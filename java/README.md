@@ -6,3 +6,5 @@ v4.46
 Compiled on latest version of Java 1.8
 Added FREQUENCY to RecurringInfo object.		
 Added AUTHTYPE to CheckTender object to support new field for TeleCheck.
+Added TRACEID and ACHSTATUS to TransactionResponse object for TeleCheck.
+
