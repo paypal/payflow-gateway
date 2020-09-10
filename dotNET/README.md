@@ -1,12 +1,20 @@
-This .NET SDK package for Payflow v4.46 is a direct replacement for the current .dll in use.  There are no API changes to this
-SDK outside of TLS 1.2 support.  However, if using COM (Classic ASP) you'll need to un-register old .DLL and re-register the new one.
+Payflow .NET SDK  
+----------------
 
-v4.46
-Fully backwards compatible with previous versions.
+A simple SDK allowing easy integration with the Payflow Gateway.
 
-Added new Request NVPs - AUTHTYPE (Telecheck) and FREQUENCY (Recurring Billing)
-Added new Response NVPs - TRACEID and ACHSTATUS (both TeleCheck)
+> THIS VERSION IS NOT 100%  COMPATIBLE WITH OLDER VERSIONS AS SOME OF THE OBJECTS AND THEIR LOCATIONS HAVE MOVED. 
+DO NOT COPY THE DLL INTO A PRODUCTION ENVIRONMENT WITHOUT ADJUSTING YOUR CODE IF NECESSARY AND TESTING.
 
-You must be using .NET 4.5 or greater for TLS 1.2 support. However, if still using .NET 3.5 (2.0) see this artricle https://support.microsoft.com/en-ca/help/3154519/support-for-tls-system-default-versions-included-in-the-net-framework
 
-The Payflow Developer Guides can be found at https://developer.paypal.com/docs/classic/products/payflow.
+## Dev Docs
+See [**developer.paypal.com/docs/payflow/integration-guide**](https://developer.paypal.com/docs/payflow/integration-guide/)
+
+## Development
+
+Please feel free to follow the [Contribution Guidelines](./CONTRIBUTING.md) to contribute to this repository. PRs are welcome, but for major changes please raise an issue first.
+
+
+
+
+> asdfadfsads
