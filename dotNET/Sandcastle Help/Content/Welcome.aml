@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<topic id="560a6b31-acc3-49c1-9659-71770df29342" revisionNumber="1">
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<para>This SDK is designed to work with both Payflow Gateway accounts(Payflow Pro and Link) and PayPal Payments Pro accounts.</para>
+		</introduction>
+
+		<section>
+			<title>Getting Started</title>
+			<content>
+        <para>
+          <legacyBold>
+            This verison of the Payflow SDK is not backwards compatible with earlier versions.
+          </legacyBold>
+        </para>        
+         <para>Please see the <link xlink:href="df400d3a-1030-4d72-865c-96b23b9f0f55">version history</link> for list of the changes.</para>
+         <para>You should to refer the <link xlink:href="https://developer.paypal.com/docs/classic/payflow/integration-guide">Payflow Gateway Developer's Guide</link> as 
+        well as the included sample files to assist you in your integration."</para>
+			</content>
+		</section>
+
+    <relatedTopics>
+      <link xlink:href="c5220611-8086-4202-ba6e-a4d550c777c5" />
+			<link xlink:href="df400d3a-1030-4d72-865c-96b23b9f0f55" />
+		</relatedTopics>
+	</developerConceptualDocument>
+</topic>
