@@ -1,8 +1,12 @@
 Payflow Gateway
 ===============
 
-The Java and .NET SDKs for Payflow have been updates for support of TLS 1.2.  Please review the README file in each directory.
+The Payflow Gateway SDK is being opened-sourced with the newest code; version 5, for .NET located in the `dotNET` directory.   The Java source will be forthcoming.
 
-Any questions or issues with these SDKs, please send your inquries to DL-PayPal-Payflow-SDK@paypal.com.
+> **Important Note:** The source code is based on v5 of the SDKs and there have been changes that prevent it from being backwards compatible with the existing v4 SDKs. Please review the [CHANGELOG] for more details.
 
-See [the documentation](https://developer.paypal.com/docs/classic/products/payflow-gateway/) for more info.
+For information on changes to the Payflow Gateway, see [New Features](https://developer.paypal.com/docs/payflow/integration-guide/new-features/) and [Revision History](https://developer.paypal.com/docs/payflow/integration-guide/reference/revision-history/).
+
+Any questions or issues with these SDKs, please send your inquires to DL-PayPal-Payflow-SDK@paypal.com.
+
+See [the documentation](https://developer.paypal.com/docs/payflow/integration-guide/) for more info.

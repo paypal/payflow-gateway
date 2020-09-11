@@ -1,12 +1,7 @@
 using System;
-using System.Diagnostics;
-using PayPal.Payments.Common;
 using PayPal.Payments.Common.Utility;
 using PayPal.Payments.DataObjects;
 using PayPal.Payments.Transactions;
-using System.Net;
-using System.Net.Sockets;
-using System.Text.RegularExpressions;
 
 namespace PayPal.Payments.Samples.CS.DataObjects.BasicTransactions
 {
@@ -27,13 +22,9 @@ namespace PayPal.Payments.Samples.CS.DataObjects.BasicTransactions
             Console.WriteLine("Executing Sample from File: DOSecureTokenAuth.cs");
             Console.WriteLine("------------------------------------------------------");
 
-            string externalip = new WebClient().DownloadString("https://ipv4.icanhazip.com/");
-
             // Create the Data Objects.
             // Create the User data object with the required user details.
-            // UserInfo User = new UserInfo("<user>", "<vendor>", "<partner>", "<password>");
-            UserInfo User = new UserInfo("toddprov4", "toddprov4", "VeriSign", "password1");
-            //UserInfo User = new UserInfo("tsieber", "thalbaschWorldPay", "PayPal", "0b6oCFc61UXp");
+            UserInfo User = new UserInfo("<user>", "<vendor>", "<partner>", "<password>");
 
             // Create the Payflow  Connection data object with the required connection details.
             PayflowConnectionData Connection = new PayflowConnectionData();
@@ -60,15 +51,6 @@ namespace PayPal.Payments.Samples.CS.DataObjects.BasicTransactions
             Bill.BillToEmail = "test@myemail.com";
             Bill.BillToCountry = "840";
             Inv.BillTo = Bill;
-
-            BrowserInfo browser = new BrowserInfo();
-            browser.ButtonSource = "Magento_Cart_Community";
-            Inv.BrowserInfo = browser;
-
-            CustomerInfo Cust = new CustomerInfo();
-            Cust.CustIP = externalip;
-            Inv.CustomerInfo = Cust;
-
 
             // Create a new Payment Device - Credit Card data object.
             // The input parameters are Credit Card Number and Expiration Date of the Credit Card.
@@ -98,37 +80,25 @@ namespace PayPal.Payments.Samples.CS.DataObjects.BasicTransactions
             // Set the flag to create a Secure Token.
             Trans.CreateSecureToken = "Y";
 
-            for (int i = 1; i < 101; i++)
+            // The Secure Token Id must be a unique id up to 36 characters.  Using the RequestID object to 
+            // generate a random id, but any means to create an id can be used.
+            Trans.SecureTokenId = PayflowUtility.RequestId;
 
-            {
+            // Set the extended data value.
+            //ExtendData ExtData = new ExtendData("SILENTTRAN", "True");
+            // Add extended data to transaction.
+            //Trans.AddToExtendData(ExtData);
 
-                // The Secure Token Id must be a unique id up to 36 characters.  Using the RequestID object to 
-                // generate a random id, but any means to create an id can be used.
-                Trans.SecureTokenId = PayflowUtility.RequestId;
-                Inv.Comment1 = "Attempt #" + i;
+            // IMPORTANT NOTE:
+            // 
+            // Remember, the Secure Token can only be used once.  Once it is redeemed by a valid transaction it cannot be used again and you will 
+            // need to generate a new token.  Also, the token has a life time of 30 minutes.
 
-                // Set the extended data value.
-                //ExtendData ExtData = new ExtendData("SILENTTRAN", "True");
-                // Add extended data to transaction.
-                //Trans.AddToExtendData(ExtData);
-
-                // IMPORTANT NOTE:
-                // 
-                // Remember, the Secure Token can only be used once.  Once it is redeemed by a valid transaction it cannot be used again and you will 
-                // need to generate a new token.  Also, the token has a life time of 30 minutes.
-
-                // Submit the Transaction
-                Response Resp = Trans.SubmitTransaction();
-                Console.WriteLine(DateTime.Now.ToString("hh:mm:ss tt") + " : " + Trans.Response.ResponseString);
-
-
-
-
-            }
+            // Submit the Transaction
+            Response Resp = Trans.SubmitTransaction();
+            Console.WriteLine(DateTime.Now.ToString("hh:mm:ss tt") + " : " + Trans.Response.ResponseString);
             Console.WriteLine("Press Enter to Exit ...");
             Console.ReadLine();
         }
-
-           
-        }
     }
+}

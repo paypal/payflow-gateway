@@ -1,23 +1,3 @@
-#region "Copyright"
-
-//             Unpublished Proprietary Program Material
-//
-// This material is proprietary to PayPal, Inc. and is not to be reproduced,
-// used or disclosed except in accordance with a written license agreement
-// with PayPal, Inc..
-//
-// (C) Copyright 2005  PayPal, Inc.   All Rights Reserved.
-//
-// PayPal, Inc. believes that this material furnished herewith is accurate 
-// and reliable.  However, no responsibility, financial or otherwise, can be 
-// accepted for any consequences arising out of the use of this material. 
-// 
-// The copyright notice above does not evidence any actual or intended
-// publication of such source code. 
-//
-
-#endregion
-
 #region "Imports"
 
 using System;
@@ -1265,8 +1245,6 @@ namespace PayPal.Payments.DataObjects
 			mProcCardSecure = (String) ResponseHashTable[PayflowConstants.PARAM_PROCCARDSECURE];
 			mProcCVV2 = (String) ResponseHashTable[PayflowConstants.PARAM_PROCCVV2];
 			mHostCode = (String) ResponseHashTable[PayflowConstants.PARAM_HOSTCODE];
-			//Added as SETTLE_DATE param is also available when VERBOSITY= MEDIUM
-			//2005-12-10
 			mSettleDate = (String) ResponseHashTable[PayflowConstants.PARAM_SETTLE_DATE];
 			mOrigPnref = (String) ResponseHashTable[PayflowConstants.PARAM_ORIGPNREF];
 			mPPRef = (String) ResponseHashTable[PayflowConstants.PARAM_PPREF];
@@ -1274,13 +1252,9 @@ namespace PayPal.Payments.DataObjects
 			mFeeAmt = (String) ResponseHashTable[PayflowConstants.PARAM_FEEAMT];
 			mPendingReason = (String) ResponseHashTable[PayflowConstants.PARAM_PENDINGREASON];
 			mPaymentType  = (String) ResponseHashTable[PayflowConstants.PARAM_PAYMENTTYPE];
-			// Added STATUS when VERBOSITY=MEDIUM
-			// 2006-09-18 TS
 			mStatus = (String)ResponseHashTable[PayflowConstants.PARAM_STATUS];
-			// Added BALAMT & AMEXID 2007-06-05 tsieber
 			mBalAmt = (String)ResponseHashTable[PayflowConstants.PARAM_BALAMT];
 			mAmexID = (String)ResponseHashTable[PayflowConstants.PARAM_AMEXID];
-			// Added AMEXPOSDATA 2007-11-05 tsieber
 			mAmexPosData = (String)ResponseHashTable[PayflowConstants.PARAM_AMEXPOSDATA];
 			mAcct = (String)ResponseHashTable[PayflowConstants.PARAM_ACCT];
 			mLastName = (String)ResponseHashTable[PayflowConstants.PARAM_LASTNAME];
@@ -1369,7 +1343,7 @@ namespace PayPal.Payments.DataObjects
             ResponseHashTable.Remove(PayflowConstants.PARAM_AFFLUENT);
             ResponseHashTable.Remove(PayflowConstants.PARAM_CCUPDATED);
 
-            // Commented Line below to reserve Status for Recurring Inquiry 2007-06-05 tsieber
+            // Commented Line below to reserve Status for Recurring Inquiry
             // ResponseHashTable.Remove(PayflowConstants.PARAM_STATUS);
         }
 
