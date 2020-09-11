@@ -97,11 +97,9 @@ namespace PayPal.Payments.Samples.CS.DataObjects.BasicTransactions
             // Result code 26 will be issued if you do not provide both the <vendor> and <user> fields.
 
             // The other most common error with authentication is result code 1, user authentication failed.  This is usually
-            // due to invalid account information or ip restriction on the account.  You can verify ip restriction by logging 
+            // due to invalid account information or IP restriction on the account.  You can verify IP restriction by logging 
             // into Manager.
-            //UserInfo User = new UserInfo("<user>", "<vendor>", "<partner>", "<password>");
-            // UserInfo User = new UserInfo("toddprov4", "toddprov4", "VeriSign", "password1");
-            UserInfo User = new UserInfo("tsieber", "thalbaschWorldPay", "PayPal", "0b6oCFc61UXp");
+            UserInfo User = new UserInfo("<user>", "<vendor>", "<partner>", "<password>");
 
             // *** Create the Payflow Connection data object with the required connection details. ***
             //
@@ -283,7 +281,9 @@ namespace PayPal.Payments.Samples.CS.DataObjects.BasicTransactions
 			//Inv.ShipTo = Ship;
 
             // ECHODATA allows you to trigger data sent in the request to be returned in the request.
-            // "ADDRESS" will return both shipping and billing address data, if sent.  "USER" will return User Information, set below.  "CUSTDATA" returns miscellaneous fields.  Refer to the developer guide.
+            // "ADDRESS" will return both shipping and billing address data, if sent.  
+			// "USER" will return User Information, set below.  
+			// "CUSTDATA" returns miscellaneous fields.  Refer to the developer guide.
             //Inv.EchoData = "USER";
 
             // *** 	Create Customer Data ***

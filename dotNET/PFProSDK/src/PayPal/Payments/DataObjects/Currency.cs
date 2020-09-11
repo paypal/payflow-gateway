@@ -1,26 +1,3 @@
-#region "Copyright"
-
-//PayPal Payflow Pro .NET SDK
-//Copyright (C) 2014  PayPal, Inc.
-//
-//This file is part of the Payflow Pro .NET SDK
-//
-//The Payflow .NET SDK is free software: you can redistribute it and/or modify
-//it under the terms of the GNU General Public License as published by
-//the Free Software Foundation, either version 3 of the License, or
-//any later version.
-//
-//The Payflow .NET SDK is is distributed in the hope that it will be useful,
-//but WITHOUT ANY WARRANTY; without even the implied warranty of
-//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//GNU General Public License for more details.
-//
-//You should have received a copy of the GNU General Public License
-//along with the Payflow .NET SDK.  If not, see <http://www.gnu.org/licenses/>.
-
-
-#endregion
-
 #region "Imports"
 
 using System;
@@ -402,25 +379,7 @@ namespace PayPal.Payments.DataObjects
 				String RetVal = PayflowConstants.EMPTY_STRING;
 				// We need to double check here whether currency value
 				// is non-zero positive before converting it.
-
-				// PPSCR00563818 - .NET SDK: Foreign currency not supported
-				// Added Globalization - 15/10/07 - tsieber
-
-                // Removed Globalization - Oct 03 2012, tsieber - as GW cannot handle comma's in amounts yet.
-
-				// Creates a CultureInfo for English in the U.S.
-				//CultureInfo usCulture = new CultureInfo("en-US");
-				// Sets the CurrentCulture to en_US.
-				//Thread.CurrentThread.CurrentCulture = usCulture;
-
-				// Clones the NumberFormatInfo and creates
-				// a new object for the local currency of France.
-				//NumberFormatInfo LocalFormat = (NumberFormatInfo)NumberFormatInfo.CurrentInfo.Clone();
-				// Replaces the default currency symbol with the 
-				// local currency symbol.
-				//LocalFormat.CurrencySymbol = "";
-
-				
+			
 				if(mNoOfDecimalDigits < 0 )
 				{
 					mNoOfDecimalDigits = 2;

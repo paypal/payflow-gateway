@@ -6,15 +6,14 @@ A simple SDK allowing easy integration with the Payflow Gateway.
 > THIS VERSION IS NOT 100%  COMPATIBLE WITH OLDER VERSIONS AS SOME OF THE OBJECTS AND THEIR LOCATIONS HAVE MOVED. 
 DO NOT COPY THE DLL INTO A PRODUCTION ENVIRONMENT WITHOUT ADJUSTING YOUR CODE IF NECESSARY AND TESTING.
 
+## Supported Platforms
+The code is compatible as-is for .NET Framework v4.x and has not been updated or tested on .NET Core or .NET Standard.
 
 ## Dev Docs
 See [**developer.paypal.com/docs/payflow/integration-guide**](https://developer.paypal.com/docs/payflow/integration-guide/)
 
 ## Development
-
 Please feel free to follow the [Contribution Guidelines](./CONTRIBUTING.md) to contribute to this repository. PRs are welcome, but for major changes please raise an issue first.
 
-
-
-
-> asdfadfsads
+## Older Versions
+The last builds of the v4 SDKs are located in the "SDK Binaries" directory.
