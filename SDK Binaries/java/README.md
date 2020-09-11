@@ -15,7 +15,7 @@ trans.addToExtendData(extData);
 
 ## Previous Release Notes
 * 4.47
- * Removed dependancy of sun.misc.BASE64Encoder and replaced with java.util.Base64.
+  * Removed dependancy of sun.misc.BASE64Encoder and replaced with java.util.Base64.
 * 4.46
   * Compiled on latest version of Java 1.8.
   * New Request NVPs - `AUTHTYPE` (TeleCheck) and `FREQUENCY` (Recurring Billing).
