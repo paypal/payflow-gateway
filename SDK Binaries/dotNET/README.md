@@ -7,6 +7,6 @@ Fully backwards compatible with previous versions.
 Added new Request NVPs - AUTHTYPE (Telecheck) and FREQUENCY (Recurring Billing)
 Added new Response NVPs - TRACEID and ACHSTATUS (both TeleCheck)
 
-You must be using .NET 4.5 or greater for TLS 1.2 support. However, if still using .NET 3.5 (2.0) see this artricle https://support.microsoft.com/en-ca/help/3154519/support-for-tls-system-default-versions-included-in-the-net-framework
+You must be using .NET 4.5 or greater for TLS 1.2 support. However, if still using .NET 3.5 (2.0) see this article https://support.microsoft.com/en-ca/help/3154519/support-for-tls-system-default-versions-included-in-the-net-framework
 
 The Payflow Developer Guides can be found at https://developer.paypal.com/docs/classic/products/payflow.
