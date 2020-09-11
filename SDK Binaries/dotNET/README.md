@@ -19,7 +19,11 @@ Trans.AddToExtendData(ExtData);
   * New Request NVPs - `AUTHTYPE` (TeleCheck) and `FREQUENCY` (Recurring Billing).
   * New Response NVPs - `TRACEID` and `ACHSTATUS` (both TeleCheck).
 
+<<<<<<< HEAD
 You must be using .NET 4.5 or greater for TLS 1.2 support. However, if still using .NET 3.5 (2.0) see this [article](https://support.microsoft.com/en-ca/help/3154519/support-for-tls-system-default-versions-included-in-the-net-framework).
+=======
+You must be using .NET 4.5 or greater for TLS 1.2 support. However, if still using .NET 3.5 (2.0) see this article https://support.microsoft.com/en-ca/help/3154519/support-for-tls-system-default-versions-included-in-the-net-framework
+>>>>>>> fb84d15d93fe673bcad4cd8e8265716d14664f62
 
 The Payflow Developer Guides can be found at [here](https://developer.paypal.com/docs/payflow/integration-guide/).
 
