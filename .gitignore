@@ -348,14 +348,3 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
-/dotNET/Payflow dotNET SDK
-/dotNET/samples/SamplesCS/SamplesCS.csproj
-/dotNET/samples/SamplesVB/SamplesVB.vbproj
-/dotNET/SamplesCS/SamplesCS.csproj
-/dotNET/PFProSDK/PFProSDK.csproj
-/dotNET/Payflow Pro .NET SDK v5
-/dotNET/SamplesVB/My Project
-/dotNET/SamplesVB/SamplesVB.vbproj
-/dotNET/Payflow dotNET SDK.sln
-/dotNET/Properties
-/dotNET/Payflow dotNET SDK.csproj
