@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/v5.iml" filepath="$PROJECT_DIR$/.idea/v5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Payflow Java SDK.iml" filepath="$PROJECT_DIR$/.idea/Payflow Java SDK.iml" />
     </modules>
   </component>
 </project>
