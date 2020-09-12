@@ -15,6 +15,8 @@
 
 package paypal.payflow;
 
+import paypal.payflow.ECGetResponse;
+
 import java.util.Hashtable;
 
 /**

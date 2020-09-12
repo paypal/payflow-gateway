@@ -15,6 +15,8 @@
 
 package paypal.payflow;
 
+import paypal.payflow.ExpressCheckoutResponse;
+
 import java.util.Hashtable;
 
 /**
