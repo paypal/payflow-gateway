@@ -1,7 +1,7 @@
-Payflow Gateway
-===============
+# Payflow Gateway SDKs
+![Home Image](homepage.jpg)
 
-The Payflow Gateway SDK is being opened-sourced with the newest code; version 5, for .NET located in the `dotNET` directory.   The Java source will be forthcoming.
+__Welcome to the Payflow .NET and Java SDKs__.  The SDKs are now opened-sourced with the newest code; version 5, located in corresponding directories.  Please review the README and CHANGELOG to more information.
 
 > **Important Note:** The source code is based on v5 of the SDKs and there have been changes that prevent it from being backwards compatible with the existing v4 SDKs. Please review the **CHANGELOG** in the corresponding directory for more details.
 
