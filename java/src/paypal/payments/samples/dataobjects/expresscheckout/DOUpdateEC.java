@@ -28,91 +28,99 @@ import paypal.payflow.*;
 
 public class DOUpdateEC {
 
-    public DOUpdateEC() {
-    }
+	public DOUpdateEC() {
+	}
 
-    public static void main(String args[]) {
-        System.out.println("------------------------------------------------------");
-        System.out.println("Executing Sample from File: DOUpdateEC.cs");
-        System.out.println("------------------------------------------------------");
+	public static void main(String args[]) {
+		System.out.println("------------------------------------------------------");
+		System.out.println("Executing Sample from File: DOUpdateEC.cs");
+		System.out.println("------------------------------------------------------");
 
-        // Payflow Pro Host Name. This is the host name for the PayPal Payment Gateway.
-        // For testing: 	pilot-payflowpro.paypal.com
-        // For production:  payflowpro.paypal.com
-        // DO NOT use payflow.verisign.com or test-payflow.verisign.com!
-        SDKProperties.setHostAddress("pilot-payflowpro.paypal.com");
-        SDKProperties.setHostPort(443);
-        SDKProperties.setTimeOut(45);
+		// Payflow Pro Host Name. This is the host name for the PayPal Payment Gateway.
+		// For testing: pilot-payflowpro.paypal.com
+		// For production: payflowpro.paypal.com
+		// DO NOT use payflow.verisign.com or test-payflow.verisign.com!
+		SDKProperties.setHostAddress("pilot-payflowpro.paypal.com");
+		SDKProperties.setHostPort(443);
+		SDKProperties.setTimeOut(45);
 
-        // Logging is by default off. To turn logging on uncomment the following lines:
-        //SDKProperties.setLogFileName("payflow_java.log");
-        //SDKProperties.setLoggingLevel(PayflowConstants.SEVERITY_DEBUG);
-        //SDKProperties.setMaxLogFileSize(1000000);
+		// Logging is by default off. To turn logging on uncomment the following lines:
+		// SDKProperties.setLogFileName("payflow_java.log");
+		// SDKProperties.setLoggingLevel(PayflowConstants.SEVERITY_DEBUG);
+		// SDKProperties.setMaxLogFileSize(1000000);
 
-        // Uncomment the lines below and set the proxy address and port, if a proxy has to be used.
-        //SDKProperties.setProxyAddress("");
-        //SDKProperties.setProxyPort(0);
+		// Uncomment the lines below and set the proxy address and port, if a proxy has
+		// to be used.
+		// SDKProperties.setProxyAddress("");
+		// SDKProperties.setProxyPort(0);
 
-        // Create the Data Objects.
-        // Create the User data object with the required user details.
-        UserInfo User = new UserInfo("<user>", "<vendor>", "<partner>", "<password>");
+		// Create the Data Objects.
+		// Create the User data object with the required user details.
+		UserInfo User = new UserInfo("<user>", "<vendor>", "<partner>", "<password>");
 
-        // Create the Payflow  Connection data object with the required connection details.
-        // The PAYFLOW_HOST property is defined in the App config file.
-        PayflowConnectionData Connection = new PayflowConnectionData();
+		// Create the Payflow Connection data object with the required connection
+		// details.
+		// The PAYFLOW_HOST property is defined in the App config file.
+		PayflowConnectionData Connection = new PayflowConnectionData();
 
-        // You can use the Update Billing Agreement request to cancel the billing agreement or update
-        // the billing agreement description.
-        //
-        // For more information on Reference Transactions, see the DOSetEC Sample for more details.
+		// You can use the Update Billing Agreement request to cancel the billing
+		// agreement or update
+		// the billing agreement description.
+		//
+		// For more information on Reference Transactions, see the DOSetEC Sample for
+		// more details.
 
-        // For Express Checkout Reference Transaction without Purchase.
-        ECUpdateBARequest updateRequest = new ECUpdateBARequest("<BAID>", "<BA_STATUS>", "<BA_DESC>");
+		// For Express Checkout Reference Transaction without Purchase.
+		ECUpdateBARequest updateRequest = new ECUpdateBARequest("<BAID>", "<BA_STATUS>", "<BA_DESC>");
 
-        // Create the Tender object.
-        PayPalTender paypalTender = new PayPalTender(updateRequest);
+		// Create the Tender object.
+		PayPalTender paypalTender = new PayPalTender(updateRequest);
 
-        // Create the transaction object.  We do not pass a Transaction Type for an update call.
-        BaseTransaction Trans = new BaseTransaction(
-                null, User, Connection, null, paypalTender, PayflowUtility.getRequestId());
+		// Create the transaction object. We do not pass a Transaction Type for an
+		// update call.
+		BaseTransaction Trans = new BaseTransaction(null, User, Connection, null, paypalTender,
+				PayflowUtility.getRequestId());
 
-        // Submit the transaction.
-        Response Resp = Trans.submitTransaction();
+		// Submit the transaction.
+		Response Resp = Trans.submitTransaction();
 
-        // Display the transaction response parameters.
-        if (Resp != null) {
-            // Get the Transaction Response parameters.
-            TransactionResponse TrxnResponse = Resp.getTransactionResponse();
+		// Display the transaction response parameters.
+		if (Resp != null) {
+			// Get the Transaction Response parameters.
+			TransactionResponse TrxnResponse = Resp.getTransactionResponse();
 
-            if (TrxnResponse != null) {
-                System.out.println("RESULT = " + TrxnResponse.getResult());
-                System.out.println("RESPMSG = " + TrxnResponse.getRespMsg());
-                if (TrxnResponse.getResult() == 0) {
-                    System.out.println("CORRELATIONID = " + TrxnResponse.getCorrelationId());
-                    System.out.println("PAYERID = " + Trans.getResponse().getEcGetResponse().getPayerId());
-                    System.out.println("PAYERSTATUS = " + Trans.getResponse().getEcGetResponse().getPayerStatus());
-                    System.out.println("SHIPTOFIRSTNAME = " + Trans.getResponse().getEcGetResponse().getShipToFirstName());
-                    System.out.println("SHIPTOLAST = " + Trans.getResponse().getEcGetResponse().getShipToLastName());
-                    System.out.println("EMAIL = " + Trans.getResponse().getEcGetResponse().getEmail());
-                    System.out.println("BAID = " + Trans.getResponse().getEcDoResponse().getbaId());
-                    System.out.println("BA_STATUS = " + Trans.getResponse().getEcUpdateResponse().getba_Status());
-                    System.out.println("BA_DESC = " + Trans.getResponse().getEcUpdateResponse().getba_Desc());
-                }
-                // If value is true, then the Request ID has not been changed and the original response
-                // of the original transction is returned.
-                System.out.println("DUPLICATE = " + TrxnResponse.getDuplicate());
-            }
+			if (TrxnResponse != null) {
+				System.out.println("RESULT = " + TrxnResponse.getResult());
+				System.out.println("RESPMSG = " + TrxnResponse.getRespMsg());
+				if (TrxnResponse.getResult() == 0) {
+					System.out.println("CORRELATIONID = " + TrxnResponse.getCorrelationId());
+					System.out.println("PAYERID = " + Trans.getResponse().getEcGetResponse().getPayerId());
+					System.out.println("PAYERSTATUS = " + Trans.getResponse().getEcGetResponse().getPayerStatus());
+					System.out.println(
+							"SHIPTOFIRSTNAME = " + Trans.getResponse().getEcGetResponse().getShipToFirstName());
+					System.out.println("SHIPTOLAST = " + Trans.getResponse().getEcGetResponse().getShipToLastName());
+					System.out.println("EMAIL = " + Trans.getResponse().getEcGetResponse().getEmail());
+					System.out.println("BAID = " + Trans.getResponse().getEcDoResponse().getbaId());
+					System.out.println("BA_STATUS = " + Trans.getResponse().getEcUpdateResponse().getba_Status());
+					System.out.println("BA_DESC = " + Trans.getResponse().getEcUpdateResponse().getba_Desc());
+				}
+				// If value is true, then the Request ID has not been changed and the original
+				// response
+				// of the original transction is returned.
+				System.out.println("DUPLICATE = " + TrxnResponse.getDuplicate());
+			}
 
-            // Display the response.
-            System.out.println();
-            System.out.println(PayflowUtility.getStatus(Resp));
+			// Display the response.
+			System.out.println();
+			System.out.println(PayflowUtility.getStatus(Resp));
 
-            // Get the Transaction Context and check for any contained SDK specific errors (optional code).
-            Context TransCtx = Resp.getContext();
-            if (TransCtx != null && TransCtx.getErrorCount() > 0) {
-                System.out.println();
-                System.out.println("Transaction Errors = " + TransCtx.toString());
-            }
-        }
-    }
+			// Get the Transaction Context and check for any contained SDK specific errors
+			// (optional code).
+			Context TransCtx = Resp.getContext();
+			if (TransCtx != null && TransCtx.getErrorCount() > 0) {
+				System.out.println();
+				System.out.println("Transaction Errors = " + TransCtx.toString());
+			}
+		}
+	}
 }
