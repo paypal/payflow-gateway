@@ -88,6 +88,8 @@ public class Invoice extends BaseRequestDataObject {
     private String vatInvNum;
     private String vatTaxRate;
     private String reportGroup;
+    private ArrayList adviceDetailList;
+    private Devices devices;
 
 
     /**
@@ -96,6 +98,7 @@ public class Invoice extends BaseRequestDataObject {
      */
     public Invoice() {
         itemList = new ArrayList();
+        adviceDetailList = new ArrayList();
     }
 
     /**
@@ -188,6 +191,77 @@ public class Invoice extends BaseRequestDataObject {
         }
     }
 
+    /**
+     * Adds a advice detail item to the list.
+     *
+     * @param item AdviceDetail object
+     *
+     * This class holds the advice detail related information.
+     * Detail of a charge where *n* is a value from 1 - 5. Use for additional breakdown of the amount.
+     * For example ADDLAMT1=1 is the amount for the additional amount for advice detail item 1 and is equal to 1,
+     * <p>Following example shows how to use advice detail.</p>
+     * <p>
+     * .................
+     * //inv is the Invoice object.
+     * .................
+     * // Create a advice detail item.
+     * AdviceDetail addDetail1 = new AdviceDetail();
+     * addDetail1.setAddLAmt("1");
+     * addDetail1.setAddLAmtType("1");
+     * inv.addAdviceDetailItem(addDetail1);
+     * AdviceDetail addDetail2 = new AdviceDetail();
+     * addDetail2.setAddLAmt("2");
+     * addDetail2.setAddLAmtType("2");
+     * inv.addAdviceDetailItem(addDetail2);
+     * ..................
+     */
+    public void addAdviceDetailItem(AdviceDetail item) {
+        adviceDetailList.add(item);
+    }
+
+    /**
+     * Removes a advice detail ine item from the list.
+     *
+     * @param index Index of the AdviceDetailItem to be removed.
+     * <p>Use this method to remove a advice detail line item at a particular index in the purchase order.</P>
+     * .................
+     * // Inv is the Invoice object
+     * .................
+     * // Remove item at index 2
+     * inv.removeAdviceDetailItem(2);
+     * .................
+     */
+    public void removeAdviceDetailItem(int index) {
+        adviceDetailList.remove(index);
+    }
+
+    /**
+     * Clears the advice detail line item list.
+     * <p>Use this method to clear all the line items added to the purchase order.</p>
+     * .................
+     * // inv is the Invoice object
+     * .................
+     * // Remove all advoce detail line items.
+     * inv.removeAllAdviceDetailItem();
+     * .................
+     */
+    public void removeAllAdviceDetailItem() {
+        adviceDetailList.clear();
+    }
+
+    /**
+     *
+     */
+    private void generateAdviceDetailRequest() {
+        for (int index = 0; index < adviceDetailList.size(); index++) {
+            AdviceDetail item = (AdviceDetail) adviceDetailList.get(index);
+            if (item != null) {
+                item.setContext(getContext());
+                item.setRequestBuffer(super.getRequestBuffer());
+                item.generateRequest(index);
+            }
+        }
+    }
 
     protected void generateRequest() {
         try {
@@ -259,10 +333,17 @@ public class Invoice extends BaseRequestDataObject {
                 userItem.setRequestBuffer(getRequestBuffer());
                 userItem.generateRequest();
             }
-
             if (itemList != null && itemList.size() > 0) {
                 generateItemRequest();
             }
+            if (adviceDetailList != null && adviceDetailList.size() > 0) {
+                generateAdviceDetailRequest();
+            }
+            if (devices != null) {
+                devices.setRequestBuffer(getRequestBuffer());
+                devices.generateRequest();
+            }
+
         } catch (Exception ex) {
             ErrorObject err = new ErrorObject(PayflowConstants.SEVERITY_FATAL, "", ex.toString());
             if (getContext() == null) {
@@ -314,6 +395,12 @@ public class Invoice extends BaseRequestDataObject {
         }
         if (userItem != null) {
             userItem.setContext(getContext());
+        }
+        if (merchantInfo != null) {
+            merchantInfo.setContext(getContext());
+        }
+        if (devices != null) {
+            devices.setContext(getContext());
         }
     }
 
@@ -590,6 +677,26 @@ public class Invoice extends BaseRequestDataObject {
      */
     public void setMerchantInfo(MerchantInfo merchantInfo) {
         this.merchantInfo = merchantInfo;
+    }
+
+    /**
+     * Sets the Devices Object
+     * <p>Use this method to set the devices the cardholder used.</P>
+     *
+     * @param devices Devices
+     *  <p>
+     * .................
+     * // inv is the Invoice object
+     * .................
+     * // Set the Devices details.
+     * Devices devices = new Devices();
+     * devices.setCatType("3");
+     * devices.setContactLess("RFD");
+     * inv.set
+     * .................
+     */
+    public void setDevices(Devices devices) {
+        this.devices = devices;
     }
 
 
