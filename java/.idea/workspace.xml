@@ -19,11 +19,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9533da2-017e-4f68-8627-3fa704709969" name="Default Changelist" comment="">
+    <list default="true" id="e9533da2-017e-4f68-8627-3fa704709969" name="Default Changelist" comment="New object: AdviceDetail, supports ADDLAMTn and ADDLAMTTYPEn&#10;New object: Devices, supports CATTYPE and CONTACTLESS&#10;Added to CustomerInfo: CUSTDATA, CUSTOMERID and CUSTOMERNUMBER">
+      <change afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/AdviceDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Devices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paypal/payments/samples/dataobjects/basictransactions/DOSale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paypal/payments/samples/dataobjects/basictransactions/DOSale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PaymentConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PaymentConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/ReconnectState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/ReconnectState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/RetryState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/RetryState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/CustomerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/CustomerInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/LineItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/LineItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/PaymentCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/PaymentCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ShipTo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ShipTo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,11 +68,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="paypal.payments.samples.dataobjects.basictransactions" />
       <recent name="paypal.payflow" />
+      <recent name="paypal.payments.samples.dataobjects.basictransactions" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.DOSale">
+    <configuration name="DOSale" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="paypal.payments.samples.dataobjects.basictransactions.DOSale" />
+      <module name="Payflow Java SDK" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DOSaleComplete" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="paypal.payments.samples.dataobjects.basictransactions.DOSaleComplete" />
       <module name="Payflow Java SDK" />
@@ -69,12 +88,16 @@
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="paypal.payments.samples.dataobjects.basictransactions.DOSaleComplete" />
+      <option name="MAIN_CLASS_NAME" value="paypal.payments.samples.dataobjects.basictransactions.DOSale" />
       <module name="Payflow Java SDK" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.DOSale" />
+      <item itemvalue="Application.DOSaleComplete" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -102,23 +125,27 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="New object: AdviceDetail, supports ADDLAMTn and ADDLAMTTYPEn&#10;New object: Devices, supports CATTYPE and CONTACTLESS&#10;Added to CustomerInfo: CUSTDATA, CUSTOMERID and CUSTOMERNUMBER" />
+    <option name="LAST_COMMIT_MESSAGE" value="New object: AdviceDetail, supports ADDLAMTn and ADDLAMTTYPEn&#10;New object: Devices, supports CATTYPE and CONTACTLESS&#10;Added to CustomerInfo: CUSTDATA, CUSTOMERID and CUSTOMERNUMBER" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="1663" y="284" key="#Project_Structure" timestamp="1599886929653">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="1663" y="284" key="#Project_Structure/0.0.3440.1400@0.0.3440.1400" timestamp="1599886929653" />
-    <state x="1637" y="365" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599884292250">
+    <state x="1637" y="365" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599979326283">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1637" y="365" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1599884292250" />
-    <state x="1912" y="500" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1599884278807">
+    <state x="1637" y="365" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1599979326283" />
+    <state x="1912" y="500" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1599979322110">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1912" y="500" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1599884278807" />
-    <state x="148" y="193" width="2095" height="988" key="DiffContextDialog" timestamp="1599894789119">
+    <state x="1912" y="500" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1599979322110" />
+    <state x="148" y="193" width="2095" height="988" key="DiffContextDialog" timestamp="1599975711254">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="148" y="193" width="2095" height="988" key="DiffContextDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1599894789119" />
+    <state x="148" y="193" width="2095" height="988" key="DiffContextDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1599975711254" />
     <state x="1858" y="427" key="FileChooserDialogImpl" timestamp="1599884229698">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
@@ -127,38 +154,38 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="404" y="0" key="FileDocumentManager.FileCacheConflict/0.0.3440.1400@0.0.3440.1400" timestamp="1599937804839" />
-    <state width="1674" height="402" key="GridCell.Tab.0.bottom" timestamp="1599963164021">
+    <state width="1674" height="397" key="GridCell.Tab.0.bottom" timestamp="1599984440690">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="402" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1599963164021" />
-    <state width="1674" height="402" key="GridCell.Tab.0.center" timestamp="1599963164021">
+    <state width="1674" height="397" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1599984440690" />
+    <state width="1674" height="397" key="GridCell.Tab.0.center" timestamp="1599984440690">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="402" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1599963164021" />
-    <state width="1674" height="402" key="GridCell.Tab.0.left" timestamp="1599963164021">
+    <state width="1674" height="397" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1599984440690" />
+    <state width="1674" height="397" key="GridCell.Tab.0.left" timestamp="1599984440690">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="402" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1599963164021" />
-    <state width="1674" height="402" key="GridCell.Tab.0.right" timestamp="1599963164021">
+    <state width="1674" height="397" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1599984440690" />
+    <state width="1674" height="397" key="GridCell.Tab.0.right" timestamp="1599984440690">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="402" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1599963164021" />
-    <state width="1674" height="402" key="GridCell.Tab.1.bottom" timestamp="1599963164021">
+    <state width="1674" height="397" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1599984440690" />
+    <state width="1674" height="399" key="GridCell.Tab.1.bottom" timestamp="1599979922796">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="402" key="GridCell.Tab.1.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1599963164021" />
-    <state width="1674" height="402" key="GridCell.Tab.1.center" timestamp="1599963164021">
+    <state width="1674" height="399" key="GridCell.Tab.1.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1599979922796" />
+    <state width="1674" height="399" key="GridCell.Tab.1.center" timestamp="1599979922796">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="402" key="GridCell.Tab.1.center/0.0.3440.1400@0.0.3440.1400" timestamp="1599963164021" />
-    <state width="1674" height="402" key="GridCell.Tab.1.left" timestamp="1599963164021">
+    <state width="1674" height="399" key="GridCell.Tab.1.center/0.0.3440.1400@0.0.3440.1400" timestamp="1599979922796" />
+    <state width="1674" height="399" key="GridCell.Tab.1.left" timestamp="1599979922796">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="402" key="GridCell.Tab.1.left/0.0.3440.1400@0.0.3440.1400" timestamp="1599963164021" />
-    <state width="1674" height="402" key="GridCell.Tab.1.right" timestamp="1599963164021">
+    <state width="1674" height="399" key="GridCell.Tab.1.left/0.0.3440.1400@0.0.3440.1400" timestamp="1599979922796" />
+    <state width="1674" height="399" key="GridCell.Tab.1.right" timestamp="1599979922796">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="402" key="GridCell.Tab.1.right/0.0.3440.1400@0.0.3440.1400" timestamp="1599963164021" />
+    <state width="1674" height="399" key="GridCell.Tab.1.right/0.0.3440.1400@0.0.3440.1400" timestamp="1599979922796" />
     <state x="1055" y="259" key="SettingsEditor" timestamp="1599894780739">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
@@ -167,6 +194,10 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="93" y="100" width="1534" height="1207" key="ShowDiffWithBranchDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1599957499868" />
+    <state x="743" y="443" key="Vcs.Push.Dialog.v2" timestamp="1599984151691">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="743" y="443" key="Vcs.Push.Dialog.v2/0.0.3440.1400@0.0.3440.1400" timestamp="1599984151691" />
     <state x="1999" y="488" width="857" height="444" key="chooseDestDirectoryDialog" timestamp="1599884830394">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
@@ -187,9 +218,9 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="198" y="191" width="1411" height="964" key="dock-window-3/0.0.3440.1400@0.0.3440.1400" timestamp="1599941680940" />
-    <state x="1786" y="339" width="747" height="1023" key="find.popup" timestamp="1599958168416">
+    <state x="2402" y="245" width="747" height="1023" key="find.popup" timestamp="1599984714669">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1786" y="339" width="747" height="1023" key="find.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1599958168416" />
+    <state x="2402" y="245" width="747" height="1023" key="find.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1599984714669" />
   </component>
 </project>

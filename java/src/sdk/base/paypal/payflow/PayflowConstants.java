@@ -1,20 +1,5 @@
 package paypal.payflow;
 
-/**
- * This program is free software: you can redistribute it and/or modify
- *    it under the terms of the GNU General Public License as published by
- *    the Free Software Foundation, either version 3 of the License, or
- *    (at your option) any later version.
- *
- *   This program is distributed in the hope that it will be useful,
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *   GNU General Public License for more details.
- *
- *   You should have received a copy of the GNU General Public License
- *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 import java.util.Hashtable;
 
 /**
@@ -339,11 +324,7 @@ public final class PayflowConstants {
      */
     public static final int SEVERITY_DEBUG = 1;
     /**
-     * package.File name of the SdkProperties file.
-     */
-
-    /**
-     * represents any error occuring due to improper initialisation of system level properties
+     * represents any error occurring due to improper initialisation of system level properties
      */
     protected static final String INIT_ERROR = "The following error occured while initialising : ";
 
@@ -1429,26 +1410,61 @@ public final class PayflowConstants {
     /**
      * Payflow Param L_ALTTAXAMT
      */
-    protected static final String PARAM_L_ALTTAXAMT= "L_ALTTAXAMT";
+    protected static final String PARAM_L_ALTTAXAMT = "L_ALTTAXAMT";
     /**
      * Payflow Param L_ALTTAXID
      */
-    protected static final String PARAM_L_ALTTAXID= "L_ALTTAXID";
+    protected static final String PARAM_L_ALTTAXID = "L_ALTTAXID";
     /**
      * Payflow Param L_ALTTAXRATE
      */
-    protected static final String PARAM_L_ALTTAXRATE= "L_ALTTAXRATE";
+    protected static final String PARAM_L_ALTTAXRATE = "L_ALTTAXRATE";
     /**
      * Payflow Param L_CARRIERSERVICESLEVELCODE
      */
-    protected static final String PARAM_L_CARRIERSERVICESLEVELCODE= "L_CARRIERSERVICESLEVELCODE";
+    protected static final String PARAM_L_CARRIERSERVICESLEVELCODE = "L_CARRIERSERVICESLEVELCODE";
     /**
      * Payflow Param L_EXTAMT
      */
-    protected static final String PARAM_L_EXTAMT= "L_EXTAMT";
+    protected static final String PARAM_L_EXTAMT = "L_EXTAMT";
+    /**
+     * Payflow Param ADDLAMT
+     */
+    protected static final String PARAM_ADDLAMT = "ADDLAMT";
+    /**
+     * Payflow Param ADDLAMTTYPE
+     */
+    protected static final String PARAM_ADDLAMTTYPE = "ADDLAMTTYPE";
+    /**
+     * Payflow Param CATTYPE
+     */
+    protected static final String PARAM_CATTYPE = "CATTYPE";
+    /**
+     * Payflow Param CONTACTLESS
+     */
+    protected static final String PARAM_CONTACTLESS = "CONTACTLESS";
+    /**
+     * Payflow Param CUSTDATA
+     */
+    protected static final String PARAM_CUSTDATA = "CUSTDATA";
+    /**
+     * Payflow Param CUSTOMERID
+     */
+    protected static final String PARAM_CUSTOMERID = "CUSTOMERID";
+    /**
+     * Payflow Param CUSTOMERNUMBER
+     */
+    protected static final String PARAM_CUSTOMERNUMBER= "CUSTOMERNUMBER";
 
 
 
+
+
+
+
+
+
+/// ----------------------------------------------------------------------------
 
     /**
      * Payflow Param VIT_OSNAME

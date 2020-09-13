@@ -25,6 +25,10 @@ public final class CustomerInfo extends BaseRequestDataObject {
     private String reqName;
     private String custHostName;
     private String custBrowser;
+    private String custData;
+    private String customerId;
+    private String customerNumber;
+
 
     /**
      * Constructor
@@ -44,6 +48,9 @@ public final class CustomerInfo extends BaseRequestDataObject {
             getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_CUSTID, custId));
             getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_CUSTHOSTNAME, custHostName));
             getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_CUSTBROWSER, custBrowser));
+            getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_CUSTDATA, custData));
+            getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_CUSTOMERID, customerId));
+            getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_CUSTOMERNUMBER, customerNumber));
         } catch (Exception ex) {
             ErrorObject err = new ErrorObject(PayflowConstants.SEVERITY_FATAL, "", ex.toString());
             if (getContext() != null) {
@@ -168,9 +175,7 @@ public final class CustomerInfo extends BaseRequestDataObject {
      * @return String
      *
      * <p>Maps to Payflow Parameter: REQNAME</p>
-     */
-    /**
-     * @return Returns the reqName.
+     *
      */
     public String getReqName() {
         return reqName;
@@ -178,11 +183,8 @@ public final class CustomerInfo extends BaseRequestDataObject {
 
     /**
      * Sets the Requester Name.
-     * @param String
-     *
      * <p>Maps to Payflow Parameter: REQNAME</p>
-     */
-    /**
+     *
      * @param reqName The reqName to set.
      */
     public void setReqName(String reqName) {
@@ -194,9 +196,7 @@ public final class CustomerInfo extends BaseRequestDataObject {
      * @return String
      *
      * <p>Maps to Payflow Parameter: CUSTHOMENAME</p>
-     */
-    /**
-     * @return Returns the custHostName.
+     *
      */
     public String getCustHostName() {
         return custHostName;
@@ -204,11 +204,8 @@ public final class CustomerInfo extends BaseRequestDataObject {
 
     /**
      * Sets the Customer's Host Name.
-     * @param String
-     *
      * <p>Maps to Payflow Parameter: CUSTHOMENAME</p>
-     */
-    /**
+     *
      * @param custHostName The customer host name to set.
      */
     public void setCustHostName(String custHostName) {
@@ -220,9 +217,7 @@ public final class CustomerInfo extends BaseRequestDataObject {
      * @return String
      *
      * <p>Maps to Payflow Parameter: CUSTBROWSER</p>
-     */
-    /**
-     * @return Returns the custBrowser.
+     *
      */
     public String getCustBrowser() {
         return custBrowser;
@@ -230,14 +225,76 @@ public final class CustomerInfo extends BaseRequestDataObject {
 
     /**
      * Sets the Customer's Browser.
-     * @param String
-     *
      * <p>Maps to Payflow Parameter: CUSTBROWSER</p>
-     */
-    /**
+     *
      * @param custBrowser The customers browser.
      */
     public void setCustBrowser(String custBrowser) {
         this.custBrowser = custBrowser;
     }
+
+    /**
+     * Gets the Customers Data.
+     * @return String
+     *
+     * <p>Maps to Payflow Parameter: CUSTDATA</p>
+     *
+     */
+    public String getCustData() {
+        return custData;
+    }
+
+    /**
+     * Sets the Customer's Data.
+     * <p>Maps to Payflow Parameter: CUSTDATA</p>
+     *
+     * @param custData The customers data.
+     */
+    public void setCustData(String custData) {
+        this.custData = custData;
+    }
+
+    /**
+     * Gets the Customers Id.
+     * @return String
+     *
+     * <p>Maps to Payflow Parameter: CUSTOMERID</p>
+     *
+     */
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    /**
+     * Sets the Customers Id.
+     * <p>Maps to Payflow Parameter: CUSTOMERID</p>
+     *
+     * @param customerId customers Id.
+     */
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    /**
+     * Gets the Customers Number.
+     * @return String
+     *
+     * <p>Maps to Payflow Parameter: CUSTOMERNUMBER</p>
+     *
+     */
+    public String getCustomerNumber() {
+        return customerNumber;
+    }
+
+    /**
+     * Sets the Customers Number.
+     * <p>Maps to Payflow Parameter: CUSTOMERNUMBER</p>
+     *
+     * @param customerNumber customers number
+     */
+    public void setCustomerNumber(String customerNumber) {
+        this.customerNumber = customerNumber;
+    }
+
+
 }
