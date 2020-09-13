@@ -16,26 +16,18 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9533da2-017e-4f68-8627-3fa704709969" name="Default Changelist" comment="New object: AdviceDetail, supports ADDLAMTn and ADDLAMTTYPEn&#10;New object: Devices, supports CATTYPE and CONTACTLESS&#10;Added to CustomerInfo: CUSTDATA, CUSTOMERID and CUSTOMERNUMBER">
-      <change afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/AdviceDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Devices.java" afterDir="false" />
+    <list default="true" id="e9533da2-017e-4f68-8627-3fa704709969" name="Default Changelist" comment="New object: AdviceDetail, supports ADDLAMTn and ADDLAMTTYPEn&#10;New object: Devices, supports CATTYPE and CONTACTLESS&#10;Added to CustomerInfo: CUSTDATA, CUSTOMERID and CUSTOMERNUMBER&#10;&#10;Additional clean up.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paypal/payments/samples/dataobjects/basictransactions/DOSale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paypal/payments/samples/dataobjects/basictransactions/DOSale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/Logger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PaymentConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PaymentConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/ReconnectState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/ReconnectState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/RetryState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/RetryState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/CustomerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/CustomerInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/PaymentCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/PaymentCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ShipTo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ShipTo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +41,18 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="paypal" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="payflow-gateway" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/paypal/payflow-gateway" />
+      </set>
+    </option>
   </component>
   <component name="ProjectId" id="1YxLiiSD0vUAJLwpYHhKcSnVklp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -65,6 +69,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Confirmation" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -111,6 +116,14 @@
       <option name="presentableId" value="Default" />
       <updated>1583879429011</updated>
     </task>
+    <task id="LOCAL-00001" summary="New object: AdviceDetail, supports ADDLAMTn and ADDLAMTTYPEn&#10;New object: Devices, supports CATTYPE and CONTACTLESS&#10;Added to CustomerInfo: CUSTDATA, CUSTOMERID and CUSTOMERNUMBER&#10;&#10;Additional clean up.">
+      <created>1599985002971</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1599985002971</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -118,7 +131,39 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
@@ -127,7 +172,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="New object: AdviceDetail, supports ADDLAMTn and ADDLAMTTYPEn&#10;New object: Devices, supports CATTYPE and CONTACTLESS&#10;Added to CustomerInfo: CUSTDATA, CUSTOMERID and CUSTOMERNUMBER" />
-    <option name="LAST_COMMIT_MESSAGE" value="New object: AdviceDetail, supports ADDLAMTn and ADDLAMTTYPEn&#10;New object: Devices, supports CATTYPE and CONTACTLESS&#10;Added to CustomerInfo: CUSTDATA, CUSTOMERID and CUSTOMERNUMBER" />
+    <MESSAGE value="New object: AdviceDetail, supports ADDLAMTn and ADDLAMTTYPEn&#10;New object: Devices, supports CATTYPE and CONTACTLESS&#10;Added to CustomerInfo: CUSTDATA, CUSTOMERID and CUSTOMERNUMBER&#10;&#10;Additional clean up." />
+    <option name="LAST_COMMIT_MESSAGE" value="New object: AdviceDetail, supports ADDLAMTn and ADDLAMTTYPEn&#10;New object: Devices, supports CATTYPE and CONTACTLESS&#10;Added to CustomerInfo: CUSTDATA, CUSTOMERID and CUSTOMERNUMBER&#10;&#10;Additional clean up." />
   </component>
   <component name="WindowStateProjectService">
     <state x="1663" y="284" key="#Project_Structure" timestamp="1599886929653">
@@ -142,6 +188,10 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="1912" y="500" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1599979322110" />
+    <state x="745" y="255" key="CommitChangelistDialog2" timestamp="1599986227161">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="745" y="255" key="CommitChangelistDialog2/0.0.3440.1400@0.0.3440.1400" timestamp="1599986227161" />
     <state x="148" y="193" width="2095" height="988" key="DiffContextDialog" timestamp="1599975711254">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
@@ -154,50 +204,58 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="404" y="0" key="FileDocumentManager.FileCacheConflict/0.0.3440.1400@0.0.3440.1400" timestamp="1599937804839" />
-    <state width="1674" height="397" key="GridCell.Tab.0.bottom" timestamp="1599984440690">
+    <state x="930" y="577" key="Github.CreatePullRequestDialog" timestamp="1599985621647">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="397" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1599984440690" />
-    <state width="1674" height="397" key="GridCell.Tab.0.center" timestamp="1599984440690">
+    <state x="930" y="577" key="Github.CreatePullRequestDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1599985621647" />
+    <state width="1674" height="397" key="GridCell.Tab.0.bottom" timestamp="1599986648265">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="397" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1599984440690" />
-    <state width="1674" height="397" key="GridCell.Tab.0.left" timestamp="1599984440690">
+    <state width="1674" height="397" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1599986648265" />
+    <state width="1674" height="397" key="GridCell.Tab.0.center" timestamp="1599986648265">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="397" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1599984440690" />
-    <state width="1674" height="397" key="GridCell.Tab.0.right" timestamp="1599984440690">
+    <state width="1674" height="397" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1599986648265" />
+    <state width="1674" height="397" key="GridCell.Tab.0.left" timestamp="1599986648265">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="397" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1599984440690" />
-    <state width="1674" height="399" key="GridCell.Tab.1.bottom" timestamp="1599979922796">
+    <state width="1674" height="397" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1599986648265" />
+    <state width="1674" height="397" key="GridCell.Tab.0.right" timestamp="1599986648265">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="399" key="GridCell.Tab.1.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1599979922796" />
-    <state width="1674" height="399" key="GridCell.Tab.1.center" timestamp="1599979922796">
+    <state width="1674" height="397" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1599986648265" />
+    <state width="1674" height="399" key="GridCell.Tab.1.bottom" timestamp="1599986648263">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="399" key="GridCell.Tab.1.center/0.0.3440.1400@0.0.3440.1400" timestamp="1599979922796" />
-    <state width="1674" height="399" key="GridCell.Tab.1.left" timestamp="1599979922796">
+    <state width="1674" height="399" key="GridCell.Tab.1.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1599986648263" />
+    <state width="1674" height="399" key="GridCell.Tab.1.center" timestamp="1599986648263">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="399" key="GridCell.Tab.1.left/0.0.3440.1400@0.0.3440.1400" timestamp="1599979922796" />
-    <state width="1674" height="399" key="GridCell.Tab.1.right" timestamp="1599979922796">
+    <state width="1674" height="399" key="GridCell.Tab.1.center/0.0.3440.1400@0.0.3440.1400" timestamp="1599986648263" />
+    <state width="1674" height="399" key="GridCell.Tab.1.left" timestamp="1599986648263">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="399" key="GridCell.Tab.1.right/0.0.3440.1400@0.0.3440.1400" timestamp="1599979922796" />
-    <state x="1055" y="259" key="SettingsEditor" timestamp="1599894780739">
+    <state width="1674" height="399" key="GridCell.Tab.1.left/0.0.3440.1400@0.0.3440.1400" timestamp="1599986648263" />
+    <state width="1674" height="399" key="GridCell.Tab.1.right" timestamp="1599986648263">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1055" y="259" key="SettingsEditor/0.0.3440.1400@0.0.3440.1400" timestamp="1599894780739" />
+    <state width="1674" height="399" key="GridCell.Tab.1.right/0.0.3440.1400@0.0.3440.1400" timestamp="1599986648263" />
+    <state x="1055" y="259" key="SettingsEditor" timestamp="1599986340858">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1055" y="259" key="SettingsEditor/0.0.3440.1400@0.0.3440.1400" timestamp="1599986340858" />
     <state x="93" y="100" width="1534" height="1207" key="ShowDiffWithBranchDialog" timestamp="1599957499868">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="93" y="100" width="1534" height="1207" key="ShowDiffWithBranchDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1599957499868" />
-    <state x="743" y="443" key="Vcs.Push.Dialog.v2" timestamp="1599984151691">
+    <state x="918" y="414" key="VCS.ChangeListViewerDialog" timestamp="1599986596716">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="743" y="443" key="Vcs.Push.Dialog.v2/0.0.3440.1400@0.0.3440.1400" timestamp="1599984151691" />
+    <state x="918" y="414" key="VCS.ChangeListViewerDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1599986596716" />
+    <state x="743" y="443" key="Vcs.Push.Dialog.v2" timestamp="1599985170233">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="743" y="443" key="Vcs.Push.Dialog.v2/0.0.3440.1400@0.0.3440.1400" timestamp="1599985170233" />
     <state x="1999" y="488" width="857" height="444" key="chooseDestDirectoryDialog" timestamp="1599884830394">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
@@ -222,5 +280,13 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="2402" y="245" width="747" height="1023" key="find.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1599984714669" />
+    <state x="964" y="604" key="git4idea.ui.GitResetDialog" timestamp="1599986597939">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="964" y="604" key="git4idea.ui.GitResetDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1599986597939" />
+    <state x="964" y="609" key="git4idea.ui.GitStashDialog" timestamp="1599986195582">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="964" y="609" key="git4idea.ui.GitStashDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1599986195582" />
   </component>
 </project>
