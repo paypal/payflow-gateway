@@ -2140,8 +2140,40 @@ namespace PayPal.Payments.Common.Utility
         /// Payflow Param MERCHANTINVOICENUM
         /// </summary>
         internal const String PARAM_MERCHANTINVOICENUM = "MERCHANTINVOICENUM";
+        /// <summary>
+        /// Payflow Param VATINVNUM
+        /// </summary>
+        internal const String PARAM_VATINVNUM = "VATINVNUM";
+        /// <summary>
+        /// Payflow Param VATTAXRATE
+        /// </summary>
+        internal const String PARAM_VATTAXRATE = "VATTAXRATE";
+        /// <summary>
+        /// Payflow Param L_ALTTAXAMT
+        /// </summary>
+        internal const String PARAM_L_ALTTAXAMT = "L_ALTTAXAMT";
+        /// <summary>
+        /// Payflow Param L_ALTTAXID
+        /// </summary>
+        internal const String PARAM_L_ALTTAXID = "L_ALTTAXID";
+        /// <summary>
+        /// Payflow Param L_ALTTAXRATE
+        /// </summary>
+        internal const String PARAM_L_ALTTAXRATE = "L_ALTTAXRATE";
+        /// <summary>
+        /// Payflow Param L_CARRIERSERVICESLEVELCODE
+        /// </summary>
+        internal const String PARAM_L_CARRIERSERVICESLEVELCODE = "L_CARRIERSERVICESLEVELCODE";
+        /// <summary>
+        /// Payflow Param L_EXTAMT
+        /// </summary>
+        internal const String PARAM_L_EXTAMT = "L_EXTAMT";
+
 
         
+
+
+
 
         #endregion
 
