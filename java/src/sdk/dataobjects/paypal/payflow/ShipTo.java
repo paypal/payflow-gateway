@@ -5,7 +5,7 @@ package paypal.payflow;
  * <p>Shipping address is destination address information.</p>
  * <p>Following example shows how to use BillTo.</p>
  *
- * @paypal.sample .................
+ * .................
  * //inv is the Invoice object.
  * .................
  * <p/>
@@ -26,7 +26,7 @@ public final class ShipTo extends Address {
      * Gets the shipping city
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOCITY</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOCITY</p>
      */
     public String getShipToCity() {
         return super.getAddressCity();
@@ -36,7 +36,7 @@ public final class ShipTo extends Address {
      * Sets the shipping city
      *
      * @param shipToCity String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOCITY</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOCITY</p>
      */
     public void setShipToCity(String shipToCity) {
         super.setAddressCity(shipToCity);
@@ -46,7 +46,7 @@ public final class ShipTo extends Address {
      * Gets the Shipping Country
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOCOUNTRY</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOCOUNTRY</p>
      */
     public String getShipToCountry() {
         return super.getAddressCountry();
@@ -56,7 +56,7 @@ public final class ShipTo extends Address {
      * Sets the Shipping Country
      *
      * @param shipToCountry String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOCOUNTRY</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOCOUNTRY</p>
      */
     public void setShipToCountry(String shipToCountry) {
         super.setAddressCountry(shipToCountry);
@@ -66,7 +66,7 @@ public final class ShipTo extends Address {
      * Gets the shipping email.
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOEMAIL</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOEMAIL</p>
      */
     public String getShipToEmail() {
         return super.getAddressEmail();
@@ -76,7 +76,7 @@ public final class ShipTo extends Address {
      * Sets the shipping email.
      *
      * @param shipToEmail String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOEMAIL</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOEMAIL</p>
      */
     public void setShipToEmail(String shipToEmail) {
         super.setAddressEmail(shipToEmail);
@@ -86,7 +86,7 @@ public final class ShipTo extends Address {
      * Gets the shipping first name
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOFIRSTNAME</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOFIRSTNAME</p>
      */
     public String getShipToFirstName() {
         return super.getAddressFirstName();
@@ -96,7 +96,7 @@ public final class ShipTo extends Address {
      * Sets the shipping first name
      *
      * @param shipToFirstName String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOFIRSTNAME</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOFIRSTNAME</p>
      */
     public void setShipToFirstName(String shipToFirstName) {
         super.setAddressFirstName(shipToFirstName);
@@ -106,7 +106,7 @@ public final class ShipTo extends Address {
      * Gets the last name from the shipping address.
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOLASTNAME</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOLASTNAME</p>
      */
     public String getShipToLastName() {
         return super.getAddressLastName();
@@ -116,7 +116,7 @@ public final class ShipTo extends Address {
      * Sets the last name in the shipping address.
      *
      * @param shipToLastName String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOLASTNAME</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOLASTNAME</p>
      */
     public void setShipToLastName(String shipToLastName) {
         super.setAddressLastName(shipToLastName);
@@ -126,7 +126,7 @@ public final class ShipTo extends Address {
      * Gets the middlename from the shipping address.
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOMIDDLENAME</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOMIDDLENAME</p>
      */
     public String getShipToMiddleName() {
         return super.getAddressMiddleName();
@@ -136,7 +136,7 @@ public final class ShipTo extends Address {
      * Sets the middlename in the shipping address.
      *
      * @param shipToMiddleName String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOMIDDLENAME</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOMIDDLENAME</p>
      */
     public void setShipToMiddleName(String shipToMiddleName) {
         super.setAddressMiddleName(shipToMiddleName);
@@ -146,7 +146,7 @@ public final class ShipTo extends Address {
      * Gets the Phone2 from the shipping address.
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOPHONE2</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOPHONE2</p>
      */
     public String getShipToPhone2() {
         return super.getAddressPhone2();
@@ -156,7 +156,7 @@ public final class ShipTo extends Address {
      * Sets the Phone2 in the shipping address.
      *
      * @param shipToPhone2 String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOPHONE2</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOPHONE2</p>
      */
     public void setShipToPhone2(String shipToPhone2) {
         super.setAddressPhone2(shipToPhone2);
@@ -166,7 +166,7 @@ public final class ShipTo extends Address {
      * Gets the phone number from the shipping address.
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOPHONE</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOPHONE</p>
      */
     public String getShipToPhone() {
         return super.getAddressPhone();
@@ -176,7 +176,7 @@ public final class ShipTo extends Address {
      * Sets the phone number in the shipping address.
      *
      * @param shipToPhone String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOPHONE</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOPHONE</p>
      */
     public void setShipToPhone(String shipToPhone) {
         super.setAddressPhone(shipToPhone);
@@ -186,7 +186,7 @@ public final class ShipTo extends Address {
      * Gets the shipping state.
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOSTATE</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOSTATE</p>
      */
     public String getShipToState() {
         return super.getAddressState();
@@ -196,7 +196,7 @@ public final class ShipTo extends Address {
      * Sets the shipping state.
      *
      * @param shipToState String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOSTATE</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOSTATE</p>
      */
     public void setShipToState(String shipToState) {
         super.setAddressState(shipToState);
@@ -206,7 +206,7 @@ public final class ShipTo extends Address {
      * Gets the shipping street.
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOSTREET</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOSTREET</p>
      */
     public String getShipToStreet() {
         return super.getAddressStreet();
@@ -216,7 +216,7 @@ public final class ShipTo extends Address {
      * Sets the shipping street.
      *
      * @param shipToStreet String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOSTREET</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOSTREET</p>
      */
     public void setShipToStreet(String shipToStreet) {
         super.setAddressStreet(shipToStreet);
@@ -226,7 +226,7 @@ public final class ShipTo extends Address {
      * Gets the shipping street2.
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOSTREET2</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOSTREET2</p>
      */
     public String getShipToStreet2() {
         return super.getAddressStreet2();
@@ -236,7 +236,7 @@ public final class ShipTo extends Address {
      * Sets the shipping street2.
      *
      * @param shipToStreet2 String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOSTREET2</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOSTREET2</p>
      */
     public void setShipToStreet2(String shipToStreet2) {
         super.setAddressStreet2(shipToStreet2);
@@ -246,7 +246,7 @@ public final class ShipTo extends Address {
      * Gets the shipping zip code.
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOZIP</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOZIP</p>
      */
     public String getShipToZip() {
         return super.getAddressZip();
@@ -256,7 +256,7 @@ public final class ShipTo extends Address {
      * Sets the shipping zip code.
      *
      * @param shipToZip String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOZIP.</p>
+     *  <p>Maps to Payflow Parameter: SHIPTOZIP.</p>
      */
     public void setShipToZip(String shipToZip) {
         super.setAddressZip(shipToZip);
@@ -266,7 +266,7 @@ public final class ShipTo extends Address {
      * Gets the shipping method.
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPMETHOD</p>
+     *  <p>Maps to Payflow Parameter: SHIPMETHOD</p>
      */
     public String getShipMethod() {
         return shipMethod;
@@ -276,7 +276,7 @@ public final class ShipTo extends Address {
      * Sets the shipping method.
      *
      * @param shipMethod String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPMETHOD</p>
+     *  <p>Maps to Payflow Parameter: SHIPMETHOD</p>
      */
     public void setShipMethod(String shipMethod) {
         this.shipMethod = shipMethod;
@@ -286,7 +286,7 @@ public final class ShipTo extends Address {
      * Gets the shipping carrier.
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPCARRIER</p>
+     *  <p>Maps to Payflow Parameter: SHIPCARRIER</p>
      */
     public String getShipCarrier() {
         return shipCarrier;
@@ -296,7 +296,7 @@ public final class ShipTo extends Address {
      * Sets the shipping carrier.
      *
      * @param shipCarrier String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPCARRIER</p>
+     *  <p>Maps to Payflow Parameter: SHIPCARRIER</p>
      */
     public void setShipCarrier(String shipCarrier) {
         this.shipCarrier = shipCarrier;
@@ -307,7 +307,7 @@ public final class ShipTo extends Address {
      * <p>Ship from postal code (called ZIP code in the USA).</P>
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPFROMZIP</p>
+     *  <p>Maps to Payflow Parameter: SHIPFROMZIP</p>
      */
     public String getShipFromZip() {
         return shipFromZip;
@@ -318,7 +318,7 @@ public final class ShipTo extends Address {
      * <p>Ship from postal code (called ZIP code in the USA).</P>
      *
      * @param shipFromZip String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPFROMZIP</p>
+     *  <p>Maps to Payflow Parameter: SHIPFROMZIP</p>
      */
     public void setShipFromZip(String shipFromZip) {
         this.shipFromZip = shipFromZip;
@@ -329,7 +329,7 @@ public final class ShipTo extends Address {
      * <p>Shipping address is destination address information.</p>
      * <p>Following example shows how to use ShipTo.</p>
      *
-     * @paypal.sample .................
+     *  .................
      * //inv is the Invoice object.
      * .................
      * <p/>
@@ -352,7 +352,7 @@ public final class ShipTo extends Address {
      *         populate the shipping addresses directly
      *         from the billing addresses when
      *         both are the same.</p>
-     * @paypal.sample ................
+     *  ................
      * //ship is the object of
      * //shipTo populated with
      * //the shipping addresses.

@@ -1,19 +1,6 @@
 package paypal.payflow;
 
-/**
- * This program is free software: you can redistribute it and/or modify
- *    it under the terms of the GNU General Public License as published by
- *    the Free Software Foundation, either version 3 of the License, or
- *    (at your option) any later version.
- *
- *   This program is distributed in the hope that it will be useful,
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *   GNU General Public License for more details.
- *
- *   You should have received a copy of the GNU General Public License
- *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+
 
 
 import java.io.File;
@@ -388,11 +375,11 @@ public final class Logger {
     }
 
 /**
-   * Pads out a string upto padlen with pad chars
+   * Pads out a string up to padlen with pad chars
    * @param str Object.toString() to be padded
    * @param padlen length of pad (+ve = pad on right, -ve pad on left)
    * @param pad character
- * @return
+   * @return value
    */
   private static String pad(Object str, int padlen, String pad)
     {

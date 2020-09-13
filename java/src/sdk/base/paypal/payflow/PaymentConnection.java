@@ -1,19 +1,6 @@
 package paypal.payflow;
 
-/**
- * This program is free software: you can redistribute it and/or modify
- *    it under the terms of the GNU General Public License as published by
- *    the Free Software Foundation, either version 3 of the License, or
- *    (at your option) any later version.
- *
- *   This program is distributed in the hope that it will be useful,
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *   GNU General Public License for more details.
- *
- *   You should have received a copy of the GNU General Public License
- *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -341,13 +328,7 @@ final class PaymentConnection {
      */
     private void initServerUri() {
 
-        /**
-         * Modified 09/20/06: To retrieve application server specific URLStreamHandler class name using
-         * SDKProperties. getURLStreamHandlerClass() [ if set by user code ]. If the handler class is set,
-         * the code uses it in the new URL call;
-         */
-
-        String classname = SDKProperties.getURLStreamHandlerClass();
+    String classname = SDKProperties.getURLStreamHandlerClass();
 
         try {
             // Begin code to handle path of Url.  The requirement for the path to be
@@ -561,12 +542,7 @@ final class PaymentConnection {
             //mHeaders = mServerConnection.getRequestProperties().toString() ;
 
         } catch (Exception ex) {
-            /**
-             * Modified 09/20/2006: Added a debug statement to log the full exception stack.
-             * This is to help merchants who are receiving a class cast exception because of using an
-             * older version of weblogic specific handler class or other issues.
-             */
-            Logger.getInstance().log("paypal.payflow.PaymentConnection.CreateConnection(): Caught Exception creating connection: " + getStackTraceAsString(ex),
+               Logger.getInstance().log("paypal.payflow.PaymentConnection.CreateConnection(): Caught Exception creating connection: " + getStackTraceAsString(ex),
                     PayflowConstants.SEVERITY_FATAL);
 
             // 04/23/07 Removed path "/transaction" TS

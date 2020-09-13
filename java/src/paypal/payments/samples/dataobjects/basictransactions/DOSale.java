@@ -25,7 +25,7 @@ public class DOSale {
 		// Logging is by default off. To turn logging on uncomment the following lines:
 		SDKProperties.setLogFileName("payflow_java.log");
 		SDKProperties.setLoggingLevel(PayflowConstants.SEVERITY_DEBUG);
-		SDKProperties.setMaxLogFileSize(100000);
+		SDKProperties.setMaxLogFileSize(1000000);
 		SDKProperties.setStackTraceOn(true);
 
 		// Uncomment the lines below and set the proxy address and port, if a proxy has
