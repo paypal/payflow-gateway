@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * <p/>
  * <p>This class can be extended to create a new transaction type.</p>
  *
- * @paypal.sample This example shows how to create and perform an Sale transaction using a Basetransaction Object.
+ *  This example shows how to create and perform an Sale transaction using a Basetransaction Object.
  * <p/>
  * ..........
  * ..........
@@ -175,7 +175,7 @@ public class BaseTransaction {
      * Gets the extend data list.
      *
      * @return extData ArrayList
-     * @paypal.sample ............
+     *  ............
      * //Trans is the transaction object.
      * ............
      * ArrayList extDataList = trans.getExtendData();
@@ -205,7 +205,7 @@ public class BaseTransaction {
      * Transaction request in Name-Value Pair format.
      *
      * @return request String
-     * @paypal.sample TRXTYPE[1]=S&amp;ACCT[16]=5105105105105100&amp;EXPDATE[4]=0109&amp;TENDER[1]=C&amp;INVNUM[8]=INV12345&amp;AMT[5]=25.12
+     *  TRXTYPE[1]=S&amp;ACCT[16]=5105105105105100&amp;EXPDATE[4]=0109&amp;TENDER[1]=C&amp;INVNUM[8]=INV12345&amp;AMT[5]=25.12
      * USER=user&amp;VENDOR=vendor&amp;PARTNER=partner&amp;PWD=password
      */
     public String getRequest() {
@@ -234,7 +234,7 @@ public class BaseTransaction {
      * Gets the transaction response object.
      *
      * @return response Response
-     * @paypal.sample ............
+     *  ............
      * //Trans is the transaction object.
      * ............
      * <p/>
@@ -381,7 +381,7 @@ public class BaseTransaction {
      * <p>Maps to Payflow Parameter - VERBOSITY</p>
      *
      * @return verbosity String
-     * @paypal.sample ............
+     *  ............
      * //Trans is the transaction object.
      * ............
      * trans.setVerbosity( "HIGH");
@@ -397,7 +397,7 @@ public class BaseTransaction {
      * <p>Maps to Payflow Parameter - VERBOSITY</p>
      *
      * @param verbosity String
-     * @paypal.sample ............
+     *  ............
      * //Trans is the transaction object.
      * ............
      * trans.setVerbosity( "HIGH");
@@ -562,7 +562,7 @@ public class BaseTransaction {
      * errors in context, if any.
      *
      * @return response String
-     * @paypal.sample ............
+     *  ............
      * //Trans is the transaction object.
      * ............
      * <p/>

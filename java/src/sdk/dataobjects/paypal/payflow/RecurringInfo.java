@@ -6,7 +6,7 @@ package paypal.payflow;
  * <p>RecurringInfo contains the required and optional parameters
  * specific to all the recurring transactions.</p>
  *
- * @paypal.sample Following examples shows how to use the RecurringInfo.
+ *  Following examples shows how to use the RecurringInfo.
  * <code lang="C#" escaped="false">
  * ............................
  * //Populate other data objects.
@@ -78,7 +78,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * Gets the profileName parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PROFILENAME
+     *  <p>Maps to Payflow Parameter: PROFILENAME
      */
     public String getProfileName() {
         return profileName;
@@ -88,7 +88,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * Sets the profileName parameter.
      *
      * @param profileName - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PROFILENAME
+     *  <p>Maps to Payflow Parameter: PROFILENAME
      */
     public void setProfileName(String profileName) {
         this.profileName = profileName;
@@ -99,7 +99,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * <p>Beginning date for the recurring billing cycle.</p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: START
+     *  <p>Maps to Payflow Parameter: START
      */
     public String getStart() {
         return start;
@@ -110,7 +110,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * <p>Beginning date for the recurring billing cycle.</p>
      *
      * @param start - String
-     * @paypal.sample <p>Maps to Payflow Parameter: START
+     *  <p>Maps to Payflow Parameter: START
      */
     public void setStart(String start) {
         this.start = start;
@@ -121,7 +121,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * <p>Number of payments to be made over the life of the agreement.</p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: TERM
+     *  <p>Maps to Payflow Parameter: TERM
      */
     public long getTerm() {
         return term;
@@ -132,7 +132,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * <p>Number of payments to be made over the life of the agreement.</p>
      *
      * @param term - String
-     * @paypal.sample <p>Maps to Payflow Parameter: TERM
+     *  <p>Maps to Payflow Parameter: TERM
      */
     public void setTerm(long term) {
         this.term = term;
@@ -183,7 +183,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      *         {@paypal.eltr}
      *         {@paypal.endlisttable}
      *         </p>
-     * @paypal.sample <p>Maps to Payflow Parameter: PAYPERIOD
+     *  <p>Maps to Payflow Parameter: PAYPERIOD
      */
     public String getPayPeriod() {
         return payPeriod;
@@ -234,7 +234,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      *                  {@paypal.eltr}
      *                  {@paypal.endlisttable}
      *                  </p>
-     * @paypal.sample <p>Maps to Payflow Parameter: PAYPERIOD
+     *  <p>Maps to Payflow Parameter: PAYPERIOD
      */
     public void setPayPeriod(String payPeriod) {
         this.payPeriod = payPeriod;
@@ -249,7 +249,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * <p>S represents an initial fee.</p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: OPTIONALTRX
+     *  <p>Maps to Payflow Parameter: OPTIONALTRX
      */
     public String getOptionalTrx() {
         return optionalTrx;
@@ -264,7 +264,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * <p>S represents an initial fee.</p>
      *
      * @param optionalTrx - String
-     * @paypal.sample <p>Maps to Payflow Parameter: OPTIONALTRX
+     *  <p>Maps to Payflow Parameter: OPTIONALTRX
      */
     public void setOptionalTrx(String optionalTrx) {
         this.optionalTrx = optionalTrx;
@@ -276,7 +276,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * Optional when OPTIONALTRX=A ($1 Authorization by default)</p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: OPTIONALTRXAMT
+     *  <p>Maps to Payflow Parameter: OPTIONALTRXAMT
      */
     public Currency getOptionalTrxAmt() {
         return optionalTrxAmt;
@@ -288,7 +288,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * Optional when OPTIONALTRX=A ($1 Authorization by default)</p>
      *
      * @param optionalTrxAmt - String
-     * @paypal.sample <p>Maps to Payflow Parameter: OPTIONALTRXAMT
+     *  <p>Maps to Payflow Parameter: OPTIONALTRXAMT
      */
     public void setOptionalTrxAmt(Currency optionalTrxAmt) {
         this.optionalTrxAmt = optionalTrxAmt;
@@ -301,7 +301,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * status is received.</p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: RETRYNUMDAYS
+     *  <p>Maps to Payflow Parameter: RETRYNUMDAYS
      */
     public long getRetryNumDays() {
         return retryNumDays;
@@ -314,7 +314,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * status is received.</p>
      *
      * @param retryNumDays - String
-     * @paypal.sample <p>Maps to Payflow Parameter: RETRYNUMDAYS
+     *  <p>Maps to Payflow Parameter: RETRYNUMDAYS
      */
     public void setRetryNumDays(long retryNumDays) {
         this.retryNumDays = retryNumDays;
@@ -328,7 +328,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * before PayPal cancels a profile.</p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: MAXFAILPAYMENTS
+     *  <p>Maps to Payflow Parameter: MAXFAILPAYMENTS
      */
     public long getMaxFailPayments() {
         return maxFailPayments;
@@ -342,7 +342,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * before PayPal cancels a profile.</p>
      *
      * @param maxFailPayments - String
-     * @paypal.sample <p>Maps to Payflow Parameter: MAXFAILPAYMENTS
+     *  <p>Maps to Payflow Parameter: MAXFAILPAYMENTS
      */
     public void setMaxFailPayments(long maxFailPayments) {
         this.maxFailPayments = maxFailPayments;
@@ -356,7 +356,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * </p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: ORIGPROFILEID
+     *  <p>Maps to Payflow Parameter: ORIGPROFILEID
      */
     public String getOrigProfileId() {
         return origProfileId;
@@ -370,7 +370,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * </p>
      *
      * @param origProfileId - String
-     * @paypal.sample <p>Maps to Payflow Parameter: ORIGPROFILEID
+     *  <p>Maps to Payflow Parameter: ORIGPROFILEID
      */
     public void setOrigProfileId(String origProfileId) {
         this.origProfileId = origProfileId;
@@ -397,7 +397,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * </p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PAYMENTHISTORY
+     *  <p>Maps to Payflow Parameter: PAYMENTHISTORY
      */
     public String getPaymentHistory() {
         return paymentHistory;
@@ -424,7 +424,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * </p>
      *
      * @param paymentHistory - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PAYMENTHISTORY
+     *  <p>Maps to Payflow Parameter: PAYMENTHISTORY
      */
     public void setPaymentHistory(String paymentHistory) {
         this.paymentHistory = paymentHistory;
@@ -435,7 +435,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * <p>Payment number identifying the failed payment to be retried.</p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PAYMENTNUM
+     *  <p>Maps to Payflow Parameter: PAYMENTNUM
      */
     public String getPaymentNum() {
         return paymentNum;
@@ -446,7 +446,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * <p>Payment number identifying the failed payment to be retried.</p>
      *
      * @param paymentNum - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PAYMENTNUM
+     *  <p>Maps to Payflow Parameter: PAYMENTNUM
      */
     public void setPaymentNum(String paymentNum) {
         this.paymentNum = paymentNum;

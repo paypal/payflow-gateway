@@ -136,14 +136,19 @@ namespace PayPal.Payments.DataObjects
 	/// <item><term>MAXAMT</term><description>ECSetRequest</description><description><see cref='ECSetRequest.MaxAmt'>MaxAmt</see></description><description>String</description></item>
 	/// <item><term>MAXFAILPAYMENTS</term><description>RecurringResponse, RecurringInfo</description><description>MaxFailPayments</description><description>String</description></item>
 	/// <item><term>MD</term><description>BuyerAuthResponse</description><description><see cref='BuyerAuthResponse.MD'>MD</see></description><description>String</description></item>
-	/// <item><term>MERCHDESCR</term><description>PurchaseCard, CreditCard</description><description><see cref='Invoice.MerchDescr'>MerchDescr</see></description><description>String</description></item>
-	/// <item><term>MERCHSVC</term><description>PurchaseCard, CreditCard</description><description><see cref='Invoice.MerchSvc'>MerchSvc</see></description><description>String</description></item>
-    /// <item><term>MERCHANTNAME</term><description>CustomerInfo</description><description><see cref='CustomerInfo.MerchantName'>MerchantName</see></description><description>String</description></item>
-    /// <item><term>MERCHANTSTREET</term><description>CustomerInfo</description><description><see cref='CustomerInfo.MerchantStreet'>MerchantStreet</see></description><description>String</description></item>
-    /// <item><term>MERCHANTCITY</term><description>CustomerInfo</description><description><see cref='CustomerInfo.MerchantCity'>MerchantCity</see></description><description>String</description></item> 
-    /// <item><term>MERCHANTSTATE</term><description>CustomerInfo</description><description><see cref='CustomerInfo.MerchantState'>MerchantState</see></description><description>String</description></item> 
-    /// <item><term>MERCHANTZIP</term><description>CustomerInfo</description><description><see cref='CustomerInfo.MerchantZip'>MerchantZip</see></description><description>String</description></item> 
-    /// <item><term>MERCHANTCOUNTRYCODE</term><description>CustomerInfo</description><description><see cref='CustomerInfo.MerchantCountryCode'>MerchantCountryCode</see></description><description>String</description></item> 
+	/// <item><term>MERCHDESCR</term><description>PurchaseCard, CreditCard</description><description><see cref='MerchantInfo.MerchDescr'>MerchDescr</see></description><description>String</description></item>
+	/// <item><term>MERCHSVC</term><description>PurchaseCard, CreditCard</description><description><see cref='MerchantInfo.MerchSvc'>MerchSvc</see></description><description>String</description></item>
+    /// <item><term>MERCHANTNAME</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantName'>MerchantName</see></description><description>String</description></item>
+    /// <item><term>MERCHANTSTREET</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantStreet'>MerchantStreet</see></description><description>String</description></item>
+    /// <item><term>MERCHANTCITY</term><description>CMerchantInfo</description><description><see cref='MerchantInfo.MerchantCity'>MerchantCity</see></description><description>String</description></item> 
+    /// <item><term>MERCHANTSTATE</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantState'>MerchantState</see></description><description>String</description></item> 
+    /// <item><term>MERCHANTZIP</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantZip'>MerchantZip</see></description><description>String</description></item> 
+    /// <item><term>MERCHANTURL</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantUrl'>MerchantUrl</see></description><description>String</description></item> 
+	/// <item><term>MERCHANTVATNUM</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantVatNum'>MerchantVatNum</see></description><description>String</description></item> 
+	/// <item><term>MERCHANTINVOICENUM</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantInvoiceNum'>MerchantInvoiceNum</see></description><description>String</description></item> 
+	
+	
+	/// <item><term>MERCHANTCOUNTRYCODE</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantCountryCode'>MerchantCountryCode</see></description><description>String</description></item> 
     /// <item><term>MICR</term><description>CheckPayment</description><description></description><description>String</description></item>
 	/// <item><term>NAME</term><description>BankAcct, CreditCard, PurchaseCard, SwipeCard, CheckPayment, RecurringResponse</description><description>Name</description><description>String</description></item>
 	/// <item><term>NATIONALTAXAMT</term><description>Invoice</description><description><see cref='Invoice.NationalTaxAmt'>NationalTaxAmt</see></description><description>Currency</description></item>
@@ -256,6 +261,8 @@ namespace PayPal.Payments.DataObjects
 	/// <item><term>TRXRESPMSG</term><description>RecurringResponse</description><description><see cref='RecurringResponse.TrxRespMsg'>TrxRespMsg</see></description><description>String</description></item>
 	/// <item><term>TRXRESULT</term><description>RecurringResponse</description><description><see cref='RecurringResponse.TrxResult'>TrxResult</see></description><description>String</description></item>
 	/// <item><term>TRXTYPE</term><description>Value is set based on the Transaction object used:SaleTransaction, CreditTransaction, VoidTransaction, CaptureTransaction etc.</description><description>TrxType</description><description>String</description></item>
+	/// <item><term>TXID</term><description>BuyerAuthResponse</description><description><see cref='BuyerAuthResponse.TxId'>TxId</see></description><description>String</description></item>
+	
 	/// <item><term>USER</term><description>UserInfo</description><description></description><description>String</description></item>
     /// <item><term>USER1</term><description>UserItem</description><description><see cref='UserItem.UserItem1'>UserItem1</see></description><description>String</description></item>
     /// <item><term>USER2</term><description>UserItem</description><description><see cref='UserItem.UserItem2'>UserItem2</see></description><description>String</description></item>

@@ -12,7 +12,7 @@ package paypal.payflow;
  * as part of a Voice Authorization transaction.
  * </p>
  *
- * @paypal.sample ...............
+ *  ...............
  * // Populate data objects
  * ...............
  * <p/>
@@ -43,6 +43,7 @@ package paypal.payflow;
 public final class VoiceAuthTransaction extends BaseTransaction {
 
     private String mAuthCode;
+    private String mAuthDate;
 
     /**
      * Constructor
@@ -53,7 +54,7 @@ public final class VoiceAuthTransaction extends BaseTransaction {
      * @param Invoice               - Invoice Object.
      * @param Tender                - Tender object such as  Card Tender.
      * @param RequestId             - Request Id
-     * @paypal.sample ...............
+     *  ...............
      * // Populate data objects
      * ...............
      * <p/>
@@ -74,12 +75,42 @@ public final class VoiceAuthTransaction extends BaseTransaction {
     /**
      * Constructor
      *
+     * @param AuthCode              - Authorization code obtain via another means; i.e. phone.
+     * @param AuthDate              - Date the AuthCode was obtained.
+     * @param UserInfo              - User Info object populated with user credentials.
+     * @param PayflowConnectionData - Connection credentials object.
+     * @param Invoice               - Invoice Object.
+     * @param Tender                - Tender object such as  Card Tender.
+     * @param RequestId             - Request Id
+     *  ...............
+     * // Populate data objects
+     * ...............
+     * <p/>
+     * // Create a new Void Transaction.
+     * VoiceAuthTransaction trans = new VoidTransaction("123PNI", "082120", user,
+     *  connection, inv, tender, payflowUtility.getRequestId());
+     */
+
+    public VoiceAuthTransaction(String AuthCode, String AuthDate, UserInfo UserInfo,
+                                PayflowConnectionData PayflowConnectionData, Invoice Invoice,
+                                BaseTender Tender, String RequestId) {
+        super(PayflowConstants.TRXTYPE_VOICEAUTH, UserInfo,
+                PayflowConnectionData, Invoice,
+                Tender, RequestId);
+        mAuthCode = AuthCode;
+        mAuthDate = AuthDate;
+    }
+
+
+    /**
+     * Constructor
+     *
      * @param AuthCode  - mandatory for Voice auth transaction.
      * @param UserInfo  - User Info object populated with user credentials.
      * @param Invoice   - Invoice Object.
      * @param Tender    - Tender object such as  Card Tender.
      * @param RequestId - Request Id
-     * @paypal.sample ...............
+     *  ...............
      * // Populate data objects
      * ...............
      * <p/>
@@ -100,6 +131,7 @@ public final class VoiceAuthTransaction extends BaseTransaction {
     protected void generateRequest() {
         super.generateRequest();
         getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_AUTHCODE, mAuthCode));
+        getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_AUTHDATE, mAuthDate));
     }
 
 }

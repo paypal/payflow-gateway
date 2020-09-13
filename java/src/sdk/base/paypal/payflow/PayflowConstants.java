@@ -1656,6 +1656,77 @@ public final class PayflowConstants {
      * Payflow Param CCUPDATED
      */
     protected static final String PARAM_CCUPDATED = "CCUPDATED";
+    /**
+     * Payflow Param THREEDSVERSION
+     */
+    protected static final String PARAM_THREEDSVERSION= "THREEDSVERSION";
+    /**
+     * Payflow Param DSTRANSACTIONID
+     */
+    protected static final String PARAM_DSTRANSACTIONID = "DSTRANSACTIONID";
+
+    /**
+     * Payflow Param RRN
+     */
+    protected static final String PARAM_RRN = "RRN";
+    /**
+     * Payflow Param STAN
+     */
+    protected static final String PARAM_STAN = "STAN";
+    /**
+     * Payflow Param ACI
+     */
+    protected static final String PARAM_ACI = "ACI";
+    /**
+     * Payflow Param VALIDATIONCODE
+     */
+    protected static final String PARAM_VALIDATIONCODE = "VALIDATIONCODE";
+    /**
+     * Payflow Param MERCHANTLOCATIONID
+     */
+    protected static final String PARAM_MERCHANTLOCATIONID = "MERCHANTLOCATIONID";
+    /**
+     * Payflow Param MERCHANTID
+     */
+    protected static final String PARAM_MERCHANTID = "MERCHANTID";
+    /**
+     * Payflow Param MERCHANTCONTACTINFO
+     */
+    protected static final String PARAM_MERCHANTCONTACTINFO = "MERCHANTCONTACTINFO";
+    /**
+     * Payflow Param CCTRANSID
+     */
+    protected static final String PARAM_CCTRANSID = "CCTRANSID";
+    /**
+     * Payflow Param CCTRANS_POSDATA
+     */
+    protected static final String PARAM_CCTRANS_POSDATA = "CCTRANS_POSDATA";
+    /**
+     * Payflow Param AUTHDATE
+     */
+    protected static final String PARAM_AUTHDATE = "AUTHDATE";
+    /**
+     * Payflow Param MERCHANTURL
+     */
+    protected static final String PARAM_MERCHANTURL = "MERCHANTURL";
+    /**
+     * Payflow Param MERCHANTVATNUM
+     */
+    protected static final String PARAM_MERCHANTVATNUM= "MERCHANTVATNUM";
+    /**
+     * Payflow Param CUSTHOSTNAME
+     */
+    protected static final String PARAM_CUSTHOSTNAME= "CUSTHOSTNAME";
+    /**
+     * Payflow Param CUSTBROWSER
+     */
+    protected static final String PARAM_CUSTBROWSER= "CUSTBROWSER";
+    /**
+     * Payflow Param MERCHANTINVOICENUM
+     */
+    protected static final String PARAM_MERCHANTINVOICENUM= "MERCHANTINVOICENUM";
+
+
 
 
 

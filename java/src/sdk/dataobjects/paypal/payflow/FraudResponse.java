@@ -32,7 +32,7 @@ public final class FraudResponse extends BaseResponseDataObject {
      * Gets the PreFpsMsg parameter.
      *
      * @return - String
-     * @paypal.sample Maps to Payflow Parameter: PREFPSMSG
+     *  Maps to Payflow Parameter: PREFPSMSG
      */
     public String getPreFpsMsg() {
         return preFpsMsg;
@@ -42,7 +42,7 @@ public final class FraudResponse extends BaseResponseDataObject {
      * Gets the PostFpsMsg parameter.
      *
      * @return - String
-     * @paypal.sample Maps to Payflow Parameter: POSTFPSMSG
+     *  Maps to Payflow Parameter: POSTFPSMSG
      */
     public String getPostFpsMsg() {
         return postFpsMsg;
@@ -65,7 +65,7 @@ public final class FraudResponse extends BaseResponseDataObject {
      * @return - String
      *         Gets the FPS Post Xml data message populated in FpsXmlData object.
      *         {@link FpsXmlData}
-     * @paypal.sample <p>Maps to Payflow Parameter: FPS_POSTXMLDATA
+     *  <p>Maps to Payflow Parameter: FPS_POSTXMLDATA
      */
     public FpsXmlData getFpsPostXmlData() {
         return fpsPostXmlData;

@@ -37,7 +37,7 @@ public class ExpressCheckoutResponse extends BaseResponseDataObject {
      * Gets the token parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: TOKEN
+     *  <p>Maps to Payflow Parameter: TOKEN
      */
     public String getToken() {
         return token;

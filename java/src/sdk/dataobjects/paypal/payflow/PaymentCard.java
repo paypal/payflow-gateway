@@ -60,7 +60,7 @@ abstract class PaymentCard extends PaymentDevice {
      *
      * @return CVV2 value
      *         <p/>
-     * @paypal.sample Maps to Payflow Parameters as follows: CVV2
+     *  Maps to Payflow Parameters as follows: CVV2
      * </p>
      */
     public String getCvv2() {
@@ -73,7 +73,7 @@ abstract class PaymentCard extends PaymentDevice {
      *
      * @param cvv2 CVV2 value
      *             <p/>
-     * @paypal.sample Maps to Payflow Parameters as follows: CVV2
+     *  Maps to Payflow Parameters as follows: CVV2
      * </p>
      */
     public void setCvv2(String cvv2) {
@@ -86,7 +86,7 @@ abstract class PaymentCard extends PaymentDevice {
      *
      * @return cardIssue String
      *         <p/>
-     * @paypal.sample Maps to Payflow Parameter : CARDISSUE
+     *  Maps to Payflow Parameter : CARDISSUE
      * </p>
      */
     public String getCardIssue() {
@@ -99,7 +99,7 @@ abstract class PaymentCard extends PaymentDevice {
      *
      * @param cardIssue String
      *                  <p/>
-     * @paypal.sample Maps to Payflow Parameter : CARDISSUE
+     *  Maps to Payflow Parameter : CARDISSUE
      * </p>
      */
     public void setCardIssue(String cardIssue) {
@@ -112,7 +112,7 @@ abstract class PaymentCard extends PaymentDevice {
      *
      * @return cardStart String
      *         <p/>
-     * @paypal.sample Maps to Payflow Parameter : CARDSTART
+     *  Maps to Payflow Parameter : CARDSTART
      * </p>
      */
     public String getCardStart() {
@@ -125,7 +125,7 @@ abstract class PaymentCard extends PaymentDevice {
      *
      * @param cardStart String
      *                  <p/>
-     * @paypal.sample Maps to Payflow Parameter : CARDSTART
+     *  Maps to Payflow Parameter : CARDSTART
      * </p>
      */
     public void setCardStart(String cardStart) {
@@ -138,7 +138,7 @@ abstract class PaymentCard extends PaymentDevice {
      *
      * @param cardOnFile String
      *                  <p/>
-     * @paypal.sample Maps to Payflow Parameter : CARDONFILE
+     *  Maps to Payflow Parameter : CARDONFILE
      * </p>
      */
     public void setCardOnFile(String cardOnFile) {
@@ -150,7 +150,7 @@ abstract class PaymentCard extends PaymentDevice {
      *
      * @param txId String
      *                  <p/>
-     * @paypal.sample Maps to Payflow Parameter : TXID
+     *  Maps to Payflow Parameter : TXID
      * </p>
      */
     public void setTxId(String txId) {

@@ -5,6 +5,7 @@
 #### Changes
 These changes will need to be incorporated into your existing integration before you can use this version.
 * FIRSTNAME, LASTNAME, STREET, CITY, STATE, PHONENUM, EMAIL, etc. have been replaced by "BILLTO" versions to align with the "SHIPTO" parameters. </p>Example:</br>`Bill.FirstName = "Joe";` is now `Bill.BillToFirstName = "Joe";`.
+* Moved Merchant fields; such as, Merchant Name, etc. from `CustomerInfo` object to new `MerchantInfo` object.
 
 * Moved `MerchDescr` and `MerchSvc` from `Invoice` object to new `MerchantInfo` object. This new object now holds the soft descriptor fields; such as, Merchant Name, Merchant City, etc.  The following is an example of the change:
 
@@ -32,15 +33,15 @@ Some of the NVPs listed below have been added in earlier builds, but are here fo
 
 * `USER1` to `USER10` which is part of the `Invoice` object.  These can be returned in the response using the `EchoData` set to "User". See the enclosed DOSaleComplete sample for more information.
 * Support for Magtek Encrypted Card Readers as part of the `Swipe` object.  Refer to DOEncryptedSwipe sample for more information.
-* Processor-specific Response Parameters: `PAYMENTADVICECODE`, `ASSOCIATIONRESPCODE`, `TYPE`, `AFFLUENT`, `CCUPDATED`, `RRN`, `STAN`, `ACI` and `VALIDATIONCODE`.
-* Location Transaction Advice Addendum Parameters: `MERCHANTLOCATIONID`, `MERCHANTID`, `MERCHANTCONTACTINFO`
-* Response Parameters: `CCTRANSID`, `CCTRANS`_POSDATA`
-* Request Parameters: `ADDLAMT`, `ADDLAMTTYPE`, `AUTHDATE`, `CATTYPE`, `CONTACTLESS`, `CUSTDATA`, `CUSTOMERID`, `CUSTOMERNUMBER`, `MERCHANTINVNUM`, `MERCHANTURL`, `MERCHANTVATNUM`, `MISCDATA`, `REPORTGROUP`, `VATINVNUM`, `VATTAXRATE`
-* Request Line Item Parameters: `L_ALTTAXAMT`, `L_ALTTAXID`, `L_ALTTAXRATE`, `L_CARRIERSERVICESLEVELCODE`, `L-EXTAMT`
+* Processor-specific Response Parameters: `PAYMENTADVICECODE`, `TYPE`, `AFFLUENT`, `CCUPDATED`, `RRN`, `STAN`, `ACI` and `VALIDATIONCODE`.
+* Location Transaction Advice Addendum Parameters: `MERCHANTLOCATIONID`, `MERCHANTID`, `MERCHANTCONTACTINFO`,  `MERCHANTURL` and `MERCHANTVATNUM` added to the `MerchantInfo` object.
+* Response Parameters: `CCTRANSID`, `CCTRANS_POSDATA`
+* Request Parameters: `ADDLAMT`, `ADDLAMTTYPE`, `AUTHDATE`, `CATTYPE`, `CONTACTLESS`, `CUSTDATA`, `CUSTOMERID`, `CUSTOMERNUMBER`, `MERCHANTINVNUM`, `MISCDATA`, `REPORTGROUP`, `VATINVNUM`, `VATTAXRATE`
+* Request Line Item Parameters: `L_ALTTAXAMT`, `L_ALTTAXID`, `L_ALTTAXRATE`, `L_CARRIERSERVICESLEVELCODE`, `L_EXTAMT`
 * `BUTTONSOURCE` to `BrowserInfo` object.
 * Recurring Parameter: `FREQUENCY`
-* Stored Credential Parameters: `CARDONFILE` (Request), `TXID` (Response) - See [Card on File](https://developer.paypal.com/docs/payflow/integration-guide/card-on-file/#supported-card-on-file-types).
-* 3DS Parameters: `DSTRANSACTIONID` (Directory Server Transaction ID) and `THREEDSVersion` (3D-Secure Version) to the `BuyerAuthStatus` object. See [3-D Secure with 3rd-Party Merchant Plug-ins](https://developer.paypal.com/docs/payflow/3d-secure-mpi/).
+* Stored Credential Parameters: `CARDONFILE` (Request), `TXID` (Request and Response) - Requests parameters are in the `PaymentCard` object - See [Card on File](https://developer.paypal.com/docs/payflow/integration-guide/card-on-file/#supported-card-on-file-types).
+* 3DS Parameters: `DSTRANSACTIONID` (Directory Server Transaction ID) and `THREEDSVERSION` (3D-Secure Version) to the `BuyerAuthStatus` object. See [3-D Secure with 3rd-Party Merchant Plug-ins](https://developer.paypal.com/docs/payflow/3d-secure-mpi/).
 
 ### New Samples
 * Data Upload (DODataUpload) under Samples/Misc to show how to use transaction type "L" allowing credit card data to be removed from local servers and stored at PayPal to be used via reference transactions.

@@ -21,7 +21,7 @@ public class ECSetBARequest extends ECSetRequest {
      *                    ECSetBARequest is used to set the data required for a Express Checkout Billing Agreement SET operation
      *                    with Billing Agreement (Reference Transaction) without Purchase.
      *                    </p>
-     * @paypal.sample .............
+     *  .............
      * <p/>
      * Create the ECSetBARequest object
      * ECSetBARequest setEC = new ECSetBARequest(ReturnUrl, CancelUrl, BillingType, BA_Desc, PaymentType, BA_Custom);

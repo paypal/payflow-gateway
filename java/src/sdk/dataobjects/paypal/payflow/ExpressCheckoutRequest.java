@@ -37,7 +37,7 @@ public class ExpressCheckoutRequest extends BaseRequestDataObject {
      * Gets the token parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: TOKEN
+     *  <p>Maps to Payflow Parameter: TOKEN
      */
     public String getToken() {
         return token;
@@ -47,7 +47,7 @@ public class ExpressCheckoutRequest extends BaseRequestDataObject {
      * Sets the token parameter.
      *
      * @param token - String
-     * @paypal.sample <p>Maps to Payflow Parameter: TOKEN
+     *  <p>Maps to Payflow Parameter: TOKEN
      */
     public void setToken(String token) {
         this.token = token;
@@ -57,7 +57,7 @@ public class ExpressCheckoutRequest extends BaseRequestDataObject {
      * Gets the recountryCodeturnurl parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: COUNTRYCODE
+     *  <p>Maps to Payflow Parameter: COUNTRYCODE
      */
     public String getCountryCode() {
         return countryCode;
@@ -67,7 +67,7 @@ public class ExpressCheckoutRequest extends BaseRequestDataObject {
      * Sets the countryCode parameter.
      *
      * @param countryCode - String
-     * @paypal.sample <p>Maps to Payflow Parameter: COUNTRYCODE
+     *  <p>Maps to Payflow Parameter: COUNTRYCODE
      */
     public void setCountryCode(String countryCode) {
         this.countryCode = countryCode;
@@ -77,7 +77,7 @@ public class ExpressCheckoutRequest extends BaseRequestDataObject {
      * Gets the postalCode parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: POSTALCODE
+     *  <p>Maps to Payflow Parameter: POSTALCODE
      */
     public String getPostalCode() {
         return postalCode;
@@ -87,7 +87,7 @@ public class ExpressCheckoutRequest extends BaseRequestDataObject {
      * Sets the postalCode parameter.
      *
      * @param postalCode - String
-     * @paypal.sample <p>Maps to Payflow Parameter: POSTALCODE
+     *  <p>Maps to Payflow Parameter: POSTALCODE
      */
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
@@ -98,7 +98,7 @@ public class ExpressCheckoutRequest extends BaseRequestDataObject {
      * Gets the doReauthorization parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: DOREAUTHORIZATION
+     *  <p>Maps to Payflow Parameter: DOREAUTHORIZATION
      */
     public String getDoReauthorization() {
         return doReauthorization;
@@ -108,7 +108,7 @@ public class ExpressCheckoutRequest extends BaseRequestDataObject {
      * Sets the postalCode parameter.
      *
      * @param doReauthorization - String
-     * @paypal.sample <p>Maps to Payflow Parameter: DOREAUTHORIZATION
+     *  <p>Maps to Payflow Parameter: DOREAUTHORIZATION
      */
     public void setDoReauthorization(String doReauthorization) {
         this.doReauthorization = doReauthorization;

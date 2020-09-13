@@ -13,7 +13,7 @@ public final class PurchaseCard extends PaymentCard {
      * @param expDate  Card expiry date (format mmyy)
      * @param cardType Purchase Card  type (P - Personal, C - Corprate, B - Business)
      *                 <p/>
-     * @paypal.sample Maps to Payflow Parameter:
+     *  Maps to Payflow Parameter:
      * ACCT , EXPDATE , COMMCARD
      * <p/>
      * //Create the PaymentDevice object

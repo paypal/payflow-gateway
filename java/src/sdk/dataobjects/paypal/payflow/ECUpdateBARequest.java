@@ -18,7 +18,7 @@ public class ECUpdateBARequest extends ExpressCheckoutRequest {
      *             <p/>
      *             ECUpdateRequest is used to set the data required for a Express Checkout UPDATE operation.
      *             </p>
-     * @paypal.sample .............
+     *  .............
      * <p/>
      * //Create the ECUpdateRequest object
      * ECUpdateRequest updateEC = new ECUpdateRequest("baid");
@@ -41,7 +41,7 @@ public class ECUpdateBARequest extends ExpressCheckoutRequest {
      *                  ECSetRequest is used to set the data required for a Express Checkout Update operation for
      *                  Reference Transactions without Purchase.
      *                  </p>
-     * @paypal.sample .............
+     *  .............
      * <p/>
      * //Create the ECUpdateRequest object
      * ECUpdateRequest updateEC = new ECSetRequest("baid","ba_status");
@@ -66,7 +66,7 @@ public class ECUpdateBARequest extends ExpressCheckoutRequest {
      *                  ECSetRequest is used to set the data required for a Express Checkout Update operation for
      *                  Reference Transactions without Purchase.
      *                  </p>
-     * @paypal.sample .............
+     *  .............
      * <p/>
      * //Create the ECUpdateRequest object
      * ECUpdateRequest updateEC = new ECSetRequest("baid","ba_status", "ba_desc");
@@ -85,7 +85,7 @@ public class ECUpdateBARequest extends ExpressCheckoutRequest {
      * Gets the BAId parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: BAID
+     *  <p>Maps to Payflow Parameter: BAID
      */
     public String getBAId() {
         return baid;
@@ -95,7 +95,7 @@ public class ECUpdateBARequest extends ExpressCheckoutRequest {
      * Sets the BAId parameter.
      *
      * @param BAId - String
-     * @paypal.sample <p>Maps to Payflow Parameter: BAID
+     *  <p>Maps to Payflow Parameter: BAID
      */
 
     public void setBAId(String BAId) {
@@ -106,7 +106,7 @@ public class ECUpdateBARequest extends ExpressCheckoutRequest {
      * Gets the BA_Status parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: BA_STATUS
+     *  <p>Maps to Payflow Parameter: BA_STATUS
      */
     public String getba_Status() {
         return ba_Status;
@@ -116,7 +116,7 @@ public class ECUpdateBARequest extends ExpressCheckoutRequest {
      * Sets the BA_Status parameter.
      *
      * @param BA_Status - String
-     * @paypal.sample <p>Maps to Payflow Parameter: BA_STATUS
+     *  <p>Maps to Payflow Parameter: BA_STATUS
      */
 
     public void setba_Status(String BA_Status) {
@@ -127,7 +127,7 @@ public class ECUpdateBARequest extends ExpressCheckoutRequest {
      * Gets the BA_Desc parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: BA_DESC
+     *  <p>Maps to Payflow Parameter: BA_DESC
      */
     public String getBA_Desc() {
         return ba_Desc;
@@ -137,7 +137,7 @@ public class ECUpdateBARequest extends ExpressCheckoutRequest {
      * Sets the BA_Desc parameter.
      *
      * @param BA_Desc - String
-     * @paypal.sample <p>Maps to Payflow Parameter: BA_DESC
+     *  <p>Maps to Payflow Parameter: BA_DESC
      */
 
     public void setBA_Desc(String BA_Desc) {

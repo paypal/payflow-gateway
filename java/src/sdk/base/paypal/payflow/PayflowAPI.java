@@ -26,7 +26,7 @@ import java.util.ArrayList;
  * returned is the string value of the response from the PayPal payment
  * gateway.
  *
- * @paypal.sample // Create an instantce of PayflowAPI.
+ *  // Create an instantce of PayflowAPI.
  * PayflowAPI pa = new PayflowAPI();
  * <p/>
  * //Sample Request.

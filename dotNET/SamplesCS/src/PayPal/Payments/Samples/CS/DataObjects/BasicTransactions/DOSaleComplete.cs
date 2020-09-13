@@ -292,7 +292,7 @@ namespace PayPal.Payments.Samples.CS.DataObjects.BasicTransactions
             // Merchant Bank regarding what parameters to send.
             // Some of the parameters could include:
             //
-            CustomerInfo CustInfo = new CustomerInfo(); 
+            //CustomerInfo CustInfo = new CustomerInfo(); 
             CustInfo.CustCode = "CustCode123";    // Customer Code
             CustInfo.CustId = "CustId123";
             CustInfo.CustIP = "255.255.255.255";  // Customer's IP Address
@@ -320,7 +320,7 @@ namespace PayPal.Payments.Samples.CS.DataObjects.BasicTransactions
             //MerchantInfo MerchInfo = new MerchantInfo();
             //MerchInfo.MerchantName = "My Company Name";
             //MerchInfo.MerchantCity = "My Company City";
-            //Inv.MerchantInfo = MerchInfo
+            //Inv.MerchantInfo = MerchInfo;
 
             // *** Create a new Payment Device - Credit Card data object. ***
             // The input parameters are Credit Card Number and Expiration Date of the Credit Card.

@@ -3,7 +3,7 @@ package paypal.payflow;
 /**
  * This class is used to perform a capture transaction.
  *
- * @paypal.sample <p>
+ *  <p>
  * Capture transaction needs to be performed on a successful
  * authorization transaction in order to capture the amount. Therefore, a
  * capture transaction always takes the PNRef of a authorization transaction.
@@ -76,7 +76,7 @@ public final class CaptureTransaction extends ReferenceTransaction {
      * @param payflowConnectionData PayflowConnectionData Connection credentials object.
      * @param Invoice               Invoice object.
      * @param requestId             Request Id.
-     * @paypal.sample <p>
+     *  <p>
      * Capture transaction needs to be performed on a successful
      * authorization transaction in order to capture the amount. Therefore, a
      * capture transaction always takes the PNRef of a authorization transaction.
@@ -123,12 +123,12 @@ public final class CaptureTransaction extends ReferenceTransaction {
      * @param userInfo  UserInfo object populated with user credentials.
      * @param invoice   Invoice object.
      * @param requestId Request Id.
-     * @paypal.sample <p>
+     *  <p>
      * Capture transaction needs to be performed on a successful
      * authorization transaction in order to capture the amount. Therefore, a
      * capture transaction always takes the PNRef of a authorization transaction.
      * </p>
-     * @paypal.sample ...............
+     *  ...............
      * // Populate data objects
      * ...............
      * <p/>
@@ -171,7 +171,7 @@ public final class CaptureTransaction extends ReferenceTransaction {
      * @param invoice               Invoice object.
      * @param tender                BaseTender object.
      * @param requestId             Request Id.
-     * @paypal.sample <p>Capture transaction needs to be performed on a successful
+     *  <p>Capture transaction needs to be performed on a successful
      * authorization transaction in order to capture the amount. Therefore, a
      * capture transaction always takes the PNRef of a authorization transaction.
      * </p>
@@ -217,7 +217,7 @@ public final class CaptureTransaction extends ReferenceTransaction {
      * @param invoice   Invoice object.
      * @param tender    BaseTender object.
      * @param requestId Request Id.
-     * @paypal.sample <p>Capture transaction needs to be performed on a successful
+     *  <p>Capture transaction needs to be performed on a successful
      * authorization transaction in order to capture the amount. Therefore, a
      * capture transaction always takes the PNRef of a authorization transaction.
      * </p>
@@ -262,7 +262,7 @@ public final class CaptureTransaction extends ReferenceTransaction {
      * @param userInfo              User Info object populated with user credentials.
      * @param payflowConnectionData Connection credentials object.
      * @param requestId             Request Id.
-     * @paypal.sample <p>Capture transaction needs to be performed on a successful
+     *  <p>Capture transaction needs to be performed on a successful
      * authorization transaction in order to capture the amount. Therefore, a
      * capture transaction always takes the PNRef of a authorization transaction.
      * </p>
@@ -306,7 +306,7 @@ public final class CaptureTransaction extends ReferenceTransaction {
      * @param origId    Original Transaction Id.
      * @param userInfo  UserInfo object populated with user credentials.
      * @param requestId Request Id.
-     * @paypal.sample <p>Capture transaction needs to be performed on a successful
+     *  <p>Capture transaction needs to be performed on a successful
      * authorization transaction in order to capture the amount. Therefore, a
      * capture transaction always takes the PNRef of a authorization transaction.
      * </p>

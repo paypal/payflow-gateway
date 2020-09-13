@@ -9,7 +9,7 @@ package paypal.payflow;
  * with n starting at 0</p>
  * <p>Following example shows how to use line item.</p>
  *
- * @paypal.sample .................
+ *  .................
  * //inv is the Invoice object.
  * .................
  * // Create a line item.
@@ -75,7 +75,7 @@ public final class LineItem extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @return amt
-     * @paypal.sample <p>Maps to Payflow Parameter: L_AMTn</p>
+     *  <p>Maps to Payflow Parameter: L_AMTn</p>
      */
     public Currency getAmt() {
         return amt;
@@ -91,7 +91,7 @@ public final class LineItem extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @param amt Currency
-     * @paypal.sample <p>Maps to Payflow Parameter: L_AMTn</p>
+     *  <p>Maps to Payflow Parameter: L_AMTn</p>
      */
     public void setAmt(Currency amt) {
         this.amt = amt;
@@ -105,7 +105,7 @@ public final class LineItem extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @return cost
-     * @paypal.sample <p>Maps to Payflow Parameter: L_COSTn</p>
+     *  <p>Maps to Payflow Parameter: L_COSTn</p>
      */
     public Currency getCost() {
         return cost;
@@ -119,7 +119,7 @@ public final class LineItem extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @param cost Currency
-     * @paypal.sample <p>Maps to Payflow Parameter: L_COSTn</p>
+     *  <p>Maps to Payflow Parameter: L_COSTn</p>
      */
     public void setCost(Currency cost) {
         this.cost = cost;
@@ -133,7 +133,7 @@ public final class LineItem extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @return freightAmt
-     * @paypal.sample <p>Maps to Payflow Parameter: L_FREIGHTAMTn</p>
+     *  <p>Maps to Payflow Parameter: L_FREIGHTAMTn</p>
      */
     public Currency getFreightAmt() {
         return freightAmt;
@@ -147,7 +147,7 @@ public final class LineItem extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @param freightAmt Currency
-     * @paypal.sample <p>Maps to Payflow Parameter: L_FREIGHTAMTn</p>
+     *  <p>Maps to Payflow Parameter: L_FREIGHTAMTn</p>
      */
     public void setFreightAmt(Currency freightAmt) {
         this.freightAmt = freightAmt;
@@ -161,7 +161,7 @@ public final class LineItem extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @return taxAmt
-     * @paypal.sample <p>Maps to Payflow Parameter: L_TAXAMTn</p>
+     *  <p>Maps to Payflow Parameter: L_TAXAMTn</p>
      */
     public Currency getTaxAmt() {
         return taxAmt;
@@ -175,7 +175,7 @@ public final class LineItem extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @param taxAmt Currency
-     * @paypal.sample <p>Maps to Payflow Parameter: L_TAXAMTn</p>
+     *  <p>Maps to Payflow Parameter: L_TAXAMTn</p>
      */
     public void setTaxAmt(Currency taxAmt) {
         this.taxAmt = taxAmt;
@@ -186,7 +186,7 @@ public final class LineItem extends BaseRequestDataObject {
      * <p>Item unit of measure.</P>
      *
      * @return uom
-     * @paypal.sample <p>Maps to Payflow Parameter: L_UOMn</p>
+     *  <p>Maps to Payflow Parameter: L_UOMn</p>
      */
     public String getUom() {
         return uom;
@@ -197,7 +197,7 @@ public final class LineItem extends BaseRequestDataObject {
      * <p>Item unit of measure.</P>
      *
      * @param uom String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_UOMn</p>
+     *  <p>Maps to Payflow Parameter: L_UOMn</p>
      */
     public void setUom(String uom) {
         this.uom = uom;
@@ -208,7 +208,7 @@ public final class LineItem extends BaseRequestDataObject {
      * <p>Item drop-off address1.</P>
      *
      * @return pickupStreet
-     * @paypal.sample <p>Maps to Payflow Parameter: L_PICKUPSTREETn</p>
+     *  <p>Maps to Payflow Parameter: L_PICKUPSTREETn</p>
      */
     public String getPickupStreet() {
         return pickupStreet;
@@ -219,7 +219,7 @@ public final class LineItem extends BaseRequestDataObject {
      * <p>Item drop-off address1.</P>
      *
      * @param pickupStreet String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_PICKUPSTREETn</p>
+     *  <p>Maps to Payflow Parameter: L_PICKUPSTREETn</p>
      */
     public void setPickupStreet(String pickupStreet) {
         this.pickupStreet = pickupStreet;
@@ -230,7 +230,7 @@ public final class LineItem extends BaseRequestDataObject {
      * <p>Item drop-off state.</P>
      *
      * @return pickupState
-     * @paypal.sample <p>Maps to Payflow Parameter: L_PICKUPSTATEn</p>
+     *  <p>Maps to Payflow Parameter: L_PICKUPSTATEn</p>
      */
     public String getPickupState() {
         return pickupState;
@@ -241,7 +241,7 @@ public final class LineItem extends BaseRequestDataObject {
      * <p>Item drop-off state.</P>
      *
      * @param pickupState String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_PICKUPSTATEn</p>
+     *  <p>Maps to Payflow Parameter: L_PICKUPSTATEn</p>
      */
     public void setPickupState(String pickupState) {
         this.pickupState = pickupState;
@@ -252,7 +252,7 @@ public final class LineItem extends BaseRequestDataObject {
      * <p>Item drop-off country.</P>
      *
      * @return pickupCountry
-     * @paypal.sample <p>Maps to Payflow Parameter: L_PICKUPCOUNTRYn</p>
+     *  <p>Maps to Payflow Parameter: L_PICKUPCOUNTRYn</p>
      */
     public String getPickupCountry() {
         return pickupCountry;
@@ -263,7 +263,7 @@ public final class LineItem extends BaseRequestDataObject {
      * <p>Item drop-off country.</P>
      *
      * @param pickupCountry String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_PICKUPCOUNTRYn</p>
+     *  <p>Maps to Payflow Parameter: L_PICKUPCOUNTRYn</p>
      */
     public void setPickupCountry(String pickupCountry) {
         this.pickupCountry = pickupCountry;
@@ -274,7 +274,7 @@ public final class LineItem extends BaseRequestDataObject {
      * <p>Item drop-off city.</P>
      *
      * @return pickupCity
-     * @paypal.sample <p>Maps to Payflow Parameter: L_PICKUPCITYn</p>
+     *  <p>Maps to Payflow Parameter: L_PICKUPCITYn</p>
      */
     public String getPickupCity() {
         return pickupCity;
@@ -285,7 +285,7 @@ public final class LineItem extends BaseRequestDataObject {
      * <p>Item drop-off city.</P>
      *
      * @param pickupCity String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_PICKUPCITYn</p>
+     *  <p>Maps to Payflow Parameter: L_PICKUPCITYn</p>
      */
     public void setPickupCity(String pickupCity) {
         this.pickupCity = pickupCity;
@@ -296,7 +296,7 @@ public final class LineItem extends BaseRequestDataObject {
      * <p>Item drop-off zip.</P>
      *
      * @return pickupZip
-     * @paypal.sample <p>Maps to Payflow Parameter: L_PICKUPZIPn</p>
+     *  <p>Maps to Payflow Parameter: L_PICKUPZIPn</p>
      */
     public String getPickupZip() {
         return pickupZip;
@@ -307,7 +307,7 @@ public final class LineItem extends BaseRequestDataObject {
      * <p>Item drop-off zip.</P>
      *
      * @param pickupZip String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_PICKUPZIPn</p>
+     *  <p>Maps to Payflow Parameter: L_PICKUPZIPn</p>
      */
     public void setPickupZip(String pickupZip) {
         this.pickupZip = pickupZip;
@@ -317,7 +317,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Gets the Line Item description
      *
      * @return desc
-     * @paypal.sample <p>Maps to Payflow Parameter: L_DESCn</p>
+     *  <p>Maps to Payflow Parameter: L_DESCn</p>
      */
     public String getDesc() {
         return desc;
@@ -327,7 +327,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Sets the Line Item description
      *
      * @param desc String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_DESCn</p>
+     *  <p>Maps to Payflow Parameter: L_DESCn</p>
      */
     public void setDesc(String desc) {
         this.desc = desc;
@@ -342,7 +342,7 @@ public final class LineItem extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @return discount
-     * @paypal.sample <p>Maps to Payflow Parameter: L_DISCOUNTn</p>
+     *  <p>Maps to Payflow Parameter: L_DISCOUNTn</p>
      */
     public Currency getDiscount() {
         return discount;
@@ -356,7 +356,7 @@ public final class LineItem extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @param discount String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_DISCOUNTn</p>
+     *  <p>Maps to Payflow Parameter: L_DISCOUNTn</p>
      */
     public void setDiscount(Currency discount) {
         this.discount = discount;
@@ -367,7 +367,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Gets the  line item Manufacturer.
      *
      * @return manufacturer
-     * @paypal.sample <p>Maps to Payflow Parameter: L_MANUFACTURERn</p>
+     *  <p>Maps to Payflow Parameter: L_MANUFACTURERn</p>
      */
     public String getManufacturer() {
         return manufacturer;
@@ -377,7 +377,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Sets the  line item Manufacturer.
      *
      * @param manufacturer String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_MANUFACTURERn</p>
+     *  <p>Maps to Payflow Parameter: L_MANUFACTURERn</p>
      */
     public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
@@ -387,7 +387,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Gets the Item product code.
      *
      * @return prodCode
-     * @paypal.sample <p>Maps to Payflow Parameter: L_PRODCODEn</p>
+     *  <p>Maps to Payflow Parameter: L_PRODCODEn</p>
      */
     public String getProdCode() {
         return prodCode;
@@ -397,7 +397,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Sets the Item product code.
      *
      * @param prodCode String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_PRODCODEn</p>
+     *  <p>Maps to Payflow Parameter: L_PRODCODEn</p>
      */
     public void setProdCode(String prodCode) {
         this.prodCode = prodCode;
@@ -407,7 +407,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Gets the Quantity per item.
      *
      * @return qty
-     * @paypal.sample <p>Maps to Payflow Parameter: L_QTYn</p>
+     *  <p>Maps to Payflow Parameter: L_QTYn</p>
      */
     public long getQty() {
         return qty;
@@ -417,7 +417,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Sets the Quantity per item.
      *
      * @param qty long
-     * @paypal.sample <p>Maps to Payflow Parameter: L_QTYn</p>
+     *  <p>Maps to Payflow Parameter: L_QTYn</p>
      */
     public void setQty(long qty) {
         this.qty = qty;
@@ -427,7 +427,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Gets the Item SKU.
      *
      * @return sku
-     * @paypal.sample <p>Maps to Payflow Parameter: L_SKUn</p>
+     *  <p>Maps to Payflow Parameter: L_SKUn</p>
      */
     public String getSku() {
         return sku;
@@ -437,7 +437,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Sets the Item SKU.
      *
      * @param sku String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_SKUn</p>
+     *  <p>Maps to Payflow Parameter: L_SKUn</p>
      */
     public void setSku(String sku) {
         this.sku = sku;
@@ -451,7 +451,7 @@ public final class LineItem extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @return taxRate
-     * @paypal.sample <p>Maps to Payflow Parameter: L_TAXRATEn</p>
+     *  <p>Maps to Payflow Parameter: L_TAXRATEn</p>
      */
     public Currency getTaxRate() {
         return taxRate;
@@ -465,7 +465,7 @@ public final class LineItem extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @param taxRate Currency
-     * @paypal.sample <p>Maps to Payflow Parameter: L_TAXRATEn</p>
+     *  <p>Maps to Payflow Parameter: L_TAXRATEn</p>
      */
     public void setTaxRate(Currency taxRate) {
         this.taxRate = taxRate;
@@ -475,7 +475,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Gets the line item TaxType
      *
      * @return taxType
-     * @paypal.sample <p>Maps to Payflow Parameter: L_TAXTYPEn</p>
+     *  <p>Maps to Payflow Parameter: L_TAXTYPEn</p>
      */
     public String getTaxType() {
         return taxType;
@@ -485,7 +485,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Sets the line item TaxType
      *
      * @param taxType String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_TAXTYPEn</p>
+     *  <p>Maps to Payflow Parameter: L_TAXTYPEn</p>
      */
     public void setTaxType(String taxType) {
         this.taxType = taxType;
@@ -495,7 +495,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Gets the line item Type.
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_TYPEn</p>
+     *  <p>Maps to Payflow Parameter: L_TYPEn</p>
      */
     public String getType() {
         return type;
@@ -505,7 +505,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Sets the line item Type.
      *
      * @param type String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_TYPEn</p>
+     *  <p>Maps to Payflow Parameter: L_TYPEn</p>
      */
     public void setType(String type) {
         this.type = type;
@@ -517,7 +517,7 @@ public final class LineItem extends BaseRequestDataObject {
      * for the line item.</P>
      *
      * @return commCode
-     * @paypal.sample <p>Maps to Payflow Parameter: L_COMMCODEn</p>
+     *  <p>Maps to Payflow Parameter: L_COMMCODEn</p>
      */
     public String getCommCode() {
         return commCode;
@@ -529,7 +529,7 @@ public final class LineItem extends BaseRequestDataObject {
      * for the line item.</P>
      *
      * @param commCode String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_COMMCODEn</p>
+     *  <p>Maps to Payflow Parameter: L_COMMCODEn</p>
      */
     public void setCommCode(String commCode) {
         this.commCode = commCode;
@@ -539,7 +539,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Gets the line item TrackingNum.
      *
      * @return trackingNum
-     * @paypal.sample <p>Maps to Payflow Parameter: L_TRACKINGNUMn</p>
+     *  <p>Maps to Payflow Parameter: L_TRACKINGNUMn</p>
      */
     public String getTrackingNum() {
         return trackingNum;
@@ -549,7 +549,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Sets the line item TrackingNum.
      *
      * @param trackingNum String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_TRACKINGNUMn</p>
+     *  <p>Maps to Payflow Parameter: L_TRACKINGNUMn</p>
      */
     public void setTrackingNum(String trackingNum) {
         this.trackingNum = trackingNum;
@@ -559,7 +559,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Gets the line item CostCenterNum.
      *
      * @return costCenterNum
-     * @paypal.sample <p>Maps to Payflow Parameter: L_COSTCENTERNUMn</p>
+     *  <p>Maps to Payflow Parameter: L_COSTCENTERNUMn</p>
      */
     public String getCostCenterNum() {
         return costCenterNum;
@@ -569,7 +569,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Sets the line item CostCenterNum.
      *
      * @param costCenterNum String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_COSTCENTERNUMn</p>
+     *  <p>Maps to Payflow Parameter: L_COSTCENTERNUMn</p>
      */
     public void setCostCenterNum(String costCenterNum) {
         this.costCenterNum = costCenterNum;
@@ -579,7 +579,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Gets the line item CatalogNum.
      *
      * @return catalogNum
-     * @paypal.sample <p>Maps to Payflow Parameter: L_CATALOGNUMn</p>
+     *  <p>Maps to Payflow Parameter: L_CATALOGNUMn</p>
      */
     public String getCatalogNum() {
         return catalogNum;
@@ -589,7 +589,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Sets the line item CatalogNum.
      *
      * @param catalogNum String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_CATALOGNUMn</p>
+     *  <p>Maps to Payflow Parameter: L_CATALOGNUMn</p>
      */
     public void setCatalogNum(String catalogNum) {
         this.catalogNum = catalogNum;
@@ -599,7 +599,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Gets the line item universal product code..
      *
      * @return upc
-     * @paypal.sample <p>Maps to Payflow Parameter: L_UPCn</p>
+     *  <p>Maps to Payflow Parameter: L_UPCn</p>
      */
     public String getUpc() {
         return upc;
@@ -609,7 +609,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Sets the line item universal product code..
      *
      * @param upc String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_UPCn</p>
+     *  <p>Maps to Payflow Parameter: L_UPCn</p>
      */
     public void setUpc(String upc) {
         this.upc = upc;
@@ -623,7 +623,7 @@ public final class LineItem extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @return handlingAmt
-     * @paypal.sample <p>Maps to Payflow Parameter: L_HANDLINGAMTn</p>
+     *  <p>Maps to Payflow Parameter: L_HANDLINGAMTn</p>
      */
     public Currency getHandlingAmt() {
         return handlingAmt;
@@ -637,7 +637,7 @@ public final class LineItem extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @param handlingAmt String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_HANDLINGAMTn</p>
+     *  <p>Maps to Payflow Parameter: L_HANDLINGAMTn</p>
      */
     public void setHandlingAmt(Currency handlingAmt) {
         this.handlingAmt = handlingAmt;
@@ -647,7 +647,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Gets the line item unspsc code
      *
      * @return unspscCode
-     * @paypal.sample <p>Maps to Payflow Parameter: L_UNSPSCCODEn</p>
+     *  <p>Maps to Payflow Parameter: L_UNSPSCCODEn</p>
      */
     public String getUnspscCode() {
         return unspscCode;
@@ -657,7 +657,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Sets the line item unspsc code
      *
      * @param unspscCode String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_UNSPSCCODEn</p>
+     *  <p>Maps to Payflow Parameter: L_UNSPSCCODEn</p>
      */
     public void setUnspscCode(String unspscCode) {
         this.unspscCode = unspscCode;
@@ -667,7 +667,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Gets the Line item number.
      *
      * @return itemNumber
-     * @paypal.sample <p>Maps to Payflow Parameter: L_xxxxn</p>
+     *  <p>Maps to Payflow Parameter: L_xxxxn</p>
      */
     public String getItemNumber() {
         return itemNumber;
@@ -677,7 +677,7 @@ public final class LineItem extends BaseRequestDataObject {
      * Sets the Line item number.
      *
      * @param itemNumber String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_xxxxn</p>
+     *  <p>Maps to Payflow Parameter: L_xxxxn</p>
      */
     public void setItemNumber(String itemNumber) {
         this.itemNumber = itemNumber;
@@ -693,7 +693,7 @@ public final class LineItem extends BaseRequestDataObject {
      * with n starting at 0</p>
      * <p>Following example shows how to use line item.</p>
      *
-     * @paypal.sample .................
+     *  .................
      * //inv is the Invoice object.
      * .................
      * // Create a line item.

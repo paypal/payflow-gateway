@@ -10,7 +10,7 @@ package paypal.payflow;
  * the PayPal transaction database.</p>
  * <p>Following example shows how to use user item.</p>
  *
- * @paypal.sample .................
+ *  .................
  * //inv is the Invoice object.
  * .................
  * // Create a user item.
@@ -36,7 +36,7 @@ public final class UserItem extends BaseRequestDataObject {
      * Gets USER1
      *
      * @return userItem1
-     * @paypal.sample <p>Maps to Payflow Parameter: USER1</p>
+     *  <p>Maps to Payflow Parameter: USER1</p>
      */
     public String getUserItem1() {
         return userItem1;
@@ -46,7 +46,7 @@ public final class UserItem extends BaseRequestDataObject {
      * Sets USER1
      *
      * @param userItem1 Stringffffffffffffff
-     * @paypal.sample <p>Maps to Payflow Parameter: USER1</p>
+     *  <p>Maps to Payflow Parameter: USER1</p>
      */
     public void setUserItem1(String userItem1) {
         this.userItem1 = userItem1;
@@ -56,7 +56,7 @@ public final class UserItem extends BaseRequestDataObject {
      * Gets USER2
      *
      * @return userItem2
-     * @paypal.sample <p>Maps to Payflow Parameter: USER2</p>
+     *  <p>Maps to Payflow Parameter: USER2</p>
      */
     public String getUserItem2() {
         return userItem2;
@@ -66,7 +66,7 @@ public final class UserItem extends BaseRequestDataObject {
      * Sets USER2
      *
      * @param userItem2 String
-     * @paypal.sample <p>Maps to Payflow Parameter: USER2</p>
+     *  <p>Maps to Payflow Parameter: USER2</p>
      */
     public void setUserItem2(String userItem2) {
         this.userItem2 = userItem2;
@@ -76,7 +76,7 @@ public final class UserItem extends BaseRequestDataObject {
      * Gets USER3
      *
      * @return userItem3
-     * @paypal.sample <p>Maps to Payflow Parameter: USER3</p>
+     *  <p>Maps to Payflow Parameter: USER3</p>
      */
     public String getUserItem3() {
         return userItem3;
@@ -86,7 +86,7 @@ public final class UserItem extends BaseRequestDataObject {
      * Sets USER3
      *
      * @param userItem3 String
-     * @paypal.sample <p>Maps to Payflow Parameter: USER3</p>
+     *  <p>Maps to Payflow Parameter: USER3</p>
      */
     public void setUserItem3(String userItem3) {
         this.userItem3 = userItem3;
@@ -96,7 +96,7 @@ public final class UserItem extends BaseRequestDataObject {
      * Gets USER4
      *
      * @return userItem4
-     * @paypal.sample <p>Maps to Payflow Parameter: USER4</p>
+     *  <p>Maps to Payflow Parameter: USER4</p>
      */
     public String getUserItem4() {
         return userItem4;
@@ -106,7 +106,7 @@ public final class UserItem extends BaseRequestDataObject {
      * Sets USER4
      *
      * @param userItem4 String
-     * @paypal.sample <p>Maps to Payflow Parameter: USER4</p>
+     *  <p>Maps to Payflow Parameter: USER4</p>
      */
     public void setUserItem4(String userItem4) {
         this.userItem4 = userItem4;
@@ -116,7 +116,7 @@ public final class UserItem extends BaseRequestDataObject {
      * Gets USER5
      *
      * @return userItem5
-     * @paypal.sample <p>Maps to Payflow Parameter: USER5</p>
+     *  <p>Maps to Payflow Parameter: USER5</p>
      */
     public String getUserItem5() {
         return userItem5;
@@ -126,7 +126,7 @@ public final class UserItem extends BaseRequestDataObject {
      * Sets USER5
      *
      * @param userItem5 String
-     * @paypal.sample <p>Maps to Payflow Parameter: USER5</p>
+     *  <p>Maps to Payflow Parameter: USER5</p>
      */
     public void setUserItem5(String userItem5) {
         this.userItem5 = userItem5;
@@ -136,7 +136,7 @@ public final class UserItem extends BaseRequestDataObject {
      * Gets USER6
      *
      * @return userItem6
-     * @paypal.sample <p>Maps to Payflow Parameter: USER6</p>
+     *  <p>Maps to Payflow Parameter: USER6</p>
      */
     public String getUserItem6() {
         return userItem6;
@@ -146,7 +146,7 @@ public final class UserItem extends BaseRequestDataObject {
      * Sets USER6
      *
      * @param userItem6 String
-     * @paypal.sample <p>Maps to Payflow Parameter: USER6</p>
+     *  <p>Maps to Payflow Parameter: USER6</p>
      */
     public void setUserItem6(String userItem6) {
         this.userItem6 = userItem6;
@@ -156,7 +156,7 @@ public final class UserItem extends BaseRequestDataObject {
      * Gets USER7
      *
      * @return userItem7
-     * @paypal.sample <p>Maps to Payflow Parameter: USER7</p>
+     *  <p>Maps to Payflow Parameter: USER7</p>
      */
     public String getUserItem7() {
         return userItem7;
@@ -166,7 +166,7 @@ public final class UserItem extends BaseRequestDataObject {
      * Sets USER7
      *
      * @param userItem7 String
-     * @paypal.sample <p>Maps to Payflow Parameter: USER7</p>
+     *  <p>Maps to Payflow Parameter: USER7</p>
      */
     public void setUserItem7(String userItem7) {
         this.userItem7 = userItem7;
@@ -176,7 +176,7 @@ public final class UserItem extends BaseRequestDataObject {
      * Gets USER88
      *
      * @return userItem8
-     * @paypal.sample <p>Maps to Payflow Parameter: USER8</p>
+     *  <p>Maps to Payflow Parameter: USER8</p>
      */
     public String getUserItem8() {
         return userItem8;
@@ -186,7 +186,7 @@ public final class UserItem extends BaseRequestDataObject {
      * Sets USER8
      *
      * @param userItem8 String
-     * @paypal.sample <p>Maps to Payflow Parameter: USER8</p>
+     *  <p>Maps to Payflow Parameter: USER8</p>
      */
     public void setUserItem8(String userItem8) {
         this.userItem8 = userItem8;
@@ -196,7 +196,7 @@ public final class UserItem extends BaseRequestDataObject {
      * Gets USER9
      *
      * @return userItem9
-     * @paypal.sample <p>Maps to Payflow Parameter: USER9</p>
+     *  <p>Maps to Payflow Parameter: USER9</p>
      */
     public String getUserItem9() {
         return userItem9;
@@ -206,7 +206,7 @@ public final class UserItem extends BaseRequestDataObject {
      * Sets USER9
      *
      * @param userItem9 String
-     * @paypal.sample <p>Maps to Payflow Parameter: USER9</p>
+     *  <p>Maps to Payflow Parameter: USER9</p>
      */
     public void setUserItem9(String userItem9) {
        this.userItem9 = userItem9;
@@ -216,7 +216,7 @@ public final class UserItem extends BaseRequestDataObject {
      * Gets USER10
      *
      * @return userItem10
-     * @paypal.sample <p>Maps to Payflow Parameter: USER10</p>
+     *  <p>Maps to Payflow Parameter: USER10</p>
      */
     public String getUserItem10() {
         return userItem10;
@@ -226,7 +226,7 @@ public final class UserItem extends BaseRequestDataObject {
      * Sets USER10
      *
      * @param userItem10 String
-     * @paypal.sample <p>Maps to Payflow Parameter: USER10</p>
+     *  <p>Maps to Payflow Parameter: USER10</p>
      */
     public void setUserItem10(String userItem10) {
         this.userItem10 = userItem10;
@@ -241,7 +241,7 @@ public final class UserItem extends BaseRequestDataObject {
      * with n starting at 0</p>
      * <p>Following example shows how to use line item.</p>
      *
-     * @paypal.sample .................
+     *  .................
      * //inv is the Invoice object.
      * .................
      * // Create a line item.

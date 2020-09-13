@@ -39,7 +39,7 @@ public class ECDoResponse extends ExpressCheckoutResponse {
      * Gets the Amt parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: AMT
+     *  <p>Maps to Payflow Parameter: AMT
      */
     public String getAmt() {
         return amt;
@@ -49,7 +49,7 @@ public class ECDoResponse extends ExpressCheckoutResponse {
      * Gets the settleamt parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: SETTLEAMT
+     *  <p>Maps to Payflow Parameter: SETTLEAMT
      */
     public String getSettleAmt() {
         return settleAmt;
@@ -59,7 +59,7 @@ public class ECDoResponse extends ExpressCheckoutResponse {
      * Gets the tax amt parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: TAXAMT
+     *  <p>Maps to Payflow Parameter: TAXAMT
      */
     public String getTaxAmt() {
         return taxAmt;
@@ -69,7 +69,7 @@ public class ECDoResponse extends ExpressCheckoutResponse {
      * Gets the exchange rate parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: EXCHANGERATE
+     *  <p>Maps to Payflow Parameter: EXCHANGERATE
      */
     public String getExchangeRate() {
         return exchangeRate;
@@ -79,7 +79,7 @@ public class ECDoResponse extends ExpressCheckoutResponse {
      * Gets the payment date  parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PAYMENTDATE
+     *  <p>Maps to Payflow Parameter: PAYMENTDATE
      */
     public String getPaymentDate() {
         return paymentDate;
@@ -89,7 +89,7 @@ public class ECDoResponse extends ExpressCheckoutResponse {
      * Gets the Payment status  parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PAYMENTSTATUS
+     *  <p>Maps to Payflow Parameter: PAYMENTSTATUS
      */
     public String getPaymentStatus() {
         return paymentStatus;
@@ -99,7 +99,7 @@ public class ECDoResponse extends ExpressCheckoutResponse {
      * Gets the BAID parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: BAID
+     *  <p>Maps to Payflow Parameter: BAID
      */
     public String getbaId() {
         return baId;

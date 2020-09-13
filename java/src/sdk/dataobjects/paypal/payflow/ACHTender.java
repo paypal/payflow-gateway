@@ -30,7 +30,7 @@ public final class ACHTender extends BaseTender {
      * the online payment processing.
      *
      * @param bankAccount String
-     * @paypal.sample Maps to Payflow Parameter: TENDER
+     *  Maps to Payflow Parameter: TENDER
      * <p/>
      * .............
      * //bnkAcct is the populated BankAcct object.
@@ -84,7 +84,7 @@ public final class ACHTender extends BaseTender {
      * </p>
      *
      * @return authType
-     * @paypal.sample <p> Maps to Payflow Parameter: AUTHTYPE </p>
+     *  <p> Maps to Payflow Parameter: AUTHTYPE </p>
      */
 
     public String getAuthType() {
@@ -132,7 +132,7 @@ public final class ACHTender extends BaseTender {
      * </p>
      *
      * @param authType String
-     * @paypal.sample <p> Maps to Payflow Parameter: AUTHTYPE </p>
+     *  <p> Maps to Payflow Parameter: AUTHTYPE </p>
      */
     public void setAuthType(String authType) {
         this.authType = authType;
@@ -161,7 +161,7 @@ public final class ACHTender extends BaseTender {
      * </p>
      *
      * @return preNote
-     * @paypal.sample <p> Maps to Payflow Parameter: PRENOTE </p>
+     *  <p> Maps to Payflow Parameter: PRENOTE </p>
      */
     public String getPreNote() {
         return preNote;
@@ -190,7 +190,7 @@ public final class ACHTender extends BaseTender {
      * </p>
      *
      * @param preNote String
-     * @paypal.sample <p> Maps to Payflow Parameter: PRENOTE </p>
+     *  <p> Maps to Payflow Parameter: PRENOTE </p>
      */
     public void setPreNote(String preNote) {
         this.preNote = preNote;
@@ -203,7 +203,7 @@ public final class ACHTender extends BaseTender {
      * Used only for POP.</p>
      *
      * @return termCity
-     * @paypal.sample <p> Maps to Payflow Parameter: TERMCITY </p>
+     *  <p> Maps to Payflow Parameter: TERMCITY </p>
      */
     public String getTermCity() {
         return termCity;
@@ -216,7 +216,7 @@ public final class ACHTender extends BaseTender {
      * Used only for POP.</p>
      *
      * @param termCity String
-     * @paypal.sample <p> Maps to Payflow Parameter: TERMCITY </p>
+     *  <p> Maps to Payflow Parameter: TERMCITY </p>
      */
     public void setTermCity(String termCity) {
         this.termCity = termCity;
@@ -229,7 +229,7 @@ public final class ACHTender extends BaseTender {
      * Used only for POP.</p>
      *
      * @return termState
-     * @paypal.sample <p> Maps to Payflow Parameter: TERMSTATE </p>
+     *  <p> Maps to Payflow Parameter: TERMSTATE </p>
      */
     public String getTermState() {
         return termState;
@@ -242,7 +242,7 @@ public final class ACHTender extends BaseTender {
      * Used only for POP.</p>
      *
      * @param termState String
-     * @paypal.sample <p> Maps to Payflow Parameter: TERMSTATE </p>
+     *  <p> Maps to Payflow Parameter: TERMSTATE </p>
      */
     public void setTermState(String termState) {
         this.termState = termState;

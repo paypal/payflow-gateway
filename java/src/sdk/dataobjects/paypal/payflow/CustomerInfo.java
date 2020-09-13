@@ -5,7 +5,7 @@ package paypal.payflow;
  * <p>Use this class to set the customer related
  * information.</p>
  *
- * @paypal.sample .................
+ *  .................
  * // inv is the Invoice object
  * .................
  * // Set the Customer Info details.
@@ -23,6 +23,8 @@ public final class CustomerInfo extends BaseRequestDataObject {
     private String dob;
     private String custId;
     private String reqName;
+    private String custHostName;
+    private String custBrowser;
 
     /**
      * Constructor
@@ -40,6 +42,8 @@ public final class CustomerInfo extends BaseRequestDataObject {
             getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_CUSTVATREGNUM, custVatRegNum));
             getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_DOB, dob));
             getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_CUSTID, custId));
+            getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_CUSTHOSTNAME, custHostName));
+            getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_CUSTBROWSER, custBrowser));
         } catch (Exception ex) {
             ErrorObject err = new ErrorObject(PayflowConstants.SEVERITY_FATAL, "", ex.toString());
             if (getContext() != null) {
@@ -53,7 +57,7 @@ public final class CustomerInfo extends BaseRequestDataObject {
      * <p>Customer code/customer reference ID.</P>
      *
      * @return custCode String
-     * @paypal.sample <p>Maps to Payflow Parameter: CUSTCODE</p>
+     *  <p>Maps to Payflow Parameter: CUSTCODE</p>
      */
 
     public String getCustCode() {
@@ -65,7 +69,7 @@ public final class CustomerInfo extends BaseRequestDataObject {
      * <p>Customer code/customer reference ID.</P>
      *
      * @param custCode String
-     * @paypal.sample <p>Maps to Payflow Parameter: CUSTCODE</p>
+     *  <p>Maps to Payflow Parameter: CUSTCODE</p>
      */
     public void setCustCode(String custCode) {
         this.custCode = custCode;
@@ -75,7 +79,7 @@ public final class CustomerInfo extends BaseRequestDataObject {
      * Gets the Customer's Id.
      *
      * @return custId String
-     * @paypal.sample <p>Maps to Payflow Parameter: CUSTID</p>
+     *  <p>Maps to Payflow Parameter: CUSTID</p>
      */
 
     public String getCustId() {
@@ -86,7 +90,7 @@ public final class CustomerInfo extends BaseRequestDataObject {
      * Sets the Customer's Id.
      *
      * @param custId String
-     * @paypal.sample <p>Maps to Payflow Parameter: CUSTID</p>
+     *  <p>Maps to Payflow Parameter: CUSTID</p>
      */
     public void setCustId(String custId) {
         this.custId = custId;
@@ -96,7 +100,7 @@ public final class CustomerInfo extends BaseRequestDataObject {
      * Gets the Customer's IP address.
      *
      * @return custIP String
-     * @paypal.sample <p>Maps to Payflow Parameter: CUSTIP</p>
+     *  <p>Maps to Payflow Parameter: CUSTIP</p>
      */
     public String getCustIP() {
         return custIP;
@@ -106,7 +110,7 @@ public final class CustomerInfo extends BaseRequestDataObject {
      * Sets the Customer's IP address.
      *
      * @param custIP String
-     * @paypal.sample <p>Maps to Payflow Parameter: CUSTIP</p>
+     *  <p>Maps to Payflow Parameter: CUSTIP</p>
      */
     public void setCustIP(String custIP) {
         this.custIP = custIP;
@@ -116,7 +120,7 @@ public final class CustomerInfo extends BaseRequestDataObject {
      * Gets the Customer's VAT registrations number.
      *
      * @return custVatRegNum String
-     * @paypal.sample <p>Maps to Payflow Parameter: CUSTVATREGNUM</p>
+     *  <p>Maps to Payflow Parameter: CUSTVATREGNUM</p>
      */
     public String getCustVatRegNum() {
         return custVatRegNum;
@@ -126,7 +130,7 @@ public final class CustomerInfo extends BaseRequestDataObject {
      * Sets the Customer's VAT registrations number.
      *
      * @param custVatRegNum String
-     * @paypal.sample <p>Maps to Payflow Parameter: CUSTVATREGNUM</p>
+     *  <p>Maps to Payflow Parameter: CUSTVATREGNUM</p>
      */
 
     public void setCustVatRegNum(String custVatRegNum) {
@@ -140,7 +144,7 @@ public final class CustomerInfo extends BaseRequestDataObject {
      * <p>mm - Month, dd - Day, yy - Year.</P>
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: DOB</p>
+     *  <p>Maps to Payflow Parameter: DOB</p>
      */
     public String getDob() {
         return dob;
@@ -153,7 +157,7 @@ public final class CustomerInfo extends BaseRequestDataObject {
      * <p>mm - Month, dd - Day, yy - Year.</P>
      *
      * @param dob String
-     * @paypal.sample <p>Maps to Payflow Parameter: DOB</p>
+     *  <p>Maps to Payflow Parameter: DOB</p>
      */
     public void setDob(String dob) {
         this.dob = dob;
@@ -162,7 +166,7 @@ public final class CustomerInfo extends BaseRequestDataObject {
     /**
      * Gets the Requester Name.
      * @return String
-     * @paypal.sample
+     *
      * <p>Maps to Payflow Parameter: REQNAME</p>
      */
     /**
@@ -175,7 +179,7 @@ public final class CustomerInfo extends BaseRequestDataObject {
     /**
      * Sets the Requester Name.
      * @param String
-     * @paypal.sample
+     *
      * <p>Maps to Payflow Parameter: REQNAME</p>
      */
     /**
@@ -183,5 +187,57 @@ public final class CustomerInfo extends BaseRequestDataObject {
      */
     public void setReqName(String reqName) {
         this.reqName = reqName;
+    }
+
+    /**
+     * Gets the Customer's Host Name.
+     * @return String
+     *
+     * <p>Maps to Payflow Parameter: CUSTHOMENAME</p>
+     */
+    /**
+     * @return Returns the custHostName.
+     */
+    public String getCustHostName() {
+        return custHostName;
+    }
+
+    /**
+     * Sets the Customer's Host Name.
+     * @param String
+     *
+     * <p>Maps to Payflow Parameter: CUSTHOMENAME</p>
+     */
+    /**
+     * @param custHostName The customer host name to set.
+     */
+    public void setCustHostName(String custHostName) {
+        this.custHostName = custHostName;
+    }
+
+    /**
+     * Gets the Customer's Browser.
+     * @return String
+     *
+     * <p>Maps to Payflow Parameter: CUSTBROWSER</p>
+     */
+    /**
+     * @return Returns the custBrowser.
+     */
+    public String getCustBrowser() {
+        return custBrowser;
+    }
+
+    /**
+     * Sets the Customer's Browser.
+     * @param String
+     *
+     * <p>Maps to Payflow Parameter: CUSTBROWSER</p>
+     */
+    /**
+     * @param custBrowser The customers browser.
+     */
+    public void setCustBrowser(String custBrowser) {
+        this.custBrowser = custBrowser;
     }
 }

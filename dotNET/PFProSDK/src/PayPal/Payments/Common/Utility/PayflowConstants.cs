@@ -2088,7 +2088,60 @@ namespace PayPal.Payments.Common.Utility
         /// Payflow Param CCUPDATED
         /// </summary>
         internal const String PARAM_CCUPDATED = "CCUPDATED";
+        /// <summary>
+        /// Payflow Param RRN
+        /// </summary>
+        internal const String PARAM_RRN = "RRN";  
+        /// <summary>
+        /// Payflow Param STAN
+        /// </summary>
+        internal const String PARAM_STAN = "STAN"; 
+        /// <summary>
+        /// Payflow Param ACI
+        /// </summary>
+        internal const String PARAM_ACI = "ACI";
+        /// <summary>
+        /// Payflow Param VALIDATIONCODE
+        /// </summary>
+        internal const String PARAM_VALIDATIONCODE = "VALIDATIONCODE";
+        /// <summary>
+        /// Payflow Param MERCHANTLOCATIONID
+        /// </summary>
+        internal const String PARAM_MERCHANTLOCATIONID = "MERCHANTLOCATIONID";
+        /// <summary>
+        /// Payflow Param MERCHANTID
+        /// </summary>
+        internal const String PARAM_MERCHANTID = "MERCHANTID";
+        /// <summary>
+        /// Payflow Param MERCHANTCONTACTINFO
+        /// </summary>
+        internal const String PARAM_MERCHANTCONTACTINFO = "MERCHANTCONTACTINFO";
+        /// <summary>
+        /// Payflow Param CCTRANSID
+        /// </summary>
+        internal const String PARAM_CCTRANSID = "CCTRANSID";
+        /// <summary>
+        /// Payflow Param CCTRANS_POSDATA
+        /// </summary>
+        internal const String PARAM_CCTRANS_POSDATA= "CCTRANS_POSDATA";
+        /// <summary>
+        /// Payflow Param AUTHDATE
+        /// </summary>
+        internal const String PARAM_AUTHDATE= "AUTHDATE";
+        /// <summary>
+        /// Payflow Param MERCHANTURL
+        /// </summary>
+        internal const String PARAM_MERCHANTURL = "MERCHANTURL";
+        /// <summary>
+        /// Payflow Param MERCHANTVATNUM
+        /// </summary>
+        internal const String PARAM_MERCHANTVATNUM = "MERCHANTVATNUM";
+        /// <summary>
+        /// Payflow Param MERCHANTINVOICENUM
+        /// </summary>
+        internal const String PARAM_MERCHANTINVOICENUM = "MERCHANTINVOICENUM";
 
+        
 
         #endregion
 

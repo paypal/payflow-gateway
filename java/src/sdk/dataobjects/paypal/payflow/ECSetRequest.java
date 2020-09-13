@@ -38,7 +38,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      *                  <p/>
      *                  ECSetRequest is used to set the data required for a Express Checkout SET operation.
      *                  </p>
-     * @paypal.sample .............
+     *  .............
      * <p/>
      * //Create the ECSetrequest object
      * ECSetRequest setEC = new ECSetRequest("http://www.yourwebsitereturnurl.com","http://www.yourwebsitecancelurl.com");
@@ -60,7 +60,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      *                  <p/>
      *                  ECSetRequest is used to set the data required for a Express Checkout SET operation.
      *                  </p>
-     * @paypal.sample .............
+     *  .............
      * <p/>
      * //Create the ECSetrequest object
      * ECSetRequest setEC = new ECSetRequest("http://www.yourwebsitereturnurl.com","http://www.yourwebsitecancelurl.com");
@@ -90,7 +90,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      *                    ECSetRequest is used to set the data required for a Express Checkout SET operation for
      *                    Reference Transactions with Purchase.
      *                    </p>
-     * @paypal.sample .............
+     *  .............
      * <p/>
      * //Create the ECSetrequest object
      * ECSetRequest setEC = new ECSetRequest("http://www.yourwebsitereturnurl.com","http://www.yourwebsitecancelurl.com",
@@ -124,7 +124,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Gets the returnurl parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: RETURNURL
+     *  <p>Maps to Payflow Parameter: RETURNURL
      */
     public String getReturnUrl() {
         return returnUrl;
@@ -134,7 +134,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Sets the Returnurl parameter.
      *
      * @param returnUrl - String
-     * @paypal.sample <p>Maps to Payflow Parameter: RETURNURL
+     *  <p>Maps to Payflow Parameter: RETURNURL
      */
 
     public void setReturnUrl(String returnUrl) {
@@ -145,7 +145,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Gets the cancelUrl parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: CANCELURL
+     *  <p>Maps to Payflow Parameter: CANCELURL
      */
     public String getCancelUrl() {
         return cancelUrl;
@@ -155,7 +155,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Sets the cancelUrl parameter.
      *
      * @param cancelUrl - String
-     * @paypal.sample <p>Maps to Payflow Parameter: CANCELURL
+     *  <p>Maps to Payflow Parameter: CANCELURL
      */
 
     public void setCancelUrl(String cancelUrl) {
@@ -166,7 +166,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Gets the reqConfirmShipping parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: REQCONFIRMSHIPPING
+     *  <p>Maps to Payflow Parameter: REQCONFIRMSHIPPING
      */
     public String getReqConfirmShipping() {
         return reqConfirmShipping;
@@ -176,7 +176,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Sets the reqBillingAddress parameter.
      *
      * @param reqBillingAddress - String
-     * @paypal.sample <p>Maps to Payflow Parameter: REQBILLNGADDRESS
+     *  <p>Maps to Payflow Parameter: REQBILLNGADDRESS
      */
 
     public void setReqBillingAddress(String reqBillingAddress) {
@@ -187,7 +187,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Gets the reqBillingAddress parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: REQBILLNGADDRESS
+     *  <p>Maps to Payflow Parameter: REQBILLNGADDRESS
      */
     public String getReqBillingAddress() {
         return reqBillingAddress;
@@ -197,7 +197,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Sets the reqConfirmShipping parameter.
      *
      * @param reqConfirmShipping - String
-     * @paypal.sample <p>Maps to Payflow Parameter: REQCONFIRMSHIPPING
+     *  <p>Maps to Payflow Parameter: REQCONFIRMSHIPPING
      */
 
     public void setReqConfirmShipping(String reqConfirmShipping) {
@@ -208,7 +208,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Gets the noShipping parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: NOSHIPPING
+     *  <p>Maps to Payflow Parameter: NOSHIPPING
      */
     public String getNoShipping() {
         return noShipping;
@@ -218,7 +218,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Sets the noShipping parameter.
      *
      * @param noShipping - String
-     * @paypal.sample <p>Maps to Payflow Parameter: NOSHIPPING
+     *  <p>Maps to Payflow Parameter: NOSHIPPING
      */
 
     public void setNoShipping(String noShipping) {
@@ -229,7 +229,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Gets the addrOverride parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: ADDOVERRIDE
+     *  <p>Maps to Payflow Parameter: ADDOVERRIDE
      */
     public String getAddrOverride() {
         return addrOverride;
@@ -239,7 +239,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Sets the addrOverride parameter.
      *
      * @param addrOverride - String
-     * @paypal.sample <p>Maps to Payflow Parameter: ADDROVERRIDE
+     *  <p>Maps to Payflow Parameter: ADDROVERRIDE
      */
 
     public void setAddrOverride(String addrOverride) {
@@ -250,7 +250,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Gets the localecode parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: LOCALECODE
+     *  <p>Maps to Payflow Parameter: LOCALECODE
      */
     public String getLocalecode() {
         return localecode;
@@ -260,7 +260,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Sets the localecode parameter.
      *
      * @param localecode - String
-     * @paypal.sample <p>Maps to Payflow Parameter: LOCALECODE
+     *  <p>Maps to Payflow Parameter: LOCALECODE
      */
 
     public void setLocalecode(String localecode) {
@@ -271,7 +271,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Gets the maxAmt parameter.
      *
      * @return - currency
-     * @paypal.sample <p>Maps to Payflow Parameter: MAXAMT
+     *  <p>Maps to Payflow Parameter: MAXAMT
      */
     public Currency getMaxAmt() {
         return maxAmt;
@@ -281,7 +281,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Sets the maxAmt parameter.
      *
      * @param maxAmt - Currency
-     * @paypal.sample <p>Maps to Payflow Parameter: MAXAMT
+     *  <p>Maps to Payflow Parameter: MAXAMT
      */
 
     public void setMaxAmt(Currency maxAmt) {
@@ -292,7 +292,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Gets the pageStyle parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PAGESTYLE
+     *  <p>Maps to Payflow Parameter: PAGESTYLE
      */
     public String getPageStyle() {
         return pageStyle;
@@ -302,7 +302,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Sets the pageStyle parameter.
      *
      * @param pageStyle - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PAGESTYLE
+     *  <p>Maps to Payflow Parameter: PAGESTYLE
      */
 
     public void setPageStyle(String pageStyle) {
@@ -313,7 +313,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Gets the HeaderImg parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: HDRIMG
+     *  <p>Maps to Payflow Parameter: HDRIMG
      */
     public String getHeaderImg() {
         return headerImg;
@@ -323,7 +323,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Sets the HeaderImg parameter.
      *
      * @param headerImg - String
-     * @paypal.sample <p>Maps to Payflow Parameter: HDRIMG
+     *  <p>Maps to Payflow Parameter: HDRIMG
      */
 
     public void setHeaderImg(String headerImg) {
@@ -334,7 +334,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Gets the headerBorderColor parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: HDRBORDERCOLOR
+     *  <p>Maps to Payflow Parameter: HDRBORDERCOLOR
      */
     public String getHeaderBorderColor() {
         return headerBorderColor;
@@ -344,7 +344,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Sets the headerBorderColor parameter.
      *
      * @param headerBorderColor - String
-     * @paypal.sample <p>Maps to Payflow Parameter: HDRBORDERCOLOR
+     *  <p>Maps to Payflow Parameter: HDRBORDERCOLOR
      */
 
     public void setHeaderBorderColor(String headerBorderColor) {
@@ -355,7 +355,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Gets the headerBackColor parameter.
      *
      * @return - headerBackColor String
-     * @paypal.sample <p>Maps to Payflow Parameter: HDRBACKCOLOR
+     *  <p>Maps to Payflow Parameter: HDRBACKCOLOR
      */
     public String getHeaderBackColor() {
         return headerBackColor;
@@ -365,7 +365,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Sets the headerBackColor parameter.
      *
      * @param headerBackColor - String
-     * @paypal.sample <p>Maps to Payflow Parameter: HDRBACKCOLOR
+     *  <p>Maps to Payflow Parameter: HDRBACKCOLOR
      */
 
     public void setHeaderBackColor(String headerBackColor) {
@@ -376,7 +376,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Gets the payFlowColor parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PAYFLOWCOLOR
+     *  <p>Maps to Payflow Parameter: PAYFLOWCOLOR
      */
     public String getPayFlowColor() {
         return payFlowColor;
@@ -386,7 +386,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Sets the payFlowColor parameter.
      *
      * @param payFlowColor - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PAYFLOWCOLOR
+     *  <p>Maps to Payflow Parameter: PAYFLOWCOLOR
      */
 
     public void setPayFlowColor(String payFlowColor) {
@@ -397,7 +397,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Gets the paymentType parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: BA_CUSTOM
+     *  <p>Maps to Payflow Parameter: BA_CUSTOM
      */
     public String getba_Custom() {
         return ba_Custom;
@@ -407,7 +407,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Sets the paymentType parameter.
      *
      * @param ba_Custom - String
-     * @paypal.sample <p>Maps to Payflow Parameter: BA_CUSTOM
+     *  <p>Maps to Payflow Parameter: BA_CUSTOM
      */
     public void setba_Custom(String ba_Custom) {
         this.ba_Custom = ba_Custom;
@@ -417,7 +417,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Gets the paymentType parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PAYMENTTYPE
+     *  <p>Maps to Payflow Parameter: PAYMENTTYPE
      */
     public String getpaymentType() {
         return paymentType;
@@ -427,7 +427,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Sets the paymentType parameter.
      *
      * @param paymentType - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PAYMENTTYPE
+     *  <p>Maps to Payflow Parameter: PAYMENTTYPE
      */
     public void setpaymentType(String paymentType) {
         this.paymentType = paymentType;
@@ -437,7 +437,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Gets the ba_Desc parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: BA_DESC
+     *  <p>Maps to Payflow Parameter: BA_DESC
      */
     public String getba_Desc() {
         return ba_Desc;
@@ -447,7 +447,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Sets the billingType parameter.
      *
      * @param ba_Desc - String
-     * @paypal.sample <p>Maps to Payflow Parameter: BA_DESC
+     *  <p>Maps to Payflow Parameter: BA_DESC
      */
     public void setba_Desc(String ba_Desc) {
         this.ba_Desc = ba_Desc;
@@ -457,7 +457,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Gets the noShipping parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: NOSHIPPING
+     *  <p>Maps to Payflow Parameter: NOSHIPPING
      */
     public String getbillingType() {
         return billingType;
@@ -467,7 +467,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Sets the billingType parameter.
      *
      * @param billingType - String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLINGTYPE
+     *  <p>Maps to Payflow Parameter: BILLINGTYPE
      */
     public void setbillingType(String billingType) {
         this.billingType = billingType;
@@ -477,7 +477,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Gets the shiptoName parameter.
      *
      * @return - string
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTONAME
+     *  <p>Maps to Payflow Parameter: SHIPTONAME
      */
     public String getshiptoName() {
         return shiptoName;
@@ -487,7 +487,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Sets the shiptoName parameter.
      *
      * @param shiptoName - String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTONAME
+     *  <p>Maps to Payflow Parameter: SHIPTONAME
      */
 
     public void setshiptoName(String shiptoName) {
@@ -498,7 +498,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Gets the allowNote parameter.
      *
      * @return - string
-     * @paypal.sample <p>Maps to Payflow Parameter: ALLOWNOTE
+     *  <p>Maps to Payflow Parameter: ALLOWNOTE
      */
     public String getallowNote() {
         return allowNote;
@@ -508,7 +508,7 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * Sets the allowNote parameter.
      *
      * @param allowNote - String
-     * @paypal.sample <p>Maps to Payflow Parameter: ALLOWNOTE
+     *  <p>Maps to Payflow Parameter: ALLOWNOTE
      */
 
     public void setallowNote(String allowNote) {

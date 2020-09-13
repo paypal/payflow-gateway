@@ -46,7 +46,8 @@ namespace PayPal.Payments.Samples.CS.DataObjects.BasicTransactions
 			CardTender Card = new CardTender(CC);
 			///////////////////////////////////////////////////////////////////
 
-			// Create a new Voice Auth Transaction.
+			// Create a new Voice Authorization Transaction.
+			// Some processors also require an authorization date to be sent.
 			VoiceAuthTransaction Trans = new VoiceAuthTransaction("<AUTH_CODE>",
                 User, Connection, Inv, Card, PayflowUtility.RequestId);
 

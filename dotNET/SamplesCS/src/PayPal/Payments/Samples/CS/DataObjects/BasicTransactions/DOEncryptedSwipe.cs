@@ -114,7 +114,7 @@ namespace PayPal.Payments.Samples.CS.DataObjects.BasicTransactions
                     // Magtek Response will only be available if a failure or error in the request.
                     Console.WriteLine("MAGTRESPONSE = " + TrxnResponse.MagTResponse);
 					// If value is true, then the Request ID has not been changed and the original response
-                    // of the original transction is returned. 
+                    // of the original transaction is returned. 
                     Console.WriteLine("DUPLICATE = " + TrxnResponse.Duplicate);
 				}
 

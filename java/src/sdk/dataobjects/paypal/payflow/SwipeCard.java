@@ -18,7 +18,7 @@ public final class SwipeCard extends PaymentDevice {
      * @param swipe Card Swipe value
      *              <p/>
      *              This is used as Payment Device for the CardTender.
-     * @paypal.sample <p>
+     *  <p>
      * Maps to Payflow Parameter: SWIPE
      * <p/>
      * //Create the SwipeCard object

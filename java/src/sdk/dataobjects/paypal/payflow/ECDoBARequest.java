@@ -19,7 +19,7 @@ public class ECDoBARequest extends ECDoRequest {
      *                ECDoBARequest is used to set the data required for a Express Checkout DO operation
      *                with Billing Agreement (Reference Transaction) without Purchase.
      *                </p>
-     * @paypal.sample .............
+     *  .............
      * <p/>
      * Create the ECDoBARequest object
      * ECDoBARequest doEC = new ECDoBARequest("[tokenid]","[payerid]");
