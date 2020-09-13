@@ -10,7 +10,7 @@ public final class CreditCard extends PaymentCard {
      * @param expDate Card expiry date
      *                This is used as Payment Device for the CardTender.
      *                <p/>
-     * @paypal.sample Maps to Payflow Parameter: ACCT , EXPDATE
+     *  Maps to Payflow Parameter: ACCT , EXPDATE
      * //Create the CreditCard object
      * CreditCard payDevice = new CreditCard("XXXXXXXXXX","XXXX");
      * </p>

@@ -18,7 +18,7 @@ public class ECDoRequest extends ExpressCheckoutRequest {
      *                <p/>
      *                ECDoRequest is used to set the data required for a Express Checkout DO operation.
      *                </p>
-     * @paypal.sample .............
+     *  .............
      * <p/>
      * Create the ECDoRequest object
      * ECDoRequest doEC = new ECDoRequest("[tokenid]","[payerid]");
@@ -39,7 +39,7 @@ public class ECDoRequest extends ExpressCheckoutRequest {
      * Gets the payerid parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PAYERID
+     *  <p>Maps to Payflow Parameter: PAYERID
      */
     public String getPayerId() {
         return payerId;
@@ -49,7 +49,7 @@ public class ECDoRequest extends ExpressCheckoutRequest {
      * Sets the payerid parameter.
      *
      * @param payerId - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PAYERID
+     *  <p>Maps to Payflow Parameter: PAYERID
      */
 
     public void setPayerId(String payerId) {

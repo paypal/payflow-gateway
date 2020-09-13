@@ -326,25 +326,47 @@ namespace PayPal.Payments.DataObjects
         /// CCUpdated
         /// </summary>
         private String mCCUpdated;
-
-
-
-        #endregion
-
-        #region "Properties"
-
-        /// <summary>
-        /// Gets Result
+		/// <summary>
+        /// RRN
         /// </summary>
-        /// <remarks>
-        /// The outcome of the attempted transaction. A
-        /// result of 0 (zero) indicates the transaction was
-        /// approved. Any other number indicates a
-        /// decline or error.
-        /// <para>Maps to Payflow Parameter:</para>
-        /// <code>RESULT</code>
-        /// </remarks>
-        public int Result
+        private String mRRN;
+		/// <summary>
+        /// STAN
+        /// </summary>
+        private String mSTAN;
+		/// <summary>
+		/// ACI
+		/// </summary>
+		private String mACI;
+        /// <summary>
+        /// ValidationCode
+        /// </summary>
+        private String mValidationCode;
+        /// <summary>
+        /// CCTransId
+        /// </summary>
+        private String mCCTransId;
+		/// <summary>
+		/// CCTrans_POSData
+		/// </summary>
+		private String mCCTrans_POSData;
+ 
+		#endregion
+
+		#region "Properties"
+
+		/// <summary>
+		/// Gets Result
+		/// </summary>
+		/// <remarks>
+		/// The outcome of the attempted transaction. A
+		/// result of 0 (zero) indicates the transaction was
+		/// approved. Any other number indicates a
+		/// decline or error.
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>RESULT</code>
+		/// </remarks>
+		public int Result
 		{
 			get { return mResult; }
 		}
@@ -1198,6 +1220,76 @@ namespace PayPal.Payments.DataObjects
             get { return mCCUpdated; }
         }
 
+		/// <summary>
+        /// Gets the Retrieve Reference transaction.
+        /// </summary>
+        /// <remarks>
+        /// <para>Maps to Payflow Parameter:</para>
+        /// <code>RRN</code>
+        /// </remarks>
+        public String RRN
+        {
+            get { return mRRN; }
+        }
+		/// <summary>
+        /// Gets the System Trace Audit number.
+        /// </summary>
+        /// <remarks>
+        /// <para>Maps to Payflow Parameter:</para>
+        /// <code>STAN</code>
+        /// </remarks>
+        public String STAN
+        {
+            get { return mSTAN; }
+        }
+		/// <summary>
+        /// Gets the Authorization Characteristics Indicator.
+        /// </summary>
+        /// <remarks>
+        /// <para>Maps to Payflow Parameter:</para>
+        /// <code>ACI</code>
+        /// </remarks>
+        public String ACI
+        {
+            get { return mACI; }
+        }
+		/// <summary>
+        /// Gets the Transaction Identifier.
+        /// </summary>
+		/// The transaction identifier associated with the transaction being settled.
+        /// <remarks>
+        /// <para>Maps to Payflow Parameter:</para>
+        /// <code>VALIDATIONCODE</code>
+        /// </remarks>
+        public String ValidationCode
+        {
+            get { return mValidationCode; }
+        }
+
+		/// <summary>
+        /// Gets the Credit Card Transaction Id.
+        /// </summary>
+		/// Unique transaction ID returned by some processors for all credit card transactions.
+        /// <remarks>
+        /// <para>Maps to Payflow Parameter:</para>
+        /// <code>CCTRANSID</code>
+        /// </remarks>
+        public String CCTransId
+        {
+            get { return mCCTransId; }
+        }
+				/// <summary>
+        /// Gets the Credit Card Transaction POS Data
+        /// </summary>
+		/// Value returned by some processors for all credit card transactions.
+        /// <remarks>
+        /// <para>Maps to Payflow Parameter:</para>
+        /// <code>CCTRAN_POSDATA</code>
+        /// </remarks>
+        public String CCTrans_POSData
+        {
+            get { return mCCTrans_POSData; }
+        }
         #endregion
 
         #region "Constructors"
@@ -1280,12 +1372,18 @@ namespace PayPal.Payments.DataObjects
             mPaymentAdviceCode = (String)ResponseHashTable[PayflowConstants.PARAM_PAYMENTADVICECODE];
             mAssociationResponseCode = (String)ResponseHashTable[PayflowConstants.PARAM_ASSOCIATIONRESPCODE];
             mType = (String)ResponseHashTable[PayflowConstants.PARAM_TYPE];
-            mAffluent = (String)ResponseHashTable[PayflowConstants.PARAM_AFFLUENT];
-            mCCUpdated = (String)ResponseHashTable[PayflowConstants.PARAM_CCUPDATED];
- 
-            // Remove the used response params from hash table.
-            // ResponseHashTable.Remove(PayflowConstants.INTL_PARAM_FULLRESPONSE);
-            ResponseHashTable.Remove(PayflowConstants.PARAM_RESULT);
+			mCCUpdated = (String)ResponseHashTable[PayflowConstants.PARAM_CCUPDATED];
+			mAffluent= (String)ResponseHashTable[PayflowConstants.PARAM_AFFLUENT];
+            mRRN= (String)ResponseHashTable[PayflowConstants.PARAM_RRN];
+            mSTAN = (String)ResponseHashTable[PayflowConstants.PARAM_STAN];
+			mACI = (String)ResponseHashTable[PayflowConstants.PARAM_ACI];
+			mValidationCode = (String)ResponseHashTable[PayflowConstants.PARAM_VALIDATIONCODE];
+			mCCTransId = (String)ResponseHashTable[PayflowConstants.PARAM_CCTRANSID];
+			mCCTrans_POSData = (String)ResponseHashTable[PayflowConstants.PARAM_CCTRANS_POSDATA];
+
+			// Remove the used response params from hash table.
+			// ResponseHashTable.Remove(PayflowConstants.INTL_PARAM_FULLRESPONSE);
+			ResponseHashTable.Remove(PayflowConstants.PARAM_RESULT);
 			ResponseHashTable.Remove(PayflowConstants.PARAM_PNREF);
 			ResponseHashTable.Remove(PayflowConstants.PARAM_RESPMSG);
 			ResponseHashTable.Remove(PayflowConstants.PARAM_AUTHCODE);
@@ -1342,10 +1440,16 @@ namespace PayPal.Payments.DataObjects
             ResponseHashTable.Remove(PayflowConstants.PARAM_TYPE);
             ResponseHashTable.Remove(PayflowConstants.PARAM_AFFLUENT);
             ResponseHashTable.Remove(PayflowConstants.PARAM_CCUPDATED);
-
-            // Commented Line below to reserve Status for Recurring Inquiry
-            // ResponseHashTable.Remove(PayflowConstants.PARAM_STATUS);
-        }
+			ResponseHashTable.Remove(PayflowConstants.PARAM_RRN);
+			ResponseHashTable.Remove(PayflowConstants.PARAM_STAN);
+			ResponseHashTable.Remove(PayflowConstants.PARAM_ACI);
+			ResponseHashTable.Remove(PayflowConstants.PARAM_VALIDATIONCODE);
+			ResponseHashTable.Remove(PayflowConstants.PARAM_CCTRANSID);
+			ResponseHashTable.Remove(PayflowConstants.PARAM_CCTRANS_POSDATA);
+		
+			// Commented Line below to reserve Status for Recurring Inquiry
+			// ResponseHashTable.Remove(PayflowConstants.PARAM_STATUS);
+		}
 
 		#endregion
 	}

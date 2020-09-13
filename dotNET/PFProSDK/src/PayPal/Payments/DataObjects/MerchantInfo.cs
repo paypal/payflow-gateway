@@ -76,6 +76,30 @@ namespace PayPal.Payments.DataObjects
         /// Holds Merchant Zip
         /// </summary>
         private String mMerchantZip;
+        /// <summary>
+        /// Holds Merchant Url
+        /// </summary>
+        private String mMerchantUrl;
+        /// <summary>
+        /// Holds Merchant VAT Number
+        /// </summary>
+        private String mMerchantVatNum;
+        /// <summary>
+        /// Holds Merchant Invoice Number
+        /// </summary>
+        private String mMerchantInvoiceNum;
+        /// <summary>
+        /// MerrchantLocationId
+        /// </summary>
+        private String mMerchantLocationId;
+        /// <summary>
+        /// MerchantId
+        /// </summary>
+        private String mMerchantId;
+        /// <summary>
+        /// MerchantContactInfo
+        /// </summary>
+        private String mMerchantContactInfo;
 
         #endregion
 
@@ -135,7 +159,7 @@ namespace PayPal.Payments.DataObjects
         /// Gets, Sets  Merchant Street
         /// </summary>
         /// <remarks>
-        /// <para>Merchant's Stree Address (Number and Street Name)</para>
+        /// <para>Merchant's Street Address (Number and Street Name)</para>
         /// <para>Maps to Payflow Parameter:</para>
         /// <code>MERCHANTSTREET</code>
         /// </remarks>
@@ -197,6 +221,89 @@ namespace PayPal.Payments.DataObjects
             get { return mMerchantZip; }
             set { mMerchantZip = value; }
         }
+
+        /// <summary>
+        /// Gets, Sets  Merchant Url
+        /// </summary>
+        /// <remarks>
+        /// <para>Merchant's website (URL)</para>
+        /// <para>Maps to Payflow Parameter:</para>
+        /// <code>MERCHANTURL</code>
+        /// </remarks>
+        public String MerchantUrl
+        {
+            get { return mMerchantUrl; }
+            set { mMerchantUrl = value; }
+        }
+
+        /// <summary>
+        /// Gets, Sets  Merchant VAT Number
+        /// </summary>
+        /// <remarks>
+        /// <para>Merchant's VAT Number</para>
+        /// <para>Maps to Payflow Parameter:</para>
+        /// <code>MERCHANTVATNUM</code>
+        /// </remarks>
+        public String MerchantVatNum
+        {
+            get { return mMerchantVatNum; }
+            set { mMerchantVatNum = value; }
+        }
+
+        /// <summary>
+        /// Gets, Sets  Merchant Invoice Number
+        /// </summary>
+        /// <remarks>
+        /// <para>Merchant's Invoice Number</para>
+        /// <para>Maps to Payflow Parameter:</para>
+        /// <code>MERCHANTINVOICENUM</code>
+        /// </remarks>
+        public String MerchantInvoiceNum
+        {
+            get { return mMerchantInvoiceNum; }
+            set { mMerchantInvoiceNum = value; }
+        }
+
+        		/// <summary>
+        /// Gets, Sets the Merchant Location Id.
+        /// </summary>
+		/// Merchant assigned store or location number.
+        /// <remarks>
+        /// <para>Maps to Payflow Parameter:</para>
+        /// <code>MERCHANTLOCATIONID</code>
+        /// </remarks>
+        public String MerchantLocationId
+        {
+            get { return mMerchantLocationId; }
+            set { mMerchantLocationId = value; }
+        }
+		/// <summary>
+        /// Gets, Sets the Merchant Id.
+        /// </summary>
+		/// Processor assigned number.
+        /// <remarks>
+        /// <para>Maps to Payflow Parameter:</para>
+        /// <code>MERCHANTID</code>
+        /// </remarks>
+        public String MerchantId
+        {
+            get { return mMerchantId; }
+            set { mMerchantId = value; }
+        }
+		/// <summary>
+        /// Gets, Sets the Merchant Contact Information.
+        /// </summary>
+		/// Merchants telephone, URl or email.
+        /// <remarks>
+        /// <para>Maps to Payflow Parameter:</para>
+        /// <code>MERCHANTCONTACTINFO</code>
+        /// </remarks>
+        public String MerchantContactInfo
+        {
+            get { return mMerchantContactInfo; }
+            set { mMerchantContactInfo = value; }
+        }
+
         /// <summary>
         /// Gets, Sets  MerchDescr
         /// </summary>
@@ -205,6 +312,7 @@ namespace PayPal.Payments.DataObjects
         /// <para>Maps to Payflow Parameter:</para>
         /// <code>MERCHDESCR</code>
         /// </remarks>
+        /// 
         public String MerchDescr
         {
             get { return mMerchDescr; }
@@ -242,6 +350,13 @@ namespace PayPal.Payments.DataObjects
                 RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTSTATE, mMerchantState));
                 RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTZIP, mMerchantZip));
                 RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTCOUNTRYCODE, mMerchantCountryCode));
+                RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTURL, mMerchantUrl));
+                RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTVATNUM, mMerchantVatNum));
+                RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTINVOICENUM, mMerchantInvoiceNum));
+                RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTLOCATIONID, mMerchantLocationId));
+                RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTID, mMerchantId));
+                RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTCONTACTINFO, mMerchantContactInfo));
+
                 RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHDESCR, mMerchDescr));
                 RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHSVC, mMerchSvc));
             }

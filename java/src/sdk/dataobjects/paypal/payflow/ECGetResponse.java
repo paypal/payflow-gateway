@@ -54,7 +54,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the email parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: EMAIL
+     *  <p>Maps to Payflow Parameter: EMAIL
      */
     public String getEmail() {
         return email;
@@ -64,7 +64,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the payerid parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PAYERID
+     *  <p>Maps to Payflow Parameter: PAYERID
      */
     public String getPayerId() {
         return payerId;
@@ -74,7 +74,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the payerstatus parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PAYERSTATUS
+     *  <p>Maps to Payflow Parameter: PAYERSTATUS
      */
     public String getPayerStatus() {
         return payerStatus;
@@ -84,7 +84,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the shiptoname parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTONAME
+     *  <p>Maps to Payflow Parameter: SHIPTONAME
      */
     public String getShipToName() {
         return shipToName;
@@ -94,7 +94,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the shiptofirstname parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOFIRSTNAME
+     *  <p>Maps to Payflow Parameter: SHIPTOFIRSTNAME
      */
     public String getShipToFirstName() {
          return shipToFirstName;
@@ -104,7 +104,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the shiptolastname parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOLASTNAME
+     *  <p>Maps to Payflow Parameter: SHIPTOLASTNAME
      */
     public String getShipToLastName() {
          return shipToLastName;
@@ -114,7 +114,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the shiptocountry parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOCOUNTRY
+     *  <p>Maps to Payflow Parameter: SHIPTOCOUNTRY
      */
     public String getShipToCountry() {
         return shipToCountryCode;
@@ -124,7 +124,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the shiptobusiness parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOBUSINESS
+     *  <p>Maps to Payflow Parameter: SHIPTOBUSINESS
      */
     public String getShipToBusiness() {
         return shipToBusiness;
@@ -134,7 +134,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the firstname parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: FIRSTNAME
+     *  <p>Maps to Payflow Parameter: FIRSTNAME
      */
     //public String getFirstName() {
       //  return firstName;
@@ -144,7 +144,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the lastname parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: LASTNAME
+     *  <p>Maps to Payflow Parameter: LASTNAME
      */
     //public String getLastName() {
       //  return lastName;
@@ -154,7 +154,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the shiptostreet parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOSTREET
+     *  <p>Maps to Payflow Parameter: SHIPTOSTREET
      */
     public String getShipToStreet() {
         return shipToStreet;
@@ -164,7 +164,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the shiptostreet2 parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOSTREET2
+     *  <p>Maps to Payflow Parameter: SHIPTOSTREET2
      */
     public String getShipToStreet2() {
         return shipToStreet2;
@@ -174,7 +174,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the shiptocity parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOCITY
+     *  <p>Maps to Payflow Parameter: SHIPTOCITY
      */
     public String getShipToCity() {
         return shipToCity;
@@ -184,7 +184,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the shiptostate parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOSTATE
+     *  <p>Maps to Payflow Parameter: SHIPTOSTATE
      */
     public String getShipToState() {
         return shipToState;
@@ -194,7 +194,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the countrycode parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: COUNTRYCODE
+     *  <p>Maps to Payflow Parameter: COUNTRYCODE
      */
     public String getCountryCode() {
         return countryCode;
@@ -204,7 +204,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the shiptozip parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPTOZIP
+     *  <p>Maps to Payflow Parameter: SHIPTOZIP
      */
     public String getShipToZip() {
         return shipToZip;
@@ -214,7 +214,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the ba_flag parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: BA_FLAG
+     *  <p>Maps to Payflow Parameter: BA_FLAG
      */
     public String getba_Flag() {
         return ba_Flag;
@@ -224,7 +224,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the phonenum parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PHONENUM
+     *  <p>Maps to Payflow Parameter: PHONENUM
      */
     public String getPhoneNum() {
         return phoneNum;
@@ -234,7 +234,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the street parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: STREET
+     *  <p>Maps to Payflow Parameter: STREET
      */
     public String getStreet() {
         return street;
@@ -244,7 +244,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the street2 parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: STREET2
+     *  <p>Maps to Payflow Parameter: STREET2
      */
     public String getStreet2() {
         return street2;
@@ -254,7 +254,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the city parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: CITY
+     *  <p>Maps to Payflow Parameter: CITY
      */
     public String getCity() {
         return city;
@@ -264,7 +264,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the state parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: STATE
+     *  <p>Maps to Payflow Parameter: STATE
      */
     public String getState() {
         return state;
@@ -274,7 +274,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the zip parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: ZIP
+     *  <p>Maps to Payflow Parameter: ZIP
      */
     public String getZip() {
         return zip;
@@ -284,7 +284,7 @@ public class ECGetResponse extends ExpressCheckoutResponse {
      * Gets the addressStatus parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: ADDRESSSTATUS
+     *  <p>Maps to Payflow Parameter: ADDRESSSTATUS
      */
     public String getAddressStatus() {
         return addressStatus;

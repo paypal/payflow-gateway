@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * no payments for 90 days, give merchants new and powerful ways to market to online
  * shoppers.
  *
- * @paypal.sample <p>
+ *  <p>
  * .................
  * // Following example shows how to use Pay Later.
  * PayLater setPayLater = new PayLater();
@@ -57,7 +57,7 @@ public class PayLater extends BaseRequestDataObject {
      *             PayPal Promotional Financing where n is a value from 0 to 9. The first promotion
      *             must be specified as L_PROMOCODE0.
      *             Combine promotions by using additonal parameters, such as L_PROMOCODE1 and L_PROMOCODE2</p>
-     * @paypal.sample <p>
+     *  <p>
      * .................
      * // setPayLaterLineItem is the PayLaterLineItem object.
      * .................
@@ -83,7 +83,7 @@ public class PayLater extends BaseRequestDataObject {
      *
      * @param index Index of promo code to be removed.
      *              <p>Use this method to remove a promo code at a particular index in the requestr.</P>
-     * @paypal.sample <p>
+     *  <p>
      * .................
      * // setPayLater is the PayLater object
      * .................
@@ -100,7 +100,7 @@ public class PayLater extends BaseRequestDataObject {
      * <p>Use this method to clear all the
      * promo codes added to the request.</p>
      *
-     * @paypal.sample <p>
+     *  <p>
      * .................
      * // setPayLater is the PayLater object
      * .................
@@ -152,7 +152,7 @@ public class PayLater extends BaseRequestDataObject {
      * for this transaction.</P>
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPPINGMETHOD</p>
+     *  <p>Maps to Payflow Parameter: SHIPPINGMETHOD</p>
      */
     public String getshippingMethod() {
         return shippingMethod;
@@ -164,7 +164,7 @@ public class PayLater extends BaseRequestDataObject {
      * for this transaction.</P>
      *
      * @param shippingMethod String
-     * @paypal.sample <p>Maps to Payflow Parameter: SHIPPINGMETHOD</p>
+     *  <p>Maps to Payflow Parameter: SHIPPINGMETHOD</p>
      */
     public void setshippingMethod(String shippingMethod) {
         this.shippingMethod = shippingMethod;
@@ -179,7 +179,7 @@ public class PayLater extends BaseRequestDataObject {
      * overridden.</P>
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: PROMOCODEOVERRIDE</p>
+     *  <p>Maps to Payflow Parameter: PROMOCODEOVERRIDE</p>
      */
     public String getpromoCodeOverride() {
         return promoCodeOverride;
@@ -194,7 +194,7 @@ public class PayLater extends BaseRequestDataObject {
      * overridden.</P>
      *
      * @param promoCodeOverride String
-     * @paypal.sample <p>Maps to Payflow Parameter: PROMOCODEOVERRIDE</p>
+     *  <p>Maps to Payflow Parameter: PROMOCODEOVERRIDE</p>
      */
     public void setpromoCodeOverride(String promoCodeOverride) {
         this.promoCodeOverride = promoCodeOverride;
@@ -209,7 +209,7 @@ public class PayLater extends BaseRequestDataObject {
      * example, 2007-12-15T17:23:15Z.</P>
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: PROFILEADDRESSCHANGEDATE</p>
+     *  <p>Maps to Payflow Parameter: PROFILEADDRESSCHANGEDATE</p>
      */
     public String getprofileAddressChangeDate() {
         return profileAddressChangeDate;
@@ -224,7 +224,7 @@ public class PayLater extends BaseRequestDataObject {
      * example, 2007-12-15T17:23:15Z.</P>
      *
      * @param profileAddressChangeDate String
-     * @paypal.sample <p>Maps to Payflow Parameter: PROFILEADDRESSCHANGEDATE</p>
+     *  <p>Maps to Payflow Parameter: PROFILEADDRESSCHANGEDATE</p>
      */
     public void setprofileAddressChangeDate(String profileAddressChangeDate) {
         this.profileAddressChangeDate = profileAddressChangeDate;
@@ -239,7 +239,7 @@ public class PayLater extends BaseRequestDataObject {
      * option in the PayPal checkout flow.</P>
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: PAYPALCHECKOUTBTNTYPE</p>
+     *  <p>Maps to Payflow Parameter: PAYPALCHECKOUTBTNTYPE</p>
      */
     public String getpaypalCheckoutBtnType() {
         return paypalCheckoutBtnType;
@@ -254,7 +254,7 @@ public class PayLater extends BaseRequestDataObject {
      * option in the PayPal checkout flow.</P>
      *
      * @param paypalCheckoutBtnType String
-     * @paypal.sample <p>Maps to Payflow Parameter: PAYPALCHECKOUTBTNTYPE</p>
+     *  <p>Maps to Payflow Parameter: PAYPALCHECKOUTBTNTYPE</p>
      */
     public void setpaypalCheckoutBtnType(String paypalCheckoutBtnType) {
         this.paypalCheckoutBtnType = paypalCheckoutBtnType;
@@ -268,7 +268,7 @@ public class PayLater extends BaseRequestDataObject {
      * category for the most expensive item.</P>
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: PRODUCTCATEGORY</p>
+     *  <p>Maps to Payflow Parameter: PRODUCTCATEGORY</p>
      */
     public String getproductCategory() {
         return productCategory;
@@ -282,7 +282,7 @@ public class PayLater extends BaseRequestDataObject {
      * category for the most expensive item.</P>
      *
      * @param productCategory String
-     * @paypal.sample <p>Maps to Payflow Parameter: PRODUCTCATEGORY</p>
+     *  <p>Maps to Payflow Parameter: PRODUCTCATEGORY</p>
      */
     public void setproductCategory(String productCategory) {
         this.productCategory = productCategory;

@@ -11,7 +11,7 @@ import java.util.Hashtable;
  * Following is the example of how to get the transaction response
  * after the transaction.
  *
- * @paypal.sample ..........
+ *  ..........
  * // Trans is the transaction object.
  * *		...................
  * // Submit the transaction.
@@ -91,12 +91,18 @@ public final class TransactionResponse extends BaseResponseDataObject {
     private String type;
     private String affluent;
     private String ccUpdated;
+    private String rrn;
+    private String stan;
+    private String aci;
+    private String validationCode;
+    private String ccTransId;
+    private String ccTrans_PosData;
 
     /**
      * Gets the result.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: RESULT
+     *  <p>Maps to Payflow Parameter: RESULT
      */
     public int getResult() {
         return result;
@@ -106,7 +112,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the PPref parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PPREF
+     *  <p>Maps to Payflow Parameter: PPREF
      */
     public String getPPRef() {
         return ppref;
@@ -116,7 +122,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the pnref number(Reference Id).
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PNREF
+     *  <p>Maps to Payflow Parameter: PNREF
      */
     public String getPnref() {
         return pnref;
@@ -126,7 +132,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the response message.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: RESPMSG
+     *  <p>Maps to Payflow Parameter: RESPMSG
      */
     public String getRespMsg() {
         return respMsg;
@@ -140,7 +146,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * the processing network.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: AUTHCODE
+     *  <p>Maps to Payflow Parameter: AUTHCODE
      */
     public String getAuthCode() {
         return authCode;
@@ -153,7 +159,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * authorization.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: AVSADDR
+     *  <p>Maps to Payflow Parameter: AVSADDR
      */
     public String getAvsAddr() {
         return avsAddr;
@@ -166,7 +172,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * authorization.</p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: AVSZIP
+     *  <p>Maps to Payflow Parameter: AVSZIP
      */
     public String getAvsZip() {
         return avsZip;
@@ -179,7 +185,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Y=valid, N=Not valid, X=cannot determine</p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: CARDSECURE
+     *  <p>Maps to Payflow Parameter: CARDSECURE
      */
     public String getCardSecure() {
         return cardSecure;
@@ -190,7 +196,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * <p>Obtain the last 4-digits of the credit card number</p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: ACCT
+     *  <p>Maps to Payflow Parameter: ACCT
      */
     public String getAcct() {
         return acct;
@@ -201,7 +207,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * <p>Obtain the expiration date of the credit card used.</p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: EXPDATE
+     *  <p>Maps to Payflow Parameter: EXPDATE
      */
     public String getExpDate() {
         return expDate;
@@ -213,7 +219,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * that the amount sent was the amount authorized.</p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: AMT
+     *  <p>Maps to Payflow Parameter: AMT
      */
     public String getAmt() {
         return amt;
@@ -224,7 +230,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * <p>Obtain the last name of the card holder./p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOLASTNAME
+     *  <p>Maps to Payflow Parameter: BILLTOLASTNAME
      */
     public String getBillToLastName() {
         return billToLastName;
@@ -235,7 +241,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * <p>Obtain the first name of the card holder./p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOFIRSTNAME
+     *  <p>Maps to Payflow Parameter: BILLTOFIRSTNAME
      */
     public String getBillToFirstName() {
         return billToFirstName;
@@ -246,7 +252,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * <p>Obtain the transaction date and time./p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: TRANSTIME
+     *  <p>Maps to Payflow Parameter: TRANSTIME
      */
     public String getTransTime() {
         return transTime;
@@ -278,7 +284,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * {@paypal.ltd} The cardholder's bank does not support this service. {@paypal.eltd}
      * {@paypal.eltr}
      * {@paypal.endlisttable}
-     * @paypal.sample <p>Maps to Payflow Parameter: CVV2MATCH
+     *  <p>Maps to Payflow Parameter: CVV2MATCH
      */
     public String getCvv2Match() {
         return cvv2Match;
@@ -294,7 +300,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * determined (X).</p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: IAVS
+     *  <p>Maps to Payflow Parameter: IAVS
      */
     public String getIavs() {
         return iavs;
@@ -305,7 +311,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * inquiry transaction is performed.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: ORIGRESULT
+     *  <p>Maps to Payflow Parameter: ORIGRESULT
      */
     public String getOrigResult() {
         return origResult;
@@ -315,7 +321,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the orignal pnref for the primary transaction.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: ORIGPNREF
+     *  <p>Maps to Payflow Parameter: ORIGPNREF
      */
     public String getOrigPnref() {
         return origPnref;
@@ -325,7 +331,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the transaction state.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: TRANSSTATE
+     *  <p>Maps to Payflow Parameter: TRANSSTATE
      */
     public String getTransState() {
         return transState;
@@ -342,7 +348,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * an Inquiry, you must provide a unique CUSTREF </p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: CUSTREF
+     *  <p>Maps to Payflow Parameter: CUSTREF
      */
     public String getCustRef() {
         return custRef;
@@ -352,7 +358,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the startTime.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: STARTTIME
+     *  <p>Maps to Payflow Parameter: STARTTIME
      */
     public String getStartTime() {
         return startTime;
@@ -362,7 +368,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the end time.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: ENDTIME
+     *  <p>Maps to Payflow Parameter: ENDTIME
      */
     public String getEndTime() {
         return endTime;
@@ -376,7 +382,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * returned as 1.</p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: DUPLICATE
+     *  <p>Maps to Payflow Parameter: DUPLICATE
      */
     public String getDuplicate() {
         return duplicate;
@@ -390,7 +396,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Value obtained when Payflow Verbosity paramter = MEDIUM
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: DATE_TO_SETTLE
+     *  <p>Maps to Payflow Parameter: DATE_TO_SETTLE
      */
     public String getDateToSettle() {
         return dateToSettle;
@@ -404,7 +410,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Value obtained when Payflow Verbosity paramter = MEDIUM </p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: BATCHID
+     *  <p>Maps to Payflow Parameter: BATCHID
      */
     public String getBatchId() {
         return batchId;
@@ -417,7 +423,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Value obtained when Payflow Verbosity paramter = MEDIUM
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: ADDLMSGS
+     *  <p>Maps to Payflow Parameter: ADDLMSGS
      */
     public String getAddlMsgs() {
         return addlMsgs;
@@ -430,7 +436,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * normalized by Gateway server.</p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: RESPTEXT
+     *  <p>Maps to Payflow Parameter: RESPTEXT
      */
     public String getRespText() {
         return respText;
@@ -443,7 +449,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Value obtained when Payflow Verbosity paramter = MEDIUM
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PROCAVS
+     *  <p>Maps to Payflow Parameter: PROCAVS
      */
     public String getProcAvs() {
         return procAvs;
@@ -455,7 +461,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Value obtained when Payflow Verbosity paramter = MEDIUM
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PROCCARDSECURE
+     *  <p>Maps to Payflow Parameter: PROCCARDSECURE
      */
     public String getProcCardSecure() {
         return procCardSecure;
@@ -470,7 +476,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Value obtained when Payflow Verbosity paramter = MEDIUM</p>
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PROCCVV2
+     *  <p>Maps to Payflow Parameter: PROCCVV2
      */
     public String getProcCVV2() {
         return procCVV2;
@@ -480,7 +486,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the hostCode.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: HOSTCODE
+     *  <p>Maps to Payflow Parameter: HOSTCODE
      */
     public String getHostCode() {
         return hostCode;
@@ -490,7 +496,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the settleDate.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: SETTLEDATE
+     *  <p>Maps to Payflow Parameter: SETTLEDATE
      */
     public String getSettleDate() {
         return settleDate;
@@ -500,7 +506,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the status.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: STATUS
+     *  <p>Maps to Payflow Parameter: STATUS
      */
     public String getStatus() {
         return status;
@@ -510,7 +516,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the status.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: BALAMT
+     *  <p>Maps to Payflow Parameter: BALAMT
      */
     public String getBalAmt() {
         return balAmt;
@@ -520,7 +526,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the status.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: AMEXID
+     *  <p>Maps to Payflow Parameter: AMEXID
      */
     public String getAmexId() {
         return amexId;
@@ -530,7 +536,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the status.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: AMEXPOSDATA
+     *  <p>Maps to Payflow Parameter: AMEXPOSDATA
      */
     public String getAmexPosData() {
         return amexPosData;
@@ -540,7 +546,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the card type.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: CARDTYPE
+     *  <p>Maps to Payflow Parameter: CARDTYPE
      */
     public String getCardType() {
         return cardType;
@@ -550,7 +556,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the original amount.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: ORIGAMT
+     *  <p>Maps to Payflow Parameter: ORIGAMT
      */
     public String getOrigAmt() {
         return origAmt;
@@ -560,7 +566,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the secure token.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: SECURETOKEN
+     *  <p>Maps to Payflow Parameter: SECURETOKEN
      */
     public String getSecureToken() {
         return secureToken;
@@ -570,7 +576,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the secure token id.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: EMAILMATCH
+     *  <p>Maps to Payflow Parameter: EMAILMATCH
      */
     public String getEmailMatch() {
         return emailMatch;
@@ -580,7 +586,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the secure token.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PHONEMATCH
+     *  <p>Maps to Payflow Parameter: PHONEMATCH
      */
     public String getPhoneMatch() {
         return phoneMatch;
@@ -590,7 +596,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the extended response message.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: EXTRSPMSG
+     *  <p>Maps to Payflow Parameter: EXTRSPMSG
      */
     public String getExtRspMsg() {
         return extRspMsg;
@@ -600,7 +606,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the secure token id.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: SECURETOKENID
+     *  <p>Maps to Payflow Parameter: SECURETOKENID
      */
     public String getSecureTokenId() {
         return secureTokenId;
@@ -610,7 +616,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the payment advice code.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PAYMENTADVICECODE
+     *  <p>Maps to Payflow Parameter: PAYMENTADVICECODE
      */
     public String getPaymentAdviceCode() {
         return paymentAdviceCode;
@@ -620,7 +626,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the association response code.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: ASSOCIATIONRESPCODE
+     *  <p>Maps to Payflow Parameter: ASSOCIATIONRESPCODE
      */
     public String getAssociationResponseCode() {
         return associationResponseCode;
@@ -630,7 +636,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the Magtek Response.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: MAGTRESPONSE
+     *  <p>Maps to Payflow Parameter: MAGTRESPONSE
      */
     public String getMagTResponse() {
         return magTResponse;
@@ -640,7 +646,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets Trace ID.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: TRACEID
+     *  <p>Maps to Payflow Parameter: TRACEID
      */
     public String getTraceId() {
         return traceId;
@@ -650,7 +656,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the ACH Status/
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: ACHSTATUS
+     *  <p>Maps to Payflow Parameter: ACHSTATUS
      */
     public String getAchStatus() {
         return achStatus;
@@ -660,7 +666,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the Transaction ID (Card on File)
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: TXID
+     *  <p>Maps to Payflow Parameter: TXID
      */
     public String getTxId() {
         return txId;
@@ -670,7 +676,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the transaction type
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: TYPE
+     *  <p>Maps to Payflow Parameter: TYPE
      */
     public String getType() {
         return type;
@@ -679,7 +685,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the cardholder status
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: AFFLUENT
+     *  <p>Maps to Payflow Parameter: AFFLUENT
      */
     public String getAffluent() {
         return affluent;
@@ -688,7 +694,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the response if the credit card was updated
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: CCUPDATED
+     *  <p>Maps to Payflow Parameter: CCUPDATED
      */
     public String getCcUpdated() {
         return ccUpdated;
@@ -697,10 +703,65 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the transaction id for Braintree.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: TRANSACTIONID
+     *  <p>Maps to Payflow Parameter: TRANSACTIONID
      */
     public String getTransactionId() {
         return transactionId;
+    }
+    /**
+     * Gets the Retrieve Reference transaction.
+     *
+     * @return - String
+     *  <p>Maps to Payflow Parameter: RRN
+     */
+    public String getRrn() {
+        return rrn;
+    }
+    /**
+     * Gets the System Trace Audit number.
+     *
+     * @return - String
+     *  <p>Maps to Payflow Parameter: STAN
+     */
+    public String getStan() {
+        return stan;
+    }
+    /**
+     * Gets the Authorization Characteristics Indicator.
+     *
+     * @return - String
+     *  <p>Maps to Payflow Parameter: ACI
+     */
+    public String getAci() {
+        return aci;
+    }
+    /**
+     * Gets the Authorization Characteristics Indicator.
+     * The transaction identifier associated with the transaction being settled.
+     * @return - String
+     *  <p>Maps to Payflow Parameter: VALIDATIONCODE
+     */
+    public String getValidationCode() {
+        return validationCode;
+    }
+
+    /**
+     * Gets the Credit Card Transaction Id.
+     * Unique transaction ID returned by some processors for all credit card transactions.
+     * @return - String
+     *  <p>Maps to Payflow Parameter: CCTRANSID
+     */
+    public String getCcTransId() {
+        return ccTransId;
+    }
+    /**
+     * Gets the Credit Card Transaction POS Data.
+     * Value returned by some processors for all credit card transactions.
+     * @return - String
+     *  <p>Maps to Payflow Parameter: CCTRANS_POSDATA
+     */
+    public String getCcTrans_PosData() {
+        return ccTrans_PosData;
     }
 
 
@@ -759,14 +820,19 @@ public final class TransactionResponse extends BaseResponseDataObject {
         paymentAdviceCode = (String) ResponseHashTable.get(PayflowConstants.PARAM_PAYMENTADVICECODE);
         associationResponseCode = (String) ResponseHashTable.get(PayflowConstants.PARAM_ASSOCIATIONRESPCODE);
         transactionId = (String) ResponseHashTable.get(PayflowConstants.PARAM_TRANSACTIONID);
-        transactionId = (String) ResponseHashTable.get(PayflowConstants.MAGTEK_PARAM_MAGTRESPONSE);
+        txId = (String) ResponseHashTable.get(PayflowConstants.PARAM_TXID);
+        magTResponse = (String) ResponseHashTable.get(PayflowConstants.MAGTEK_PARAM_MAGTRESPONSE);
         traceId = (String) ResponseHashTable.get(PayflowConstants.PARAM_TRACEID);
         achStatus = (String) ResponseHashTable.get(PayflowConstants.PARAM_ACHSTATUS);
         type = (String) ResponseHashTable.get(PayflowConstants.PARAM_TYPE);
         affluent= (String) ResponseHashTable.get(PayflowConstants.PARAM_AFFLUENT);
         ccUpdated = (String) ResponseHashTable.get(PayflowConstants.PARAM_CCUPDATED);
-        txId = (String) ResponseHashTable.get(PayflowConstants.PARAM_TXID);
-
+        rrn = (String) ResponseHashTable.get(PayflowConstants.PARAM_RRN);
+        stan = (String) ResponseHashTable.get(PayflowConstants.PARAM_STAN);
+        aci = (String) ResponseHashTable.get(PayflowConstants.PARAM_ACI);
+        validationCode = (String) ResponseHashTable.get(PayflowConstants.PARAM_VALIDATIONCODE);
+        ccTransId = (String) ResponseHashTable.get(PayflowConstants.PARAM_CCTRANSID);
+        ccTrans_PosData = (String) ResponseHashTable.get(PayflowConstants.PARAM_CCTRANS_POSDATA);
 
         ResponseHashTable.remove(PayflowConstants.PARAM_RESULT);
         ResponseHashTable.remove(PayflowConstants.PARAM_PPREF);
@@ -817,11 +883,22 @@ public final class TransactionResponse extends BaseResponseDataObject {
         ResponseHashTable.remove(PayflowConstants.PARAM_EXTRSPMSG);
         ResponseHashTable.remove(PayflowConstants.PARAM_PAYMENTADVICECODE);
         ResponseHashTable.remove(PayflowConstants.PARAM_ASSOCIATIONRESPCODE);
+        ResponseHashTable.remove(PayflowConstants.PARAM_TXID);
         ResponseHashTable.remove(PayflowConstants.PARAM_TRANSACTIONID);
         ResponseHashTable.remove(PayflowConstants.MAGTEK_PARAM_MAGTRESPONSE);
         ResponseHashTable.remove(PayflowConstants.PARAM_TRACEID);
         ResponseHashTable.remove(PayflowConstants.PARAM_ACHSTATUS);
-        ResponseHashTable.remove(PayflowConstants.PARAM_TXID);
+        ResponseHashTable.remove(PayflowConstants.PARAM_AFFLUENT);
+        ResponseHashTable.remove(PayflowConstants.PARAM_TYPE);
+        ResponseHashTable.remove(PayflowConstants.PARAM_RRN);
+        ResponseHashTable.remove(PayflowConstants.PARAM_STAN);
+        ResponseHashTable.remove(PayflowConstants.PARAM_ACI);
+        ResponseHashTable.remove(PayflowConstants.PARAM_VALIDATIONCODE);
+        ResponseHashTable.remove(PayflowConstants.PARAM_CCTRANSID);
+        ResponseHashTable.remove(PayflowConstants.PARAM_CCTRANS_POSDATA);
+
+
+
 
     }
 
@@ -829,7 +906,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the feeAmt parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: FEEAMT
+     *  <p>Maps to Payflow Parameter: FEEAMT
      */
     public String getFeeAmt() {
         return feeAmt;
@@ -839,7 +916,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the pending reason parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PENDINGREASON
+     *  <p>Maps to Payflow Parameter: PENDINGREASON
      */
     public String getPendingReason() {
         return pendingReason;
@@ -849,7 +926,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the Payment Type parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: PAYMENTTYPE
+     *  <p>Maps to Payflow Parameter: PAYMENTTYPE
      */
     public String getPaymentType() {
         return paymentType;
@@ -859,7 +936,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the Correlation Id parameter
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: CORRELATIONID
+     *  <p>Maps to Payflow Parameter: CORRELATIONID
      */
 
     public String getCorrelationId() {

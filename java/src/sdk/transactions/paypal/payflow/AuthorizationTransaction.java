@@ -7,7 +7,7 @@ package paypal.payflow;
  * A successful authorization needs to be captured using a capture transaction.
  * </p>
  *
- * @paypal.sample This example shows how to create and perform an authorization transaction.
+ *  This example shows how to create and perform an authorization transaction.
  * <p/>
  * ..........
  * ..........
@@ -89,7 +89,7 @@ public class AuthorizationTransaction extends BaseTransaction {
      * A successful authorization needs to be captured using a capture transaction.</p>
      *
      * @return origId String
-     * @paypal.sample This example shows how to create and perform a reference authorization transaction.
+     *  This example shows how to create and perform a reference authorization transaction.
      * ..........
      * ..........
      * //Populate required data objects.
@@ -169,7 +169,7 @@ public class AuthorizationTransaction extends BaseTransaction {
      * <p/>
      *
      * @return partialAuth String
-     * @paypal.sample This example shows how to set the flag to support partial authorizations.
+     *  This example shows how to set the flag to support partial authorizations.
      * ..........
      * ..........
      * //Populate required data objects.
@@ -250,7 +250,7 @@ public class AuthorizationTransaction extends BaseTransaction {
      * <p/>
      *
      * @return secureToken String
-     * @paypal.sample This example shows how to set the flag to create a secure token.
+     *  This example shows how to set the flag to create a secure token.
      * ..........
      * ..........
      * //Populate required data objects.
@@ -331,7 +331,7 @@ public class AuthorizationTransaction extends BaseTransaction {
      * @param invoice               Invoice object.
      * @param tender                Tender object.
      * @param requestId             Request Id.
-     * @paypal.sample This example shows how to create and perform a authorization transaction.
+     *  This example shows how to create and perform a authorization transaction.
      * <p/>
      * ..........
      * ..........
@@ -393,7 +393,7 @@ public class AuthorizationTransaction extends BaseTransaction {
      * @param invoice   Invoice object.
      * @param tender    Tender object
      * @param requestId String Request Id
-     * @paypal.sample This example shows how to create and perform
+     *  This example shows how to create and perform
      * a authorization transaction.
      * <p/>
      * ..........

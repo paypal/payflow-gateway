@@ -18,7 +18,7 @@ public final class BankAcct extends PaymentDevice {
      *             in which the user provides his bank account details for
      *             the online payment processing.
      *             <p/>
-     * @paypal.sample //Create the BankAcct object
+     *  //Create the BankAcct object
      * BankAcct account = new BankAcct("XXXXXXXXXXX","XXXXXXXXXXX");
      * </p>
      */
@@ -40,7 +40,7 @@ public final class BankAcct extends PaymentDevice {
      *
      * @return String
      *         <p/>
-     * @paypal.sample Maps to Payflow Parameters as follows: ABA
+     *  Maps to Payflow Parameters as follows: ABA
      * </p>
      */
     public String getAba() {
@@ -69,7 +69,7 @@ public final class BankAcct extends PaymentDevice {
      *         {@paypal.endlisttable}
      *         </p>
      *         <p/>
-     * @paypal.sample Maps to Payflow Parameters as follows: ACCTTYPE
+     *  Maps to Payflow Parameters as follows: ACCTTYPE
      * </p>
      */
     public String getAcctType() {
@@ -97,7 +97,7 @@ public final class BankAcct extends PaymentDevice {
      *                 {@paypal.endlisttable}
      *                 </p>
      *                 <p/>
-     * @paypal.sample Maps to Payflow Parameters as follows: ACCTTYPE
+     *  Maps to Payflow Parameters as follows: ACCTTYPE
      * </p>
      */
     public void setAcctType(String acctType) {

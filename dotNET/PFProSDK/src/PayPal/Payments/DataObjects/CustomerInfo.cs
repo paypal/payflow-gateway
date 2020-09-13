@@ -76,40 +76,10 @@ namespace PayPal.Payments.DataObjects
         /// </summary>
         private String mCustId;
 
-        // <summary>
-        // Holds corporate name
-        // </summary>
-        // Removed 04/07/07 
-        // private String mCorpName;
-
         /// <summary>
         /// Holds ReqName
         /// </summary>
         private String mReqName;
-        /// <summary>
-        /// Holds MerchantName
-        /// </summary>
-        private String mMerchantName;
-        /// <summary>
-        /// Holds MerchantStreet
-        /// </summary>
-        private String mMerchantStreet;
-        /// <summary>
-        /// Holds MerchantCity
-        /// </summary>
-        private String mMerchantCity;
-        /// <summary>
-        /// Holds MerchantState
-        /// </summary>
-        private String mMerchantState;
-        /// <summary>
-        /// Holds MerchantCountryCode
-        /// </summary>
-        private String mMerchantCountryCode;
-        /// <summary>
-        /// Holds MerchantZip
-        /// </summary>
-        private String mMerchantZip;
 
         #endregion
 
@@ -266,104 +236,6 @@ namespace PayPal.Payments.DataObjects
             set { mCustId = value; }
         }
 
-        /// <summary>
-        /// Gets, Sets  MerchantName.
-        /// </summary>
-        /// <remarks>
-        /// <para>Name of Merchant</para>
-        /// <para>Maps to Payflow Parameter:</para>
-        /// <code>MERCHANTNAME</code>
-        /// </remarks>
-        public String MerchantName
-        {
-            get { return mMerchantName; }
-            set { mMerchantName = value; }
-        }
-        /// <summary>
-        /// Gets, Sets  MerchantStreet.
-        /// </summary>
-        /// <remarks>
-        /// <para>Merchant's Stree Address (Number and Street Name)</para>
-        /// <para>Maps to Payflow Parameter:</para>
-        /// <code>MERCHANTSTREET</code>
-        /// </remarks>
-        public String MerchantStreet
-        {
-            get { return mMerchantStreet; }
-            set { mMerchantStreet = value; }
-        }
-        /// <summary>
-        /// Gets, Sets  MerchantCity.
-        /// </summary>
-        /// <remarks>
-        /// <para>Merchant's City</para>
-        /// <para>Maps to Payflow Parameter:</para>
-        /// <code>MERCHANTCITY</code>
-        /// </remarks>
-        public String MerchantCity
-        {
-            get { return mMerchantCity; }
-            set { mMerchantCity = value; }
-        }
-        /// <summary>
-        /// Gets, Sets  MerchantState.
-        /// </summary>
-        /// <remarks>
-        /// <para>Merchant's State</para>
-        /// <para>Maps to Payflow Parameter:</para>
-        /// <code>MERCHANTSTATE</code>
-        /// </remarks>
-        public String MerchantState
-        {
-            get { return mMerchantState; }
-            set { mMerchantState = value; }
-        }
-        /// <summary>
-        /// Gets, Sets  MerchantCountryCode.
-        /// </summary>
-        /// <remarks>
-        /// <para>Merchant's Numeric Country Code.  Example: USA = 840</para>
-        /// <para>Maps to Payflow Parameter:</para>
-        /// <code>MERCHANTCOUNTRYCODE</code>
-        /// </remarks>
-        public String MerchantCountryCode
-        {
-            get { return mMerchantCountryCode; }
-            set { mMerchantCountryCode = value; }
-        }
-        /// <summary>
-        /// Gets, Sets  MerchantZip.
-        /// </summary>
-        /// <remarks>
-        /// <para>Merchant's 5- to 9-digit ZIP (postal) code excluding
-        /// spaces, dashes, and non-numeric characters.</para>
-        /// <para>Maps to Payflow Parameter:</para>
-        /// <code>MERCHANTZIP</code>
-        /// </remarks>
-        public String MerchantZip
-        {
-            get { return mMerchantZip; }
-            set { mMerchantZip = value; }
-        }
-
-        // <summary>
-        // Gets, Sets  CorpName.
-        // </summary>
-        // <remarks>
-        // <para>Corporation name.</para>
-        // <para>Maps to Payflow Parameter:</para>
-        // <code>CORPNAME</code>
-        // </remarks>
-        //public String CorpName
-        //{
-        //	get { return mCorpName; }
-        //	set { mCorpName = value; }
-        //}
-
-        // 04/07/07 - Moved Company Name to BillTo class.
-
-        // 04/07/07 - Moved MerchDescr and MerchSvc to Invoice class.
-
         #endregion
 
         #region "Core functions"
@@ -383,17 +255,6 @@ namespace PayPal.Payments.DataObjects
                 RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_CUSTID, mCustId));
                 RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_CUSTHOSTNAME, mCustHostName));
                 RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_CUSTBROWSER, mCustBrowser));
-                RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTNAME, mMerchantName));
-                RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTSTREET, mMerchantStreet));
-                RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTCITY, mMerchantCity));
-                RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTSTATE, mMerchantState));
-                RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTZIP, mMerchantZip));
-                RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTCOUNTRYCODE, mMerchantCountryCode));
-
-                // 04/07/07 Moved CompanyName to BillTo class.
-                // Removed 04/07/07
-                // RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_CORPNAME, mCorpName));
-
             }
             catch (BaseException)
             {

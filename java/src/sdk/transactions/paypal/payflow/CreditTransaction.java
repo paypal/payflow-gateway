@@ -8,7 +8,7 @@ package paypal.payflow;
  * reference credit transaction takes the PNRef of a previous transaction.
  * </p>
  *
- * @paypal.sample ...............<br>
+ *  ...............<br>
  * // Populate data objects<br>
  * ...............<br>
  * <br>
@@ -55,7 +55,7 @@ public final class CreditTransaction extends BaseTransaction {
      * gets the OrigPPRef
      *
      * @return origPPRef
-     * @paypal.sample <p> maps to PayflowParameter ORIGPPREF</p>
+     *  <p> maps to PayflowParameter ORIGPPREF</p>
      */
     public String getOrigPPRef() {
         return origPPRef;
@@ -65,7 +65,7 @@ public final class CreditTransaction extends BaseTransaction {
      * sets the OrigPPRef
      *
      * @param origPPRef String
-     * @paypal.sample <p> maps to PayflowParameter ORIGPPREF</p>
+     *  <p> maps to PayflowParameter ORIGPPREF</p>
      */
     public void setOrigPPRef(String origPPRef) {
         this.origPPRef = origPPRef;
@@ -83,7 +83,7 @@ public final class CreditTransaction extends BaseTransaction {
      *                              transactions in order to credit the amount. Therefore, a
      *                              reference credit transaction takes the PNRef of a previous
      *                              // transaction.</p>
-     * @paypal.sample ...............<br>
+     *  ...............<br>
      * // Populate data objects<br>
      * ...............<br>
      * <br>
@@ -137,7 +137,7 @@ public final class CreditTransaction extends BaseTransaction {
      *                  transactions in order to credit the amount. Therefore, a
      *                  reference credit transaction takes the PNRef of a previous transaction.
      *                  </p>
-     * @paypal.sample ...............<br>
+     *  ...............<br>
      * // Populate data objects<br>
      * ...............<br>
      * <br>
@@ -191,7 +191,7 @@ public final class CreditTransaction extends BaseTransaction {
      *                              transactions in order to credit the amount. Therefore, a
      *                              reference credit transaction takes the PNRef of a previous transaction.
      *                              </p>
-     * @paypal.sample ...............<br>
+     *  ...............<br>
      * // Populate data objects<br>
      * ...............<br>
      * <br>
@@ -248,7 +248,7 @@ public final class CreditTransaction extends BaseTransaction {
      *                  transactions in order to credit the amount. Therefore, a
      *                  reference credit transaction takes the PNRef of a previous transaction.
      *                  </p>
-     * @paypal.sample ...............<br>
+     *  ...............<br>
      * // Populate data objects<br>
      * ...............<br>
      * <br>
@@ -304,7 +304,7 @@ public final class CreditTransaction extends BaseTransaction {
      *                              reference credit transaction takes the PNRef of a previous
      *                              // transaction.
      *                              </p>
-     * @paypal.sample ...............<br>
+     *  ...............<br>
      * // Populate data objects<br>
      * ...............<br>
      * <br>
@@ -358,7 +358,7 @@ public final class CreditTransaction extends BaseTransaction {
      *                  transactions in order to credit the amount. Therefore, a
      *                  reference credit transaction takes the PNRef of a previous transaction.
      *                  </p>
-     * @paypal.sample ...............<br>
+     *  ...............<br>
      * // Populate data objects<br>
      * ...............<br>
      * <br>
@@ -406,7 +406,7 @@ public final class CreditTransaction extends BaseTransaction {
      * @param requestId             Request Id.
      *                              <p>This class is used for a stand alone credit transaction.
      *                              </p>
-     * @paypal.sample ...............<br>
+     *  ...............<br>
      * // Populate data objects<br>
      * ...............<br>
      * <br>

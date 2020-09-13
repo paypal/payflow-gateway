@@ -189,8 +189,7 @@ public final class PayflowConnectionData extends BaseRequestDataObject {
     }
 
     /**
-     * For any value not passed in the constructor the values being set in the properties will
-     * be used.
+     * For any value not passed in the constructor the values being set in the properties will be used.
      */
     private void initSDKProperties() {
         Logger.getInstance().log("paypal.payflow.PayflowConnectionData.initSDKProperties(): Entered", PayflowConstants.SEVERITY_DEBUG);

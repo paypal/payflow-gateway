@@ -16,7 +16,7 @@ public class PayPalTender extends BaseTender {
      * with CreditCard as the payment device
      *
      * @param creditCard CreditCard
-     * @paypal.sample Maps to Payflow Parameter: TENDER
+     *  Maps to Payflow Parameter: TENDER
      * <p/>
      * .............
      * //creditCard is the populated CreditCard object.
@@ -34,7 +34,7 @@ public class PayPalTender extends BaseTender {
      * with ExpressCheckoutRequest.This is used for a ExpressCheckout transaction.
      *
      * @param ecReq ExpressCheckoutRequest
-     * @paypal.sample Maps to Payflow Parameter: TENDER
+     *  Maps to Payflow Parameter: TENDER
      * <p/>
      * .............
      * //ecReq is the populated ExpressCheckoutRequest object.

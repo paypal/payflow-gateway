@@ -12,7 +12,7 @@ public class ECUpdateResponse extends ExpressCheckoutResponse {
      * Gets the BA_Desc parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: BA_DESC
+     *  <p>Maps to Payflow Parameter: BA_DESC
      */
     public String getba_Desc() {
         return ba_Desc;
@@ -22,7 +22,7 @@ public class ECUpdateResponse extends ExpressCheckoutResponse {
      * Sets the BA_Desc parameter.
      *
      * @param ba_Desc - String
-     * @paypal.sample <p>Maps to Payflow Parameter: BA_DESC
+     *  <p>Maps to Payflow Parameter: BA_DESC
      */
 
     public void setba_Desc(String ba_Desc) {
@@ -33,7 +33,7 @@ public class ECUpdateResponse extends ExpressCheckoutResponse {
      * Gets the BA_Status parameter.
      *
      * @return - String
-     * @paypal.sample <p>Maps to Payflow Parameter: BA_STATUS
+     *  <p>Maps to Payflow Parameter: BA_STATUS
      */
     public String getba_Status() {
         return ba_Status;
@@ -43,7 +43,7 @@ public class ECUpdateResponse extends ExpressCheckoutResponse {
      * Sets the BA_Status parameter.
      *
      * @param BA_Status - String
-     * @paypal.sample <p>Maps to Payflow Parameter: BA_STATUS
+     *  <p>Maps to Payflow Parameter: BA_STATUS
      */
 
     public void setba_Status(String BA_Status) {

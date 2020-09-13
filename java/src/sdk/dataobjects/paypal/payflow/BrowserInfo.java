@@ -21,7 +21,7 @@ public final class BrowserInfo extends BaseRequestDataObject {
      * <p>Use the BrowserInfo object for the user
      * browser related information.</p>
      *
-     * @paypal.sample <p>Following example shows how to use a
+     *  <p>Following example shows how to use a
      * Browser Info object.</p>
      * .................
      * // inv is the Invoice object
@@ -56,7 +56,7 @@ public final class BrowserInfo extends BaseRequestDataObject {
      * Gets the browser's country code.
      *
      * @return browserCountryCode String
-     * @paypal.sample <p>Maps to Payflow Parameter: BROWSERCOUNTRYCODE</p>
+     *  <p>Maps to Payflow Parameter: BROWSERCOUNTRYCODE</p>
      */
     public String getBrowserCountryCode() {
         return browserCountryCode;
@@ -66,7 +66,7 @@ public final class BrowserInfo extends BaseRequestDataObject {
      * Sets the browser's country code.
      *
      * @param browserCountryCode String
-     * @paypal.sample <p>Maps to Payflow Parameter: BROWSERCOUNTRYCODE</p>
+     *  <p>Maps to Payflow Parameter: BROWSERCOUNTRYCODE</p>
      */
     public void setBrowserCountryCode(String browserCountryCode) {
         this.browserCountryCode = browserCountryCode;
@@ -77,7 +77,7 @@ public final class BrowserInfo extends BaseRequestDataObject {
      * <p>Browser's local time.</P>
      *
      * @return browserTime String
-     * @paypal.sample <p>Maps to Payflow Parameter: BROWSERTIME</p>
+     *  <p>Maps to Payflow Parameter: BROWSERTIME</p>
      */
     public String getBrowserTime() {
         return browserTime;
@@ -88,7 +88,7 @@ public final class BrowserInfo extends BaseRequestDataObject {
      * <p>Browser's local time.</P>
      *
      * @param browserTime String
-     * @paypal.sample <p>Maps to Payflow Parameter: BROWSERTIME</p>
+     *  <p>Maps to Payflow Parameter: BROWSERTIME</p>
      */
     public void setBrowserTime(String browserTime) {
         this.browserTime = browserTime;
@@ -98,7 +98,7 @@ public final class BrowserInfo extends BaseRequestDataObject {
      * Gets the browser user agent.
      *
      * @return browserUserAgent String
-     * @paypal.sample <p>Maps to Payflow Parameter: BROWSERUSERAGENT</p>
+     *  <p>Maps to Payflow Parameter: BROWSERUSERAGENT</p>
      */
     public String getBrowserUserAgent() {
         return browserUserAgent;
@@ -108,7 +108,7 @@ public final class BrowserInfo extends BaseRequestDataObject {
      * Sets the browser user agent.
      *
      * @param browserUserAgent String
-     * @paypal.sample <p>Maps to Payflow Parameter: BROWSERUSERAGENT</p>
+     *  <p>Maps to Payflow Parameter: BROWSERUSERAGENT</p>
      */
     public void setBrowserUserAgent(String browserUserAgent) {
         this.browserUserAgent = browserUserAgent;

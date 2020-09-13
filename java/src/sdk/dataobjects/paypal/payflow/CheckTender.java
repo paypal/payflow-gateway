@@ -11,7 +11,7 @@ public final class CheckTender extends BaseTender {
      * with CheckPayment as the payment device
      *
      * @param check CheckTender
-     * @paypal.sample Maps to Payflow Parameter: TENDER
+     *  Maps to Payflow Parameter: TENDER
      * <p/>
      * .............
      * //check is the populated CheckPaymentobject.

@@ -351,7 +351,7 @@ namespace PayPal.Payments.Communication
 		///		// CurrentPaymentState is the
 		///		// PaymentState object.
 		///		
-		///		If(CurrnetPaymentState.IsXmlPayRequest)
+		///		If(CurrentPaymentState.IsXmlPayRequest)
 		///		{
 		///			Console.WriteLine("Request Type = XML Pay request")
 		///		}
@@ -436,7 +436,7 @@ namespace PayPal.Payments.Communication
 		///		// CurrentPaymentState is the
 		///		// PaymentState object.
 		///		
-		///		if(CurrnetPaymentState.HaveRequestId)
+		///		if(CurrentPaymentState.HaveRequestId)
 		///		{
 		///			Console.WriteLine("RequestId obtained.");
 		///		}
@@ -450,7 +450,7 @@ namespace PayPal.Payments.Communication
 		///		// CurrentPaymentState is the
 		///		// PaymentState object.
 		///		
-		///		If(CurrnetPaymentState.HaveRequestId)
+		///		If(CurrentPaymentState.HaveRequestId)
 		///		{
 		///			Console.WriteLine("RequestId obtained.")
 		///		}
@@ -529,7 +529,7 @@ namespace PayPal.Payments.Communication
 		///		// CurrentPaymentState is the
 		///		// PaymentState object.
 		///		
-		///		if(CurrnetPaymentState.InProgress)
+		///		if(CurrentPaymentState.InProgress)
 		///		{
 		///			Console.WriteLine("Transaction in progress.");
 		///		}
@@ -543,7 +543,7 @@ namespace PayPal.Payments.Communication
 		///		// CurrentPaymentState is the
 		///		// PaymentState object.
 		///		
-		///		If(CurrnetPaymentState.InProgress)
+		///		If(CurrentPaymentState.InProgress)
 		///		{
 		///			Console.WriteLine("Transaction in progress.")
 		///		}
@@ -570,7 +570,7 @@ namespace PayPal.Payments.Communication
 		///		// CurrentPaymentState is the
 		///		// PaymentState object.
 		///		
-		///		if(CurrnetPaymentState.Success)
+		///		if(CurrentPaymentState.Success)
 		///		{
 		///			Console.WriteLine("Current state succeeds.");
 		///		}
@@ -584,7 +584,7 @@ namespace PayPal.Payments.Communication
 		///		// CurrentPaymentState is the
 		///		// PaymentState object.
 		///		
-		///		If(CurrnetPaymentState.Success)
+		///		If(CurrentPaymentState.Success)
 		///		{
 		///			Console.WriteLine("Current state succeeds.")
 		///		}
@@ -611,7 +611,7 @@ namespace PayPal.Payments.Communication
 		///		// CurrentPaymentState is the
 		///		// PaymentState object.
 		///		
-		///		if(CurrnetPaymentState.Failed)
+		///		if(CurrentPaymentState.Failed)
 		///		{
 		///			Console.WriteLine("Current state fails.");
 		///		}
@@ -625,7 +625,7 @@ namespace PayPal.Payments.Communication
 		///		// CurrentPaymentState is the
 		///		// PaymentState object.
 		///		
-		///		If(CurrnetPaymentState.Failed)
+		///		If(CurrentPaymentState.Failed)
 		///		{
 		///			Console.WriteLine("Current state fails.")
 		///		}
@@ -652,7 +652,7 @@ namespace PayPal.Payments.Communication
 		///		// CurrentPaymentState is the
 		///		// PaymentState object.
 		///		
-		///		if(CurrnetPaymentState.HasExecuted)
+		///		if(CurrentPaymentState.HasExecuted)
 		///		{
 		///			Console.WriteLine("Current State has finished execution.");
 		///		}
@@ -666,7 +666,7 @@ namespace PayPal.Payments.Communication
 		///		// CurrentPaymentState is the
 		///		// PaymentState object.
 		///		
-		///		If(CurrnetPaymentState.HasExecuted)
+		///		If(CurrentPaymentState.HasExecuted)
 		///		{
 		///			Console.WriteLine("Current State has finished execution.")
 		///		}

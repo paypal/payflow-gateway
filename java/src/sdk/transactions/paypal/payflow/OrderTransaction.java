@@ -7,7 +7,7 @@ package paypal.payflow;
  * the specified total over a maximum of 29 days.
  * <p/>
  *
- * @paypal.sample This example shows how to create and perform a order transaction as part of Express Checkout.
+ *  This example shows how to create and perform a order transaction as part of Express Checkout.
  * <p/>
  * ..........
  * ..........
@@ -61,7 +61,7 @@ public class OrderTransaction extends AuthorizationTransaction {
      * @param invoice               Invoice object.
      * @param tender                Tender object
      * @param requestId             String Request Id
-     * @paypal.sample This example shows how to create and perform
+     *  This example shows how to create and perform
      * a authorization transaction.
      * <p/>
      * ..........
@@ -121,7 +121,7 @@ public class OrderTransaction extends AuthorizationTransaction {
      * @param invoice   Invoice object.
      * @param tender    Tender object
      * @param requestId String Request Id
-     * @paypal.sample This example shows how to create and perform
+     *  This example shows how to create and perform
      * a authorization transaction.
      * <p/>
      * ..........

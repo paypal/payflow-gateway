@@ -5,7 +5,7 @@ package paypal.payflow;
  * <p>Billing address is Cardholder's address information.</p>
  * <p>Following example shows how to use BillTo.</p>
  *
- * @paypal.sample .................
+ *  .................
  * // inv is the Invoice object.
  * .................
  * <p/>
@@ -35,7 +35,7 @@ public final class BillTo extends Address {
      * (used for AVS and reporting).</P>
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOSTREET</p>
+     *  <p>Maps to Payflow Parameter: BILLTOSTREET</p>
      */
     public String getBillToStreet() {
         return super.getAddressStreet();
@@ -47,7 +47,7 @@ public final class BillTo extends Address {
      * (used for AVS and reporting).</P>
      *
      * @param billToStreet String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOSTREET</p>
+     *  <p>Maps to Payflow Parameter: BILLTOSTREET</p>
      */
     public void setBillToStreet(String billToStreet) {
         super.setAddressStreet(billToStreet);
@@ -58,7 +58,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's billing 2nd line street address.</P>
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOSTREET2</p>
+     *  <p>Maps to Payflow Parameter: BILLTOSTREET2</p>
      */
     public String getBillToStreet2() {
         return super.getAddressStreet2();
@@ -69,7 +69,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's billing 2nd line street address.</P>
      *
      * @param billToStreet2 String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOSTREET2</p>
+     *  <p>Maps to Payflow Parameter: BILLTOSTREET2</p>
      */
     public void setBillToStreet2(String billToStreet2) {
         super.setAddressStreet2(billToStreet2);
@@ -80,7 +80,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's billing city.</P>
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOCITY</p>
+     *  <p>Maps to Payflow Parameter: BILLTOCITY</p>
      */
     public String getBillToCity() {
         return super.getAddressCity();
@@ -91,7 +91,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's billing city.</P>
      *
      * @param billToCity String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOCITY</p>
+     *  <p>Maps to Payflow Parameter: BILLTOCITY</p>
      */
     public void setBillToCity(String billToCity) {
         super.setAddressCity(billToCity);
@@ -102,7 +102,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's billing state code.</P>
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOSTATE</p>
+     *  <p>Maps to Payflow Parameter: BILLTOSTATE</p>
      */
     public String getBillToState() {
         return super.getAddressState();
@@ -113,7 +113,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's billing state code./P>
      *
      * @param billToState String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOSTATE</p>
+     *  <p>Maps to Payflow Parameter: BILLTOSTATE</p>
      */
     public void setBillToState(String billToState) {
         super.setAddressState(billToState);
@@ -129,7 +129,7 @@ public final class BillTo extends Address {
      * AVS service.</P>
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOZIP</p>
+     *  <p>Maps to Payflow Parameter: BILLTOZIP</p>
      */
     public String getBillToZip() {
         return super.getAddressZip();
@@ -145,7 +145,7 @@ public final class BillTo extends Address {
      * AVS service.</P>
      *
      * @param billToZip String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOZIP</p>
+     *  <p>Maps to Payflow Parameter: BILLTOZIP</p>
      */
     public void setBillToZip(String billToZip) {
         super.setAddressZip(billToZip);
@@ -156,7 +156,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's first name.</P>
      *
      * @return firstName String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOFIRSTNAME</p>
+     *  <p>Maps to Payflow Parameter: BILLTOFIRSTNAME</p>
      */
     public String getBillToFirstName() {
         return super.getAddressFirstName();
@@ -167,7 +167,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's first name.</P>
      *
      * @param billToFirstName String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOFIRSTNAME</p>
+     *  <p>Maps to Payflow Parameter: BILLTOFIRSTNAME</p>
      */
     public void setBillToFirstName(String billToFirstName) {
         super.setAddressFirstName(billToFirstName);
@@ -178,7 +178,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's middle name.</P>
      *
      * @return billToMiddleName String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOMIDDLENAME</p>
+     *  <p>Maps to Payflow Parameter: BILLTOMIDDLENAME</p>
      */
     public String getBillToMiddleName() {
         return super.getAddressMiddleName();
@@ -189,7 +189,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's middle name.</P>
      *
      * @param billToMiddleName String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOMIDDLENAME</p>
+     *  <p>Maps to Payflow Parameter: BILLTOMIDDLENAME</p>
      */
     public void setBillToMiddleName(String billToMiddleName) {
         super.setAddressMiddleName(billToMiddleName);
@@ -200,7 +200,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's last name.</P>
      *
      * @return BillToLastName String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOLASTNAME</p>
+     *  <p>Maps to Payflow Parameter: BILLTOLASTNAME</p>
      */
     public String getBillToLastName() {
         return super.getAddressLastName();
@@ -211,7 +211,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's last name.</P>
      *
      * @param billToLastName String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOLASTNAME</p>
+     *  <p>Maps to Payflow Parameter: BILLTOLASTNAME</p>
      */
     public void setBillToLastName(String billToLastName) {
         super.setAddressLastName(billToLastName);
@@ -222,7 +222,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's telephone number.</P>
      *
      * @return billToPhone String
-     * @paypal.sample <p>Maps to Payflow Parameter: PHONENUM</p>
+     *  <p>Maps to Payflow Parameter: PHONENUM</p>
      */
     public String getBillToPhone() {
         return super.getAddressPhone();
@@ -233,7 +233,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's telephone number.</P>
      *
      * @param billToPhone String
-     * @paypal.sample <p>Maps to Payflow Parameter: PHONENUM</p>
+     *  <p>Maps to Payflow Parameter: PHONENUM</p>
      */
     public void setBillToPhone(String billToPhone) {
         super.setAddressPhone(billToPhone);
@@ -244,7 +244,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's 2nd telephone number.</P>
      *
      * @return billToPhone2 String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOPHONE2</p>
+     *  <p>Maps to Payflow Parameter: BILLTOPHONE2</p>
      */
     public String getBillToPhone2() {
         return super.getAddressPhone2();
@@ -255,7 +255,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's 2nd telephone number./P>
      *
      * @param billToPhone2 String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOPHONE2</p>
+     *  <p>Maps to Payflow Parameter: BILLTOPHONE2</p>
      */
     public void setBillToPhone2(String billToPhone2) {
         super.setAddressPhone2(billToPhone2);
@@ -266,7 +266,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's fax address.</P>
      *
      * @return fax String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOFAX</p>
+     *  <p>Maps to Payflow Parameter: BILLTOFAX</p>
      */
     public String getBillToFax() {
         return super.getAddressFax();
@@ -277,7 +277,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's fax address.</P>
      *
      * @param billToFax String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOFAX</p>
+     *  <p>Maps to Payflow Parameter: BILLTOFAX</p>
      */
     public void setBillToFax(String billToFax) {
         super.setAddressFax(billToFax);
@@ -288,7 +288,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's e-mail address</P>
      *
      * @return email String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOEMAIL</p>
+     *  <p>Maps to Payflow Parameter: BILLTOEMAIL</p>
      */
     public String getBillToEmail() {
         return super.getAddressEmail();
@@ -299,7 +299,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's e-mail address</P>
      *
      * @param billToEmail String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOEMAIL</p>
+     *  <p>Maps to Payflow Parameter: BILLTOEMAIL</p>
      */
     public void setBillToEmail(String billToEmail) {
         super.setAddressEmail(billToEmail);
@@ -310,7 +310,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's billing country code</P>
      *
      * @return billToCountry String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOCOUNTRY</p>
+     *  <p>Maps to Payflow Parameter: BILLTOCOUNTRY</p>
      */
     public String getBillToCountry() {
         return super.getAddressCountry();
@@ -321,7 +321,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's billing country code</P>
      *
      * @param billToCountry String
-     * @paypal.sample <p>Maps to Payflow Parameter: BILLTOCOUNTRY</p>
+     *  <p>Maps to Payflow Parameter: BILLTOCOUNTRY</p>
      */
     public void setBillToCountry(String billToCountry) {
         super.setAddressCountry(billToCountry);
@@ -332,7 +332,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's home telephone number.</P>
      *
      * @return homePhone String
-     * @paypal.sample <p>Maps to Payflow Parameter: HOMEPHONE</p>
+     *  <p>Maps to Payflow Parameter: HOMEPHONE</p>
      */
     public String getBillToHomePhone() {
         return billToHomePhone;
@@ -343,7 +343,7 @@ public final class BillTo extends Address {
      * <p>Cardholder's home telephone number.</P>
      *
      * @param billToHomePhone String
-     * @paypal.sample <p>Maps to Payflow Parameter: HOMEPHONE</p>
+     *  <p>Maps to Payflow Parameter: HOMEPHONE</p>
      */
     public void setBillToHomePhone(String billToHomePhone) {
         this.billToHomePhone = billToHomePhone;
@@ -353,7 +353,7 @@ public final class BillTo extends Address {
      * Gets the Company Name.
      *
      * @return String
-     * @paypal.sample <p>Maps to Payflow Parameter: COMPANYNAME</p>
+     *  <p>Maps to Payflow Parameter: COMPANYNAME</p>
      */
 
     public String getBillToCompanyName() {
@@ -364,7 +364,7 @@ public final class BillTo extends Address {
      * Sets the Company Name.
      *
      * @param billToCompanyName String
-     * @paypal.sample <p>Maps to Payflow Parameter: COMPANYNAME</p>
+     *  <p>Maps to Payflow Parameter: COMPANYNAME</p>
      */
     public void setBillToCompanyName(String billToCompanyName) {
         this.billToCompanyName = billToCompanyName;
@@ -380,7 +380,7 @@ public final class BillTo extends Address {
      * both are the same.</p>
      *
      * @return shipTo ShipTo
-     * @paypal.sample ................
+     *  ................
      * //bill is the object of
      * //billTo populated with
      * //the billing addresses.

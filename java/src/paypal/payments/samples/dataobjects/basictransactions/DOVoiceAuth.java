@@ -58,7 +58,8 @@ public class DOVoiceAuth {
 		CardTender card = new CardTender(cc);
 		///////////////////////////////////////////////////////////////////
 
-		// Create a new Voice Auth Transaction.
+		// Create a new Voice Authorization Transaction.
+		// Some processors also require an authorization date to be sent.
 		VoiceAuthTransaction trans = new VoiceAuthTransaction("123PNI", user, connection, inv, card,
 				PayflowUtility.getRequestId());
 

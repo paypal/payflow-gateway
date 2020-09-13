@@ -14,7 +14,7 @@ package paypal.payflow;
  * For more information, please refer to the Payflow Developers' Guide.
  * </p>
  *
- * @paypal.sample This example shows how to create and perform a Verify Enrollment transaction.
+ *  This example shows how to create and perform a Verify Enrollment transaction.
  * <p/>
  * ..........
  * ..........

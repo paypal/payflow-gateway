@@ -16,7 +16,7 @@ public class ReferenceTransaction extends BaseTransaction {
      * gets the OrigPPRef
      *
      * @return origPPRef
-     * @paypal.sample <p> maps to PayflowParameter ORIGPPREF</p>
+     *  <p> maps to PayflowParameter ORIGPPREF</p>
      */
     public String getOrigPPRef() {
         return origPPRef;
@@ -26,7 +26,7 @@ public class ReferenceTransaction extends BaseTransaction {
      * sets the OrigPPRef
      *
      * @param origPPRef String
-     * @paypal.sample <p> maps to PayflowParameter ORIGPPREF</p>
+     *  <p> maps to PayflowParameter ORIGPPREF</p>
      */
     public void setOrigPPRef(String origPPRef) {
         this.origPPRef = origPPRef;

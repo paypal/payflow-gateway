@@ -6,7 +6,7 @@ package paypal.payflow;
  * /// not mapped through the data objects.
  * /// This class can be used to send such extended parameter information
  * /// in the transaction request.</p>
- * /// @paypal.sample
+ * ///
  * /// Following example shows how to use this class.
  * ///		.............
  * ///		// trans is the transaction object.

@@ -65,7 +65,7 @@ public class BaseTender extends BaseRequestDataObject {
      * For TeleCheck - Account holder's next unused (available) check number.
      *
      * @return chkNum String
-     * @paypal.sample </p><p> Maps to Payflow Parameter: CHKNUM</p>
+     *  </p><p> Maps to Payflow Parameter: CHKNUM</p>
      */
     public String getChkNum() {
         return chkNum;
@@ -78,7 +78,7 @@ public class BaseTender extends BaseRequestDataObject {
      * For TeleCheck - Account holder's next unused (available) check number.</p>
      *
      * @param chkNum String
-     * @paypal.sample <p> Maps to Payflow Parameter: CHKNUM </p>
+     *  <p> Maps to Payflow Parameter: CHKNUM </p>
      */
     public void setChkNum(String chkNum) {
         this.chkNum = chkNum;
@@ -116,7 +116,7 @@ public class BaseTender extends BaseRequestDataObject {
      * {@paypal.endlisttable}
      *
      * @return chkNum String
-     * @paypal.sample </p><p> Maps to Payflow Parameter: CHKTYPE</p>
+     *  </p><p> Maps to Payflow Parameter: CHKTYPE</p>
      */
     public String getChkType() {
         return chkType;
@@ -143,7 +143,7 @@ public class BaseTender extends BaseRequestDataObject {
      *                {@paypal.eltr}
      *                {@paypal.endlisttable}
      *                </p>
-     * @paypal.sample </p><p> Maps to Payflow Parameter: CHKTYPE</p>
+     *  </p><p> Maps to Payflow Parameter: CHKTYPE</p>
      */
     public void setChkType(String chkType) {
         this.chkType = chkType;
@@ -153,7 +153,7 @@ public class BaseTender extends BaseRequestDataObject {
      * gets the drivers License Number.
      *
      * @return dL String
-     * @paypal.sample <p>Format: XXnnnnnnnn</p>
+     *  <p>Format: XXnnnnnnnn</p>
      * <p>XX = State Code, nnnnnnnn = DL Number</p>
      * <p>Maps to Payflow Parameter: DL </p>
      */
@@ -165,7 +165,7 @@ public class BaseTender extends BaseRequestDataObject {
      * Gets the Tender Type.
      *
      * @return tender
-     * @paypal.sample <p>
+     *  <p>
      * Maps to Payflow Parameter: TENDER</p>
      */
     public String getTender() {
@@ -176,7 +176,7 @@ public class BaseTender extends BaseRequestDataObject {
      * gets the drivers License Number.
      *
      * @param dL String
-     * @paypal.sample <p>Format: XXnnnnnnnn</p>
+     *  <p>Format: XXnnnnnnnn</p>
      * <p>XX = State Code, nnnnnnnn = DL Number</p>
      * <p>Maps to Payflow Parameter: DL </p>
      */
@@ -188,7 +188,7 @@ public class BaseTender extends BaseRequestDataObject {
      * returns the account holders social security number
      *
      * @return sS String
-     * @paypal.sample <p>Maps to Payflow Parameter: SS </p>
+     *  <p>Maps to Payflow Parameter: SS </p>
      */
     public String getSS() {
         return sS;

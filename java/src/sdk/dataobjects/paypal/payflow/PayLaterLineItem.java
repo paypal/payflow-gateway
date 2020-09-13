@@ -7,7 +7,7 @@ package paypal.payflow;
  * using additonal parameters, such as L_PROMOCODE1 and L_PROMOCODE2.</p>
  * <p>Following example shows how to use the Pay Later Promo Code.</p>
  *
- * @paypal.sample .................
+ *  .................
  * // setPayLaterLineItem is the PayLaterLineItem object.
  * .................
  * <p/>
@@ -33,7 +33,7 @@ public final class PayLaterLineItem extends BaseRequestDataObject {
      * Gets the Promo Code.
      *
      * @return promoCode
-     * @paypal.sample <p>Maps to Payflow Parameter: L_PROMOCODEn</p>
+     *  <p>Maps to Payflow Parameter: L_PROMOCODEn</p>
      */
     public String getpromoCode() {
         return promoCode;
@@ -45,7 +45,7 @@ public final class PayLaterLineItem extends BaseRequestDataObject {
      * A promotion code for PayPal Promotional Financing.
      *
      * @param promoCode String
-     * @paypal.sample <p>Maps to Payflow Parameter: L_PROMOCODEn</p>
+     *  <p>Maps to Payflow Parameter: L_PROMOCODEn</p>
      */
     public void setpromoCode(String promoCode) {
         this.promoCode = promoCode;
@@ -58,7 +58,7 @@ public final class PayLaterLineItem extends BaseRequestDataObject {
      * using additonal parameters, such as L_PROMOCODE1 and L_PROMOCODE2.</p>
      * <p>Following example shows how to use the Pay Later Promo Code.</p>
      *
-     * @paypal.sample .................
+     *  .................
      * // setPayLaterLineItem is the PayLaterLineItem object.
      * .................
      * <p/>

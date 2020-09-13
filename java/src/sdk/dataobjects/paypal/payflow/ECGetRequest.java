@@ -16,7 +16,7 @@ public class ECGetRequest extends ExpressCheckoutRequest {
      *              <p/>
      *              ECGetRequest is used to set the data required for a Express Checkout GET operation.
      *              </p>
-     * @paypal.sample .............
+     *  .............
      * <p/>
      * Create the ECGetRequest object
      * ECGetRequest getEC = new ECGetRequest("[tokenid]");

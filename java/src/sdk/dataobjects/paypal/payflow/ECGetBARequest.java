@@ -16,7 +16,7 @@ public class ECGetBARequest extends ECGetRequest {
      *              ECGetBARequest is used to set the data required for a Express Checkout GET operation
      *              with Billing Agreement (Reference Transaction) without Purchase.
      *              </p>
-     * @paypal.sample .............
+     *  .............
      * <p/>
      * Create the ECGetBARequest object
      * ECGetBARequest getEC = new ECGetBARequest("[tokenid]");

@@ -14,7 +14,7 @@ public final class CardTender extends BaseTender {
      * with CreditCard as the payment device
      *
      * @param card CreditCard
-     * @paypal.sample Maps to Payflow Parameter: TENDER
+     *  Maps to Payflow Parameter: TENDER
      * <p/>
      * .............
      * //card is the populated CreditCard object.
@@ -32,7 +32,7 @@ public final class CardTender extends BaseTender {
      * with PurchaseCard as the payment device
      *
      * @param purCard PurchaseCard
-     * @paypal.sample Maps to Payflow Parameter: TENDER
+     *  Maps to Payflow Parameter: TENDER
      * <p/>
      * .............
      * //purCard is the populated PurchaseCard object.
@@ -50,7 +50,7 @@ public final class CardTender extends BaseTender {
      * with SwipeCard as the payment device
      *
      * @param swpCard CardTender
-     * @paypal.sample Maps to Payflow Parameter: TENDER
+     *  Maps to Payflow Parameter: TENDER
      * <p/>
      * .............
      * //swpCard is the populated SwipeCard object.

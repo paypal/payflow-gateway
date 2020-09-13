@@ -37,6 +37,11 @@ abstract class PaymentDevice extends BaseRequestDataObject {
      */
     private String name;
 
+    /**
+     * MagTek Information.
+     */
+    private String magtek;
+
     protected PaymentDevice() {
     }
 
@@ -95,7 +100,7 @@ abstract class PaymentDevice extends BaseRequestDataObject {
      *
      * @return String
      *         <p/>
-     * @paypal.sample Maps to Payflow Parameters as follows: NAME
+     * Maps to Payflow Parameters as follows: NAME
      * </p>
      */
 
@@ -107,12 +112,28 @@ abstract class PaymentDevice extends BaseRequestDataObject {
      * gets the account holder's name.
      *
      * @param name <p/>
-     * @paypal.sample Maps to Payflow Parameters as follows: NAME
+     * Maps to Payflow Parameters as follows: NAME
      * </p>
      */
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getMagTek(MagTekInfo mT) {
+        return magtek;
+    }
+
+    /**
+     * gets the MagTek Encrypted Swipe Data.
+     *
+     * @param magtek <p/>
+     *
+     */
+    public void setMagtek(String magtek) {
+        this.magtek = magtek;
+    }
+
+
 
     /**
      * Generates the transaction request.
