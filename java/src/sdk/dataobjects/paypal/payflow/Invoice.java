@@ -85,6 +85,10 @@ public class Invoice extends BaseRequestDataObject {
     private String echoData;
     private String orderId;
     private String custIp;
+    private String vatInvNum;
+    private String vatTaxRate;
+    private String reportGroup;
+
 
     /**
      * Constructor.This is a default constructor which does not take any parameters.
@@ -226,12 +230,15 @@ public class Invoice extends BaseRequestDataObject {
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_ITEMAMT, itemAmt));
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_ORDERDESC, orderDesc));
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_CUSTIP, custIp));
-            // 05/06/07 Added recurringType tsieber
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_RECURRINGTYPE, recurringType));
-            // 03/27/2015 Added Transaction Id for Braintree
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_TRANSACTIONID, transactionId));
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_ECHODATA, echoData));
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_ORDERID, orderId));
+            super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_VATINVNUM, vatInvNum));
+            super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_VATTAXRATE, vatTaxRate));
+            super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_REPORTGROUP, reportGroup));
+
+
             if (billTo != null) {
                 billTo.setRequestBuffer(getRequestBuffer());
                 billTo.generateRequest();
@@ -1504,6 +1511,65 @@ public class Invoice extends BaseRequestDataObject {
      */
     public String getCustIp() {
         return custIp;
+    }
+
+    /**
+     * Sets the VAT Invoice Number.
+     *
+     * @param vatInvNum String
+     *  <p>Maps to Payflow Parameter: VATINVNUM</p>
+     */
+    public void setVatInvNum(String vatInvNum) {
+        this.vatInvNum = vatInvNum;
+    }
+
+    /**
+     * Gets the VAT Invoice Number.
+     *
+     * @return vatInvNum String
+     *  <p>Maps to Payflow Parameter: VATINVNUM</p>
+     */
+    public String getVatInvNum() {
+        return vatInvNum;
+    }
+
+    /**
+     * Sets the VAT Tax Rate.
+     *
+     * @param vatTaxRate String
+     *  <p>Maps to Payflow Parameter: VATTAXRATE</p>
+     */
+    public void setVatTaxRate(String vatTaxRate) {
+        this.vatTaxRate = vatTaxRate;
+    }
+
+    /**
+     * Gets the VAT Tax Rate.
+     *
+     * @return vatTaxRate String
+     *  <p>Maps to Payflow Parameter: VATTAXRATE</p>
+     */
+    public String getVatTaxRate() {
+        return vatTaxRate;
+    }
+
+    /**
+     * Sets the Report Group.
+     * Category that the transaction is in, for example: coffee mugs.
+     * @param reportGroup String
+     *  <p>Maps to Payflow Parameter: REPORTGROUP</p>
+     */
+    public void setReportGroup(String reportGroup) {
+        this.reportGroup = reportGroup;
+    }
+    /**
+     * Gets the Report Group.
+     *
+     * @return reportGroup String
+     *  <p>Maps to Payflow Parameter: REPORTGROUP</p>
+     */
+    public String getReportGroup() {
+        return reportGroup;
     }
 }
 

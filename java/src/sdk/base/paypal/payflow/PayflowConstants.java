@@ -1426,7 +1426,26 @@ public final class PayflowConstants {
      * Payflow Param CARDONFILE
      */
     protected static final String PARAM_CARDONFILE = "CARDONFILE";
-
+    /**
+     * Payflow Param L_ALTTAXAMT
+     */
+    protected static final String PARAM_L_ALTTAXAMT= "L_ALTTAXAMT";
+    /**
+     * Payflow Param L_ALTTAXID
+     */
+    protected static final String PARAM_L_ALTTAXID= "L_ALTTAXID";
+    /**
+     * Payflow Param L_ALTTAXRATE
+     */
+    protected static final String PARAM_L_ALTTAXRATE= "L_ALTTAXRATE";
+    /**
+     * Payflow Param L_CARRIERSERVICESLEVELCODE
+     */
+    protected static final String PARAM_L_CARRIERSERVICESLEVELCODE= "L_CARRIERSERVICESLEVELCODE";
+    /**
+     * Payflow Param L_EXTAMT
+     */
+    protected static final String PARAM_L_EXTAMT= "L_EXTAMT";
 
 
 
@@ -1725,6 +1744,19 @@ public final class PayflowConstants {
      * Payflow Param MERCHANTINVOICENUM
      */
     protected static final String PARAM_MERCHANTINVOICENUM= "MERCHANTINVOICENUM";
+    /**
+     * Payflow Param VATINVNUM
+     */
+    protected static final String PARAM_VATINVNUM = "VATINVNUM";
+    /**
+     * Payflow Param VATTAXRATE
+     */
+    protected static final String PARAM_VATTAXRATE = "VATTAXRATE";
+    /**
+     * Payflow Param REPORTGROUP
+     */
+    protected static final String PARAM_REPORTGROUP = "REPORTGROUP";
+
 
 
 
@@ -1818,7 +1850,6 @@ public final class PayflowConstants {
     protected static final String PARAM_ITEMAMT = "ITEMAMT";
     protected static final String PARAM_L_ITEMNUMBER = "L_ITEMNUMBER";
     protected static final String PARAM_ORDERDESC = "ORDERDESC";
-    // 05/06/07 added missing parameter recurringType tsieber
     protected static final String PARAM_RECURRINGTYPE = "RECURRINGTYPE";
     protected static final String PARAM_REQBILLINGADDRESS = "REQBILLINGADDRESS";
 

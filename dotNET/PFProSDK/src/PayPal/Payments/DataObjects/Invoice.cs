@@ -297,25 +297,26 @@ namespace PayPal.Payments.DataObjects
 		/// </summary>
 		private String mRecurringType;
 		
-		/// <summary>
-		/// Merchant Description
-		/// </summary>
-		private String mMerchDescr;
-
-		/// <summary>
-		/// Merchant Telephone
-		/// </summary>
-		private String mMerchSvc;
-
         /// <summary>
         /// Order Id
         /// </summary>
         private String mOrderId;
-
-        /// <summary>
+		/// <summary>
         /// Echo data
         /// </summary>
         private String mEchoData;
+		/// <summary>
+		/// VAT Invoice Number
+		/// </summary>
+		private String mVatInvNum;
+		/// <summary>
+        /// VAT Tax Rate
+        /// </summary>
+        private String mVatTaxRate;
+		/// <summary>
+        /// Report Group
+        /// </summary>
+        private String mReportGroup;
 
 		#endregion
 
@@ -1227,34 +1228,6 @@ namespace PayPal.Payments.DataObjects
 			set { mRecurringType = value; }
 		}
 
-		/// <summary>
-		/// Gets, Sets  MerchDescr
-		/// </summary>
-		/// <remarks>
-		/// <para>Merchant's description.</para>
-		/// <para>Maps to Payflow Parameter:</para>
-		/// <code>MERCHDESCR</code>
-		/// </remarks>
-		public String MerchDescr
-		{
-			get { return mMerchDescr; }
-			set { mMerchDescr = value; }
-		}
-
-		/// <summary>
-		/// Gets, Sets  MerchSvc
-		/// </summary>
-		/// <remarks>
-		/// <para>Merchant's contact number.</para>
-		/// <para>Maps to Payflow Parameter:</para>
-		/// <code>MERCHSVC</code>
-		/// </remarks>
-		public String MerchSvc
-		{
-			get { return mMerchSvc; }
-			set { mMerchSvc = value; }
-		}
-
         /// <summary>
         /// Gets, Sets  OrderId
         /// </summary>
@@ -1295,6 +1268,47 @@ namespace PayPal.Payments.DataObjects
             get { return mEchoData; }
             set { mEchoData = value; }
         }
+
+		/// <summary>
+		/// Gets, Sets  VAT Invoice Number.
+		/// </summary>
+		/// <remarks>
+		/// <para>Value added tax invoice number.</para>
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>VATINVNUM<</code>
+		/// </remarks>
+		public String VatInvNum
+		{
+			get { return mVatInvNum; }
+			set { mVatInvNum = value; }
+		}
+
+		/// <summary>
+		/// Gets, Sets  VAT Tax Rate.
+		/// </summary>
+		/// <remarks>
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>VATTAXRATE</code>
+		/// </remarks>
+		public String VatTaxRate
+		{
+			get { return mVatTaxRate; }
+			set { mVatTaxRate = value; }
+		}
+
+		/// <summary>
+		/// Gets, Sets  Report Group.
+		/// </summary>
+		/// <remarks>
+		/// <para>Category that the transaction is in, for example: coffee mugs.</para>
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>REPORTGROUP</code>
+		/// </remarks>
+		public String ReportGroup
+		{
+			get { return mReportGroup; }
+			set { mReportGroup = value; }
+		}
 
 		#endregion
 
@@ -1464,10 +1478,14 @@ namespace PayPal.Payments.DataObjects
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_ITEMAMT, mItemAmt));
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_ORDERDESC, mOrderDesc));
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_RECURRINGTYPE, mRecurringType));
-				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHDESCR, mMerchDescr));
-				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHSVC, mMerchSvc));
                 RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_ORDERID, mOrderId));
                 RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_ECHODATA, mEchoData));
+				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_VATINVNUM, mVatInvNum));
+				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_VATTAXRATE, mVatTaxRate));
+				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_REPORTGROUP, mReportGroup));
+
+
+
 				if (mBillTo != null)
 				{
 					mBillTo.RequestBuffer = RequestBuffer;

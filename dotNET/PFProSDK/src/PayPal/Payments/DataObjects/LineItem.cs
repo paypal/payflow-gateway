@@ -191,6 +191,30 @@ namespace PayPal.Payments.DataObjects
 		private String mUnspscCode;
 
 		/// <summary>
+		/// line item alternate tax amount
+		/// </summary>
+		private String mAltTaxAmt;
+		/// <summary>
+		/// line item alternate tax Id
+		/// </summary>
+		private String mAltTaxId;
+		/// <summary>
+		/// line item alternate tax rate
+		/// </summary>
+		private String mAltTaxRate;
+		/// <summary>
+		/// line item carrier service level code
+		/// </summary>
+		private String mCarrierServiceLevelCode;
+		/// <summary>
+		/// line item extra amount
+		/// </summary>
+		private String mExtAmt;
+
+
+		/// --------------------------------------
+		/// 
+		/// <summary>
 		/// line item name
 		/// </summary>
 		private String mName;
@@ -593,6 +617,97 @@ namespace PayPal.Payments.DataObjects
 		}
 
 		/// <summary>
+		/// Gets, Sets line item alternate tax code.
+		/// </summary>
+		/// <remarks>
+		/// <para>Item AltTaxAmt.</para>
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>L_ALTTAXAMT</code>
+		/// </remarks>
+		public String AltTaxAmt
+		{
+			get { return mAltTaxAmt; }
+			set { mAltTaxAmt = value; }
+		}
+
+		/// <summary>
+		/// Gets, Sets line item alternate tax Id.
+		/// </summary>
+		/// <remarks>
+		/// <para>Item AltTaxId.</para>
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>L_ALTTAXID</code>
+		/// </remarks>
+		public String AltTaxId
+		{
+			get { return mAltTaxId; }
+			set { mAltTaxId = value; }
+		}
+
+		/// <summary>
+		/// Gets, Sets line item alternate tax rate.
+		/// </summary>
+		/// <remarks>
+		/// <para>Item AltTaxRate.</para>
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>L_ALTTAXRATE</code>
+		/// </remarks>
+		public String AltTaxRate
+		{
+			get { return mAltTaxRate; }
+			set { mAltTaxRate = value; }
+		}
+
+		/// <summary>
+		/// Gets, Sets line item carrier service level code
+		/// </summary>
+		/// <remarks>
+		/// <para>Item CarrierServiceLevelCode.</para>
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>L_CARRIERSERVICELEVELCODE</code>
+		/// </remarks>
+		public String CarrierServiceLevelCode
+		{
+			get { return mCarrierServiceLevelCode; }
+			set { mCarrierServiceLevelCode = value; }
+		}
+
+		/// <summary>
+		/// Gets, Sets line item extended amount
+		/// <remarks>
+		/// <para>Item ExtAmt</para>
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>L_EXTAMT</code>
+		/// </remarks>
+		public String ExtAmt
+			{
+			get { return mExtAmt; }
+			set { mExtAmt = value; }
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		/// ------------------------------------------------------
+
+		/// <summary>
 		/// Gets, Sets line item name.
 		/// </summary>
 		/// <remarks>
@@ -720,6 +835,14 @@ namespace PayPal.Payments.DataObjects
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_L_CATALOGNUM + IndexVal, mCatalogNum));
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_L_UPC + IndexVal, mUpc));
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_L_UNSPSCCODE + IndexVal, mUnspscCode));
+				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_L_ALTTAXAMT + IndexVal, mAltTaxAmt));
+				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_L_ALTTAXID + IndexVal, mAltTaxId));
+				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_L_ALTTAXRATE + IndexVal, mAltTaxRate));
+				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_L_CARRIERSERVICESLEVELCODE + IndexVal, mCarrierServiceLevelCode));
+				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_L_EXTAMT + IndexVal, mExtAmt));
+
+
+				
 			}
 			catch (BaseException)
 			{
