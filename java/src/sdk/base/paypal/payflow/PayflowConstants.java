@@ -1772,10 +1772,15 @@ public final class PayflowConstants {
      * Payflow Param REPORTGROUP
      */
     protected static final String PARAM_REPORTGROUP = "REPORTGROUP";
-	    /**
+	 /**
      * Payflow Param MISCDATA
      */
     protected static final String PARAM_MISCDATA = "MISCDATA";
+    /**
+     * Payflow Param FREQUENCY
+     */
+    protected static final String PARAM_FREQUENCY = "FREQUENCY";
+
 
 
 
