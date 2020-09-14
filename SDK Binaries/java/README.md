@@ -15,6 +15,8 @@ Should you want to want to modify and compile for another version or application
   * Fully backwards compatible with previous versions; except for Java version support. Compiled on Java 1.8.0_261.
   * Added support for `CARDONFILE` and `TXID` as part of the `PaymentCard` (both) and `TransactionResponse` (TXID) objects) .  See [Card on File](https://developer.paypal.com/docs/payflow/integration-guide/card-on-file/) for more details.
   * Added support for 3DS v2 by adding `DSTRANSACTIONID` and `THREEDSVERSION` parameters.  See [3-D Secure with 3rd-Party Merchant Plug-ins](https://developer.paypal.com/docs/payflow/3d-secure-mpi/) for more details.
+  * `USER1` to `USER10` which is part of the `Invoice` object.</br>These can be returned in the response using the `EchoData` set to "User".
+  * `ECHODATA` in the `Invoice` object.
 
 ## Previous Release Notes
 * 4.47
