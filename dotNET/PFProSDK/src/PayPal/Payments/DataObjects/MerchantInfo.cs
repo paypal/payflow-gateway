@@ -87,7 +87,7 @@ namespace PayPal.Payments.DataObjects
         /// <summary>
         /// Holds Merchant Invoice Number
         /// </summary>
-        private String mMerchantInvoiceNum;
+        private String mMerchantInvNum;
         /// <summary>
         /// MerrchantLocationId
         /// </summary>
@@ -256,12 +256,12 @@ namespace PayPal.Payments.DataObjects
         /// <remarks>
         /// <para>Merchant's Invoice Number</para>
         /// <para>Maps to Payflow Parameter:</para>
-        /// <code>MERCHANTINVOICENUM</code>
+        /// <code>MERCHANTINVNUM</code>
         /// </remarks>
-        public String MerchantInvoiceNum
+        public String MerchantInvNum
         {
-            get { return mMerchantInvoiceNum; }
-            set { mMerchantInvoiceNum = value; }
+            get { return mMerchantInvNum; }
+            set { mMerchantInvNum = value; }
         }
 
         		/// <summary>
@@ -352,7 +352,7 @@ namespace PayPal.Payments.DataObjects
                 RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTCOUNTRYCODE, mMerchantCountryCode));
                 RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTURL, mMerchantUrl));
                 RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTVATNUM, mMerchantVatNum));
-                RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTINVOICENUM, mMerchantInvoiceNum));
+                RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTINVNUM, mMerchantInvNum));
                 RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTLOCATIONID, mMerchantLocationId));
                 RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTID, mMerchantId));
                 RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MERCHANTCONTACTINFO, mMerchantContactInfo));

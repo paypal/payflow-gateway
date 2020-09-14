@@ -253,6 +253,7 @@
     <Compile Include="src\PayPal\Payments\DataObjects\CustomerInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\PayPal\Payments\DataObjects\Devices.cs" />
     <Compile Include="src\PayPal\Payments\DataObjects\ECDoBARequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -308,6 +309,7 @@
     <Compile Include="src\PayPal\Payments\DataObjects\IResponseDataObject.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\PayPal\Payments\DataObjects\AdviceDetail.cs" />
     <Compile Include="src\PayPal\Payments\DataObjects\LineItem.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -352,9 +354,7 @@
     <Compile Include="src\PayPal\Payments\DataObjects\RuleParameter.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="src\PayPal\Payments\DataObjects\ShipTo.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="src\PayPal\Payments\DataObjects\ShipTo.cs" />
     <Compile Include="src\PayPal\Payments\DataObjects\SwipeCard.cs">
       <SubType>Code</SubType>
     </Compile>

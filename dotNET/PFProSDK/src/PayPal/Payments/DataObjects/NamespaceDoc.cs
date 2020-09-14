@@ -7,8 +7,11 @@ namespace PayPal.Payments.DataObjects
 	/// <item><term>ABA</term><description>BankAcct</description><description><see cref='BankAcct.Aba'>Aba</see></description><description>String</description></item>
 	/// <item><term>ACCT</term><description>BankAcct ,  CreditCard , PurchaseCard , SwipeCard , CheckPayment , RecurringResponse, TransactionResponse</description><description>Acct</description><description>String</description></item>
 	/// <item><term>ACCTTYPE</term><description>BankAcct</description><description><see cref='BankAcct.AcctType'>AcctType</see></description><description>String</description></item>
+	/// <item><term>ACI</term><description>TransactionResponse</description><description><see cref='TransactionResponse.Aci'>Aci</see></description><description>String</description></item>
 	/// <item><term>ACSURL</term><description>BuyerAuthResponse</description><description><see cref='BuyerAuthResponse.AcsUrl'>AcsUrl</see></description><description>String</description></item>
 	/// <item><term>ACTION</term><description>Value is set based on Transaction object used:RecurringAddTransaction, RecurringModifyTransaction, RecurringCancelTransaction, RecurringInquiryTransaction, RecurringReActivateTransaction, RecurringPaymentTransaction</description><description>NA</description><description>String</description></item>
+	/// <item><term>ADDLAMTn</term><description>AdviceDetail</description><description><see cref='AdviceDetail.AddLAmt'>AddLAmt</see></description><description>String</description></item>
+	/// <item><term>ADDLAMTTYPEn</term><description>AdviceDetail</description><description><see cref='AdviceDetail.AddLAmtType'>AddLAmtType</see></description><description>String</description></item>
 	/// <item><term>ADDLMSGS</term><description>TransactionResponse</description><description><see cref='TransactionResponse.AddlMsgs'>AddlMsgs</see></description><description>String</description></item>
 	/// <item><term>ADDROVERRIDE</term><description>ECSetRequest</description><description><see cref='ECSetRequest.AddrOverride'>AddrOverride</see></description><description>String</description></item>
 	/// <item><term>ADDRSTATUS</term><description>ECGetResponse</description><description><see cref='ECGetResponse.AddressStatus'>AddressStatus</see></description><description>String</description></item>
@@ -31,21 +34,21 @@ namespace PayPal.Payments.DataObjects
 	/// <item><term>BILLINGTYPE</term><description>ECSetRequest</description><description><see cref='ECSetRequest.BillingType'>BillingType</see></description><description>String</description></item>
 	/// <item><term>BATCHID</term><description>TransactionResponse</description><description><see cref='TransactionResponse.BatchId'>BatchId</see></description><description>String</description></item>
 	/// <item><term>BILLINGTYPE</term><description>ECSetRequest</description><description><see cref='ECSetRequest.BillingType'>BillingType</see></description><description>String</description></item>
-    /// <item><term>BILLTOCITY</term><description>BillTo, RecurringResponse</description><description>BillToCity</description><description>String</description></item>
-    /// <item><term>BILLTOCOUNTRY</term><description>BillTo, RecurringResponse</description><description>BillToCountry</description><description>String</description></item>
+	/// <item><term>BILLTOCITY</term><description>BillTo, RecurringResponse</description><description>BillToCity</description><description>String</description></item>
+	/// <item><term>BILLTOCOUNTRY</term><description>BillTo, RecurringResponse</description><description>BillToCountry</description><description>String</description></item>
 	/// <item><term>BILLTOEMAIL</term><description>BillTo,RecurringResponse,ECGetResponse</description><description>BillToEmail</description><description>String</description></item>
-    /// <item><term>BILLTOFAX</term><description>BillTo</description><description><see cref='BillTo.BillToFax'>BillToFax</see></description><description>String</description></item>
-    /// <item><term>BILLTOFIRSTNAME</term><description>BillTo, RecurringResponse ,ECGetResponse, TransactionResponse</description><description>BillToFirstName</description><description>String</description></item>
-    /// <item><term>BILLTOHOMEPHONE</term><description>BillTo</description><description><see cref='BillTo.BillToHomePhone'>BillToHomePhone</see></description><description>String</description></item>
-    /// <item><term>BILLTOLASTNAME</term><description>BillTo, RecurringResponse,ECGetResponse, TransactionResponse</description><description>BillToLastName</description><description>String</description></item>
-    /// <item><term>BILLTOMIDDLENAME</term><description>BillTo, RecurringResponse</description><description>BillToMiddleName</description><description>String</description></item>
-    /// <item><term>BillToPHONENUM</term><description>BillTo, RecurringResponse</description><description>BillToPhoneNum</description><description>String</description></item>
-    /// <item><term>BILLTOPHONE2</term><description>BillTo</description><description><see cref='BillTo.BillToPhone2'>BillToPhone2</see></description><description>String</description></item>
-    /// <item><term>BILLTOSTATE</term><description>BillTo, RecurringResponse</description><description>BillToState</description><description>String</description></item>
-    /// <item><term>BILLTOSTREET</term><description>BillTo, RecurringResponse</description><description>BillToStreet</description><description>String</description></item>
+	/// <item><term>BILLTOFAX</term><description>BillTo</description><description><see cref='BillTo.BillToFax'>BillToFax</see></description><description>String</description></item>
+	/// <item><term>BILLTOFIRSTNAME</term><description>BillTo, RecurringResponse ,ECGetResponse, TransactionResponse</description><description>BillToFirstName</description><description>String</description></item>
+	/// <item><term>BILLTOHOMEPHONE</term><description>BillTo</description><description><see cref='BillTo.BillToHomePhone'>BillToHomePhone</see></description><description>String</description></item>
+	/// <item><term>BILLTOLASTNAME</term><description>BillTo, RecurringResponse,ECGetResponse, TransactionResponse</description><description>BillToLastName</description><description>String</description></item>
+	/// <item><term>BILLTOMIDDLENAME</term><description>BillTo, RecurringResponse</description><description>BillToMiddleName</description><description>String</description></item>
+	/// <item><term>BillToPHONENUM</term><description>BillTo, RecurringResponse</description><description>BillToPhoneNum</description><description>String</description></item>
+	/// <item><term>BILLTOPHONE2</term><description>BillTo</description><description><see cref='BillTo.BillToPhone2'>BillToPhone2</see></description><description>String</description></item>
+	/// <item><term>BILLTOSTATE</term><description>BillTo, RecurringResponse</description><description>BillToState</description><description>String</description></item>
+	/// <item><term>BILLTOSTREET</term><description>BillTo, RecurringResponse</description><description>BillToStreet</description><description>String</description></item>
 	/// <item><term>BILLTOSTREET2</term><description>BillTo</description><description><see cref='BillTo.BillToStreet2'>BillToStreet2</see></description><description>String</description></item>
-    /// <item><term>BILLTOZIP</term><description>BillTo, RecurringResponse</description><description>BillToZip</description><description>String</description></item>
-    /// <item><term>BROWSERCOUNTRYCODE</term><description>BrowserInfo</description><description><see cref='BrowserInfo.BrowserCountryCode'>BrowserCountryCode</see></description><description>String</description></item>
+	/// <item><term>BILLTOZIP</term><description>BillTo, RecurringResponse</description><description>BillToZip</description><description>String</description></item>
+	/// <item><term>BROWSERCOUNTRYCODE</term><description>BrowserInfo</description><description><see cref='BrowserInfo.BrowserCountryCode'>BrowserCountryCode</see></description><description>String</description></item>
 	/// <item><term>BROWSERTIME</term><description>BrowserInfo</description><description><see cref='BrowserInfo.BrowserTime'>BrowserTime</see></description><description>String</description></item>
 	/// <item><term>BROWSERUSERAGENT</term><description>BrowserInfo</description><description><see cref='BrowserInfo.BrowserUserAgent'>BrowserUserAgent</see></description><description>String</description></item>
 	/// <item><term>BUTTONSOURCE</term><description>BrowserInfo</description><description><see cref='BrowserInfo.ButtonSource'>ButtonSource</see></description><description>String</description></item>
@@ -55,7 +58,10 @@ namespace PayPal.Payments.DataObjects
 	/// <item><term>CARDSECURE</term><description>TransactionResponse</description><description><see cref='TransactionResponse.CardSecure'>CardSecure</see></description><description>String</description></item>
 	/// <item><term>CARDSTART</term><description>PurchaseCard, CreditCard</description><description>CardStart</description><description>String</description></item>
 	/// <item><term>CARDTYPE</term><description>TransactionResponse</description><description><see cref='TransactionResponse.CardType'>CardType</see></description><description>String</description></item>
+	/// <item><term>CATTYPE</term><description>Devices</description><description><see cref='Devices.CatType'>CatType</see></description><description>String</description></item>
 	/// <item><term>CAVV</term><description>BuyerAuthResponse</description><description><see cref='BuyerAuthResponse.CAVV'>CAVV</see></description><description>String</description></item>
+ 	/// <item><term>CCTRANSID</term><description>TransactionResponse</description><description><see cref='TransactionResponse.CCTransId'>CCTransId</see></description><description>String</description></item>
+	/// <item><term>CCTRANS_POSDATA</term><description>TransactionResponse</description><description><see cref='TransactionResponse.CCTrans_POSData'>CCTrans_POSData</see></description><description>String</description></item>
 	/// <item><term>CHKNUM</term><description>ACHTender, CheckTender, CardTender</description><description>ChkNum</description><description>String</description></item>
 	/// <item><term>CHKTYPE</term><description>ACHTender, CheckTender, CardTender</description><description>ChkType</description><description>String</description></item>
 	/// <item><term>COMMCARD</term><description>PurchaseCard</description><description></description><description>String</description></item>
@@ -63,13 +69,17 @@ namespace PayPal.Payments.DataObjects
 	/// <item><term>COMMENT1</term><description>Invoice</description><description><see cref='Invoice.Comment1'>Comment1</see></description><description>String</description></item>
 	/// <item><term>COMMENT2</term><description>Invoice</description><description><see cref='Invoice.Comment2'>Comment2</see></description><description>String</description></item>
 	/// <item><term>COMPANYNAME</term><description>BillTo, RecurringResponse</description><description>CompanyName</description><description>String</description></item>
+	/// <item><term>CONTACTLESS</term><description>Devices</description><description><see cref='Devices.Contactless'>Contactless</see></description><description>String</description></item>
 	/// <item><term>COUNTRYCODE</term><description>BillTo,ECGetResponse</description><description>CountryCode</description><description>String</description></item>
 	/// <item><term>COUNTRYCODE</term><description>ExpressCheckoutRequest</description><description><see cref='ExpressCheckoutRequest.CountryCode'>CountryCode</see></description><description>String</description></item>
 	/// <item><term>CURRENCY</term><description>BuyerAuthVETransaction</description><description></description><description>Currency</description></item>
 	/// <item><term>CUSTCODE</term><description>CustomerInfo</description><description><see cref='CustomerInfo.CustCode'>CustCode</see></description><description>String</description></item>
+	/// <item><term>CUSTDATA</term><description>CustomerInfo</description><description><see cref='CustomerInfo.CustData'>CustData</see></description><description>String</description></item>
 	/// <item><term>CUSTID</term><description>CustomerInfo</description><description><see cref='CustomerInfo.CustId'>CustId</see></description><description>String</description></item>
 	/// <item><term>CUSTIP</term><description>CustomerInfo</description><description><see cref='CustomerInfo.CustIP'>CustIP</see></description><description>String</description></item>
 	/// <item><term>CUSTOM</term><description>BrowserInfo</description><description><see cref='BrowserInfo.Custom'>Custom</see></description><description>String</description></item>
+	/// <item><term>CUSTOMERID</term><description>CustomerInfo</description><description><see cref='CustomerInfo.CustomerId'>CustomerId</see></description><description>String</description></item>
+	/// <item><term>CUSTOMERNUMBER</term><description>CustomerInfo</description><description><see cref='CustomerInfo.CustomerNumber'>CustomerNumber</see></description><description>String</description></item>
 	/// <item><term>CUSTREF</term><description>Invoice, TransactionResponse</description><description>CustRef</description><description>String</description></item>
 	/// <item><term>CUSTVATREGNUM</term><description>CustomerInfo</description><description><see cref='CustomerInfo.CustVatRegNum'>CustVatRegNum</see></description><description>String</description></item>
 	/// <item><term>CVV2</term><description>PurchaseCard, CreditCard</description><description>CVV2</description><description>String</description></item>
@@ -105,13 +115,18 @@ namespace PayPal.Payments.DataObjects
 	/// <item><term>IAVS</term><description>TransactionResponse</description><description><see cref='TransactionResponse.IAVS'>IAVS</see></description><description>String</description></item>
 	/// <item><term>INVNUM</term><description>Invoice</description><description><see cref='Invoice.InvNum'>InvNum</see></description><description>String</description></item>
 	/// <item><term>INVOICEDATE</term><description>Invoice</description><description><see cref='Invoice.InvoiceDate'>InvoiceDate</see></description><description>Date</description></item>
+	/// <item><term>L_ALTTAXAMTn</term><description>LineItem</description><description><see cref='LineItem.AltTaxAmt'>AltTaxAmt</see></description><description>Currency</description></item>
+	/// <item><term>L_ALTTAXIDn</term><description>LineItem</description><description><see cref='LineItem.AltTaxId'>AltTaxId</see></description><description>Currency</description></item>
+	/// <item><term>L_ALTTAXRATEn</term><description>LineItem</description><description><see cref='LineItem.AltTaxRate'>AltTaxRate</see></description><description>Currency</description></item>
 	/// <item><term>L_AMTn</term><description>LineItem</description><description><see cref='LineItem.Amt'>Amt</see></description><description>Currency</description></item>
+	/// <item><term>L_CARRIERSERVICELEVELCODEn</term><description>LineItem</description><description><see cref='LineItem.CarrierServiceLevelCode'>CarrierServiceLevelCode</see></description><description>Currency</description></item>
 	/// <item><term>L_CATALOGNUMn</term><description>LineItem</description><description><see cref='LineItem.CatalogNum'>CatalogNum</see></description><description>String</description></item>
 	/// <item><term>L_COMMCODEn</term><description>LineItem</description><description><see cref='LineItem.CommCode'>CommCode</see></description><description>String</description></item>
 	/// <item><term>L_COSTCENTERNUMn</term><description>LineItem</description><description><see cref='LineItem.CostCenterNum'>CostCenterNum</see></description><description>String</description></item>
 	/// <item><term>L_COSTn</term><description>LineItem</description><description><see cref='LineItem.Cost'>Cost</see></description><description>Currency</description></item>
 	/// <item><term>L_DESCn</term><description>LineItem</description><description><see cref='LineItem.Desc'>Desc</see></description><description>String</description></item>
 	/// <item><term>L_DISCOUNTn</term><description>LineItem</description><description><see cref='LineItem.Discount'>Discount</see></description><description>Currency</description></item>
+	/// <item><term>L_EXTAMTn</term><description>LineItem</description><description><see cref='LineItem.ExtAmt'>ExtAmt</see></description><description>Currency</description></item>
 	/// <item><term>L_FREIGHTAMTn</term><description>LineItem</description><description><see cref='LineItem.FreightAmt'>FreightAmt</see></description><description>Currency</description></item>
 	/// <item><term>L_HANDLINGAMTn</term><description>LineItem</description><description><see cref='LineItem.HandlingAmt'>HandlingAmt</see></description><description>Currency</description></item>
 	/// <item><term>L_MANUFACTURERn</term><description>LineItem</description><description><see cref='LineItem.Manufacturer'>Manufacturer</see></description><description>String</description></item>
@@ -138,18 +153,19 @@ namespace PayPal.Payments.DataObjects
 	/// <item><term>MD</term><description>BuyerAuthResponse</description><description><see cref='BuyerAuthResponse.MD'>MD</see></description><description>String</description></item>
 	/// <item><term>MERCHDESCR</term><description>PurchaseCard, CreditCard</description><description><see cref='MerchantInfo.MerchDescr'>MerchDescr</see></description><description>String</description></item>
 	/// <item><term>MERCHSVC</term><description>PurchaseCard, CreditCard</description><description><see cref='MerchantInfo.MerchSvc'>MerchSvc</see></description><description>String</description></item>
-    /// <item><term>MERCHANTNAME</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantName'>MerchantName</see></description><description>String</description></item>
-    /// <item><term>MERCHANTSTREET</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantStreet'>MerchantStreet</see></description><description>String</description></item>
-    /// <item><term>MERCHANTCITY</term><description>CMerchantInfo</description><description><see cref='MerchantInfo.MerchantCity'>MerchantCity</see></description><description>String</description></item> 
-    /// <item><term>MERCHANTSTATE</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantState'>MerchantState</see></description><description>String</description></item> 
-    /// <item><term>MERCHANTZIP</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantZip'>MerchantZip</see></description><description>String</description></item> 
-    /// <item><term>MERCHANTURL</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantUrl'>MerchantUrl</see></description><description>String</description></item> 
+	/// <item><term>MERCHANTCITY</term><description>CMerchantInfo</description><description><see cref='MerchantInfo.MerchantCity'>MerchantCity</see></description><description>String</description></item>
+	/// <item><term>MERCHANTCONTACTINFO</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantContactInfo'>MerchantContactInfo</see></description><description>String</description></item>
+	/// <item><term>MERCHANTID</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantId'>MerchantId</see></description><description>String</description></item>
+	/// <item><term>MERCHANTINVNUM</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantInvNum'>>MerchantInvNum</see></description><description>String</description></item> 
+	/// <item><term>MERCHANTLOCATIONID</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantLocationId'>MerchantLocationId</see></description><description>String</description></item>
+	/// <item><term>MERCHANTNAME</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantName'>MerchantName</see></description><description>String</description></item>
+	/// <item><term>MERCHANTSTATE</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantState'>MerchantState</see></description><description>String</description></item> 
+	/// <item><term>MERCHANTSTREET</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantStreet'>MerchantStreet</see></description><description>String</description></item>
+	/// <item><term>MERCHANTURL</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantUrl'>MerchantUrl</see></description><description>String</description></item> 
 	/// <item><term>MERCHANTVATNUM</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantVatNum'>MerchantVatNum</see></description><description>String</description></item> 
-	/// <item><term>MERCHANTINVOICENUM</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantInvoiceNum'>MerchantInvoiceNum</see></description><description>String</description></item> 
-	
-	
-	/// <item><term>MERCHANTCOUNTRYCODE</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantCountryCode'>MerchantCountryCode</see></description><description>String</description></item> 
-    /// <item><term>MICR</term><description>CheckPayment</description><description></description><description>String</description></item>
+	/// <item><term>MERCHANTZIP</term><description>MerchantInfo</description><description><see cref='MerchantInfo.MerchantZip'>MerchantZip</see></description><description>String</description></item> 
+	/// <item><term>MICR</term><description>CheckPayment</description><description></description><description>String</description></item>
+	/// <item><term>MISCDATA</term><description>Invoice</description><description><see cref='Invoice.MiscData'>MiscData</see></description><description>Currency</description></item>
 	/// <item><term>NAME</term><description>BankAcct, CreditCard, PurchaseCard, SwipeCard, CheckPayment, RecurringResponse</description><description>Name</description><description>String</description></item>
 	/// <item><term>NATIONALTAXAMT</term><description>Invoice</description><description><see cref='Invoice.NationalTaxAmt'>NationalTaxAmt</see></description><description>Currency</description></item>
 	/// <item><term>NEXTPAYMENT</term><description>RecurringResponse</description><description><see cref='RecurringResponse.NextPayment'>NextPayment</see></description><description>String</description></item>
@@ -159,8 +175,8 @@ namespace PayPal.Payments.DataObjects
 	/// <item><term>OPTIONALTRXAMT</term><description>RecurringInfo</description><description><see cref='RecurringInfo.OptionalTrxAmt'>OptionalTrxAmt</see></description><description>Currency</description></item>
 	/// <item><term>ORDERDATE</term><description>Invoice</description><description><see cref='Invoice.OrderDate'>OrderDate</see></description><description>String</description></item>
 	/// <item><term>ORDERDESC</term><description>Invoice</description><description><see cref='Invoice.OrderDesc'>OrderDesc</see></description><description>String</description></item>
-    /// <item><term>ORDERID</term><description>Invoice</description><description><see cref='Invoice.OrderId'>OrderId</see></description><description>String</description></item>
-    /// <item><term>ORDERTIME</term><description>Invoice</description><description><see cref='Invoice.OrderTime'>OrderTime</see></description><description>String</description></item>
+	/// <item><term>ORDERID</term><description>Invoice</description><description><see cref='Invoice.OrderId'>OrderId</see></description><description>String</description></item>
+	/// <item><term>ORDERTIME</term><description>Invoice</description><description><see cref='Invoice.OrderTime'>OrderTime</see></description><description>String</description></item>
 	/// <item><term>ORIGAMT</term><description>TransactionResponse</description><description><see cref='TransactionResponse.OrigAmt'>OrigAmt</see></description><description>String</description></item>
 	/// <item><term>ORIGID</term><description>ReferenceTransaction, CaptureTransaction, FraudReviewTransaction, InquiryTransaction, VoidTransaction</description><description>OrigId</description><description>String</description></item>
 	/// <item><term>ORIGPROFILEID</term><description>RecurringInfo</description><description><see cref='RecurringInfo.OrigProfileId'>OrigProfileId</see></description><description>String</description></item>
@@ -213,6 +229,7 @@ namespace PayPal.Payments.DataObjects
 	/// <item><term>PWD</term><description>UserInfo</description><description></description><description>String</description></item>
 	/// <item><term>RECURRING</term><description>RecurringInfo, Invoice</description><description>Recurring</description><description>String</description></item>
 	/// <item><term>RECURRINGTYPE</term><description>Invoice</description><description><see cref='Invoice.RecurringType'>RecurringType</see></description><description>String</description></item>
+	/// <item><term>REPORTGROUP</term><description>Invoice</description><description><see cref='Invoice.ReportGroup'>ReportGroup</see></description><description>Currency</description></item>
 	/// <item><term>REQCONFIRMSHIPPING</term><description>ECSetRequest</description><description><see cref='ECSetRequest.ReqConfirmShipping'>ReqConfirmShipping</see></description><description>String</description></item>
 	/// <item><term>REQNAME</term><description>CustomerInfo</description><description><see cref='CustomerInfo.ReqName'>ReqName</see></description><description>String</description></item>
 	/// <item><term>RESPMSG</term><description>TransactionResponse</description><description><see cref='TransactionResponse.RespMsg'>RespMsg</see></description><description>String</description></item>
@@ -221,6 +238,7 @@ namespace PayPal.Payments.DataObjects
 	/// <item><term>RETRYNUMDAYS</term><description>RecurringResponse, RecurringInfo</description><description>RetryNumDays</description><description>String</description></item>
 	/// <item><term>RETURNURL</term><description>ECSetRequest</description><description><see cref='ECSetRequest.ReturnURL'>ReturnURL</see></description><description>String</description></item>
 	/// <item><term>RPREF</term><description>RecurringResponse</description><description><see cref='RecurringResponse.RPRef'>RPRef</see></description><description>String</description></item>
+	/// <item><term>RRN</term><description>TransactionResponse</description><description><see cref='TransactionResponse.Rrn'>Rrn</see></description><description>String</description></item>
 	/// <item><term>SECURETOKEN</term><description>TransactionResponse</description><description><see cref='TransactionResponse.SecureToken'>SecureToken</see></description><description>String</description></item>
 	/// <item><term>SECURETOKENID</term><description>TransactionResponse</description><description><see cref='TransactionResponse.SecureTokenId'>SecureTokenId</see></description><description>String</description></item>
 	/// <item><term>SETTLEAMT</term><description>ECDoResponse</description><description><see cref='ECDoResponse.SettleAmt'>SettleAmt</see></description><description>String</description></item>
@@ -243,6 +261,7 @@ namespace PayPal.Payments.DataObjects
 	/// <item><term>SHIPTOSTREET2</term><description>ShipTo, ECGetResponse</description><description><see cref='ShipTo.ShipToStreet2'>ShipToStreet2</see></description><description>String</description></item>
 	/// <item><term>SHIPTOZIP</term><description>ShipTo, RecurringResponse,ECGetResponse</description><description>ShipToZip</description><description>String</description></item>
 	/// <item><term>SS</term><description>CheckTender</description><description></description><description>String</description></item>
+	/// <item><term>STAN</term><description>TransactionResponse</description><description><see cref='TransactionResponse.Stan'>Stan</see></description><description>String</description></item>
 	/// <item><term>START</term><description>RecurringResponse, RecurringInfo</description><description>Start</description><description>String</description></item>
 	/// <item><term>STARTTIME</term><description>Invoice, TransactionResponse</description><description>StartTime</description><description>String</description></item>
 	/// <item><term>STATUS</term><description>RecurringResponse</description><description><see cref='RecurringResponse.Status'>Status</see></description><description>String</description></item>
@@ -262,21 +281,23 @@ namespace PayPal.Payments.DataObjects
 	/// <item><term>TRXRESULT</term><description>RecurringResponse</description><description><see cref='RecurringResponse.TrxResult'>TrxResult</see></description><description>String</description></item>
 	/// <item><term>TRXTYPE</term><description>Value is set based on the Transaction object used:SaleTransaction, CreditTransaction, VoidTransaction, CaptureTransaction etc.</description><description>TrxType</description><description>String</description></item>
 	/// <item><term>TXID</term><description>BuyerAuthResponse</description><description><see cref='BuyerAuthResponse.TxId'>TxId</see></description><description>String</description></item>
-	
 	/// <item><term>USER</term><description>UserInfo</description><description></description><description>String</description></item>
-    /// <item><term>USER1</term><description>UserItem</description><description><see cref='UserItem.UserItem1'>UserItem1</see></description><description>String</description></item>
-    /// <item><term>USER2</term><description>UserItem</description><description><see cref='UserItem.UserItem2'>UserItem2</see></description><description>String</description></item>
-    /// <item><term>USER3</term><description>UserItem</description><description><see cref='UserItem.UserItem3'>UserItem3</see></description><description>String</description></item>
-    /// <item><term>USER4</term><description>UserItem</description><description><see cref='UserItem.UserItem4'>UserItem4</see></description><description>String</description></item>
-    /// <item><term>USER5</term><description>UserItem</description><description><see cref='UserItem.UserItem5'>UserItem5</see></description><description>String</description></item>
-    /// <item><term>USER6</term><description>UserItem</description><description><see cref='UserItem.UserItem6'>UserItem6</see></description><description>String</description></item>
-    /// <item><term>USER7</term><description>UserItem</description><description><see cref='UserItem.UserItem7'>UserItem7</see></description><description>String</description></item>
-    /// <item><term>USER8</term><description>UserItem</description><description><see cref='UserItem.UserItem8'>UserItem8</see></description><description>String</description></item>
-    /// <item><term>USER9</term><description>UserItem</description><description><see cref='UserItem.UserItem9'>UserItem9</see></description><description>String</description></item>
-    /// <item><term>USER10</term><description>UserItem</description><description><see cref='UserItem.UserItem10'>UserItem10</see></description><description>String</description></item>
-    /// <item><term>VATREGNUM</term><description>Invoice</description><description><see cref='Invoice.VatRegNum'>VatRegNum</see></description><description>String</description></item>
+	/// <item><term>USER1</term><description>UserItem</description><description><see cref='UserItem.UserItem1'>UserItem1</see></description><description>String</description></item>
+	/// <item><term>USER2</term><description>UserItem</description><description><see cref='UserItem.UserItem2'>UserItem2</see></description><description>String</description></item>
+	/// <item><term>USER3</term><description>UserItem</description><description><see cref='UserItem.UserItem3'>UserItem3</see></description><description>String</description></item>
+	/// <item><term>USER4</term><description>UserItem</description><description><see cref='UserItem.UserItem4'>UserItem4</see></description><description>String</description></item>
+	/// <item><term>USER5</term><description>UserItem</description><description><see cref='UserItem.UserItem5'>UserItem5</see></description><description>String</description></item>
+	/// <item><term>USER6</term><description>UserItem</description><description><see cref='UserItem.UserItem6'>UserItem6</see></description><description>String</description></item>
+	/// <item><term>USER7</term><description>UserItem</description><description><see cref='UserItem.UserItem7'>UserItem7</see></description><description>String</description></item>
+	/// <item><term>USER8</term><description>UserItem</description><description><see cref='UserItem.UserItem8'>UserItem8</see></description><description>String</description></item>
+	/// <item><term>USER9</term><description>UserItem</description><description><see cref='UserItem.UserItem9'>UserItem9</see></description><description>String</description></item>
+	/// <item><term>USER10</term><description>UserItem</description><description><see cref='UserItem.UserItem10'>UserItem10</see></description><description>String</description></item>
+	/// <item><term>VALIDATRIONCODE</term><description>TransactionResponse</description><description><see cref='TransactionResponse.ValidationCode'>ValidationCode</see></description><description>String</description></item>
+	/// <item><term>VATINVNUM</term><description>Invoice</description><description><see cref='Invoice.VatInvNum'>VatInvNum</see></description><description>String</description></item>
+	/// <item><term>VATREGNUM</term><description>Invoice</description><description><see cref='Invoice.VatRegNum'>VatRegNum</see></description><description>String</description></item>
 	/// <item><term>VATTAXAMT</term><description>Invoice</description><description><see cref='Invoice.VatTaxAmt'>VatTaxAmt</see></description><description>Currency</description></item>
-	/// <item><term>VATTAXPERCENT</term><description>Invoice</description><description></description><description>String</description></item>
+	/// <item><term>VATTAXPERCENT</term><description>Invoice</description><description><see cref='Invoice.VatTaxPercent'>VatTaxPercent</see></description><description>String</description></item>
+	/// <item><term>VATTAXRATE</term><description>Invoice</description><description><see cref='Invoice.VatTaxRate'>VatTaxRate</see></description><description>String</description></item>
 	/// <item><term>VENDOR</term><description>UserInfo</description><description></description><description>String</description></item>
 	/// <item><term>VERBOSITY</term><description>Value is set based on the Transaction object used:SaleTransaction, CreditTransaction, VoidTransaction, CaptureTransaction, AuthorizationTransaction, VoiceAuthTransaction, InquiryTransaction, FraudReviewTransaction, RecurringAddTransaction, RecurringModifyTransaction, RecurringCancelTransaction, RecurringInquiryTransaction, RecurringReActivateTransaction, RecurringPaymentTransaction</description><description>Verbosity</description><description>String</description></item>
 	/// <item><term>VIT_INTGTYPE</term><description>Value is set from all the Transaction objects: SaleTransaction, CreditTransaction, VoidTransaction, CaptureTransaction etc.</description><description>Vit_IntgType</description><description>String</description></item>

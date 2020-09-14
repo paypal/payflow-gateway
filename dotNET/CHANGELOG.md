@@ -1,6 +1,6 @@
-## <small>5.0.0 (2020-09-10)</small>
+## 5.0.0 (2020-09-13)
 
-### IMPORTANT: THIS VERSION IS NOT 100%  COMPATIBLE WITH OLDER VERSIONS AS SOME OF THE OBJECTS AND THEIR LOCATIONS HAVE MOVED.
+### IMPORTANT: </p>THIS VERSION IS NOT 100%  COMPATIBLE WITH OLDER VERSIONS AS SOME OF THE OBJECTS AND THEIR LOCATIONS HAVE MOVED.
 
 #### Changes
 These changes will need to be incorporated into your existing integration before you can use this version.
@@ -21,7 +21,7 @@ These changes will need to be incorporated into your existing integration before
 	`Inv.VatTaxAmt = new Currency(new decimal(25.00), "USD");`
 
 #### New Objects:
-* `MerchantInfo`.  This object holds the soft descriptor fields; such as, Merchant Name, Merchant City, etc. 
+* `MerchantInfo`.  This object holds the soft descriptor fields; such as, Merchant Name, Merchant City, etc.
 * `EchoData` to Invoice object, this parameter will allow you to "echo" back data in the response. See [Echo Data](https://developer.paypal.com/docs/payflow/integration-guide/submit-transactions/#echo-data).
 
 * `ORDERID` as part of the Invoice object. Order ID is used to prevent duplicate "orders" from being processed.
@@ -31,17 +31,34 @@ These changes will need to be incorporated into your existing integration before
 #### New NVP Parameters:
 Some of the NVPs listed below have been added in earlier builds, but are here for reference.
 
-* `USER1` to `USER10` which is part of the `Invoice` object.  These can be returned in the response using the `EchoData` set to "User". See the enclosed DOSaleComplete sample for more information.
-* Support for Magtek Encrypted Card Readers as part of the `Swipe` object.  Refer to DOEncryptedSwipe sample for more information.
-* Processor-specific Response Parameters: `PAYMENTADVICECODE`, `TYPE`, `AFFLUENT`, `CCUPDATED`, `RRN`, `STAN`, `ACI` and `VALIDATIONCODE`.
-* Location Transaction Advice Addendum Parameters: `MERCHANTLOCATIONID`, `MERCHANTID`, `MERCHANTCONTACTINFO`,  `MERCHANTURL` and `MERCHANTVATNUM` added to the `MerchantInfo` object.
-* Response Parameters: `CCTRANSID`, `CCTRANS_POSDATA`
-* Request Parameters: `ADDLAMT`, `ADDLAMTTYPE`, `AUTHDATE`, `CATTYPE`, `CONTACTLESS`, `CUSTDATA`, `CUSTOMERID`, `CUSTOMERNUMBER`, `MERCHANTINVNUM`, `MISCDATA`, `REPORTGROUP`, `VATINVNUM`, `VATTAXRATE`
-* Request Line Item Parameters: `L_ALTTAXAMT`, `L_ALTTAXID`, `L_ALTTAXRATE`, `L_CARRIERSERVICESLEVELCODE`, `L_EXTAMT`
-* `BUTTONSOURCE` to `BrowserInfo` object.
-* Recurring Parameter: `FREQUENCY`
-* Stored Credential Parameters: `CARDONFILE` (Request), `TXID` (Request and Response) - Requests parameters are in the `PaymentCard` object - See [Card on File](https://developer.paypal.com/docs/payflow/integration-guide/card-on-file/#supported-card-on-file-types).
-* 3DS Parameters: `DSTRANSACTIONID` (Directory Server Transaction ID) and `THREEDSVERSION` (3D-Secure Version) to the `BuyerAuthStatus` object. See [3-D Secure with 3rd-Party Merchant Plug-ins](https://developer.paypal.com/docs/payflow/3d-secure-mpi/).
+* **Stored Credential Parameters**: `CARDONFILE` (Request), `TXID` (Request and Response) - Requests parameters are in the `PaymentCard` object - See [Card on File](https://developer.paypal.com/docs/payflow/integration-guide/card-on-file/#supported-card-on-file-types).</p>
+* **v2 3DS Parameters**: `DSTRANSACTIONID` (Directory Server Transaction ID) and `THREEDSVERSION` (3D-Secure Version) to the `BuyerAuthStatus` object. See [3-D Secure with 3rd-Party Merchant Plug-ins](https://developer.paypal.com/docs/payflow/3d-secure-mpi/).
+</p>
+* `USER1` to `USER10` which is part of the `Invoice` object.</br>These can be returned in the response using the `EchoData` set to "User". See the enclosed DOSaleComplete sample for more information.</p>
+* Support for Magtek Encrypted Card Readers as part of the `Swipe` object.  Refer to `DOEncryptedSwipe` sample for more information.
+</p>
+* **Processor-specific Response Parameters**:
+	* `PAYMENTADVICECODE`, `TYPE`, `AFFLUENT`, `CCUPDATED`, `RRN`, `STAN`, `ACI` and `VALIDATIONCODE` in `TransactionResponse` object.
+</p>
+* **Location Transaction Advice Addendum Parameters**:
+	* `MERCHANTLOCATIONID`, `MERCHANTID`, `MERCHANTCONTACTINFO`,  `MERCHANTURL`, `MERCHANTVATNUM` and `MERCHANTINVNUM` in `MerchantInfo` object.
+</p>
+* **Response Parameters**:
+	* `CCTRANSID`, `CCTRANS_POSDATA` in `TransactionResponse` object.
+</p>
+* **Request Parameters**:
+	* `ADDLAMT`, `ADDLAMTTYPE` in new `AdviceDetails` object.
+	* `CATTYPE`, `CONTACTLESS` in new `Devices` object.
+	* `CUSTDATA`, `CUSTOMERID`, `CUSTOMERNUMBER` in `CustomerInfo` object.
+	* `MISCDATA`, `REPORTGROUP`, `VATINVNUM`, `VATTAXRATE` in `Invoice` object.
+	* `AUTHDATE` in `VoiceAuthTransaction` object.
+	* `BUTTONSOURCE` in `BrowserInfo` object.
+</p>
+* **Request Line Item Parameters**:
+	* `L_ALTTAXAMT`, `L_ALTTAXID`, `L_ALTTAXRATE`, `L_CARRIERSERVICELEVELCODE`, `L_EXTAMT` in `LineItem` object.
+</p>
+* **Recurring Parameter**:
+	* `FREQUENCY` in `ReccurringInfo` object.
 
 ### New Samples
-* Data Upload (DODataUpload) under Samples/Misc to show how to use transaction type "L" allowing credit card data to be removed from local servers and stored at PayPal to be used via reference transactions.
+* **Data Upload (DODataUpload)** under Samples/Misc to show how to use transaction type "L" allowing credit card data to be removed from local servers and stored at PayPal to be used via reference transactions.

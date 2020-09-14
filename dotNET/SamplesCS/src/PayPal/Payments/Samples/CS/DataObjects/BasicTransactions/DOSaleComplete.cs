@@ -293,10 +293,10 @@ namespace PayPal.Payments.Samples.CS.DataObjects.BasicTransactions
             // Some of the parameters could include:
             //
             //CustomerInfo CustInfo = new CustomerInfo(); 
-            CustInfo.CustCode = "CustCode123";    // Customer Code
-            CustInfo.CustId = "CustId123";
-            CustInfo.CustIP = "255.255.255.255";  // Customer's IP Address
-            Inv.CustomerInfo = CustInfo;
+            //CustInfo.CustCode = "CustCode123";    // Customer Code
+            //CustInfo.CustId = "CustId123";
+            //CustInfo.CustIP = "255.255.255.255";  // Customer's IP Address
+            //Inv.CustomerInfo = CustInfo;
 
             // *** Send User fields ***
             // You can send up to ten string type parameters to store temporary data (for example, variables, 

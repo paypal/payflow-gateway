@@ -19,24 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9533da2-017e-4f68-8627-3fa704709969" name="Default Changelist" comment="New object: AdviceDetail, supports ADDLAMTn and ADDLAMTTYPEn&#10;New object: Devices, supports CATTYPE and CONTACTLESS&#10;Added to CustomerInfo: CUSTDATA, CUSTOMERID and CUSTOMERNUMBER">
-      <change afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/AdviceDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Devices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paypal/payments/samples/dataobjects/basictransactions/DOSale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paypal/payments/samples/dataobjects/basictransactions/DOSale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/Logger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PaymentConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PaymentConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/ReconnectState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/ReconnectState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/RetryState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/RetryState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/CustomerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/CustomerInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/PaymentCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/PaymentCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ShipTo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ShipTo.java" afterDir="false" />
-    </list>
+    <list default="true" id="e9533da2-017e-4f68-8627-3fa704709969" name="Default Changelist" comment="New object: AdviceDetail, supports ADDLAMTn and ADDLAMTTYPEn&#10;New object: Devices, supports CATTYPE and CONTACTLESS&#10;Added to CustomerInfo: CUSTDATA, CUSTOMERID and CUSTOMERNUMBER" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,22 +137,22 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="404" y="0" key="FileDocumentManager.FileCacheConflict/0.0.3440.1400@0.0.3440.1400" timestamp="1599937804839" />
-    <state width="1674" height="397" key="GridCell.Tab.0.bottom" timestamp="1599984440690">
+    <state width="1674" height="397" key="GridCell.Tab.0.bottom" timestamp="1599986827159">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="397" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1599984440690" />
-    <state width="1674" height="397" key="GridCell.Tab.0.center" timestamp="1599984440690">
+    <state width="1674" height="397" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1599986827159" />
+    <state width="1674" height="397" key="GridCell.Tab.0.center" timestamp="1599986827159">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="397" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1599984440690" />
-    <state width="1674" height="397" key="GridCell.Tab.0.left" timestamp="1599984440690">
+    <state width="1674" height="397" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1599986827159" />
+    <state width="1674" height="397" key="GridCell.Tab.0.left" timestamp="1599986827159">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="397" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1599984440690" />
-    <state width="1674" height="397" key="GridCell.Tab.0.right" timestamp="1599984440690">
+    <state width="1674" height="397" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1599986827159" />
+    <state width="1674" height="397" key="GridCell.Tab.0.right" timestamp="1599986827159">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="397" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1599984440690" />
+    <state width="1674" height="397" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1599986827159" />
     <state width="1674" height="399" key="GridCell.Tab.1.bottom" timestamp="1599979922796">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>

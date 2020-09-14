@@ -13,7 +13,7 @@ package paypal.payflow;
  * AdviceDetail addDetail1 = new AdviceDetail();
  * addDetail1.setAddLAmt("1");
  * addDetail1.setAddLAmtType("1");
- * inv.addAdviceDetailItem(addDetail1);
+ * inv.addAdviceDetailItem(addDetail1);Advuc
  * AdviceDetail addDetail2 = new AdviceDetail();
  * addDetail2.setAddLAmt("2");
  * addDetail2.setAddLAmtType("2");
@@ -90,7 +90,7 @@ public class AdviceDetail extends BaseRequestDataObject {
     protected void generateRequest(int Index) {
 
         try {
-            String IndexVal = String.valueOf(Index+1);
+            String IndexVal = String.valueOf(Index+1);  // adding +1 as range is 1 to 5.
 
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_ADDLAMT + IndexVal, addLAmt));
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_ADDLAMTTYPE+ IndexVal, addLAmtType));
