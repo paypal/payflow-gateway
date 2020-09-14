@@ -72,6 +72,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
     private String origProfileId;
     private String paymentHistory;
     private String paymentNum;
+    private String frequency;
 
     /**
      * Gets the profileName parameter.
@@ -375,6 +376,29 @@ public final class RecurringInfo extends BaseRequestDataObject {
     }
 
     /**
+     * Gets the frequency parameter.
+     * <p>Number of days (frequency) between payment. Returned if <code>PAYPERIOD=DAYS</code></p>
+     *
+     * @return - String
+     *  <p>Maps to Payflow Parameter: FREQUENCY</p>
+     */
+    public String getFrequency() {
+        return frequency;
+    }
+
+    /**
+     * Gets the frequency parameter.
+     * <p>Number of days (frequency) between payment. Returned if <code>PAYPERIOD=DAYS</code></p>
+     *
+     * @param frequency - String
+     *  <p>Maps to Payflow Parameter: FREQUENCY</p>
+     */
+    public void setFrequency(String frequency)  {
+        this.frequency= frequency;
+    }
+
+
+    /**
      * constructor
      */
     public RecurringInfo() {
@@ -400,6 +424,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_ORIGPROFILEID, origProfileId));
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_PAYMENTHISTORY, paymentHistory));
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_PAYMENTNUM, paymentNum));
+            super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_FREQUENCY, frequency));
         }
         catch (Exception ex) {
             ErrorObject err = new ErrorObject(PayflowConstants.SEVERITY_FATAL, "", ex.toString());

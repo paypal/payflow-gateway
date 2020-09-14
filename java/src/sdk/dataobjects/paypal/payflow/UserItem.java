@@ -45,7 +45,7 @@ public final class UserItem extends BaseRequestDataObject {
     /**
      * Sets USER1
      *
-     * @param userItem1 Stringffffffffffffff
+     * @param userItem1 String
      *  <p>Maps to Payflow Parameter: USER1</p>
      */
     public void setUserItem1(String userItem1) {
