@@ -81,6 +81,21 @@ namespace PayPal.Payments.DataObjects
         /// </summary>
         private String mReqName;
 
+        /// <summary>
+        /// Holds Customer Data
+        /// </summary>
+        private String mCustData;
+
+        /// <summary>
+        /// Holds Customer Id
+        /// </summary>
+        private String mCustomerId;
+
+        /// <summary>
+        /// Holds Customer Number
+        /// </summary>
+        private String mCustomerNumber;
+
         #endregion
 
         #region "Constructor"
@@ -236,6 +251,45 @@ namespace PayPal.Payments.DataObjects
             set { mCustId = value; }
         }
 
+                /// <summary>
+        /// Gets, Sets Customer Data
+        /// </summary>
+        /// <remarks>
+        /// <para>Requester Name.</para>
+        /// <para>Maps to Payflow Parameter:</para>
+        /// <code>CUSTDATAE</code>
+        /// </remarks>
+        public String CustData
+        {
+            get { return mCustData; }
+            set { mCustData = value; }
+        }
+
+        /// <summary>
+        /// Gets, Sets Customer identification.
+        /// </summary>
+        /// <remarks>
+        /// <para>Maps to Payflow Parameter:</para>
+        /// <code>CUSTOMERID</code>
+        /// </remarks>
+        public String CustomerId
+        {
+            get { return mCustomerId; }
+            set { mCustomerId = value; }
+        }
+
+        /// <summary>
+        /// Gets, Sets Customer Number.
+        /// </summary>
+        /// <remarks>
+        /// <para>Maps to Payflow Parameter:</para>
+        /// <code>CUSTOMERNUMBER</code>
+        /// </remarks>
+        public String CustomerNumber
+        {
+            get { return mCustomerNumber; }
+            set { mCustomerNumber = value; }
+        }
         #endregion
 
         #region "Core functions"
@@ -255,6 +309,9 @@ namespace PayPal.Payments.DataObjects
                 RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_CUSTID, mCustId));
                 RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_CUSTHOSTNAME, mCustHostName));
                 RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_CUSTBROWSER, mCustBrowser));
+                RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_CUSTDATA, mCustData));
+                RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_CUSTOMERID, mCustomerId));
+                RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_CUSTOMERNUMBER, mCustomerNumber));
             }
             catch (BaseException)
             {

@@ -327,17 +327,17 @@ namespace PayPal.Payments.DataObjects
         /// </summary>
         private String mCCUpdated;
 		/// <summary>
-        /// RRN
+        /// Rrn
         /// </summary>
-        private String mRRN;
+        private String mRrn;
 		/// <summary>
-        /// STAN
+        /// Stan
         /// </summary>
-        private String mSTAN;
+        private String mStan;
 		/// <summary>
-		/// ACI
+		/// Aci
 		/// </summary>
-		private String mACI;
+		private String mAci;
         /// <summary>
         /// ValidationCode
         /// </summary>
@@ -1227,9 +1227,9 @@ namespace PayPal.Payments.DataObjects
         /// <para>Maps to Payflow Parameter:</para>
         /// <code>RRN</code>
         /// </remarks>
-        public String RRN
+        public String Rrn
         {
-            get { return mRRN; }
+            get { return mRrn; }
         }
 		/// <summary>
         /// Gets the System Trace Audit number.
@@ -1238,20 +1238,20 @@ namespace PayPal.Payments.DataObjects
         /// <para>Maps to Payflow Parameter:</para>
         /// <code>STAN</code>
         /// </remarks>
-        public String STAN
+        public String Stan
         {
-            get { return mSTAN; }
+            get { return mStan; }
         }
 		/// <summary>
         /// Gets the Authorization Characteristics Indicator.
         /// </summary>
         /// <remarks>
         /// <para>Maps to Payflow Parameter:</para>
-        /// <code>ACI</code>
+        /// <code>Aci</code>
         /// </remarks>
-        public String ACI
+        public String Aci
         {
-            get { return mACI; }
+            get { return mAci; }
         }
 		/// <summary>
         /// Gets the Transaction Identifier.
@@ -1374,9 +1374,9 @@ namespace PayPal.Payments.DataObjects
             mType = (String)ResponseHashTable[PayflowConstants.PARAM_TYPE];
 			mCCUpdated = (String)ResponseHashTable[PayflowConstants.PARAM_CCUPDATED];
 			mAffluent= (String)ResponseHashTable[PayflowConstants.PARAM_AFFLUENT];
-            mRRN= (String)ResponseHashTable[PayflowConstants.PARAM_RRN];
-            mSTAN = (String)ResponseHashTable[PayflowConstants.PARAM_STAN];
-			mACI = (String)ResponseHashTable[PayflowConstants.PARAM_ACI];
+            mRrn= (String)ResponseHashTable[PayflowConstants.PARAM_RRN];
+            mStan = (String)ResponseHashTable[PayflowConstants.PARAM_STAN];
+			mAci = (String)ResponseHashTable[PayflowConstants.PARAM_ACI];
 			mValidationCode = (String)ResponseHashTable[PayflowConstants.PARAM_VALIDATIONCODE];
 			mCCTransId = (String)ResponseHashTable[PayflowConstants.PARAM_CCTRANSID];
 			mCCTrans_POSData = (String)ResponseHashTable[PayflowConstants.PARAM_CCTRANS_POSDATA];

@@ -838,7 +838,7 @@ namespace PayPal.Payments.DataObjects
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_L_ALTTAXAMT + IndexVal, mAltTaxAmt));
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_L_ALTTAXID + IndexVal, mAltTaxId));
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_L_ALTTAXRATE + IndexVal, mAltTaxRate));
-				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_L_CARRIERSERVICESLEVELCODE + IndexVal, mCarrierServiceLevelCode));
+				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_L_CARRIERSERVICELEVELCODE + IndexVal, mCarrierServiceLevelCode));
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_L_EXTAMT + IndexVal, mExtAmt));
 
 

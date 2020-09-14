@@ -349,3 +349,5 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/dotNET/SamplesCS/src/PayPal/Payments/Samples/CS/DataObjects/BasicTransactions/DOTest.cs
+/dotNET/SamplesVB/src/PayPal/Payments/Samples/VB/DataObjects/BasicTransactions/DOTest.vb

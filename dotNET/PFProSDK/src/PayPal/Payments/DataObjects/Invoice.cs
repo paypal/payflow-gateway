@@ -317,6 +317,18 @@ namespace PayPal.Payments.DataObjects
         /// Report Group
         /// </summary>
         private String mReportGroup;
+		/// <summary>
+		/// AdviceDetailList
+		/// </summary>
+		private ArrayList mAdviceDetailList;
+		/// <summary>
+		/// Devices
+		/// </summary>
+		private Devices mDevices;
+		/// <summary>
+		/// Miscellaneous Data
+        /// </summary>
+        private String mMiscData;
 
 		#endregion
 
@@ -404,6 +416,7 @@ namespace PayPal.Payments.DataObjects
 		public Invoice()
 		{
 			mItemList = new ArrayList();
+			mAdviceDetailList = new ArrayList();
 		}
 
 		#endregion
@@ -1310,6 +1323,160 @@ namespace PayPal.Payments.DataObjects
 			set { mReportGroup = value; }
 		}
 
+		/// <summary>
+		/// Gets, Sets Devices.
+		/// </summary>
+		/// <remarks>
+		/// <para>
+		/// Items that reflect what type of device; either termainal or card is used or presented.
+		/// </para>
+		/// </remarks>
+		/// <example>
+		/// <code lang="C#" escaped="false">
+		///	.................
+		///	// Inv is the Invoice object
+		///	.................
+		///	// Create a new Devices object.
+		///	Devices UsedDevices = new Devices();
+		///	UsedDevices.CatType = "3";
+		///	UsedDevices.Contactless = "RFD";
+		///	Inv.Devices = UsedDevices;
+		///	.................
+		///	</code>
+		/// <code lang="Visual Basic" escaped="false">
+		///	.................
+		///	' Inv is the Invoice object
+		///	.................
+        /// ' Set the device/card capabilities
+        /// Dim UsedDevices As Devices = New Devices
+        /// UsedDevices.CatType = "3"
+        /// UsedDevices.Contactless = "RFD"
+        /// Inv.Devices = UsedDevices
+		///	.................
+		///	</code>
+		/// </example>
+		public Devices Devices
+		{
+			get { return mDevices; }
+			set { mDevices = value; }
+		}
+
+		/// <summary>
+		/// Gets, Sets  Miscellaneous Data.
+		/// </summary>
+		/// <remarks>
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>MISCDATA</code>
+		/// </remarks>
+		public String MiscData
+		{
+			get { return mMiscData; }
+			set { mMiscData = value; }
+		}
+		#endregion
+
+		#region "AdviceDetailItem related Methods"
+
+	/// <summary>
+	/// Used for advice detail items.
+	/// </summary>
+	/// <remarks>
+	/// This class holds the advice detail related information.
+	/// Detail of a charge where *n* is a value from 1 - 5. Use for additional breakdown of the amount.
+	/// For example ADDLAMT1=1 is the amount for the additional amount for advice detail item 1 and is equal to 1,
+	/// </remarks>
+	/// <example>
+	/// <para>Following example shows how to use AdviceDetail.</para>
+	/// <code lang="C#" escaped="false">
+	///  .................
+	///  //Inv is the Invoice object.
+	///  .................
+	/// // Set the Advice Detail items.
+	/// AdviceDetail AddDetail1 = new AdviceDetail();
+	///	AddDetail1.AddLAmt = "1";
+	///	AddDetail1.AddLAmtType = "1";
+	///	Inv.AddAdviceDetailItem(AddDetail1);
+	///	// To add another item, just do the same as above but increment the value of AddDetail to 2: AddDetail2
+	///	.................
+	/// </code>
+	/// <code lang="Visual Basic" escaped="false">
+	///  .................
+	///  'Inv is the Invoice object.
+	///  .................
+    ///  ' Set the Advice Detail items.
+    ///  Dim AddDetail1 As AdviceDetail = New AdviceDetail
+    ///  AddDetail1.AddLAmt = "1"
+    ///  AddDetail1.AddLAmtType = "1"
+    ///  Inv.AddAdviceDetailItem(AddDetail1)
+	///  ' To add another item, just do the same as above but increment the value of AddDetail to 2: AddDetail2
+	///	.................
+	/// </code>
+	/// </example>
+		public void AddAdviceDetailItem(AdviceDetail Item)
+		{
+			mAdviceDetailList.Add(Item);
+		}
+
+		/// <summary>
+		/// Removes a advice detail item from line item list.
+		/// </summary>
+		/// <param name="Index">Index of line item to be removed.</param>
+		/// <remarks>
+		/// <para>Use this method to remove an advice detail item at a particular 
+		/// index in the purchase order.</para>
+		/// </remarks>
+		/// <example>
+		/// <code lang="C#" escaped="false">
+		///	.................
+		///	// Inv is the Invoice object
+		///	.................
+		///	// Remove item at index 0
+		///	Inv.RemoveAdviceDetailItem(0);
+		///	.................
+		///	</code>
+		/// <code lang="Visual Basic" escaped="false">
+		///	.................
+		///	' Inv is the Invoice object
+		///	.................
+		///	' Remove item at index 0;
+		///	Inv.RemoveAdviceDetailItem(0)
+		///	.................
+		///	</code>
+		/// </example>
+		public void RemoveAdviceDetailItem(int Index)
+		{
+			mAdviceDetailList.RemoveAt(Index);
+		}
+
+		/// <summary>
+		/// Clears the advice detail item list.
+		/// </summary>
+		/// <remarks>
+		/// <para>Use this method to clear all the 
+		/// advice detail items added to the purchase order.</para>
+		/// </remarks>
+		/// <example>
+		/// <code lang="C#" escaped="false">
+		///	.................
+		///	// Inv is the Invoice object
+		///	.................
+		///	// Remove all advice detail items.
+		///	Inv.RemoveAllAdviceDetailItems();
+		///	.................
+		///	</code>
+		/// <code lang="Visual Basic" escaped="false">
+		///	.................
+		///	' Inv is the Invoice object
+		///	.................
+		///	' Remove all advice detail items.
+		///	Inv.RemoveAllAdviceDetailItems()
+		///	.................
+		///	</code>
+		/// </example>
+		public void RemoveAllAdviceDetailItems()
+		{
+			mAdviceDetailList.Clear();
+		}
 		#endregion
 
 		#region "LineItem related Methods"
@@ -1428,6 +1595,22 @@ namespace PayPal.Payments.DataObjects
 			}
 		}
 
+		/// <summary>
+		/// Generates transaction request for advice detail items
+		/// </summary>
+		private void GenerateAdviceDetailRequest()
+		{
+			for (int Index = 0; Index < mAdviceDetailList.Count; Index++)
+			{
+				AdviceDetail Item = (AdviceDetail) mAdviceDetailList[Index];
+				if (Item != null)
+				{
+					Item.RequestBuffer = RequestBuffer;
+					Item.GenerateRequest(Index);
+				}
+			}
+		}
+	
 		#endregion
 
 		#region "Core functions"
@@ -1483,6 +1666,7 @@ namespace PayPal.Payments.DataObjects
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_VATINVNUM, mVatInvNum));
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_VATTAXRATE, mVatTaxRate));
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_REPORTGROUP, mReportGroup));
+				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MISCDATA, mMiscData));
 
 
 
@@ -1520,6 +1704,16 @@ namespace PayPal.Payments.DataObjects
                     mUserItem.RequestBuffer = RequestBuffer;
                     mUserItem.GenerateRequest();
                 }
+				if (mAdviceDetailList != null && mAdviceDetailList.Count > 0)
+				{
+					GenerateAdviceDetailRequest();
+				}
+                if (mDevices!= null)
+                {
+                    mDevices.RequestBuffer = RequestBuffer;
+                    mDevices.GenerateRequest();
+                }
+
 			}
 			catch (BaseException)
 			{

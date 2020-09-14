@@ -19,7 +19,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>SamplesCS</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-    <StartupObject>PayPal.Payments.Samples.CS.DataObjects.BasicTransactions.DOSaleCompleteCS</StartupObject>
+    <StartupObject>PayPal.Payments.Samples.CS.DataObjects.BasicTransactions.DOTest</StartupObject>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -117,6 +117,7 @@
     <Compile Include="src\PayPal\Payments\Samples\CS\DataObjects\BasicTransactions\DOReferenceCredit.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\PayPal\Payments\Samples\CS\DataObjects\BasicTransactions\DOTest.cs" />
     <Compile Include="src\PayPal\Payments\Samples\CS\DataObjects\BasicTransactions\DOSale.cs">
       <SubType>Code</SubType>
     </Compile>

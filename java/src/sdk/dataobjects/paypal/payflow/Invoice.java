@@ -90,6 +90,7 @@ public class Invoice extends BaseRequestDataObject {
     private String reportGroup;
     private ArrayList adviceDetailList;
     private Devices devices;
+	private String miscData;
 
 
     /**
@@ -209,10 +210,7 @@ public class Invoice extends BaseRequestDataObject {
      * addDetail1.setAddLAmt("1");
      * addDetail1.setAddLAmtType("1");
      * inv.addAdviceDetailItem(addDetail1);
-     * AdviceDetail addDetail2 = new AdviceDetail();
-     * addDetail2.setAddLAmt("2");
-     * addDetail2.setAddLAmtType("2");
-     * inv.addAdviceDetailItem(addDetail2);
+     * // To add another item, just do the same as above but increment the value of AddDetail to 2: AddDetail2
      * ..................
      */
     public void addAdviceDetailItem(AdviceDetail item) {
@@ -220,10 +218,10 @@ public class Invoice extends BaseRequestDataObject {
     }
 
     /**
-     * Removes a advice detail ine item from the list.
+     * Removes a advice detail item from the list.
      *
      * @param index Index of the AdviceDetailItem to be removed.
-     * <p>Use this method to remove a advice detail line item at a particular index in the purchase order.</P>
+     * <p>Use this method to remove a advice detail item at a particular index in the purchase order.</P>
      * .................
      * // Inv is the Invoice object
      * .................
@@ -236,12 +234,12 @@ public class Invoice extends BaseRequestDataObject {
     }
 
     /**
-     * Clears the advice detail line item list.
-     * <p>Use this method to clear all the line items added to the purchase order.</p>
+     * Clears the advice detail item list.
+     * <p>Use this method to clear all the items added to the purchase order.</p>
      * .................
      * // inv is the Invoice object
      * .................
-     * // Remove all advoce detail line items.
+     * // Remove all advice detail items.
      * inv.removeAllAdviceDetailItem();
      * .................
      */
@@ -311,6 +309,7 @@ public class Invoice extends BaseRequestDataObject {
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_VATINVNUM, vatInvNum));
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_VATTAXRATE, vatTaxRate));
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_REPORTGROUP, reportGroup));
+			super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_MISCDATA, miscData));
 
 
             if (billTo != null) {
@@ -1677,6 +1676,24 @@ public class Invoice extends BaseRequestDataObject {
      */
     public String getReportGroup() {
         return reportGroup;
+    }
+	
+	/**
+     * Sets the Miscellaneous Data.
+     * @param miscData String
+     *  <p>Maps to Payflow Parameter: MISCDATA</p>
+     */
+    public void setMiscData(String miscData) {
+        this.miscData = miscData;
+    }
+    /**
+     * Gets the Miscellaneous Data.
+     *
+     * @return miscData String
+     *  <p>Maps to Payflow Parameter: MISCDATA</p>
+     */
+    public String getMiscData() {
+        return miscData;
     }
 }
 

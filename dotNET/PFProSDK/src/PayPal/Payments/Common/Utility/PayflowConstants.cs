@@ -2137,9 +2137,9 @@ namespace PayPal.Payments.Common.Utility
         /// </summary>
         internal const String PARAM_MERCHANTVATNUM = "MERCHANTVATNUM";
         /// <summary>
-        /// Payflow Param MERCHANTINVOICENUM
+        /// Payflow Param MERCHANTINVNUM
         /// </summary>
-        internal const String PARAM_MERCHANTINVOICENUM = "MERCHANTINVOICENUM";
+        internal const String PARAM_MERCHANTINVNUM = "MERCHANTINVNUM";
         /// <summary>
         /// Payflow Param VATINVNUM
         /// </summary>
@@ -2148,6 +2148,10 @@ namespace PayPal.Payments.Common.Utility
         /// Payflow Param VATTAXRATE
         /// </summary>
         internal const String PARAM_VATTAXRATE = "VATTAXRATE";
+         /// <summary>
+        /// Payflow Param REPORTGROUP
+        /// </summary>
+        internal const String PARAM_REPORTGROUP = "REPORTGROUP";
         /// <summary>
         /// Payflow Param L_ALTTAXAMT
         /// </summary>
@@ -2161,16 +2165,48 @@ namespace PayPal.Payments.Common.Utility
         /// </summary>
         internal const String PARAM_L_ALTTAXRATE = "L_ALTTAXRATE";
         /// <summary>
-        /// Payflow Param L_CARRIERSERVICESLEVELCODE
+        /// Payflow Param L_CARRIERSERVICELEVELCODE
         /// </summary>
-        internal const String PARAM_L_CARRIERSERVICESLEVELCODE = "L_CARRIERSERVICESLEVELCODE";
+        internal const String PARAM_L_CARRIERSERVICELEVELCODE = "L_CARRIERSERVICELEVELCODE";
         /// <summary>
         /// Payflow Param L_EXTAMT
         /// </summary>
         internal const String PARAM_L_EXTAMT = "L_EXTAMT";
+                /// <summary>
+        /// Payflow Param LADDLAMT
+        /// </summary>
+        internal const String PARAM_ADDLAMT = "ADDLAMT";
+        /// <summary>
+        /// Payflow Param ADDLAMTTYPE
+        /// </summary>
+        internal const String PARAM_ADDLAMTTYPE= "ADDLAMTTYPE";
+        /// <summary>
+        /// Payflow Param CATTYPE
+        /// </summary>
+        internal const String PARAM_CATTYPE = "CATTYPE";
+        /// <summary>
+        /// Payflow Param CONTACTLESS
+        /// </summary>
+        internal const String PARAM_CONTACTLESS = "CONTACTLESS";
+        /// <summary>
+        /// Payflow Param CUSTDATA
+        /// </summary>
+        internal const String PARAM_CUSTDATA = "CUSTDATA";
+        /// <summary>
+        /// Payflow Param CUSTOMERID
+        /// </summary>
+        internal const String PARAM_CUSTOMERID = "CUSTOMERID";
+        /// <summary>
+        /// Payflow Param CUSTOMERNUMBER
+        /// </summary>
+        internal const String PARAM_CUSTOMERNUMBER = "CUSTOMERNUMBER";
+        /// <summary>
+        /// Payflow Param MISCDATA
+        /// </summary>
+        internal const String PARAM_MISCDATA = "MISCDATA";
 
 
-        
+
 
 
 
