@@ -17,7 +17,7 @@ See the [Payflow Gateway Developer's Guide](https://developer.paypal.com/docs/pa
 
 For information on changes to the Payflow Gateway, see [New Features](https://developer.paypal.com/docs/payflow/integration-guide/new-features/) and [Revision History](https://developer.paypal.com/docs/payflow/integration-guide/reference/revision-history/).
 
-Any questions or issues with these SDKs, please send your inquires to DL-PayPal-Payflow-SDK@paypal.com.
+Any questions or issues with these SDKs, please send open an [ISSUE}(https://github.com/paypal/payflow-gateway/issues) or you can email DL-PayPal-Payflow-SDK@paypal.com.
 
 ## License
 Code released under [SDK LICENSE](LICENSE)  
