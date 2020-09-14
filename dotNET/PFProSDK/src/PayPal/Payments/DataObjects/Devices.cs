@@ -7,7 +7,36 @@ using PayPal.Payments.Common.Exceptions;
 #endregion
 
 namespace PayPal.Payments.DataObjects
-{
+{	
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <remarks>Items that reflect what type of device; either terminal or card is used or presented.</remarks>
+		/// <example>
+		/// <para>Following example shows how to use Devices.</para>
+		/// <code lang="C#" escaped="false">
+		///  .................
+		///  //Inv is the Invoice object.
+		///  .................
+		/// // Create a new Devices object.
+		///	Devices UsedDevices = new Devices();
+		///	UsedDevices.CatType = "3";
+		///	UsedDevices.Contactless = "RFD";
+		///	Inv.Devices = UsedDevices;
+		///	.................
+		/// </code>
+		/// <code lang="Visual Basic" escaped="false">
+		/// .................
+		/// 'Inv is the Invoice object.
+		/// .................
+        /// ' Set the device/card capabilities
+        /// Dim UsedDevices As Devices = New Devices
+        /// UsedDevices.CatType = "3"
+        /// UsedDevices.Contactless = "RFD"
+        /// Inv.Devices = UsedDevices
+		///	.................
+		/// </code>
+		/// </example>
 
     public sealed class Devices : BaseRequestDataObject
     {

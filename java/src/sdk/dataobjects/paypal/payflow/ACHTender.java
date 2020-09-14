@@ -31,11 +31,11 @@ public final class ACHTender extends BaseTender {
      *
      * @param bankAccount String
      *  Maps to Payflow Parameter: TENDER
-     * <p/>
+     *  * <p>
      * .............
      * //bnkAcct is the populated BankAcct object.
      * .............
-     * <p/>
+     *  * <p>
      * //Create the Tender object
      * ACHTender tender = new ACHTender(bnkAcct);
      */
@@ -45,43 +45,19 @@ public final class ACHTender extends BaseTender {
 
     /**
      * Gets the Authtype.
-     * <p/>
+     *  * <p>
      * The type of authorization received from the payer.
      * Allowed Auth Types are:
-     * {@paypal.listtable}
-     * {@paypal.ltr}
-     * {@paypal.lth}AUTHTYPE {@paypal.elth}
-     * {@paypal.lth}Description  {@paypal.elth}
-     * {@paypal.eltr}
-     * {@paypal.ltr}
-     * {@paypal.ltd} CCD {@paypal.eltd}
-     * {@paypal.ltd}Default for B2B format accounts{@paypal.eltd}
-     * {@paypal.ltr}
-     * {@paypal.ltd} PPD {@paypal.eltd}
-     * {@paypal.ltd}Standard customer authorization method) for B2C format accounts.{@paypal.eltd}
-     * {@paypal.eltr}
-     * {@paypal.ltr}
-     * {@paypal.ltd} ARC {@paypal.eltd}
-     * {@paypal.ltd}Accounts Receivables check entry for a single entry debit.{@paypal.eltd}
-     * {@paypal.eltr}
-     * {@paypal.ltr}
-     * {@paypal.ltd} RCK {@paypal.eltd}
-     * {@paypal.ltd}Re-presented check entry for a single entry debit.{@paypal.eltd}
-     * {@paypal.eltr}
-     * {@paypal.ltr}
-     * {@paypal.ltd} WEB {@paypal.eltd}
-     * {@paypal.ltd}The customer authorized the payment over the Internet.{@paypal.eltd}
-     * {@paypal.eltr}
-     * {@paypal.ltr}
-     * {@paypal.ltd} TEL {@paypal.eltd}
-     * {@paypal.ltd}Debit authorization obtained by telephone.{@paypal.eltd}
-     * {@paypal.eltr}
-     * {@paypal.ltr}
-     * {@paypal.ltd} POP {@paypal.eltd}
-     * {@paypal.ltd}Point of Purchase check entry for a single entry debit.{@paypal.eltd}
-     * {@paypal.eltr}
-     * {@paypal.endlisttable}
-     * </p>
+     *
+     * AUTHTYPE - Description
+     *
+     * CCD - Default for B2B format accounts
+     * PPD - Standard customer authorization method) for B2C format accounts.
+     * ARC - Accounts Receivables check entry for a single entry debit.
+     * RCK - Re-presented check entry for a single entry debit.
+     * WEB - The customer authorized the payment over the Internet.
+     * TEL - Debit authorization obtained by telephone.
+     * POP - Point of Purchase check entry for a single entry debit.
      *
      * @return authType
      *  <p> Maps to Payflow Parameter: AUTHTYPE </p>
@@ -93,43 +69,19 @@ public final class ACHTender extends BaseTender {
 
     /**
      * Sets the Authtype.
-     * <p/>
+     *  * <p>
      * The type of authorization received from the payer.
      * Allowed Auth Types are:
-     * {@paypal.listtable}
-     * {@paypal.ltr}
-     * {@paypal.lth}AUTHTYPE {@paypal.elth}
-     * {@paypal.lth}Description  {@paypal.elth}
-     * {@paypal.eltr}
-     * {@paypal.ltr}
-     * {@paypal.ltd} CCD {@paypal.eltd}
-     * {@paypal.ltd}Default for B2B format accounts{@paypal.eltd}
-     * {@paypal.ltr}
-     * {@paypal.ltd} PPD {@paypal.eltd}
-     * {@paypal.ltd}Standard customer authorization method) for B2C format accounts.{@paypal.eltd}
-     * {@paypal.eltr}
-     * {@paypal.ltr}
-     * {@paypal.ltd} ARC {@paypal.eltd}
-     * {@paypal.ltd}Accounts Receivables check entry for a single entry debit.{@paypal.eltd}
-     * {@paypal.eltr}
-     * {@paypal.ltr}
-     * {@paypal.ltd} RCK {@paypal.eltd}
-     * {@paypal.ltd}Re-presented check entry for a single entry debit.{@paypal.eltd}
-     * {@paypal.eltr}
-     * {@paypal.ltr}
-     * {@paypal.ltd} WEB {@paypal.eltd}
-     * {@paypal.ltd}The customer authorized the payment over the Internet.{@paypal.eltd}
-     * {@paypal.eltr}
-     * {@paypal.ltr}
-     * {@paypal.ltd} TEL {@paypal.eltd}
-     * {@paypal.ltd}Debit authorization obtained by telephone.{@paypal.eltd}
-     * {@paypal.eltr}
-     * {@paypal.ltr}
-     * {@paypal.ltd} POP {@paypal.eltd}
-     * {@paypal.ltd}Point of Purchase check entry for a single entry debit.{@paypal.eltd}
-     * {@paypal.eltr}
-     * {@paypal.endlisttable}
-     * </p>
+     *
+     * AUTHTYPE - Description
+     *
+     * CCD - Default for B2B format accounts
+     * PPD - Standard customer authorization method) for B2C format accounts.
+     * ARC - Accounts Receivables check entry for a single entry debit.
+     * RCK - Re-presented check entry for a single entry debit.
+     * WEB - The customer authorized the payment over the Internet.
+     * TEL - Debit authorization obtained by telephone.
+     * POP - Point of Purchase check entry for a single entry debit.
      *
      * @param authType String
      *  <p> Maps to Payflow Parameter: AUTHTYPE </p>
@@ -140,25 +92,16 @@ public final class ACHTender extends BaseTender {
 
     /**
      * Gets the PreNote.
-     * <p/>
+     *  * <p>
      * Prenote indicates a prenotification payment with no amount.
      * Used to verify bank account validity. Receiving banks are not required
      * to respond to prenotification payments.
      * Allowed prenote values are:
-     * {@paypal.listtable}
-     * {@paypal.ltr}
-     * {@paypal.lth}PRENOTE {@paypal.elth}
-     * {@paypal.lth}Description  {@paypal.elth}
-     * {@paypal.eltr}
-     * {@paypal.ltr}
-     * {@paypal.ltd} N {@paypal.eltd}
-     * {@paypal.ltd}Default. AMT needs to be passed.{@paypal.eltd}
-     * {@paypal.ltr}
-     * {@paypal.ltd} Y {@paypal.eltd}
-     * {@paypal.ltd}Default. AMT does not need to be passed.{@paypal.eltd}
-     * {@paypal.eltr}
-     * {@paypal.endlisttable}
-     * </p>
+     *
+     * PRENOTE  - Description
+     *
+     * N Default. AMT needs to be passed.
+     * Y Default. AMT does not need to be passed.
      *
      * @return preNote
      *  <p> Maps to Payflow Parameter: PRENOTE </p>
@@ -169,25 +112,16 @@ public final class ACHTender extends BaseTender {
 
     /**
      * Sets the PreNote.
-     * <p/>
+     *  * <p>
      * Prenote indicates a prenotification payment with no amount.
      * Used to verify bank account validity. Receiving banks are not required
      * to respond to prenotification payments.
      * Allowed prenote values are:
-     * {@paypal.listtable}
-     * {@paypal.ltr}
-     * {@paypal.lth}PRENOTE {@paypal.elth}
-     * {@paypal.lth}Description  {@paypal.elth}
-     * {@paypal.eltr}
-     * {@paypal.ltr}
-     * {@paypal.ltd} N {@paypal.eltd}
-     * {@paypal.ltd}Default. AMT needs to be passed.{@paypal.eltd}
-     * {@paypal.ltr}
-     * {@paypal.ltd} Y {@paypal.eltd}
-     * {@paypal.ltd}Default. AMT does not need to be passed.{@paypal.eltd}
-     * {@paypal.eltr}
-     * {@paypal.endlisttable}
-     * </p>
+     *
+     * PRENOTE  - Description
+     *
+     * N Default. AMT needs to be passed.
+     * Y Default. AMT does not need to be passed.
      *
      * @param preNote String
      *  <p> Maps to Payflow Parameter: PRENOTE </p>
@@ -198,8 +132,7 @@ public final class ACHTender extends BaseTender {
 
     /**
      * Gets the Term City.
-     * <p/>
-     * City where the merchant's terminal is located.
+     * <p>City where the merchant's terminal is located.
      * Used only for POP.</p>
      *
      * @return termCity
@@ -211,8 +144,7 @@ public final class ACHTender extends BaseTender {
 
     /**
      * Gets the Term City.
-     * <p/>
-     * City where the merchant's terminal is located.
+     * <p>City where the merchant's terminal is located.
      * Used only for POP.</p>
      *
      * @param termCity String
@@ -224,8 +156,7 @@ public final class ACHTender extends BaseTender {
 
     /**
      * Gets the TermState.
-     * <p/>
-     * State where the merchant's terminal is located.
+     * <p>State where the merchant's terminal is located.
      * Used only for POP.</p>
      *
      * @return termState
@@ -237,8 +168,7 @@ public final class ACHTender extends BaseTender {
 
     /**
      * Gets the TermState.
-     * <p/>
-     * State where the merchant's terminal is located.
+     * <p> State where the merchant's terminal is located.
      * Used only for POP.</p>
      *
      * @param termState String

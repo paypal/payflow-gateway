@@ -1,8 +1,9 @@
 package paypal.payflow;
 
 /**
+ * <pre>{@code
  * This is the base class of all different recurring action transactions.
- * <p/>
+ *
  * Each derived class of RecurringTransaction specifies a unique action
  * transaction. This class can also be directly used to perform a recurring
  * transaction. Alternatively, a new class can be extended from this to
@@ -12,7 +13,7 @@ package paypal.payflow;
  *  ...............
  * // Populate data objects
  * ...............
- * <p/>
+ *
  * //Set the Recurring related information.
  * recurringInfo recurInfo = new recurringInfo();
  * // The date that the first payment will be processed.
@@ -24,14 +25,14 @@ package paypal.payflow;
  * // QTER / SMYR / YEAR
  * recurInfo.setPayPeriod ("WEEK");
  * //////////////////////////////////////////////////
- * <p/>
+ *
  * // Create a new Recurring Transaction.
  * RecurringTransaction trans = new RecurringTransaction("A", recurInfo,
  * user, connection, inv, tender, payflowUtility.getRequestId());
- * <p/>
+ *
  * // Submit the transaction.
  * Response resp = trans.submitTransaction();
- * <p/>
+ *
  * if (resp != null)
  * {
  * // Get the Transaction Response parameters.
@@ -41,7 +42,7 @@ package paypal.payflow;
  * System.out.println("RESULT = " + trxnResponse.getResult());
  * System.out.println("RESPMSG = " + trxnResponse.getRespMsg());
  * }
- * <p/>
+ *
  * // Get the Recurring Response parameters.
  * RecurringResponse recurResponse = resp.getRecurringResponse();
  * if (recurResponse != null)
@@ -50,13 +51,15 @@ package paypal.payflow;
  * System.out.println("PROFILEID = " + recurResponse.getProfileId());
  * }
  * }
- * <p/>
+ *
  * // Get the Context and check for any contained SDK specific errors.
  * Context ctx = resp.getTransactionContext();
- * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)
+ * if (ctx != null & ctx.getErrorCount() > 0)
  * {
  * System.out.println("Errors = " + ctx.ToString());
  * }
+ * }
+ * </pre>
  */
 
 public class RecurringTransaction extends BaseTransaction {
@@ -73,7 +76,7 @@ public class RecurringTransaction extends BaseTransaction {
      * @param userInfo              UserInfo              - User Info object populated with user credentials.
      * @param payflowConnectionData PayflowConnectionData - Connection credentials object.
      * @param requestId             String             - Request Id
-     *                              <p/>
+     *                               * <p>
      *                              Each derived class of RecurringTransaction specifies a unique action
      *                              transaction. This class can also be directly used to perform a recurring
      *                              transaction. Alternatively, a new class can be extended from this to
@@ -82,12 +85,11 @@ public class RecurringTransaction extends BaseTransaction {
      *  ...............
      * // Populate data objects
      * ...............
-     * <p/>
-     * <p/>
+     *  * <p>
      * // Create a new Recurring Transaction.
      * RecurringTransaction trans = new RecurringTransaction("A", recurInfo,
      * user, connection, payflowUtility.getRequestId ());
-     * <p/>
+     *  * <p>
      * // Submit the transaction.
      * Response resp = trans.submitTransaction();
      */
@@ -111,7 +113,7 @@ public class RecurringTransaction extends BaseTransaction {
      * @param recurringInfo RecurringInfo - Recurring Info object.
      * @param userInfo      UserInfo      - User Info object populated with user credentials.
      * @param requestId     String     - Request Id
-     *                      <p/>
+     *                       * <p>
      *                      Each derived class of RecurringTransaction specifies a unique action
      *                      transaction. This class can also be directly used to perform a recurring
      *                      transaction. Alternatively, a new class can be extended from this to
@@ -120,12 +122,11 @@ public class RecurringTransaction extends BaseTransaction {
      *  ...............
      * // Populate data objects
      * ...............
-     * <p/>
-     * <p/>
+     *  * <p>
      * // Create a new Recurring Transaction.
      * RecurringTransaction trans = new RecurringTransaction("A", recurInfo,
      * user,  payflowUtility.getRequestId ());
-     * <p/>
+     *  * <p>
      * // Submit the transaction.
      * Response resp = trans.submitTransaction();
      */
@@ -152,7 +153,7 @@ public class RecurringTransaction extends BaseTransaction {
      * @param payflowConnectionData PayflowConnectionData - Connection credentials object.
      * @param invoice               Invoice              - Invoice Object.
      * @param requestId             String             - Request Id
-     *                              <p/>
+     *                               * <p>
      *                              Each derived class of RecurringTransaction specifies a unique action
      *                              transaction. This class can also be directly used to perform a recurring
      *                              transaction. Alternatively, a new class can be extended from this to
@@ -161,12 +162,11 @@ public class RecurringTransaction extends BaseTransaction {
      *  ...............
      * // Populate data objects
      * ...............
-     * <p/>
-     * <p/>
+     *  * <p>
      * // Create a new Recurring Transaction.
      * RecurringTransaction trans = new RecurringTransaction("A", recurInfo,
      * user, connection, invoice, payflowUtility.getRequestId ());
-     * <p/>
+     *  * <p>
      * // Submit the transaction.
      * Response resp = trans.submitTransaction();
      */
@@ -193,7 +193,7 @@ public class RecurringTransaction extends BaseTransaction {
      * @param userInfo      UserInfo      - User Info object populated with user credentials.
      * @param invoice       Invoice       - Invoice Object.
      * @param requestId     String     - Request Id
-     *                      <p/>
+     *                       * <p>
      *                      Each derived class of RecurringTransaction specifies a unique action
      *                      transaction. This class can also be directly used to perform a recurring
      *                      transaction. Alternatively, a new class can be extended from this to
@@ -202,12 +202,11 @@ public class RecurringTransaction extends BaseTransaction {
      *  ...............
      * // Populate data objects
      * ...............
-     * <p/>
-     * <p/>
+     *  * <p>
      * // Create a new Recurring Transaction.
      * RecurringTransaction trans = new RecurringTransaction("A", recurInfo,
      * user, invoice, payflowUtility.getRequestId ());
-     * <p/>
+     *  * <p>
      * // Submit the transaction.
      * Response resp = trans.submitTransaction();
      */
@@ -229,7 +228,7 @@ public class RecurringTransaction extends BaseTransaction {
      * @param invoice               Invoice               - Invoice object.
      * @param tender                Tender                - Tender
      * @param RequestId             - Request Id
-     *                              <p/>
+     *                               * <p>
      *                              Each derived class of RecurringTransaction specifies a unique action
      *                              transaction. This class can also be directly used to perform a recurring
      *                              transaction. Alternatively, a new class can be extended from this to
@@ -238,12 +237,11 @@ public class RecurringTransaction extends BaseTransaction {
      *  ...............
      * // Populate data objects
      * ...............
-     * <p/>
-     * <p/>
+     *  * <p>
      * // Create a new Recurring Transaction.
      * RecurringTransaction trans = new RecurringTransaction("A", recurInfo,
      * user, connection, invoice, tender, payflowUtility.getRequestId ());
-     * <p/>
+     *  * <p>
      * // Submit the transaction.
      * Response resp = trans.submitTransaction();
      */
@@ -273,7 +271,7 @@ public class RecurringTransaction extends BaseTransaction {
      * @param invoice       Invoice       - Invoice object.
      * @param tender        Tender        - Tender
      * @param requestId     String     - Request Id
-     *                      <p/>
+     *                       * <p>
      *                      Each derived class of RecurringTransaction specifies a unique action
      *                      transaction. This class can also be directly used to perform a recurring
      *                      transaction. Alternatively, a new class can be extended from this to
@@ -282,12 +280,11 @@ public class RecurringTransaction extends BaseTransaction {
      *  ...............
      * // Populate data objects
      * ...............
-     * <p/>
-     * <p/>
+     *  * <p>
      * // Create a new Recurring Transaction.
      * RecurringTransaction trans = new RecurringTransaction("A", recurInfo,
      * user, invoice, tender, payflowUtility.getRequestId ());
-     * <p/>
+     *  * <p>
      * // Submit the transaction.
      * Response resp = trans.submitTransaction();
      */

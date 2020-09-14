@@ -60,7 +60,7 @@ public class AdviceDetail extends BaseRequestDataObject {
      * Sets the advice detail amount type
      *
      * @param addLAmtType String
-     * <p>Maps to Payflow Parameter: ADDLAMTTYPE/p>
+     * <p>Maps to Payflow Parameter: ADDLAMTTYPE</p>
      */
     public void setAddLAmtType(String addLAmtType) {
         this.addLAmtType = addLAmtType;

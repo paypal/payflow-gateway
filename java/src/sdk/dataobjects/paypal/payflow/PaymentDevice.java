@@ -4,26 +4,13 @@ package paypal.payflow;
  * This abstract class serves as base class of all the payment devices.
  * Each Payment Device is associated with a tender type.
  * Following are the Payment Devices associated with different tender types:
- * {@paypal.listtable}
- * {@paypal.ltr}
- * {@paypal.lth}Payment Device Data {@paypal.elth}
- * {@paypal.lth}Tender Type {@paypal.elth}
- * {@paypal.eltr}
- * {@paypal.ltr}
- * {@paypal.ltd}BankAcct {@paypal.eltd}
- * {@paypal.ltd}{@link ACHTender}{@paypal.eltd}
- * {@paypal.eltr}
- * {@paypal.ltr}
- * {@paypal.ltd} CreditCard ,PurchaseCard ,SwipeCard{@paypal.eltd}
- * {@paypal.ltd}
- * {@link CardTender}
- * {@paypal.eltd}
- * {@paypal.eltr}
- * {@paypal.ltr}
- * {@paypal.ltd} CheckPayment {@paypal.eltd}
- * {@paypal.ltd} {@link CheckTender}{@paypal.eltd}
- * {@paypal.eltr}
- * {@paypal.endlisttable}
+ *
+ * Payment Device Data Tender Type
+ *
+ * BankAcct {@link ACHTender}
+ * CreditCard, PurchaseCard, SwipeCard {@link CardTender}
+ * CheckPayment {@link CheckTender}
+ *
  */
 abstract class PaymentDevice extends BaseRequestDataObject {
 
@@ -69,27 +56,13 @@ abstract class PaymentDevice extends BaseRequestDataObject {
      * gets the Account holder's account number.
      *
      * @return String
-     *         <p/>
-     *         Maps to Payflow Parameters as follows:
-     *         {@paypal.listtable}
-     *         {@paypal.ltr}
-     *         {@paypal.lth} Specific transaction {@paypal.elth}
-     *         {@paypal.lth}Payflow Parameter{@paypal.elth}
-     *         {@paypal.eltr}
-     *         {@paypal.ltr}
-     *         {@paypal.ltd} Transactions with CreditCard, PurchaseCard, BankAcct payment devices {@paypal.eltd}
-     *         {@paypal.ltd} ACCT {@paypal.eltd}
-     *         {@paypal.eltr}
-     *         {@paypal.ltr}
-     *         {@paypal.ltd} Transactions with CheckPayment {@paypal.eltd}
-     *         {@paypal.ltd} MICR {@paypal.ltd}
-     *         {@paypal.eltr}
-     *         {@paypal.ltr}
-     *         {@paypal.ltd} Transactions with SwipeCard {@paypal.eltd}
-     *         {@paypal.ltd} SWIPE {@paypal.ltd}
-     *         {@paypal.eltr}
-     *         {@paypal.endlisttable}
-     *         </p>
+     *
+     * Maps to Payflow Parameters as follows:
+     *
+     * ACCT - Transactions with CreditCard, PurchaseCard, BankAcct payment devices
+     * MICR - Transactions with CheckPayment
+     * SWIPE - Transactions with SwipeCard
+     *
      */
     public String getAcct() {
         return acct;
@@ -99,7 +72,7 @@ abstract class PaymentDevice extends BaseRequestDataObject {
      * gets the account holder's name.
      *
      * @return String
-     *         <p/>
+     *          * <p>
      * Maps to Payflow Parameters as follows: NAME
      * </p>
      */
@@ -111,7 +84,7 @@ abstract class PaymentDevice extends BaseRequestDataObject {
     /**
      * gets the account holder's name.
      *
-     * @param name <p/>
+     * @param name  * <p>
      * Maps to Payflow Parameters as follows: NAME
      * </p>
      */
@@ -126,7 +99,7 @@ abstract class PaymentDevice extends BaseRequestDataObject {
     /**
      * gets the MagTek Encrypted Swipe Data.
      *
-     * @param magtek <p/>
+     * @param magtek Magtek Encrypted Swipe Data
      *
      */
     public void setMagtek(String magtek) {

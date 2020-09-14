@@ -35,7 +35,7 @@ public class NVPSale {
 		PayflowAPI pa = new PayflowAPI();
 
 		// Sample Request.
-		// Please replace <user>, <vendor>, <password> & <partner> with your merchant
+		// Please replace %3Cuser%3E%2C+%3Cvendor%3E%2C+%3Cpassword%3E+%26+%3Cpartner%3E with your merchant
 		// information.
 		String request = "USER=<user>&VENDOR=<vendor>&PARTNER=<partner>&PWD=<password>&TRXTYPE=S&ACCT=5100000000000008&EXPDATE=0119&TENDER=C&INVNUM=INV12345&PONUM=PO12345&STREET=123 Main St.&ZIP=12345&AMT=12.25&CVV2=123&VERBOSITY=HIGH";
 

@@ -10,20 +10,20 @@ public class ECDoRequest extends ExpressCheckoutRequest {
     private String payerId;
 
     /**
-     * * <summary>
+     *
      * Constructor for ECDoRequest
      *
      * @param token   - String
      * @param payerId String
-     *                <p/>
-     *                ECDoRequest is used to set the data required for a Express Checkout DO operation.
-     *                </p>
-     *  .............
-     * <p/>
-     * Create the ECDoRequest object
+     *
+     * ECDoRequest is used to set the data required for a Express Checkout DO operation.
+     *
+     * <code>
+     * *.............
+     * * Create the ECDoRequest object
      * ECDoRequest doEC = new ECDoRequest("[tokenid]","[payerid]");
-     * <p/>
-     * .............
+     * *.............
+     * </code>
      */
     public ECDoRequest(String token, String payerId) {
         super(PayflowConstants.PARAM_ACTION_DO, token);

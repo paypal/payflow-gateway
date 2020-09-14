@@ -1,16 +1,15 @@
 package paypal.payflow;
 
 /**
+ * <pre>{@code
  * This class is used to perform a voice authorization transaction.
- * <p/>
- * * This class is used to create and perform a
- * Sale Transaction.
- * </p>
+ *
+ * * This class is used to create and perform a Sale Transaction.
  *
  *  ...............
  * // Populate data objects
  * ...............
- * <p/>
+ *
  * // Create a new SaleTransaction.
  * SaleTransaction trans = new SaleTransaction(user,
  * connection, inv, tender, PayflowUtility.RequestId);
@@ -38,13 +37,15 @@ package paypal.payflow;
  * System.out.println("POSTFPSMSG = " + fraudResp.getPostFpsMsg());
  * }
  * }
- * <p/>
+ *
  * // Get the Context and check for any contained SDK specific errors.
  * Context ctx = resp.getTransactionContext();
- * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)
+ * if (ctx != null & ctx.getErrorCount() > 0)
  * {
  * System.out.println("Errors = " + ctx.toString());
  * }
+ * }
+ * </pre>
  */
 
 
@@ -85,11 +86,11 @@ public final class SaleTransaction extends BaseTransaction {
 
     /**
      * Gets, Sets CreateSecureToken, SecureTokenId. This property is used to create a SecureToken and SecureTokenId.
-     * <p/>
+     *  * <p>
      * Use a secure token to send non-credit card transaction data to the Payflow server for storage in
      * a way that can't be intercepted and manipulated maliciously.The secure token must be used with the hosted
      * checkout pages. The token is good for a one-time transaction and is valid for 30 minutes.
-     * <p/>
+     *  * <p>
      * NOTE: Without using a secure token, Payflow Pro merchants can host their own payment page and Payflow Link merchants
      * can use a form post to send transaction data to the hosted checkout pages. However, by not using the secure token,
      * these Payflow gateway users are responsible for the secure handling of data.  To obtain a secure token, pass a unique,
@@ -97,7 +98,7 @@ public final class SaleTransaction extends BaseTransaction {
      * ID with a secure token and returns the token as a string of up to 32 alphanumeric characters.  To pass the transaction
      * data to the hosted checkout page, you pass the secure token and token ID in an HTTP form post. The token and ID trigger
      * the Payflow server to retrieve your data and display it for buyer approval.
-     * <p/>
+     *  * <p>
      *
      * @return secureToken String
      *  This example shows how to set the flag to create a secure token.
@@ -106,26 +107,26 @@ public final class SaleTransaction extends BaseTransaction {
      * //Populate required data objects.
      * ..........
      * ..........
-     * <p/>
+     *  * <p>
      * // Since we are using the hosted payment pages, you will not be sending the credit card data with the
      * // Secure Token Request.  You just send all other 'sensitive' data within this request and when you
      * // call the hosted payment pages, you'll only need to pass the SECURETOKEN; which is generated and returned
      * // and the SECURETOKENID that was created and used in the request.
-     * <p/>
+     *  * <p>
      * // Create a new Secure Token Sale Transaction.  Even though this example is performing
      * // an authorization, you can create a secure token using SaleTransaction too.  Only Authorization and Sale
      * // type transactions are permitted.
      * SaleTransaction Trans = new SaleTransaction(User, Connection, Inv, null, PayflowUtility.RequestId);
-     * <p/>
+     *  * <p>
      * // Set the flag to create a Secure Token.
      * Trans.CreateSecureToken = "Y";
      * // The Secure Token Id must be a unique id up to 36 characters.  Using the RequestID object to
      * // generate a random id, but any means to create an id can be used.
      * Trans.SecureTokenId = PayflowUtility.RequestId;
-     * <p/>
+     *  * <p>
      * //Submit the transaction.
      * trans.submitTransaction();
-     * <p/>
+     *  * <p>
      * // Get the Response.
      * Response resp = trans.getResponse();
      * if (resp != null)
@@ -142,7 +143,7 @@ public final class SaleTransaction extends BaseTransaction {
      * }
      * // Get the Context and check for any contained SDK specific errors.
      * Context ctx = resp.getTransactionContext();
-     * if (ctx != null ++ ctx.getErrorCount() > 0)
+     * if (ctx != null ++ Ctx.getErrorCount() %3E 0)
      * {
      * System.out.println(Environment.NewLine + "Errors = " + ctx.toString());
      * }
@@ -184,7 +185,7 @@ public final class SaleTransaction extends BaseTransaction {
      *  ...............
      * // Populate data objects
      * ...............
-     * <p/>
+     *  * <p>
      * // Create a new SaleTransaction.
      * SaleTransaction trans = new SaleTransaction(user,
      * connection, inv, tender, payflowUtility.getRequestId());
@@ -208,7 +209,7 @@ public final class SaleTransaction extends BaseTransaction {
      *  ...............
      * // Populate data objects
      * ...............
-     * <p/>
+     *  * <p>
      * // Create a new SaleTransaction.
      * SaleTransaction trans = new SaleTransaction(user,
      * connection, inv, tender, payflowUtility.getRequestId());

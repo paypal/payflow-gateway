@@ -3133,6 +3133,151 @@
             Payflow Param CCUPDATED
             </summary>
         </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_RRN">
+            <summary>
+            Payflow Param RRN
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_STAN">
+            <summary>
+            Payflow Param STAN
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_ACI">
+            <summary>
+            Payflow Param ACI
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_VALIDATIONCODE">
+            <summary>
+            Payflow Param VALIDATIONCODE
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_MERCHANTLOCATIONID">
+            <summary>
+            Payflow Param MERCHANTLOCATIONID
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_MERCHANTID">
+            <summary>
+            Payflow Param MERCHANTID
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_MERCHANTCONTACTINFO">
+            <summary>
+            Payflow Param MERCHANTCONTACTINFO
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_CCTRANSID">
+            <summary>
+            Payflow Param CCTRANSID
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_CCTRANS_POSDATA">
+            <summary>
+            Payflow Param CCTRANS_POSDATA
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_AUTHDATE">
+            <summary>
+            Payflow Param AUTHDATE
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_MERCHANTURL">
+            <summary>
+            Payflow Param MERCHANTURL
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_MERCHANTVATNUM">
+            <summary>
+            Payflow Param MERCHANTVATNUM
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_MERCHANTINVNUM">
+            <summary>
+            Payflow Param MERCHANTINVNUM
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_VATINVNUM">
+            <summary>
+            Payflow Param VATINVNUM
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_VATTAXRATE">
+            <summary>
+            Payflow Param VATTAXRATE
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_REPORTGROUP">
+            <summary>
+            Payflow Param REPORTGROUP
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_L_ALTTAXAMT">
+            <summary>
+            Payflow Param L_ALTTAXAMT
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_L_ALTTAXID">
+            <summary>
+            Payflow Param L_ALTTAXID
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_L_ALTTAXRATE">
+            <summary>
+            Payflow Param L_ALTTAXRATE
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_L_CARRIERSERVICELEVELCODE">
+            <summary>
+            Payflow Param L_CARRIERSERVICELEVELCODE
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_L_EXTAMT">
+            <summary>
+            Payflow Param L_EXTAMT
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_ADDLAMT">
+            <summary>
+            Payflow Param LADDLAMT
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_ADDLAMTTYPE">
+            <summary>
+            Payflow Param ADDLAMTTYPE
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_CATTYPE">
+            <summary>
+            Payflow Param CATTYPE
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_CONTACTLESS">
+            <summary>
+            Payflow Param CONTACTLESS
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_CUSTDATA">
+            <summary>
+            Payflow Param CUSTDATA
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_CUSTOMERID">
+            <summary>
+            Payflow Param CUSTOMERID
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_CUSTOMERNUMBER">
+            <summary>
+            Payflow Param CUSTOMERNUMBER
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_MISCDATA">
+            <summary>
+            Payflow Param MISCDATA
+            </summary>
+        </member>
         <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.MAGTEK_PARAM_ENCMP">
             <summary>
             Magtek Param ENCMP
@@ -5047,7 +5192,7 @@
             	// CurrentPaymentState is the
             	// PaymentState object.
             	
-            	If(CurrnetPaymentState.IsXmlPayRequest)
+            	If(CurrentPaymentState.IsXmlPayRequest)
             	{
             		Console.WriteLine("Request Type = XML Pay request")
             	}
@@ -5121,7 +5266,7 @@
             	// CurrentPaymentState is the
             	// PaymentState object.
             	
-            	if(CurrnetPaymentState.HaveRequestId)
+            	if(CurrentPaymentState.HaveRequestId)
             	{
             		Console.WriteLine("RequestId obtained.");
             	}
@@ -5135,7 +5280,7 @@
             	// CurrentPaymentState is the
             	// PaymentState object.
             	
-            	If(CurrnetPaymentState.HaveRequestId)
+            	If(CurrentPaymentState.HaveRequestId)
             	{
             		Console.WriteLine("RequestId obtained.")
             	}
@@ -5194,7 +5339,7 @@
             	// CurrentPaymentState is the
             	// PaymentState object.
             	
-            	if(CurrnetPaymentState.InProgress)
+            	if(CurrentPaymentState.InProgress)
             	{
             		Console.WriteLine("Transaction in progress.");
             	}
@@ -5208,7 +5353,7 @@
             	// CurrentPaymentState is the
             	// PaymentState object.
             	
-            	If(CurrnetPaymentState.InProgress)
+            	If(CurrentPaymentState.InProgress)
             	{
             		Console.WriteLine("Transaction in progress.")
             	}
@@ -5232,7 +5377,7 @@
             	// CurrentPaymentState is the
             	// PaymentState object.
             	
-            	if(CurrnetPaymentState.Success)
+            	if(CurrentPaymentState.Success)
             	{
             		Console.WriteLine("Current state succeeds.");
             	}
@@ -5246,7 +5391,7 @@
             	// CurrentPaymentState is the
             	// PaymentState object.
             	
-            	If(CurrnetPaymentState.Success)
+            	If(CurrentPaymentState.Success)
             	{
             		Console.WriteLine("Current state succeeds.")
             	}
@@ -5270,7 +5415,7 @@
             	// CurrentPaymentState is the
             	// PaymentState object.
             	
-            	if(CurrnetPaymentState.Failed)
+            	if(CurrentPaymentState.Failed)
             	{
             		Console.WriteLine("Current state fails.");
             	}
@@ -5284,7 +5429,7 @@
             	// CurrentPaymentState is the
             	// PaymentState object.
             	
-            	If(CurrnetPaymentState.Failed)
+            	If(CurrentPaymentState.Failed)
             	{
             		Console.WriteLine("Current state fails.")
             	}
@@ -5308,7 +5453,7 @@
             	// CurrentPaymentState is the
             	// PaymentState object.
             	
-            	if(CurrnetPaymentState.HasExecuted)
+            	if(CurrentPaymentState.HasExecuted)
             	{
             		Console.WriteLine("Current State has finished execution.");
             	}
@@ -5322,7 +5467,7 @@
             	// CurrentPaymentState is the
             	// PaymentState object.
             	
-            	If(CurrnetPaymentState.HasExecuted)
+            	If(CurrentPaymentState.HasExecuted)
             	{
             		Console.WriteLine("Current State has finished execution.")
             	}
@@ -7716,34 +7861,19 @@
             Holds ReqName
             </summary>
         </member>
-        <member name="F:PayPal.Payments.DataObjects.CustomerInfo.mMerchantName">
+        <member name="F:PayPal.Payments.DataObjects.CustomerInfo.mCustData">
             <summary>
-            Holds MerchantName
+            Holds Customer Data
             </summary>
         </member>
-        <member name="F:PayPal.Payments.DataObjects.CustomerInfo.mMerchantStreet">
+        <member name="F:PayPal.Payments.DataObjects.CustomerInfo.mCustomerId">
             <summary>
-            Holds MerchantStreet
+            Holds Customer Id
             </summary>
         </member>
-        <member name="F:PayPal.Payments.DataObjects.CustomerInfo.mMerchantCity">
+        <member name="F:PayPal.Payments.DataObjects.CustomerInfo.mCustomerNumber">
             <summary>
-            Holds MerchantCity
-            </summary>
-        </member>
-        <member name="F:PayPal.Payments.DataObjects.CustomerInfo.mMerchantState">
-            <summary>
-            Holds MerchantState
-            </summary>
-        </member>
-        <member name="F:PayPal.Payments.DataObjects.CustomerInfo.mMerchantCountryCode">
-            <summary>
-            Holds MerchantCountryCode
-            </summary>
-        </member>
-        <member name="F:PayPal.Payments.DataObjects.CustomerInfo.mMerchantZip">
-            <summary>
-            Holds MerchantZip
+            Holds Customer Number
             </summary>
         </member>
         <member name="M:PayPal.Payments.DataObjects.CustomerInfo.#ctor">
@@ -7860,68 +7990,130 @@
             <code>CUSTID</code>
             </remarks>
         </member>
-        <member name="P:PayPal.Payments.DataObjects.CustomerInfo.MerchantName">
+        <member name="P:PayPal.Payments.DataObjects.CustomerInfo.CustData">
             <summary>
-            Gets, Sets  MerchantName.
+            Gets, Sets Customer Data
             </summary>
             <remarks>
-            <para>Name of Merchant</para>
+            <para>Requester Name.</para>
             <para>Maps to Payflow Parameter:</para>
-            <code>MERCHANTNAME</code>
+            <code>CUSTDATAE</code>
             </remarks>
         </member>
-        <member name="P:PayPal.Payments.DataObjects.CustomerInfo.MerchantStreet">
+        <member name="P:PayPal.Payments.DataObjects.CustomerInfo.CustomerId">
             <summary>
-            Gets, Sets  MerchantStreet.
+            Gets, Sets Customer identification.
             </summary>
             <remarks>
-            <para>Merchant's Stree Address (Number and Street Name)</para>
             <para>Maps to Payflow Parameter:</para>
-            <code>MERCHANTSTREET</code>
+            <code>CUSTOMERID</code>
             </remarks>
         </member>
-        <member name="P:PayPal.Payments.DataObjects.CustomerInfo.MerchantCity">
+        <member name="P:PayPal.Payments.DataObjects.CustomerInfo.CustomerNumber">
             <summary>
-            Gets, Sets  MerchantCity.
+            Gets, Sets Customer Number.
             </summary>
             <remarks>
-            <para>Merchant's City</para>
             <para>Maps to Payflow Parameter:</para>
-            <code>MERCHANTCITY</code>
-            </remarks>
-        </member>
-        <member name="P:PayPal.Payments.DataObjects.CustomerInfo.MerchantState">
-            <summary>
-            Gets, Sets  MerchantState.
-            </summary>
-            <remarks>
-            <para>Merchant's State</para>
-            <para>Maps to Payflow Parameter:</para>
-            <code>MERCHANTSTATE</code>
-            </remarks>
-        </member>
-        <member name="P:PayPal.Payments.DataObjects.CustomerInfo.MerchantCountryCode">
-            <summary>
-            Gets, Sets  MerchantCountryCode.
-            </summary>
-            <remarks>
-            <para>Merchant's Numeric Country Code.  Example: USA = 840</para>
-            <para>Maps to Payflow Parameter:</para>
-            <code>MERCHANTCOUNTRYCODE</code>
-            </remarks>
-        </member>
-        <member name="P:PayPal.Payments.DataObjects.CustomerInfo.MerchantZip">
-            <summary>
-            Gets, Sets  MerchantZip.
-            </summary>
-            <remarks>
-            <para>Merchant's 5- to 9-digit ZIP (postal) code excluding
-            spaces, dashes, and non-numeric characters.</para>
-            <para>Maps to Payflow Parameter:</para>
-            <code>MERCHANTZIP</code>
+            <code>CUSTOMERNUMBER</code>
             </remarks>
         </member>
         <member name="M:PayPal.Payments.DataObjects.CustomerInfo.GenerateRequest">
+            <summary>
+            Generates the transaction request.
+            </summary>
+        </member>
+        <member name="T:PayPal.Payments.DataObjects.Devices">
+            <summary>
+            Constructor
+            </summary>
+            <remarks>Items that reflect what type of device; either terminal or card is used or presented.</remarks>
+            <example>
+            <para>Following example shows how to use Devices.</para>
+            <code lang="C#" escaped="false">
+             .................
+             //Inv is the Invoice object.
+             .................
+            // Create a new Devices object.
+            Devices UsedDevices = new Devices();
+            UsedDevices.CatType = "3";
+            UsedDevices.Contactless = "RFD";
+            Inv.Devices = UsedDevices;
+            .................
+            </code>
+            <code lang="Visual Basic" escaped="false">
+            .................
+            'Inv is the Invoice object.
+            .................
+            ' Set the device/card capabilities
+            Dim UsedDevices As Devices = New Devices
+            UsedDevices.CatType = "3"
+            UsedDevices.Contactless = "RFD"
+            Inv.Devices = UsedDevices
+            .................
+            </code>
+            </example>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.Devices.mCatType">
+            <summary>
+            Type of Terminal
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.Devices.mContactless">
+            <summary>
+            Card Input Capability
+            </summary>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.Devices.CatType">
+            <summary>
+            Gets, Sets Terminal type
+            </summary>
+            <remarks>
+            <para>Maps to Payflow Parameter:</para>
+            <code>CATTYPE</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.Devices.Contactless">
+            <summary>
+            Gets, Sets Card Input Capability
+            </summary>
+            <remarks>
+            <para>Maps to Payflow Parameter:</para>
+            <code>CONTACTLESS</code>
+            </remarks>
+        </member>
+        <member name="M:PayPal.Payments.DataObjects.Devices.#ctor">
+            <summary>
+            Constructor
+            </summary>
+            <remarks>Items that reflect what type of device; either terminal or card is used or presented.</remarks>
+            <example>
+            <para>Following example shows how to use Devices.</para>
+            <code lang="C#" escaped="false">
+             .................
+             //Inv is the Invoice object.
+             .................
+            // Create a new Devices object.
+            Devices UsedDevices = new Devices();
+            UsedDevices.CatType = "3";
+            UsedDevices.Contactless = "RFD";
+            Inv.Devices = UsedDevices;
+            .................
+            </code>
+            <code lang="Visual Basic" escaped="false">
+            .................
+            'Inv is the Invoice object.
+            .................
+            ' Set the device/card capabilities
+            Dim UsedDevices As Devices = New Devices
+            UsedDevices.CatType = "3"
+            UsedDevices.Contactless = "RFD"
+            Inv.Devices = UsedDevices
+            .................
+            </code>
+            </example>
+        </member>
+        <member name="M:PayPal.Payments.DataObjects.Devices.GenerateRequest">
             <summary>
             Generates the transaction request.
             </summary>
@@ -10005,16 +10197,6 @@
             RecurringType
             </summary>
         </member>
-        <member name="F:PayPal.Payments.DataObjects.Invoice.mMerchDescr">
-            <summary>
-            Merchant Description
-            </summary>
-        </member>
-        <member name="F:PayPal.Payments.DataObjects.Invoice.mMerchSvc">
-            <summary>
-            Merchant Telephone
-            </summary>
-        </member>
         <member name="F:PayPal.Payments.DataObjects.Invoice.mOrderId">
             <summary>
             Order Id
@@ -10023,6 +10205,36 @@
         <member name="F:PayPal.Payments.DataObjects.Invoice.mEchoData">
             <summary>
             Echo data
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.Invoice.mVatInvNum">
+            <summary>
+            VAT Invoice Number
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.Invoice.mVatTaxRate">
+            <summary>
+            VAT Tax Rate
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.Invoice.mReportGroup">
+            <summary>
+            Report Group
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.Invoice.mAdviceDetailList">
+            <summary>
+            AdviceDetailList
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.Invoice.mDevices">
+            <summary>
+            Devices
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.Invoice.mMiscData">
+            <summary>
+            Miscellaneous Data
             </summary>
         </member>
         <member name="M:PayPal.Payments.DataObjects.Invoice.#ctor">
@@ -10763,26 +10975,6 @@
             <code>RECURRINGTYPE</code>
             </remarks>
         </member>
-        <member name="P:PayPal.Payments.DataObjects.Invoice.MerchDescr">
-            <summary>
-            Gets, Sets  MerchDescr
-            </summary>
-            <remarks>
-            <para>Merchant's description.</para>
-            <para>Maps to Payflow Parameter:</para>
-            <code>MERCHDESCR</code>
-            </remarks>
-        </member>
-        <member name="P:PayPal.Payments.DataObjects.Invoice.MerchSvc">
-            <summary>
-            Gets, Sets  MerchSvc
-            </summary>
-            <remarks>
-            <para>Merchant's contact number.</para>
-            <para>Maps to Payflow Parameter:</para>
-            <code>MERCHSVC</code>
-            </remarks>
-        </member>
         <member name="P:PayPal.Payments.DataObjects.Invoice.OrderId">
             <summary>
             Gets, Sets  OrderId
@@ -10815,6 +11007,161 @@
             <para>Maps to Payflow Parameter:</para>
             <code>ECHODATA</code>
             </remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:PayPal.Payments.DataObjects.Invoice.VatInvNum" -->
+        <member name="P:PayPal.Payments.DataObjects.Invoice.VatTaxRate">
+            <summary>
+            Gets, Sets  VAT Tax Rate.
+            </summary>
+            <remarks>
+            <para>Maps to Payflow Parameter:</para>
+            <code>VATTAXRATE</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.Invoice.ReportGroup">
+            <summary>
+            Gets, Sets  Report Group.
+            </summary>
+            <remarks>
+            <para>Category that the transaction is in, for example: coffee mugs.</para>
+            <para>Maps to Payflow Parameter:</para>
+            <code>REPORTGROUP</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.Invoice.Devices">
+            <summary>
+            Gets, Sets Devices.
+            </summary>
+            <remarks>
+            <para>
+            Items that reflect what type of device; either termainal or card is used or presented.
+            </para>
+            </remarks>
+            <example>
+            <code lang="C#" escaped="false">
+            .................
+            // Inv is the Invoice object
+            .................
+            // Create a new Devices object.
+            Devices UsedDevices = new Devices();
+            UsedDevices.CatType = "3";
+            UsedDevices.Contactless = "RFD";
+            Inv.Devices = UsedDevices;
+            .................
+            </code>
+            <code lang="Visual Basic" escaped="false">
+            .................
+            ' Inv is the Invoice object
+            .................
+            ' Set the device/card capabilities
+            Dim UsedDevices As Devices = New Devices
+            UsedDevices.CatType = "3"
+            UsedDevices.Contactless = "RFD"
+            Inv.Devices = UsedDevices
+            .................
+            </code>
+            </example>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.Invoice.MiscData">
+            <summary>
+            Gets, Sets  Miscellaneous Data.
+            </summary>
+            <remarks>
+            <para>Maps to Payflow Parameter:</para>
+            <code>MISCDATA</code>
+            </remarks>
+        </member>
+        <member name="M:PayPal.Payments.DataObjects.Invoice.AddAdviceDetailItem(PayPal.Payments.DataObjects.AdviceDetail)">
+            <summary>
+            Used for advice detail items.
+            </summary>
+            <remarks>
+            This class holds the advice detail related information.
+            Detail of a charge where *n* is a value from 1 - 5. Use for additional breakdown of the amount.
+            For example ADDLAMT1=1 is the amount for the additional amount for advice detail item 1 and is equal to 1,
+            </remarks>
+            <example>
+            <para>Following example shows how to use AdviceDetail.</para>
+            <code lang="C#" escaped="false">
+             .................
+             //Inv is the Invoice object.
+             .................
+            // Set the Advice Detail items.
+            AdviceDetail AddDetail1 = new AdviceDetail();
+            AddDetail1.AddLAmt = "1";
+            AddDetail1.AddLAmtType = "1";
+            Inv.AddAdviceDetailItem(AddDetail1);
+            // To add another item, just do the same as above but increment the value of AddDetail to 2: AddDetail2
+            .................
+            </code>
+            <code lang="Visual Basic" escaped="false">
+             .................
+             'Inv is the Invoice object.
+             .................
+             ' Set the Advice Detail items.
+             Dim AddDetail1 As AdviceDetail = New AdviceDetail
+             AddDetail1.AddLAmt = "1"
+             AddDetail1.AddLAmtType = "1"
+             Inv.AddAdviceDetailItem(AddDetail1)
+             ' To add another item, just do the same as above but increment the value of AddDetail to 2: AddDetail2
+            .................
+            </code>
+            </example>
+        </member>
+        <member name="M:PayPal.Payments.DataObjects.Invoice.RemoveAdviceDetailItem(System.Int32)">
+            <summary>
+            Removes a advice detail item from line item list.
+            </summary>
+            <param name="Index">Index of line item to be removed.</param>
+            <remarks>
+            <para>Use this method to remove an advice detail item at a particular 
+            index in the purchase order.</para>
+            </remarks>
+            <example>
+            <code lang="C#" escaped="false">
+            .................
+            // Inv is the Invoice object
+            .................
+            // Remove item at index 0
+            Inv.RemoveAdviceDetailItem(0);
+            .................
+            </code>
+            <code lang="Visual Basic" escaped="false">
+            .................
+            ' Inv is the Invoice object
+            .................
+            ' Remove item at index 0;
+            Inv.RemoveAdviceDetailItem(0)
+            .................
+            </code>
+            </example>
+        </member>
+        <member name="M:PayPal.Payments.DataObjects.Invoice.RemoveAllAdviceDetailItems">
+            <summary>
+            Clears the advice detail item list.
+            </summary>
+            <remarks>
+            <para>Use this method to clear all the 
+            advice detail items added to the purchase order.</para>
+            </remarks>
+            <example>
+            <code lang="C#" escaped="false">
+            .................
+            // Inv is the Invoice object
+            .................
+            // Remove all advice detail items.
+            Inv.RemoveAllAdviceDetailItems();
+            .................
+            </code>
+            <code lang="Visual Basic" escaped="false">
+            .................
+            ' Inv is the Invoice object
+            .................
+            ' Remove all advice detail items.
+            Inv.RemoveAllAdviceDetailItems()
+            .................
+            </code>
+            </example>
         </member>
         <member name="M:PayPal.Payments.DataObjects.Invoice.AddLineItem(PayPal.Payments.DataObjects.LineItem)">
             <summary>
@@ -10910,6 +11257,11 @@
             Generates transaction request for line items
             </summary>
         </member>
+        <member name="M:PayPal.Payments.DataObjects.Invoice.GenerateAdviceDetailRequest">
+            <summary>
+            Generates transaction request for advice detail items
+            </summary>
+        </member>
         <member name="M:PayPal.Payments.DataObjects.Invoice.GenerateRequest">
             <summary>
             Generates the transaction request.
@@ -10942,6 +11294,130 @@
             </summary>
             <remarks>When implemented in the derived class, this method 
             should be preferred to be made as an internal method.</remarks>
+        </member>
+        <member name="T:PayPal.Payments.DataObjects.AdviceDetail">
+            <summary>
+            Used for advice detail items.
+            </summary>
+            <remarks>
+            This class holds the advice detail related information.
+            Detail of a charge where *n* is a value from 1 - 5. Use for additional breakdown of the amount.
+            For example ADDLAMT1=1 is the amount for the additional amount for advice detail item 1 and is equal to 1,
+            </remarks>
+            <example>
+            <para>Following example shows how to use AdviceDetail.</para>
+            <code lang="C#" escaped="false">
+             .................
+             //Inv is the Invoice object.
+             .................
+            // Set the Advice Detail items.
+            AdviceDetail AddDetail1 = new AdviceDetail();
+            AddDetail1.AddLAmt = "1";
+            AddDetail1.AddLAmtType = "1";
+            Inv.AddAdviceDetailItem(AddDetail1);
+            // To add another item, just do the same as above but increment the value of AddDetail to 2: AddDetail2
+            .................
+            </code>
+            <code lang="Visual Basic" escaped="false">
+             .................
+             'Inv is the Invoice object.
+             .................
+             ' Set the Advice Detail items.
+             Dim AddDetail1 As AdviceDetail = New AdviceDetail
+             AddDetail1.AddLAmt = "1"
+             AddDetail1.AddLAmtType = "1"
+             Inv.AddAdviceDetailItem(AddDetail1)
+             ' To add another item, just do the same as above but increment the value of AddDetail to 2: AddDetail2
+            .................
+            </code>
+            </example>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.AdviceDetail.mAdviceDetailNumber">
+            <summary>
+            Advice Detail Number
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.AdviceDetail.mAddLAmt">
+            <summary>
+            Advice Detail Amount
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.AdviceDetail.mAddLAmtType">
+            <summary>
+            Advice Detail Amount Type
+            </summary>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.AdviceDetail.AddLAmt">
+            <summary>
+            Gets, Sets advice detail amount
+            </summary>
+            <remarks>
+            <para>Maps to Payflow Parameter:</para>
+            <code>ADDLAMTn</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.AdviceDetail.AddLAmtType">
+            <summary>
+            Gets, Sets advice detail amount type
+            </summary>
+            <remarks>
+            <para>Maps to Payflow Parameter:</para>
+            <code>ADDLAMTTYPEn</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.AdviceDetail.AdviceDetailNumber">
+            ------------------------------------------------------
+            <summary>
+            Gets, Sets advice detail line item number.
+            </summary>
+            <remarks>
+            <para></para>
+            <para>Maps to Payflow Parameter:</para>
+            <code>ADDLxxxxn</code>
+            </remarks>
+        </member>
+        <member name="M:PayPal.Payments.DataObjects.AdviceDetail.#ctor">
+            <summary>
+            Used for advice detail items.
+            </summary>
+            <remarks>
+            This class holds the advice detail related information.
+            Detail of a charge where *n* is a value from 1 - 5. Use for additional breakdown of the amount.
+            For example ADDLAMT1=1 is the amount for the additional amount for advice detail item 1 and is equal to 1,
+            </remarks>
+            <example>
+            <para>Following example shows how to use AdviceDetail.</para>
+            <code lang="C#" escaped="false">
+             .................
+             //Inv is the Invoice object.
+             .................
+            // Set the Advice Detail items.
+            AdviceDetail AddDetail1 = new AdviceDetail();
+            AddDetail1.AddLAmt = "1";
+            AddDetail1.AddLAmtType = "1";
+            Inv.AddAdviceDetailItem(AddDetail1);
+            // To add another item, just do the same as above but increment the value of AddDetail to 2: AddDetail2
+            .................
+            </code>
+            <code lang="Visual Basic" escaped="false">
+             .................
+             'Inv is the Invoice object.
+             .................
+             ' Set the Advice Detail items.
+             Dim AddDetail1 As AdviceDetail = New AdviceDetail
+             AddDetail1.AddLAmt = "1"
+             AddDetail1.AddLAmtType = "1"
+             Inv.AddAdviceDetailItem(AddDetail1)
+             ' To add another item, just do the same as above but increment the value of AddDetail to 2: AddDetail2
+            .................
+            </code>
+            </example>
+        </member>
+        <member name="M:PayPal.Payments.DataObjects.AdviceDetail.GenerateRequest(System.Int32)">
+            <summary>
+            Generates advice detail item request
+            </summary>
+            <param name="Index">index number of advice detail item</param>
         </member>
         <member name="T:PayPal.Payments.DataObjects.LineItem">
             <summary>
@@ -11122,7 +11598,34 @@
             line item unspsc code
             </summary>
         </member>
+        <member name="F:PayPal.Payments.DataObjects.LineItem.mAltTaxAmt">
+            <summary>
+            line item alternate tax amount
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.LineItem.mAltTaxId">
+            <summary>
+            line item alternate tax Id
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.LineItem.mAltTaxRate">
+            <summary>
+            line item alternate tax rate
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.LineItem.mCarrierServiceLevelCode">
+            <summary>
+            line item carrier service level code
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.LineItem.mExtAmt">
+            <summary>
+            line item extra amount
+            </summary>
+        </member>
         <member name="F:PayPal.Payments.DataObjects.LineItem.mName">
+            --------------------------------------
+            
             <summary>
             line item name
             </summary>
@@ -11415,7 +11918,49 @@
             <code>L_UNSPSCCODEn</code>
             </remarks>
         </member>
+        <member name="P:PayPal.Payments.DataObjects.LineItem.AltTaxAmt">
+            <summary>
+            Gets, Sets line item alternate tax code.
+            </summary>
+            <remarks>
+            <para>Item AltTaxAmt.</para>
+            <para>Maps to Payflow Parameter:</para>
+            <code>L_ALTTAXAMT</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.LineItem.AltTaxId">
+            <summary>
+            Gets, Sets line item alternate tax Id.
+            </summary>
+            <remarks>
+            <para>Item AltTaxId.</para>
+            <para>Maps to Payflow Parameter:</para>
+            <code>L_ALTTAXID</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.LineItem.AltTaxRate">
+            <summary>
+            Gets, Sets line item alternate tax rate.
+            </summary>
+            <remarks>
+            <para>Item AltTaxRate.</para>
+            <para>Maps to Payflow Parameter:</para>
+            <code>L_ALTTAXRATE</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.LineItem.CarrierServiceLevelCode">
+            <summary>
+            Gets, Sets line item carrier service level code
+            </summary>
+            <remarks>
+            <para>Item CarrierServiceLevelCode.</para>
+            <para>Maps to Payflow Parameter:</para>
+            <code>L_CARRIERSERVICELEVELCODE</code>
+            </remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:PayPal.Payments.DataObjects.LineItem.ExtAmt" -->
         <member name="P:PayPal.Payments.DataObjects.LineItem.Name">
+            ------------------------------------------------------
             <summary>
             Gets, Sets line item name.
             </summary>
@@ -11937,6 +12482,36 @@
             Holds Merchant Zip
             </summary>
         </member>
+        <member name="F:PayPal.Payments.DataObjects.MerchantInfo.mMerchantUrl">
+            <summary>
+            Holds Merchant Url
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.MerchantInfo.mMerchantVatNum">
+            <summary>
+            Holds Merchant VAT Number
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.MerchantInfo.mMerchantInvNum">
+            <summary>
+            Holds Merchant Invoice Number
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.MerchantInfo.mMerchantLocationId">
+            <summary>
+            MerrchantLocationId
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.MerchantInfo.mMerchantId">
+            <summary>
+            MerchantId
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.MerchantInfo.mMerchantContactInfo">
+            <summary>
+            MerchantContactInfo
+            </summary>
+        </member>
         <member name="M:PayPal.Payments.DataObjects.MerchantInfo.#ctor">
             <summary>
             Constructor
@@ -11985,7 +12560,7 @@
             Gets, Sets  Merchant Street
             </summary>
             <remarks>
-            <para>Merchant's Stree Address (Number and Street Name)</para>
+            <para>Merchant's Street Address (Number and Street Name)</para>
             <para>Maps to Payflow Parameter:</para>
             <code>MERCHANTSTREET</code>
             </remarks>
@@ -12031,6 +12606,66 @@
             <code>MERCHANTZIP</code>
             </remarks>
         </member>
+        <member name="P:PayPal.Payments.DataObjects.MerchantInfo.MerchantUrl">
+            <summary>
+            Gets, Sets  Merchant Url
+            </summary>
+            <remarks>
+            <para>Merchant's website (URL)</para>
+            <para>Maps to Payflow Parameter:</para>
+            <code>MERCHANTURL</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.MerchantInfo.MerchantVatNum">
+            <summary>
+            Gets, Sets  Merchant VAT Number
+            </summary>
+            <remarks>
+            <para>Merchant's VAT Number</para>
+            <para>Maps to Payflow Parameter:</para>
+            <code>MERCHANTVATNUM</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.MerchantInfo.MerchantInvNum">
+            <summary>
+            Gets, Sets  Merchant Invoice Number
+            </summary>
+            <remarks>
+            <para>Merchant's Invoice Number</para>
+            <para>Maps to Payflow Parameter:</para>
+            <code>MERCHANTINVNUM</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.MerchantInfo.MerchantLocationId">
+            <summary>
+            Gets, Sets the Merchant Location Id.
+            </summary>
+            Merchant assigned store or location number.
+            <remarks>
+            <para>Maps to Payflow Parameter:</para>
+            <code>MERCHANTLOCATIONID</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.MerchantInfo.MerchantId">
+            <summary>
+            Gets, Sets the Merchant Id.
+            </summary>
+            Processor assigned number.
+            <remarks>
+            <para>Maps to Payflow Parameter:</para>
+            <code>MERCHANTID</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.MerchantInfo.MerchantContactInfo">
+            <summary>
+            Gets, Sets the Merchant Contact Information.
+            </summary>
+            Merchants telephone, URl or email.
+            <remarks>
+            <para>Maps to Payflow Parameter:</para>
+            <code>MERCHANTCONTACTINFO</code>
+            </remarks>
+        </member>
         <member name="P:PayPal.Payments.DataObjects.MerchantInfo.MerchDescr">
             <summary>
             Gets, Sets  MerchDescr
@@ -12040,6 +12675,7 @@
             <para>Maps to Payflow Parameter:</para>
             <code>MERCHDESCR</code>
             </remarks>
+            
         </member>
         <member name="P:PayPal.Payments.DataObjects.MerchantInfo.MerchSvc">
             <summary>
@@ -12063,8 +12699,11 @@
             <item><term>ABA</term><description>BankAcct</description><description><see cref='P:PayPal.Payments.DataObjects.BankAcct.Aba'>Aba</see></description><description>String</description></item>
             <item><term>ACCT</term><description>BankAcct ,  CreditCard , PurchaseCard , SwipeCard , CheckPayment , RecurringResponse, TransactionResponse</description><description>Acct</description><description>String</description></item>
             <item><term>ACCTTYPE</term><description>BankAcct</description><description><see cref='P:PayPal.Payments.DataObjects.BankAcct.AcctType'>AcctType</see></description><description>String</description></item>
+            <item><term>ACI</term><description>TransactionResponse</description><description><see cref='P:PayPal.Payments.DataObjects.TransactionResponse.Aci'>Aci</see></description><description>String</description></item>
             <item><term>ACSURL</term><description>BuyerAuthResponse</description><description><see cref='P:PayPal.Payments.DataObjects.BuyerAuthResponse.AcsUrl'>AcsUrl</see></description><description>String</description></item>
             <item><term>ACTION</term><description>Value is set based on Transaction object used:RecurringAddTransaction, RecurringModifyTransaction, RecurringCancelTransaction, RecurringInquiryTransaction, RecurringReActivateTransaction, RecurringPaymentTransaction</description><description>NA</description><description>String</description></item>
+            <item><term>ADDLAMTn</term><description>AdviceDetail</description><description><see cref='P:PayPal.Payments.DataObjects.AdviceDetail.AddLAmt'>AddLAmt</see></description><description>String</description></item>
+            <item><term>ADDLAMTTYPEn</term><description>AdviceDetail</description><description><see cref='P:PayPal.Payments.DataObjects.AdviceDetail.AddLAmtType'>AddLAmtType</see></description><description>String</description></item>
             <item><term>ADDLMSGS</term><description>TransactionResponse</description><description><see cref='P:PayPal.Payments.DataObjects.TransactionResponse.AddlMsgs'>AddlMsgs</see></description><description>String</description></item>
             <item><term>ADDROVERRIDE</term><description>ECSetRequest</description><description><see cref='P:PayPal.Payments.DataObjects.ECSetRequest.AddrOverride'>AddrOverride</see></description><description>String</description></item>
             <item><term>ADDRSTATUS</term><description>ECGetResponse</description><description><see cref='P:PayPal.Payments.DataObjects.ECGetResponse.AddressStatus'>AddressStatus</see></description><description>String</description></item>
@@ -12111,7 +12750,10 @@
             <item><term>CARDSECURE</term><description>TransactionResponse</description><description><see cref='P:PayPal.Payments.DataObjects.TransactionResponse.CardSecure'>CardSecure</see></description><description>String</description></item>
             <item><term>CARDSTART</term><description>PurchaseCard, CreditCard</description><description>CardStart</description><description>String</description></item>
             <item><term>CARDTYPE</term><description>TransactionResponse</description><description><see cref='P:PayPal.Payments.DataObjects.TransactionResponse.CardType'>CardType</see></description><description>String</description></item>
+            <item><term>CATTYPE</term><description>Devices</description><description><see cref='P:PayPal.Payments.DataObjects.Devices.CatType'>CatType</see></description><description>String</description></item>
             <item><term>CAVV</term><description>BuyerAuthResponse</description><description><see cref='P:PayPal.Payments.DataObjects.BuyerAuthResponse.CAVV'>CAVV</see></description><description>String</description></item>
+            <item><term>CCTRANSID</term><description>TransactionResponse</description><description><see cref='P:PayPal.Payments.DataObjects.TransactionResponse.CCTransId'>CCTransId</see></description><description>String</description></item>
+            <item><term>CCTRANS_POSDATA</term><description>TransactionResponse</description><description><see cref='P:PayPal.Payments.DataObjects.TransactionResponse.CCTrans_POSData'>CCTrans_POSData</see></description><description>String</description></item>
             <item><term>CHKNUM</term><description>ACHTender, CheckTender, CardTender</description><description>ChkNum</description><description>String</description></item>
             <item><term>CHKTYPE</term><description>ACHTender, CheckTender, CardTender</description><description>ChkType</description><description>String</description></item>
             <item><term>COMMCARD</term><description>PurchaseCard</description><description></description><description>String</description></item>
@@ -12119,13 +12761,17 @@
             <item><term>COMMENT1</term><description>Invoice</description><description><see cref='P:PayPal.Payments.DataObjects.Invoice.Comment1'>Comment1</see></description><description>String</description></item>
             <item><term>COMMENT2</term><description>Invoice</description><description><see cref='P:PayPal.Payments.DataObjects.Invoice.Comment2'>Comment2</see></description><description>String</description></item>
             <item><term>COMPANYNAME</term><description>BillTo, RecurringResponse</description><description>CompanyName</description><description>String</description></item>
+            <item><term>CONTACTLESS</term><description>Devices</description><description><see cref='P:PayPal.Payments.DataObjects.Devices.Contactless'>Contactless</see></description><description>String</description></item>
             <item><term>COUNTRYCODE</term><description>BillTo,ECGetResponse</description><description>CountryCode</description><description>String</description></item>
             <item><term>COUNTRYCODE</term><description>ExpressCheckoutRequest</description><description><see cref='P:PayPal.Payments.DataObjects.ExpressCheckoutRequest.CountryCode'>CountryCode</see></description><description>String</description></item>
             <item><term>CURRENCY</term><description>BuyerAuthVETransaction</description><description></description><description>Currency</description></item>
             <item><term>CUSTCODE</term><description>CustomerInfo</description><description><see cref='P:PayPal.Payments.DataObjects.CustomerInfo.CustCode'>CustCode</see></description><description>String</description></item>
+            <item><term>CUSTDATA</term><description>CustomerInfo</description><description><see cref='P:PayPal.Payments.DataObjects.CustomerInfo.CustData'>CustData</see></description><description>String</description></item>
             <item><term>CUSTID</term><description>CustomerInfo</description><description><see cref='P:PayPal.Payments.DataObjects.CustomerInfo.CustId'>CustId</see></description><description>String</description></item>
             <item><term>CUSTIP</term><description>CustomerInfo</description><description><see cref='P:PayPal.Payments.DataObjects.CustomerInfo.CustIP'>CustIP</see></description><description>String</description></item>
             <item><term>CUSTOM</term><description>BrowserInfo</description><description><see cref='P:PayPal.Payments.DataObjects.BrowserInfo.Custom'>Custom</see></description><description>String</description></item>
+            <item><term>CUSTOMERID</term><description>CustomerInfo</description><description><see cref='P:PayPal.Payments.DataObjects.CustomerInfo.CustomerId'>CustomerId</see></description><description>String</description></item>
+            <item><term>CUSTOMERNUMBER</term><description>CustomerInfo</description><description><see cref='P:PayPal.Payments.DataObjects.CustomerInfo.CustomerNumber'>CustomerNumber</see></description><description>String</description></item>
             <item><term>CUSTREF</term><description>Invoice, TransactionResponse</description><description>CustRef</description><description>String</description></item>
             <item><term>CUSTVATREGNUM</term><description>CustomerInfo</description><description><see cref='P:PayPal.Payments.DataObjects.CustomerInfo.CustVatRegNum'>CustVatRegNum</see></description><description>String</description></item>
             <item><term>CVV2</term><description>PurchaseCard, CreditCard</description><description>CVV2</description><description>String</description></item>
@@ -12161,13 +12807,18 @@
             <item><term>IAVS</term><description>TransactionResponse</description><description><see cref='P:PayPal.Payments.DataObjects.TransactionResponse.IAVS'>IAVS</see></description><description>String</description></item>
             <item><term>INVNUM</term><description>Invoice</description><description><see cref='P:PayPal.Payments.DataObjects.Invoice.InvNum'>InvNum</see></description><description>String</description></item>
             <item><term>INVOICEDATE</term><description>Invoice</description><description><see cref='P:PayPal.Payments.DataObjects.Invoice.InvoiceDate'>InvoiceDate</see></description><description>Date</description></item>
+            <item><term>L_ALTTAXAMTn</term><description>LineItem</description><description><see cref='P:PayPal.Payments.DataObjects.LineItem.AltTaxAmt'>AltTaxAmt</see></description><description>Currency</description></item>
+            <item><term>L_ALTTAXIDn</term><description>LineItem</description><description><see cref='P:PayPal.Payments.DataObjects.LineItem.AltTaxId'>AltTaxId</see></description><description>Currency</description></item>
+            <item><term>L_ALTTAXRATEn</term><description>LineItem</description><description><see cref='P:PayPal.Payments.DataObjects.LineItem.AltTaxRate'>AltTaxRate</see></description><description>Currency</description></item>
             <item><term>L_AMTn</term><description>LineItem</description><description><see cref='P:PayPal.Payments.DataObjects.LineItem.Amt'>Amt</see></description><description>Currency</description></item>
+            <item><term>L_CARRIERSERVICELEVELCODEn</term><description>LineItem</description><description><see cref='P:PayPal.Payments.DataObjects.LineItem.CarrierServiceLevelCode'>CarrierServiceLevelCode</see></description><description>Currency</description></item>
             <item><term>L_CATALOGNUMn</term><description>LineItem</description><description><see cref='P:PayPal.Payments.DataObjects.LineItem.CatalogNum'>CatalogNum</see></description><description>String</description></item>
             <item><term>L_COMMCODEn</term><description>LineItem</description><description><see cref='P:PayPal.Payments.DataObjects.LineItem.CommCode'>CommCode</see></description><description>String</description></item>
             <item><term>L_COSTCENTERNUMn</term><description>LineItem</description><description><see cref='P:PayPal.Payments.DataObjects.LineItem.CostCenterNum'>CostCenterNum</see></description><description>String</description></item>
             <item><term>L_COSTn</term><description>LineItem</description><description><see cref='P:PayPal.Payments.DataObjects.LineItem.Cost'>Cost</see></description><description>Currency</description></item>
             <item><term>L_DESCn</term><description>LineItem</description><description><see cref='P:PayPal.Payments.DataObjects.LineItem.Desc'>Desc</see></description><description>String</description></item>
             <item><term>L_DISCOUNTn</term><description>LineItem</description><description><see cref='P:PayPal.Payments.DataObjects.LineItem.Discount'>Discount</see></description><description>Currency</description></item>
+            <item><term>L_EXTAMTn</term><description>LineItem</description><description><see cref='P:PayPal.Payments.DataObjects.LineItem.ExtAmt'>ExtAmt</see></description><description>Currency</description></item>
             <item><term>L_FREIGHTAMTn</term><description>LineItem</description><description><see cref='P:PayPal.Payments.DataObjects.LineItem.FreightAmt'>FreightAmt</see></description><description>Currency</description></item>
             <item><term>L_HANDLINGAMTn</term><description>LineItem</description><description><see cref='P:PayPal.Payments.DataObjects.LineItem.HandlingAmt'>HandlingAmt</see></description><description>Currency</description></item>
             <item><term>L_MANUFACTURERn</term><description>LineItem</description><description><see cref='P:PayPal.Payments.DataObjects.LineItem.Manufacturer'>Manufacturer</see></description><description>String</description></item>
@@ -12192,15 +12843,21 @@
             <item><term>MAXAMT</term><description>ECSetRequest</description><description><see cref='P:PayPal.Payments.DataObjects.ECSetRequest.MaxAmt'>MaxAmt</see></description><description>String</description></item>
             <item><term>MAXFAILPAYMENTS</term><description>RecurringResponse, RecurringInfo</description><description>MaxFailPayments</description><description>String</description></item>
             <item><term>MD</term><description>BuyerAuthResponse</description><description><see cref='P:PayPal.Payments.DataObjects.BuyerAuthResponse.MD'>MD</see></description><description>String</description></item>
-            <item><term>MERCHDESCR</term><description>PurchaseCard, CreditCard</description><description><see cref='P:PayPal.Payments.DataObjects.Invoice.MerchDescr'>MerchDescr</see></description><description>String</description></item>
-            <item><term>MERCHSVC</term><description>PurchaseCard, CreditCard</description><description><see cref='P:PayPal.Payments.DataObjects.Invoice.MerchSvc'>MerchSvc</see></description><description>String</description></item>
-            <item><term>MERCHANTNAME</term><description>CustomerInfo</description><description><see cref='P:PayPal.Payments.DataObjects.CustomerInfo.MerchantName'>MerchantName</see></description><description>String</description></item>
-            <item><term>MERCHANTSTREET</term><description>CustomerInfo</description><description><see cref='P:PayPal.Payments.DataObjects.CustomerInfo.MerchantStreet'>MerchantStreet</see></description><description>String</description></item>
-            <item><term>MERCHANTCITY</term><description>CustomerInfo</description><description><see cref='P:PayPal.Payments.DataObjects.CustomerInfo.MerchantCity'>MerchantCity</see></description><description>String</description></item> 
-            <item><term>MERCHANTSTATE</term><description>CustomerInfo</description><description><see cref='P:PayPal.Payments.DataObjects.CustomerInfo.MerchantState'>MerchantState</see></description><description>String</description></item> 
-            <item><term>MERCHANTZIP</term><description>CustomerInfo</description><description><see cref='P:PayPal.Payments.DataObjects.CustomerInfo.MerchantZip'>MerchantZip</see></description><description>String</description></item> 
-            <item><term>MERCHANTCOUNTRYCODE</term><description>CustomerInfo</description><description><see cref='P:PayPal.Payments.DataObjects.CustomerInfo.MerchantCountryCode'>MerchantCountryCode</see></description><description>String</description></item> 
+            <item><term>MERCHDESCR</term><description>PurchaseCard, CreditCard</description><description><see cref='P:PayPal.Payments.DataObjects.MerchantInfo.MerchDescr'>MerchDescr</see></description><description>String</description></item>
+            <item><term>MERCHSVC</term><description>PurchaseCard, CreditCard</description><description><see cref='P:PayPal.Payments.DataObjects.MerchantInfo.MerchSvc'>MerchSvc</see></description><description>String</description></item>
+            <item><term>MERCHANTCITY</term><description>CMerchantInfo</description><description><see cref='P:PayPal.Payments.DataObjects.MerchantInfo.MerchantCity'>MerchantCity</see></description><description>String</description></item>
+            <item><term>MERCHANTCONTACTINFO</term><description>MerchantInfo</description><description><see cref='P:PayPal.Payments.DataObjects.MerchantInfo.MerchantContactInfo'>MerchantContactInfo</see></description><description>String</description></item>
+            <item><term>MERCHANTID</term><description>MerchantInfo</description><description><see cref='P:PayPal.Payments.DataObjects.MerchantInfo.MerchantId'>MerchantId</see></description><description>String</description></item>
+            <item><term>MERCHANTINVNUM</term><description>MerchantInfo</description><description><see cref='P:PayPal.Payments.DataObjects.MerchantInfo.MerchantInvNum'>>MerchantInvNum</see></description><description>String</description></item> 
+            <item><term>MERCHANTLOCATIONID</term><description>MerchantInfo</description><description><see cref='P:PayPal.Payments.DataObjects.MerchantInfo.MerchantLocationId'>MerchantLocationId</see></description><description>String</description></item>
+            <item><term>MERCHANTNAME</term><description>MerchantInfo</description><description><see cref='P:PayPal.Payments.DataObjects.MerchantInfo.MerchantName'>MerchantName</see></description><description>String</description></item>
+            <item><term>MERCHANTSTATE</term><description>MerchantInfo</description><description><see cref='P:PayPal.Payments.DataObjects.MerchantInfo.MerchantState'>MerchantState</see></description><description>String</description></item> 
+            <item><term>MERCHANTSTREET</term><description>MerchantInfo</description><description><see cref='P:PayPal.Payments.DataObjects.MerchantInfo.MerchantStreet'>MerchantStreet</see></description><description>String</description></item>
+            <item><term>MERCHANTURL</term><description>MerchantInfo</description><description><see cref='P:PayPal.Payments.DataObjects.MerchantInfo.MerchantUrl'>MerchantUrl</see></description><description>String</description></item> 
+            <item><term>MERCHANTVATNUM</term><description>MerchantInfo</description><description><see cref='P:PayPal.Payments.DataObjects.MerchantInfo.MerchantVatNum'>MerchantVatNum</see></description><description>String</description></item> 
+            <item><term>MERCHANTZIP</term><description>MerchantInfo</description><description><see cref='P:PayPal.Payments.DataObjects.MerchantInfo.MerchantZip'>MerchantZip</see></description><description>String</description></item> 
             <item><term>MICR</term><description>CheckPayment</description><description></description><description>String</description></item>
+            <item><term>MISCDATA</term><description>Invoice</description><description><see cref='P:PayPal.Payments.DataObjects.Invoice.MiscData'>MiscData</see></description><description>Currency</description></item>
             <item><term>NAME</term><description>BankAcct, CreditCard, PurchaseCard, SwipeCard, CheckPayment, RecurringResponse</description><description>Name</description><description>String</description></item>
             <item><term>NATIONALTAXAMT</term><description>Invoice</description><description><see cref='P:PayPal.Payments.DataObjects.Invoice.NationalTaxAmt'>NationalTaxAmt</see></description><description>Currency</description></item>
             <item><term>NEXTPAYMENT</term><description>RecurringResponse</description><description><see cref='P:PayPal.Payments.DataObjects.RecurringResponse.NextPayment'>NextPayment</see></description><description>String</description></item>
@@ -12264,6 +12921,7 @@
             <item><term>PWD</term><description>UserInfo</description><description></description><description>String</description></item>
             <item><term>RECURRING</term><description>RecurringInfo, Invoice</description><description>Recurring</description><description>String</description></item>
             <item><term>RECURRINGTYPE</term><description>Invoice</description><description><see cref='P:PayPal.Payments.DataObjects.Invoice.RecurringType'>RecurringType</see></description><description>String</description></item>
+            <item><term>REPORTGROUP</term><description>Invoice</description><description><see cref='P:PayPal.Payments.DataObjects.Invoice.ReportGroup'>ReportGroup</see></description><description>Currency</description></item>
             <item><term>REQCONFIRMSHIPPING</term><description>ECSetRequest</description><description><see cref='P:PayPal.Payments.DataObjects.ECSetRequest.ReqConfirmShipping'>ReqConfirmShipping</see></description><description>String</description></item>
             <item><term>REQNAME</term><description>CustomerInfo</description><description><see cref='P:PayPal.Payments.DataObjects.CustomerInfo.ReqName'>ReqName</see></description><description>String</description></item>
             <item><term>RESPMSG</term><description>TransactionResponse</description><description><see cref='P:PayPal.Payments.DataObjects.TransactionResponse.RespMsg'>RespMsg</see></description><description>String</description></item>
@@ -12272,6 +12930,7 @@
             <item><term>RETRYNUMDAYS</term><description>RecurringResponse, RecurringInfo</description><description>RetryNumDays</description><description>String</description></item>
             <item><term>RETURNURL</term><description>ECSetRequest</description><description><see cref='P:PayPal.Payments.DataObjects.ECSetRequest.ReturnURL'>ReturnURL</see></description><description>String</description></item>
             <item><term>RPREF</term><description>RecurringResponse</description><description><see cref='P:PayPal.Payments.DataObjects.RecurringResponse.RPRef'>RPRef</see></description><description>String</description></item>
+            <item><term>RRN</term><description>TransactionResponse</description><description><see cref='P:PayPal.Payments.DataObjects.TransactionResponse.Rrn'>Rrn</see></description><description>String</description></item>
             <item><term>SECURETOKEN</term><description>TransactionResponse</description><description><see cref='P:PayPal.Payments.DataObjects.TransactionResponse.SecureToken'>SecureToken</see></description><description>String</description></item>
             <item><term>SECURETOKENID</term><description>TransactionResponse</description><description><see cref='P:PayPal.Payments.DataObjects.TransactionResponse.SecureTokenId'>SecureTokenId</see></description><description>String</description></item>
             <item><term>SETTLEAMT</term><description>ECDoResponse</description><description><see cref='P:PayPal.Payments.DataObjects.ECDoResponse.SettleAmt'>SettleAmt</see></description><description>String</description></item>
@@ -12294,6 +12953,7 @@
             <item><term>SHIPTOSTREET2</term><description>ShipTo, ECGetResponse</description><description><see cref='P:PayPal.Payments.DataObjects.ShipTo.ShipToStreet2'>ShipToStreet2</see></description><description>String</description></item>
             <item><term>SHIPTOZIP</term><description>ShipTo, RecurringResponse,ECGetResponse</description><description>ShipToZip</description><description>String</description></item>
             <item><term>SS</term><description>CheckTender</description><description></description><description>String</description></item>
+            <item><term>STAN</term><description>TransactionResponse</description><description><see cref='P:PayPal.Payments.DataObjects.TransactionResponse.Stan'>Stan</see></description><description>String</description></item>
             <item><term>START</term><description>RecurringResponse, RecurringInfo</description><description>Start</description><description>String</description></item>
             <item><term>STARTTIME</term><description>Invoice, TransactionResponse</description><description>StartTime</description><description>String</description></item>
             <item><term>STATUS</term><description>RecurringResponse</description><description><see cref='P:PayPal.Payments.DataObjects.RecurringResponse.Status'>Status</see></description><description>String</description></item>
@@ -12312,6 +12972,7 @@
             <item><term>TRXRESPMSG</term><description>RecurringResponse</description><description><see cref='P:PayPal.Payments.DataObjects.RecurringResponse.TrxRespMsg'>TrxRespMsg</see></description><description>String</description></item>
             <item><term>TRXRESULT</term><description>RecurringResponse</description><description><see cref='P:PayPal.Payments.DataObjects.RecurringResponse.TrxResult'>TrxResult</see></description><description>String</description></item>
             <item><term>TRXTYPE</term><description>Value is set based on the Transaction object used:SaleTransaction, CreditTransaction, VoidTransaction, CaptureTransaction etc.</description><description>TrxType</description><description>String</description></item>
+            <item><term>TXID</term><description>BuyerAuthResponse</description><description><see cref='!:BuyerAuthResponse.TxId'>TxId</see></description><description>String</description></item>
             <item><term>USER</term><description>UserInfo</description><description></description><description>String</description></item>
             <item><term>USER1</term><description>UserItem</description><description><see cref='P:PayPal.Payments.DataObjects.UserItem.UserItem1'>UserItem1</see></description><description>String</description></item>
             <item><term>USER2</term><description>UserItem</description><description><see cref='P:PayPal.Payments.DataObjects.UserItem.UserItem2'>UserItem2</see></description><description>String</description></item>
@@ -12323,9 +12984,12 @@
             <item><term>USER8</term><description>UserItem</description><description><see cref='P:PayPal.Payments.DataObjects.UserItem.UserItem8'>UserItem8</see></description><description>String</description></item>
             <item><term>USER9</term><description>UserItem</description><description><see cref='P:PayPal.Payments.DataObjects.UserItem.UserItem9'>UserItem9</see></description><description>String</description></item>
             <item><term>USER10</term><description>UserItem</description><description><see cref='P:PayPal.Payments.DataObjects.UserItem.UserItem10'>UserItem10</see></description><description>String</description></item>
+            <item><term>VALIDATRIONCODE</term><description>TransactionResponse</description><description><see cref='P:PayPal.Payments.DataObjects.TransactionResponse.ValidationCode'>ValidationCode</see></description><description>String</description></item>
+            <item><term>VATINVNUM</term><description>Invoice</description><description><see cref='P:PayPal.Payments.DataObjects.Invoice.VatInvNum'>VatInvNum</see></description><description>String</description></item>
             <item><term>VATREGNUM</term><description>Invoice</description><description><see cref='P:PayPal.Payments.DataObjects.Invoice.VatRegNum'>VatRegNum</see></description><description>String</description></item>
             <item><term>VATTAXAMT</term><description>Invoice</description><description><see cref='P:PayPal.Payments.DataObjects.Invoice.VatTaxAmt'>VatTaxAmt</see></description><description>Currency</description></item>
-            <item><term>VATTAXPERCENT</term><description>Invoice</description><description></description><description>String</description></item>
+            <item><term>VATTAXPERCENT</term><description>Invoice</description><description><see cref='P:PayPal.Payments.DataObjects.Invoice.VatTaxPercent'>VatTaxPercent</see></description><description>String</description></item>
+            <item><term>VATTAXRATE</term><description>Invoice</description><description><see cref='P:PayPal.Payments.DataObjects.Invoice.VatTaxRate'>VatTaxRate</see></description><description>String</description></item>
             <item><term>VENDOR</term><description>UserInfo</description><description></description><description>String</description></item>
             <item><term>VERBOSITY</term><description>Value is set based on the Transaction object used:SaleTransaction, CreditTransaction, VoidTransaction, CaptureTransaction, AuthorizationTransaction, VoiceAuthTransaction, InquiryTransaction, FraudReviewTransaction, RecurringAddTransaction, RecurringModifyTransaction, RecurringCancelTransaction, RecurringInquiryTransaction, RecurringReActivateTransaction, RecurringPaymentTransaction</description><description>Verbosity</description><description>String</description></item>
             <item><term>VIT_INTGTYPE</term><description>Value is set from all the Transaction objects: SaleTransaction, CreditTransaction, VoidTransaction, CaptureTransaction etc.</description><description>Vit_IntgType</description><description>String</description></item>
@@ -15836,6 +16500,36 @@
             CCUpdated
             </summary>
         </member>
+        <member name="F:PayPal.Payments.DataObjects.TransactionResponse.mRrn">
+            <summary>
+            Rrn
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.TransactionResponse.mStan">
+            <summary>
+            Stan
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.TransactionResponse.mAci">
+            <summary>
+            Aci
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.TransactionResponse.mValidationCode">
+            <summary>
+            ValidationCode
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.TransactionResponse.mCCTransId">
+            <summary>
+            CCTransId
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.TransactionResponse.mCCTrans_POSData">
+            <summary>
+            CCTrans_POSData
+            </summary>
+        </member>
         <member name="P:PayPal.Payments.DataObjects.TransactionResponse.Result">
             <summary>
             Gets Result
@@ -16541,6 +17235,63 @@
             
             <para>Maps to Payflow Parameter:</para>
             <code>CCUPDATED</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.TransactionResponse.Rrn">
+            <summary>
+            Gets the Retrieve Reference transaction.
+            </summary>
+            <remarks>
+            <para>Maps to Payflow Parameter:</para>
+            <code>RRN</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.TransactionResponse.Stan">
+            <summary>
+            Gets the System Trace Audit number.
+            </summary>
+            <remarks>
+            <para>Maps to Payflow Parameter:</para>
+            <code>STAN</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.TransactionResponse.Aci">
+            <summary>
+            Gets the Authorization Characteristics Indicator.
+            </summary>
+            <remarks>
+            <para>Maps to Payflow Parameter:</para>
+            <code>Aci</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.TransactionResponse.ValidationCode">
+            <summary>
+            Gets the Transaction Identifier.
+            </summary>
+            The transaction identifier associated with the transaction being settled.
+            <remarks>
+            <para>Maps to Payflow Parameter:</para>
+            <code>VALIDATIONCODE</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.TransactionResponse.CCTransId">
+            <summary>
+            Gets the Credit Card Transaction Id.
+            </summary>
+            Unique transaction ID returned by some processors for all credit card transactions.
+            <remarks>
+            <para>Maps to Payflow Parameter:</para>
+            <code>CCTRANSID</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.TransactionResponse.CCTrans_POSData">
+            <summary>
+            Gets the Credit Card Transaction POS Data
+            </summary>
+            Value returned by some processors for all credit card transactions.
+            <remarks>
+            <para>Maps to Payflow Parameter:</para>
+            <code>CCTRAN_POSDATA</code>
             </remarks>
         </member>
         <member name="M:PayPal.Payments.DataObjects.TransactionResponse.#ctor">
@@ -25936,20 +26687,24 @@
         </member>
         <member name="F:PayPal.Payments.Transactions.VoiceAuthTransaction.mAuthCode">
             <summary>
-            Holds Authcode , mandatory param for Voice Auth transaction.
+            Holds AuthCode, Authorization code obtain via another means; i.e. phone.
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Transactions.VoiceAuthTransaction.mAuthDate">
+            <summary>
+            Holds AuthDate, Date the AuthCode was obtained.
             </summary>
         </member>
         <member name="M:PayPal.Payments.Transactions.VoiceAuthTransaction.#ctor">
             <summary>
-            Private Constructor. This prevents
-            creation of an empty Transaction object. 
+            Private Constructor. This prevents creation of an empty Transaction object. 
             </summary>
         </member>
         <member name="M:PayPal.Payments.Transactions.VoiceAuthTransaction.#ctor(System.String,PayPal.Payments.DataObjects.UserInfo,PayPal.Payments.DataObjects.PayflowConnectionData,PayPal.Payments.DataObjects.Invoice,PayPal.Payments.DataObjects.BaseTender,System.String)">
              <summary>
              Constructor
              </summary>
-             <param name="AuthCode">Authcode , mandatory for Voice auth transaction.</param>
+             <param name="AuthCode">Authorization code obtain via another means; i.e. phone.</param>
              <param name="UserInfo">User Info object populated with user credentials.</param>
              <param name="PayflowConnectionData">Connection credentials object.</param>
              <param name="Invoice">Invoice object.</param>
@@ -25970,7 +26725,7 @@
             	// Populate data objects
             	...............
             
-            	// Create a new Voice Auth Transaction.                                                           
+            	// Create a new Voice Authorization Transaction.                                                           
             	VoiceAuthTransaction Trans = new VoiceAuthTransaction("123PNI",                    
             		User, Connection, Inv, Card, PayflowUtility.RequestId);                                
             	                                                                                                                    
@@ -26003,9 +26758,95 @@
             	...............
             	' Populate data objects
             	...............
-            	 ' Create a new Voice Auth Transaction.                                                                
+            	 ' Create a new Voice Authorization Transaction.                                                                
             	 Dim Trans As VoiceAuthTransaction = New VoiceAuthTransaction("123PNI", User,    
             		Connection, Inv, Card, PayflowUtility.RequestId)                                          
+            	                                                                                                                         
+            	 ' Submit the transaction.                                                                                     
+            	 Dim Resp As Response = Trans.SubmitTransaction()                                             
+            	                                                                                                                         
+            	 If Not Resp Is Nothing Then                                                                                 
+            	     ' Get the Transaction Response parameters.                                                     
+            	     Dim TrxnResponse As TransactionResponse = Resp.TransactionResponse           
+            	     If Not TrxnResponse Is Nothing Then                                                               
+            	         Console.WriteLine("RESULT = " + TrxnResponse.Result)                                
+            	         Console.WriteLine("PNREF = " + TrxnResponse.Pnref)                                   
+            	         Console.WriteLine("RESPMSG = " + TrxnResponse.RespMsg)                         
+            	         Console.WriteLine("AUTHCODE = " + TrxnResponse.AuthCode)                      
+            	     End If                                                                                                            
+            	 End If                                                                                                                
+            	                                                                                                                         
+            	 ' Get the Context and check for any contained SDK specific errors.                         
+            	 Dim Ctx As Context = Resp.TransactionContext                                                    
+            	 If Not Ctx Is Nothing AndAlso Ctx.getErrorCount() > 0 Then                                  
+            	     Console.WriteLine(Environment.NewLine + "Errors = " + Ctx.ToString())             
+            	 End If                                                                                                                
+            
+            	</code>
+            	</example>
+        </member>
+        <member name="M:PayPal.Payments.Transactions.VoiceAuthTransaction.#ctor(System.String,System.String,PayPal.Payments.DataObjects.UserInfo,PayPal.Payments.DataObjects.PayflowConnectionData,PayPal.Payments.DataObjects.Invoice,PayPal.Payments.DataObjects.BaseTender,System.String)">
+             <summary>
+             Constructor
+             </summary>
+             <param name="AuthCode">Authorization code obtain via another means; i.e. phone.</param>
+             <param name="AuthDate">Date the AuthCode was obtained.</param>
+             <param name="UserInfo">User Info object populated with user credentials.</param>
+             <param name="PayflowConnectionData">Connection credentials object.</param>
+             <param name="Invoice">Invoice object.</param>
+             <param name="Tender">Tender object such as  Card Tender.</param>
+             <param name="RequestId">Request Id</param>
+             <remarks> 
+             Some transactions cannot be authorized over the Internet (for example, high dollar
+             amounts)—processing networks generate Referral (Result Code 13) transactions.
+             In these situations, contact the customer service department of the 
+             merchant bank and provide the payment information as requested. 
+             If the transaction is approved, the bank provides a voice authorization 
+             code (AUTHCODE) for the transaction. This must be included as AUTHCODE 
+             as part of a Voice Authorization transaction.
+             </remarks>
+            	<example>
+            	<code lang="C#" escaped="false">
+            	...............
+            	// Populate data objects
+            	...............
+            
+            	// Create a new Voice Authorization Transaction.                                                           
+            	VoiceAuthTransaction Trans = new VoiceAuthTransaction("123PNI", "08102020",                 
+            		User, Connection, Inv, Card, PayflowUtility.RequestId);                                
+            	                                                                                                                    
+            	// Submit the transaction.                                                                                
+            	Response Resp = Trans.SubmitTransaction();                                                   
+            	                                                                                                                    
+            	if (Resp != null)                                                                                              
+            	{                                                                                                                   
+            		// Get the Transaction Response parameters.                                            
+            		TransactionResponse TrxnResponse =  Resp.TransactionResponse;            
+            		if (TrxnResponse != null)                                                                         
+            		{                                                                                                           
+            			Console.WriteLine("RESULT = " + TrxnResponse.Result);                   
+            			Console.WriteLine("PNREF = " + TrxnResponse.Pnref);                      
+            			Console.WriteLine("RESPMSG = " + TrxnResponse.RespMsg);            
+            			Console.WriteLine("AUTHCODE = " + TrxnResponse.AuthCode);        
+            		}                                                                                                           
+            	}                                                                                                                   
+            	                                                                                                                    
+            	// Get the Context and check for any contained SDK specific errors.                   
+            	Context Ctx = Resp.TransactionContext;                                                          
+            	if (Ctx != null &amp;&amp; Ctx.getErrorCount() > 0)                                                       
+            	{                                                                                                                   
+            		Console.WriteLine(Environment.NewLine + "Errors = " + Ctx.ToString());    
+            	}                                                                                                                   
+            
+            
+             </code>
+            	<code lang="Visual Basic" escaped="false">
+            	...............
+            	' Populate data objects
+            	...............
+            	 ' Create a new Voice Authorization Transaction.                                                                
+            	 Dim Trans As VoiceAuthTransaction = New VoiceAuthTransaction("123PNI", "08102020",
+            	 User, Connection, Inv, Card, PayflowUtility.RequestId)                                          
             	                                                                                                                         
             	 ' Submit the transaction.                                                                                     
             	 Dim Resp As Response = Trans.SubmitTransaction()                                             
@@ -26034,7 +26875,7 @@
              <summary>
              Constructor
              </summary>
-             <param name="AuthCode">Authcode , mandatory for Voice auth transaction.</param>
+             <param name="AuthCode">Authorization code obtain via another means; i.e. phone.</param>
              <param name="UserInfo">User Info object populated with user credentials.</param>
              <param name="Invoice">Invoice object.</param>
              <param name="Tender">Tender object such as  Card Tender.</param>
@@ -26054,7 +26895,7 @@
             	// Populate data objects
             	...............
             
-            	// Create a new Voice Auth Transaction.                                                           
+            	// Create a new Voice Authorization Transaction.                                                           
             	VoiceAuthTransaction Trans = new VoiceAuthTransaction("123PNI",                    
             		User, Inv, Card, PayflowUtility.RequestId);                                
             	                                                                                                                    

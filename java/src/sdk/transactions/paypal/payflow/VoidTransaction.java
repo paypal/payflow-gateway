@@ -1,20 +1,19 @@
 package paypal.payflow;
 
 /**
+ * <pre>{@code
  * This class is used to perform a void transaction.
- * <p/>
+ *
  * The Void transaction prevents a transaction from being settled, but does
  * not release the authorization (hold on funds) on the cardholder's account.
  * Delayed Capture, Sale, Credit, Authorization, and Voice
  * Authorization transactions can be voided. A Void transaction cannot be voided.
  * The Void must occur prior to settlement.
- * </p>
  *
- * @
  *  ................
  * // Populate data objects
  * ...............
- * <p/>
+ *
  * // Create a new Void Transaction.
  * // The ORIGID is the PNREF no. for a previous transaction.
  * VoidTransaction trans = new VoidTransaction("V63A0A07BE5A",
@@ -32,13 +31,15 @@ package paypal.payflow;
  * System.out.println("RESPMSG = " + trxnResponse.getRespMsg());
  * }
  * }
- * <p/>
+ *
  * // Get the Context and check for any contained SDK specific errors.
  * Context ctx = resp.getTransactionContext();
- * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)
+ * if (ctx != null & ctx.getErrorCount() > 0)
  * {
  * System.out.println("Errors = " + ctx.toString());
  * }
+ * }
+ * </pre>
  */
 
 public class VoidTransaction extends ReferenceTransaction {
@@ -50,11 +51,11 @@ public class VoidTransaction extends ReferenceTransaction {
      * @param UserInfo              - User Info object populated with user credentials.
      * @param PayflowConnectionData - Connection credentials object.
      * @param RequestId             - Request Id
-     *                              <p/>
+     *                               * <p>
      *                              ...............
      *                              // Populate data objects
      *                              ...............
-     *                              <p/>
+     *                               * <p>
      *                              // Create a new Void Transaction.
      *                              // The ORIGID is the PNREF no. for a previous transaction.
      *                              VoidTransaction trans = new VoidTransaction("V63A0A07BE5A",
@@ -71,11 +72,11 @@ public class VoidTransaction extends ReferenceTransaction {
      * @param OrigId    - Original Transaction Id.
      * @param UserInfo  - User Info object populated with user credentials.
      * @param RequestId - Request Id
-     *                  <p/>
+     *                   * <p>
      *                  ...............
      *                  // Populate data objects
      *                  ...............
-     *                  <p/>
+     *                   * <p>
      *                  // Create a new Void Transaction.
      *                  // The ORIGID is the PNREF no. for a previous transaction.
      *                  VoidTransaction trans = new VoidTransaction("V63A0A07BE5A",
@@ -96,7 +97,7 @@ public class VoidTransaction extends ReferenceTransaction {
      *  ...............
      * // Populate data objects
      * ...............
-     * <p/>
+     *  * <p>
      * // Create a new Void Transaction.
      * // The ORIGID is the PNREF no. for a previous transaction.
      * VoidTransaction trans = new VoidTransaction("V63A0A07BE5A",
@@ -116,7 +117,7 @@ public class VoidTransaction extends ReferenceTransaction {
      *  ...............
      * // Populate data objects
      * ...............
-     * <p/>
+     *  * <p>
      * // Create a new Void Transaction.
      * // The ORIGID is the PNREF no. for a previous transaction.
      * VoidTransaction trans = new VoidTransaction("V63A0A07BE5A",

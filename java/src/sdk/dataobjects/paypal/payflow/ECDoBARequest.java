@@ -9,21 +9,21 @@ package paypal.payflow;
 public class ECDoBARequest extends ECDoRequest {
 
     /**
-     * * <summary>
+     *
      * Constructor for ECDoBARequest
+     *
      *
      * @param token   String
      * @param payerId String
-     *                <p/>
-     *                <p/>
+     *                 * <p>
      *                ECDoBARequest is used to set the data required for a Express Checkout DO operation
      *                with Billing Agreement (Reference Transaction) without Purchase.
      *                </p>
      *  .............
-     * <p/>
+     *  * <p>
      * Create the ECDoBARequest object
      * ECDoBARequest doEC = new ECDoBARequest("[tokenid]","[payerid]");
-     * <p/>
+     *  * <p>
      * .............
      */
 

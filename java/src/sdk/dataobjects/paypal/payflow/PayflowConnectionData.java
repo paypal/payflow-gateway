@@ -7,32 +7,12 @@ package paypal.payflow;
  * is used to create the object, or
  * passed values are empty, then The following values (if empty) are looked for
  * as follows:
- * * {@paypal.listtable}
- * {@paypal.ltr}
- * {@paypal.lth}Property {@paypal.elth}
- * {@paypal.lth}From Internal Default {@paypal.elth}
- * {@paypal.lth}From SDK Properties {@paypal.elth}
- * {@paypal.eltr}
- * {@paypal.ltr}
- * {@paypal.ltd} Payflow Host {@paypal.eltd}
- * {@paypal.ltd} NA{@paypal.eltd}
- * {@paypal.ltd} HostAddress{@paypal.eltd}
- * {@paypal.eltr}
- * {@paypal.ltr}
- * {@paypal.ltd} Payflow Port{@paypal.eltd}
- * {@paypal.ltd} 443 {@paypal.eltd}
- * {@paypal.ltd} HostPort{@paypal.eltd}
- * {@paypal.eltr}
- * {@paypal.ltr}
- * {@paypal.ltd} Transaction timeout {@paypal.eltd}
- * {@paypal.ltd} 45 seconds {@paypal.eltd}
- * {@paypal.ltd} TimeOut {@paypal.eltd}
- * {@paypal.eltr}
- * {@paypal.ltr}
- * {@paypal.ltd} NA {@paypal.eltd}
- * {@paypal.eltr}
- * {@paypal.endlisttable}
- * </P>
+ *
+ * Property From Internal Default From SDK Properties
+ * Payflow Host - NA - HostAddress
+ * Payflow Port- 443 - HostPort
+ * Transaction timeout - 45 seconds - NA
+ *
  */
 public final class PayflowConnectionData extends BaseRequestDataObject {
 

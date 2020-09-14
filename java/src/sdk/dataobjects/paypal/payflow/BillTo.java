@@ -8,7 +8,7 @@ package paypal.payflow;
  *  .................
  * // inv is the Invoice object.
  * .................
- * <p/>
+ *  * <p>
  * // Set the Billing Address details.
  * BillTo bill = new BillTo();
  * bill.setBillToStreet( "123 Main St.");
@@ -110,7 +110,7 @@ public final class BillTo extends Address {
 
     /**
      * Sets the State
-     * <p>Cardholder's billing state code./P>
+     * <p>Cardholder's billing state code.</p>
      *
      * @param billToState String
      *  <p>Maps to Payflow Parameter: BILLTOSTATE</p>
@@ -252,7 +252,7 @@ public final class BillTo extends Address {
 
     /**
      * Sets the Billing Phone2.
-     * <p>Cardholder's 2nd telephone number./P>
+     * <p>Cardholder's 2nd telephone number.</p>
      *
      * @param billToPhone2 String
      *  <p>Maps to Payflow Parameter: BILLTOPHONE2</p>
@@ -385,14 +385,13 @@ public final class BillTo extends Address {
      * //billTo populated with
      * //the billing addresses.
      * ................
-     * <p/>
-     * <p/>
+     *  * <p>
      * ShipTo ship;
-     * <p/>
+     *  * <p>
      * //Populate shipping addresses
      * //from billing addresses.
      * ship = bill.copy();
-     * <p/>
+     *  * <p>
      * ................
      */
 

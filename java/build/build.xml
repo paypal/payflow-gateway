@@ -1,0 +1,92 @@
+<project name="v4java_sdk" default="package">
+    <target name="init">
+
+        <echo message="In Init START ..."/>
+        <property name="V4JAVA_HOME" value=".."/>
+        <property name="CLASSPATH" value="${V4JAVA_HOME}/lib/xercesImpl.jar;${V4JAVA_HOME}/lib/xml-apis.jar;"/>
+        <property name="DIST_DIR" value="F:/Source/Releases/Java/dist"/>
+        <property name="BUILD_DIR" value="F:/Source/Releases/Java/dist/classes"/>
+        <property name="RELEASE_DIR" value="F:/Source/Releases/Java/dist/release"/>
+        <property name="CLIENT_PACKAGE_DIR" value="${RELEASE_DIR}/payflow"/>
+        <property name="RELEASE_ZIP" value="Payflow_SDK_for_Java_v5.zip"/>
+        <property name="RELEASE_TAR" value="Payflow_SDK_for_Java_v5.tar"/>
+        <property name="RELEASE_GZIP" value="${RELEASE_TAR}.gz"/>
+        <property name="JAR_NAME" value="payflow.jar"/>
+        <!--<property name="TOMCAT_HOME" value="C:\apache-tomcat-5.5.26\common\lib\"/>-->
+        <echo message="In Init END ..."/>
+    </target>
+    <target name="makedir" depends="init">
+        <delete dir="${RELEASE_DIR}" quiet="true"/>
+        <delete dir="${BUILD_DIR}" quiet="true"/>
+        <echo message="Creating the required directories ..."/>
+        <mkdir dir="${DIST_DIR}"/>
+        <mkdir dir="${BUILD_DIR}"/>
+        <mkdir dir="${BUILD_DIR}/paypal"/>
+        <mkdir dir="${BUILD_DIR}/sdk"/>
+        <mkdir dir="${BUILD_DIR}/lib"/>
+        <mkdir dir="${RELEASE_DIR}"/>
+        <mkdir dir="${CLIENT_PACKAGE_DIR}"/>
+        <mkdir dir="${CLIENT_PACKAGE_DIR}/lib"/>
+        <mkdir dir="${CLIENT_PACKAGE_DIR}/docs"/>
+        <mkdir dir="${CLIENT_PACKAGE_DIR}/docs/payflow_API"/>
+        <mkdir dir="${CLIENT_PACKAGE_DIR}/paypal"/>
+        <!--<mkdir dir="${CLIENT_PCKG_DIR}/test"/>-->
+    </target>
+    <target name="clean" depends="init">
+    </target>
+
+    <target name="compile" depends="init,clean,makedir">
+        <echo message="Compiling Payflow Java classes ..."/>
+        <javac destdir="${BUILD_DIR}/sdk"
+               srcdir="${V4JAVA_HOME}/src/sdk/base;${V4JAVA_HOME}/src/sdk/dataobjects;${V4JAVA_HOME}/src/sdk/transactions"
+               classpath="${CLASSPATH}" includeantruntime="false" deprecation="on" source="1.8" target="1.8">
+            <include name="**/*.java"/>
+        </javac>
+    </target>
+
+    <target name="makejar" depends="compile">
+        <echo message="Creating ${JAR_NAME} ..."/>
+        <jar destfile="${CLIENT_PACKAGE_DIR}/lib/${JAR_NAME}" basedir="${BUILD_DIR}/sdk"/>
+    </target>
+
+    <target name="compilesamples" depends="makejar">
+        <echo message="Compiling Sample classes (will not be shipped) ..."/>
+        <javac destdir="${BUILD_DIR}/paypal" srcdir="${V4JAVA_HOME}/src/paypal"
+               classpath="${CLASSPATH};${CLIENT_PACKAGE_DIR}/lib/${JAR_NAME}" includeantruntime="false" deprecation="on" source="1.8" target="1.8">
+            <include name="**/*.java"/>
+        </javac>
+    </target>
+
+    <target name="package" depends="compilesamples">
+        <echo message="Creating ${RELEASE_ZIP} ..."/>
+        <copy todir="${CLIENT_PACKAGE_DIR}/paypal/">
+            <fileset dir="${V4JAVA_HOME}/src/paypal"/>
+        </copy>
+        <copy todir="${CLIENT_PACKAGE_DIR}">
+            <fileset dir="F:/Source/Releases/Java/test">
+                <include name="payflow_test.bat"/>
+                <include name="payflow_test.pl"/>
+            </fileset>
+        </copy>
+        <copy todir="${CLIENT_PACKAGE_DIR}">
+            <fileset dir="F:/Source/Releases/Java/docs">
+                <include name="CHANGELOG.html"/>
+                <include name="Start.txt"/>
+            </fileset>
+        </copy>
+        <copy todir="${CLIENT_PACKAGE_DIR}/docs">
+            <fileset dir="F:/Source/Releases/Java/docs">
+                <exclude name="CHANGELOG.html"/>
+            </fileset>
+        </copy>
+        <copy todir="${CLIENT_PACKAGE_DIR}/lib/">
+            <fileset dir="${V4JAVA_HOME}/lib/">
+                <include name="*.*"/>
+            </fileset>
+        </copy>
+
+         <zip destfile="${RELEASE_DIR}/${RELEASE_ZIP}" basedir="${CLIENT_PACKAGE_DIR}" includes="**" whenempty="fail"/>
+        <!-- <tar destfile="${RELEASE_DIR}/${RELEASE_TAR}" basedir="${CLIENT_PCKG_DIR}"/> -->
+        <!-- <gzip src="${RELEASE_DIR}/${RELEASE_TAR}" destfile="${RELEASE_DIR}/${RELEASE_GZIP}"/> -->
+    </target>
+</project>

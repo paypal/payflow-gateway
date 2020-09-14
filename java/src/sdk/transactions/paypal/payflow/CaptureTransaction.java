@@ -11,14 +11,14 @@ package paypal.payflow;
  * ...............
  * // Populate data objects
  * ...............
- * <p/>
+ *  * <p>
  * // Create a new Capture Transaction.
  * CaptureTransaction trans = new CaptureTransaction("PNRef of Authorization transaction",
  * User, Connection, PayflowUtility.getrequestId();
- * <p/>
+ *  * <p>
  * // Submit the transaction.
  * Response resp = trans.SubmitTransaction();
- * <p/>
+ *  * <p>
  * if (Resp != null)
  * {
  * TransactionResponse trxnResponse =  resp.getTransactionResponse();
@@ -32,10 +32,10 @@ package paypal.payflow;
  * System.out.println("AVSZIP = " + trxnResponse.getAVSZip());
  * }
  * }
- * <p/>
+ *  * <p>
  * // Get the Context and check for any contained SDK specific errors.
  * Context ctx = resp.getTransactionContext();
- * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)
+ * if (ctx != null &amp;&amp; ctx.getErrorCount() %3E 0)
  * {
  * System.out.println( "Errors = " + ctx.ToString());
  * }
@@ -81,18 +81,18 @@ public final class CaptureTransaction extends ReferenceTransaction {
      * authorization transaction in order to capture the amount. Therefore, a
      * capture transaction always takes the PNRef of a authorization transaction.
      * </p>
-     * <p/>
+     *  * <p>
      * ...............
      * // Populate data objects
      * ...............
-     * <p/>
+     *  * <p>
      * // Create a new Capture Transaction.
      * CaptureTransaction trans = new CaptureTransaction("PNRef of Authorization transaction",
      * User, Connection, Inv, PayflowUtility.requestId);
-     * <p/>
+     *  * <p>
      * // Submit the transaction.
      * Response resp = trans.SubmitTransaction();
-     * <p/>
+     *  * <p>
      * if (resp != null)
      * {
      * TransactionResponse trxnResponse =  resp.getTransactionResponse();
@@ -106,10 +106,10 @@ public final class CaptureTransaction extends ReferenceTransaction {
      * System.out.println("AVSZIP = " + trxnResponse.getAVSZip());
      * }
      * }
-     * <p/>
+     *  * <p>
      * Get the Context and check for any contained SDK specific errors.
      * Context ctx = resp.getTransactionContext();
-     * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)
+     * if (ctx != null &amp;&amp; ctx.getErrorCount() %3E 0)
      * {
      * System.out.println("Errors = " + ctx.ToString());
      * }
@@ -131,14 +131,14 @@ public final class CaptureTransaction extends ReferenceTransaction {
      *  ...............
      * // Populate data objects
      * ...............
-     * <p/>
+     *  * <p>
      * // Create a new Capture Transaction.
      * CaptureTransaction Trans = new CaptureTransaction("PNRef of Authorization transaction",
      * User, Inv, PayflowUtility.requestId);
-     * <p/>
+     *  * <p>
      * // Submit the transaction.
      * Response resp = trans.submitTransaction();
-     * <p/>
+     *  * <p>
      * if (resp != null)
      * {
      * TransactionResponse trxnResponse =  Resp.TransactionResponse;
@@ -152,10 +152,10 @@ public final class CaptureTransaction extends ReferenceTransaction {
      * System.out.println("AVSZIP = " + trxnResponse.getAVSZip());
      * }
      * }
-     * <p/>
+     *  * <p>
      * // Get the Context and check for any contained SDK specific errors.
      * Context ctx = resp.getTransactionContext();
-     * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)
+     * if (ctx != null &amp;&amp; ctx.getErrorCount() %3E 0)
      * {
      * System.out.println("Errors = " + Ctx.ToString());
      * }
@@ -178,14 +178,14 @@ public final class CaptureTransaction extends ReferenceTransaction {
      * ...............
      * // Populate data objects
      * ...............
-     * <p/>
+     *  * <p>
      * // Create a new Capture Transaction.
      * CaptureTransaction trans = new CaptureTransaction("PNRef of Authorization transaction",
      * User, Connection, Inv, tender, PayflowUtility.requestId);
-     * <p/>
+     *  * <p>
      * // Submit the transaction.
      * Response Resp = Trans.submitTransaction();
-     * <p/>
+     *  * <p>
      * if (resp != null)
      * {
      * TransactionResponse trxnResponse =  resp.getTransactionResponse();
@@ -199,10 +199,10 @@ public final class CaptureTransaction extends ReferenceTransaction {
      * System.out.println("AVSZIP = " + trxnResponse.getAVSZip());
      * }
      * }
-     * <p/>
+     *  * <p>
      * // Get the Context and check for any contained SDK specific errors.
      * Context ctx = resp.getTransactionContext();
-     * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)
+     * if (ctx != null &amp;&amp; ctx.getErrorCount() %3E 0)
      * {
      * System.out.println("Errors = " + ctx.ToString());
      * }
@@ -224,14 +224,14 @@ public final class CaptureTransaction extends ReferenceTransaction {
      * ...............
      * // Populate data objects
      * ...............
-     * <p/>
+     *  * <p>
      * // Create a new Capture Transaction.
      * CaptureTransaction trans = new CaptureTransaction("PNRef of Authorization transaction",
      * User,  Inv, tender, PayflowUtility.requestId);
-     * <p/>
+     *  * <p>
      * // Submit the transaction.
      * Response resp = trans.submitTransaction();
-     * <p/>
+     *  * <p>
      * if (Resp != null)
      * {
      * TransactionResponse trxnResponse =  resp.getTransactionResponse;
@@ -245,10 +245,10 @@ public final class CaptureTransaction extends ReferenceTransaction {
      * System.out.println("AVSZIP = " + trxnResponse.getAVSZip());
      * }
      * }
-     * <p/>
+     *  * <p>
      * // Get the Context and check for any contained SDK specific errors.
      * Context ctx = resp.getTransactionContext();
-     * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)
+     * if (ctx != null &amp;&amp; ctx.getErrorCount() %3E 0)
      * {
      * System.out.println("Errors = " + ctx.toString());
      * }
@@ -269,14 +269,14 @@ public final class CaptureTransaction extends ReferenceTransaction {
      * ...............
      * // Populate data objects
      * ...............
-     * <p/>
+     *  * <p>
      * // Create a new Capture Transaction.
      * CaptureTransaction trans = new CaptureTransaction("PNRef of Authorization transaction",
      * User, Connection, PayflowUtility.getrequestId());
-     * <p/>
+     *  * <p>
      * // Submit the transaction.
      * Response resp = trans.submitTransaction();
-     * <p/>
+     *  * <p>
      * if (Resp != null)
      * {
      * TransactionResponse trxnResponse =  resp.getTransactionResponse();
@@ -290,10 +290,10 @@ public final class CaptureTransaction extends ReferenceTransaction {
      * System.out.println("AVSZIP = " + trxnResponse.getAVSZip());
      * }
      * }
-     * <p/>
+     *  * <p>
      * // Get the Context and check for any contained SDK specific errors.
      * Context ctx = resp.getTransactionContext();
-     * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)
+     * if (ctx != null &amp;&amp; ctx.getErrorCount() %3E 0)
      * {
      * System.out.println("Errors = " + ctx.ToString());
      * }
@@ -313,14 +313,14 @@ public final class CaptureTransaction extends ReferenceTransaction {
      * ...............
      * // Populate data objects
      * ...............
-     * <p/>
+     *  * <p>
      * // Create a new Capture Transaction.
      * CaptureTransaction trans = new CaptureTransaction("PNRef of Authorization transaction",
      * User, Connection, PayflowUtility.getrequestId());
-     * <p/>
+     *  * <p>
      * // Submit the transaction.
      * Response Resp = trans.submitTransaction();
-     * <p/>
+     *  * <p>
      * if (Resp != null)
      * {
      * TransactionResponse trxnResponse =  resp.getTransactionResponse();
@@ -334,10 +334,10 @@ public final class CaptureTransaction extends ReferenceTransaction {
      * System.out.println("AVSZIP = " + trxnResponse.getAVSZip());
      * }
      * }
-     * <p/>
+     *  * <p>
      * // Get the Context and check for any contained SDK specific errors.
      * Context ctx = Resp.getTransactionContext();
-     * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)
+     * if (ctx != null &amp;&amp; ctx.getErrorCount() %3E 0)
      * {
      * System.out.println(Environment.NewLine + "Errors = " + ctx.toString());
      * }

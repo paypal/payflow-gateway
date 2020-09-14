@@ -19,7 +19,83 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9533da2-017e-4f68-8627-3fa704709969" name="Default Changelist" comment="New object: AdviceDetail, supports ADDLAMTn and ADDLAMTTYPEn&#10;New object: Devices, supports CATTYPE and CONTACTLESS&#10;Added to CustomerInfo: CUSTDATA, CUSTOMERID and CUSTOMERNUMBER" />
+    <list default="true" id="e9533da2-017e-4f68-8627-3fa704709969" name="Default Changelist" comment="New object: AdviceDetail, supports ADDLAMTn and ADDLAMTTYPEn&#10;New object: Devices, supports CATTYPE and CONTACTLESS&#10;Added to CustomerInfo: CUSTDATA, CUSTOMERID and CUSTOMERNUMBER">
+      <change afterPath="$PROJECT_DIR$/.idea/ant.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/PFProSDK/Properties/AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/PFProSDK/Properties/AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/PFProSDK/ndoc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/PFProSDK/ndoc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/PFProSDK/src/PayPal/Payments/DataObjects/Devices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/PFProSDK/src/PayPal/Payments/DataObjects/Devices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/Payflow dotNET SDK.sln" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/Payflow dotNET SDK.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paypal/payments/samples/namevaluepairs/NVPSale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paypal/payments/samples/namevaluepairs/NVPSale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paypal/payments/samples/xmlpay/XMLPaySale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paypal/payments/samples/xmlpay/XMLPaySale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/Context.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/Context.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PaymentState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PaymentState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ACHTender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ACHTender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/AdviceDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/AdviceDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/BankAcct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/BankAcct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/BaseTender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/BaseTender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/BillTo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/BillTo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/CardTender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/CardTender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/CheckPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/CheckPayment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/CheckTender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/CheckTender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/CreditCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/CreditCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Currency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Currency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ECDoBARequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ECDoBARequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ECDoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ECDoRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ECGetBARequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ECGetBARequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ECGetRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ECGetRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ECSetBARequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ECSetBARequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ECSetRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ECSetRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ECUpdateBARequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ECUpdateBARequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ExpressCheckoutRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ExpressCheckoutRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ExpressCheckoutResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ExpressCheckoutResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/FpsXmlData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/FpsXmlData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/FraudResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/FraudResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/IRequestDataObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/IRequestDataObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/IResponseDataObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/IResponseDataObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/MagTekInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/MagTekInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/MerchantInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/MerchantInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/PayLater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/PayLater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/PayLaterLineItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/PayLaterLineItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/PayPalTender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/PayPalTender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/PayflowConnectionData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/PayflowConnectionData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/PaymentCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/PaymentCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/PaymentDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/PaymentDevice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/PurchaseCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/PurchaseCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/RecurringInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/RecurringInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/RecurringResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/RecurringResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ShipTo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/ShipTo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/SwipeCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/SwipeCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/TransactionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/TransactionResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/UserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/AuthorizationTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/AuthorizationTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/BaseTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/BaseTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/BuyerAuthVATransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/BuyerAuthVATransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/BuyerAuthVETransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/BuyerAuthVETransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/CaptureTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/CaptureTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/CreditTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/CreditTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/FraudReviewTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/FraudReviewTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/InquiryTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/InquiryTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/OrderTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/OrderTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/RecurringAddTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/RecurringAddTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/RecurringCancelTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/RecurringCancelTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/RecurringInquiryTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/RecurringInquiryTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/RecurringModifyTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/RecurringModifyTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/RecurringPaymentTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/RecurringPaymentTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/RecurringReActivateTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/RecurringReActivateTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/RecurringTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/RecurringTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/ReferenceTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/ReferenceTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/SaleTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/SaleTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/VoiceAuthTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/VoiceAuthTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/VoidTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/transactions/paypal/payflow/VoidTransaction.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,34 +201,38 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="1912" y="500" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1599979322110" />
+    <state x="898" y="439" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1600063871539">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="898" y="439" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.3440.1400@0.0.3440.1400" timestamp="1600063871539" />
     <state x="148" y="193" width="2095" height="988" key="DiffContextDialog" timestamp="1599975711254">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="148" y="193" width="2095" height="988" key="DiffContextDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1599975711254" />
-    <state x="1858" y="427" key="FileChooserDialogImpl" timestamp="1599884229698">
+    <state x="1858" y="427" key="FileChooserDialogImpl" timestamp="1600055538854">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1858" y="427" key="FileChooserDialogImpl/0.0.3440.1400@0.0.3440.1400" timestamp="1599884229698" />
+    <state x="1858" y="427" key="FileChooserDialogImpl/0.0.3440.1400@0.0.3440.1400" timestamp="1600055538854" />
     <state x="404" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1599937804839">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="404" y="0" key="FileDocumentManager.FileCacheConflict/0.0.3440.1400@0.0.3440.1400" timestamp="1599937804839" />
-    <state width="1674" height="397" key="GridCell.Tab.0.bottom" timestamp="1599986827159">
+    <state width="1674" height="397" key="GridCell.Tab.0.bottom" timestamp="1600064333657">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="397" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1599986827159" />
-    <state width="1674" height="397" key="GridCell.Tab.0.center" timestamp="1599986827159">
+    <state width="1674" height="397" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1600064333657" />
+    <state width="1674" height="397" key="GridCell.Tab.0.center" timestamp="1600064333657">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="397" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1599986827159" />
-    <state width="1674" height="397" key="GridCell.Tab.0.left" timestamp="1599986827159">
+    <state width="1674" height="397" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1600064333657" />
+    <state width="1674" height="397" key="GridCell.Tab.0.left" timestamp="1600064333657">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="397" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1599986827159" />
-    <state width="1674" height="397" key="GridCell.Tab.0.right" timestamp="1599986827159">
+    <state width="1674" height="397" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1600064333657" />
+    <state width="1674" height="397" key="GridCell.Tab.0.right" timestamp="1600064333657">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1674" height="397" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1599986827159" />
+    <state width="1674" height="397" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1600064333657" />
     <state width="1674" height="399" key="GridCell.Tab.1.bottom" timestamp="1599979922796">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
@@ -185,10 +265,10 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="1999" y="488" width="857" height="444" key="chooseDestDirectoryDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1599884830394" />
-    <state x="1013" y="601" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599894048706">
+    <state x="1013" y="601" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600066956138">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1013" y="601" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3440.1400@0.0.3440.1400" timestamp="1599894048706" />
+    <state x="1013" y="601" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3440.1400@0.0.3440.1400" timestamp="1600066956138" />
     <state x="291" y="62" width="1525" height="811" key="dock-window-1" timestamp="1599942499697">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
@@ -201,9 +281,13 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="198" y="191" width="1411" height="964" key="dock-window-3/0.0.3440.1400@0.0.3440.1400" timestamp="1599941680940" />
-    <state x="2402" y="245" width="747" height="1023" key="find.popup" timestamp="1599984714669">
+    <state x="2261" y="243" width="747" height="1023" key="find.popup" timestamp="1600061231701">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="2402" y="245" width="747" height="1023" key="find.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1599984714669" />
+    <state x="2261" y="243" width="747" height="1023" key="find.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1600061231701" />
+    <state x="720" y="372" key="new project wizard" timestamp="1600064376676">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="720" y="372" key="new project wizard/0.0.3440.1400@0.0.3440.1400" timestamp="1600064376676" />
   </component>
 </project>

@@ -2,19 +2,19 @@ package paypal.payflow;
 
 /**
  * This class is used to create and perform an Order Transaction for Express Checkout.
- * <p/>
+ *  * <p>
  * An Order transaction represents an agreement to pay one or more authorized amounts up to
  * the specified total over a maximum of 29 days.
- * <p/>
+ *  * <p>
  *
  *  This example shows how to create and perform a order transaction as part of Express Checkout.
- * <p/>
+ *  * <p>
  * ..........
  * ..........
  * //Populate required data objects.
  * ..........
  * ..........
- * <p/>
+ *  * <p>
  * // Create a new Order Transaction.
  * OrderTransaction Trans = new OrderTransaction(
  * userInfo,
@@ -24,7 +24,7 @@ package paypal.payflow;
  * RequestId);
  * //Submit the transaction.
  * trans.submitTransaction();
- * <p/>
+ *  * <p>
  * // Get the Response.
  * Response resp = trans.getResponse();
  * if (Resp != null)
@@ -46,7 +46,7 @@ package paypal.payflow;
  * }
  * // Get the Context and check for any contained SDK specific errors.
  * Context ctx = resp.getTransactionContext();
- * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)
+ * if (ctx != null &amp;&amp; ctx.getErrorCount() %3E 0)
  * {
  * System.out.println("Errors = " + ctx.ToString());
  * }
@@ -63,13 +63,13 @@ public class OrderTransaction extends AuthorizationTransaction {
      * @param requestId             String Request Id
      *  This example shows how to create and perform
      * a authorization transaction.
-     * <p/>
+     *  * <p>
      * ..........
      * ..........
      * //Populate required data objects.
      * ..........
      * ..........
-     * <p/>
+     *  * <p>
      * // Create a new Order Transaction.
      * OrderTransaction Trans = new OrderTransaction(
      * userInfo,
@@ -79,7 +79,7 @@ public class OrderTransaction extends AuthorizationTransaction {
      * RequestId);
      * //Submit the transaction.
      * trans.submitTransaction();
-     * <p/>
+     *  * <p>
      * // Get the Response.
      * Response resp = trans.getResponse();
      * if (Resp != null)
@@ -101,7 +101,7 @@ public class OrderTransaction extends AuthorizationTransaction {
      * }
      * // Get the Context and check for any contained SDK specific errors.
      * Context ctx = resp.getTransactionContext();
-     * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)
+     * if (ctx != null &amp;&amp; ctx.getErrorCount() %3E 0)
      * {
      * System.out.println("Errors = " + ctx.ToString());
      * }
@@ -123,13 +123,13 @@ public class OrderTransaction extends AuthorizationTransaction {
      * @param requestId String Request Id
      *  This example shows how to create and perform
      * a authorization transaction.
-     * <p/>
+     *  * <p>
      * ..........
      * ..........
      * //Populate required data objects.
      * ..........
      * ..........
-     * <p/>
+     *  * <p>
      * // Create a new Order Transaction.
      * OrderTransaction Trans = new OrderTransaction(
      * userInfo,
@@ -138,7 +138,7 @@ public class OrderTransaction extends AuthorizationTransaction {
      * RequestId);
      * //Submit the transaction.
      * trans.submitTransaction();
-     * <p/>
+     *  * <p>
      * // Get the Response.
      * Response resp = trans.getResponse();
      * if (Resp != null)
@@ -160,7 +160,7 @@ public class OrderTransaction extends AuthorizationTransaction {
      * }
      * // Get the Context and check for any contained SDK specific errors.
      * Context ctx = resp.getTransactionContext();
-     * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)
+     * if (ctx != null &amp;&amp; ctx.getErrorCount() %3E 0)
      * {
      * System.out.println("Errors = " + ctx.ToString());
      * }

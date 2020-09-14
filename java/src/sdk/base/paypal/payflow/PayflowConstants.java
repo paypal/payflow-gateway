@@ -18,7 +18,7 @@ public final class PayflowConstants {
     protected static final String EMPTY_STRING = "";
 
     /**
-     * NVP Delimiter (&)
+     * NVP Delimiter (ampersand)
      */
     protected static final String DELIMITER_NVP = "&";
 
@@ -55,11 +55,11 @@ public final class PayflowConstants {
      */
     protected static final int DEFAULT_HOSTPORT = 443;
     /**
-     * SDK Client Type (J --> JAVA)
+     * SDK Client Type (J -- JAVA)
      */
     protected static final String CLIENT_TYPE = "J";
     /**
-     * SDK Client Version (4000 --> V4 protocol)
+     * SDK Client Version (4000 -- V4 protocol)
      */
     protected static final String CLIENT_VERSION = "440";
     /**

@@ -4,7 +4,7 @@ import java.util.Hashtable;
 
 /**
  * Used for transaction response.
- * <p/>
+ *  * <p>
  * TransactionResponse object is contained in the main response
  * object Response of the transaction.
  * </p>
@@ -16,7 +16,7 @@ import java.util.Hashtable;
  * *		...................
  * // Submit the transaction.
  * Response resp = trans.SubmitTransaction();
- * <p/>
+ *  * <p>
  * if (resp != null)
  * {
  * // Get the Transaction Response parameters.
@@ -227,7 +227,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
 
     /**
      * Gets the lastname parameter.
-     * <p>Obtain the last name of the card holder./p>
+     * <p>Obtain the last name of the card holder.</p>
      *
      * @return - String
      *  <p>Maps to Payflow Parameter: BILLTOLASTNAME
@@ -238,7 +238,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
 
     /**
      * Gets the firstname parameter.
-     * <p>Obtain the first name of the card holder./p>
+     * <p>Obtain the first name of the card holder.</p>
      *
      * @return - String
      *  <p>Maps to Payflow Parameter: BILLTOFIRSTNAME
@@ -249,7 +249,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
 
     /**
      * Gets the transtime parameter.
-     * <p>Obtain the transaction date and time./p>
+     * <p>Obtain the transaction date and time.</p>
      *
      * @return - String
      *  <p>Maps to Payflow Parameter: TRANSTIME
@@ -265,26 +265,13 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * transaction.</p>
      *
      * @return - String
-     * <p/>
-     * {@paypal.listtable}
-     * {@paypal.ltr}
-     * {@paypal.lth} Value {@paypal.elth}
-     * {@paypal.lth} Description {@paypal.elth}
-     * {@paypal.eltr}
-     * {@paypal.ltr}
-     * {@paypal.ltd} Y {@paypal.eltd}
-     * {@paypal.ltd} The submitted value matches the data on file for the card. {@paypal.eltd}
-     * {@paypal.eltr}
-     * {@paypal.ltr}
-     * {@paypal.ltd} N {@paypal.eltd}
-     * {@paypal.ltd} The submitted value does not match the data on file for the card. {@paypal.eltd}
-     * {@paypal.eltr}
-     * {@paypal.ltr}
-     * {@paypal.ltd} X {@paypal.eltd}
-     * {@paypal.ltd} The cardholder's bank does not support this service. {@paypal.eltd}
-     * {@paypal.eltr}
-     * {@paypal.endlisttable}
-     *  <p>Maps to Payflow Parameter: CVV2MATCH
+     *
+     * Value  Description
+     *   Y  - The submitted value matches the data on file for the card.
+     *   N  - The submitted value does not match the data on file for the card.
+     *   X  - The cardholder's bank does not support this service.
+     *
+     *  Maps to Payflow Parameter: CVV2MATCH
      */
     public String getCvv2Match() {
         return cvv2Match;
@@ -311,7 +298,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * inquiry transaction is performed.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: ORIGRESULT
+     *  <p>Maps to Payflow Parameter: ORIGRESULT</p>
      */
     public String getOrigResult() {
         return origResult;
@@ -321,7 +308,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the orignal pnref for the primary transaction.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: ORIGPNREF
+     *  <p>Maps to Payflow Parameter: ORIGPNREF</p>
      */
     public String getOrigPnref() {
         return origPnref;
@@ -331,7 +318,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the transaction state.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: TRANSSTATE
+     *  <p>Maps to Payflow Parameter: TRANSSTATE</p>
      */
     public String getTransState() {
         return transState;
@@ -348,7 +335,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * an Inquiry, you must provide a unique CUSTREF </p>
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: CUSTREF
+     *  <p>Maps to Payflow Parameter: CUSTREF</p>
      */
     public String getCustRef() {
         return custRef;
@@ -358,7 +345,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the startTime.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: STARTTIME
+     *  <p>Maps to Payflow Parameter: STARTTIME</p>
      */
     public String getStartTime() {
         return startTime;
@@ -368,7 +355,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the end time.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: ENDTIME
+     *  <p>Maps to Payflow Parameter: ENDTIME</p>
      */
     public String getEndTime() {
         return endTime;
@@ -382,7 +369,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * returned as 1.</p>
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: DUPLICATE
+     *  <p>Maps to Payflow Parameter: DUPLICATE</p>
      */
     public String getDuplicate() {
         return duplicate;
@@ -396,7 +383,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Value obtained when Payflow Verbosity paramter = MEDIUM
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: DATE_TO_SETTLE
+     *  <p>Maps to Payflow Parameter: DATE_TO_SETTLE</p>
      */
     public String getDateToSettle() {
         return dateToSettle;
@@ -410,7 +397,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Value obtained when Payflow Verbosity paramter = MEDIUM </p>
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: BATCHID
+     *  <p>Maps to Payflow Parameter: BATCHID</p>
      */
     public String getBatchId() {
         return batchId;
@@ -423,7 +410,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Value obtained when Payflow Verbosity paramter = MEDIUM
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: ADDLMSGS
+     *  <p>Maps to Payflow Parameter: ADDLMSGS</p>
      */
     public String getAddlMsgs() {
         return addlMsgs;
@@ -436,7 +423,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * normalized by Gateway server.</p>
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: RESPTEXT
+     *  <p>Maps to Payflow Parameter: RESPTEXT</p>
      */
     public String getRespText() {
         return respText;
@@ -449,7 +436,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Value obtained when Payflow Verbosity paramter = MEDIUM
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: PROCAVS
+     *  <p>Maps to Payflow Parameter: PROCAVS</p>
      */
     public String getProcAvs() {
         return procAvs;
@@ -458,10 +445,10 @@ public final class TransactionResponse extends BaseResponseDataObject {
     /**
      * Gets the ProcCardSecure.
      * <p>VPAS/SPA response from the processor.
-     * Value obtained when Payflow Verbosity paramter = MEDIUM
+     * Value obtained when Payflow Verbosity parameter = MEDIUM
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: PROCCARDSECURE
+     *  <p>Maps to Payflow Parameter: PROCCARDSECURE</p>
      */
     public String getProcCardSecure() {
         return procCardSecure;
@@ -473,10 +460,10 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Its a 3- or 4-digit code that is printed (not imprinted) on
      * the back of a credit card. Used as partial assurance
      * that the card is in the buyer's possession.
-     * Value obtained when Payflow Verbosity paramter = MEDIUM</p>
+     * Value obtained when Payflow Verbosity parameter = MEDIUM</p>
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: PROCCVV2
+     *  <p>Maps to Payflow Parameter: PROCCVV2</p>
      */
     public String getProcCVV2() {
         return procCVV2;
@@ -486,7 +473,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the hostCode.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: HOSTCODE
+     *  <p>Maps to Payflow Parameter: HOSTCODE</p>
      */
     public String getHostCode() {
         return hostCode;
@@ -496,7 +483,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the settleDate.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: SETTLEDATE
+     *  <p>Maps to Payflow Parameter: SETTLEDATE</p>
      */
     public String getSettleDate() {
         return settleDate;
@@ -506,7 +493,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the status.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: STATUS
+     *  <p>Maps to Payflow Parameter: STATUS</p>
      */
     public String getStatus() {
         return status;
@@ -516,7 +503,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the status.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: BALAMT
+     *  <p>Maps to Payflow Parameter: BALAMT</p>
      */
     public String getBalAmt() {
         return balAmt;
@@ -526,7 +513,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the status.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: AMEXID
+     *  <p>Maps to Payflow Parameter: AMEXID</p>
      */
     public String getAmexId() {
         return amexId;
@@ -536,7 +523,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the status.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: AMEXPOSDATA
+     *  <p>Maps to Payflow Parameter: AMEXPOSDATA</p>
      */
     public String getAmexPosData() {
         return amexPosData;
@@ -546,7 +533,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the card type.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: CARDTYPE
+     *  <p>Maps to Payflow Parameter: CARDTYPE</p>
      */
     public String getCardType() {
         return cardType;
@@ -556,7 +543,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the original amount.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: ORIGAMT
+     *  <p>Maps to Payflow Parameter: ORIGAMT</p>
      */
     public String getOrigAmt() {
         return origAmt;
@@ -566,7 +553,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the secure token.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: SECURETOKEN
+     *  <p>Maps to Payflow Parameter: SECURETOKEN</p>
      */
     public String getSecureToken() {
         return secureToken;
@@ -576,7 +563,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the secure token id.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: EMAILMATCH
+     *  <p>Maps to Payflow Parameter: EMAILMATCH</p>
      */
     public String getEmailMatch() {
         return emailMatch;
@@ -586,7 +573,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the secure token.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: PHONEMATCH
+     *  <p>Maps to Payflow Parameter: PHONEMATCH</p>
      */
     public String getPhoneMatch() {
         return phoneMatch;
@@ -596,7 +583,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the extended response message.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: EXTRSPMSG
+     *  <p>Maps to Payflow Parameter: EXTRSPMSG</p>
      */
     public String getExtRspMsg() {
         return extRspMsg;
@@ -606,7 +593,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the secure token id.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: SECURETOKENID
+     *  <p>Maps to Payflow Parameter: SECURETOKENID</p>
      */
     public String getSecureTokenId() {
         return secureTokenId;
@@ -616,7 +603,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the payment advice code.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: PAYMENTADVICECODE
+     *  <p>Maps to Payflow Parameter: PAYMENTADVICECODE</p>
      */
     public String getPaymentAdviceCode() {
         return paymentAdviceCode;
@@ -626,7 +613,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
      * Gets the association response code.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: ASSOCIATIONRESPCODE
+     *  <p>Maps to Payflow Parameter: ASSOCIATIONRESPCODE</p>
      */
     public String getAssociationResponseCode() {
         return associationResponseCode;

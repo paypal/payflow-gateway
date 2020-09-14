@@ -2,7 +2,7 @@ package paypal.payflow;
 
 /**
  * Interface for all request data objects.
- * <p/>
+ *  * <p>
  * This interface can be used to create a new request data object.
  * </p>
  */

@@ -13,7 +13,7 @@ import java.text.DecimalFormat;
  * .............
  * //inv is the Invoice object
  * .............
- * <p/>
+ *  * <p>
  * //Set the currency object.
  * Currency mt = new Currency(new Double(25.12));
  * // A valid amount is a two decimal value.
@@ -23,7 +23,7 @@ import java.text.DecimalFormat;
  * //If the NoOfDecimalDigits property is used then it is mandatory to set one of the following properties to true.
  * amt.setRound (true);
  * amt.setTruncate (true);
- * <p/>
+ *  * <p>
  * //Set the amount in the invoice object
  * inv.setAmt( Amt);
  * .............
@@ -44,10 +44,10 @@ public final class Currency extends BaseRequestDataObject {
      *  .............
      * //inv is the Invoice object
      * .............
-     * <p/>
+     *  * <p>
      * //Set the invoice amount.
      * inv.setAmt(new Currency(new Double(25.12)));
-     * <p/>
+     *  * <p>
      * .............
      */
 
@@ -64,10 +64,10 @@ public final class Currency extends BaseRequestDataObject {
      *  .............
      * //inv is the Invoice object
      * .............
-     * <p/>
+     *  * <p>
      * //Set the invoice amount.
      * inv.setAmt(new Currency(new Double(25.12),"USD"));
-     * <p/>
+     *  * <p>
      * .............
      */
 
@@ -168,12 +168,13 @@ public final class Currency extends BaseRequestDataObject {
     /**
      * Overrides ToString
      *
-     * @return String</returns>
-     *         <p>Formats string value of currency in format "$.CC"</p>
+     * @return String
+     *
+     * <p>Formats string value of currency in format "$.CC"</p>
      *  .............
      * //inv is the Invoice object
      * .............
-     * <p/>
+     *  * <p>
      * //Set the invoice amount.
      * inv.setAmt (new Currency(new Double(25.12),"USD"));
      * String currValue = inv.ToString();

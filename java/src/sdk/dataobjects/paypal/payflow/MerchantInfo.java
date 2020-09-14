@@ -68,7 +68,7 @@ public final class MerchantInfo extends BaseRequestDataObject {
      * Gets the Merchant's Name.
      *
      * @return merchantName String
-     *  <p>Maps to Payflow Parameter: MERCHANTNAME/p>
+     *  <p>Maps to Payflow Parameter: MERCHANTNAME</p>
      */
     public String getMerchantName() {
         return merchantName;

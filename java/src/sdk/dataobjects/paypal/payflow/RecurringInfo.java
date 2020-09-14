@@ -2,16 +2,15 @@ package paypal.payflow;
 
 
 /**
+ * <pre> {@code
  * Used for recurring transaction related information
  * <p>RecurringInfo contains the required and optional parameters
  * specific to all the recurring transactions.</p>
  *
  *  Following examples shows how to use the RecurringInfo.
- * <code lang="C#" escaped="false">
  * ............................
  * //Populate other data objects.
  * ............................
- * <p/>
  * RecurringInfo RecurInfo = new RecurringInfo();
  * // The date that the first payment will be processed.
  * // This will be of the format mmddyyyy.
@@ -21,15 +20,14 @@ package paypal.payflow;
  * // capital letters and can be any of WEEK / BIWK / SMMO / FRWK / MONT /
  * // QTER / SMYR / YEAR
  * RecurInfo.PayPeriod = "WEEK";
- * <p/>
- * <p/>
+ *
  * // Create a new Recurring Add Transaction.
  * RecurringAddTransaction Trans = new RecurringAddTransaction(
  * User, Connection, Inv, Card, RecurInfo, PayflowUtility.RequestId);
- * <p/>
+ *
  * // Submit the transaction.
  * Response Resp = Trans.SubmitTransaction();
- * <p/>
+ *
  * if (Resp != null)
  * {
  * // Get the Transaction Response parameters.
@@ -39,7 +37,7 @@ package paypal.payflow;
  * Console.WriteLine("RESULT = " + TrxnResponse.Result);
  * Console.WriteLine("RESPMSG = " + TrxnResponse.RespMsg);
  * }
- * <p/>
+ *
  * // Get the Recurring Response parameters.
  * RecurringResponse RecurResponse = Resp.RecurringResponse;
  * if (RecurResponse != null)
@@ -48,18 +46,19 @@ package paypal.payflow;
  * Console.WriteLine("PROFILEID = " + RecurResponse.ProfileId);
  * }
  * }
- * <p/>
+ *
  * // Get the Context and check for any contained SDK specific errors.
  * Context Ctx = Resp.TransactionContext;
- * if (Ctx != null &amp;&amp; Ctx.getErrorCount() > 0)
+ * if (Ctx != null & Ctx.getErrorCount() > 0)
  * {
  * Console.WriteLine(Environment.NewLine + "Errors = " + Ctx.ToString());
  * }
- * <p/>
+ *
  * Console.WriteLine(Environment.NewLine + "Press Enter to Exit ...");
  * Console.ReadLine();
  * }
- * </code>
+ * }
+ * </pre>
  */
 public final class RecurringInfo extends BaseRequestDataObject {
     private String profileName;
@@ -78,7 +77,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * Gets the profileName parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: PROFILENAME
+     *  <p>Maps to Payflow Parameter: PROFILENAME</p>
      */
     public String getProfileName() {
         return profileName;
@@ -88,7 +87,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * Sets the profileName parameter.
      *
      * @param profileName - String
-     *  <p>Maps to Payflow Parameter: PROFILENAME
+     *  <p>Maps to Payflow Parameter: PROFILENAME</p>
      */
     public void setProfileName(String profileName) {
         this.profileName = profileName;
@@ -99,7 +98,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * <p>Beginning date for the recurring billing cycle.</p>
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: START
+     *  <p>Maps to Payflow Parameter: START</p>
      */
     public String getStart() {
         return start;
@@ -110,7 +109,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * <p>Beginning date for the recurring billing cycle.</p>
      *
      * @param start - String
-     *  <p>Maps to Payflow Parameter: START
+     *  <p>Maps to Payflow Parameter: START</p>
      */
     public void setStart(String start) {
         this.start = start;
@@ -121,7 +120,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * <p>Number of payments to be made over the life of the agreement.</p>
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: TERM
+     *  <p>Maps to Payflow Parameter: TERM</p>
      */
     public long getTerm() {
         return term;
@@ -132,7 +131,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * <p>Number of payments to be made over the life of the agreement.</p>
      *
      * @param term - String
-     *  <p>Maps to Payflow Parameter: TERM
+     *  <p>Maps to Payflow Parameter: TERM</p>
      */
     public void setTerm(long term) {
         this.term = term;
@@ -143,47 +142,20 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * <p>Specifies how often the payment occurs.</p>
      *
      * @return - String
-     *         <p/>
-     *         {@paypal.listtable}
-     *         {@paypal.ltr}
-     *         {@paypal.lth} Value {@paypal.elth}
-     *         {@paypal.lth} Description {@paypal.elth}
-     *         {@paypal.eltr}
-     *         {@paypal.ltr}
-     *         {@paypal.ltd} WEEK {@paypal.eltd}
-     *         {@paypal.ltd} Weekly - Every week on the same day of the week as the first payment. {@paypal.eltd}
-     *         {@paypal.eltr}
-     *         {@paypal.ltr}
-     *         {@paypal.ltd} BIWK {@paypal.eltd}
-     *         {@paypal.ltd} Every Two Weeks - Every other week on the same day of the week as the first payment. {@paypal.eltd}
-     *         {@paypal.eltr}
-     *         {@paypal.ltr}
-     *         {@paypal.ltd} SMMO {@paypal.eltd}
-     *         {@paypal.ltd} Twice Every Month - The 1st and 15th of the month.Results in 24 payments per year. SMMO can start on 1st to 15th of the month, second payment 15 days later or on the last day of the month. {@paypal.eltd}
-     *         {@paypal.eltr}
-     *         {@paypal.ltr}
-     *         {@paypal.ltd} FRWK {@paypal.eltd}
-     *         {@paypal.ltd} Every Four Weeks - Every 28 days from the previous payment date beginning with the first payment date. Results in 13 payments per year. {@paypal.eltd}
-     *         {@paypal.eltr}
-     *         {@paypal.ltr}
-     *         {@paypal.ltd} MONT {@paypal.eltd}
-     *         {@paypal.ltd} Monthly - Every month on the same date as the first payment. Results in 12 payments per year. {@paypal.eltd}
-     *         {@paypal.eltr}
-     *         {@paypal.ltr}
-     *         {@paypal.ltd} QTER {@paypal.eltd}
-     *         {@paypal.ltd} Quarterly - Every three months on the same date as the first payment. {@paypal.eltd}
-     *         {@paypal.eltr}
-     *         {@paypal.ltr}
-     *         {@paypal.ltd} SMYR {@paypal.eltd}
-     *         {@paypal.ltd} Twice Every Year - Every six months on the same date as the first payment. {@paypal.eltd}
-     *         {@paypal.eltr}
-     *         {@paypal.ltr}
-     *         {@paypal.ltd} YEAR {@paypal.eltd}
-     *         {@paypal.ltd} Yearly - Every twelve months on the same date as the first payment. {@paypal.eltd}
-     *         {@paypal.eltr}
-     *         {@paypal.endlisttable}
-     *         </p>
-     *  <p>Maps to Payflow Parameter: PAYPERIOD
+     *
+     * <pre>
+     *  Value - Description
+     *  WEEK  - Weekly - Every week on the same day of the week as the first payment.
+     *  BIWK  - Every Two Weeks - Every other week on the same day of the week as the first payment.
+     *  SMMO  - Twice Every Month - The 1st and 15th of the month.Results in 24 payments per year. SMMO can start on 1st to 15th of the month, second payment 15 days later or on the last day of the month.
+     *  FRWK  - Every Four Weeks - Every 28 days from the previous payment date beginning with the first payment date. Results in 13 payments per year.
+     *  MONT  - Monthly - Every month on the same date as the first payment. Results in 12 payments per year.
+     *  QTER  - Quarterly - Every three months on the same date as the first payment.
+     *  SMYR  - Twice Every Year - Every six months on the same date as the first payment.
+     *  YEAR  - Yearly - Every twelve months on the same date as the first payment.
+     *
+     *  Maps to Payflow Parameter: PAYPERIOD
+     *  </pre>
      */
     public String getPayPeriod() {
         return payPeriod;
@@ -194,47 +166,19 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * <p>Specifies how often the payment occurs.</p>
      *
      * @param payPeriod - String
-     *                  <p/>
-     *                  * {@paypal.listtable}
-     *                  {@paypal.ltr}
-     *                  {@paypal.lth} Value {@paypal.elth}
-     *                  {@paypal.lth} Description {@paypal.elth}
-     *                  {@paypal.eltr}
-     *                  {@paypal.ltr}
-     *                  {@paypal.ltd} WEEK {@paypal.eltd}
-     *                  {@paypal.ltd} Weekly - Every week on the same day of the week as the first payment. {@paypal.eltd}
-     *                  {@paypal.eltr}
-     *                  {@paypal.ltr}
-     *                  {@paypal.ltd} BIWK {@paypal.eltd}
-     *                  {@paypal.ltd} Every Two Weeks - Every other week on the same day of the week as the first payment. {@paypal.eltd}
-     *                  {@paypal.eltr}
-     *                  {@paypal.ltr}
-     *                  {@paypal.ltd} SMMO {@paypal.eltd}
-     *                  {@paypal.ltd} Twice Every Month - The 1st and 15th of the month.Results in 24 payments per year. SMMO can start on 1st to 15th of the month, second payment 15 days later or on the last day of the month. {@paypal.eltd}
-     *                  {@paypal.eltr}
-     *                  {@paypal.ltr}
-     *                  {@paypal.ltd} FRWK {@paypal.eltd}
-     *                  {@paypal.ltd} Every Four Weeks - Every 28 days from the previous payment date beginning with the first payment date. Results in 13 payments per year. {@paypal.eltd}
-     *                  {@paypal.eltr}
-     *                  {@paypal.ltr}
-     *                  {@paypal.ltd} MONT {@paypal.eltd}
-     *                  {@paypal.ltd} Monthly - Every month on the same date as the first payment. Results in 12 payments per year. {@paypal.eltd}
-     *                  {@paypal.eltr}
-     *                  {@paypal.ltr}
-     *                  {@paypal.ltd} QTER {@paypal.eltd}
-     *                  {@paypal.ltd} Quarterly - Every three months on the same date as the first payment. {@paypal.eltd}
-     *                  {@paypal.eltr}
-     *                  {@paypal.ltr}
-     *                  {@paypal.ltd} SMYR {@paypal.eltd}
-     *                  {@paypal.ltd} Twice Every Year - Every six months on the same date as the first payment. {@paypal.eltd}
-     *                  {@paypal.eltr}
-     *                  {@paypal.ltr}
-     *                  {@paypal.ltd} YEAR {@paypal.eltd}
-     *                  {@paypal.ltd} Yearly - Every twelve months on the same date as the first payment. {@paypal.eltd}
-     *                  {@paypal.eltr}
-     *                  {@paypal.endlisttable}
-     *                  </p>
-     *  <p>Maps to Payflow Parameter: PAYPERIOD
+     * <pre>
+     *  Value - Description
+     *  WEEK  - Weekly - Every week on the same day of the week as the first payment.
+     *  BIWK  - Every Two Weeks - Every other week on the same day of the week as the first payment.
+     *  SMMO  - Twice Every Month - The 1st and 15th of the month.Results in 24 payments per year. SMMO can start on 1st to 15th of the month, second payment 15 days later or on the last day of the month.
+     *  FRWK  - Every Four Weeks - Every 28 days from the previous payment date beginning with the first payment date. Results in 13 payments per year.
+     *  MONT  - Monthly - Every month on the same date as the first payment. Results in 12 payments per year.
+     *  QTER  - Quarterly - Every three months on the same date as the first payment.
+     *  SMYR  - Twice Every Year - Every six months on the same date as the first payment.
+     *  YEAR  - Yearly - Every twelve months on the same date as the first payment.
+     *
+     *  Maps to Payflow Parameter: PAYPERIOD
+     *  </pre>
      */
     public void setPayPeriod(String payPeriod) {
         this.payPeriod = payPeriod;
@@ -249,7 +193,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * <p>S represents an initial fee.</p>
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: OPTIONALTRX
+     *  <p>Maps to Payflow Parameter: OPTIONALTRX</p>
      */
     public String getOptionalTrx() {
         return optionalTrx;
@@ -264,7 +208,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * <p>S represents an initial fee.</p>
      *
      * @param optionalTrx - String
-     *  <p>Maps to Payflow Parameter: OPTIONALTRX
+     *  <p>Maps to Payflow Parameter: OPTIONALTRX</p>
      */
     public void setOptionalTrx(String optionalTrx) {
         this.optionalTrx = optionalTrx;
@@ -276,7 +220,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * Optional when OPTIONALTRX=A ($1 Authorization by default)</p>
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: OPTIONALTRXAMT
+     *  <p>Maps to Payflow Parameter: OPTIONALTRXAMT</p>
      */
     public Currency getOptionalTrxAmt() {
         return optionalTrxAmt;
@@ -288,7 +232,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * Optional when OPTIONALTRX=A ($1 Authorization by default)</p>
      *
      * @param optionalTrxAmt - String
-     *  <p>Maps to Payflow Parameter: OPTIONALTRXAMT
+     *  <p>Maps to Payflow Parameter: OPTIONALTRXAMT</p>
      */
     public void setOptionalTrxAmt(Currency optionalTrxAmt) {
         this.optionalTrxAmt = optionalTrxAmt;
@@ -301,7 +245,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * status is received.</p>
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: RETRYNUMDAYS
+     *  <p>Maps to Payflow Parameter: RETRYNUMDAYS</p>
      */
     public long getRetryNumDays() {
         return retryNumDays;
@@ -314,7 +258,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * status is received.</p>
      *
      * @param retryNumDays - String
-     *  <p>Maps to Payflow Parameter: RETRYNUMDAYS
+     *  <p>Maps to Payflow Parameter: RETRYNUMDAYS</p>
      */
     public void setRetryNumDays(long retryNumDays) {
         this.retryNumDays = retryNumDays;
@@ -322,13 +266,13 @@ public final class RecurringInfo extends BaseRequestDataObject {
 
     /**
      * Gets the maxFailPayments parameter.
-     * <p/>
+     *  * <p>
      * * The number of payment periods (specified by
      * PAYPERIOD) for which the transaction is allowed to fail
      * before PayPal cancels a profile.</p>
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: MAXFAILPAYMENTS
+     *  <p>Maps to Payflow Parameter: MAXFAILPAYMENTS</p>
      */
     public long getMaxFailPayments() {
         return maxFailPayments;
@@ -336,13 +280,13 @@ public final class RecurringInfo extends BaseRequestDataObject {
 
     /**
      * Sets the maxFailPayments parameter.
-     * <p/>
+     *  * <p>
      * * The number of payment periods (specified by
      * PAYPERIOD) for which the transaction is allowed to fail
      * before PayPal cancels a profile.</p>
      *
      * @param maxFailPayments - String
-     *  <p>Maps to Payflow Parameter: MAXFAILPAYMENTS
+     *  <p>Maps to Payflow Parameter: MAXFAILPAYMENTS</p>
      */
     public void setMaxFailPayments(long maxFailPayments) {
         this.maxFailPayments = maxFailPayments;
@@ -356,7 +300,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * </p>
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: ORIGPROFILEID
+     *  <p>Maps to Payflow Parameter: ORIGPROFILEID</p>
      */
     public String getOrigProfileId() {
         return origProfileId;
@@ -370,7 +314,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * </p>
      *
      * @param origProfileId - String
-     *  <p>Maps to Payflow Parameter: ORIGPROFILEID
+     *  <p>Maps to Payflow Parameter: ORIGPROFILEID</p>
      */
     public void setOrigProfileId(String origProfileId) {
         this.origProfileId = origProfileId;
@@ -378,26 +322,15 @@ public final class RecurringInfo extends BaseRequestDataObject {
 
     /**
      * Gets the paymentHistory parameter.
-     * <p/>
+     *
      * Used for recurring inquiry.Allowed values are:
-     * {@paypal.listtable}
-     * {@paypal.ltr}
-     * {@paypal.lth} Value {@paypal.elth}
-     * {@paypal.lth} Description {@paypal.elth}
-     * {@paypal.eltr}
-     * {@paypal.ltr}
-     * {@paypal.ltd} Y {@paypal.eltd}
-     * {@paypal.ltd} To view the full set of payment information for a profile, include the name/value pair with the Inquiry action. {@paypal.eltd}
-     * {@paypal.eltr}
-     * {@paypal.ltr}
-     * {@paypal.ltd} N {@paypal.eltd}
-     * {@paypal.ltd} To view the status of a customer's profile, submit an Inquiry action that does not include the PAYMENTHISTORY parameter (alternatively, submit PAYMENTHISTORY=N). {@paypal.eltd}
-     * {@paypal.eltr}
-     * {@paypal.endlisttable}
-     * </p>
+     * Value Description
+     *
+     *   Y - To view the full set of payment information for a profile, include the name/value pair with the Inquiry action.
+     *   N - To view the status of a customer's profile, submit an Inquiry action that does not include the PAYMENTHISTORY parameter (alternatively, submit PAYMENTHISTORY=N).
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: PAYMENTHISTORY
+     *  <p>Maps to Payflow Parameter: PAYMENTHISTORY</p>
      */
     public String getPaymentHistory() {
         return paymentHistory;
@@ -405,26 +338,15 @@ public final class RecurringInfo extends BaseRequestDataObject {
 
     /**
      * Sets the paymentHistory parameter.
-     * <p/>
+     *
      * Used for recurring inquiry.Allowed values are:
-     * {@paypal.listtable}
-     * {@paypal.ltr}
-     * {@paypal.lth} Value {@paypal.elth}
-     * {@paypal.lth} Description {@paypal.elth}
-     * {@paypal.eltr}
-     * {@paypal.ltr}
-     * {@paypal.ltd} Y {@paypal.eltd}
-     * {@paypal.ltd} To view the full set of payment information for a profile, include the name/value pair with the Inquiry action. {@paypal.eltd}
-     * {@paypal.eltr}
-     * {@paypal.ltr}
-     * {@paypal.ltd} N {@paypal.eltd}
-     * {@paypal.ltd} To view the status of a customer's profile, submit an Inquiry action that does not include the PAYMENTHISTORY parameter (alternatively, submit PAYMENTHISTORY=N). {@paypal.eltd}
-     * {@paypal.eltr}
-     * {@paypal.endlisttable}
-     * </p>
+     * Value Description
+     *
+     *   Y - To view the full set of payment information for a profile, include the name/value pair with the Inquiry action.
+     *   N - To view the status of a customer's profile, submit an Inquiry action that does not include the PAYMENTHISTORY parameter (alternatively, submit PAYMENTHISTORY=N).
      *
      * @param paymentHistory - String
-     *  <p>Maps to Payflow Parameter: PAYMENTHISTORY
+     * <p>Maps to Payflow Parameter: PAYMENTHISTORY</p>
      */
     public void setPaymentHistory(String paymentHistory) {
         this.paymentHistory = paymentHistory;
@@ -435,7 +357,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * <p>Payment number identifying the failed payment to be retried.</p>
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: PAYMENTNUM
+     *  <p>Maps to Payflow Parameter: PAYMENTNUM</p>
      */
     public String getPaymentNum() {
         return paymentNum;
@@ -446,7 +368,7 @@ public final class RecurringInfo extends BaseRequestDataObject {
      * <p>Payment number identifying the failed payment to be retried.</p>
      *
      * @param paymentNum - String
-     *  <p>Maps to Payflow Parameter: PAYMENTNUM
+     *  <p>Maps to Payflow Parameter: PAYMENTNUM</p>
      */
     public void setPaymentNum(String paymentNum) {
         this.paymentNum = paymentNum;

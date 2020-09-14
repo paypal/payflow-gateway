@@ -6,31 +6,30 @@ import java.util.ArrayList;
 /**
  * This class is the base class for all transaction objects. It has methods for generating the transaction request,
  * sending it to the server and obtaining the response.
- * <p/>
  * <p>This class can be extended to create a new transaction type.</p>
  *
  *  This example shows how to create and perform an Sale transaction using a Basetransaction Object.
- * <p/>
+ *  * <p>
  * ..........
  * ..........
  * //Populate required data objects.
  * ..........
  * ..........
- * <p/>
+ *  * <p>
  * //Create a new Base Transaction.
  * BaseTransaction trans = new BaseTransaction("S",User, Connection, Inv, Card, PayflowUtility.RequestId);
- * <p/>
+ *  * <p>
  * //Submit the transaction.
  * trans.submitTransaction();
  * // Get the Response
  * Response resp = trans.getResponse();
- * <p/>
+ *  * <p>
  * // Display the transaction response parameters.
  * if (resp != null)
  * {
  * // Get the Transaction Response parameters.
  * TransactionResponse trxnResponse =  resp.getTransactionResponse();
- * <p/>
+ *  * <p>
  * if (TrxnResponse != null)
  * {
  * System.out.println("RESULT = " + trxnResponse.getResult());
@@ -41,8 +40,6 @@ import java.util.ArrayList;
  * System.out.println("AVSZIP = " + trxnResponse.getAVSZip());
  * System.out.println("IAVS = " + trxnResponse.getIAVS());
  * }
- * <p/>
- * <p/>
  * // Get the Fraud Response parameters.
  * FraudResponse fraudResp =  resp.getFraudResponse();
  * if (fraudResp != null)
@@ -50,18 +47,16 @@ import java.util.ArrayList;
  * System.out.println("PREFPSMSG = " + fraudResp.getPreFpsMsg());
  * System.out.println("POSTFPSMSG = " + fraudResp.getPostFpsMsg());
  * }
- * <p/>
+ *  * <p>
  * // Display the response.
  * System.out.println(PayflowUtility.getStatus(Resp));
- * <p/>
- * <p/>
+ *  * <p>
  * // Get the Transaction Context and check for any contained SDK specific errors (optional code).
  * Context transCtx = resp.getTransactionContext();
- * if (transCtx != null &amp;&amp; transCtx.getErrorCount() > 0)
+ * if (transCtx != null &amp;&amp; transCtx.getErrorCount() %3E 0)
  * {
  * System.out.println(+ "Transaction Errors = " + transCtx.toString());
  * }
- * <p/>
  * }
  */
 public class BaseTransaction {
@@ -237,10 +232,10 @@ public class BaseTransaction {
      *  ............
      * //Trans is the transaction object.
      * ............
-     * <p/>
+     *  * <p>
      * //Submit the transaction.
      * trans.submitTransaction();
-     * <p/>
+     *  * <p>
      * // Get the Response.
      * Response resp = trans.getResponse();
      * if (resp != null)
@@ -267,7 +262,7 @@ public class BaseTransaction {
      * }
      * // Get the Context and check for any contained SDK specific errors.
      * Context ctx = resp.getTransactionContext();
-     * if (ctx != null ++ Ctx.getErrorCount() > 0)
+     * if (ctx != null ++ Ctx.getErrorCount() %3E 0)
      * {
      * System.out.println(Environment.NewLine + "Errors = " + Ctx.ToString());
      * }
@@ -289,32 +284,17 @@ public class BaseTransaction {
      * Tender object for ACH, Credit Card, PINless Debit &amp; eCheck.
      *
      * @param tender BaseTender
-     *               <p/>
-     *               Allowed Tender Types are:
-     *               </p>
-     *               {@paypal.listtable}
-     *               {@paypal.ltr}
-     *               {@paypal.lth}Tender Type{@paypal.elth}
-     *               {@paypal.lth}Tender Name<@paypal.elth}
-     *               {@paypal.eltr}
-     *               {@paypal.ltr}
-     *               {@paypal.ltd}A{@paypal.eltd}
-     *               {@paypal.ltd}ACH ( Automatic Clearing House )<@paypal.eltd}
-     *               {@paypal.eltr}
-     *               {@paypal.ltr}
-     *               {@paypal.ltd}C{@paypal.eltd}
-     *               {@paypal.ltd}Credit Card{@paypal.eltd}
-     *               {@paypal.eltr}
-     *               {@paypal.ltr}
-     *               {@paypal.ltd}D{@paypal.eltd}
-     *               {@paypal.ltd}PINLess Debit{@paypal.eltd}
-     *               {@paypal.eltr}
-     *               {@paypal.ltr}
-     *               {@paypal.ltd}K{@paypal.eltd}
-     *               {@paypal.ltd}e-Check ( TeleCheck ){@paypal.eltd}
-     *               {@paypal.eltr}
-     *               {@paypal.endlisttable}
-     *               <p>Each Tender type Maps to Payflow Parameter - TENDER</p>
+     *
+     * Allowed Tender Types are:
+     *
+     * Tender Type : Tender Name
+     *               
+     * A - ACH (Automatic Clearing House)
+     * C - Credit Card
+     * D - PINLess Debit
+     * K - e-Check (TeleCheck)
+     *
+     * <p>Each Tender type Maps to Payflow Parameter - TENDER</p>
      * @see ACHTender
      * @see CardTender
      * @see CheckTender
@@ -329,46 +309,20 @@ public class BaseTransaction {
      * and the AMT must be empty or the exact amount of the original Debit/Sale payment.
      *
      * @return trxType String
-     *         <p>Maps to Payflow Parameter - TRXTYPE</p>
-     *         Allowed TrxType values are:
-     *         {@paypal.listtable}
-     *         {@paypal.ltr}
-     *         {@paypal.lth}Transaction Type{@paypal.elth}
-     *         {@paypal.lth}Transaction Name{@paypal.elth}
-     *         {@paypal.eltr}
-     *         {@paypal.ltr}
-     *         {@paypal.ltd}S{@paypal.eltd}
-     *         {@paypal.ltd}Sale/Debit{@paypal.eltd}
-     *         {@paypal.eltr}
-     *         {@paypal.ltr}
-     *         {@paypal.ltd}A{@paypal.eltd}
-     *         {@paypal.ltd}Voice Authorization/Force{@paypal.eltd}
-     *         {@paypal.eltr}
-     *         {@paypal.ltr}
-     *         {@paypal.ltd}C{@paypal.eltd}
-     *         {@paypal.ltd}Credit{@paypal.eltd}
-     *         {@paypal.eltr}
-     *         {@paypal.ltr}
-     *         {@paypal.ltd}V{@paypal.eltd}
-     *         {@paypal.ltd}Void{@paypal.eltd}
-     *         {@paypal.eltr}
-     *         {@paypal.ltr}
-     *         {@paypal.ltd}D{@paypal.eltd}
-     *         {@paypal.ltd}Delayed Capture{@paypal.eltd}
-     *         {@paypal.eltr}
-     *         {@paypal.ltr}
-     *         {@paypal.ltd}F{@paypal.eltd}
-     *         {@paypal.ltd}Force/Voice Authorization{@paypal.eltd}
-     *         {@paypal.eltr}
-     *         {@paypal.ltr}
-     *         {@paypal.ltd}I{@paypal.eltd}
-     *         {@paypal.ltd}Inquiry{@paypal.eltd}
-     *         {@paypal.eltr}
-     *         {@paypal.ltr}
-     *         {@paypal.ltd}R{@paypal.eltd}
-     *         {@paypal.ltd}Recurring billing<@paypal.eltd}
-     *         {@paypal.eltr}
-     *         {@paypal.endlisttable}
+     * <p>Maps to Payflow Parameter - TRXTYPE</p>
+     * Allowed TrxType values are:
+     *         
+     * Transaction Type - Transaction Name
+     *         
+     * S - Sale/Debit
+     * A - Voice Authorization/Force
+     * C - Credit
+     * V - Void
+     * D - Delayed Capture
+     * F - Force/Voice Authorization
+     * I - Inquiry
+     * R - Recurring billing
+     *
      */
     public String getTrxType() {
         return trxType;
@@ -565,10 +519,10 @@ public class BaseTransaction {
      *  ............
      * //Trans is the transaction object.
      * ............
-     * <p/>
+     *  * <p>
      * //Submit the transaction.
      * trans.submitTransaction();
-     * <p/>
+     *  * <p>
      * // Get the Response.
      * Response resp = trans.getResponse();
      * if (Resp != null)
@@ -595,7 +549,7 @@ public class BaseTransaction {
      * }
      * // Get the Context and check for any contained SDK specific errors.
      * Context ctx = resp.getTransactionContext();
-     * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)
+     * if (ctx != null &amp;&amp; ctx.getErrorCount() %3E 0)
      * {
      * System.out.println("Errors = " + ctx.ToString());
      * }

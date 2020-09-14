@@ -495,24 +495,24 @@ public final class PayflowUtility {
 
         IPXmlReader xmlReader = new IPXmlReader(parmList);
         Document xmlPayRequest = xmlReader.getXmlDocumentElement();
-        //Mask ACCT if present : Corresponding XmlPay element --> AcctNum or CardNum
+        //Mask ACCT if present : Corresponding XmlPay element -- AcctNum or CardNum
         PayflowUtility.maskXmlNodeValue(xmlPayRequest, PayflowConstants.XML_PARAM_ACCTNUM);
         PayflowUtility.maskXmlNodeValue(xmlPayRequest, PayflowConstants.XML_PARAM_CARDNUM);
-        //Mask EXPDATE if present : Corresponding XmlPay element --> ExpDate
+        //Mask EXPDATE if present : Corresponding XmlPay element -- ExpDate
         //PayflowUtility.maskXmlNodeValue(xmlPayRequest, PayflowConstants.XML_PARAM_EXPDATE);
-        //Mask SWIPE if present : Corresponding XmlPay element --> MagData
+        //Mask SWIPE if present : Corresponding XmlPay element -- MagData
         PayflowUtility.maskXmlNodeValue(xmlPayRequest, PayflowConstants.XML_PARAM_MAGDATA);
-        //Mask MICR if present : Corresponding XmlPay element --> MICR or MagData
+        //Mask MICR if present : Corresponding XmlPay element -- MICR or MagData
         PayflowUtility.maskXmlNodeValue(xmlPayRequest, PayflowConstants.XML_PARAM_MICR);
-        //Mask CVV2 if present : Corresponding XmlPay element --> CVNum
+        //Mask CVV2 if present : Corresponding XmlPay element -- CVNum
         PayflowUtility.maskXmlNodeValue(xmlPayRequest, PayflowConstants.XML_PARAM_CVNUM);
-        //Mask PWD if present : Corresponding XmlPay element --> Password
+        //Mask PWD if present : Corresponding XmlPay element -- Password
         PayflowUtility.maskXmlNodeValue(xmlPayRequest, PayflowConstants.XML_PARAM_PASSWORD);
-        //Mask DL if present : Corresponding XmlPay element --> DL
+        //Mask DL if present : Corresponding XmlPay element -- DL
         PayflowUtility.maskXmlNodeValue(xmlPayRequest, PayflowConstants.XML_PARAM_DL);
-        //Mask SS if present : Corresponding XmlPay element --> CVNum
+        //Mask SS if present : Corresponding XmlPay element -- CVNum
         PayflowUtility.maskXmlNodeValue(xmlPayRequest, PayflowConstants.XML_PARAM_SS);
-        //Mask DOB if present : Corresponding XmlPay element --> DOB
+        //Mask DOB if present : Corresponding XmlPay element -- DOB
         PayflowUtility.maskXmlNodeValue(xmlPayRequest, PayflowConstants.XML_PARAM_DOB);
 
         // This class was deprecated in Xerces 2.9.0.  Replaced with DOM Level 3 LSSerializer.

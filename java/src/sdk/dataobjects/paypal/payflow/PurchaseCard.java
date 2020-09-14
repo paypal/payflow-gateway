@@ -12,10 +12,10 @@ public final class PurchaseCard extends PaymentCard {
      * @param acct     Purchase Card number
      * @param expDate  Card expiry date (format mmyy)
      * @param cardType Purchase Card  type (P - Personal, C - Corprate, B - Business)
-     *                 <p/>
+     *                  * <p>
      *  Maps to Payflow Parameter:
      * ACCT , EXPDATE , COMMCARD
-     * <p/>
+     *  * <p>
      * //Create the PaymentDevice object
      * PurchaseCard payDevice = new PurchaseCard("XXXXXXXXXX","XXXX","C");
      * </p>

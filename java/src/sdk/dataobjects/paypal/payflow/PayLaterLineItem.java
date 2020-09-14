@@ -10,7 +10,7 @@ package paypal.payflow;
  *  .................
  * // setPayLaterLineItem is the PayLaterLineItem object.
  * .................
- * <p/>
+ *  * <p>
  * // Create new Promo Code or Codes.  You can combine up to 10 promotions.
  * // First promo code, L_PROMOCODE0
  * PayLaterLineItem setPayLaterLineItem = new PayLaterLineItem();
@@ -21,7 +21,7 @@ package paypal.payflow;
  * PayLaterLineItem setPayLaterLineItem1 = new PayLaterLineItem();
  * setPayLaterLineItem1.setpromoCode("102");
  * setPayLater.PayLaterAddLineItem(setPayLaterLineItem1);
- * <p/>
+ *  * <p>
  * ..................
  */
 
@@ -41,7 +41,7 @@ public final class PayLaterLineItem extends BaseRequestDataObject {
 
     /**
      * Sets the Line item number.
-     * <p/>
+     *  * <p>
      * A promotion code for PayPal Promotional Financing.
      *
      * @param promoCode String
@@ -61,7 +61,7 @@ public final class PayLaterLineItem extends BaseRequestDataObject {
      *  .................
      * // setPayLaterLineItem is the PayLaterLineItem object.
      * .................
-     * <p/>
+     *  * <p>
      * // Create new Promo Code or Codes.  You can combine up to 10 promotions.
      * // First promo code, L_PROMOCODE0
      * PayLaterLineItem setPayLaterLineItem = new PayLaterLineItem();
@@ -72,7 +72,7 @@ public final class PayLaterLineItem extends BaseRequestDataObject {
      * PayLaterLineItem setPayLaterLineItem1 = new PayLaterLineItem();
      * setPayLaterLineItem1.setpromoCode("102");
      * setPayLater.PayLaterAddLineItem(setPayLaterLineItem1);
-     * <p/>
+     *  * <p>
      * ..................
      */
     public PayLaterLineItem() {

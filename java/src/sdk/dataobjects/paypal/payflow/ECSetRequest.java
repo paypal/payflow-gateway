@@ -35,14 +35,12 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      *
      * @param ReturnUrl - String
      * @param CancelUrl - String
-     *                  <p/>
-     *                  ECSetRequest is used to set the data required for a Express Checkout SET operation.
-     *                  </p>
-     *  .............
-     * <p/>
-     * //Create the ECSetrequest object
+     * <p>
+     * ECSetRequest is used to set the data required for a Express Checkout SET operation.
+     * .............
+     * <code>
+     * //Create the ECSetRequest object
      * ECSetRequest setEC = new ECSetRequest("http://www.yourwebsitereturnurl.com","http://www.yourwebsitecancelurl.com");
-     * <p/>
      * .............
      * </code>
      */
@@ -57,14 +55,13 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      *
      * @param ReturnUrl - String
      * @param CancelUrl - String
-     *                  <p/>
-     *                  ECSetRequest is used to set the data required for a Express Checkout SET operation.
-     *                  </p>
-     *  .............
-     * <p/>
-     * //Create the ECSetrequest object
+     * @param PayLater - String
+     *
+     * ECSetRequest is used to set the data required for a Express Checkout SET operation.
+     * .............
+     * <code>
+     * //Create the ECSetRequest object
      * ECSetRequest setEC = new ECSetRequest("http://www.yourwebsitereturnurl.com","http://www.yourwebsitecancelurl.com");
-     * <p/>
      * .............
      * </code>
      */
@@ -85,17 +82,15 @@ public class ECSetRequest extends ExpressCheckoutRequest {
      * @param BA_Desc     - String
      * @param PaymentType - String
      * @param BA_Custom   - String
-     *                    <p/>
-     *                    <p/>
-     *                    ECSetRequest is used to set the data required for a Express Checkout SET operation for
-     *                    Reference Transactions with Purchase.
-     *                    </p>
+     *
+     * ECSetRequest is used to set the data required for a Express Checkout SET operation for
+     * Reference Transactions with Purchase.
+     *
      *  .............
-     * <p/>
-     * //Create the ECSetrequest object
+     * <code>
+     * //Create the ECSetRequest object
      * ECSetRequest setEC = new ECSetRequest("http://www.yourwebsitereturnurl.com","http://www.yourwebsitecancelurl.com",
      * "MerchantInitiatedBilling", "Test Transaction", "any", "Something");
-     * <p/>
      * .............
      * </code>
      */

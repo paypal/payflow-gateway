@@ -12,15 +12,14 @@ public class ECGetRequest extends ExpressCheckoutRequest {
      * Constructor for ECGetRequest
      *
      * @param Token String
-     *              <p/>
-     *              <p/>
+     *               * <p>
      *              ECGetRequest is used to set the data required for a Express Checkout GET operation.
      *              </p>
      *  .............
-     * <p/>
+     *  * <p>
      * Create the ECGetRequest object
      * ECGetRequest getEC = new ECGetRequest("[tokenid]");
-     * <p/>
+     *  * <p>
      * .............
      */
     public ECGetRequest(String Token) {

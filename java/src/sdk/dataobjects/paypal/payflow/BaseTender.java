@@ -4,30 +4,13 @@ package paypal.payflow;
  * This abstract class serves as base class of all tender objects.
  * Each tender type is associated with a Payment Device.
  * Following are the Payment Devices associated with different tender types:
- * {@paypal.listtable}
- * {@paypal.ltr}
- * {@paypal.lth}Tender Type {@paypal.elth}
- * {@paypal.lth}Payment Device Data Object  {@paypal.elth}
- * {@paypal.eltr}
- * {@paypal.ltr}
- * {@paypal.ltd}ACHTender {@paypal.eltd}
- * {@paypal.ltd}{@link BankAcct}{@paypal.eltd}
- * {@paypal.eltr}
- * {@paypal.ltr}
- * {@paypal.ltd} CardTender{@paypal.eltd}
- * {@paypal.ltd}
- * {@link CreditCard}
- * <br>
- * {@link PurchaseCard}
- * <br>
- * {@link SwipeCard}
- * {@paypal.eltd}
- * {@paypal.eltr}
- * {@paypal.ltr}
- * {@paypal.ltd} CheckTender {@paypal.eltd}
- * {@paypal.ltd} {@link CheckPayment}{@paypal.eltd}
- * {@paypal.eltr}
- * {@paypal.endlisttable}
+ *
+ * Tender Type Payment Device Data Object
+ *
+ * ACHTender - {@link BankAcct}
+ * CardTender - {@link CreditCard} {@link PurchaseCard} {@link SwipeCard}
+ * CheckTender- {@link CheckPayment}
+ *
  */
 public class BaseTender extends BaseRequestDataObject {
     /**
@@ -60,7 +43,7 @@ public class BaseTender extends BaseRequestDataObject {
     private String authType;
     /**
      * Gets the checkNumber.
-     * <p/>
+     *  * <p>
      * For ACH - The check serial number. Required for POP, ARC, and RCK.
      * For TeleCheck - Account holder's next unused (available) check number.
      *
@@ -73,7 +56,7 @@ public class BaseTender extends BaseRequestDataObject {
 
     /**
      * Sets the check Number.
-     * <p/>
+     *  * <p>
      * For ACH - The check serial number. Required for POP, ARC, and RCK.
      * For TeleCheck - Account holder's next unused (available) check number.</p>
      *
@@ -86,11 +69,11 @@ public class BaseTender extends BaseRequestDataObject {
 
     /**
      *  Gets the Authtype.
-     *  <p/>
+     *   * <p>
      *  Allowed AuthTypes for ACH:
      *  CCD (B2B), PPD (B2C), ARC (Accounts Receivables)
      *  RCK (Re-presentment), WEB (Internet), TEL (Telephone, mailorder), POP (Point of Purchase)
-     *  <p/>
+     *   * <p>
      *  Allowed AuthTypes for TeleCheck:
      *  I (Internet), P (Telephone, mailorder), D (Prearranged Deposits)
      * @param authType String
@@ -100,20 +83,11 @@ public class BaseTender extends BaseRequestDataObject {
 
     /**
      * Gets the check Type.
-     * <p/>Allowed CheckTypes are:
-     * {@paypal.listtable}
-     * {@paypal.ltr}
-     * {@paypal.lth}Check Type {@paypal.elth}
-     * {@paypal.lth}Description  {@paypal.elth}
-     * {@paypal.eltr}
-     * {@paypal.ltr}
-     * {@paypal.ltd}P {@paypal.eltd}
-     * {@paypal.ltd}Personal{@paypal.eltd}
-     * {@paypal.ltr}
-     * {@paypal.ltd} C{@paypal.eltd}
-     * {@paypal.ltd}Company{@paypal.eltd}
-     * {@paypal.eltr}
-     * {@paypal.endlisttable}
+     * <p>Allowed CheckTypes are:
+     * Check Type - Description
+     *
+     * P - Personal
+     * C - Company
      *
      * @return chkNum String
      *  </p><p> Maps to Payflow Parameter: CHKTYPE</p>
@@ -126,24 +100,15 @@ public class BaseTender extends BaseRequestDataObject {
      * sets the check type
      *
      * @param chkType String
-     *                <p/>
-     *                Allowed CheckTypes are:
-     *                {@paypal.listtable}
-     *                {@paypal.ltr}
-     *                {@paypal.lth} Check Type {@paypal.elth}
-     *                {@paypal.lth} Description {@paypal.elth}
-     *                {@paypal.eltr}
-     *                {@paypal.ltr}
-     *                {@paypal.ltd} P {@paypal.eltd}
-     *                {@paypal.ltd} Personal {@paypal.eltd}
-     *                {@paypal.eltr}
-     *                {@paypal.ltr}
-     *                {@paypal.ltd} C {@paypal.eltd}
-     *                {@paypal.ltd} Company {@paypal.ltd}
-     *                {@paypal.eltr}
-     *                {@paypal.endlisttable}
-     *                </p>
-     *  </p><p> Maps to Payflow Parameter: CHKTYPE</p>
+     * <p>
+     * Allowed CheckTypes are:
+     *
+     * Check Type - Description
+     *
+     * P - Personal
+     * C - Company
+     * </p>
+     * <p> Maps to Payflow Parameter: CHKTYPE</p>
      */
     public void setChkType(String chkType) {
         this.chkType = chkType;
@@ -165,8 +130,8 @@ public class BaseTender extends BaseRequestDataObject {
      * Gets the Tender Type.
      *
      * @return tender
-     *  <p>
-     * Maps to Payflow Parameter: TENDER</p>
+     *
+     * <p>Maps to Payflow Parameter: TENDER</p>
      */
     public String getTender() {
         return tender;

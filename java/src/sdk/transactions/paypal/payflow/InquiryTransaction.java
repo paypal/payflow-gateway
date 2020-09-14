@@ -9,11 +9,11 @@ package paypal.payflow;
  *  ...............
  * // Populate data objects
  * ...............
- * <p/>
+ *  * <p>
  * // Create a new Inquiry Transaction.
  * InquiryTransaction trans = new InquiryTransaction("PNRef of a previous transaction",
  * user, uonnection, payflowUtility.getRequestId());
- * <p/>
+ *  * <p>
  * // Submit the transaction.
  * Response resp = trans.submitTransaction();
  * if (resp != null)
@@ -38,10 +38,10 @@ package paypal.payflow;
  * System.out.println("POSTFPSMSG = " + fraudResp.getPostFpsMsg());
  * }
  * }
- * <p/>
+ *  * <p>
  * // Get the Context and check for any contained SDK specific errors.
  * Context ctx = resp.getTransactionContext();
- * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)
+ * if (ctx != null &amp;&amp; ctx.getErrorCount() %3E 0)
  * {
  * System.out.println("Errors = " + ctx.toString());
  * }
@@ -50,7 +50,7 @@ package paypal.payflow;
 public final class InquiryTransaction extends ReferenceTransaction {
 
     /**
-     * <p/>
+     *  * <p>
      * Private Constructor. This prevents
      * creation of an empty Transaction object.
      * </p>
@@ -69,7 +69,7 @@ public final class InquiryTransaction extends ReferenceTransaction {
      *  ...............
      * // Populate data objects
      * ...............
-     * <p/>
+     *  * <p>
      * // Create a new Inquiry Transaction.
      * InquiryTransaction trans = new InquiryTransaction("PNRef of a previous transaction",
      * user, connection, payflowUtility.getRequestId());
@@ -94,7 +94,7 @@ public final class InquiryTransaction extends ReferenceTransaction {
      *  ...............
      * // Populate data objects
      * ...............
-     * <p/>
+     *  * <p>
      * // Create a new Inquiry Transaction.
      * InquiryTransaction trans = new InquiryTransaction("PNRef of a previous transaction",
      * user, payflowUtility.getRequestId());
@@ -118,7 +118,7 @@ public final class InquiryTransaction extends ReferenceTransaction {
      *  ...............
      * // Populate data objects
      * ...............
-     * <p/>
+     *  * <p>
      * // Create a new Inquiry Transaction.
      * InquiryTransaction trans = new InquiryTransaction("PNRef of a previous transaction",
      * user, connection, invoice, payflowUtility.getRequestId());
@@ -147,7 +147,7 @@ public final class InquiryTransaction extends ReferenceTransaction {
      *  ...............
      * // Populate data objects
      * ...............
-     * <p/>
+     *  * <p>
      * // Create a new Inquiry Transaction.
      * InquiryTransaction trans = new InquiryTransaction("PNRef of a previous transaction",
      * user, connection, invoice, payflowUtility.getRequestId());

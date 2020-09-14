@@ -15,11 +15,11 @@ public final class CardTender extends BaseTender {
      *
      * @param card CreditCard
      *  Maps to Payflow Parameter: TENDER
-     * <p/>
+     *  * <p>
      * .............
      * //card is the populated CreditCard object.
      * .............
-     * <p/>
+     *  * <p>
      * //Create the Tender object
      * CardTender tender = new CardTender(card);
      */
@@ -33,11 +33,11 @@ public final class CardTender extends BaseTender {
      *
      * @param purCard PurchaseCard
      *  Maps to Payflow Parameter: TENDER
-     * <p/>
+     *  * <p>
      * .............
      * //purCard is the populated PurchaseCard object.
      * .............
-     * <p/>
+     *  * <p>
      * //Create the Tender object
      * CardTender tender = new CardTender(purCard);
      */
@@ -51,11 +51,11 @@ public final class CardTender extends BaseTender {
      *
      * @param swpCard CardTender
      *  Maps to Payflow Parameter: TENDER
-     * <p/>
+     *  * <p>
      * .............
      * //swpCard is the populated SwipeCard object.
      * .............
-     * <p/>
+     *  * <p>
      * //Create the Tender object
      * CardTender tender = new CardTender(swpCard);
      */

@@ -46,7 +46,7 @@ abstract class PaymentCard extends PaymentDevice {
      * Card validation code. This is the 3 or 4 digit code present at the back side of the card.
      *
      * @return CVV2 value
-     *         <p/>
+     *          * <p>
      *  Maps to Payflow Parameters as follows: CVV2
      * </p>
      */
@@ -59,7 +59,7 @@ abstract class PaymentCard extends PaymentDevice {
      * Card validation code. This is the 3 or 4 digit code present at the back side of the card.
      *
      * @param cvv2 CVV2 value
-     *             <p/>
+     *              * <p>
      *  Maps to Payflow Parameters as follows: CVV2
      * </p>
      */
@@ -72,7 +72,7 @@ abstract class PaymentCard extends PaymentDevice {
      * <p> Used in Switch/Solo cards </p>
      *
      * @return cardIssue String
-     *         <p/>
+     *          * <p>
      *  Maps to Payflow Parameter : CARDISSUE
      * </p>
      */
@@ -85,7 +85,7 @@ abstract class PaymentCard extends PaymentDevice {
      * <p> Used in Switch/Solo cards </p>
      *
      * @param cardIssue String
-     *                  <p/>
+     *                   * <p>
      *  Maps to Payflow Parameter : CARDISSUE
      * </p>
      */
@@ -98,7 +98,7 @@ abstract class PaymentCard extends PaymentDevice {
      * <p> Used in Switch/Solo cards </p>
      *
      * @return cardStart String
-     *         <p/>
+     *          * <p>
      *  Maps to Payflow Parameter : CARDSTART
      * </p>
      */
@@ -111,7 +111,7 @@ abstract class PaymentCard extends PaymentDevice {
      * <p> Used in Switch/Solo cards </p>
      *
      * @param cardStart String
-     *                  <p/>
+     *                   * <p>
      *  Maps to Payflow Parameter : CARDSTART
      * </p>
      */
@@ -124,7 +124,7 @@ abstract class PaymentCard extends PaymentDevice {
      * <p> Used to store credit card (stored credential) </p>
      *
      * @param cardOnFile String
-     *                  <p/>
+     *                   * <p>
      *  Maps to Payflow Parameter : CARDONFILE
      * </p>
      */
@@ -136,7 +136,7 @@ abstract class PaymentCard extends PaymentDevice {
      * <p> The transaction Id to reference a stored crendential</p>
      *
      * @param txId String
-     *                  <p/>
+     *                   * <p>
      *  Maps to Payflow Parameter : TXID
      * </p>
      */

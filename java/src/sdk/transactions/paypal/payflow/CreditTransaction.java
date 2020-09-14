@@ -35,7 +35,7 @@ package paypal.payflow;
  * <br>
  * // Get the Context and check for any contained SDK specific errors.<br>
  * Context ctx = resp.getTransactionContext();<br>
- * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)<br>
+ * if (ctx != null &amp;&amp; ctx.getErrorCount() %3E 0)<br>
  * {<br>
  * System.out.println("Errors = " + ctx.toString());<br>
  * }<br>
@@ -111,7 +111,7 @@ public final class CreditTransaction extends BaseTransaction {
      * <br>
      * // Get the Context and check for any contained SDK specific errors.<br>
      * Context ctx = resp.getTransactionContext();<br>
-     * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)<br>
+     * if (ctx != null &amp;&amp; ctx.getErrorCount() %3E 0)<br>
      * {<br>
      * System.out.println("Errors = " + ctx.ToString());<br>
      * }<br>
@@ -165,7 +165,7 @@ public final class CreditTransaction extends BaseTransaction {
      * <br>
      * // Get the Context and check for any contained SDK specific errors.<br>
      * Context ctx = Resp.getTransactionContext();<br>
-     * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)<br>
+     * if (ctx != null &amp;&amp; ctx.getErrorCount() %3E 0)<br>
      * {<br>
      * System.out.println("Errors = " + ctx.toString());<br>
      * }<br>
@@ -219,7 +219,7 @@ public final class CreditTransaction extends BaseTransaction {
      * <br>
      * // Get the Context and check for any contained SDK specific errors.<br>
      * Context ctx = resp.getTransactionContext();<br>
-     * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)<br>
+     * if (ctx != null &amp;&amp; ctx.getErrorCount() %3E 0)<br>
      * {<br>
      * System.out.println("Errors = " + ctx.toString());<br>
      * }<br>
@@ -276,7 +276,7 @@ public final class CreditTransaction extends BaseTransaction {
      * <br>
      * // Get the Context and check for any contained SDK specific errors.<br>
      * Context ctx = Resp.TransactionContext;<br>
-     * if (ctx != null &amp;&amp;ctx.getErrorCount() > 0)<br>
+     * if (ctx != null &amp;&amp;ctx.getErrorCount() %3E 0)<br>
      * {<br>
      * System.out.println("Errors = " + ctx.ToString());<br>
      * }<br>
@@ -332,7 +332,7 @@ public final class CreditTransaction extends BaseTransaction {
      * <br>
      * // Get the Context and check for any contained SDK specific errors.<br>
      * Context ctx = resp.getTransactionContext();<br>
-     * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)<br>
+     * if (ctx != null &amp;&amp; ctx.getErrorCount() %3E 0)<br>
      * {<br>
      * System.out.println("Errors = " + ctx.ToString());<br>
      * }<br>
@@ -348,8 +348,8 @@ public final class CreditTransaction extends BaseTransaction {
     }
 
     /**
+     *
      * Constructor.
-     * </summary>
      *
      * @param origId    Original Transaction Id
      * @param userInfo  User Info object populated with user credentials.
@@ -385,7 +385,7 @@ public final class CreditTransaction extends BaseTransaction {
      * <br>
      * // Get the Context and check for any contained SDK specific errors.<br>
      * Context Ctx = Resp.TransactionContext;<br>
-     * if (Ctx != null &amp;&amp; Ctx.getErrorCount() > 0)<br>
+     * if (ctx != null &amp;&amp; ctx.getErrorCount() %3E 0)<br>
      * {<br>
      * System.out.println("Errors = " + ctx.ToString());<br>
      * }<br>
@@ -434,7 +434,7 @@ public final class CreditTransaction extends BaseTransaction {
      * <br>
      * // Get the Context and check for any contained SDK specific errors.<br>
      * Context Ctx = Resp.TransactionContext;<br>
-     * if (Ctx != null &amp;&amp; Ctx.getErrorCount() > 0)<br>
+     * if (ctx != null &amp;&amp; ctx.getErrorCount() %3E 0)<br>
      * {<br>
      * Console.WriteLine(Environment.NewLine + "Errors = " +<br>
      * // Ctx.ToString());<br>
@@ -451,8 +451,8 @@ public final class CreditTransaction extends BaseTransaction {
     }
 
     /**
+     *
      * Constructor.
-     * </summary>
      *
      * @param userInfo  User Info object populated with user credentials.
      * @param invoice   Invoice object.
@@ -486,11 +486,11 @@ public final class CreditTransaction extends BaseTransaction {
      *                  <br>
      *                  // Get the Context and check for any contained SDK specific errors.<br>
      *                  Context ctx = resp.getTransactionContext();<br>
-     *                  if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)<br>
+     *                  if (ctx != null &amp;&amp; ctx.getErrorCount() %3E 0)<br>
      *                  {<br>
      *                  System.out.println("Errors = " + ctx.ToString());<br>
      *                  }<br>
-     *                  <p/>
+     *                   * <p>
      *                  <br>
      */
     public CreditTransaction(UserInfo userInfo,

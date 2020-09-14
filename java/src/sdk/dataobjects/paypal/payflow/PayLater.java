@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * customers promotional financing. Buyers that choose the promotional offer can defer
  * payments for purchases on participating merchant web sites, allowing them to shop now and
  * pay later.
- * <p/>
+ *  * <p>
  * The PayPal Pay Later service allows online merchants to offer promotional financing to
  * buyers at checkout - even if a buyer doesn't have a PayPal account. Promotional offers, such as
  * no payments for 90 days, give merchants new and powerful ways to market to online

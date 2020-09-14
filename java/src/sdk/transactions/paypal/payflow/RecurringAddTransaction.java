@@ -1,9 +1,10 @@
 package paypal.payflow;
 
 /**
+ * <pre>{@code
  * This class is used to perform a recurring transaction with
  * add action.
- * <p/>
+ *
  * RecurringAddTransaction is used to add a new recurring profile
  * either by submitting the data that defines the profile or by converting an
  * existing transaction into a profile. Upon successful creation of a profile,
@@ -11,32 +12,29 @@ package paypal.payflow;
  * initiates the payment cycle, and returns a Profile ID (a 12-character string that
  * uniquely identifies the profile for searching and reporting). Upon failure, PayPal
  * does not generate the profile and returns an error message.
- * </p>
  *
  *  ...............
  * // Populate data objects
  * ...............
- * <p/>
  * //Set the Recurring related information.
  * RecurringInfo recurInfo = new RecurringInfo();
  * // The date that the first payment will be processed.
  * // This will be of the format mmddyyyy.
  * recurInfo.setStart("01012009");
  * recurInfo.setProfileName ("PayPal");
- * <p/>
- * <p/>
+ *
  * // Specifies how often the payment occurs. All PAYPERIOD values must use
  * // capital letters and can be any of WEEK / BIWK / SMMO / FRWK / MONT /
  * // QTER / SMYR / YEAR
  * recurInfo.setPayPeriod ("WEEK");
- * <p/>
+ *
  * // Create a new RecurringAddTransaction
  * RecurringAddTransaction trans = new RecurringAddTransaction(
  * user, connection, inv, card, recurInfo, PayflowUtility.getRequestId());
- * <p/>
+ *
  * // Submit the transaction.
  * Response resp = trans.submitTransaction();
- * <p/>
+ *
  * if (Resp != null)
  * {
  * // Get the Transaction Response parameters.
@@ -46,7 +44,7 @@ package paypal.payflow;
  * System.out.println("RESULT = " + trxnResponse.getResult());
  * System.out.println("RESPMSG = " + trxnResponse.getRespMsg());
  * }
- * <p/>
+ *
  * // Get the Recurring Response parameters.
  * RecurringResponse recurResponse = resp.getRecurringResponse();
  * if (recurResponse != null)
@@ -57,10 +55,12 @@ package paypal.payflow;
  * }
  * // Get the Context and check for any contained SDK specific errors.
  * Context ctx = resp.getTransactionContext();
- * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)
+ * if (ctx != null & ctx.getErrorCount() > 0)
  * {
  * System.out.println("/n" + "Errors = " + Ctx.ToString());
  * }
+ * }
+ * </pre>
  */
 
 public class RecurringAddTransaction extends RecurringTransaction {
@@ -95,7 +95,7 @@ public class RecurringAddTransaction extends RecurringTransaction {
      * @param Tender                - Tender object such as  Card Tender object.
      * @param RecurringInfo         - Recurring Info object.
      * @param RequestId             - Request Id
-     *                              <p/>
+     *                               * <p>
      *                              RecurringAddTransaction is used to add a new recurring profile
      *                              either by submitting the data that defines the profile or by converting an
      *                              existing transaction into a profile. Upon successful creation of a profile,
@@ -107,12 +107,11 @@ public class RecurringAddTransaction extends RecurringTransaction {
      *  ...............
      * // Populate data objects
      * ...............
-     * <p/>
-     * <p/>
+     *  * <p>
      * // Create a new RecurringCancelTransaction.
      * RecurringCancelTransaction trans = new RecurringCancelTransaction(user, connection, inv, tender, recurInfo,
      * payflowUtility.getRequestId ());
-     * <p/>
+     *  * <p>
      * // Submit the transaction.
      * Response resp = trans.submitTransaction();
      */
@@ -136,7 +135,7 @@ public class RecurringAddTransaction extends RecurringTransaction {
      * @param Tender        - Tender object such as  Card Tender object.
      * @param RecurringInfo - Recurring Info object.
      * @param RequestId     - Request Id
-     *                      <p/>
+     *                       * <p>
      *                      RecurringAddTransaction is used to add a new recurring profile
      *                      either by submitting the data that defines the profile or by converting an
      *                      existing transaction into a profile. Upon successful creation of a profile,
@@ -148,12 +147,11 @@ public class RecurringAddTransaction extends RecurringTransaction {
      *  ...............
      * // Populate data objects
      * ...............
-     * <p/>
-     * <p/>
+     *  * <p>
      * // Create a new RecurringCancelTransaction.
      * RecurringCancelTransaction trans = new RecurringCancelTransaction(user, inv, tender, recurInfo,
      * payflowUtility.getRequestId ());
-     * <p/>
+     *  * <p>
      * // Submit the transaction.
      * Response resp = trans.submitTransaction();
      */

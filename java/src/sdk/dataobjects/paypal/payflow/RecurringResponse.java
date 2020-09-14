@@ -15,7 +15,7 @@ import java.util.Hashtable;
  * ...................
  * // Submit the transaction.
  * Response resp = trans.SubmitTransaction();
- * <p/>
+ *  * <p>
  * if (resp != null)
  * {
  * // Get the Transaction Response parameters.
@@ -25,7 +25,7 @@ import java.util.Hashtable;
  * System.out.println("RESULT = " + trxnResponse.Result);
  * System.out.println("RESPMSG = " + trxnResponse.RespMsg);
  * }
- * <p/>
+ *  * <p>
  * // Get the Recurring Response parameters.
  * RecurringResponse recurResponse = resp.getRecurringResponse();
  * if (recurResponse != null)
@@ -34,7 +34,7 @@ import java.util.Hashtable;
  * System.out.println("PROFILEID = " + recurResponse.getProfileId());
  * }
  * }
- * <p/>
+ *  * <p>
  * ...................
  */
 public final class RecurringResponse extends BaseResponseDataObject {

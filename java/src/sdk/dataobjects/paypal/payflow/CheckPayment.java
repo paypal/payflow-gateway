@@ -11,7 +11,7 @@ public final class CheckPayment extends PaymentDevice {
      *
      * @param micr MICR Value
      *             This is used as Payment Device for the CheckTender.
-     *             <p/>
+     *              * <p>
      *  Maps to Payflow Parameter: MICR
      * //Create the CheckPayment object
      * CheckPayment payDevice = new CheckPayment("XXXXXXXXXX");

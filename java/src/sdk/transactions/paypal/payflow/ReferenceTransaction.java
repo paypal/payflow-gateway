@@ -2,11 +2,12 @@ package paypal.payflow;
 
 /**
  * This class is used as base class for all reference transactions.
- * <p>This class can be derived to create a new reference transaction
+ *
+ * This class can be derived to create a new reference transaction
  * or can be used as is to submit a new type of reference transaction.
  * <p>A reference transaction is a transaction which always takes
- * the PNRef of a previously submitted transaction.</p>
- * </p>
+ * the PNRef of a previously submitted transaction.
+ *
  */
 public class ReferenceTransaction extends BaseTransaction {
     private String origId;
@@ -43,7 +44,7 @@ public class ReferenceTransaction extends BaseTransaction {
      * @param userInfo              UserInfo             - User Info object populated with user credentials.
      * @param payflowConnectionData PayflowConnectionData         - Connection credentials object.
      * @param requestId             String          - RequestId
-     *                              <p/>
+     *                               * <p>
      *                              This class can be derived to create a new reference transaction
      *                              or can be used as is to submit a new type of reference transaction.
      *                              A reference transaction is a transaction which always takes
@@ -66,7 +67,7 @@ public class ReferenceTransaction extends BaseTransaction {
      * @param origId    String   - Original Transaction Id.
      * @param userInfo  UserInfo - User Info object populated with user credentials.
      * @param requestId String   - RequestId
-     *                  <p/>
+     *                   * <p>
      *                  This class can be derived to create a new reference transaction
      *                  or can be used as is to submit a new type of reference transaction.
      *                  A reference transaction is a transaction which always takes
@@ -90,7 +91,7 @@ public class ReferenceTransaction extends BaseTransaction {
      * @param payflowConnectionData PayflowConnectionData - Connection credentials object.
      * @param invoice               Invoice               - Invoice object.
      * @param requestId             String                - RequestId
-     *                              <p/>
+     *                               * <p>
      *                              This class can be derived to create a new reference transaction
      *                              or can be used as is to submit a new type of reference transaction.
      *                              A reference transaction is a transaction which always takes
@@ -114,7 +115,7 @@ public class ReferenceTransaction extends BaseTransaction {
      * @param userInfo  UserInfo - User Info object populated with user credentials.
      * @param invoice   Invoice  - Invoice object.
      * @param requestId String   - RequestId
-     *                  <p/>
+     *                   * <p>
      *                  This class can be derived to create a new reference transaction
      *                  or can be used as is to submit a new type of reference transaction.
      *                  A reference transaction is a transaction which always takes
@@ -135,7 +136,7 @@ public class ReferenceTransaction extends BaseTransaction {
      * @param invoice               Invoice               - Invoice object.
      * @param tender                Tender                - Tender object.
      * @param requestId             String                - RequestId
-     *                              <p/>
+     *                               * <p>
      *                              This class can be derived to create a new reference transaction
      *                              or can be used as is to submit a new type of reference transaction.
      *                              A reference transaction is a transaction which always takes
@@ -162,7 +163,7 @@ public class ReferenceTransaction extends BaseTransaction {
      * @param invoice   Invoice  - Invoice object.
      * @param tender    Tender   - Tender object.
      * @param requestId String   - RequestId
-     *                  <p/>
+     *                   * <p>
      *                  This class can be derived to create a new reference transaction
      *                  or can be used as is to submit a new type of reference transaction.
      *                  A reference transaction is a transaction which always takes

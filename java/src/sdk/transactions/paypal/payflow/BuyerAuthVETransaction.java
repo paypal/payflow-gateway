@@ -5,7 +5,7 @@ package paypal.payflow;
  * This class is used to create and perform
  * a Verify Enrollment transaction.
  * Verify Enrollment is the first step of Buyer authentication process.
- * <p/>
+ *  * <p>
  * After a successful Verify Enrollment Transaction,
  * you should redirect the user's browser to his/her banks
  * secure authentication server which will authenticate the user.
@@ -15,19 +15,19 @@ package paypal.payflow;
  * </p>
  *
  *  This example shows how to create and perform a Verify Enrollment transaction.
- * <p/>
+ *  * <p>
  * ..........
  * ..........
  * //Populate required data objects.
- * <p/>
+ *  * <p>
  * //Create the Card object.
  * CreditCard card = new CreditCard("XXXXXXXXXXXXXXXX","XXXX");
- * <p/>
+ *  * <p>
  * //Create the currency object.
  * Currency amt = new Currency(new decimal(1.00),"US");
  * ..........
  * ..........
- * <p/>
+ *  * <p>
  * //Create a new Verify Enrollment Transaction.
  * BuyerAuthVETransaction trans = new BuyerAuthVETransaction(
  * UserInfo,
@@ -37,7 +37,7 @@ package paypal.payflow;
  * RequestId);
  * //Submit the transaction.
  * trans.SubmitTransaction();
- * <p/>
+ *  * <p>
  * // Get the Response.
  * Response resp = trans.getResponse();
  * if (Resp != null)
@@ -49,8 +49,7 @@ package paypal.payflow;
  * System.out.println("RESULT = " + trxnResponse.getResult());
  * System.out.println("RESPMSG = " + trxnResponse.getRespMsg());
  * }
- * <p/>
- * <p/>
+ *  * <p>
  * // Get the Buyer auth Response parameters.
  * BuyerAuthResponse bAResponse = resp.getBuyerAuthResponse();
  * if (bAResponse != null)
@@ -63,7 +62,7 @@ package paypal.payflow;
  * }
  * // Get the Context and check for any contained SDK specific errors.
  * Context ctx = resp.getTransactionContext();
- * if (ctx != null ++ ctx.getErrorCount() > 0)
+ * if (ctx != null ++ ctx.getErrorCount() %3E 0)
  * {
  * System.out.println("Errors = " + Ctx.ToString());
  * }
@@ -83,7 +82,7 @@ public final class BuyerAuthVETransaction extends BuyerAuthTransaction {
 
     /**
      * Gets, Sets Purchase description.
-     * <para>Maps to Payflow Parameter - <code>PUR_DESC</code></para>
+     * <p>Maps to Payflow Parameter - <code>PUR_DESC</code></p>
      *
      * @return purDesc
      */

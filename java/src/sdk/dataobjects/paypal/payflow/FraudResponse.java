@@ -13,7 +13,7 @@ import java.util.Hashtable;
 
 /**
  * Container class for response messages specific Fraud Protections Services.
- * <p/>
+ *  * <p>
  * This class contains the fraud protection
  * services related response messages and data objects parsed
  * from the xml data in the fraud response.

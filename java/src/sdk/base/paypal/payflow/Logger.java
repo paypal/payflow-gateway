@@ -319,7 +319,7 @@ public final class Logger {
      * This method populates each ErrorObject int the arraylist passed, with the
      * details from the SortedList held by the logger class. It populates the mLoggerErrs
      * in case the relevant message code is not found.
-     * <p/>
+     *  * <p>
      * Populate the error object with the details
      *
      * @param errObj ArrayList

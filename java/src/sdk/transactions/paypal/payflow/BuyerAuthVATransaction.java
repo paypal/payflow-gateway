@@ -5,7 +5,7 @@ package paypal.payflow;
  * This class is used to create and perform
  * a Validate Authentication transaction.
  * Validate Authentication is the second step of Buyer authentication process.
- * <p/>
+ *  * <p>
  * When the user authenticates on the secure authentication server, the server
  * returns back a Payer authentication Signature (PaRes). You must send this value of PaRes
  * to validate the authentication to the payment gateway during the Validate Authentication.
@@ -20,7 +20,7 @@ package paypal.payflow;
  * //Populate required data objects.
  * ..........
  * ..........
- * <p/>
+ *  * <p>
  * //Create a new validate Auhtentication Transaction.
  * BuyerAuthVATransaction trans = new BuyerAuthVATransaction(
  * UserInfo,
@@ -29,7 +29,7 @@ package paypal.payflow;
  * RequestId);
  * //Submit the transaction.
  * trans.submitTransaction();
- * <p/>
+ *  * <p>
  * // Get the Response.
  * Response resp = trans.getResponse();
  * if (resp != null)
@@ -41,8 +41,7 @@ package paypal.payflow;
  * System.out.println("RESULT = " + TrxnResponse.Result);
  * System.out.println("RESPMSG = " + TrxnResponse.RespMsg);
  * }
- * <p/>
- * <p/>
+ *  * <p>
  * // Get the Buyer auth Response parameters.
  * BuyerAuthResponse bAResponse = resp.BuyerAuthResponse;
  * if (BAResponse != null)
@@ -53,7 +52,7 @@ package paypal.payflow;
  * }
  * // Get the Context and check for any contained SDK specific errors.
  * Context ctx = resp.TransactionContext;
- * if (ctx != null ++ ctx.getErrorCount() > 0)
+ * if (ctx != null ++ ctx.getErrorCount() %3E 0)
  * {
  * System.out.println("Errors = " + ctx.ToString());
  * }

@@ -1,9 +1,10 @@
 package paypal.payflow;
 
 /**
+ * <pre>{@code
  * This class is used to perform a recurring transaction with
  * Inquiry action.
- * <p/>
+ *  * <p>
  * RecurringInquiryTransaction is used to request two different sets of information:
  * To view the full set of payment information for a profile, include the
  * PAYMENTHISTORY=Y name/value pair with the Inquiry action.
@@ -15,18 +16,18 @@ package paypal.payflow;
  *  ...............
  * // Populate data objects
  * ...............
- * <p/>
+ *  * <p>
  * //Set the Recurring related information.
  * RecurringInfo recurInfo = new RecurringInfo();
  * recurInfo.setOrigProfileId ("RT0000001350");
- * <p/>
+ *  * <p>
  * // Create a new Recurring Inquiry Transaction.
  * RecurringInquiryTransaction trans = new RecurringInquiryTransaction(
  * user, connection, recurInfo, PayflowUtility.getRequestId());
- * <p/>
+ *  * <p>
  * // Submit the transaction.
  * Response resp = trans.submitTransaction();
- * <p/>
+ *  * <p>
  * if (Resp != null)
  * {
  * // Get the Transaction Response parameters.
@@ -36,7 +37,7 @@ package paypal.payflow;
  * System.out.println("RESULT = " + trxnResponse.getResult());
  * System.out.println("RESPMSG = " + trxnResponse.getRespMsg());
  * }
- * <p/>
+ *  * <p>
  * // Get the Recurring Response parameters.
  * RecurringResponse recurResponse = resp.getRecurringResponse();
  * if (recurResponse != null)
@@ -65,10 +66,12 @@ package paypal.payflow;
  * }
  * // Get the Context and check for any contained SDK specific errors.
  * Context ctx = resp.getTransactionContext();
- * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)
+ * if (ctx != null & ctx.getErrorCount() > 0)
  * {
  * System.out.println("/n" + "Errors = " + Ctx.ToString());
  * }
+ * }
+ * </pre>
  */
 
 public class RecurringInquiryTransaction extends RecurringTransaction {
@@ -80,8 +83,7 @@ public class RecurringInquiryTransaction extends RecurringTransaction {
      * @param payflowConnectionData PayflowConnectionData - Connection credentials object.
      * @param recurringInfo         RecurringInfo   - Recurring Info object.
      * @param requestId             String              - Request Id
-     *                              <p/>
-     *                              <p/>
+     *                               * <p>
      *                              RecurringInquiryTransaction is used to request two different sets of information:
      *                              To view the full set of payment information for a profile, include the
      *                              PAYMENTHISTORY=Y name/value pair with the Inquiry action.
@@ -92,12 +94,11 @@ public class RecurringInquiryTransaction extends RecurringTransaction {
      *  ...............
      * // Populate data objects
      * ...............
-     * <p/>
-     * <p/>
+     *  * <p>
      * // Create a new RecurringInquiryTransaction.
      * RecurringInquiryTransaction trans = new RecurringInquiryTransaction(user, connection, recurInfo,
      * payflowUtility.getRequestId ());
-     * <p/>
+     *  * <p>
      * // Submit the transaction.
      * Response resp = trans.submitTransaction();
      */
@@ -115,8 +116,7 @@ public class RecurringInquiryTransaction extends RecurringTransaction {
      * @param userInfo      UserInfo             - User Info object populated with user credentials.
      * @param recurringInfo RecurringInfo   - Recurring Info object.
      * @param requestId     String              - Request Id
-     *                      <p/>
-     *                      <p/>
+     *                       * <p>
      *                      RecurringInquiryTransaction is used to request two different sets of information:
      *                      To view the full set of payment information for a profile, include the
      *                      PAYMENTHISTORY=Y name/value pair with the Inquiry action.
@@ -127,12 +127,11 @@ public class RecurringInquiryTransaction extends RecurringTransaction {
      *  ...............
      * // Populate data objects
      * ...............
-     * <p/>
-     * <p/>
+     *  * <p>
      * // Create a new RecurringInquiryTransaction.
      * RecurringInquiryTransaction trans = new RecurringInquiryTransaction(user, recurInfo,
      * payflowUtility.getRequestId ());
-     * <p/>
+     *  * <p>
      * // Submit the transaction.
      * Response resp = trans.submitTransaction();
      */

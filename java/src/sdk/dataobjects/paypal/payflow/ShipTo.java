@@ -8,7 +8,7 @@ package paypal.payflow;
  * .................
  * //inv is the Invoice object.
  * .................
- * <p/>
+ *  * <p>
  * //Set the Shipping Address details.
  * ShipTo ship = new ShipTo();
  * ship.setShipToStreet( "123 Main St.");
@@ -332,7 +332,7 @@ public final class ShipTo extends Address {
      *  .................
      * //inv is the Invoice object.
      * .................
-     * <p/>
+     *  * <p>
      * //Set the Shipping Address details.
      * ShipTo ship = new ShipTo();
      * ship.setShipToStreet ("685A E. Middlefield Rd.");
@@ -357,14 +357,13 @@ public final class ShipTo extends Address {
      * //shipTo populated with
      * //the shipping addresses.
      * ................
-     * <p/>
-     * <p/>
+     *  * <p>
      * BillTo bill;
-     * <p/>
+     *  * <p>
      * //Populate billing addresses
      * //from shipping addresses.
      * bill = ship.copy();
-     * <p/>
+     *  * <p>
      * ................
      */
     public BillTo copy() {

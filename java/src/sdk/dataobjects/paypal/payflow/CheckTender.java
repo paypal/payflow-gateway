@@ -12,11 +12,11 @@ public final class CheckTender extends BaseTender {
      *
      * @param check CheckTender
      *  Maps to Payflow Parameter: TENDER
-     * <p/>
+     *  * <p>
      * .............
      * //check is the populated CheckPaymentobject.
      * .............
-     * <p/>
+     *  * <p>
      * //Create the Tender object
      * CheckTender tender = new CardTender(check);
      */

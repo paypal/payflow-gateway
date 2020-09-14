@@ -5,25 +5,13 @@ package paypal.payflow;
  * <p>Each request object is associated with a particular type of expressChecout operation.</p>
  * <p>Following are the request objects associated with
  * different operations of ExpressCheckout:</p>
- * <p/>
- * {@paypal.listtable}
- * {@paypal.ltr}
- * {@paypal.ltd}ExpressCheckout operation.{@paypal.eltd}
- * {@paypal.ltd}Request data object{@paypal.eltd}
- * {@paypal.eltr}
- * {@paypal.ltr}
- * {@paypal.ltd}SET operation for ExpressCheckout.{@paypal.eltd}
- * {@paypal.ltd}{@link ECSetRequest} {@paypal.eltd}
- * {@paypal.eltr}
- * {@paypal.ltr}
- * {@paypal.ltd}GET operation for ExpressCheckout.{@paypal.eltd}
- * {@paypal.ltd}{@link ECGetRequest} {@paypal.eltd}
- * {@paypal.eltr}
- * {@paypal.ltr}
- * {@paypal.ltd}DO operation for ExpressCheckout.{@paypal.eltd}
- * {@paypal.ltd}{@link ECDoRequest} {@paypal.eltd}
- * {@paypal.eltr}
+ *  * <p>
+ * ExpressCheckout operation. Request data object
+ * SET operation for ExpressCheckout {@link ExpressCheckoutResponse}
+ * GET operation for ExpressCheckout {@link ECGetResponse}
+ * DO operation for ExpressCheckout {@link ECDoResponse}
  */
+
 public class ExpressCheckoutRequest extends BaseRequestDataObject {
 
 

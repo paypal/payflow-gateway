@@ -18,21 +18,19 @@ import java.util.ArrayList;
  * {@link FraudResponse}
  * {@link Rule}
  * {@link RuleParameter}
- * </p>
+ *
  * Following example shows how to obtained and use FpsXmlData.
  *
  *  ..............................
  * // resp is the Response object
  * // obtained after submitting the transaction.
  * ..............................
- * <p/>
- * <p/>
+ *  * <p>
  * FpsXmlData preXmlData = fraudResp.getFpsPreXmlData();
  * if (preXmlData != null)
  * {
  * // Get the list of Rules.
  * ArrayList rulesList = preXmlData.getRules();
- * if (rulesList != null && rulesList.size()> 0)
  * {
  * Iterator rulesEnum = rulesList.iterator();
  * Rule doRule = null;
@@ -46,11 +44,11 @@ import java.util.ArrayList;
  * System.out.println("Rule Description = " + doRule.getRuleDescription());
  * System.out.println("Action = " + doRule.getAction());
  * System.out.println("Triggered Message = " + doRule.getTriggeredMessage());
- * <p/>
+ *  * <p>
  * // Get the list of Rule Vendor Parameters.
  * ArrayList ruleVendorParmsList = doRule.getRuleVendorParms();
- * <p/>
- * if (ruleVendorParmsList != null && ruleVendorParmsList.size() > 0)
+ *  * <p>
+ * if (ruleVendorParmsList != null &amp;&amp; ruleVendorParmsList.size() %3E 0)
  * {
  * Iterator ruleParametersEnum = ruleVendorParmsList.iterator();
  * // Loop through the list of Rule Parameters.

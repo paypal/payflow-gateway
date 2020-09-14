@@ -17,11 +17,11 @@ public class PayPalTender extends BaseTender {
      *
      * @param creditCard CreditCard
      *  Maps to Payflow Parameter: TENDER
-     * <p/>
+     *  * <p>
      * .............
      * //creditCard is the populated CreditCard object.
      * .............
-     * <p/>
+     *  * <p>
      * //Create the Tender object
      * PayPalTender tender = new PayPalTender(creditCard);
      */
@@ -35,11 +35,11 @@ public class PayPalTender extends BaseTender {
      *
      * @param ecReq ExpressCheckoutRequest
      *  Maps to Payflow Parameter: TENDER
-     * <p/>
+     *  * <p>
      * .............
      * //ecReq is the populated ExpressCheckoutRequest object.
      * .............
-     * <p/>
+     *  * <p>
      * //Create the Tender object
      * PayPalTender tender = new PayPalTender(ecReq);
      */

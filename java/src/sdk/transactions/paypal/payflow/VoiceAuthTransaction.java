@@ -1,21 +1,22 @@
 package paypal.payflow;
 
 /**
+ * <pre>{@code
  * This class is used to perform a voice authorization transaction.
- * <p/>
+ *
  * Some transactions cannot be authorized over the Internet (for example, high dollar
  * amounts)'processing networks generate Referral (Result Code 13) transactions.
  * In these situations, contact the customer service department of the
  * merchant bank and provide the payment information as requested.
+ *
  * If the transaction is approved, the bank provides a voice authorization
  * code (AUTHCODE) for the transaction. This must be included as AUTHCODE
  * as part of a Voice Authorization transaction.
- * </p>
  *
  *  ...............
  * // Populate data objects
  * ...............
- * <p/>
+ *
  * // Create a new Voice Auth Transaction.
  * VoiceAuthTransaction trans = new VoiceAuthTransaction("123PNI",
  * user, connection, inv, card, PayflowUtility.RequestId);
@@ -32,13 +33,15 @@ package paypal.payflow;
  * System.out.println("RESPMSG = " + trxnResponse.getRespMsg());
  * }
  * }
- * <p/>
+ *
  * // Get the Context and check for any contained SDK specific errors.
  * Context ctx = resp.getTransactionContext();
- * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)
+ * if (ctx != null & ctx.getErrorCount() > 0)
  * {
  * System.out.println("Errors = " + ctx.toString());
  * }
+ * }
+ * </pre>
  */
 public final class VoiceAuthTransaction extends BaseTransaction {
 
@@ -57,7 +60,7 @@ public final class VoiceAuthTransaction extends BaseTransaction {
      *  ...............
      * // Populate data objects
      * ...............
-     * <p/>
+     *  * <p>
      * // Create a new Void Transaction.
      * VoiceAuthTransaction trans = new VoidTransaction("123PNI",
      * user, connection, inv, tender, payflowUtility.getRequestId());
@@ -85,7 +88,6 @@ public final class VoiceAuthTransaction extends BaseTransaction {
      *  ...............
      * // Populate data objects
      * ...............
-     * <p/>
      * // Create a new Void Transaction.
      * VoiceAuthTransaction trans = new VoidTransaction("123PNI", "082120", user,
      *  connection, inv, tender, payflowUtility.getRequestId());
@@ -113,7 +115,6 @@ public final class VoiceAuthTransaction extends BaseTransaction {
      *  ...............
      * // Populate data objects
      * ...............
-     * <p/>
      * // Create a new Void Transaction.
      * VoiceAuthTransaction trans = new VoidTransaction("123PNI",
      * user, inv, tender, payflowUtility.getRequestId());

@@ -9,26 +9,12 @@ import java.util.Hashtable;
  * <p>Each response object is associated with a particular type of expressCheckout operation.</p>
  * <p>Following are the request objects associated with
  * different operations of ExpressCheckout:</p>
- * <p/>
- * {@paypal.listtable}
- * {@paypal.ltr}
- * {@paypal.ltd}ExpressCheckout operation.{@paypal.eltd}
- * {@paypal.ltd}Request data object{@paypal.eltd}
- * {@paypal.eltr}
- * {@paypal.ltr}
- * {@paypal.ltd}SET operation for ExpressCheckout.{@paypal.eltd}
- * {@paypal.ltd}{@link ExpressCheckoutResponse} {@paypal.eltd}
- * {@paypal.eltr}
- * {@paypal.ltr}
- * {@paypal.ltd}GET operation for ExpressCheckout.{@paypal.eltd}
- * {@paypal.ltd}{@link ECGetResponse} {@paypal.eltd}
- * {@paypal.eltr}
- * {@paypal.ltr}
- * {@paypal.ltd}DO operation for ExpressCheckout.{@paypal.eltd}
- * {@paypal.ltd}{@link ECDoResponse} {@paypal.eltd}
- * {@paypal.eltr}
+ * <p>
+ * ExpressCheckout operation. Request data object
+ * SET operation for ExpressCheckout {@link ExpressCheckoutResponse}
+ * GET operation for ExpressCheckout {@link ECGetResponse}
+ * DO operation for ExpressCheckout {@link ECDoResponse}
  */
-
 
 public class ExpressCheckoutResponse extends BaseResponseDataObject {
     private String token;

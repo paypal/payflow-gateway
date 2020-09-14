@@ -15,16 +15,13 @@ public class ECUpdateBARequest extends ExpressCheckoutRequest {
      * Constructor for ECSetRequest
      *
      * @param BAId - String
-     *             <p/>
+     *              * <p>
      *             ECUpdateRequest is used to set the data required for a Express Checkout UPDATE operation.
      *             </p>
      *  .............
-     * <p/>
      * //Create the ECUpdateRequest object
      * ECUpdateRequest updateEC = new ECUpdateRequest("baid");
-     * <p/>
      * .............
-     * </code>
      */
     public ECUpdateBARequest(String BAId) {
         super(PayflowConstants.PARAM_ACTION_UPDATE);
@@ -36,16 +33,14 @@ public class ECUpdateBARequest extends ExpressCheckoutRequest {
      *
      * @param BAId      - String
      * @param BA_Status - String
-     *                  <p/>
-     *                  <p/>
+     *                   * <p>
      *                  ECSetRequest is used to set the data required for a Express Checkout Update operation for
      *                  Reference Transactions without Purchase.
      *                  </p>
+     *  <code>
      *  .............
-     * <p/>
      * //Create the ECUpdateRequest object
      * ECUpdateRequest updateEC = new ECSetRequest("baid","ba_status");
-     * <p/>
      * .............
      * </code>
      */
@@ -61,18 +56,14 @@ public class ECUpdateBARequest extends ExpressCheckoutRequest {
      * @param BAId      - String
      * @param BA_Status - String
      * @param BA_Desc   - String
-     *                  <p/>
-     *                  <p/>
+     *                   * <p>
      *                  ECSetRequest is used to set the data required for a Express Checkout Update operation for
      *                  Reference Transactions without Purchase.
      *                  </p>
      *  .............
-     * <p/>
      * //Create the ECUpdateRequest object
      * ECUpdateRequest updateEC = new ECSetRequest("baid","ba_status", "ba_desc");
-     * <p/>
      * .............
-     * </code>
      */
     public ECUpdateBARequest(String BAId, String BA_Status, String BA_Desc) {
         super(PayflowConstants.PARAM_ACTION_UPDATE);

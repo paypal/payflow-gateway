@@ -16,18 +16,16 @@ public class ECSetBARequest extends ECSetRequest {
      * @param BA_Desc     - String
      * @param PaymentType - String
      * @param BA_Custom   - String
-     *                    <p/>
-     *                    <p/>
+     *                     * <p>
      *                    ECSetBARequest is used to set the data required for a Express Checkout Billing Agreement SET operation
      *                    with Billing Agreement (Reference Transaction) without Purchase.
      *                    </p>
-     *  .............
-     * <p/>
+     * .............
+     *  * <p>
      * Create the ECSetBARequest object
      * ECSetBARequest setEC = new ECSetBARequest(ReturnUrl, CancelUrl, BillingType, BA_Desc, PaymentType, BA_Custom);
-     * <p/>
+     *  * <p>
      * .............
-     * </code>
      */
     public ECSetBARequest(String ReturnUrl, String CancelUrl, String BillingType, String BA_Desc,
                           String PaymentType, String BA_Custom) {

@@ -13,29 +13,31 @@ import java.util.ArrayList;
  * returned is the string value of the response from the PayPal payment
  * gateway.
  *
- *  // Create an instantce of PayflowAPI.
+ * <pre>{@code
+ *  // Create an instance of PayflowAPI.
  * PayflowAPI pa = new PayflowAPI();
- * <p/>
  * //Sample Request.
- * // Please replace <user>, <vendor>, <password> & <partner> with your merchant information.
+ * // Please replace <user>, <vendor>, <password> & <partner>with your merchant information.
  * String request = "TRXTYPE=S&ACCT=5100000000000008&EXPDATE=0109&TENDER=C&INVNUM=INV12345&PONUM=PO12345&STREET=123 Main St.&ZIP=12345&AMT=12.25&USER=[user]&VENDOR=[vendor]&PARTNER=[partner]&PWD=[password]";
- * // RequestId is a unique string that is required for each & every transaction.
+ * // RequestId is a unique string that is required for each and every transaction.
  * // The merchant can use her/his own algorithm to generate this unique request id or
  * // use the SDK provided API to generate this as shown below (PayflowAPI.generateRequestId).
  * String requestId = pa.generateRequestId();
  * String response = pa.submitTransaction(request,requestId);
- * <p/>
+ * * <p>
  * // Following lines of code are optional.
  * // Begin optional code for displaying SDK errors ...
- * // It is used to read any errors that might have occured in the SDK.
+ * // It is used to read any errors that might have occurred in the SDK.
  * // Get the transaction errors.
- * <p/>
+ *  * <p>
  * String transErrors = pa.getTransactionContext().toString();
- * if (transErrors != null && transErrors.length()> 0)
+ * if (transErrors != null & transErrors.length() > 0)
  * {
  * System.out.println("Transaction Errors from SDK = \n" + transErrors);
  * }
  * .........................
+ * }
+ * </pre>
  */
 public class PayflowAPI {
 

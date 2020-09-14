@@ -17,7 +17,7 @@ public final class BankAcct extends PaymentDevice {
      *             BankAcct should be used to perform the transactions
      *             in which the user provides his bank account details for
      *             the online payment processing.
-     *             <p/>
+     *              * <p>
      *  //Create the BankAcct object
      * BankAcct account = new BankAcct("XXXXXXXXXXX","XXXXXXXXXXX");
      * </p>
@@ -39,7 +39,7 @@ public final class BankAcct extends PaymentDevice {
      * Target Bank's transit ABA routing number.Appies only to ACH transactions.(8-digit number)
      *
      * @return String
-     *         <p/>
+     *          * <p>
      *  Maps to Payflow Parameters as follows: ABA
      * </p>
      */
@@ -51,26 +51,16 @@ public final class BankAcct extends PaymentDevice {
      * Gets the Customer's bank account type.
      *
      * @return String
-     *         <p/>
-     *         Allowed AcctType values are:
-     *         {@paypal.listtable}
-     *         {@paypal.ltr}
-     *         {@paypal.lth} ACCTTYPE {@paypal.elth}
-     *         {@paypal.lth}Description{@paypal.elth}
-     *         {@paypal.eltr}
-     *         {@paypal.ltr}
-     *         {@paypal.ltd} C {@paypal.eltd}
-     *         {@paypal.ltd} Checking account {@paypal.eltd}
-     *         {@paypal.eltr}
-     *         {@paypal.ltr}
-     *         {@paypal.ltd} S {@paypal.eltd}
-     *         {@paypal.ltd} Savings account {@paypal.ltd}
-     *         {@paypal.eltr}
-     *         {@paypal.endlisttable}
-     *         </p>
-     *         <p/>
-     *  Maps to Payflow Parameters as follows: ACCTTYPE
-     * </p>
+     *
+     * Allowed AcctType values are:
+     *
+     * ACCTTYPE  - Description
+     *
+     * C - Checking account
+     * S - Savings account
+     *
+     * Maps to Payflow Parameters as follows: ACCTTYPE
+     *
      */
     public String getAcctType() {
         return acctType;
@@ -79,24 +69,15 @@ public final class BankAcct extends PaymentDevice {
     /**
      * Sets the Customer's bank account type.
      *
-     * @param acctType <p/>
-     *                 Allowed AcctType values are:
-     *                 {@paypal.listtable}
-     *                 {@paypal.ltr}
-     *                 {@paypal.lth} ACCTTYPE {@paypal.elth}
-     *                 {@paypal.lth}Description{@paypal.elth}
-     *                 {@paypal.eltr}
-     *                 {@paypal.ltr}
-     *                 {@paypal.ltd} C {@paypal.eltd}
-     *                 {@paypal.ltd} Checking account {@paypal.eltd}
-     *                 {@paypal.eltr}
-     *                 {@paypal.ltr}
-     *                 {@paypal.ltd} S {@paypal.eltd}
-     *                 {@paypal.ltd} Savings account {@paypal.ltd}
-     *                 {@paypal.eltr}
-     *                 {@paypal.endlisttable}
-     *                 </p>
-     *                 <p/>
+     * @param acctType  * <p>
+     *
+     * Allowed AcctType values are:
+     *
+     * ACCTTYPE  - Description
+     *
+     * C - Checking account
+     * S - Savings account
+     *
      *  Maps to Payflow Parameters as follows: ACCTTYPE
      * </p>
      */

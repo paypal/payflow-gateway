@@ -4,7 +4,7 @@ package paypal.payflow;
  * Used for Magtek related information.
  * <p>
  * Use the MagtekInfo object for the Magtek
- * encrypted card reader related information.</remarks>
+ * encrypted card reader related information.
  * <p>
  * Following example shows how to use the MagtekInfo object.
  * <p>
@@ -205,7 +205,7 @@ public final class MagTekInfo extends BaseRequestDataObject {
      * Sets the MagTek Card Type.
      *
      * @param magtekCardType String
-     * <p>Maps to Payflow Parameter: MAGTEKCARDTYPE<</p>
+     * <p>Maps to Payflow Parameter: MAGTEKCARDTYPE</p>
      */
     public void setMagtekCardType(String magtekCardType) {
         this.magtekCardType = magtekCardType;
@@ -325,7 +325,7 @@ public final class MagTekInfo extends BaseRequestDataObject {
      * Sets the last 4-digits of the PAN.
      *
      * @param pan4 String
-     * <p>Maps to Payflow Parameter: PAN4/p>
+     * <p>Maps to Payflow Parameter: PAN4</p>
      */
     public void setPan4(String pan4) {
         this.pan4 = pan4;

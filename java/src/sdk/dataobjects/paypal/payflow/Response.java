@@ -22,18 +22,19 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 
 /**
+ * <pre>{@code
  * Container class for response messages.
- * <p>This class enclosed response data objects specific to
+ * This class enclosed response data objects specific to
  * following:
  * <ol>
  * <li>Transaction response
- * --> Response messages common to all transactions.</li>
+ * -- Response messages common to all transactions.</li>
  * <li>Fraud response
- * --> Fraud Filters response messages.</li>
+ * -- Fraud Filters response messages.</li>
  * <li>Recurring response
- * --> Recurring transaction response messages.</li>
+ * -- Recurring transaction response messages.</li>
  * <li>Buyerauth response
- * --> Buyer auth response messages. (Not supported.)</li>
+ * -- Buyer auth response messages. (Not supported.)</li>
  * </ol>
  * <p>Additionally the Response class also contains the
  * transaction context, full request response string values.</p>
@@ -42,7 +43,7 @@ import java.util.Hashtable;
  * {@link RecurringResponse}
  * {@link BuyerAuthResponse}
  * {@link Context}
- * </p>
+ *
  * Following example shows, how to obtain response
  * of a transaction and how to use it.
  *
@@ -51,7 +52,7 @@ import java.util.Hashtable;
  * *		...................
  * // Submit the transaction.
  * Response resp = trans.SubmitTransaction();
- * <p/>
+ *  * <p>
  * if (resp != null)
  * {
  * // Get the Transaction Response parameters.
@@ -61,7 +62,7 @@ import java.util.Hashtable;
  * System.out.println("RESULT = " + trxnResponse.Result);
  * System.out.println("RESPMSG = " + trxnResponse.RespMsg);
  * }
- * <p/>
+ *  * <p>
  * // Get the Recurring Response parameters.
  * RecurringResponse recurResponse = resp.getRecurringResponse();
  * if (recurResponse != null)
@@ -70,13 +71,15 @@ import java.util.Hashtable;
  * System.out.println("PROFILEID = " + recurResponse.getProfileId());
  * }
  * }
- * <p/>
+ *  * <p>
  * // Get the Context and check for any contained SDK specific errors.
  * Context ctx = resp.getTransactionContext();
- * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)
+ * if (ctx != null & ctx.getErrorCount() > 0)
  * {
  * System.out.println( "Errors = " + ctx());
  * }
+ * }
+ * </pre>
  */
 public final class Response extends BaseResponseDataObject {
 

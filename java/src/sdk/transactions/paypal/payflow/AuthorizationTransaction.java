@@ -3,18 +3,18 @@ package paypal.payflow;
 /**
  * This class is used to create and perform an
  * Authorization Transaction.
- * <p/>
+ *  * <p>
  * A successful authorization needs to be captured using a capture transaction.
  * </p>
  *
  *  This example shows how to create and perform an authorization transaction.
- * <p/>
+ *  * <p>
  * ..........
  * ..........
  * //Populate required data objects.
  * ..........
  * ..........
- * <p/>
+ *  * <p>
  * //Create a new Authorization Transaction.
  * AuthorizationTransaction trans = new AuthorizationTransaction(
  * userInfo,
@@ -24,7 +24,7 @@ package paypal.payflow;
  * RequestId);
  * //Submit the transaction.
  * trans.submitTransaction();
- * <p/>
+ *  * <p>
  * // Get the Response.
  * Response resp = trans.getResponse();
  * if (Resp != null)
@@ -51,7 +51,7 @@ package paypal.payflow;
  * }
  * // Get the Context and check for any contained SDK specific errors.
  * Context ctx = resp.getTransactionContext();
- * if (ctx != null ++ ctx.getErrorCount() > 0)
+ * if (ctx != null ++ ctx.getErrorCount() %3E 0)
  * {
  * System.out.println("Errors = " + ctx.toString());
  * }
@@ -81,11 +81,11 @@ public class AuthorizationTransaction extends BaseTransaction {
     /**
      * Gets, Sets OrigId. This property is used to perform a
      * reference Authorization Transaction.
-     * <p/>
+     *  * <p>
      * A reference Authorization transaction is an authorization transaction which copies the transaction data,
      * except the Account Number, Expiration Date and Swipe data from a previous trasnaction.
      * PNRef of this previous trasnaction needs to be set in this OrigId property.
-     * <p/>
+     *  * <p>
      * A successful authorization needs to be captured using a capture transaction.</p>
      *
      * @return origId String
@@ -95,7 +95,7 @@ public class AuthorizationTransaction extends BaseTransaction {
      * //Populate required data objects.
      * ..........
      * ..........
-     * <p/>
+     *  * <p>
      * //Create a new Authorization Transaction.
      * AuthorizationTransaction trans = new AuthorizationTransaction(
      * userInfo,
@@ -108,10 +108,10 @@ public class AuthorizationTransaction extends BaseTransaction {
      * // Flag the transactions to allow partial authorizations
      * // of pre-paid credit cards.
      * trans.setPartialAuth("Y");
-     * <p/>
+     *  * <p>
      * //Submit the transaction.
      * trans.submitTransaction();
-     * <p/>
+     *  * <p>
      * // Get the Response.
      * Response resp = trans.getResponse();
      * if (resp != null)
@@ -138,7 +138,7 @@ public class AuthorizationTransaction extends BaseTransaction {
      * }
      * // Get the Context and check for any contained SDK specific errors.
      * Context ctx = resp.getTransactionContext();
-     * if (ctx != null ++ ctx.getErrorCount() > 0)
+     * if (ctx != null ++ Ctx.getErrorCount() %3E 0)
      * {
      * System.out.println(Environment.NewLine + "Errors = " + ctx.toString());
      * }
@@ -154,7 +154,7 @@ public class AuthorizationTransaction extends BaseTransaction {
     /**
      * Gets, Sets partialAuth. This property is used to notify banks that a partial authorization
      * can be performed for a pre-paid debit/gift card.
-     * <p/>
+     *  * <p>
      * Partial Approval is supported for Visa, MasterCard, American Express and Discover (JCB (US Domestic only),
      * and Diners) Prepaid card products such as gift, Flexible Spending Account (FSA) or Healthcare Reimbursement
      * Account (HRA) cards. In addition Discover (JCB (US Domestic only), and Diners) supports partial Approval
@@ -166,7 +166,7 @@ public class AuthorizationTransaction extends BaseTransaction {
      * transaction amount to be paid by other means. The introduction of the partial approval capability will reduce
      * decline frequency and enhance the consumer and merchant experience at the point of sale. Merchants will now
      * have the ability to accept partial approval rather than having the sale declined.
-     * <p/>
+     *  * <p>
      *
      * @return partialAuth String
      *  This example shows how to set the flag to support partial authorizations.
@@ -175,17 +175,17 @@ public class AuthorizationTransaction extends BaseTransaction {
      * //Populate required data objects.
      * ..........
      * ..........
-     * <p/>
+     *  * <p>
      * //Create a new Authorization Transaction.
      * AuthorizationTransaction trans = new AuthorizationTransaction(userInfo, PayflowConnectionData,
      * invoice, Tender, RequestId);
      * // Flag the transactions to allow partial authorizations
      * // of pre-paid credit cards.
      * trans.setPartialAuth("Y");
-     * <p/>
+     *  * <p>
      * //Submit the transaction.
      * trans.submitTransaction();
-     * <p/>
+     *  * <p>
      * // Get the Response.
      * Response resp = trans.getResponse();
      * if (resp != null)
@@ -209,12 +209,6 @@ public class AuthorizationTransaction extends BaseTransaction {
      * System.out.println("PREFPSMSG = " + fraudResp.getPreFpsMsg());
      * System.out.println("POSTFPSMSG = " + fraudResp.getPostFpsMsg());
      * }
-     * }
-     * // Get the Context and check for any contained SDK specific errors.
-     * Context ctx = resp.getTransactionContext();
-     * if (ctx != null ++ ctx.getErrorCount() > 0)
-     * {
-     * System.out.println(Environment.NewLine + "Errors = " + ctx.toString());
      * }
      */
     public String getPartialAuth() {
@@ -235,11 +229,11 @@ public class AuthorizationTransaction extends BaseTransaction {
 
     /**
      * Gets, Sets CreateSecureToken, SecureTokenId. This property is used to create a SecureToken and SecureTokenId.
-     * <p/>
+     *  * <p>
      * Use a secure token to send non-credit card transaction data to the Payflow server for storage in
      * a way that can't be intercepted and manipulated maliciously.The secure token must be used with the hosted
      * checkout pages. The token is good for a one-time transaction and is valid for 30 minutes.
-     * <p/>
+     *  * <p>
      * NOTE: Without using a secure token, Payflow Pro merchants can host their own payment page and Payflow Link merchants
      * can use a form post to send transaction data to the hosted checkout pages. However, by not using the secure token,
      * these Payflow gateway users are responsible for the secure handling of data.  To obtain a secure token, pass a unique,
@@ -247,7 +241,7 @@ public class AuthorizationTransaction extends BaseTransaction {
      * ID with a secure token and returns the token as a string of up to 32 alphanumeric characters.  To pass the transaction
      * data to the hosted checkout page, you pass the secure token and token ID in an HTTP form post. The token and ID trigger
      * the Payflow server to retrieve your data and display it for buyer approval.
-     * <p/>
+     *  * <p>
      *
      * @return secureToken String
      *  This example shows how to set the flag to create a secure token.
@@ -256,26 +250,26 @@ public class AuthorizationTransaction extends BaseTransaction {
      * //Populate required data objects.
      * ..........
      * ..........
-     * <p/>
+     *  * <p>
      * // Since we are using the hosted payment pages, you will not be sending the credit card data with the
      * // Secure Token Request.  You just send all other 'sensitive' data within this request and when you
      * // call the hosted payment pages, you'll only need to pass the SECURETOKEN; which is generated and returned
      * // and the SECURETOKENID that was created and used in the request.
-     * <p/>
+     *  * <p>
      * // Create a new Secure Token Authorization Transaction.  Even though this example is performing
      * // an authorization, you can create a secure token using SaleTransaction too.  Only Authorization and Sale
      * // type transactions are permitted.
      * AuthorizationTransaction Trans = new AuthorizationTransaction(User, Connection, Inv, PayflowUtility.RequestId);
-     * <p/>
+     *  * <p>
      * // Set the flag to create a Secure Token.
      * Trans.CreateSecureToken = "Y";
      * // The Secure Token Id must be a unique id up to 36 characters.  Using the RequestID object to
      * // generate a random id, but any means to create an id can be used.
      * Trans.SecureTokenId = PayflowUtility.RequestId;
-     * <p/>
+     *  * <p>
      * //Submit the transaction.
      * trans.submitTransaction();
-     * <p/>
+     *  * <p>
      * // Get the Response.
      * Response resp = trans.getResponse();
      * if (resp != null)
@@ -289,12 +283,6 @@ public class AuthorizationTransaction extends BaseTransaction {
      * System.out.println("SECURETOKEN = " + trxnResponse.getSecureToken());
      * System.out.println("SECURETOKENID = " + trxnResponse.getSecureTokenId());
      * }
-     * }
-     * // Get the Context and check for any contained SDK specific errors.
-     * Context ctx = resp.getTransactionContext();
-     * if (ctx != null ++ ctx.getErrorCount() > 0)
-     * {
-     * System.out.println(Environment.NewLine + "Errors = " + ctx.toString());
      * }
      */
     public String getCreateSecureToken() {
@@ -332,13 +320,13 @@ public class AuthorizationTransaction extends BaseTransaction {
      * @param tender                Tender object.
      * @param requestId             Request Id.
      *  This example shows how to create and perform a authorization transaction.
-     * <p/>
+     *  * <p>
      * ..........
      * ..........
      * //Populate required data objects.
      * ..........
      * ..........
-     * <p/>
+     *  * <p>
      * //Create a new Authorization Transaction.
      * AuthorizationTransaction Trans = new AuthorizationTransaction(
      * userInfo,
@@ -348,7 +336,7 @@ public class AuthorizationTransaction extends BaseTransaction {
      * RequestId);
      * //Submit the transaction.
      * trans.submitTransaction();
-     * <p/>
+     *  * <p>
      * // Get the Response.
      * Response resp = trans.getResponse();
      * if (Resp != null)
@@ -373,12 +361,6 @@ public class AuthorizationTransaction extends BaseTransaction {
      * System.out.println("POSTFPSMSG = " + fraudResp.getPostFpsMsg());
      * }
      * }
-     * // Get the Context and check for any contained SDK specific errors.
-     * Context ctx = resp.getTransactionContext();
-     * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)
-     * {
-     * System.out.println("Errors = " + ctx.ToString());
-     * }
      */
     public AuthorizationTransaction(UserInfo userInfo, PayflowConnectionData payflowConnectionData,
                                     Invoice invoice,
@@ -389,29 +371,24 @@ public class AuthorizationTransaction extends BaseTransaction {
     /**
      * Constructor.
      *
-     * @param userInfo  User Info object populated with user credentials.</param>
+     * @param userInfo  User Info object, populated with user credentials.
      * @param invoice   Invoice object.
      * @param tender    Tender object
      * @param requestId String Request Id
      *  This example shows how to create and perform
      * a authorization transaction.
-     * <p/>
+     *  * <p>
      * ..........
      * ..........
      * //Populate required data objects.
      * ..........
      * ..........
-     * <p/>
+     *  * <p>
      * // Create a new Authorization Transaction.
-     * AuthorizationTransaction Trans = new AuthorizationTransaction(
-     * userInfo,
-     * PayflowConnectionData,
-     * Invoice,
-     * Tender,
-     * RequestId);
+     * AuthorizationTransaction Trans = new AuthorizationTransaction(userInfo, PayflowConnectionData, Invoice, Tender, RequestId);
      * //Submit the transaction.
      * trans.submitTransaction();
-     * <p/>
+     * <p>
      * // Get the Response.
      * Response resp = trans.getResponse();
      * if (Resp != null)
@@ -438,7 +415,7 @@ public class AuthorizationTransaction extends BaseTransaction {
      * }
      * // Get the Context and check for any contained SDK specific errors.
      * Context ctx = resp.getTransactionContext();
-     * if (ctx != null &amp;&amp; ctx.getErrorCount() > 0)
+     * if (ctx != null &amp;&amp; ctx.getErrorCount() %3E 0)
      * {
      * System.out.println("Errors = " + ctx.ToString());
      * }
