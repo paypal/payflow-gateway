@@ -59,4 +59,5 @@ Some of the NVPs listed below have been added in earlier builds, but are here fo
 	* `FREQUENCY` in `ReccurringInfo` object.
 
 ### New Samples
-* **Data Upload (DODataUpload)** under Samples/Misc to show how to use transaction type "L" allowing credit card data to be removed from local servers and stored at PayPal to be used via reference transactions.
+* **Data Upload (DODataUpload)** under `samples\dataobjects\misc` to show how to use transaction type "L" allowing credit card data to be removed from local servers and stored at PayPal to be used via reference transactions.
+* **Encrypted Swipe (DOEncryptedSwipe)** under `samples\dataobjects\basictransactons` is for user using MagTek Encrypted Swipe readers.  See [Payflow Gateway Magtek Parameters](https://developer.paypal.com/docs/payflow/integration-guide/magtek/).  
