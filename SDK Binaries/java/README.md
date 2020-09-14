@@ -7,6 +7,9 @@ ExtendData extData = new ExtendData("VERSION", "214.0");  // NVP, Value
 // Add extended data to transaction.
 trans.addToExtendData(extData);
 ```
+
+Should you want to want to modify and compile for another version or application, please feel free to down the source code from the [Java Repo](https://github.com/paypal/payflow-gateway/tree/master/java) and feel free to offer pull requests of your changes.  However, remember that v5 of the Java SDK is not fully backwards compatible and requires testing prior to deploying in a production environment.
+
 ## Current Release Notes
 * v4.48
   * Fully backwards compatible with previous versions; except for Java version support. Compiled on Java 1.8.0_261.
