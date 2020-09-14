@@ -49,7 +49,7 @@ Some of the NVPs listed below have been added in earlier builds, but are here fo
 	* `ADDLAMT`, `ADDLAMTTYPE` in new `AdviceDetails` object.
 	* `CATTYPE`, `CONTACTLESS` in new `Devices` object.
 	* `CUSTDATA`, `CUSTOMERID`, `CUSTOMERNUMBER` in `CustomerInfo` object.
-	* `MISCDATA`, `REPORTGROUP`, `VATINVNUM`, `VATTAXRATE` in `Invoice` object.
+	* `ECHODATA`, `MISCDATA`, `REPORTGROUP`, `VATINVNUM`, `VATTAXRATE` in `Invoice` object.
 	* `AUTHDATE` in `VoiceAuthTransaction` object.
 	* `BUTTONSOURCE` in `BrowserInfo` object.
 
