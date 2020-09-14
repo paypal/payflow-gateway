@@ -37,6 +37,7 @@ Some of the NVPs listed below have been added in earlier builds, but are here fo
 * Support for Magtek Encrypted Card Readers as part of the `Swipe` object.  Refer to `DOEncryptedSwipe` sample for more information.
 
 * **Processor-specific Response Parameters**:
+	* `PAYMENTADVICECODE`, `TYPE`, `AFFLUENT`, `CCUPDATED`, `RRN`, `STAN`, `ACI` and `VALIDATIONCODE` in `TransactionResponse` object.
 
 * **Location Transaction Advice Addendum Parameters**:
 	* `MERCHANTLOCATIONID`, `MERCHANTID`, `MERCHANTCONTACTINFO`,  `MERCHANTURL`, `MERCHANTVATNUM` and `MERCHANTINVNUM` in `MerchantInfo` object.
