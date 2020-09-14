@@ -8,8 +8,8 @@ ExtendData extData = new ExtendData("VERSION", "214.0");  // NVP, Value
 trans.addToExtendData(extData);
 ```
 ## Current Release Notes
-* v4.48  (Not released yet.  ETA End of September)
-  * Fully backwards compatible with previous versions; except for Java version support. Compiled on Java x.x.
+* v4.48
+  * Fully backwards compatible with previous versions; except for Java version support. Compiled on Java 1.8.0_261.
   * Added support for `CARDONFILE` and `TXID` as part of the `PaymentCard` (both) and `TransactionResponse` (TXID) objects) .  See [Card on File](https://developer.paypal.com/docs/payflow/integration-guide/card-on-file/) for more details.
   * Added support for 3DS v2 by adding `DSTRANSACTIONID` and `THREEDSVERSION` parameters.  See [3-D Secure with 3rd-Party Merchant Plug-ins](https://developer.paypal.com/docs/payflow/3d-secure-mpi/) for more details.
 
