@@ -329,6 +329,10 @@ namespace PayPal.Payments.DataObjects
 		/// Miscellaneous Data
         /// </summary>
         private String mMiscData;
+		///<summary>a
+		///Secure Token, used for Inquiry transaction
+		///</summary>
+		private String mSecureToken;
 
 		#endregion
 
@@ -1287,8 +1291,8 @@ namespace PayPal.Payments.DataObjects
 		/// </summary>
 		/// <remarks>
 		/// <para>Value added tax invoice number.</para>
-		/// <para>Maps to Payflow Parameter:</para>
-		/// <code>VATINVNUM<</code>
+		/// <para>Maps to Payflow Parameter: 
+		/// <code>VATINVNUM</code></para>
 		/// </remarks>
 		public String VatInvNum
 		{
@@ -1373,45 +1377,63 @@ namespace PayPal.Payments.DataObjects
 			get { return mMiscData; }
 			set { mMiscData = value; }
 		}
+
+		/// <summary>
+		/// Gets, Sets  SecureToken.
+		/// </summary>
+		/// <remarks>
+		///	<para> Merchant-defined identifier used in the Secure Token flow.
+		///	</para>
+		///	<para>You can use SECURETOKEN when performing Inquiry transactions. To ensure that you can always access
+		///	the correct transaction when performing an Inquiry, you must use CREATESECURETOKEN when
+		///	submitting any transaction.</para>
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>SECURETOKEN</code>
+		/// </remarks>
+		public String SecureToken
+		{
+			get { return mSecureToken; }
+			set { mSecureToken = value; }
+		}
 		#endregion
 
 		#region "AdviceDetailItem related Methods"
 
-	/// <summary>
-	/// Used for advice detail items.
-	/// </summary>
-	/// <remarks>
-	/// This class holds the advice detail related information.
-	/// Detail of a charge where *n* is a value from 1 - 5. Use for additional breakdown of the amount.
-	/// For example ADDLAMT1=1 is the amount for the additional amount for advice detail item 1 and is equal to 1,
-	/// </remarks>
-	/// <example>
-	/// <para>Following example shows how to use AdviceDetail.</para>
-	/// <code lang="C#" escaped="false">
-	///  .................
-	///  //Inv is the Invoice object.
-	///  .................
-	/// // Set the Advice Detail items.
-	/// AdviceDetail AddDetail1 = new AdviceDetail();
-	///	AddDetail1.AddLAmt = "1";
-	///	AddDetail1.AddLAmtType = "1";
-	///	Inv.AddAdviceDetailItem(AddDetail1);
-	///	// To add another item, just do the same as above but increment the value of AddDetail to 2: AddDetail2
-	///	.................
-	/// </code>
-	/// <code lang="Visual Basic" escaped="false">
-	///  .................
-	///  'Inv is the Invoice object.
-	///  .................
-    ///  ' Set the Advice Detail items.
-    ///  Dim AddDetail1 As AdviceDetail = New AdviceDetail
-    ///  AddDetail1.AddLAmt = "1"
-    ///  AddDetail1.AddLAmtType = "1"
-    ///  Inv.AddAdviceDetailItem(AddDetail1)
-	///  ' To add another item, just do the same as above but increment the value of AddDetail to 2: AddDetail2
-	///	.................
-	/// </code>
-	/// </example>
+		/// <summary>
+		/// Used for advice detail items.
+		/// </summary>
+		/// <remarks>
+		/// This class holds the advice detail related information.
+		/// Detail of a charge where *n* is a value from 1 - 5. Use for additional breakdown of the amount.
+		/// For example ADDLAMT1=1 is the amount for the additional amount for advice detail item 1 and is equal to 1,
+		/// </remarks>
+		/// <example>
+		/// <para>Following example shows how to use AdviceDetail.</para>
+		/// <code lang="C#" escaped="false">
+		///  .................
+		///  //Inv is the Invoice object.
+		///  .................
+		/// // Set the Advice Detail items.
+		/// AdviceDetail AddDetail1 = new AdviceDetail();
+		///	AddDetail1.AddLAmt = "1";
+		///	AddDetail1.AddLAmtType = "1";
+		///	Inv.AddAdviceDetailItem(AddDetail1);
+		///	// To add another item, just do the same as above but increment the value of AddDetail to 2: AddDetail2
+		///	.................
+		/// </code>
+		/// <code lang="Visual Basic" escaped="false">
+		///  .................
+		///  'Inv is the Invoice object.
+		///  .................
+		///  ' Set the Advice Detail items.
+		///  Dim AddDetail1 As AdviceDetail = New AdviceDetail
+		///  AddDetail1.AddLAmt = "1"
+		///  AddDetail1.AddLAmtType = "1"
+		///  Inv.AddAdviceDetailItem(AddDetail1)
+		///  ' To add another item, just do the same as above but increment the value of AddDetail to 2: AddDetail2
+		///	.................
+		/// </code>
+		/// </example>
 		public void AddAdviceDetailItem(AdviceDetail Item)
 		{
 			mAdviceDetailList.Add(Item);
@@ -1667,6 +1689,7 @@ namespace PayPal.Payments.DataObjects
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_VATTAXRATE, mVatTaxRate));
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_REPORTGROUP, mReportGroup));
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MISCDATA, mMiscData));
+				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_SECURETOKEN, mSecureToken));
 
 
 

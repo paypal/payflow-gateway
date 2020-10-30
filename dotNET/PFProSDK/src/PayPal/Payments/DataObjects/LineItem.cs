@@ -679,6 +679,7 @@ namespace PayPal.Payments.DataObjects
 		/// <para>Maps to Payflow Parameter:</para>
 		/// <code>L_EXTAMT</code>
 		/// </remarks>
+		/// </summary>
 		public String ExtAmt
 			{
 			get { return mExtAmt; }

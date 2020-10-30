@@ -35,7 +35,7 @@ namespace PayPal.Payments.Transactions
 
 		#region "Properties"
 		/// <summary>
-		/// Gets, Sets OrgiPpref
+		/// Gets, Sets OrigPpref
 		/// </summary>
 		/// <remarks>
 		/// <para>Maps to Payflow Parameter:</para>

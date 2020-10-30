@@ -125,7 +125,6 @@
     <Compile Include="src\PayPal\Payments\Samples\VB\DataObjects\BasicTransactions\DOReferenceCredit.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="src\PayPal\Payments\Samples\VB\DataObjects\BasicTransactions\DOTest.vb" />
     <Compile Include="src\PayPal\Payments\Samples\VB\DataObjects\BasicTransactions\DOSale.vb">
       <SubType>Code</SubType>
     </Compile>

@@ -37,7 +37,7 @@ Namespace PayPal.Payments.Samples.VB.DataObjects.BasicTransactions
             ' Create the Data Objects.
             ' Create the User data object with the required user details.
             Dim User As UserInfo = New UserInfo("<user>", "<vendor>", "<partner>", "<password>")
-            
+
             ' Create the Payflow  Connection data object with the required connection details.
             ' The PAYFLOW_HOST property is defined in the App config file.
             Dim Connection As PayflowConnectionData = New PayflowConnectionData
@@ -46,11 +46,11 @@ Namespace PayPal.Payments.Samples.VB.DataObjects.BasicTransactions
             ' Replace <PNREF> with a previous transaction ID that you processed on your account.
             Dim Trans As InquiryTransaction = New InquiryTransaction("<PNREF>", User, Connection, PayflowUtility.RequestId)
 
-            ' To use CUSTREF instead of PNREF you need to set the CustRef and include the INVOICE object in your
-            ' request.  Since you will be using CUSTREF instead of PNREF, PNREF will be "" (null).
+            ' To use CUSTREF Or SECURETOKEN instead of PNREF you need to set the CustRef Or SecureToken And include the INVOICE object in your
+            ' request.  Since you will be using CUSTREF Or SECURETOKEN instead of PNREF, PNREF will be "" (null).
             ' Create a new Invoice data object with the Amount, Billing Address etc. details.
             'Dim Inv As Invoice = New Invoice
-            'Inv.CustRef = "TEST1"
+            'Inv.CustRef = "CUSTREF" ' Can also use Inv.SecureToken.
             'Dim Trans As InquiryTransaction = New InquiryTransaction("", User, Connection, Inv, PayflowUtility.RequestId)
 
             ' Refer to the Payflow Pro Developer's Guide for more information regarding the parameters returned
@@ -69,37 +69,24 @@ Namespace PayPal.Payments.Samples.VB.DataObjects.BasicTransactions
                     Console.WriteLine("--------------------------------------------")
                     Console.WriteLine("Original Response Data")
                     Console.WriteLine("--------------------------------------------")
-                    Select Case Trans.Verbosity.ToUpper
-                        Case "LOW"
-                            Console.WriteLine("RESULT = " + TrxnResponse.OrigResult)
-                            Console.WriteLine("PNREF = " + TrxnResponse.OrigPnref)
-                            Console.WriteLine("RESPMSG = " + TrxnResponse.RespMsg)
-                            Console.WriteLine("AUTHCODE = " + TrxnResponse.AuthCode)
-                            Console.WriteLine("CVV2MATCH = " + TrxnResponse.CVV2Match)
-                            Console.WriteLine("AVSADDR = " + TrxnResponse.AVSAddr)
-                            Console.WriteLine("AVSZIP = " + TrxnResponse.AVSZip)
-                            Console.WriteLine("IAVS = " + TrxnResponse.IAVS)
-                            Console.WriteLine("CARDSECURE = " + TrxnResponse.ProcCardSecure)
-                        Case "MEDIUM"
-                            Console.WriteLine("RESULT = " + TrxnResponse.OrigResult)
-                            Console.WriteLine("PNREF = " + TrxnResponse.OrigPnref)
-                            Console.WriteLine("RESPMSG = " + TrxnResponse.RespMsg)
-                            Console.WriteLine("AUTHCODE = " + TrxnResponse.AuthCode)
-                            Console.WriteLine("AVSADDR = " + TrxnResponse.AVSAddr)
-                            Console.WriteLine("AVSZIP = " + TrxnResponse.AVSZip)
-                            Console.WriteLine("CVV2MATCH = " + TrxnResponse.CVV2Match)
-                            Console.WriteLine("IAVS = " + TrxnResponse.IAVS)
-                            Console.WriteLine("HOSTCODE = " + TrxnResponse.HostCode)
-                            Console.WriteLine("RESPTEXT = " + TrxnResponse.RespText)
-                            Console.WriteLine("PROCAVS = " + TrxnResponse.ProcAVS)
-                            Console.WriteLine("PROCCVV2 = " + TrxnResponse.ProcCVV2)
-                            Console.WriteLine("PROCCARDSECURE = " + TrxnResponse.ProcCardSecure)
-                            Console.WriteLine("ADDLMSGS = " + TrxnResponse.AddlMsgs)
-                            Console.WriteLine("TRANSSTATE = " + TrxnResponse.TransState)
-                            Console.WriteLine("DATE_TO_SETTLE = " + TrxnResponse.DateToSettle)
-                            Console.WriteLine("BATCHID = " + TrxnResponse.BatchId)
-                            Console.WriteLine("SETTLE_DATE = " + TrxnResponse.SettleDate)
-                    End Select
+                    Console.WriteLine("RESULT = " + TrxnResponse.OrigResult)
+                    Console.WriteLine("PNREF = " + TrxnResponse.OrigPnref)
+                    Console.WriteLine("RESPMSG = " + TrxnResponse.RespMsg)
+                    Console.WriteLine("AUTHCODE = " + TrxnResponse.AuthCode)
+                    Console.WriteLine("AVSADDR = " + TrxnResponse.AVSAddr)
+                    Console.WriteLine("AVSZIP = " + TrxnResponse.AVSZip)
+                    Console.WriteLine("CVV2MATCH = " + TrxnResponse.CVV2Match)
+                    Console.WriteLine("IAVS = " + TrxnResponse.IAVS)
+                    Console.WriteLine("HOSTCODE = " + TrxnResponse.HostCode)
+                    Console.WriteLine("RESPTEXT = " + TrxnResponse.RespText)
+                    Console.WriteLine("PROCAVS = " + TrxnResponse.ProcAVS)
+                    Console.WriteLine("PROCCVV2 = " + TrxnResponse.ProcCVV2)
+                    Console.WriteLine("PROCCARDSECURE = " + TrxnResponse.ProcCardSecure)
+                    Console.WriteLine("ADDLMSGS = " + TrxnResponse.AddlMsgs)
+                    Console.WriteLine("TRANSSTATE = " + TrxnResponse.TransState)
+                    Console.WriteLine("DATE_TO_SETTLE = " + TrxnResponse.DateToSettle)
+                    Console.WriteLine("BATCHID = " + TrxnResponse.BatchId)
+                    Console.WriteLine("SETTLE_DATE = " + TrxnResponse.SettleDate)
                 End If
 
                 ' Display the response.
