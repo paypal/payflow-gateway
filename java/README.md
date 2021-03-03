@@ -7,11 +7,11 @@ A simple SDK allowing easy integration with the Payflow Gateway for Java.
 DO NOT COPY THE DLL INTO A PRODUCTION ENVIRONMENT WITHOUT ADJUSTING YOUR CODE IF NECESSARY AND TESTING.
 
 ## Supported Platforms
-The code is compatible as-is for Java v1.8.0_261 using IntelliJ IDEA.
+The code is compatible as-is for Java v1.8.0_281 using IntelliJ IDEA.
 
 ## Get Started
 Follow these easy steps to quickly get up and running:
-1. Verify you have Java 1.8.0_261 installed.
+1. Verify you have Java 1.8.0_281 installed.
 1. Obtain the files from the repo.
 1. Open **IntelliJ** and select **Open** or **Import**.
 1. Navigate to the `java` directory to open the project from there.

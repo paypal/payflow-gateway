@@ -22,7 +22,7 @@ import paypal.payflow.*;
 // NOTE: You must be enabled by PayPal to use reference transactions.  Contact your account manager
 // or the sales department for more details.
 //
-// See the DOSetEC Sample for more details on Reference Transations using Express Checkout.
+// See the DOSetEC Sample for more details on Reference Transactions using Express Checkout.
 
 public class DODoEC {
 	public DODoEC() {
@@ -36,15 +36,14 @@ public class DODoEC {
 		// Payflow Pro Host Name. This is the host name for the PayPal Payment Gateway.
 		// For testing: pilot-payflowpro.paypal.com
 		// For production: payflowpro.paypal.com
-		// DO NOT use payflow.verisign.com or test-payflow.verisign.com!
 		SDKProperties.setHostAddress("pilot-payflowpro.paypal.com");
 		SDKProperties.setHostPort(443);
 		SDKProperties.setTimeOut(45);
 
 		// Logging is by default off. To turn logging on uncomment the following lines:
-		// SDKProperties.setLogFileName("payflow_java.log");
-		// SDKProperties.setLoggingLevel(PayflowConstants.SEVERITY_DEBUG);
-		// SDKProperties.setMaxLogFileSize(1000000);
+		//SDKProperties.setLogFileName("payflow_java.log");
+		//SDKProperties.setLoggingLevel(PayflowConstants.SEVERITY_DEBUG);
+		//SDKProperties.setMaxLogFileSize(1000000);
 
 		// Uncomment the lines below and set the proxy address and port, if a proxy has
 		// to be used.
@@ -55,8 +54,7 @@ public class DODoEC {
 		// Create the User data object with the required user details.
 		UserInfo user = new UserInfo("<user>", "<vendor>", "<partner>", "<password>");
 
-		// Create the Payflow Connection data object with the required connection
-		// details.
+		// Create the Payflow Connection data object with the required connection details.
 		// The PAYFLOW_HOST property is defined in the App config file.
 		PayflowConnectionData Connection = new PayflowConnectionData();
 
@@ -64,19 +62,15 @@ public class DODoEC {
 		// checkout by clicking on "Continue Checkout" button, it's time to actually
 		// authorize the transaction.
 		// This is the third step in PayPal Express Checkout, in which you need to
-		// perform a
-		// DO operation to authorize the purchase amount.
+		// perform a DO operation to authorize the purchase amount.
 		//
-		// For more information on Reference Transactions, see the DOSetEC Sample for
-		// more details.
+		// For more information on Reference Transactions, see the DOSetEC Sample for more details.
 
-		// For Regular Express Checkout or Express Checkout Reference Transaction with
-		// Purchase.
-		// ECDoRequest doRequest = new ECDoRequest("<TOKEN>", "<PAYERID>");
-		ECDoRequest doRequest = new ECDoRequest("EC-7GF96160AD060941R", "9A7GVVKMK64FS");
+		// For Regular Express Checkout or Express Checkout Reference Transaction with Purchase.
+		ECDoRequest doRequest = new ECDoRequest("<TOKEN>", "<PAYERID>");
 
 		// For Express Checkout Reference Transaction without Purchase.
-		// ECDoBARequest doRequest = new ECDoBARequest("<TOKEN>", "<PAYERID>");
+		//ECDoBARequest doRequest = new ECDoBARequest("<TOKEN>", "<PAYERID>");
 
 		// Performing a Reference Transaction, Do Authorization or Re Doauthorization
 		// These transactions do not require a token or payerid. Additional fields
@@ -86,12 +80,9 @@ public class DODoEC {
 
 		// Perform a Do Reauthorization
 		// To reauthorize an Authorization for an additional three-day honor period, you
-		// can use a Do
-		// Reauthorization transaction. A Do Reauthorization can be used at most once
-		// during the 29-day
-		// authorization period.
-		// To set up a Do Reauthorization, you must pass ORIGID in the
-		// AuthorizationTransaction object
+		// can use a Do Reauthorization transaction. A Do Reauthorization can be used at most once
+		// during the 29-day authorization period.
+		// To set up a Do Reauthorization, you must pass ORIGID in the AuthorizationTransaction object
 		// and set DoReauthorization to 1.
 		// doRequest.setDoReauthorization("1");
 
@@ -99,7 +90,7 @@ public class DODoEC {
 		// details.
 		Invoice inv = new Invoice();
 		// Set Amount.
-		Currency amt = new Currency(new Double(15.00));
+		Currency amt = new Currency(new Double(25.00));
 		inv.setAmt(amt);
 		inv.setComment1("Testing Express Checkout");
 
@@ -113,6 +104,8 @@ public class DODoEC {
 
 		AuthorizationTransaction Trans = new AuthorizationTransaction(user, Connection, inv, paypalTender,
 				PayflowUtility.getRequestId());
+
+		CreditTransaction credit = new CreditTransaction(user, Connection, inv, paypalTender, PayflowUtility.getRequestId());
 
 		// Using a Reference Transaction
 		// To be able to "charge" a customer using their Billing Agreement you will need

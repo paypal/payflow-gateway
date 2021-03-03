@@ -1,12 +1,12 @@
-<project name="v4java_sdk" default="package">
+<project name="v5java_sdk" default="package">
     <target name="init">
 
         <echo message="In Init START ..."/>
-        <property name="V4JAVA_HOME" value=".."/>
-        <property name="CLASSPATH" value="${V4JAVA_HOME}/lib/xercesImpl.jar;${V4JAVA_HOME}/lib/xml-apis.jar;"/>
-        <property name="DIST_DIR" value="F:/Source/Releases/Java/dist"/>
-        <property name="BUILD_DIR" value="F:/Source/Releases/Java/dist/classes"/>
-        <property name="RELEASE_DIR" value="F:/Source/Releases/Java/dist/release"/>
+        <property name="V5JAVA_HOME" value=".."/>
+        <property name="CLASSPATH" value="${V5JAVA_HOME}/lib/xercesImpl.jar;${V5JAVA_HOME}/lib/xml-apis.jar;"/>
+        <property name="DIST_DIR" value="${V5JAVA_HOME}/Releases/Java/dist"/>
+        <property name="BUILD_DIR" value="${V5JAVA_HOME}/Releases/Java/dist/classes"/>
+        <property name="RELEASE_DIR" value="${V5JAVA_HOME}/Releases/Java/dist/release"/>
         <property name="CLIENT_PACKAGE_DIR" value="${RELEASE_DIR}/payflow"/>
         <property name="RELEASE_ZIP" value="Payflow_SDK_for_Java_v5.zip"/>
         <property name="RELEASE_TAR" value="Payflow_SDK_for_Java_v5.tar"/>
@@ -38,7 +38,7 @@
     <target name="compile" depends="init,clean,makedir">
         <echo message="Compiling Payflow Java classes ..."/>
         <javac destdir="${BUILD_DIR}/sdk"
-               srcdir="${V4JAVA_HOME}/src/sdk/base;${V4JAVA_HOME}/src/sdk/dataobjects;${V4JAVA_HOME}/src/sdk/transactions"
+               srcdir="${V5JAVA_HOME}/src/sdk/base;${V5JAVA_HOME}/src/sdk/dataobjects;${V5JAVA_HOME}/src/sdk/transactions"
                classpath="${CLASSPATH}" includeantruntime="false" deprecation="on" source="1.8" target="1.8">
             <include name="**/*.java"/>
         </javac>
@@ -51,7 +51,7 @@
 
     <target name="compilesamples" depends="makejar">
         <echo message="Compiling Sample classes (will not be shipped) ..."/>
-        <javac destdir="${BUILD_DIR}/paypal" srcdir="${V4JAVA_HOME}/src/paypal"
+        <javac destdir="${BUILD_DIR}/paypal" srcdir="${V5JAVA_HOME}/src/paypal"
                classpath="${CLASSPATH};${CLIENT_PACKAGE_DIR}/lib/${JAR_NAME}" includeantruntime="false" deprecation="on" source="1.8" target="1.8">
             <include name="**/*.java"/>
         </javac>
@@ -60,27 +60,27 @@
     <target name="package" depends="compilesamples">
         <echo message="Creating ${RELEASE_ZIP} ..."/>
         <copy todir="${CLIENT_PACKAGE_DIR}/paypal/">
-            <fileset dir="${V4JAVA_HOME}/src/paypal"/>
+            <fileset dir="${V5JAVA_HOME}/src/paypal"/>
         </copy>
         <copy todir="${CLIENT_PACKAGE_DIR}">
-            <fileset dir="F:/Source/Releases/Java/test">
+            <fileset dir="${V5JAVA_HOME}/Releases/Java/test">
                 <include name="payflow_test.bat"/>
                 <include name="payflow_test.pl"/>
             </fileset>
         </copy>
         <copy todir="${CLIENT_PACKAGE_DIR}">
-            <fileset dir="F:/Source/Releases/Java/docs">
+            <fileset dir="${V5JAVA_HOME}/Releases/Java/docs">
                 <include name="CHANGELOG.html"/>
                 <include name="Start.txt"/>
             </fileset>
         </copy>
         <copy todir="${CLIENT_PACKAGE_DIR}/docs">
-            <fileset dir="F:/Source/Releases/Java/docs">
+            <fileset dir="${V5JAVA_HOME}/Releases/Java/docs">
                 <exclude name="CHANGELOG.html"/>
             </fileset>
         </copy>
         <copy todir="${CLIENT_PACKAGE_DIR}/lib/">
-            <fileset dir="${V4JAVA_HOME}/lib/">
+            <fileset dir="${V5JAVA_HOME}/lib/">
                 <include name="*.*"/>
             </fileset>
         </copy>

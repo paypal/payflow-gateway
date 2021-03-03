@@ -1857,9 +1857,9 @@ public final class PayflowConstants {
     protected static final String PARAM_ACTION_DO = "D";
     protected static final String PARAM_ACTION_GET = "G";
     protected static final String PARAM_ACTION_UPDATE = "U";
-    protected static final String PARAM_ACTION_SETBA = "Z";
-    protected static final String PARAM_ACTION_GETBA = "W";
-    protected static final String PARAM_ACTION_DOBA = "X";
+    protected static final String PARAM_ACTION_SETBA = "S";  // Z-S  Z, W, X are deprecated
+    protected static final String PARAM_ACTION_GETBA = "G";  // W-G
+    protected static final String PARAM_ACTION_DOBA = "X"; // X-D
     protected static final String PARAM_RETURNURL = "RETURNURL";
     protected static final String PARAM_CANCELURL = "CANCELURL";
     protected static final String PARAM_REQCONFIRMSHIPPING = "REQCONFIRMSHIPPING";

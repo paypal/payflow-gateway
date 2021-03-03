@@ -1,7 +1,6 @@
 package paypal.payflow;
 
 
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,16 +13,10 @@ import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Properties;
-
 import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.X509TrustManager;
-import javax.net.ssl.TrustManager;
 import javax.net.ssl.*;
 
 import sun.misc.BASE64Encoder;
-
-//import sun.net.ssl.HttpsURLConnection;
 
 /**
  * This is the Connection Class.
@@ -34,7 +27,7 @@ final class PaymentConnection {
      * Holds whether transaction is
      * with or without proxy.
      */
-    private boolean mIsProxy;
+    private boolean mIsProxy = false;
 
     /**
      * Payflow Host Address
@@ -299,10 +292,8 @@ final class PaymentConnection {
         if (mProxyAddress != null && mProxyAddress.length() > 0 && mProxyPort > 0) {
             mIsProxy = true;
         }
-
         Logger.getInstance().log("paypal.payflow.PaymentConnection.InitializeProxy(String,int,String, String): Exiting",
                 PayflowConstants.SEVERITY_DEBUG);
-
     }
 
     /**
@@ -328,67 +319,18 @@ final class PaymentConnection {
      */
     private void initServerUri() {
 
-    String classname = SDKProperties.getURLStreamHandlerClass();
+        String classname = SDKProperties.getURLStreamHandlerClass();
 
         try {
-            // Begin code to handle path of Url.  The requirement for the path to be
-            // removed in future core update.
             String HostAddress;
-            // Removed path for 49 05/Sep/07 tsieber
-            //int iSlashPos = mHostAddress.lastIndexOf("/");
-            // String HostPath;
-            //if (iSlashPos > -1) {
-            //    HostAddress = mHostAddress.substring(0, iSlashPos);
-            //    HostPath = mHostAddress.substring(iSlashPos);
-            // } else {
             HostAddress = mHostAddress;
-            //     HostPath = null;
-            // }
             Logger.getInstance().log("paypal.payflow.PaymentConnection.InitServerUri(String): URLStreamHandlerClass: " + classname,
                     PayflowConstants.SEVERITY_DEBUG);
-
-            /*
-            // Create a trust manager that does not validate certificate chains
-              TrustManager[] trustAllCerts = new TrustManager[]{
-                  new X509TrustManager() {
-                      public java.security.cert.X509Certificate[] getAcceptedIssuers() {
-                          return null;
-                      }
-                      public void checkClientTrusted(
-                          java.security.cert.X509Certificate[] certs, String authType) {
-                      }
-                      public void checkServerTrusted(
-                          java.security.cert.X509Certificate[] certs, String authType) {
-                      }
-                  }
-              };
-
-              // Install the all-trusting trust manager
-              try {
-                  SSLContext sc = SSLContext.getInstance("SSL");
-                  sc.init(null, trustAllCerts, new java.security.SecureRandom());
-                  HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
-              } catch (Exception e) {
-              }
-
-              // Now you can access an https URL without having the certificate in the truststore
-              try {
-                  URL url = new URL("https://216.113.171.104:443");
-
-              } catch (MalformedURLException e) {
-              }
-             //  */
-
             if (classname != null && classname.length() > 0) {
                 URLStreamHandler Handler = (URLStreamHandler) Class.forName(classname).newInstance();
-                // mServerUri = new URL("https", mHostAddress, mHostPort, serverFile, Handler);
-                //mServerUri = new URL(null, "https://" + HostAddress + ":" + mHostPort + HostPath, Handler);
                 mServerUri = new URL(null, "https://" + HostAddress + ":" + mHostPort, Handler);
             } else {
-                // mServerUri = new URL("https", mHostAddress, mHostPort, serverFile);
-                //mServerUri = new URL(null, "https://" + HostAddress + ":" + mHostPort + HostPath);
                 mServerUri = new URL(null, "https://" + HostAddress + ":" + mHostPort);
-                //mServerUri = new URL(null, "https://" + HostAddress);
             }
         } catch (Exception ex) {
             Logger.getInstance().log("paypal.payflow.PaymentConnection.InitServerUri(String): Caught Exception: " + getStackTraceAsString(ex),
@@ -431,44 +373,25 @@ final class PaymentConnection {
                 PayflowConstants.SEVERITY_DEBUG);
 
         try {
-            /*
-            / 07-May-2008 tsieber
-            / Changed original proxy implementation as it was determined to not thread safe and impacted other proxy
-            / http connections. Users of Java 1.4 default to a system wide proxy and a per connection
-            / was not introduced until 1.5.
-            */
-
             if (getIsProxy()) {
                 if (mIsProxy) {
-                    //String version = System.getProperty("java.version");
-                    //if (version.indexOf("1.4") != -1) {
-                    Properties sys = System.getProperties();
-                    sys.put("http.proxySet", "true");
-                    sys.put("http.proxyHost", mProxyAddress);
-                    sys.put("http.proxyPort", String.valueOf(mProxyPort));
-                    sys.put("https.proxySet", "true");
-                    sys.put("https.proxyHost", mProxyAddress);
-                    sys.put("https.proxyPort", String.valueOf(mProxyPort));
-                    System.setProperties(sys);
                     // Add TLS 1.2 support - tsieber 03/17/2017
-                    System.setProperty("https.protocols", "TLSv1.2");
-                    mServerConnection = (HttpsURLConnection) mServerUri.openConnection();
-                    Logger.getInstance().log("paypal.payflow.PaymentConnection.createConnection(String): Initialized. Using Proxy on 1.4.",
+                    SSLContext sc = SSLContext.getInstance("TLSv1.2");
+                    // Init the SSLContext with a TrustManager [] and SecureRandom ()
+                    sc.init(null, null, new java.security.SecureRandom());
+                    Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(mProxyAddress, mProxyPort));
+                    mServerConnection = (HttpsURLConnection) mServerUri.openConnection(proxy);
+                    mServerConnection.setSSLSocketFactory(sc.getSocketFactory());
+                    Logger.getInstance().log("paypal.payflow.PaymentConnection.createConnection(String): Initialized. Using Proxy.",
                             PayflowConstants.SEVERITY_INFO);
-                } else {
-
-                    //   SocketAddress addr = new
-                    //         InetSocketAddress(mProxyAddress, mProxyPort);
-                    //Proxy proxy = new Proxy(Proxy.Type.HTTP, addr);
-                    //  mServerConnection = (HttpsURLConnection) mServerUri.openConnection(proxy);
-                    //Logger.getInstance().log("paypal.payflow.PaymentConnection.createConnection(String): Initialized. Using Proxy on 1.5+.",
-                    //      PayflowConstants.SEVERITY_INFO);
-                    //    }
                 }
             } else {
-                // Add TLS 1.2 support - tsieber 03/17/2017
-                System.setProperty("https.protocols", "TLSv1.2");
+                SSLContext sc = SSLContext.getInstance("TLSv1.2");
+                // Init the SSLContext with a TrustManager [] and SecureRandom ()
+                sc.init(null, null, new java.security.SecureRandom());
                 mServerConnection = (HttpsURLConnection) mServerUri.openConnection();
+                mServerConnection.setSSLSocketFactory(sc.getSocketFactory());
+
                 Logger.getInstance().log("paypal.payflow.PaymentConnection.createConnection(String): Initialized.",
                         PayflowConstants.SEVERITY_INFO);
             }
@@ -510,8 +433,7 @@ final class PaymentConnection {
                 //Get the Hash map.
                 Hashtable clientInfoHash = mClientInfo.getClientInfoHash();
                 if (clientInfoHash != null && clientInfoHash.size() > 0) {
-                    //Iterate through the hash map to add the
-                    //appropriate headers.
+                    //Iterate through the hash map to add the appropriate headers.
                     for (int i = 0; i < clientInfoHash.size(); i++) {
                         Collection headerKeyValue = clientInfoHash.values();
                         Object valueObj[] = headerKeyValue.toArray();
@@ -538,15 +460,9 @@ final class PaymentConnection {
                     }
                 }
             }
-            //Assign the Headers to a class variable
-            //mHeaders = mServerConnection.getRequestProperties().toString() ;
-
         } catch (Exception ex) {
-               Logger.getInstance().log("paypal.payflow.PaymentConnection.CreateConnection(): Caught Exception creating connection: " + getStackTraceAsString(ex),
+            Logger.getInstance().log("paypal.payflow.PaymentConnection.CreateConnection(): Caught Exception creating connection: " + getStackTraceAsString(ex),
                     PayflowConstants.SEVERITY_FATAL);
-
-            // 04/23/07 Removed path "/transaction" TS
-            // String addlMessage = "Input Server Uri= " + "https://" + mHostAddress + ":" + mHostPort + "/" + mServerUri.getPath();
             String addlMessage = "Input Server Uri= " + mServerUri.getProtocol() + "://" + mServerUri.getHost() + ":" + mServerUri.getPort();
             ErrorObject initError = PayflowUtility.populateCommError(PayflowConstants.E_SOK_CONN_FAILED, ex,
                     PayflowConstants.SEVERITY_ERROR, getIsXmlPayRequest(),
@@ -576,7 +492,7 @@ final class PaymentConnection {
                     PayflowConstants.SEVERITY_INFO);
             initServerUri();
             Logger.getInstance().log("paypal.payflow.PaymentConnection.ConnectToServer(String): Initialized Server Uri = "
-                    + mServerUri.getProtocol() + "://" + mServerUri.getHost() + ":" + mServerUri.getPort(),
+                            + mServerUri.getProtocol() + "://" + mServerUri.getHost() + ":" + mServerUri.getPort(),
                     PayflowConstants.SEVERITY_INFO);
             Logger.getInstance().log("paypal.payflow.PaymentConnection.ConnectToServer(String): Initializing Connection Attributes.",
                     PayflowConstants.SEVERITY_INFO);
@@ -599,11 +515,7 @@ final class PaymentConnection {
             }
         } catch (Exception ex) {
             Logger.getInstance().log("paypal.payflow.PaymentConnection.ConnectToServer(String): Caught Exception: " + getStackTraceAsString(ex), PayflowConstants.SEVERITY_FATAL);
-
-            // 04/23/07 Removed path "/transaction" TS
-            // String addlMessage = "Input Server Uri = " + mServerUri.getProtocol() + "://" + mServerUri.getHost() + ":" + mServerUri.getPort() + "/" + mServerUri.getPath();
             String addlMessage = "Input Server Uri = " + mServerUri.getProtocol() + "://" + mServerUri.getHost() + ":" + mServerUri.getPort();
-
             ErrorObject initError = PayflowUtility.populateCommError(PayflowConstants.E_SOK_CONN_FAILED, ex,
                     PayflowConstants.SEVERITY_ERROR, getIsXmlPayRequest(),
                     addlMessage);
@@ -638,8 +550,6 @@ final class PaymentConnection {
                 reqStram.write(paramListBytes);
                 reqStram.close();
                 loggableHeaders.putAll(mHeaders);
-                //loggableHeaders.remove(PayflowConstants.PAYFLOWHEADER_CLIENT_TYPE);
-                //loggableHeaders.remove(PayflowConstants.PAYFLOWHEADER_CLIENT_VERSION);
                 Iterator iter = loggableHeaders.keySet().iterator();
                 String key;
                 //Dump the headers to the log file
@@ -655,9 +565,7 @@ final class PaymentConnection {
                     Logger.getInstance().log("paypal.payflow.PaymentConnection.sendToServer(String request): " + headerLog.toString()
                             , PayflowConstants.SEVERITY_DEBUG);
                 }
-
                 //Added VIT Headers to the http request.
-
                 retVal = true;
             } else {
                 ErrorObject initError = PayflowUtility.populateCommError(PayflowConstants.E_EMPTY_PARAM_LIST, null,
@@ -714,8 +622,6 @@ final class PaymentConnection {
         } catch (Exception ex) {
             Logger.getInstance().log("paypal.payflow.PaymentConnection.ReceiveResponse(): Caught Exception: " + getStackTraceAsString(ex), PayflowConstants.SEVERITY_ERROR);
 
-            // 04/23/07 Removed Path "/transaction" TS
-            // String addlMessage = "Input Server Uri = " + mServerUri.getProtocol() + "://" + mServerUri.getHost() + ":" + mServerUri.getPort() + "/" + mServerUri.getPath();
             String addlMessage = "Input Server Uri = " + mServerUri.getProtocol() + "://" + mServerUri.getHost() + ":" + mServerUri.getPort();
 
             ErrorObject initError = PayflowUtility.populateCommError(PayflowConstants.E_TIMEOUT_WAIT_RESP,
@@ -739,21 +645,7 @@ final class PaymentConnection {
             if (mServerConnection != null) {
                 mServerConnection.disconnect();
                 mServerConnection = null;
-                // Now, let's 'unset' the proxy.
-                if (mIsProxy) {
-                    String version = System.getProperty("java.version");
-                    if (version.indexOf("1.4") != -1) {
-                        Properties sys = System.getProperties();
-                        sys.put("http.proxySet", "false");
-                        sys.put("http.proxyHost", "");
-                        sys.put("http.proxyPort", "0");
-                        sys.put("https.proxySet", "false");
-                        sys.put("https.proxyHost", "");
-                        sys.put("https.proxyPort", "0");
-                        System.setProperties(sys);
-                    }
                 }
-            }
         } catch (Exception ex) {
             Logger.getInstance().log("paypal.payflow.PaymentConnection.Disconnect(): Caught Exception: " + getStackTraceAsString(ex),
                     PayflowConstants.SEVERITY_FATAL);

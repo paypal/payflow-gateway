@@ -59,15 +59,14 @@ public class DOSetEC {
 		// Payflow Pro Host Name. This is the host name for the PayPal Payment Gateway.
 		// For testing: pilot-payflowpro.paypal.com
 		// For production: payflowpro.paypal.com
-		// DO NOT use payflow.verisign.com or test-payflow.verisign.com!
 		SDKProperties.setHostAddress("pilot-payflowpro.paypal.com");
 		SDKProperties.setHostPort(443);
 		SDKProperties.setTimeOut(45);
 
 		// Logging is by default off. To turn logging on uncomment the following lines:
-		SDKProperties.setLogFileName("payflow_java.log");
-		SDKProperties.setLoggingLevel(PayflowConstants.SEVERITY_DEBUG);
-		SDKProperties.setMaxLogFileSize(1000000);
+		//SDKProperties.setLogFileName("payflow_java.log");
+		//SDKProperties.setLoggingLevel(PayflowConstants.SEVERITY_DEBUG);
+		//SDKProperties.setMaxLogFileSize(1000000);
 
 		// Uncomment the lines below and set the proxy address and port, if a proxy has
 		// to be used.
@@ -76,45 +75,35 @@ public class DOSetEC {
 
 		// Create the Data Objects.
 		// Create the User data object with the required user details.
-		UserInfo User = new UserInfo("<user>", "<vendor>", "<partner>", "<password>");
+		UserInfo user = new UserInfo("<user>", "<vendor>", "<partner>", "<password>");
 
-		// Create the Payflow Connection data object with the required connection
-		// details.
+		// Create the Payflow Connection data object with the required connection details.
 		// The PAYFLOW_HOST property is defined in the App config file.
-		PayflowConnectionData Connection = new PayflowConnectionData();
+		PayflowConnectionData connection = new PayflowConnectionData();
 
 		// Create a new Invoice data object with the Amount, Billing Address etc.
 		// details.
 		Invoice inv = new Invoice();
 		// Set Amount.
-		Currency amt = new Currency(new Double(25.12));
+		Currency amt = new Currency(new Double(25.00));
 		inv.setAmt(amt);
 		inv.setOrderDesc("This is my order description");
 
 		// **** PayPal Pay Later Service ****
 		// PayPal Pay Later is a new, convenient, and secure service that allows you to
-		// offer your
-		// customers promotional financing. Buyers that choose the promotional offer can
-		// defer
-		// payments for purchases on participating merchant web sites, allowing them to
-		// shop now and
-		// pay later.
+		// offer your customers promotional financing. Buyers that choose the promotional offer can
+		// defer payments for purchases on participating merchant web sites, allowing them to
+		// shop now and pay later.
 		// The PayPal Pay Later service allows online merchants to offer promotional
-		// financing to
-		// buyers at checkout - even if a buyer doesn't have a PayPal account.
-		// Promotional offers, such as
-		// no payments for 90 days, give merchants new and powerful ways to market to
-		// online
-		// shoppers.
+		// financing to buyers at checkout - even if a buyer doesn't have a PayPal account.
+		// Promotional offers, such as no payments for 90 days, give merchants new and powerful ways to market to
+		// online shoppers.
 		// The PayPal Pay Later service is issued by GE Money Bank, one of the world's
-		// leading
-		// providers of consumer credit.
+		// leading providers of consumer credit.
 		// **** Signing Up for PayPal Pay Later ****
 		// PayPal's new promotional financing is currently available to consumers and
-		// select merchants
-		// in the U.S. If you are a merchant and would like to add this service, please
-		// contact your sales
-		// representative for information and additional documentation.
+		// select merchants in the U.S. If you are a merchant and would like to add this service, please
+		// contact your sales representative for information and additional documentation.
 		//
 		// PayLater setPayLater = new PayLater();
 		// setPayLater.setshippingMethod("UPSGround");
@@ -133,90 +122,62 @@ public class DOSetEC {
 		// **** Performing a Standard Transaction using Express Checkout ****
 		//
 		// Express Checkout offers your customers an easy, convenient checkout
-		// experience. It lets them
-		// use shipping and billing information stored securely at PayPal to check out,
-		// so they don't have
-		// to re-enter it on your site.
+		// experience. It lets them use shipping and billing information stored securely at PayPal to check out,
+		// so they don't have to re-enter it on your site.
 		//
 		// From the perspective of website development, Express Checkout works like
-		// other Payflow Pro
-		// features. You submit transaction information to the server as name-value pair
-		// parameter
-		// strings.
+		// other Payflow Pro features. You submit transaction information to the server as name-value pair
+		// parameter strings.
 		//
 		// Create the data object for Express Checkout SET operation using ECSetRequest
 		// Data Object.
-		// ECSetRequest setRequest = new ECSetRequest("http://www.myreturnurl.com",
-		// "http://www.mycancelurl.com");
-		ECSetRequest setRequest = new ECSetRequest("http://www.paypal.com", "http://www.paypal.com");
+		ECSetRequest setRequest = new ECSetRequest("http://www.myreturnurl.com", "http://www.mycancelurl.com");
 
 		// If using Pay Later, you would create the data object as below.
-		// ECSetRequest setRequest = new ECSetRequest("http://www.myreturnurl.com",
-		// "http://www.mycancelurl.com", setPayLater);
+		//ECSetRequest setRequest = new ECSetRequest("http://www.myreturnurl.com", "http://www.mycancelurl.com", setPayLater);
 
 		// **** Performing a Reference Transaction using Express Checkout ****
 		//
 		// NOTE: You must be enabled by PayPal to use reference transactions. Contact
-		// your account manager
-		// or the sales department for more details.
+		// your account manager or the sales department for more details.
 		//
 		// See the "Using Reference Transactions with Express Checkout" guide that is
-		// supplied to you
-		// once your account is active with the feature.
+		// supplied to you once your account is active with the feature.
 
 		// *** With Making a Purchase ***
 		// Say that you have implemented Express Checkout on your website. The customer
-		// logs in to
-		// purchase an item of merchandise and chooses PayPal to pay for it. In the
-		// normal Express
-		// Checkout flow, the customer is then redirected to PayPal to log in to verify
-		// their billing
-		// information. If the customer approves payment on the Confirmation page when
-		// you are using
-		// a reference transaction, you receive the billing agreement as part of the
-		// transaction.You can
-		// use that billing agreement later to bill the customer a set amount on a
-		// recurring basis, such as
-		// once-a-month, for future purchases. The customer doesn't need to log into
-		// PayPal each time to
-		// make a payment.
+		// logs in to purchase an item of merchandise and chooses PayPal to pay for it. In the
+		// normal Express Checkout flow, the customer is then redirected to PayPal to log in to verify
+		// their billing information. If the customer approves payment on the Confirmation page when
+		// you are using a reference transaction, you receive the billing agreement as part of the
+		// transaction.You can use that billing agreement later to bill the customer a set amount on a
+		// recurring basis, such as once-a-month, for future purchases. The customer doesn't need to log into
+		// PayPal each time to make a payment.
 		//
 		// Create the data object for Express Checkout Reference Transaction SET
-		// operation
-		// with Purchase using ECSetRequest Data Object.
-		// ECSetRequest setRequest = new ECSetRequest("http://www.myreturnurl.com",
-		// "http://www.mycancelurl.com",
-		// "MerchantInitiatedBilling", "Test Description", "any", "BACustom");
+		// operation with Purchase using ECSetRequest Data Object.
+		//ECSetRequest setRequest = new ECSetRequest("http://www.myreturnurl.com", "http://www.mycancelurl.com", "MerchantInitiatedBilling", "Test Description", "any", "BACustom");
 
 		// *** Without Making a Purchase ***
 		// Typically, the customer chooses a billing agreement without making a purchase
-		// when they
-		// subscribe for merchandise they will pay for on a recurring schedule. If, for
-		// example, the
-		// customer logs in to your website to order a magazine subscription, you set up
-		// an agreement to
-		// bill the customer on a scheduled basis, say, once a month. In the billing
-		// agreement flow
-		// without purchase, the customer is redirected to PayPal to log in. On the
-		// PayPal site, they
-		// consent to the billing agreement. Next month, when you send the customer the
-		// first magazine
-		// issue, the billing agreement authorizes you to start charging the customer's
-		// PayPal account on
-		// the agreed upon recurring basis without having the customer log in to PayPal.
+		// when they subscribe for merchandise they will pay for on a recurring schedule. If, for
+		// example, the customer logs in to your website to order a magazine subscription, you set up
+		// an agreement to bill the customer on a scheduled basis, say, once a month. In the billing
+		// agreement flow without purchase, the customer is redirected to PayPal to log in. On the
+		// PayPal site, they consent to the billing agreement. Next month, when you send the customer the
+		// first magazine issue, the billing agreement authorizes you to start charging the customer's
+		// PayPal account on the agreed upon recurring basis without having the customer log in to PayPal.
 		//
 		// Create the data object for Express Checkout Reference Transaction SET
-		// operation
-		// without Purchase using ECSetBARequest Data Object.
-		// ECSetBARequest setRequest = new ECSetBARequest("http://www.myreturnurl.com",
-		// "http://www.mycancelurl.com",
-		// "MerchantInitiatedBilling", "Test Description", "any", "BACustom");
+		// operation without Purchase using ECSetBARequest Data Object.
+		//
+		// setRequest = new ECSetBARequest("http://www.myreturnurl.com", "http://www.mycancelurl.com", "MerchantInitiatedBilling", "Test Description", "any", "BACustom");
 
 		// Create the Tender object.
 		PayPalTender paypalTender = new PayPalTender(setRequest);
 
 		// Create the transaction object.
-		AuthorizationTransaction Trans = new AuthorizationTransaction(User, Connection, inv, paypalTender,
+		AuthorizationTransaction Trans = new AuthorizationTransaction(user, connection, inv, paypalTender,
 				PayflowUtility.getRequestId());
 
 		// Submit the Transaction
@@ -234,7 +195,7 @@ public class DOSetEC {
 				System.out.println("CORRELATIONID = " + TrxnResponse.getCorrelationId());
 				// If value is true, then the Request ID has not been changed and the original
 				// response
-				// of the original transction is returned.
+				// of the original transaction is returned.
 				System.out.println("DUPLICATE = " + TrxnResponse.getDuplicate());
 			}
 
@@ -270,16 +231,12 @@ public class DOSetEC {
 				// set up a test business account and personal account so you can test Express
 				// Checkout.
 				//
-				// Once you have a test business account created, create a ticket at
-				// http://www.paypal.com/mts
-				// under Contact Support and request to have your Payflow Pro (US, AU) or
-				// Websites Payments Pro
-				// Payflow Edition (UK) account modified to use the PayPal Sandbox. Provide the
-				// e-mail ID you
+				// Once you have a test business account created, create a ticket at http://www.paypal.com/mts
+				// under Contact Support and request to have your Payflow Pro (US, AU) or Websites Payments Pro
+				// Payflow Edition (UK) account modified to use the PayPal Sandbox. Provide the e-mail ID you
 				// used when you created your account on the Sandbox.
 				//
-				// Once you are notified that your account has been updated you will then need
-				// to modify the host
+				// Once you are notified that your account has been updated you will then need  to modify the host
 				// URLs of the Payflow Pro Express Checkout test servers to the URLs used by the
 				// Sandbox.
 				// For example,
@@ -293,16 +250,15 @@ public class DOSetEC {
 				String PayPalUrl = "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=";
 
 				// For Express Checkout (Reference) without Purchase.
-				// String PayPalUrl =
-				// "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_customer-billing-agreement&token=";
+				//String PayPalUrl = "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_customer-billing-agreement&token=";
 
 				PayPalUrl += Trans.getResponse().getEcSetResponse().getToken();
 
 				Runtime rt = Runtime.getRuntime();
 				Process p = null;
 				try {
-					// p = rt.exec("C:\\Program Files\\Mozilla Firefox\\firefox.exe " + PayPalUrl);
-					p = rt.exec("C:\\Program Files\\Internet Explorer\\iexplore.exe " + PayPalUrl);
+					p = rt.exec("C:\\Program Files\\Mozilla Firefox\\firefox.exe " + PayPalUrl);
+					//p = rt.exec("C:\\Program Files\\Internet Explorer\\iexplore.exe " + PayPalUrl);
 				} catch (Exception exc) {
 					/* handle exception */}
 			}

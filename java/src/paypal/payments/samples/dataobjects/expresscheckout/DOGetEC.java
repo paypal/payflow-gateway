@@ -54,39 +54,32 @@ public class DOGetEC {
 
 		// Create the Data Objects.
 		// Create the User data object with the required user details.
-
-		UserInfo User = new UserInfo("<user>", "<vendor>", "<partner>", "<password>");
+		UserInfo user = new UserInfo("<user>", "<vendor>", "<partner>", "<password>");
 
 		// Create the Payflow Connection data object with the required connection
 		// details.
 		// The PAYFLOW_HOST property is defined in the App config file.
-		PayflowConnectionData Connection = new PayflowConnectionData();
+		PayflowConnectionData connection = new PayflowConnectionData();
 
 		// Calling a GET operation is second step in PayPal Express checkout process.
-		// Once the
-		// customner has logged into his/her paypal account, selected shipping address
-		// and clicked on
-		// "Continue checkout", the PayPal server will redirect the page to the
-		// ReturnUrl you have
-		// specified in the previous SET request. To obtain the shipping details chosen
-		// by the
-		// Customer, you will then need to do a GET operation.
+		// Once the customner has logged into his/her paypal account, selected shipping address
+		// and clicked on "Continue checkout", the PayPal server will redirect the page to the
+		// ReturnUrl you have specified in the previous SET request. To obtain the shipping details chosen
+		// by the Customer, you will then need to do a GET operation.
 		//
-		// For more information on Reference Transactions, see the DOSetEC Sample for
-		// more details.
+		// For more information on Reference Transactions, see the DOSetEC Sample for more details.
 
-		// For Regular Express Checkout or Express Checkout Reference Transaction with
-		// Purchase.
+		// For Regular Express Checkout or Express Checkout Reference Transaction with Purchase.
 		ECGetRequest getRequest = new ECGetRequest("<TOKEN>");
 
 		// For Express Checkout Reference Transaction without Purchase.
-		// ECGetBARequest getRequest = new ECGetBARequest("<TOKEN>");
+		//ECGetBARequest getRequest = new ECGetBARequest("<TOKEN>");
 
 		// Create the Tender.
 		PayPalTender paypalTender = new PayPalTender(getRequest);
 
 		// Create a transaction.
-		AuthorizationTransaction Trans = new AuthorizationTransaction(User, Connection, null, paypalTender,
+		AuthorizationTransaction Trans = new AuthorizationTransaction(user, connection, null, paypalTender,
 				PayflowUtility.getRequestId());
 
 		// Submit the Transaction
