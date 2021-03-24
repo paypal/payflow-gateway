@@ -7,16 +7,10 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.SocketException;
 import java.net.*;
-import java.util.Collection;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.*;
-
-import sun.misc.BASE64Encoder;
+import java.util.Base64;
 
 /**
  * This is the Connection Class.
@@ -346,9 +340,8 @@ final class PaymentConnection {
                 PayflowConstants.SEVERITY_DEBUG);
         if (mIsProxy) {
             try {
-                BASE64Encoder encode = new BASE64Encoder();
                 String pStr = mProxyLogon + ":" + mProxyPassword;
-                String auth = "Basic" + " " + encode.encode(pStr.getBytes());
+                String auth = "Basic" + " " + Base64.getEncoder().encodeToString(pStr.getBytes());
                 mServerConnection.setRequestProperty("Proxy-Authorization", auth);
             } catch (Exception ex) {
                 Logger.getInstance().log("paypal.payflow.PaymentConnection.InitProxyInfo(): Caught Exception: " + getStackTraceAsString(ex), PayflowConstants.SEVERITY_FATAL);

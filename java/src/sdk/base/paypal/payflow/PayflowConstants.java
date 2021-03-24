@@ -59,9 +59,9 @@ public final class PayflowConstants {
      */
     protected static final String CLIENT_TYPE = "J";
     /**
-     * SDK Client Version (4000 -- V4 protocol)
+     * SDK Client Version (5000 -- V5 protocol)
      */
-    protected static final String CLIENT_VERSION = "440";
+    protected static final String CLIENT_VERSION = "501";    // <<<<< UPDATE VERSION AS NEEDED
     /**
      * SDK User Agent (Java SDK)
      */
@@ -326,7 +326,7 @@ public final class PayflowConstants {
     /**
      * represents any error occurring due to improper initialisation of system level properties
      */
-    protected static final String INIT_ERROR = "The following error occured while initialising : ";
+    protected static final String INIT_ERROR = "The following error occurred while initialising : ";
 
     /**
      * Represents the description for error if the message file is not available
