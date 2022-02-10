@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <StartupObject>PayPal.Payments.Samples.CS.DataObjects.ExpressCheckout.DODoEC</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PayflowProSDK\PayflowProSDK.csproj" />
+  </ItemGroup>
+
+</Project>

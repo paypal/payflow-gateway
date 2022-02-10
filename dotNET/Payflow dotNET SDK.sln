@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30428.66
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PFProSDK", "PFProSDK\PFProSDK.csproj", "{CE010258-E90B-4349-9BDA-C717768C9442}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SamplesCS", "SamplesCS\SamplesCS.csproj", "{73AD89A0-693B-464F-99EC-020DE7DFF591}"
-EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SamplesVB", "SamplesVB\SamplesVB.vbproj", "{5DFB23B2-BC06-496A-AA34-41488BC86F82}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9BCC3AAF-6761-49BB-B187-11B5B3315AB1}"
 	ProjectSection(SolutionItems) = preProject
@@ -17,7 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Payflow SDK Docs", "..\..\..\Sandcastle Help\Payflow SDK Docs.shfbproj", "{0A65541E-8B2C-4401-9A0C-648F6B194E3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PayflowProSDK", "PayflowProSDK\PayflowProSDK.csproj", "{8009B18A-EFBC-467D-9E86-AFBC1C7AB031}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samples", "Samples\Samples.csproj", "{3F8705C4-FE34-4759-A739-2929A9B5179B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PFProSDK", "PFProSDK\PFProSDK.csproj", "{CE010258-E90B-4349-9BDA-C717768C9442}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SamplesVB", "SamplesVB\SamplesVB.vbproj", "{5DFB23B2-BC06-496A-AA34-41488BC86F82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,22 +27,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CE010258-E90B-4349-9BDA-C717768C9442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CE010258-E90B-4349-9BDA-C717768C9442}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CE010258-E90B-4349-9BDA-C717768C9442}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CE010258-E90B-4349-9BDA-C717768C9442}.Release|Any CPU.Build.0 = Release|Any CPU
 		{73AD89A0-693B-464F-99EC-020DE7DFF591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{73AD89A0-693B-464F-99EC-020DE7DFF591}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73AD89A0-693B-464F-99EC-020DE7DFF591}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73AD89A0-693B-464F-99EC-020DE7DFF591}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8009B18A-EFBC-467D-9E86-AFBC1C7AB031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8009B18A-EFBC-467D-9E86-AFBC1C7AB031}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8009B18A-EFBC-467D-9E86-AFBC1C7AB031}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8009B18A-EFBC-467D-9E86-AFBC1C7AB031}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F8705C4-FE34-4759-A739-2929A9B5179B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F8705C4-FE34-4759-A739-2929A9B5179B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F8705C4-FE34-4759-A739-2929A9B5179B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F8705C4-FE34-4759-A739-2929A9B5179B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE010258-E90B-4349-9BDA-C717768C9442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE010258-E90B-4349-9BDA-C717768C9442}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE010258-E90B-4349-9BDA-C717768C9442}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE010258-E90B-4349-9BDA-C717768C9442}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5DFB23B2-BC06-496A-AA34-41488BC86F82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5DFB23B2-BC06-496A-AA34-41488BC86F82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DFB23B2-BC06-496A-AA34-41488BC86F82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DFB23B2-BC06-496A-AA34-41488BC86F82}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0A65541E-8B2C-4401-9A0C-648F6B194E3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A65541E-8B2C-4401-9A0C-648F6B194E3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0A65541E-8B2C-4401-9A0C-648F6B194E3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0A65541E-8B2C-4401-9A0C-648F6B194E3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

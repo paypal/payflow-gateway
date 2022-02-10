@@ -19,14 +19,15 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>SamplesCS</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-    <StartupObject>PayPal.Payments.Samples.CS.DataObjects.BasicTransactions.DOInquiry</StartupObject>
+    <StartupObject>PayPal.Payments.Samples.CS.DataObjects.ExpressCheckout.DODoEC</StartupObject>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>0.0</OldToolsVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -41,7 +42,6 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -230,9 +230,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PFProSDK\PFProSDK.csproj">
-      <Project>{ce010258-e90b-4349-9bda-c717768c9442}</Project>
-      <Name>PFProSDK</Name>
+    <ProjectReference Include="..\PayflowProSDK\PayflowProSDK.csproj">
+      <Project>{8009b18a-efbc-467d-9e86-afbc1c7ab031}</Project>
+      <Name>PayflowProSDK</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
