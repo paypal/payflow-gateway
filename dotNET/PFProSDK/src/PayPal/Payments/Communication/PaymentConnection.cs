@@ -659,7 +659,7 @@ namespace PayPal.Payments.Communication
 				{
 					ConnContext.AddError(InitError);
 				}
-                Logger.Instance.Log("PayPal.Payments.Communication.PaymentConnection.SendToServer(String): InitError: ", PayflowConstants.SEVERITY_DEBUG);
+                Logger.Instance.Log("PayPal.Payments.Communication.PaymentConnection.SendToServer(String): InitError: " + Ex.Message, PayflowConstants.SEVERITY_DEBUG);
 			}
 			finally
 			{
