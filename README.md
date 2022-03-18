@@ -15,7 +15,7 @@ See the [Payflow Gateway Developer's Guide](https://developer.paypal.com/docs/pa
 
 ## XMLPay
 
-The original XMLPay Developer Guide is no longer available, but the XML Schema's for XMLPay are available and the general information for the data can be found in the [Payflow Developer's Guide](https://developer.paypal.com/api/nvp-soap/payflow/integration-guide/).
+The original XMLPay Developer Guide is no longer available, but the XML Schema for Payflow's XMLPay is available and the general information for the data can be found in the [Payflow Developer's Guide](https://developer.paypal.com/api/nvp-soap/payflow/integration-guide/).
 
 ## General Information
 
