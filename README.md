@@ -13,6 +13,10 @@ The files in the SDK Binaries folder are the last builds of the v4 branch, but d
 
 See the [Payflow Gateway Developer's Guide](https://developer.paypal.com/docs/payflow/integration-guide/) for more info.
 
+## XMLPay
+
+The original XMLPay Developer Guide is no longer available, but the XML Schema's for XMLPay are available and the general information for the data can be found in the [Payflow Developer's Guide](https://developer.paypal.com/api/nvp-soap/payflow/integration-guide/).
+
 ## General Information
 
 For information on changes to the Payflow Gateway, see [New Features](https://developer.paypal.com/docs/payflow/integration-guide/new-features/) and [Revision History](https://developer.paypal.com/docs/payflow/integration-guide/reference/revision-history/).
