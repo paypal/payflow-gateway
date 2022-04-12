@@ -8,8 +8,8 @@
         <property name="BUILD_DIR" value="${V5JAVA_HOME}/Releases/Java/dist/classes"/>
         <property name="RELEASE_DIR" value="${V5JAVA_HOME}/Releases/Java/dist/release"/>
         <property name="CLIENT_PACKAGE_DIR" value="${RELEASE_DIR}/payflow"/>
-        <property name="RELEASE_ZIP" value="Payflow_SDK_for_Java_v5.zip"/>
-        <property name="RELEASE_TAR" value="Payflow_SDK_for_Java_v5.tar"/>
+        <property name="RELEASE_ZIP" value="Payflow_SDK_for_Java_v5_02.zip"/>
+        <property name="RELEASE_TAR" value="Payflow_SDK_for_Java_v5-02.tar"/>
         <property name="RELEASE_GZIP" value="${RELEASE_TAR}.gz"/>
         <property name="JAR_NAME" value="payflow.jar"/>
         <!--<property name="TOMCAT_HOME" value="C:\apache-tomcat-5.5.26\common\lib\"/>-->
@@ -39,7 +39,7 @@
         <echo message="Compiling Payflow Java classes ..."/>
         <javac destdir="${BUILD_DIR}/sdk"
                srcdir="${V5JAVA_HOME}/src/sdk/base;${V5JAVA_HOME}/src/sdk/dataobjects;${V5JAVA_HOME}/src/sdk/transactions"
-               classpath="${CLASSPATH}" includeantruntime="false" deprecation="on" source="1.8" target="1.8">
+               classpath="${CLASSPATH}" includeantruntime="false" deprecation="on" source="1.7" target="1.7">
             <include name="**/*.java"/>
         </javac>
     </target>

@@ -10298,8 +10298,13 @@
             </summary>
         </member>
         <member name="F:PayPal.Payments.DataObjects.Invoice.mVMaid">
-            <summary>a
+            <summary>
              MVaid
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.Invoice.mPar">
+            <summary>
+             Par
             </summary>
         </member>
         <member name="M:PayPal.Payments.DataObjects.Invoice.#ctor">
@@ -11173,6 +11178,7 @@
         </member>
         <!-- Badly formed XML comment ignored for member "P:PayPal.Payments.DataObjects.Invoice.CitDate" -->
         <!-- Badly formed XML comment ignored for member "P:PayPal.Payments.DataObjects.Invoice.VMaid" -->
+        <!-- Badly formed XML comment ignored for member "P:PayPal.Payments.DataObjects.Invoice.Par" -->
         <member name="M:PayPal.Payments.DataObjects.Invoice.AddAdviceDetailItem(PayPal.Payments.DataObjects.AdviceDetail)">
             <summary>
             Used for advice detail items.
@@ -12827,7 +12833,7 @@
             <item><term>AUTHCODE</term><description>VoiceAuthTransaction,  TransactionResponse</description><description>AuthCode</description><description>String</description></item>
             <item><term>AUTHENTICATION_ID</term><description>BuyerAuthResponse</description><description><see cref='P:PayPal.Payments.DataObjects.BuyerAuthResponse.Authentication_Id'>Authentication_Id</see></description><description>String</description></item>
             <item><term>AUTHENTICATION_STATUS</term><description>BuyerAuthResponse</description><description><see cref='P:PayPal.Payments.DataObjects.BuyerAuthResponse.Authentication_Status'>Authentication_Status</see></description><description>String</description></item>
-            <item><term>AUTHTYPE</term><description>ACHTender</description><description><see cref='!:ACHTender.AuthType'>AuthType</see></description><description>String</description></item>
+            <item><term>AUTHTYPE</term><description>ACHTender</description><description><see cref='!:AACHTender.'>AuthType</see></description><description>String</description></item>
             <item><term>AVSADDR</term><description>TransactionResponse</description><description><see cref='P:PayPal.Payments.DataObjects.TransactionResponse.AVSAddr'>AVSAddr</see></description><description>String</description></item>
             <item><term>AVSZIP</term><description>TransactionResponse</description><description><see cref='P:PayPal.Payments.DataObjects.TransactionResponse.AVSZip'>AVSZip</see></description><description>String</description></item>
             <item><term>BA_CUSTOM</term><description>ECSetRequest</description><description><see cref='P:PayPal.Payments.DataObjects.ECSetRequest.BA_Custom'>BA_Custom</see></description><description>String</description></item>
@@ -13087,7 +13093,7 @@
             <item><term>TRXRESPMSG</term><description>RecurringResponse</description><description><see cref='P:PayPal.Payments.DataObjects.RecurringResponse.TrxRespMsg'>TrxRespMsg</see></description><description>String</description></item>
             <item><term>TRXRESULT</term><description>RecurringResponse</description><description><see cref='P:PayPal.Payments.DataObjects.RecurringResponse.TrxResult'>TrxResult</see></description><description>String</description></item>
             <item><term>TRXTYPE</term><description>Value is set based on the Transaction object used:SaleTransaction, CreditTransaction, VoidTransaction, CaptureTransaction etc.</description><description>TrxType</description><description>String</description></item>
-            <item><term>TXID</term><description>BuyerAuthResponse</description><description><see cref='!:BuyerAuthResponse.TxId'>TxId</see></description><description>String</description></item>
+            <item><term>TXID</term><description>BuyerAuthResponse</description><description><see cref='P:PayPal.Payments.DataObjects.TransactionResponse.TxId'>TxId</see></description><description>String</description></item>
             <item><term>USER</term><description>UserInfo</description><description></description><description>String</description></item>
             <item><term>USER1</term><description>UserItem</description><description><see cref='P:PayPal.Payments.DataObjects.UserItem.UserItem1'>UserItem1</see></description><description>String</description></item>
             <item><term>USER2</term><description>UserItem</description><description><see cref='P:PayPal.Payments.DataObjects.UserItem.UserItem2'>UserItem2</see></description><description>String</description></item>
@@ -17702,7 +17708,7 @@
              UserItem nUser = new UserItem();
              
              //Add information to user item.
-             nUser.UserItem1 = "tUSER1";
+             nUser.UserItem1 = "TUSER1";
              nUser.UserItem2 = "TUSER2";
              
              //Add line item to invoice.

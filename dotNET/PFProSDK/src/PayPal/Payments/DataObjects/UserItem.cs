@@ -31,7 +31,7 @@ namespace PayPal.Payments.DataObjects
     ///	 UserItem nUser = new UserItem();
     ///	 
     ///	 //Add information to user item.
-    ///	 nUser.UserItem1 = "tUSER1";
+    ///	 nUser.UserItem1 = "TUSER1";
     ///	 nUser.UserItem2 = "TUSER2";
     ///	 
     ///	 //Add line item to invoice.

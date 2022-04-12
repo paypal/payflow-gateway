@@ -94,6 +94,7 @@ public class Invoice extends BaseRequestDataObject {
     private String scaExemption;
     private String citDate;
     private String vMaid;
+    private String par;
 
     /**
      * Constructor.This is a default constructor which does not take any parameters.
@@ -314,6 +315,7 @@ public class Invoice extends BaseRequestDataObject {
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_SCAEXEMPTION, scaExemption));
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_CITDATE, citDate));
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_VMAID, vMaid));
+            super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_PAR, par));
 
 
             if (billTo != null) {
@@ -1762,6 +1764,26 @@ public class Invoice extends BaseRequestDataObject {
      */
     public String getVMaid() {
         return vMaid;
+    }
+
+    /**
+     * Sets the PAR
+     *
+     * @param par String
+     *              <p>Maps to Payflow Parameter: PAR</p>
+     */
+    public void setPar(String par) {
+        this.par = par;
+    }
+
+    /**
+     * Gets the Par
+     *
+     * @return par String
+     * <p>Maps to Payflow Parameter: PAR</p>
+     */
+    public String getPar() {
+        return par;
     }
 }
 

@@ -341,11 +341,14 @@ namespace PayPal.Payments.DataObjects
 		///CitiDate
 		///</summary>
 		private String mCitDate;
-		///<summary>a
+		///<summary>
 		/// MVaid
 		///</summary>
 		private String mVMaid;
-
+		///<summary>
+		/// Par
+		///</summary>
+		private String mPar;
 		#endregion
 
 		#region "Constructors"
@@ -1446,12 +1449,28 @@ namespace PayPal.Payments.DataObjects
 		///	</para>
 		///	<para> Visa only. Visa Merchant Authentication ID assigned by Visa EU.</para>
 		/// <para>Maps to Payflow Parameter:</para>
-		/// <code>VMaid</code>
+		/// <code>VMAID</code>
 		/// </remarks>
 		public String VMaid
 		{
 			get { return mVMaid; }
 			set { mVMaid = value; }
+		}
+
+		/// Gets, Sets  Par.
+		/// </summary>
+		/// <remarks>
+		///	<para> Payment Account Reference
+		///	</para>
+		///	<para> American Express only. The Payment Account Reference (PAR) is a non-financial reference number assigned to each unique Primary Account Number (PAN) and mapped to all its affiliated Payment Tokens. 
+		///		For Merchants that encounter both PAN and Token transactions, PAR provides the ability to link both types of Transactions and activities for a card account.</para>
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>PAR/code>
+		/// </remarks>
+		public String Par
+		{
+			get { return mPar; }
+			set { mPar = value; }
 		}
 		#endregion
 
@@ -1751,6 +1770,7 @@ namespace PayPal.Payments.DataObjects
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_SCAEXEMPTION, mSCAExemption));
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_CITDATE, mCitDate));
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_VMAID, mVMaid));
+				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_PAR, mPar));
 
 
 

@@ -43,12 +43,13 @@ public class BaseTender extends BaseRequestDataObject {
     private String authType;
     /**
      * Gets the checkNumber.
-     *  * <p>
+     * <p>
      * For ACH - The check serial number. Required for POP, ARC, and RCK.
-     * For TeleCheck - Account holder's next unused (available) check number.
+     * For TeleCheck - Account holder's next unused (available) check number.</p>
      *
      * @return chkNum String
-     *  </p><p> Maps to Payflow Parameter: CHKNUM</p>
+     *
+     *  <p> Maps to Payflow Parameter: CHKNUM </p>
      */
     public String getChkNum() {
         return chkNum;
@@ -56,7 +57,7 @@ public class BaseTender extends BaseRequestDataObject {
 
     /**
      * Sets the check Number.
-     *  * <p>
+     * <p>
      * For ACH - The check serial number. Required for POP, ARC, and RCK.
      * For TeleCheck - Account holder's next unused (available) check number.</p>
      *
@@ -88,9 +89,9 @@ public class BaseTender extends BaseRequestDataObject {
      *
      * P - Personal
      * C - Company
-     *
+     * </p>
      * @return chkNum String
-     *  </p><p> Maps to Payflow Parameter: CHKTYPE</p>
+     *  <p> Maps to Payflow Parameter: CHKTYPE</p>
      */
     public String getChkType() {
         return chkType;
