@@ -169,7 +169,6 @@ Namespace PayPal.Payments.Samples.VB.DataObjects.BasicTransactions
             ' from your merchant bank.  Refer to the Payflow Pro Developer’s Guide
             ' and consult your Internet Merchant Bank on what parameters (if any) you can use.
             ' Some of the parameters could include:
-            ' Inv.Recurring = "Y";
             ' Inv.TaxExempt = "Y";
 
             ' *** Create Level 2/3 Data for Purchase Card ***
@@ -318,6 +317,7 @@ Namespace PayPal.Payments.Samples.VB.DataObjects.BasicTransactions
             ' Sending this fields could help in obtaining a lower discount rate from your Internet merchant Bank.
             ' CVV2 is not required when performing a Swipe transaction as the card is present.
             CC.Cvv2 = "123"
+
             ' Name on Credit Card is optional and not used as part of the authorization.
             ' Also, this field populates the NAME field which is the same as FIRSTNAME, so if you
             ' are already populating first name, do not use this field.
@@ -331,7 +331,7 @@ Namespace PayPal.Payments.Samples.VB.DataObjects.BasicTransactions
             ' Example: 
             ' CITI (CIT Initial) - Signifies that the merchant Is storing the cardholder credentials for the first time in anticipation of future 
             ' stored credential transactions. Example: A cardholder sets up a customer profile for future purchases. 
-            'CC.CardonFile = "CITI"
+            CC.CardonFile = "CITI"
 
             ' *** Create a new Tender - Card Tender data object. ***
             Dim Card As New CardTender(CC)  ' credit card

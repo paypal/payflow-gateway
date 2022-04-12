@@ -1,5 +1,11 @@
 ### IMPORTANT: </p>THIS VERSION IS NOT 100%  COMPATIBLE WITH OLDER VERSIONS AS SOME OF THE OBJECTS AND THEIR LOCATIONS HAVE MOVED.
 
+## 5.0.2 (2022-03-30)
+
+#### Changes
+* Fixed issue where `RecurringResponse` object was not returning all available values in the response.
+* Added `SCAExemption`, `CitDate` and `VMaid` under the `Invoice` object to support Strong Customer Authentication.
+
 ## 5.0.1 (2021-03-23)
 
 #### Changes

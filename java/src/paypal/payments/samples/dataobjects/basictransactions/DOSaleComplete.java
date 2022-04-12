@@ -184,15 +184,6 @@ public class DOSaleComplete {
 		inv.setComment1("Comment1");
 		inv.setComment2("Comment2");
 
-		// There are additional Invoice parameters that could assist you in obtaining a
-		// better rate
-		// from your merchant bank. Refer to the Payflow Pro Developer's Guide
-		// and consult your Internet Merchant Bank on what parameters (if any) you can
-		// use.
-		// Some of the parameters could include:
-		inv.setRecurring("Y");
-		// inv.setTaxExempt("Y");
-
 		// *** Set the Billing Address details. ***
 		//
 		// The billing details below except for Street and Zip are for reporting
@@ -209,14 +200,10 @@ public class DOSaleComplete {
 		bill.setBillToLastName("Smith");
 		bill.setBillToCompanyName("Joe's Hardware");
 
-		// It is highly suggested that you pass at minimum Street and Zip for AVS
-		// response.
-		// However, AVS is only supported by US banks and some foreign banks. See the
-		// Payflow
-		// Developer's Guide for more information. Sending these fields could help in
-		// obtaining
-		// a lower discount rate from your Internet merchant Bank. Consult your bank for
-		// more information.
+		// It is highly suggested that you pass at minimum Street and Zip for AVS response.
+		// However, AVS is only supported by US banks and some foreign banks. See the Payflow
+		// Developer's Guide for more information. Sending these fields could help in obtaining
+		// a lower discount rate from your Internet merchant Bank. Consult your bank for more information.
 
 		bill.setBillToStreet("123 Main St.");
 		// Secondary street address.
@@ -296,17 +283,11 @@ public class DOSaleComplete {
 		// inv.CustomerInfo = CustInfo;
 
 		// *** Create Level 2/3 Data for Purchase Card ***
-		// PayPal Payment Services supports passing Purchasing Card Level 2 information
-		// (such as
-		// purchase order number, tax amount, and charge description) in the settlement
-		// file.
-		// If additional required invoice information and line item details are included
-		// in the transaction,
-		// PayPal formats Purchasing Card Level 3 information in an appropriate format,
-		// for example,
-		// EDI (Electronic Data Interchange) 810 format as required by American Express
-		// during
-		// settlement processing.
+		// PayPal Payment Services supports passing Purchasing Card Level 2 information (such as
+		// purchase order number, tax amount, and charge description) in the settlement file.
+		// If additional required invoice information and line item details are included in the transaction,
+		// PayPal formats Purchasing Card Level 3 information in an appropriate format, for example,
+		// EDI (Electronic Data Interchange) 810 format as required by American Express during settlement processing.
 
 		//// Create a line item.
 		// LineItem item = new LineItem();
@@ -330,14 +311,11 @@ public class DOSaleComplete {
 		// inv.addLineItem(item1);
 
 		// *** Send User fields ***
-		// You can send up to ten string type parameters to store temporary data (for
-		// example, variables,
-		// session IDs, order numbers, and so on). These fields will be echoed back
-		// either via API response
+		// You can send up to ten string type parameters to store temporary data (for example, variables,
+		// session IDs, order numbers, and so on). These fields will be echoed back either via API response
 		// or as part of the Silent / Return post if using the hosted checkout page.
 		//
-		// Note: UserItem1 through UserItem10 are not displayed to the customer and are
-		// not stored in
+		// Note: UserItem1 through UserItem10 are not displayed to the customer and are not stored in
 		// the PayPal transaction database.
 		//
 		// UserItem nUser = new UserItem();
@@ -368,6 +346,17 @@ public class DOSaleComplete {
 		 * However, you are not allowed to store this data within your local database.
 		 */
 		cc.setCvv2("123");
+
+		/* Card on File: Stored Credential
+		 * A stored credential is information, including, but not limited to, an account number or a payment token.
+		 * It is stored by a merchant, its agent, a payment facilitator or a staged digital wallet operator to process future transactions for a cardholder.
+		 * Refer to the Payflow Gateway Developer Guide for more information.
+		 *
+		 * Example:
+		 * CITI (CIT Initial) - Signifies that the merchant is storing the cardholder credentials for the first time in anticipation of future
+		 * stored credential transactions. Example: A cardholder sets up a customer profile for future purchases.
+		 */
+		cc.setCardOnFile("CITI");
 
 		// *** Create a new Tender - Card Tender data object. ***
 		CardTender card = new CardTender(cc); // credit card

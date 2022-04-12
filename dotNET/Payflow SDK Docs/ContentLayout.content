@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Topics>
+  <Topic id="560a6b31-acc3-49c1-9659-71770df29342" visible="True" isDefault="true" title="Welcome to the Payflow Gateway .NET SDK">
+    <HelpKeywords>
+      <HelpKeyword index="K" term="Welcome" />
+    </HelpKeywords>
+  </Topic>
+  <Topic id="df400d3a-1030-4d72-865c-96b23b9f0f55" visible="True" isExpanded="true" title="Version History">
+    <HelpKeywords>
+      <HelpKeyword index="K" term="version, history" />
+    </HelpKeywords>
+    <Topic id="b2509c1b-9f06-4cd2-9497-3d835ae42a01" visible="True" title="Version 5.0.0">
+      <HelpKeywords>
+        <HelpKeyword index="K" term="version, 5.0.0" />
+      </HelpKeywords>
+    </Topic>
+    <Topic id="78abef13-b7ae-4d58-ae46-66be2d107624" visible="True" isSelected="true" title="Version 5.0.2">
+      <HelpKeywords>
+        <HelpKeyword index="K" term="version, 5.0.2" />
+      </HelpKeywords>
+    </Topic>
+    <Topic id="c5220611-8086-4202-ba6e-a4d550c777c5" visible="True" title="GNU General Public License">
+      <HelpKeywords>
+        <HelpKeyword index="K" term="License, GPL, GNU" />
+      </HelpKeywords>
+    </Topic>
+  </Topic>
+</Topics>

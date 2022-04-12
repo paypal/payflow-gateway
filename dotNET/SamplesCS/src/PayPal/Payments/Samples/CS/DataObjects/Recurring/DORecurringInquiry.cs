@@ -26,7 +26,7 @@ namespace PayPal.Payments.Samples.CS.DataObjects.Recurring
 			// Create the Data Objects.
 			// Create the User data object with the required user details.
 			UserInfo User = new UserInfo("<user>", "<vendor>", "<partner>", "<password>");
-						
+
 			// Create the Payflow  Connection data object with the required connection details.
 			// The PAYFLOW_HOST property is defined in the App config file.
 			PayflowConnectionData Connection = new PayflowConnectionData();
@@ -36,8 +36,6 @@ namespace PayPal.Payments.Samples.CS.DataObjects.Recurring
 			// To show payment history instead of Profile details, change to "Y".
 			// To view "Optional Transactions", use 'O'.
 			RecurInfo.PaymentHistory = "N";
-
-			///////////////////////////////////////////////////////////////////
 
 			// Create a new Recurring Inquiry Transaction.
 			RecurringInquiryTransaction Trans = new RecurringInquiryTransaction(
@@ -54,7 +52,6 @@ namespace PayPal.Payments.Samples.CS.DataObjects.Recurring
 				if (TrxnResponse != null)
 				{
 					Console.WriteLine("RESULT = " + TrxnResponse.Result);
-					Console.WriteLine("RESPMSG = " + TrxnResponse.RespMsg);
 				}
 
 				// Get the Recurring Response parameters.
@@ -68,13 +65,19 @@ namespace PayPal.Payments.Samples.CS.DataObjects.Recurring
 					{
 						Console.WriteLine("STATUS = " + RecurResponse.Status);
 						Console.WriteLine("PROFILENAME = " + RecurResponse.ProfileName);
+						Console.WriteLine("CREATIONDATE = " + RecurResponse.CreationDate);
+						Console.WriteLine("LASTCHANGED = " + RecurResponse.LastChangedDate);
 						Console.WriteLine("START = " + RecurResponse.Start);
 						Console.WriteLine("TERM = " + RecurResponse.Term);
 						Console.WriteLine("PAYMENTSLEFT = " + RecurResponse.PaymentsLeft);
 						Console.WriteLine("NEXTPAYMENT = " + RecurResponse.NextPayment);
+						Console.WriteLine("NEXTPAYMENTNUM = " + RecurResponse.NextPaymentNumber);
 						Console.WriteLine("PAYPERIOD = " + RecurResponse.PayPeriod);
+						Console.WriteLine("RPSTATE = " + RecurResponse.RPState);
+						Console.WriteLine("FREQUENCY = " + RecurResponse.Frequency);	
 						Console.WriteLine("TENDER = " + RecurResponse.Tender);
 						Console.WriteLine("AMT = " + RecurResponse.Amt);
+						Console.WriteLine("CURRENCY = " + RecurResponse.Currency);	
 						Console.WriteLine("ACCT = " + RecurResponse.Acct);
 						Console.WriteLine("EXPDATE = " + RecurResponse.ExpDate);
 						Console.WriteLine("AGGREGATEAMT = " + RecurResponse.AggregateAmt);
@@ -83,10 +86,14 @@ namespace PayPal.Payments.Samples.CS.DataObjects.Recurring
 						Console.WriteLine("NUMFAILPAYMENTS = " + RecurResponse.NumFailPayments);
 						Console.WriteLine("RETRYNUMDAYS = " + RecurResponse.RetryNumDays);
 						Console.WriteLine("END = " + RecurResponse.End);
-						Console.WriteLine("FIRSTNAME = " + RecurResponse.Name);
+						Console.WriteLine("FIRSTNAME = " + RecurResponse.FirstName);
 						Console.WriteLine("LASTNAME = " + RecurResponse.LastName);
 						Console.WriteLine("STREET = " + RecurResponse.Street);
+						Console.WriteLine("CITY = " + RecurResponse.City);
+						Console.WriteLine("STATE = " + RecurResponse.State);
 						Console.WriteLine("ZIP = " + RecurResponse.Zip);
+						Console.WriteLine("PHONENUM = " + RecurResponse.PhoneNum);
+						Console.WriteLine("EMAIL = " + RecurResponse.Email);
 					} 
 					else 
 					{

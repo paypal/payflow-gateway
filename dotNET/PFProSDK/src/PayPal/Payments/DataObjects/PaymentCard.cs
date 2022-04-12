@@ -47,18 +47,25 @@ namespace PayPal.Payments.DataObjects
         /// </summary>
         private String mTxId;
 
+		/// <summary>
+		/// Payment Account Reference
+		/// </summary>
+		private String mParId;
 
-        #endregion
 
-        #region "Constructors"
 
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        /// <param name="Acct">Card number</param>
-        /// <param name="ExpDate">Card expiry date</param>
-        /// <remarks>Abstract class. Instance cannot be created directly.</remarks>
-        public PaymentCard(String Acct, String ExpDate) : base(Acct)
+
+		#endregion
+
+		#region "Constructors"
+
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="Acct">Card number</param>
+		/// <param name="ExpDate">Card expiry date</param>
+		/// <remarks>Abstract class. Instance cannot be created directly.</remarks>
+		public PaymentCard(String Acct, String ExpDate) : base(Acct)
 		{
 			mExpDate = ExpDate;
 		}
@@ -136,14 +143,28 @@ namespace PayPal.Payments.DataObjects
             set { mTxId = value; }
         }
 
-        #endregion
+		/// <summary>
+		/// Gets, Sets PAR
+		/// </summary>
+		/// <remarks>
+		/// Reference number assigned to each unique Primary Account Number (PAN).
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>PAR</code>
+		/// </remarks>
+		public String ParId
+		{
+			get { return mParId; }
+			set { mParId = value; }
+		}
 
-        #region "Core functions"
+		#endregion
 
-        /// <summary>
-        /// Generates the transaction request.
-        /// </summary>
-        internal override void GenerateRequest()
+		#region "Core functions"
+
+		/// <summary>
+		/// Generates the transaction request.
+		/// </summary>
+		internal override void GenerateRequest()
 		{
 			try
 			{

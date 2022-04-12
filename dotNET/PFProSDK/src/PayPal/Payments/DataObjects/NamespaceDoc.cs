@@ -24,7 +24,7 @@ namespace PayPal.Payments.DataObjects
 	/// <item><term>AUTHCODE</term><description>VoiceAuthTransaction,  TransactionResponse</description><description>AuthCode</description><description>String</description></item>
 	/// <item><term>AUTHENTICATION_ID</term><description>BuyerAuthResponse</description><description><see cref='BuyerAuthResponse.Authentication_Id'>Authentication_Id</see></description><description>String</description></item>
 	/// <item><term>AUTHENTICATION_STATUS</term><description>BuyerAuthResponse</description><description><see cref='BuyerAuthResponse.Authentication_Status'>Authentication_Status</see></description><description>String</description></item>
-	/// <item><term>AUTHTYPE</term><description>ACHTender</description><description><see cref='ACHTender.AuthType'>AuthType</see></description><description>String</description></item>
+	/// <item><term>AUTHTYPE</term><description>ACHTender</description><description><see cref='AACHTender.'>AuthType</see></description><description>String</description></item>
 	/// <item><term>AVSADDR</term><description>TransactionResponse</description><description><see cref='TransactionResponse.AVSAddr'>AVSAddr</see></description><description>String</description></item>
 	/// <item><term>AVSZIP</term><description>TransactionResponse</description><description><see cref='TransactionResponse.AVSZip'>AVSZip</see></description><description>String</description></item>
 	/// <item><term>BA_CUSTOM</term><description>ECSetRequest</description><description><see cref='ECSetRequest.BA_Custom'>BA_Custom</see></description><description>String</description></item>
@@ -60,10 +60,11 @@ namespace PayPal.Payments.DataObjects
 	/// <item><term>CARDTYPE</term><description>TransactionResponse</description><description><see cref='TransactionResponse.CardType'>CardType</see></description><description>String</description></item>
 	/// <item><term>CATTYPE</term><description>Devices</description><description><see cref='Devices.CatType'>CatType</see></description><description>String</description></item>
 	/// <item><term>CAVV</term><description>BuyerAuthResponse</description><description><see cref='BuyerAuthResponse.CAVV'>CAVV</see></description><description>String</description></item>
- 	/// <item><term>CCTRANSID</term><description>TransactionResponse</description><description><see cref='TransactionResponse.CCTransId'>CCTransId</see></description><description>String</description></item>
+	/// <item><term>CCTRANSID</term><description>TransactionResponse</description><description><see cref='TransactionResponse.CCTransId'>CCTransId</see></description><description>String</description></item>
 	/// <item><term>CCTRANS_POSDATA</term><description>TransactionResponse</description><description><see cref='TransactionResponse.CCTrans_POSData'>CCTrans_POSData</see></description><description>String</description></item>
 	/// <item><term>CHKNUM</term><description>ACHTender, CheckTender, CardTender</description><description>ChkNum</description><description>String</description></item>
 	/// <item><term>CHKTYPE</term><description>ACHTender, CheckTender, CardTender</description><description>ChkType</description><description>String</description></item>
+	/// <item><term>CITDATE</term><description>Invoice</description><description><see cref='Invoice.CitDate'>CitDate</see></description><description>String</description></item>
 	/// <item><term>COMMCARD</term><description>PurchaseCard</description><description></description><description>String</description></item>
 	/// <item><term>COMMCODE</term><description>Invoice</description><description><see cref='Invoice.CommCode'>CommCode</see></description><description>String</description></item>
 	/// <item><term>COMMENT1</term><description>Invoice</description><description><see cref='Invoice.Comment1'>Comment1</see></description><description>String</description></item>
@@ -188,8 +189,10 @@ namespace PayPal.Payments.DataObjects
 	/// <item><term>P_TRANSTATEn</term><description>RecurringResponse</description><description><see cref='RecurringResponse.InquiryParams'>InquiryParams</see></description><description>String</description></item>
 	/// <item><term>P_TRANSTIMEn</term><description>RecurringResponse</description><description><see cref='RecurringResponse.InquiryParams'>InquiryParams</see></description><description>String</description></item>
 	/// <item><term>PAGESTYLE</term><description>ECSetRequest</description><description><see cref='ECSetRequest.PageStyle'>PageStyle</see></description><description>String</description></item>
+	/// <item><term>PAR</term><description>CreditCard</description><description></description><description>String</description></item>
 	/// <item><term>PAREQ</term><description>BuyerAuthResponse</description><description><see cref='BuyerAuthResponse.PaReq'>PaReq</see></description><description>String</description></item>
 	/// <item><term>PARES</term><description>BuyerAuthVATransaction</description><description></description><description>String</description></item>
+	/// <item><term>PARID</term><description>TransactionResponse</description><description><see cref='TransactionResponse.ParId'>ParId</see ></description><description>String</description></item >
 	/// <item><term>PARTIALAUTH</term><description>AuthorizationTransaction</description><description></description><description>String</description></item>
 	/// <item><term>PARTNER</term><description>UserInfo</description><description></description><description>String</description></item>
 	/// <item><term>PAYERID</term><description>ECDoRequest ,ECGetResponse</description><description>PayerId</description><description>String</description></item>
@@ -239,6 +242,7 @@ namespace PayPal.Payments.DataObjects
 	/// <item><term>RETURNURL</term><description>ECSetRequest</description><description><see cref='ECSetRequest.ReturnURL'>ReturnURL</see></description><description>String</description></item>
 	/// <item><term>RPREF</term><description>RecurringResponse</description><description><see cref='RecurringResponse.RPRef'>RPRef</see></description><description>String</description></item>
 	/// <item><term>RRN</term><description>TransactionResponse</description><description><see cref='TransactionResponse.Rrn'>Rrn</see></description><description>String</description></item>
+	/// <item><term>SCAEXEMPTION</term><description>Invoice</description><description><see cref='Invoice.SCAExemption'>SCAExemption</see></description><description>String</description></item>
 	/// <item><term>SECURETOKEN</term><description>TransactionResponse</description><description><see cref='TransactionResponse.SecureToken'>SecureToken</see></description><description>String</description></item>
 	/// <item><term>SECURETOKENID</term><description>TransactionResponse</description><description><see cref='TransactionResponse.SecureTokenId'>SecureTokenId</see></description><description>String</description></item>
 	/// <item><term>SETTLEAMT</term><description>ECDoResponse</description><description><see cref='ECDoResponse.SettleAmt'>SettleAmt</see></description><description>String</description></item>
@@ -280,7 +284,7 @@ namespace PayPal.Payments.DataObjects
 	/// <item><term>TRXRESPMSG</term><description>RecurringResponse</description><description><see cref='RecurringResponse.TrxRespMsg'>TrxRespMsg</see></description><description>String</description></item>
 	/// <item><term>TRXRESULT</term><description>RecurringResponse</description><description><see cref='RecurringResponse.TrxResult'>TrxResult</see></description><description>String</description></item>
 	/// <item><term>TRXTYPE</term><description>Value is set based on the Transaction object used:SaleTransaction, CreditTransaction, VoidTransaction, CaptureTransaction etc.</description><description>TrxType</description><description>String</description></item>
-	/// <item><term>TXID</term><description>BuyerAuthResponse</description><description><see cref='BuyerAuthResponse.TxId'>TxId</see></description><description>String</description></item>
+	/// <item><term>TXID</term><description>BuyerAuthResponse</description><description><see cref='TransactionResponse.TxId'>TxId</see></description><description>String</description></item>
 	/// <item><term>USER</term><description>UserInfo</description><description></description><description>String</description></item>
 	/// <item><term>USER1</term><description>UserItem</description><description><see cref='UserItem.UserItem1'>UserItem1</see></description><description>String</description></item>
 	/// <item><term>USER2</term><description>UserItem</description><description><see cref='UserItem.UserItem2'>UserItem2</see></description><description>String</description></item>
@@ -308,7 +312,14 @@ namespace PayPal.Payments.DataObjects
 	/// <item><term>VIT_PROXY</term><description>Internal to the SDK.</description><description></description><description>String</description></item>
 	/// <item><term>VIT_SDKRUNTIMEVERSION</term><description>Internal to the SDK.</description><description></description><description>String</description></item>
 	/// <item><term>XID</term><description>BuyerAuthResponse</description><description><see cref='BuyerAuthResponse.XID'>XID</see></description><description>String</description></item>
+	/// <item><term>VMAID</term><description>Invoice</description><description><see cref='Invoice.VMaid'>VMaid</see></description><description>String</description></item>
 	/// <item><term>PAYFLOW-REQUEST-ID (Header)</term><description>Value is set from all the transactions:SaleTransaction, CaptureTransaction, VoidTransaction etc.</description><description>RequestId</description><description>String</description></item>
+	/// <item><term>NEXTPAYMENTNUM</term><description>RecurringResponse</description><description><see cref='RecurringResponse.NextPaymentNumber'>NEXTPAYMENTNUM</see></description><description>String</description></item>
+	/// <item><term>RPSTATE</term><description>RecurringResponse</description><description><see cref='RecurringResponse.RPState'>RPSTATE</see></description><description>String</description></item>
+	/// <item><term>NEXTPAYMENT</term><description>RecurringResponse</description><description><see cref='RecurringResponse.NextPayment'>NextPayment</see></description><description>String</description></item>
+	/// <item><term>CREATIONDATE</term><description>RecurringResponse</description><description><see cref='RecurringResponse.CreationDate'>CREATIONDATE</see></description><description>String</description></item>
+	/// <item><term>LASTCHANGED</term><description>RecurringResponse</description><description><see cref='RecurringResponse.LastChangedDate'>LASTCHANGE</see></description><description>String</description></item>
+	/// <item><term>FREQUENCY</term><description>RecurringResponse</description><description><see cref='RecurringResponse.Frequency'>FREQUENCY</see></description><description>String</description></item>
 	/// </list>
 	/// </summary>
 

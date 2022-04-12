@@ -21,7 +21,7 @@
     <OptionExplicit>On</OptionExplicit>
     <OptionStrict>Off</OptionStrict>
     <RootNamespace>SamplesVB</RootNamespace>
-    <StartupObject>SamplesVB.PayPal.Payments.Samples.VB.DataObjects.BasicTransactions.DOTest</StartupObject>
+    <StartupObject>SamplesVB.PayPal.Payments.Samples.VB.DataObjects.BasicTransactions.DOSaleCompleteVB</StartupObject>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <MyType>Console</MyType>

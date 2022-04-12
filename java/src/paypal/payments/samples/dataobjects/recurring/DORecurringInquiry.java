@@ -42,9 +42,9 @@ public class DORecurringInquiry {
 		PayflowConnectionData connection = new PayflowConnectionData();
 
 		RecurringInfo recurInfo = new RecurringInfo();
-		recurInfo.setOrigProfileId("RT0000000026"); // <profile_id>"); // Example: RP0000000012
+		recurInfo.setOrigProfileId("<profile_id>"); // Example: RP0000000012
 		// To show payment history instead of Profile details.
-		recurInfo.setPaymentHistory("Y");
+		recurInfo.setPaymentHistory("N");
 		///////////////////////////////////////////////////////////////////
 
 		// Create a new Recurring Inquiry Transaction.
@@ -75,17 +75,23 @@ public class DORecurringInquiry {
 
 				System.out.println("RPREF = " + recurResponse.getRpRef());
 				System.out.println("PROFILEID = " + recurResponse.getProfileId());
-				// Show profile details.
+				// Show profile details.  These are not all the values available.
 				if (recurResponse.getInquiryParams().isEmpty()) {
 					System.out.println("STATUS = " + recurResponse.getStatus());
 					System.out.println("PROFILENAME = " + recurResponse.getProfileName());
+					System.out.println("CREATIONDATE = " + recurResponse.getCreationDate());
+					System.out.println("LASTCHANGED = " + recurResponse.getLastChanged());
 					System.out.println("START = " + recurResponse.getStart());
 					System.out.println("TERM = " + recurResponse.getTerm());
 					System.out.println("PAYNMENTSLEFT = " + recurResponse.getPaymentsLeft());
 					System.out.println("NEXTPAYMENT = " + recurResponse.getNextPayment());
+					System.out.println("NEXTPAYMENTNUM = " + recurResponse.getNextPaymentNumber());
 					System.out.println("PAYPERIOD = " + recurResponse.getPayPeriod());
+					System.out.println("RPSTATE = " + recurResponse.getRpState());
+					System.out.println("FREQUENCY = " + recurResponse.getFrequency());
 					System.out.println("TENDER = " + recurResponse.getTender());
 					System.out.println("AMT = " + recurResponse.getAmt());
+					System.out.println("CURRENCY = " + recurResponse.getCurrency());
 					System.out.println("ACCT = " + recurResponse.getAcct());
 					System.out.println("EXPDATE = " + recurResponse.getExpDate());
 					System.out.println("AGGREGATEAMT = " + recurResponse.getAggregateAmt());
@@ -97,7 +103,10 @@ public class DORecurringInquiry {
 					System.out.println("FIRSTNAME = " + recurResponse.getName());
 					System.out.println("LASTNAME = " + recurResponse.getLastname());
 					System.out.println("STREET = " + recurResponse.getStreet());
+					System.out.println("CITY = " + recurResponse.getCity());
 					System.out.println("ZIP = " + recurResponse.getZip());
+					System.out.println("PHONENUM = " + recurResponse.getPhoneNum());
+					System.out.println("EMAIL = " + recurResponse.getEmail());
 				} else {
 					// Display the Payment History instead of Profile data.
 					// Payment History is stored in the HASHTABLE RecurResponse.InquiryParams.

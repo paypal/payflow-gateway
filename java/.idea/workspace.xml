@@ -31,22 +31,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9533da2-017e-4f68-8627-3fa704709969" name="Default Changelist" comment="New object: AdviceDetail, supports ADDLAMTn and ADDLAMTTYPEn&#10;New object: Devices, supports CATTYPE and CONTACTLESS&#10;Added to CustomerInfo: CUSTDATA, CUSTOMERID and CUSTOMERNUMBER">
+      <change afterPath="$PROJECT_DIR$/../dotNET/Payflow SDK Docs/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dotNET/Payflow SDK Docs/Content/GPL.aml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dotNET/Payflow SDK Docs/Content/VersionHistory/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dotNET/Payflow SDK Docs/Content/VersionHistory/VersionHistory.aml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dotNET/Payflow SDK Docs/Content/VersionHistory/v5.0.0.aml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dotNET/Payflow SDK Docs/Content/VersionHistory/v5.0.2.aml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dotNET/Payflow SDK Docs/Content/Welcome.aml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dotNET/Payflow SDK Docs/ContentLayout.content" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dotNET/Payflow SDK Docs/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dotNET/Payflow SDK Docs/icons/Help.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/PFProSDK/PFProSDK.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/PFProSDK/PFProSDK.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/PFProSDK/Properties/AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/PFProSDK/Properties/AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/PFProSDK/ndoc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/PFProSDK/ndoc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/PFProSDK/src/PayPal/Payments/Common/Utility/PayflowConstants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/PFProSDK/src/PayPal/Payments/Common/Utility/PayflowConstants.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/PFProSDK/src/PayPal/Payments/DataObjects/ACHTender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/PFProSDK/src/PayPal/Payments/DataObjects/ACHTender.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dotNET/PFProSDK/src/PayPal/Payments/DataObjects/Invoice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/PFProSDK/src/PayPal/Payments/DataObjects/Invoice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/PFProSDK/src/PayPal/Payments/DataObjects/NamespaceDoc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/PFProSDK/src/PayPal/Payments/DataObjects/NamespaceDoc.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/PFProSDK/src/PayPal/Payments/DataObjects/PaymentCard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/PFProSDK/src/PayPal/Payments/DataObjects/PaymentCard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/PFProSDK/src/PayPal/Payments/DataObjects/RecurringResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/PFProSDK/src/PayPal/Payments/DataObjects/RecurringResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/PFProSDK/src/PayPal/Payments/DataObjects/TransactionResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/PFProSDK/src/PayPal/Payments/DataObjects/TransactionResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/Payflow dotNET SDK.sln" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/Payflow dotNET SDK.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/SamplesCS/App.config" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/SamplesCS/App.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/SamplesCS/SamplesCS.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/SamplesCS/SamplesCS.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/SamplesCS/src/PayPal/Payments/Samples/CS/DataObjects/BasicTransactions/DOSaleComplete.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/SamplesCS/src/PayPal/Payments/Samples/CS/DataObjects/BasicTransactions/DOSaleComplete.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/SamplesCS/src/PayPal/Payments/Samples/CS/DataObjects/Recurring/DORecurringInquiry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/SamplesCS/src/PayPal/Payments/Samples/CS/DataObjects/Recurring/DORecurringInquiry.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/SamplesVB/SamplesVB.vbproj" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/SamplesVB/SamplesVB.vbproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/SamplesVB/src/PayPal/Payments/Samples/VB/DataObjects/BasicTransactions/DOSaleComplete.vb" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/SamplesVB/src/PayPal/Payments/Samples/VB/DataObjects/BasicTransactions/DOSaleComplete.vb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Payflow Java SDK.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Payflow Java SDK.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_14_2020_12_02_AM_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_14_2020_12_02_AM__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/build.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/paypal/payments/samples/dataobjects/basictransactions/DOSaleComplete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paypal/payments/samples/dataobjects/basictransactions/DOSaleComplete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paypal/payments/samples/dataobjects/expresscheckout/DODoEC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paypal/payments/samples/dataobjects/expresscheckout/DODoEC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paypal/payments/samples/dataobjects/expresscheckout/DOGetEC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paypal/payments/samples/dataobjects/expresscheckout/DOGetEC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paypal/payments/samples/dataobjects/expresscheckout/DOSetEC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paypal/payments/samples/dataobjects/expresscheckout/DOSetEC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paypal/payments/samples/dataobjects/recurring/DORecurringInquiry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paypal/payments/samples/dataobjects/recurring/DORecurringInquiry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PayflowConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PaymentConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/base/paypal/payflow/PaymentConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/v5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/PaymentCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/PaymentCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/RecurringResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/RecurringResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/TransactionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/TransactionResponse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +108,7 @@
       <recent name="paypal.payments.samples.dataobjects.basictransactions" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DODoEC">
+  <component name="RunManager" selected="Application.DOSaleComplete">
     <configuration name="DODoEC" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="paypal.payments.samples.dataobjects.expresscheckout.DODoEC" />
       <module name="Payflow Java SDK" />

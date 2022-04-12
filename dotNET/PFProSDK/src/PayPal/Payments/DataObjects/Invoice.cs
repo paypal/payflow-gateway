@@ -329,10 +329,22 @@ namespace PayPal.Payments.DataObjects
 		/// Miscellaneous Data
         /// </summary>
         private String mMiscData;
-		///<summary>a
+		///<summary>
 		///Secure Token, used for Inquiry transaction
 		///</summary>
 		private String mSecureToken;
+		///<summary>
+		///SCA Exemption
+		///</summary>
+		private String mSCAExemption;
+		///<summary>
+		///CitiDate
+		///</summary>
+		private String mCitDate;
+		///<summary>a
+		/// MVaid
+		///</summary>
+		private String mVMaid;
 
 		#endregion
 
@@ -1395,6 +1407,52 @@ namespace PayPal.Payments.DataObjects
 			get { return mSecureToken; }
 			set { mSecureToken = value; }
 		}
+
+		/// <summary>
+		/// Gets, Sets  SCAExemption.
+		/// </summary>
+		/// <remarks>
+		///	<para> Value to flag exemption status.
+		///	</para>
+		///	<para> Only one of the following values can be sent: TM, SCP, TRA, LVP, MIT, RP, SD, TM</para>
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>SCAEXEMPTION</code>
+		/// </remarks>
+		public String SCAExemption
+		{
+			get { return mSCAExemption; }
+			set { mSCAExemption = value; }
+		}
+
+		/// Gets, Sets  CitDate.
+		/// </summary>
+		/// <remarks>
+		///	<para> Original transaction date of the CIT transaction.
+		///	</para>
+		///	<para> MasterCard only. Merchant initiated(MIT) and recurring(RP) transactions must contain the original settlement date which is received from the initial Cardholder Initiated(CITI) transaction response.</para>
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>CITDATE</code>
+		/// </remarks>
+		public String CitDate
+		{
+			get { return mCitDate; }
+			set { mCitDate = value; }
+		}
+
+		/// Gets, Sets  VMaid.
+		/// </summary>
+		/// <remarks>
+		///	<para> Visa Merchant Authentication ID
+		///	</para>
+		///	<para> Visa only. Visa Merchant Authentication ID assigned by Visa EU.</para>
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>VMaid</code>
+		/// </remarks>
+		public String VMaid
+		{
+			get { return mVMaid; }
+			set { mVMaid = value; }
+		}
 		#endregion
 
 		#region "AdviceDetailItem related Methods"
@@ -1689,7 +1747,10 @@ namespace PayPal.Payments.DataObjects
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_VATTAXRATE, mVatTaxRate));
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_REPORTGROUP, mReportGroup));
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_MISCDATA, mMiscData));
-				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_SECURETOKEN, mSecureToken));
+				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_SECURETOKEN, mSecureToken)); 
+				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_SCAEXEMPTION, mSCAExemption));
+				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_CITDATE, mCitDate));
+				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_VMAID, mVMaid));
 
 
 
