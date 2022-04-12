@@ -22,11 +22,10 @@ namespace PayPal.Payments.Samples.CS.NameValuePairs
 			Console.WriteLine("Executing Sample from File: NVPSale.cs");
 			Console.WriteLine("------------------------------------------------------");
 
-            // Sample Request. 
-            // Please replace <user>, <vendor>, <password> & <partner> with your merchant information.
-            //String Request = "USER=<user>&VENDOR=<vendor>&PARTNER=<partner>&PWD=<password>&TRXTYPE=S&ACCT=5105105105105100&EXPDATE=0125&TENDER=C&INVNUM=INV12345&AMT=25.12&PONUM=PO12345&STREET=123 Main St.&ZIP=12345";
-			String Request = "USER=toddprov4&VENDOR=toddprov4&PARTNER=VeriSign&PWD=password1&TRXTYPE=S&ORIGID=A50O0BE63815&EXPDATE=0125&TENDER=C&INVNUM=INV12345&AMT=25.12&PONUM=PO12345&STREET=123 Main St.&ZIP=12345";
-
+            		// Sample Request. 
+            		// Please replace <user>, <vendor>, <password> & <partner> with your merchant information.
+            		String Request = "USER=<user>&VENDOR=<vendor>&PARTNER=<partner>&PWD=<password>&TRXTYPE=S&ACCT=5105105105105100&EXPDATE=0125&TENDER=C&INVNUM=INV12345&AMT=25.12&PONUM=PO12345&STREET=123 Main St.&ZIP=12345";
+			
 			// Create an instance of PayflowNETAPI.
 			PayflowNETAPI PayflowNETAPI = new PayflowNETAPI();
 			// Can also pass the values in the constructor itself instead of using .config file.
