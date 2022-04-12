@@ -294,6 +294,38 @@ namespace PayPal.Payments.DataObjects
 		/// </summary>
 		private Hashtable mInquiryParams;
 
+		/// <summary>
+		/// Creation Date
+		/// </summary>
+		private String mCreationDate;
+
+		/// <summary>
+		/// Last Changed Date
+		/// </summary>
+		private String mLastChangedDate;
+
+		/// <summary>
+		/// Recurring Profile State
+		/// </summary>
+		private String mRPState;
+
+		/// <summary>
+		/// Next Payment Number
+		/// </summary>
+		private String mNextPaymentNumber;
+
+		/// <summary>
+		/// Frequency
+		/// </summary>
+		private String mFrequency;
+
+		/// <summary>
+		/// Currency
+		/// </summary>
+		private String mCurrency;
+
+
+
 		#endregion
 
 		#region "Properties"
@@ -850,6 +882,84 @@ namespace PayPal.Payments.DataObjects
 			get { return mShipToCountry; }
 		}
 
+		/// <summary>
+		/// Gets Creation Date
+		/// </summary>
+		/// <remarks>
+		/// Creation Date
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>CREATIONDATE</code>
+		/// </remarks>
+		public String CreationDate
+		{
+			get { return mCreationDate; }
+		}
+
+		/// <summary>
+		/// Gets Last Changed Date
+		/// </summary>
+		/// <remarks>
+		/// Last Changed Date
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>LASTCHANGED</code>
+		/// </remarks>
+		public String LastChangedDate
+		{
+			get { return mLastChangedDate; }
+		}
+
+		/// <summary>
+		/// Gets Recurring Profile State
+		/// </summary>
+		/// <remarks>
+		/// Recurring Profile State
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>RPSTATE</code>
+		/// </remarks>
+		public String RPState
+		{
+			get { return mRPState; }
+		}
+
+		/// <summary>
+		/// Gets Next Payment Number
+		/// </summary>
+		/// <remarks>
+		/// Next Payment Number
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>NEXTPAYMENTNUM</code>
+		/// </remarks>
+		public String NextPaymentNumber
+		{
+			get { return mNextPaymentNumber; }
+		}
+
+		/// <summary>
+		/// Gets Frequency
+		/// </summary>
+		/// <remarks>
+		/// Frequency
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>FREQUENCY</code>
+		/// </remarks>
+		public String Frequency
+		{
+			get { return mFrequency; }
+		}
+
+		/// <summary>
+		/// Gets Currency
+		/// </summary>
+		/// <remarks>
+		/// Frequency
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>CURRENCY</code>
+		/// </remarks>
+		public String Currency
+		{
+			get { return mCurrency; }
+		}
+
 
 		/// <summary>
 		/// Gets recurring inquiry 
@@ -922,54 +1032,62 @@ namespace PayPal.Payments.DataObjects
 		{
 			try
 			{
-				mProfileId = (String) ResponseHashTable[PayflowConstants.PARAM_PROFILEID];
-				mRPRef = (String) ResponseHashTable[PayflowConstants.PARAM_RPREF];
-				mTrxPNRef = (String) ResponseHashTable[PayflowConstants.PARAM_TRXPNREF];
-				mTrxResult = (String) ResponseHashTable[PayflowConstants.PARAM_TRXRESULT];
-				mTrxRespMsg = (String) ResponseHashTable[PayflowConstants.PARAM_TRXRESPMSG];
+				mProfileId = (String)ResponseHashTable[PayflowConstants.PARAM_PROFILEID];
+				mRPRef = (String)ResponseHashTable[PayflowConstants.PARAM_RPREF];
+				mTrxPNRef = (String)ResponseHashTable[PayflowConstants.PARAM_TRXPNREF];
+				mTrxResult = (String)ResponseHashTable[PayflowConstants.PARAM_TRXRESULT];
+				mTrxRespMsg = (String)ResponseHashTable[PayflowConstants.PARAM_TRXRESPMSG];
 
 				//Additional fields for Inquiry transaction
-				mProfileName = (String) ResponseHashTable[PayflowConstants.PARAM_PROFILENAME];
-				mStart = (String) ResponseHashTable[PayflowConstants.PARAM_START];
-				mTerm = (String) ResponseHashTable[PayflowConstants.PARAM_TERM];
-				mPayPeriod = (String) ResponseHashTable[PayflowConstants.PARAM_PAYPERIOD];
-				mStatus = (String) ResponseHashTable[PayflowConstants.PARAM_STATUS];
-				mTenderType = (String) ResponseHashTable[PayflowConstants.PARAM_TENDER];
-				mPaymentsLeft = (String) ResponseHashTable[PayflowConstants.PARAM_PAYMENTSLEFT];
-				mNxtPayment = (String) ResponseHashTable[PayflowConstants.PARAM_NEXTPAYMENT];
-				mEnd = (String) ResponseHashTable[PayflowConstants.PARAM_END];
-				mAggregateAmt = (String) ResponseHashTable[PayflowConstants.PARAM_AGGREGATEAMT];
-				mAggregateOptionalAmt = (String) ResponseHashTable[PayflowConstants.PARAM_AGGREGATEOPTIONALAMT];
-				mAmt = (String) ResponseHashTable[PayflowConstants.PARAM_AMT];
-				mAcct = (String) ResponseHashTable[PayflowConstants.PARAM_ACCT];
-				mExpDate = (String) ResponseHashTable[PayflowConstants.PARAM_EXPDATE];
-				mMaxFailPayments = (String) ResponseHashTable[PayflowConstants.PARAM_MAXFAILPAYMENTS];
-				mNumFailPayments = (String) ResponseHashTable[PayflowConstants.PARAM_NUMFAILPAYMENTS];
-				mRetryNumDays = (String) ResponseHashTable[PayflowConstants.PARAM_RETRYNUMDAYS];
-				mEmail = (String) ResponseHashTable[PayflowConstants.PARAM_EMAIL];
-				mCompanyName = (String) ResponseHashTable[PayflowConstants.PARAM_COMPANYNAME];
-				mName = (String) ResponseHashTable[PayflowConstants.PARAM_NAME];
-				mFirstName = (String) ResponseHashTable[PayflowConstants.PARAM_FIRSTNAME];
-				mMiddleName = (String) ResponseHashTable[PayflowConstants.PARAM_MIDDLENAME];
-				mLastName = (String) ResponseHashTable[PayflowConstants.PARAM_LASTNAME];
-				mStreet = (String) ResponseHashTable[PayflowConstants.PARAM_STREET];
-				mCity = (String) ResponseHashTable[PayflowConstants.PARAM_CITY];
-				mState = (String) ResponseHashTable[PayflowConstants.PARAM_STATE];
-				mZip = (String) ResponseHashTable[PayflowConstants.PARAM_ZIP];
-				mCountry = (String) ResponseHashTable[PayflowConstants.PARAM_COUNTRY];
-				mPhoneNum = (String) ResponseHashTable[PayflowConstants.PARAM_PHONENUM];
-				mShipToFName = (String) ResponseHashTable[PayflowConstants.PARAM_SHIPTOFIRSTNAME];
-				mShipToMName = (String) ResponseHashTable[PayflowConstants.PARAM_SHIPTOMIDDLENAME];
-				mShipToLName = (String) ResponseHashTable[PayflowConstants.PARAM_SHIPTOLASTNAME];
-				mShipToStreet = (String) ResponseHashTable[PayflowConstants.PARAM_SHIPTOSTREET];
-				mShipToCity = (String) ResponseHashTable[PayflowConstants.PARAM_SHIPTOCITY];
-				mShipToState = (String) ResponseHashTable[PayflowConstants.PARAM_SHIPTOSTATE];
-				mShipToZip = (String) ResponseHashTable[PayflowConstants.PARAM_SHIPTOZIP];
-				mShipToCountry = (String) ResponseHashTable[PayflowConstants.PARAM_SHIPTOCOUNTRY];
+				mProfileName = (String)ResponseHashTable[PayflowConstants.PARAM_PROFILENAME];
+				mStatus = (String)ResponseHashTable[PayflowConstants.PARAM_STATUS];
+				mStart = (String)ResponseHashTable[PayflowConstants.PARAM_START];
+				mTerm = (String)ResponseHashTable[PayflowConstants.PARAM_TERM];
+				mPayPeriod = (String)ResponseHashTable[PayflowConstants.PARAM_PAYPERIOD];
+				mStatus = (String)ResponseHashTable[PayflowConstants.PARAM_STATUS];
+				mTenderType = (String)ResponseHashTable[PayflowConstants.PARAM_TENDER];
+				mPaymentsLeft = (String)ResponseHashTable[PayflowConstants.PARAM_PAYMENTSLEFT];
+				mNxtPayment = (String)ResponseHashTable[PayflowConstants.PARAM_NEXTPAYMENT];
+				mCreationDate = (String)ResponseHashTable[PayflowConstants.PARAM_CREATIONDATE];
+				mLastChangedDate = (String)ResponseHashTable[PayflowConstants.PARAM_LASTCHANGED];
+				mRPState = (String)ResponseHashTable[PayflowConstants.PARAM_RPSTATE];
+				mNextPaymentNumber = (String)ResponseHashTable[PayflowConstants.PARAM_NEXTPAYMENTNUM];
+				mFrequency = (String)ResponseHashTable[PayflowConstants.PARAM_FREQUENCY];
+				mEnd = (String)ResponseHashTable[PayflowConstants.PARAM_END];
+				mAggregateAmt = (String)ResponseHashTable[PayflowConstants.PARAM_AGGREGATEAMT];
+				mAggregateOptionalAmt = (String)ResponseHashTable[PayflowConstants.PARAM_AGGREGATEOPTIONALAMT];
+				mAmt = (String)ResponseHashTable[PayflowConstants.PARAM_AMT];
+				mCurrency = (String)ResponseHashTable[PayflowConstants.PARAM_CURRENCY];
+				mAcct = (String)ResponseHashTable[PayflowConstants.PARAM_ACCT];
+				mExpDate = (String)ResponseHashTable[PayflowConstants.PARAM_EXPDATE];
+				mMaxFailPayments = (String)ResponseHashTable[PayflowConstants.PARAM_MAXFAILPAYMENTS];
+				mNumFailPayments = (String)ResponseHashTable[PayflowConstants.PARAM_NUMFAILPAYMENTS];
+				mRetryNumDays = (String)ResponseHashTable[PayflowConstants.PARAM_RETRYNUMDAYS];
+				mEmail = (String)ResponseHashTable["EMAIL"];
+				mCompanyName = (String)ResponseHashTable[PayflowConstants.PARAM_COMPANYNAME];
+				// mName = (String) ResponseHashTable[PayflowConstants.PARAM_NAME];
+				mFirstName = (String)ResponseHashTable[PayflowConstants.PARAM_NAME];
+				mMiddleName = (String)ResponseHashTable[PayflowConstants.PARAM_MIDDLENAME];
+				mLastName = (String)ResponseHashTable["LASTNAME"];
+				mStreet = (String)ResponseHashTable["STREET"];
+				mCity = (String)ResponseHashTable["CITY"];
+				mState = (String)ResponseHashTable["STATE"];
+				mZip = (String)ResponseHashTable["ZIP"];
+				mCountry = (String)ResponseHashTable["COUNTRY"];
+				mPhoneNum = (String)ResponseHashTable["PHONENUM"];
+				mShipToFName = (String)ResponseHashTable[PayflowConstants.PARAM_SHIPTOFIRSTNAME];
+				mShipToMName = (String)ResponseHashTable[PayflowConstants.PARAM_SHIPTOMIDDLENAME];
+				mShipToLName = (String)ResponseHashTable[PayflowConstants.PARAM_SHIPTOLASTNAME];
+				mShipToStreet = (String)ResponseHashTable[PayflowConstants.PARAM_SHIPTOSTREET];
+				mShipToCity = (String)ResponseHashTable[PayflowConstants.PARAM_SHIPTOCITY];
+				mShipToState = (String)ResponseHashTable[PayflowConstants.PARAM_SHIPTOSTATE];
+				mShipToZip = (String)ResponseHashTable[PayflowConstants.PARAM_SHIPTOZIP];
+				mShipToCountry = (String)ResponseHashTable[PayflowConstants.PARAM_SHIPTOCOUNTRY];
 
 
 				ResponseHashTable.Remove(PayflowConstants.PARAM_PROFILEID);
 				ResponseHashTable.Remove(PayflowConstants.PARAM_RPREF);
+				ResponseHashTable.Remove(PayflowConstants.PARAM_STATUS);
 				ResponseHashTable.Remove(PayflowConstants.PARAM_TRXPNREF);
 				ResponseHashTable.Remove(PayflowConstants.PARAM_TRXRESULT);
 				ResponseHashTable.Remove(PayflowConstants.PARAM_TRXRESPMSG);
@@ -985,6 +1103,7 @@ namespace PayPal.Payments.DataObjects
 				ResponseHashTable.Remove(PayflowConstants.PARAM_AGGREGATEAMT);
 				ResponseHashTable.Remove(PayflowConstants.PARAM_AGGREGATEOPTIONALAMT);
 				ResponseHashTable.Remove(PayflowConstants.PARAM_AMT);
+				ResponseHashTable.Remove(PayflowConstants.PARAM_CURRENCY);
 				ResponseHashTable.Remove(PayflowConstants.PARAM_ACCT);
 				ResponseHashTable.Remove(PayflowConstants.PARAM_EXPDATE);
 				ResponseHashTable.Remove(PayflowConstants.PARAM_MAXFAILPAYMENTS);
@@ -995,11 +1114,11 @@ namespace PayPal.Payments.DataObjects
 				ResponseHashTable.Remove(PayflowConstants.PARAM_NAME);
 				ResponseHashTable.Remove(PayflowConstants.PARAM_FIRSTNAME);
 				ResponseHashTable.Remove(PayflowConstants.PARAM_MIDDLENAME);
-				ResponseHashTable.Remove(PayflowConstants.PARAM_LASTNAME);
-				ResponseHashTable.Remove(PayflowConstants.PARAM_STREET);
-				ResponseHashTable.Remove(PayflowConstants.PARAM_CITY);
-				ResponseHashTable.Remove(PayflowConstants.PARAM_STATE);
-				ResponseHashTable.Remove(PayflowConstants.PARAM_ZIP);
+				ResponseHashTable.Remove("LASTNAME");
+				ResponseHashTable.Remove("STREET");
+				ResponseHashTable.Remove("CITY");
+				ResponseHashTable.Remove("STATE");
+				ResponseHashTable.Remove("ZIP");
 				ResponseHashTable.Remove(PayflowConstants.PARAM_COUNTRY);
 				ResponseHashTable.Remove(PayflowConstants.PARAM_PHONENUM);
 				ResponseHashTable.Remove(PayflowConstants.PARAM_SHIPTOFIRSTNAME);

@@ -97,6 +97,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
     private String validationCode;
     private String ccTransId;
     private String ccTrans_PosData;
+    private String parId;
 
     /**
      * Gets the result.
@@ -751,6 +752,16 @@ public final class TransactionResponse extends BaseResponseDataObject {
         return ccTrans_PosData;
     }
 
+    /**
+     * Gets the Payment Account Reference.
+     * Value returned by some processors for the Payment Account Reference.
+     * @return - String
+     *  <p>Maps to Payflow Parameter: PARID
+     */
+    public String getParId() {
+        return parId;
+    }
+
 
     protected TransactionResponse() {
     }
@@ -820,7 +831,9 @@ public final class TransactionResponse extends BaseResponseDataObject {
         validationCode = (String) ResponseHashTable.get(PayflowConstants.PARAM_VALIDATIONCODE);
         ccTransId = (String) ResponseHashTable.get(PayflowConstants.PARAM_CCTRANSID);
         ccTrans_PosData = (String) ResponseHashTable.get(PayflowConstants.PARAM_CCTRANS_POSDATA);
+        parId= (String) ResponseHashTable.get(PayflowConstants.PARAM_PARID);
 
+        // items commented out below are due to being used in RecurringResponse too.
         ResponseHashTable.remove(PayflowConstants.PARAM_RESULT);
         ResponseHashTable.remove(PayflowConstants.PARAM_PPREF);
         ResponseHashTable.remove(PayflowConstants.PARAM_PNREF);
@@ -851,16 +864,16 @@ public final class TransactionResponse extends BaseResponseDataObject {
         ResponseHashTable.remove(PayflowConstants.PARAM_PENDINGREASON);
         ResponseHashTable.remove(PayflowConstants.PARAM_PAYMENTTYPE);
         ResponseHashTable.remove(PayflowConstants.PARAM_CORRELATIONID);
-        ResponseHashTable.remove(PayflowConstants.PARAM_STATUS);
+        //ResponseHashTable.remove(PayflowConstants.PARAM_STATUS);
         ResponseHashTable.remove(PayflowConstants.PARAM_BALAMT);
         ResponseHashTable.remove(PayflowConstants.PARAM_AMEXID);
         ResponseHashTable.remove(PayflowConstants.PARAM_AMEXPOSDATA);
-        ResponseHashTable.remove(PayflowConstants.PARAM_ACCT);
-        ResponseHashTable.remove(PayflowConstants.PARAM_LASTNAME);
-        ResponseHashTable.remove(PayflowConstants.PARAM_FIRSTNAME);
-        ResponseHashTable.remove(PayflowConstants.PARAM_AMT);
+        //ResponseHashTable.remove(PayflowConstants.PARAM_ACCT);
+        //ResponseHashTable.remove(PayflowConstants.PARAM_LASTNAME);
+        //ResponseHashTable.remove(PayflowConstants.PARAM_FIRSTNAME);
+        //ResponseHashTable.remove(PayflowConstants.PARAM_AMT);
         ResponseHashTable.remove(PayflowConstants.PARAM_TRANSTIME);
-        ResponseHashTable.remove(PayflowConstants.PARAM_EXPDATE);
+        //ResponseHashTable.remove(PayflowConstants.PARAM_EXPDATE);
         ResponseHashTable.remove(PayflowConstants.PARAM_CARDTYPE);
         ResponseHashTable.remove(PayflowConstants.PARAM_ORIGAMT);
         ResponseHashTable.remove(PayflowConstants.PARAM_SECURETOKEN);
@@ -883,6 +896,7 @@ public final class TransactionResponse extends BaseResponseDataObject {
         ResponseHashTable.remove(PayflowConstants.PARAM_VALIDATIONCODE);
         ResponseHashTable.remove(PayflowConstants.PARAM_CCTRANSID);
         ResponseHashTable.remove(PayflowConstants.PARAM_CCTRANS_POSDATA);
+        ResponseHashTable.remove(PayflowConstants.PARAM_PARID);
 
 
 

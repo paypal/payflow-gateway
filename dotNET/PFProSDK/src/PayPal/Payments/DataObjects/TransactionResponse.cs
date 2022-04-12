@@ -350,7 +350,11 @@ namespace PayPal.Payments.DataObjects
 		/// CCTrans_POSData
 		/// </summary>
 		private String mCCTrans_POSData;
- 
+		/// <summary>
+		/// ParId
+		/// </summary>
+		private String mParId;
+
 		#endregion
 
 		#region "Properties"
@@ -1278,7 +1282,7 @@ namespace PayPal.Payments.DataObjects
         {
             get { return mCCTransId; }
         }
-				/// <summary>
+		/// <summary>
         /// Gets the Credit Card Transaction POS Data
         /// </summary>
 		/// Value returned by some processors for all credit card transactions.
@@ -1290,14 +1294,28 @@ namespace PayPal.Payments.DataObjects
         {
             get { return mCCTrans_POSData; }
         }
-        #endregion
 
-        #region "Constructors"
+		/// <summary>
+		/// Gets the Payment Account Reference
+		/// </summary>
+		/// Value returned by some processors that is a non-financial reference number assigned to each unique 
+		/// Primary Account Number (PAN) and mapped to all its affiliated Payment Tokens.
+		/// <remarks>
+		/// <para>Maps to Payflow Parameter:</para>
+		/// <code>PARID</code>
+		/// </remarks>
+		public String ParId
+		{
+			get { return mParId; }
+		}
+		#endregion
 
-        /// <summary>
-        /// Constructor for Transaction response.
-        /// </summary>
-        internal TransactionResponse ()
+		#region "Constructors"
+
+		/// <summary>
+		/// Constructor for Transaction response.
+		/// </summary>
+		internal TransactionResponse ()
 		{
 
 		}
@@ -1380,6 +1398,7 @@ namespace PayPal.Payments.DataObjects
 			mValidationCode = (String)ResponseHashTable[PayflowConstants.PARAM_VALIDATIONCODE];
 			mCCTransId = (String)ResponseHashTable[PayflowConstants.PARAM_CCTRANSID];
 			mCCTrans_POSData = (String)ResponseHashTable[PayflowConstants.PARAM_CCTRANS_POSDATA];
+			mParId = (String)ResponseHashTable[PayflowConstants.PARAM_PARID];
 
 			// Remove the used response params from hash table.
 			// ResponseHashTable.Remove(PayflowConstants.INTL_PARAM_FULLRESPONSE);
@@ -1416,13 +1435,8 @@ namespace PayPal.Payments.DataObjects
 			ResponseHashTable.Remove(PayflowConstants.PARAM_BALAMT);
 			ResponseHashTable.Remove(PayflowConstants.PARAM_AMEXID);
 			ResponseHashTable.Remove(PayflowConstants.PARAM_AMEXPOSDATA);
-			ResponseHashTable.Remove(PayflowConstants.PARAM_ACCT);
-			ResponseHashTable.Remove(PayflowConstants.PARAM_LASTNAME);
-			ResponseHashTable.Remove(PayflowConstants.PARAM_FIRSTNAME);
             // This is here to deal with FIRSTNAME returned in ACH, not BILLTOFIRSTNAME.
             ResponseHashTable.Remove("FIRSTNAME");
-            ResponseHashTable.Remove(PayflowConstants.PARAM_AMT);
-			ResponseHashTable.Remove(PayflowConstants.PARAM_EXPDATE);
 			ResponseHashTable.Remove(PayflowConstants.PARAM_TRANSTIME);
 			ResponseHashTable.Remove(PayflowConstants.PARAM_CARDTYPE);
 			ResponseHashTable.Remove(PayflowConstants.PARAM_ORIGAMT);
@@ -1446,9 +1460,15 @@ namespace PayPal.Payments.DataObjects
 			ResponseHashTable.Remove(PayflowConstants.PARAM_VALIDATIONCODE);
 			ResponseHashTable.Remove(PayflowConstants.PARAM_CCTRANSID);
 			ResponseHashTable.Remove(PayflowConstants.PARAM_CCTRANS_POSDATA);
-		
-			// Commented Line below to reserve Status for Recurring Inquiry
+			ResponseHashTable.Remove(PayflowConstants.PARAM_PARID);
+
+			// Commented lines below to reserve Status for Recurring Inquiry
 			// ResponseHashTable.Remove(PayflowConstants.PARAM_STATUS);
+			// ResponseHashTable.Remove(PayflowConstants.PARAM_AMT);
+			// ResponseHashTable.Remove(PayflowConstants.PARAM_EXPDATE);
+			// ResponseHashTable.Remove(PayflowConstants.PARAM_ACCT);
+			// ResponseHashTable.Remove(PayflowConstants.PARAM_LASTNAME);
+			// ResponseHashTable.Remove(PayflowConstants.PARAM_FIRSTNAME);
 		}
 
 		#endregion

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="df400d3a-1030-4d72-865c-96b23b9f0f55" revisionNumber="1">
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<para>The topics in this section describe the various changes made to the Payflow Gateway .NET SDK over the
+life of the project.</para>
+		</introduction>
+
+		<section>
+			<title>Version History</title>
+			<content>
+				<para>Select a version below to see a description of its changes.</para>
+
+				<list class="bullet">
+					<listItem>
+						<para>
+							<link xlink:href="b2509c1b-9f06-4cd2-9497-3d835ae42a01" />
+						</para>
+					</listItem>
+					<listItem>
+						<para>
+							<link xlink:href="78abef13-b7ae-4d58-ae46-66be2d107624" />
+						</para>
+					</listItem>
+				</list>
+
+			</content>
+		</section>
+
+		<relatedTopics>
+			<link xlink:href="560a6b31-acc3-49c1-9659-71770df29342" />
+		</relatedTopics>
+
+	</developerConceptualDocument>
+</topic>

@@ -1456,14 +1456,6 @@ public final class PayflowConstants {
      */
     protected static final String PARAM_CUSTOMERNUMBER= "CUSTOMERNUMBER";
 
-
-
-
-
-
-
-
-
 /// ----------------------------------------------------------------------------
 
     /**
@@ -1776,11 +1768,53 @@ public final class PayflowConstants {
      * Payflow Param MISCDATA
      */
     protected static final String PARAM_MISCDATA = "MISCDATA";
+
+    // added DTPAYFLOW-1691 - March 2022 - v5.02
     /**
      * Payflow Param FREQUENCY
      */
     protected static final String PARAM_FREQUENCY = "FREQUENCY";
 
+    /**
+     * Payflow Param CREATIONDATE
+     */
+    protected static final String PARAM_CREATIONDATE = "CREATIONDATE";
+
+    /**
+     * Payflow Param LASTCHANGED
+     */
+    protected static final String PARAM_LASTCHANGED = "LASTCHANGED";
+
+    /**
+     * Payflow Param RPSTATE
+     */
+    protected static final String PARAM_RPSTATE = "RPSTATE";
+
+    /**
+     * Payflow Param NEXTPAYMENTNUM
+     */
+    protected static final String PARAM_NEXTPAYMENTNUM = "NEXTPAYMENTNUM";
+
+    /**
+     * Payflow Param SCAEXEMPTION
+     */
+    protected static final String PARAM_SCAEXEMPTION = "SCAEXEMPTION";
+    /**
+     * Payflow Param CITDATE
+     */
+    protected static final String PARAM_CITDATE = "CITDATE";
+    /**
+     * Payflow Param VMAID
+     */
+    protected static final String PARAM_VMAID = "VMAID";
+    /**
+     * Payflow Param PAR
+     */
+    protected static final String PARAM_PAR = "PAR";
+    /**
+     * Payflow Param VMAID
+     */
+    protected static final String PARAM_PARID = "PARID";
 
 
 

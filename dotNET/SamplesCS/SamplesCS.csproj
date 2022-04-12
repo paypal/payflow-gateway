@@ -19,10 +19,10 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>SamplesCS</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-    <StartupObject>PayPal.Payments.Samples.CS.DataObjects.BasicTransactions.DOInquiry</StartupObject>
+    <StartupObject>PayPal.Payments.Samples.CS.DataObjects.BasicTransactions.DOSaleCompleteCS</StartupObject>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>0.0</OldToolsVersion>

@@ -29,6 +29,11 @@ abstract class PaymentCard extends PaymentDevice {
      * Transaction Id for stored credential (card on file).
      */
     private String txId;
+    /**
+     * Payment Account Reference
+     */
+    private String par;
+
 
     /**
      * Constructor
@@ -120,6 +125,19 @@ abstract class PaymentCard extends PaymentDevice {
     }
 
     /**
+     * Gets the cardOnFile
+     * <p> Used to store credit card (stored credential)  </p>
+     *
+     * @return cardOnFile String
+     *          * <p>
+     *  Maps to Payflow Parameter : CARDONFILE
+     * </p>
+     */
+    public String getCardOnFile() {
+        return cardOnFile;
+    }
+
+    /**
      * Sets the cardOnFile
      * <p> Used to store credit card (stored credential) </p>
      *
@@ -131,9 +149,22 @@ abstract class PaymentCard extends PaymentDevice {
     public void setCardOnFile(String cardOnFile) {
         this.cardOnFile= cardOnFile;
     }
+
+    /**
+     * Gets the TxId
+     * <p> The transaction Id to reference a stored credential.</p>
+     *
+     * @return txId String
+     *          * <p>
+     *  Maps to Payflow Parameter : TXID
+     * </p>
+     */
+    public String getTxId() {
+        return txId;
+    }
     /**
      * Sets the Transaction Id (stored credential).
-     * <p> The transaction Id to reference a stored crendential</p>
+     * <p> The transaction Id to reference a stored credential.</p>
      *
      * @param txId String
      *                   * <p>
@@ -142,6 +173,32 @@ abstract class PaymentCard extends PaymentDevice {
      */
     public void setTxId(String txId) {
         this.txId = txId;
+    }
+
+
+    /**
+     * Gets the par
+     * <p>unique Primary Account Number (PAN)</p>
+     *
+     * @return par String
+     *          * <p>
+     *  Maps to Payflow Parameter : PAR
+     * </p>
+     */
+    public String getParId() {
+        return par;
+    }
+    /**
+     * Sets the Payment Account Reference.
+     * <p>A non-financial reference number assigned to each unique Primary Account Number (PAN) and mapped to all its affiliated Payment Tokens.</p>
+     *
+     * @param par String
+     *                   * <p>
+     *  Maps to Payflow Parameter : PAR
+     * </p>
+     */
+    public void setPar(String par) {
+        this.par = par;
     }
 
     /**
@@ -155,5 +212,6 @@ abstract class PaymentCard extends PaymentDevice {
         super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_CARDISSUE, cardIssue));
         super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_CARDONFILE, cardOnFile));
         super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_TXID, txId));
+        super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_PAR, par));
     }
 }

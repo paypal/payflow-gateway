@@ -9,13 +9,13 @@ import java.util.Hashtable;
  * the recurring transactions.</p>
  * <p>Following example shows how to obtain and use the recurring
  * response.
- *
- *  ...................
+ * <p>
+ * ...................
  * // Trans is the recurring transaction.
  * ...................
  * // Submit the transaction.
  * Response resp = trans.SubmitTransaction();
- *  * <p>
+ * * <p>
  * if (resp != null)
  * {
  * // Get the Transaction Response parameters.
@@ -25,7 +25,7 @@ import java.util.Hashtable;
  * System.out.println("RESULT = " + trxnResponse.Result);
  * System.out.println("RESPMSG = " + trxnResponse.RespMsg);
  * }
- *  * <p>
+ * * <p>
  * // Get the Recurring Response parameters.
  * RecurringResponse recurResponse = resp.getRecurringResponse();
  * if (recurResponse != null)
@@ -34,7 +34,7 @@ import java.util.Hashtable;
  * System.out.println("PROFILEID = " + recurResponse.getProfileId());
  * }
  * }
- *  * <p>
+ * * <p>
  * ...................
  */
 public final class RecurringResponse extends BaseResponseDataObject {
@@ -82,13 +82,19 @@ public final class RecurringResponse extends BaseResponseDataObject {
     private String shipToState;
     private String shipToZip;
     private String shipToCountry;
+    private String creationDate;
+    private String lastChanged;
+    private String rpState;
+    private String nextPaymentNumber;
+    private String frequency;
+    private String currency;
     private Hashtable inquiryParams;
 
     /**
      * Gets the Profile ID of the original profile.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: PROFILEID
+     * <p>Maps to Payflow Parameter: PROFILEID
      */
     public String getProfileId() {
         return profileId;
@@ -98,7 +104,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the Reference number to this particular action request.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: RPREF
+     * <p>Maps to Payflow Parameter: RPREF
      */
     public String getRpRef() {
         return rpRef;
@@ -108,7 +114,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the PNREF of the optional transaction.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: TRXPNREF
+     * <p>Maps to Payflow Parameter: TRXPNREF
      */
     public String getTrxPNRef() {
         return trxPNRef;
@@ -118,7 +124,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the RESULT of the optional transaction.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: TRXRESULT
+     * <p>Maps to Payflow Parameter: TRXRESULT
      */
     public String getTrxResult() {
         return trxResult;
@@ -128,7 +134,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the RESPMSG of the optional transaction.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: TRXRESPMSG
+     * <p>Maps to Payflow Parameter: TRXRESPMSG
      */
     public String getTrxRespMsg() {
         return trxRespMsg;
@@ -138,7 +144,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the profileName parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: PROFILENAME
+     * <p>Maps to Payflow Parameter: PROFILENAME
      */
     public String getProfileName() {
         return profileName;
@@ -148,7 +154,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the Beginning date for the recurring billing cycle.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: START
+     * <p>Maps to Payflow Parameter: START
      */
     public String getStart() {
         return start;
@@ -158,7 +164,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the Number of payments to be made over the life of the agreement.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: TERM
+     * <p>Maps to Payflow Parameter: TERM
      */
     public String getTerm() {
         return term;
@@ -168,7 +174,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the PayPeriod parameter.Specifies how often the payment occurs.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: PAYPERIOD
+     * <p>Maps to Payflow Parameter: PAYPERIOD
      */
     public String getPayPeriod() {
         return payPeriod;
@@ -178,7 +184,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the Current status of the profile.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: STATUS
+     * <p>Maps to Payflow Parameter: STATUS
      */
     public String getStatus() {
         return status;
@@ -188,7 +194,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the tendertype.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: TENDER
+     * <p>Maps to Payflow Parameter: TENDER
      */
     public String getTender() {
         return tender;
@@ -198,7 +204,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the PaymentsLeft parameter. Number of payments left to be billed.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: PAYMENTSLEFT
+     * <p>Maps to Payflow Parameter: PAYMENTSLEFT
      */
     public String getPaymentsLeft() {
         return paymentsLeft;
@@ -208,7 +214,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the next payment parameter.Date that the next payment is due.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: NEXTPAYMENT
+     * <p>Maps to Payflow Parameter: NEXTPAYMENT
      */
     public String getNextPayment() {
         return nextPayment;
@@ -218,7 +224,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the profileName parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: END
+     * <p>Maps to Payflow Parameter: END
      */
     public String getEnd() {
         return end;
@@ -228,7 +234,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets AggregateAmt.Amount collected so far for scheduled payments.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: AGGREGATEAMT
+     * <p>Maps to Payflow Parameter: AGGREGATEAMT
      */
     public String getAggregateAmt() {
         return aggregateAmt;
@@ -238,7 +244,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the AggregateOptAmt parameter.Amount collected through sending optional transactions.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: AGGREGATEOPTIONALAMT
+     * <p>Maps to Payflow Parameter: AGGREGATEOPTIONALAMT
      */
     public String getAggregateOptionalAmt() {
         return aggregateOptionalAmt;
@@ -248,7 +254,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the amt parameter.Base dollar amount to be billed.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: AMT
+     * <p>Maps to Payflow Parameter: AMT
      */
     public String getAmt() {
         return amt;
@@ -258,7 +264,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets Acct.Masked credit card number.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: ACCT
+     * <p>Maps to Payflow Parameter: ACCT
      */
     public String getAcct() {
         return acct;
@@ -268,7 +274,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the ExpDate parameter.Expiration date of the credit card account.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: EXPDATE
+     * <p>Maps to Payflow Parameter: EXPDATE
      */
     public String getExpDate() {
         return expDate;
@@ -280,7 +286,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * before PayPal cancels a profile.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: MAXFAILPAYMENTS
+     * <p>Maps to Payflow Parameter: MAXFAILPAYMENTS
      */
     public String getMaxFailPayments() {
         return maxFailPayments;
@@ -290,7 +296,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the NumFailPayments parameter.Number of payments that failed.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: NUMFAILPAYMENTS
+     * <p>Maps to Payflow Parameter: NUMFAILPAYMENTS
      */
     public String getNumFailPayments() {
         return numFailPayments;
@@ -300,7 +306,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the retryNumDays parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: RETRYNUMDAYS
+     * <p>Maps to Payflow Parameter: RETRYNUMDAYS
      */
     public String getRetryNumDays() {
         return retryNumDays;
@@ -310,7 +316,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the email parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: EMAIL
+     * <p>Maps to Payflow Parameter: EMAIL
      */
     public String getEmail() {
         return email;
@@ -320,7 +326,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the companyName parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: COMPANYNAME
+     * <p>Maps to Payflow Parameter: COMPANYNAME
      */
     public String getCompanyName() {
         return companyName;
@@ -330,7 +336,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the name parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: NAME
+     * <p>Maps to Payflow Parameter: NAME
      */
     public String getName() {
         return name;
@@ -340,7 +346,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the firstName parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: FIRSTNAME
+     * <p>Maps to Payflow Parameter: FIRSTNAME
      */
     public String getFirstName() {
         return firstName;
@@ -350,7 +356,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the middleName parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: MIDDLENAME
+     * <p>Maps to Payflow Parameter: MIDDLENAME
      */
     public String getMiddleName() {
         return middleName;
@@ -360,7 +366,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the lastname parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: LASTNAME
+     * <p>Maps to Payflow Parameter: LASTNAME
      */
     public String getLastname() {
         return lastname;
@@ -370,7 +376,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the street parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: STREET
+     * <p>Maps to Payflow Parameter: STREET
      */
     public String getStreet() {
         return street;
@@ -380,7 +386,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the city parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: CITY
+     * <p>Maps to Payflow Parameter: CITY
      */
     public String getCity() {
         return city;
@@ -390,7 +396,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the state parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: STATE
+     * <p>Maps to Payflow Parameter: STATE
      */
     public String getState() {
         return state;
@@ -400,7 +406,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the Zip parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: ZIP
+     * <p>Maps to Payflow Parameter: ZIP
      */
     public String getZip() {
         return zip;
@@ -410,7 +416,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the Country parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: COUNTRY
+     * <p>Maps to Payflow Parameter: COUNTRY
      */
     public String getCountry() {
         return country;
@@ -420,7 +426,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the PhoneNum parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: PHONENUM
+     * <p>Maps to Payflow Parameter: PHONENUM
      */
     public String getPhoneNum() {
         return phoneNum;
@@ -430,7 +436,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the hipToFName parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: SHIPTOFIRSTNAME
+     * <p>Maps to Payflow Parameter: SHIPTOFIRSTNAME
      */
     public String getShipToFName() {
         return shipToFName;
@@ -440,7 +446,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the ShipToMName parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: SHIPTOMIDDLENAME
+     * <p>Maps to Payflow Parameter: SHIPTOMIDDLENAME
      */
     public String getShipToMName() {
         return shipToMName;
@@ -450,7 +456,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the ShipToLName parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: SHIPTOLASTNAME
+     * <p>Maps to Payflow Parameter: SHIPTOLASTNAME
      */
     public String getShipToLName() {
         return shipToLName;
@@ -460,7 +466,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the ShipToStreet parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: SHIPTOSTREET
+     * <p>Maps to Payflow Parameter: SHIPTOSTREET
      */
     public String getShipToStreet() {
         return shipToStreet;
@@ -470,7 +476,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the ShipToCity parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: SHIPTOCITY
+     * <p>Maps to Payflow Parameter: SHIPTOCITY
      */
     public String getShipToCity() {
         return shipToCity;
@@ -480,7 +486,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the profileName parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: PROFILENAME
+     * <p>Maps to Payflow Parameter: PROFILENAME
      */
     public String getShipToState() {
         return shipToState;
@@ -490,7 +496,7 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the ShipToZip parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: SHIPTOZIP
+     * <p>Maps to Payflow Parameter: SHIPTOZIP
      */
     public String getShipToZip() {
         return shipToZip;
@@ -500,17 +506,78 @@ public final class RecurringResponse extends BaseResponseDataObject {
      * Gets the ShipToCountry parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: SHIPTOCOUNTRY
+     * <p>Maps to Payflow Parameter: SHIPTOCOUNTRY
      */
     public String getShipToCountry() {
         return shipToCountry;
+    }
+
+
+    /**
+     * Gets the CreationDate parameter.
+     *
+     * @return - String
+     * <p>Maps to Payflow Parameter: CREATIONDATE
+     */
+    public String getCreationDate() {
+        return creationDate;
+    }
+
+    /**
+     * Gets the LastChanged parameter.
+     *
+     * @return - String
+     * <p>Maps to Payflow Parameter: LASTCHANGED
+     */
+    public String getLastChanged() {
+        return lastChanged;
+    }
+
+    /**
+     * Gets the RPStateparameter.
+     *
+     * @return - String
+     * <p>Maps to Payflow Parameter: RPSTATE
+     */
+    public String getRpState() {
+        return rpState;
+    }
+
+    /**
+     * Gets the NextPaymentNumber parameter.
+     *
+     * @return - String
+     * <p>Maps to Payflow Parameter: NEXTPAYMENTNUMBER
+     */
+    public String getNextPaymentNumber() {
+        return nextPayment;
+    }
+
+    /**
+     * Gets the Frequency parameter.
+     *
+     * @return - String
+     * <p>Maps to Payflow Parameter: FREQUENCY
+     */
+    public String getFrequency() {
+        return frequency;
+    }
+
+    /**
+     * Gets the Currency parameter.
+     *
+     * @return - String
+     * <p>Maps to Payflow Parameter: CURRENCY
+     */
+    public String getCurrency() {
+        return currency;
     }
 
     /**
      * Gets the profileName parameter.
      *
      * @return - String
-     *  <p>Maps to Payflow Parameter: PROFILENAME
+     * <p>Maps to Payflow Parameter: PROFILENAME
      */
     public Hashtable getInquiryParams() {
         return inquiryParams;
@@ -545,16 +612,17 @@ public final class RecurringResponse extends BaseResponseDataObject {
         maxFailPayments = (String) ResponseHashTable.get(PayflowConstants.PARAM_MAXFAILPAYMENTS);
         numFailPayments = (String) ResponseHashTable.get(PayflowConstants.PARAM_NUMFAILPAYMENTS);
         retryNumDays = (String) ResponseHashTable.get(PayflowConstants.PARAM_RETRYNUMDAYS);
-        email = (String) ResponseHashTable.get(PayflowConstants.PARAM_EMAIL);
         companyName = (String) ResponseHashTable.get(PayflowConstants.PARAM_COMPANYNAME);
+        // Since Recurring Billing was never updated to support "BILLTO" parameters, overriding with older NVPs.
         name = (String) ResponseHashTable.get(PayflowConstants.PARAM_NAME);
         firstName = (String) ResponseHashTable.get(PayflowConstants.PARAM_FIRSTNAME);
         middleName = (String) ResponseHashTable.get(PayflowConstants.PARAM_MIDDLENAME);
-        lastname = (String) ResponseHashTable.get(PayflowConstants.PARAM_LASTNAME);
-        street = (String) ResponseHashTable.get(PayflowConstants.PARAM_STREET);
-        city = (String) ResponseHashTable.get(PayflowConstants.PARAM_CITY);
-        state = (String) ResponseHashTable.get(PayflowConstants.PARAM_STATE);
-        zip = (String) ResponseHashTable.get(PayflowConstants.PARAM_ZIP);
+        lastname = (String) ResponseHashTable.get("LASTNAME");
+        street = (String) ResponseHashTable.get("STREET");
+        city = (String) ResponseHashTable.get("CITY");
+        state = (String) ResponseHashTable.get("STATE");
+        zip = (String) ResponseHashTable.get("ZIP");
+        email = (String) ResponseHashTable.get("EMAIL");
         country = (String) ResponseHashTable.get(PayflowConstants.PARAM_COUNTRY);
         phoneNum = (String) ResponseHashTable.get(PayflowConstants.PARAM_PHONENUM);
         shipToFName = (String) ResponseHashTable.get(PayflowConstants.PARAM_SHIPTOFIRSTNAME);
@@ -565,6 +633,12 @@ public final class RecurringResponse extends BaseResponseDataObject {
         shipToState = (String) ResponseHashTable.get(PayflowConstants.PARAM_SHIPTOSTATE);
         shipToZip = (String) ResponseHashTable.get(PayflowConstants.PARAM_SHIPTOZIP);
         shipToCountry = (String) ResponseHashTable.get(PayflowConstants.PARAM_SHIPTOCOUNTRY);
+        creationDate = (String) ResponseHashTable.get(PayflowConstants.PARAM_CREATIONDATE);
+        lastChanged = (String) ResponseHashTable.get(PayflowConstants.PARAM_LASTCHANGED);
+        rpState = (String) ResponseHashTable.get(PayflowConstants.PARAM_RPSTATE);
+        nextPaymentNumber = (String) ResponseHashTable.get(PayflowConstants.PARAM_NEXTPAYMENTNUM);
+        frequency = (String) ResponseHashTable.get(PayflowConstants.PARAM_FREQUENCY);
+        currency = (String) ResponseHashTable.get(PayflowConstants.PARAM_CURRENCY);
 
 
         ResponseHashTable.remove(PayflowConstants.PARAM_PROFILEID);
@@ -589,16 +663,16 @@ public final class RecurringResponse extends BaseResponseDataObject {
         ResponseHashTable.remove(PayflowConstants.PARAM_MAXFAILPAYMENTS);
         ResponseHashTable.remove(PayflowConstants.PARAM_NUMFAILPAYMENTS);
         ResponseHashTable.remove(PayflowConstants.PARAM_RETRYNUMDAYS);
-        ResponseHashTable.remove(PayflowConstants.PARAM_EMAIL);
         ResponseHashTable.remove(PayflowConstants.PARAM_COMPANYNAME);
         ResponseHashTable.remove(PayflowConstants.PARAM_NAME);
         ResponseHashTable.remove(PayflowConstants.PARAM_FIRSTNAME);
         ResponseHashTable.remove(PayflowConstants.PARAM_MIDDLENAME);
         ResponseHashTable.remove(PayflowConstants.PARAM_LASTNAME);
-        ResponseHashTable.remove(PayflowConstants.PARAM_STREET);
-        ResponseHashTable.remove(PayflowConstants.PARAM_CITY);
-        ResponseHashTable.remove(PayflowConstants.PARAM_STATE);
-        ResponseHashTable.remove(PayflowConstants.PARAM_ZIP);
+        ResponseHashTable.remove("STREET");
+        ResponseHashTable.remove("CITY");
+        ResponseHashTable.remove("STATE");
+        ResponseHashTable.remove("ZIP");
+        ResponseHashTable.remove("EMAIL");
         ResponseHashTable.remove(PayflowConstants.PARAM_COUNTRY);
         ResponseHashTable.remove(PayflowConstants.PARAM_PHONENUM);
         ResponseHashTable.remove(PayflowConstants.PARAM_SHIPTOFIRSTNAME);
@@ -615,6 +689,12 @@ public final class RecurringResponse extends BaseResponseDataObject {
         ResponseHashTable.remove(PayflowConstants.PARAM_P_TENDERn);
         ResponseHashTable.remove(PayflowConstants.PARAM_P_TRANSTIMEn);
         ResponseHashTable.remove(PayflowConstants.PARAM_P_AMOUNTn);
+        ResponseHashTable.remove(PayflowConstants.PARAM_CREATIONDATE);
+        ResponseHashTable.remove(PayflowConstants.PARAM_LASTCHANGED);
+        ResponseHashTable.remove(PayflowConstants.PARAM_RPSTATE);
+        ResponseHashTable.remove(PayflowConstants.PARAM_NEXTPAYMENTNUM);
+        ResponseHashTable.remove(PayflowConstants.PARAM_FREQUENCY);
+        ResponseHashTable.remove(PayflowConstants.PARAM_CURRENCY);
     }
 
 }

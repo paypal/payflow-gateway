@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Used as the Purchase Invoice class. All the purchase related information can be stored in this class.
- *  * <p>
+ * * <p>
  * Following transactions do require invoice object:</p>
  * <ol>
  * <li>Sale Transaction</li>
@@ -21,7 +21,7 @@ import java.util.ArrayList;
  * <li>Reference Credit Transaction</li>
  * </ol>
  *
- *  <p>
+ * <p>
  * .................
  * // Create a new Invoice data object with the Amount, Billing Address etc. details.
  * Invoice inv = new Invoice();
@@ -90,8 +90,10 @@ public class Invoice extends BaseRequestDataObject {
     private String reportGroup;
     private ArrayList adviceDetailList;
     private Devices devices;
-	private String miscData;
-
+    private String miscData;
+    private String scaExemption;
+    private String citDate;
+    private String vMaid;
 
     /**
      * Constructor.This is a default constructor which does not take any parameters.
@@ -113,31 +115,31 @@ public class Invoice extends BaseRequestDataObject {
      *             For example L_QTY0=1 is the quantity for line item 0 and is equal to 1,
      *             with n starting at 0</p>
      *             <p>Following example shows how to use line item.</p>
-     *  <p>
-     * .................
-     * //inv is the Invoice object.
-     * .................
-     * // Create a line item.
-     * LineItem item = new LineItem();
-     * // Add first item.
-     * Currency lnamt = new Currency(new Double(8.95), "USD");
-     * item.setAmt(lnamt);
-     * item.setDesc("Line 1");
-     * item.setQty(1);
-     * item.setItemNumber("1");
-     * // Add line item to invoice.
-     * inv.addLineItem(item);
-     * // Create a line item.
-     * LineItem item1 = new LineItem();
-     * // Add second item.
-     * Currency lnamt1 = new Currency(new Double(5.25), "USD");
-     * item1.setAmt(lnamt);
-     * item1.setDesc("Line 2");
-     * item1.setQty(2);
-     * item1.setItemNumber("2");
-     * // Add line item to invoice.
-     * inv.addLineItem(item1);
-     * .................
+     *             <p>
+     *             .................
+     *             //inv is the Invoice object.
+     *             .................
+     *             // Create a line item.
+     *             LineItem item = new LineItem();
+     *             // Add first item.
+     *             Currency lnamt = new Currency(new Double(8.95), "USD");
+     *             item.setAmt(lnamt);
+     *             item.setDesc("Line 1");
+     *             item.setQty(1);
+     *             item.setItemNumber("1");
+     *             // Add line item to invoice.
+     *             inv.addLineItem(item);
+     *             // Create a line item.
+     *             LineItem item1 = new LineItem();
+     *             // Add second item.
+     *             Currency lnamt1 = new Currency(new Double(5.25), "USD");
+     *             item1.setAmt(lnamt);
+     *             item1.setDesc("Line 2");
+     *             item1.setQty(2);
+     *             item1.setItemNumber("2");
+     *             // Add line item to invoice.
+     *             inv.addLineItem(item1);
+     *             .................
      */
     public void addLineItem(LineItem item) {
         itemList.add(item);
@@ -148,13 +150,13 @@ public class Invoice extends BaseRequestDataObject {
      *
      * @param index Index of lineitem to be removed.
      *              <p>Use this method to remove a line item at a particular index in the purchase order.</P>
-     *  <p>
-     * .................
-     * // Inv is the Invoice object
-     * .................
-     * // Remove item at index 0
-     * inv.removeLineItem(0);
-     * .................
+     *              <p>
+     *              .................
+     *              // Inv is the Invoice object
+     *              .................
+     *              // Remove item at index 0
+     *              inv.removeLineItem(0);
+     *              .................
      */
     public void removeLineItem(int index) {
         itemList.remove(index);
@@ -165,7 +167,7 @@ public class Invoice extends BaseRequestDataObject {
      * <p>Use this method to clear all the
      * line items added to the purchase order.</p>
      *
-     *  <p>
+     * <p>
      * .................
      * // inv is the Invoice object
      * .................
@@ -178,7 +180,6 @@ public class Invoice extends BaseRequestDataObject {
     }
 
     /**
-     *
      *
      */
     private void generateItemRequest() {
@@ -196,22 +197,22 @@ public class Invoice extends BaseRequestDataObject {
      * Adds a advice detail item to the list.
      *
      * @param item AdviceDetail object
-     *
-     * This class holds the advice detail related information.
-     * Detail of a charge where *n* is a value from 1 - 5. Use for additional breakdown of the amount.
-     * For example ADDLAMT1=1 is the amount for the additional amount for advice detail item 1 and is equal to 1,
-     * <p>Following example shows how to use advice detail.</p>
-     * <p>
-     * .................
-     * //inv is the Invoice object.
-     * .................
-     * // Create a advice detail item.
-     * AdviceDetail addDetail1 = new AdviceDetail();
-     * addDetail1.setAddLAmt("1");
-     * addDetail1.setAddLAmtType("1");
-     * inv.addAdviceDetailItem(addDetail1);
-     * // To add another item, just do the same as above but increment the value of AddDetail to 2: AddDetail2
-     * ..................
+     *             <p>
+     *             This class holds the advice detail related information.
+     *             Detail of a charge where *n* is a value from 1 - 5. Use for additional breakdown of the amount.
+     *             For example ADDLAMT1=1 is the amount for the additional amount for advice detail item 1 and is equal to 1,
+     *             <p>Following example shows how to use advice detail.</p>
+     *             <p>
+     *             .................
+     *             //inv is the Invoice object.
+     *             .................
+     *             // Create a advice detail item.
+     *             AdviceDetail addDetail1 = new AdviceDetail();
+     *             addDetail1.setAddLAmt("1");
+     *             addDetail1.setAddLAmtType("1");
+     *             inv.addAdviceDetailItem(addDetail1);
+     *             // To add another item, just do the same as above but increment the value of AddDetail to 2: AddDetail2
+     *             ..................
      */
     public void addAdviceDetailItem(AdviceDetail item) {
         adviceDetailList.add(item);
@@ -221,13 +222,13 @@ public class Invoice extends BaseRequestDataObject {
      * Removes a advice detail item from the list.
      *
      * @param index Index of the AdviceDetailItem to be removed.
-     * <p>Use this method to remove a advice detail item at a particular index in the purchase order.</P>
-     * .................
-     * // Inv is the Invoice object
-     * .................
-     * // Remove item at index 2
-     * inv.removeAdviceDetailItem(2);
-     * .................
+     *              <p>Use this method to remove a advice detail item at a particular index in the purchase order.</P>
+     *              .................
+     *              // Inv is the Invoice object
+     *              .................
+     *              // Remove item at index 2
+     *              inv.removeAdviceDetailItem(2);
+     *              .................
      */
     public void removeAdviceDetailItem(int index) {
         adviceDetailList.remove(index);
@@ -309,7 +310,10 @@ public class Invoice extends BaseRequestDataObject {
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_VATINVNUM, vatInvNum));
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_VATTAXRATE, vatTaxRate));
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_REPORTGROUP, reportGroup));
-			super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_MISCDATA, miscData));
+            super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_MISCDATA, miscData));
+            super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_SCAEXEMPTION, scaExemption));
+            super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_CITDATE, citDate));
+            super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_VMAID, vMaid));
 
 
             if (billTo != null) {
@@ -411,7 +415,7 @@ public class Invoice extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @return Currency
-     *  <p>Maps to Payflow Parameter: ALTTAXAMT</p>
+     * <p>Maps to Payflow Parameter: ALTTAXAMT</p>
      */
     public Currency getAltTaxAmt() {
         return altTaxAmt;
@@ -425,7 +429,7 @@ public class Invoice extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @param altTaxAmt Currency
-     *  <p>Maps to Payflow Parameter: ALTTAXAMT</p>
+     *                  <p>Maps to Payflow Parameter: ALTTAXAMT</p>
      */
     public void setAltTaxAmt(Currency altTaxAmt) {
         this.altTaxAmt = altTaxAmt;
@@ -441,7 +445,7 @@ public class Invoice extends BaseRequestDataObject {
      * provider may stipulate a maximum amount.</p>
      *
      * @return Currency
-     *  <p>Maps to Payflow Parameter: AMT</p>
+     * <p>Maps to Payflow Parameter: AMT</p>
      * .................
      * // inv is the Invoice object
      * .................
@@ -470,20 +474,20 @@ public class Invoice extends BaseRequestDataObject {
      * provider may stipulate a maximum amount.</p>
      *
      * @param amt Currency
-     *  <p>Maps to Payflow Parameter: AMT</p>
-     * .................
-     * // inv is the Invoice object
-     * .................
-     * // Set the Amount for the invoice.
-     * // A valid amount is a two decimal value.
-     * Currency amt = new Currency(new decimal(25.12))
-     * //For values which have more than two decimal places
-     * Currency amt = new Currency(new decimal(25.1214));
-     * amt.setNoOfDecimalDigits (2);
-     * //If the NoOfDecimalDigits property is used then it is mandatory to set one of the following properties to true.
-     * amt.setRound (true);
-     * amt.setTruncate (true);
-     * inv.setAmt (Amt);
+     *            <p>Maps to Payflow Parameter: AMT</p>
+     *            .................
+     *            // inv is the Invoice object
+     *            .................
+     *            // Set the Amount for the invoice.
+     *            // A valid amount is a two decimal value.
+     *            Currency amt = new Currency(new decimal(25.12))
+     *            //For values which have more than two decimal places
+     *            Currency amt = new Currency(new decimal(25.1214));
+     *            amt.setNoOfDecimalDigits (2);
+     *            //If the NoOfDecimalDigits property is used then it is mandatory to set one of the following properties to true.
+     *            amt.setRound (true);
+     *            amt.setTruncate (true);
+     *            inv.setAmt (Amt);
      */
     public void setAmt(Currency amt) {
         this.amt = amt;
@@ -506,16 +510,16 @@ public class Invoice extends BaseRequestDataObject {
      * addresses of the purchase order.</P>
      *
      * @param billTo BillTo
-     *  <p>
-     * .................
-     * // inv is the Invoice object
-     * .................
-     * // Set the Billing Address details.
-     * BillTo bill = New BillTo();
-     * bill.setBillToStreet("123 Main St.");
-     * bill.setBillToZip("12345");
-     * inv.setBillTo (bill);
-     * .................
+     *               <p>
+     *               .................
+     *               // inv is the Invoice object
+     *               .................
+     *               // Set the Billing Address details.
+     *               BillTo bill = New BillTo();
+     *               bill.setBillToStreet("123 Main St.");
+     *               bill.setBillToZip("12345");
+     *               inv.setBillTo (bill);
+     *               .................
      */
     public void setBillTo(BillTo billTo) {
         this.billTo = billTo;
@@ -538,16 +542,16 @@ public class Invoice extends BaseRequestDataObject {
      * related information of the purchase order.</P>
      *
      * @param browserInfo BrowserInfo
-     *  <p>
-     * .................
-     * // inv is the Invoice object
-     * .................
-     * // Set the Browser Info details.
-     * BrowserInfo browser = New BrowserInfo();
-     * browser.setBrowserCountryCode ("USA");
-     * browser.setBrowserUserAgent ("IE 6.0");
-     * inv.setBrowserInfo (browser);
-     * .................
+     *                    <p>
+     *                    .................
+     *                    // inv is the Invoice object
+     *                    .................
+     *                    // Set the Browser Info details.
+     *                    BrowserInfo browser = New BrowserInfo();
+     *                    browser.setBrowserCountryCode ("USA");
+     *                    browser.setBrowserUserAgent ("IE 6.0");
+     *                    inv.setBrowserInfo (browser);
+     *                    .................
      */
     public void setBrowserInfo(BrowserInfo browserInfo) {
         this.browserInfo = browserInfo;
@@ -559,7 +563,7 @@ public class Invoice extends BaseRequestDataObject {
      * for the purchase order.</P>
      *
      * @return String
-     *  <p>Maps to Payflow Parameter: COMMCODE</p>
+     * <p>Maps to Payflow Parameter: COMMCODE</p>
      */
     public String getCommCode() {
         return commCode;
@@ -571,7 +575,7 @@ public class Invoice extends BaseRequestDataObject {
      * for the purchase order.</P>
      *
      * @param commCode String
-     *  <p>Maps to Payflow Parameter: COMMCODE</p>
+     *                 <p>Maps to Payflow Parameter: COMMCODE</p>
      */
     public void setCommCode(String commCode) {
         this.commCode = commCode;
@@ -583,7 +587,7 @@ public class Invoice extends BaseRequestDataObject {
      * purposes.</P>
      *
      * @return String
-     *  <p>Maps to Payflow Parameter: COMMENT1</p>
+     * <p>Maps to Payflow Parameter: COMMENT1</p>
      */
     public String getComment1() {
         return comment1;
@@ -595,7 +599,7 @@ public class Invoice extends BaseRequestDataObject {
      * purposes.</P>
      *
      * @param comment1 String
-     *  <p>Maps to Payflow Parameter: COMMENT1</p>
+     *                 <p>Maps to Payflow Parameter: COMMENT1</p>
      */
     public void setComment1(String comment1) {
         this.comment1 = comment1;
@@ -607,7 +611,7 @@ public class Invoice extends BaseRequestDataObject {
      * purposes.</P>
      *
      * @return String
-     *  <p>Maps to Payflow Parameter: COMMENT2</p>
+     * <p>Maps to Payflow Parameter: COMMENT2</p>
      */
     public String getComment2() {
         return comment2;
@@ -619,7 +623,7 @@ public class Invoice extends BaseRequestDataObject {
      * purposes.</P>
      *
      * @param comment2 String
-     *  <p>Maps to Payflow Parameter: COMMENT2</p>
+     *                 <p>Maps to Payflow Parameter: COMMENT2</p>
      */
     public void setComment2(String comment2) {
         this.comment2 = comment2;
@@ -642,16 +646,16 @@ public class Invoice extends BaseRequestDataObject {
      * related information of the purchase order.</P>
      *
      * @param customerInfo CustomerInfo
-     *  <p>
-     * .................
-     * // inv is the Invoice object
-     * .................
-     * // Set the Customer Info details.
-     * CustomerInfo cust = New CustomerInfo();
-     * cust.setCustCode ("CustXXXXX");
-     * cust.setCustIP ("255.255.255.255");
-     * inv.setCustomerInfo (Cust);
-     * .................
+     *                     <p>
+     *                     .................
+     *                     // inv is the Invoice object
+     *                     .................
+     *                     // Set the Customer Info details.
+     *                     CustomerInfo cust = New CustomerInfo();
+     *                     cust.setCustCode ("CustXXXXX");
+     *                     cust.setCustIP ("255.255.255.255");
+     *                     inv.setCustomerInfo (Cust);
+     *                     .................
      */
     public void setCustomerInfo(CustomerInfo customerInfo) {
         this.customerInfo = customerInfo;
@@ -663,16 +667,16 @@ public class Invoice extends BaseRequestDataObject {
      * related information of the purchase order.</P>
      *
      * @param merchantInfo MerchantInfo
-     *  <p>
-     * .................
-     * // inv is the Invoice object
-     * .................
-     * // Set the Merchant Info details.
-     * MerchantInfo merchant = new MerchantInfo();
-     * merchant.setMerchantName("MerchantXXXXX");
-     * merchant.setMerchantCity("Somewhere");
-     * inv.setMerchantInfo (merchant);
-     * .................
+     *                     <p>
+     *                     .................
+     *                     // inv is the Invoice object
+     *                     .................
+     *                     // Set the Merchant Info details.
+     *                     MerchantInfo merchant = new MerchantInfo();
+     *                     merchant.setMerchantName("MerchantXXXXX");
+     *                     merchant.setMerchantCity("Somewhere");
+     *                     inv.setMerchantInfo (merchant);
+     *                     .................
      */
     public void setMerchantInfo(MerchantInfo merchantInfo) {
         this.merchantInfo = merchantInfo;
@@ -683,16 +687,16 @@ public class Invoice extends BaseRequestDataObject {
      * <p>Use this method to set the devices the cardholder used.</P>
      *
      * @param devices Devices
-     *  <p>
-     * .................
-     * // inv is the Invoice object
-     * .................
-     * // Set the Devices details.
-     * Devices devices = new Devices();
-     * devices.setCatType("3");
-     * devices.setContactLess("RFD");
-     * inv.set
-     * .................
+     *                <p>
+     *                .................
+     *                // inv is the Invoice object
+     *                .................
+     *                // Set the Devices details.
+     *                Devices devices = new Devices();
+     *                devices.setCatType("3");
+     *                devices.setContactLess("RFD");
+     *                inv.set
+     *                .................
      */
     public void setDevices(Devices devices) {
         this.devices = devices;
@@ -714,16 +718,16 @@ public class Invoice extends BaseRequestDataObject {
      * <p>Use this method to set the User Items.</P>
      *
      * @param userItem UserItem
-     *  <p>
-     * .................
-     * // inv is the Invoice object
-     * .................
-     * // Set the User Item details.
-     * UserItem nUser = new UserItem();
-     * nUser.setUserItem1("TUSER1");
-     * nUser.setUserItem2("TUSER2");
-     * inv.setUserItem(nUser);
-     * .................
+     *                 <p>
+     *                 .................
+     *                 // inv is the Invoice object
+     *                 .................
+     *                 // Set the User Item details.
+     *                 UserItem nUser = new UserItem();
+     *                 nUser.setUserItem1("TUSER1");
+     *                 nUser.setUserItem2("TUSER2");
+     *                 inv.setUserItem(nUser);
+     *                 .................
      */
     public void setUserItem(UserItem userItem) {
         this.userItem = userItem;
@@ -740,7 +744,7 @@ public class Invoice extends BaseRequestDataObject {
      * submitting any transaction, including retries.</p>
      *
      * @return String
-     *  <p>Maps to Payflow Parameter: CUSTREF</p>
+     * <p>Maps to Payflow Parameter: CUSTREF</p>
      */
     public String getCustRef() {
         return custRef;
@@ -757,7 +761,7 @@ public class Invoice extends BaseRequestDataObject {
      * submitting any transaction, including retries.</p>
      *
      * @param custRef String
-     *  <p>Maps to Payflow Parameter: CUSTREF</p>
+     *                <p>Maps to Payflow Parameter: CUSTREF</p>
      */
     public void setCustRef(String custRef) {
         this.custRef = custRef;
@@ -768,7 +772,7 @@ public class Invoice extends BaseRequestDataObject {
      * <p>General description of the transaction.</P>
      *
      * @return String
-     *  <p>Maps to Payflow Parameter: DESC</p>
+     * <p>Maps to Payflow Parameter: DESC</p>
      */
     public String getDesc() {
         return desc;
@@ -779,7 +783,7 @@ public class Invoice extends BaseRequestDataObject {
      * <p>General description of the transaction.</P>
      *
      * @param desc String
-     *  <p>Maps to Payflow Parameter: DESC</p>
+     *             <p>Maps to Payflow Parameter: DESC</p>
      */
     public void setDesc(String desc) {
         this.desc = desc;
@@ -791,7 +795,7 @@ public class Invoice extends BaseRequestDataObject {
      * the charge.</P>
      *
      * @return String
-     *  <p>Maps to Payflow Parameter: DESC1</p>
+     * <p>Maps to Payflow Parameter: DESC1</p>
      */
     public String getDesc1() {
         return desc1;
@@ -803,7 +807,7 @@ public class Invoice extends BaseRequestDataObject {
      * the charge.</P>
      *
      * @param desc1 String
-     *  <p>Maps to Payflow Parameter: DESC1</p>
+     *              <p>Maps to Payflow Parameter: DESC1</p>
      */
     public void setDesc1(String desc1) {
         this.desc1 = desc1;
@@ -815,7 +819,7 @@ public class Invoice extends BaseRequestDataObject {
      * the charge.</P>
      *
      * @return String
-     *  <p>Maps to Payflow Parameter: DESC2</p>
+     * <p>Maps to Payflow Parameter: DESC2</p>
      */
     public String getDesc2() {
         return desc2;
@@ -827,7 +831,7 @@ public class Invoice extends BaseRequestDataObject {
      * the charge.</P>
      *
      * @param desc2 String
-     *  <p>Maps to Payflow Parameter: DESC2</p>
+     *              <p>Maps to Payflow Parameter: DESC2</p>
      */
     public void setDesc2(String desc2) {
         this.desc2 = desc2;
@@ -839,7 +843,7 @@ public class Invoice extends BaseRequestDataObject {
      * the charge.</P>
      *
      * @return String
-     *  <p>Maps to Payflow Parameter: DESC3</p>
+     * <p>Maps to Payflow Parameter: DESC3</p>
      */
     public String getDesc3() {
         return desc3;
@@ -851,7 +855,7 @@ public class Invoice extends BaseRequestDataObject {
      * the charge.</P>
      *
      * @param desc3 String
-     *  <p>Maps to Payflow Parameter: DESC3</p>
+     *              <p>Maps to Payflow Parameter: DESC3</p>
      */
     public void setDesc3(String desc3) {
         this.desc3 = desc3;
@@ -863,7 +867,7 @@ public class Invoice extends BaseRequestDataObject {
      * the charge.</P>
      *
      * @return String
-     *  <p>Maps to Payflow Parameter: DESC4</p>
+     * <p>Maps to Payflow Parameter: DESC4</p>
      */
     public String getDesc4() {
         return desc4;
@@ -875,7 +879,7 @@ public class Invoice extends BaseRequestDataObject {
      * the charge.</P>
      *
      * @param desc4 String
-     *  <p>Maps to Payflow Parameter: DESC4</p>
+     *              <p>Maps to Payflow Parameter: DESC4</p>
      */
     public void setDesc4(String desc4) {
         this.desc4 = desc4;
@@ -889,7 +893,7 @@ public class Invoice extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @return Currency
-     *  <p>Maps to Payflow Parameter: DISCOUNT</p>
+     * <p>Maps to Payflow Parameter: DISCOUNT</p>
      */
     public Currency getDiscount() {
         return discount;
@@ -903,7 +907,7 @@ public class Invoice extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @param discount Currency
-     *  <p>Maps to Payflow Parameter: DISCOUNT</p>
+     *                 <p>Maps to Payflow Parameter: DISCOUNT</p>
      */
     public void setDiscount(Currency discount) {
         this.discount = discount;
@@ -918,7 +922,7 @@ public class Invoice extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @return Currency
-     *  <p>Maps to Payflow Parameter: DUTYAMT</p>
+     * <p>Maps to Payflow Parameter: DUTYAMT</p>
      */
     public Currency getDutyAmt() {
         return dutyAmt;
@@ -933,7 +937,7 @@ public class Invoice extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @param dutyAmt Currency
-     *  <p>Maps to Payflow Parameter: DUTYAMT</p>
+     *                <p>Maps to Payflow Parameter: DUTYAMT</p>
      */
     public void setDutyAmt(Currency dutyAmt) {
         this.dutyAmt = dutyAmt;
@@ -954,7 +958,7 @@ public class Invoice extends BaseRequestDataObject {
      * <p>yyyy - Year, mm - Month dd - Day, hh - Hours, mm - Minutes ss - Seconds.</p>
      *
      * @return String
-     *  <p>Maps to Payflow Parameter: ENDTIME</p>
+     * <p>Maps to Payflow Parameter: ENDTIME</p>
      */
     public String getEndTime() {
         return endTime;
@@ -975,7 +979,7 @@ public class Invoice extends BaseRequestDataObject {
      * <p>yyyy - Year, mm - Month dd - Day, hh - Hours, mm - Minutes ss - Seconds.</p>
      *
      * @param endTime String
-     *  <p>Maps to Payflow Parameter: ENDTIME</p>
+     *                <p>Maps to Payflow Parameter: ENDTIME</p>
      */
     public void setEndTime(String endTime) {
         this.endTime = endTime;
@@ -989,7 +993,7 @@ public class Invoice extends BaseRequestDataObject {
      * instead of 1,199.95.</p>
      *
      * @return Currency
-     *  <p>Maps to Payflow Parameter: FREIGHTAMT</p>
+     * <p>Maps to Payflow Parameter: FREIGHTAMT</p>
      */
     public Currency getFreightAmt() {
         return freightAmt;
@@ -1003,7 +1007,7 @@ public class Invoice extends BaseRequestDataObject {
      * instead of 1,199.95.</p>
      *
      * @param freightAmt Currency
-     *  <p>Maps to Payflow Parameter: FREIGHTAMT</p>
+     *                   <p>Maps to Payflow Parameter: FREIGHTAMT</p>
      */
     public void setFreightAmt(Currency freightAmt) {
         this.freightAmt = freightAmt;
@@ -1017,7 +1021,7 @@ public class Invoice extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @return Currency
-     *  <p>Maps to Payflow Parameter: HANDLINGAMT</p>
+     * <p>Maps to Payflow Parameter: HANDLINGAMT</p>
      */
     public Currency getHandlingAmt() {
         return handlingAmt;
@@ -1031,7 +1035,7 @@ public class Invoice extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @param handlingAmt Currency
-     *  <p>Maps to Payflow Parameter: HANDLINGAMT</p>
+     *                    <p>Maps to Payflow Parameter: HANDLINGAMT</p>
      */
     public void setHandlingAmt(Currency handlingAmt) {
         this.handlingAmt = handlingAmt;
@@ -1046,7 +1050,7 @@ public class Invoice extends BaseRequestDataObject {
      * appear on the merchant's bank reconciliation statement.</P>
      *
      * @return String
-     *  <p>Maps to Payflow Parameter: INVNUM</p>
+     * <p>Maps to Payflow Parameter: INVNUM</p>
      */
     public String getInvNum() {
         return invNum;
@@ -1061,7 +1065,7 @@ public class Invoice extends BaseRequestDataObject {
      * appear on the merchant's bank reconciliation statement.</P>
      *
      * @param invNum String
-     *  <p>Maps to Payflow Parameter: INVNUM</p>
+     *               <p>Maps to Payflow Parameter: INVNUM</p>
      */
     public void setInvNum(String invNum) {
         this.invNum = invNum;
@@ -1074,7 +1078,7 @@ public class Invoice extends BaseRequestDataObject {
      * <p>yyyy - Year, mm - Month, dd - Day.</P>
      *
      * @return String
-     *  <p>Maps to Payflow Parameter: INVOICEDATE</p>
+     * <p>Maps to Payflow Parameter: INVOICEDATE</p>
      */
     public String getInvoiceDate() {
         return invoiceDate;
@@ -1087,7 +1091,7 @@ public class Invoice extends BaseRequestDataObject {
      * yyyy - Year, mm - Month, dd - Day.
      *
      * @param invoiceDate String
-     *  <p>Maps to Payflow Parameter: INVOICEDATE</p>
+     *                    <p>Maps to Payflow Parameter: INVOICEDATE</p>
      */
     public void setInvoiceDate(String invoiceDate) {
         this.invoiceDate = invoiceDate;
@@ -1102,7 +1106,7 @@ public class Invoice extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @return Currency
-     *  <p>Maps to Payflow Parameter: LOCALTAXAMT</p>
+     * <p>Maps to Payflow Parameter: LOCALTAXAMT</p>
      */
     public Currency getLocalTaxAmt() {
         return localTaxAmt;
@@ -1116,7 +1120,7 @@ public class Invoice extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @param localTaxAmt Currency
-     *  <p>Maps to Payflow Parameter: LOCALTAXAMT</p>
+     *                    <p>Maps to Payflow Parameter: LOCALTAXAMT</p>
      */
     public void setLocalTaxAmt(Currency localTaxAmt) {
         this.localTaxAmt = localTaxAmt;
@@ -1130,7 +1134,7 @@ public class Invoice extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @return Currency
-     *  <p>Maps to Payflow Parameter: NATIONALTAXAMT</p>
+     * <p>Maps to Payflow Parameter: NATIONALTAXAMT</p>
      */
     public Currency getNationalTaxAmt() {
         return nationalTaxAmt;
@@ -1144,7 +1148,7 @@ public class Invoice extends BaseRequestDataObject {
      * instead of 1,199.95.</p>
      *
      * @param nationalTaxAmt Currency
-     *  <p>Maps to Payflow Parameter: NATIONALTAXAMT</p>
+     *                       <p>Maps to Payflow Parameter: NATIONALTAXAMT</p>
      */
     public void setNationalTaxAmt(Currency nationalTaxAmt) {
         this.nationalTaxAmt = nationalTaxAmt;
@@ -1157,7 +1161,7 @@ public class Invoice extends BaseRequestDataObject {
      * mm - Month, dd - Day, yy - Year.</P>
      *
      * @return String
-     *  <p>Maps to Payflow Parameter: ORDERDATE</p>
+     * <p>Maps to Payflow Parameter: ORDERDATE</p>
      */
     public String getOrderDate() {
         return orderDate;
@@ -1170,7 +1174,7 @@ public class Invoice extends BaseRequestDataObject {
      * mm - Month, dd - Day, yy - Year.</P>
      *
      * @param orderDate String
-     *  <p>Maps to Payflow Parameter: ORDERDATE</p>
+     *                  <p>Maps to Payflow Parameter: ORDERDATE</p>
      */
     public void setOrderDate(String orderDate) {
         this.orderDate = orderDate;
@@ -1180,7 +1184,7 @@ public class Invoice extends BaseRequestDataObject {
      * Gets the Order Time
      *
      * @return String
-     *  <p>Maps to Payflow Parameter: ORDERTIME</p>
+     * <p>Maps to Payflow Parameter: ORDERTIME</p>
      */
     public String getOrderTime() {
         return orderTime;
@@ -1190,7 +1194,7 @@ public class Invoice extends BaseRequestDataObject {
      * Sets the Order Time
      *
      * @param orderTime String
-     *  <p>Maps to Payflow Parameter: ORDERTIME</p>
+     *                  <p>Maps to Payflow Parameter: ORDERTIME</p>
      */
     public void setOrderTime(String orderTime) {
         this.orderTime = orderTime;
@@ -1201,7 +1205,7 @@ public class Invoice extends BaseRequestDataObject {
      * <P>Purchase Order Number / Merchant related data.</P>
      *
      * @return String
-     *  <p>Maps to Payflow Parameter: PONUM</p>
+     * <p>Maps to Payflow Parameter: PONUM</p>
      */
     public String getPoNum() {
         return poNum;
@@ -1212,7 +1216,7 @@ public class Invoice extends BaseRequestDataObject {
      * <P>Purchase Order Number / Merchant related data.</P>
      *
      * @param poNum String
-     *  <p>Maps to Payflow Parameter: PONUM</p>
+     *              <p>Maps to Payflow Parameter: PONUM</p>
      */
     public void setPoNum(String poNum) {
         this.poNum = poNum;
@@ -1223,7 +1227,7 @@ public class Invoice extends BaseRequestDataObject {
      * <P>Transaction ID / Merchant related data.</P>
      *
      * @return String
-     *  <p>Maps to Payflow Parameter: TRANSACTIONID</p>
+     * <p>Maps to Payflow Parameter: TRANSACTIONID</p>
      */
     public String getTransactionId() {
         return transactionId;
@@ -1234,7 +1238,7 @@ public class Invoice extends BaseRequestDataObject {
      * <P>Transaction Id / Merchant related data.</P>
      *
      * @param transactionId String
-     *  <p>Maps to Payflow Parameter: TRANSACTIONID</p>
+     *                      <p>Maps to Payflow Parameter: TRANSACTIONID</p>
      */
     public void setTransactionId(String transactionId) {
         this.transactionId = transactionId;
@@ -1245,7 +1249,7 @@ public class Invoice extends BaseRequestDataObject {
      * <P>Used to echo data back in response.</P>
      *
      * @return String
-     *  <p>Maps to Payflow Parameter: ECHODATA</p>
+     * <p>Maps to Payflow Parameter: ECHODATA</p>
      */
     public String getEchoData() {
         return echoData;
@@ -1258,7 +1262,7 @@ public class Invoice extends BaseRequestDataObject {
      * will be returned in the response</p>
      *
      * @param echoData String
-     *  <p>Maps to Payflow Parameter: ECHODATA</p>
+     *                 <p>Maps to Payflow Parameter: ECHODATA</p>
      */
     public void setEchoData(String echoData) {
         this.echoData = echoData;
@@ -1269,7 +1273,7 @@ public class Invoice extends BaseRequestDataObject {
      * <P>Used for Order ID</P>
      *
      * @return orderID String
-     *  <p>Maps to Payflow Parameter: ORDERID</p>
+     * <p>Maps to Payflow Parameter: ORDERID</p>
      */
     public String getOrderId() {
         return orderId;
@@ -1291,9 +1295,9 @@ public class Invoice extends BaseRequestDataObject {
      * as your only means to check for duplicate transactions.</p>
      *
      * @param orderId String
-     *  <p>Maps to Payflow Parameter: ORDERID</p>
+     *                <p>Maps to Payflow Parameter: ORDERID</p>
      */
-    public void setOrderId (String orderId) {
+    public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
 
@@ -1302,7 +1306,7 @@ public class Invoice extends BaseRequestDataObject {
      * <p>Is a recurring transaction? Y or N.</P>
      *
      * @return String
-     *  <p>Maps to Payflow Parameter: RECURRING</p>
+     * <p>Maps to Payflow Parameter: RECURRING</p>
      */
     public String getRecurring() {
         return recurring;
@@ -1313,7 +1317,7 @@ public class Invoice extends BaseRequestDataObject {
      * <p>Is a recurring transaction? Y or N.</P>
      *
      * @param recurring String
-     *  <p>Maps to Payflow Parameter: RECURRING</p>
+     *                  <p>Maps to Payflow Parameter: RECURRING</p>
      */
     public void setRecurring(String recurring) {
         this.recurring = recurring;
@@ -1327,7 +1331,7 @@ public class Invoice extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @return Currency
-     *  <p>Maps to Payflow Parameter: SHIPPINGAMT</p>
+     * <p>Maps to Payflow Parameter: SHIPPINGAMT</p>
      */
     public Currency getShippingAmt() {
         return shippingAmt;
@@ -1341,7 +1345,7 @@ public class Invoice extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @param shippingAmt Currency
-     *  <p>Maps to Payflow Parameter: SHIPPINGAMT</p>
+     *                    <p>Maps to Payflow Parameter: SHIPPINGAMT</p>
      */
     public void setShippingAmt(Currency shippingAmt) {
         this.shippingAmt = shippingAmt;
@@ -1349,8 +1353,8 @@ public class Invoice extends BaseRequestDataObject {
 
     /**
      * @return ShipTo
-     *         <p>Use this method to get the shipping
-     *         addresses of the purchase order.</p>
+     * <p>Use this method to get the shipping
+     * addresses of the purchase order.</p>
      */
     public ShipTo getShipTo() {
         return shipTo;
@@ -1359,15 +1363,15 @@ public class Invoice extends BaseRequestDataObject {
     /**
      * @param shipTo <p>Use this property to set the shipping
      *               addresses of the purchase order.</p>
-     *  .................
-     * // inv is the Invoice object
-     * .................
-     * // Set the Shipping Address details.
-     * ShipTo ship = New ShipTo();
-     * ship.setShipToStreet ("685A E. Middlefield Rd.");
-     * ship.setShipToZip ("94043");
-     * inv.setShipTo(ship);
-     * .................
+     *               .................
+     *               // inv is the Invoice object
+     *               .................
+     *               // Set the Shipping Address details.
+     *               ShipTo ship = New ShipTo();
+     *               ship.setShipToStreet ("685A E. Middlefield Rd.");
+     *               ship.setShipToZip ("94043");
+     *               inv.setShipTo(ship);
+     *               .................
      */
     public void setShipTo(ShipTo shipTo) {
         this.shipTo = shipTo;
@@ -1386,7 +1390,7 @@ public class Invoice extends BaseRequestDataObject {
      * yyyy - Year, mm - Month dd - Day, hh - Hours, mm - Minutes ss - Seconds.</P>
      *
      * @return startTime String
-     *  <p>Maps to Payflow Parameter: STARTTIME</p>
+     * <p>Maps to Payflow Parameter: STARTTIME</p>
      */
     public String getStartTime() {
         return startTime;
@@ -1405,7 +1409,7 @@ public class Invoice extends BaseRequestDataObject {
      * <p>yyyy - Year, mm - Month dd - Day, hh - Hours, mm - Minutes ss - Seconds.</P>
      *
      * @param startTime String
-     *  <p>Maps to Payflow Parameter: STARTTIME</p>
+     *                  <p>Maps to Payflow Parameter: STARTTIME</p>
      */
     public void setStartTime(String startTime) {
         this.startTime = startTime;
@@ -1419,7 +1423,7 @@ public class Invoice extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @return taxAmt Currency
-     *  <p>Maps to Payflow Parameter: TAXAMT</p>
+     * <p>Maps to Payflow Parameter: TAXAMT</p>
      */
     public Currency getTaxAmt() {
         return taxAmt;
@@ -1433,7 +1437,7 @@ public class Invoice extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @param taxAmt Currency
-     *  <p>Maps to Payflow Parameter: TAXAMT</p>
+     *               <p>Maps to Payflow Parameter: TAXAMT</p>
      */
     public void setTaxAmt(Currency taxAmt) {
         this.taxAmt = taxAmt;
@@ -1444,7 +1448,7 @@ public class Invoice extends BaseRequestDataObject {
      * <p>Is the customer tax exempt? Y or N</P>
      *
      * @return taxExempt String
-     *  <p>Maps to Payflow Parameter: TAXEXEMPT</p>
+     * <p>Maps to Payflow Parameter: TAXEXEMPT</p>
      */
     public String getTaxExempt() {
         return taxExempt;
@@ -1455,7 +1459,7 @@ public class Invoice extends BaseRequestDataObject {
      * <p>Is the customer tax exempt? Y or N</P>
      *
      * @param taxExempt String
-     *  <p>Maps to Payflow Parameter: TAXEXEMPT</p>
+     *                  <p>Maps to Payflow Parameter: TAXEXEMPT</p>
      */
     public void setTaxExempt(String taxExempt) {
         this.taxExempt = taxExempt;
@@ -1465,7 +1469,7 @@ public class Invoice extends BaseRequestDataObject {
      * Gets the VAT registration number
      *
      * @return vatRegNum String
-     *  <p>Maps to Payflow Parameter: VATREGNUM</p>
+     * <p>Maps to Payflow Parameter: VATREGNUM</p>
      */
     public String getVatRegNum() {
         return vatRegNum;
@@ -1475,7 +1479,7 @@ public class Invoice extends BaseRequestDataObject {
      * Sets the VAT registration number
      *
      * @param vatRegNum String
-     *  <p>Maps to Payflow Parameter: VATREGNUM</p>
+     *                  <p>Maps to Payflow Parameter: VATREGNUM</p>
      */
     public void setVatRegNum(String vatRegNum) {
         this.vatRegNum = vatRegNum;
@@ -1489,7 +1493,7 @@ public class Invoice extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @return vatTaxAmt Currency
-     *  <p>Maps to Payflow Parameter: VATTAXAMT</p>
+     * <p>Maps to Payflow Parameter: VATTAXAMT</p>
      */
     public Currency getVatTaxAmt() {
         return vatTaxAmt;
@@ -1503,7 +1507,7 @@ public class Invoice extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @param vatTaxAmt Currency
-     *  <p>Maps to Payflow Parameter: VATTAXAMT</p>
+     *                  <p>Maps to Payflow Parameter: VATTAXAMT</p>
      */
     public void setVatTaxAmt(Currency vatTaxAmt) {
         this.vatTaxAmt = vatTaxAmt;
@@ -1513,7 +1517,7 @@ public class Invoice extends BaseRequestDataObject {
      * Gets the VAT Tax percentage.
      *
      * @return vatTaxPercent String
-     *  <p>Maps to Payflow Parameter: VATTAXPERCENT</p>
+     * <p>Maps to Payflow Parameter: VATTAXPERCENT</p>
      */
     public String getVatTaxPercent() {
         return vatTaxPercent;
@@ -1523,7 +1527,7 @@ public class Invoice extends BaseRequestDataObject {
      * Sets the VAT Tax percentage.
      *
      * @param vatTaxPercent String
-     *  <p>Maps to Payflow Parameter: VATTAXPERCENT</p>
+     *                      <p>Maps to Payflow Parameter: VATTAXPERCENT</p>
      */
     public void setVatTaxPercent(String vatTaxPercent) {
         this.vatTaxPercent = vatTaxPercent;
@@ -1537,7 +1541,7 @@ public class Invoice extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @return itemAmt String
-     *  <p>Maps to Payflow Parameter: ITEMAMT</p>
+     * <p>Maps to Payflow Parameter: ITEMAMT</p>
      */
     public Currency getItemAmt() {
         return itemAmt;
@@ -1551,7 +1555,7 @@ public class Invoice extends BaseRequestDataObject {
      * instead of 1,199.95.</P>
      *
      * @param itemAmt String
-     *  <p>Maps to Payflow Parameter: ITEMAMT</p>
+     *                <p>Maps to Payflow Parameter: ITEMAMT</p>
      */
     public void setItemAmt(Currency itemAmt) {
         this.itemAmt = itemAmt;
@@ -1561,7 +1565,7 @@ public class Invoice extends BaseRequestDataObject {
      * Gets the order description for this Invoice
      *
      * @return orderDesc String
-     *  <p> Maps to Payflow Parameter: ORDERDESC</p>
+     * <p> Maps to Payflow Parameter: ORDERDESC</p>
      */
     public String getOrderDesc() {
         return orderDesc;
@@ -1571,7 +1575,7 @@ public class Invoice extends BaseRequestDataObject {
      * Sets the order description for this Invoice
      *
      * @param orderDesc String
-     *  <p> Maps to Payflow Parameter: ORDERDESC</p>
+     *                  <p> Maps to Payflow Parameter: ORDERDESC</p>
      */
     public void setOrderDesc(String orderDesc) {
         this.orderDesc = orderDesc;
@@ -1583,7 +1587,7 @@ public class Invoice extends BaseRequestDataObject {
      * F = First occurrence / S = Subsequent occurrence (default)
      *
      * @param recurringType String
-     *  <p>Maps to Payflow Parameter: RECURRINGTYPE</p>
+     *                      <p>Maps to Payflow Parameter: RECURRINGTYPE</p>
      */
     public void setRecurringType(String recurringType) {
         this.recurringType = recurringType;
@@ -1593,7 +1597,7 @@ public class Invoice extends BaseRequestDataObject {
      * Gets the type of the Recurring transaction (UK).
      *
      * @return recurringType String
-     *  <p>Maps to Payflow Parameter: RECURRINGTYPE</p>
+     * <p>Maps to Payflow Parameter: RECURRINGTYPE</p>
      */
     public String getRecurringType() {
         return recurringType;
@@ -1601,9 +1605,9 @@ public class Invoice extends BaseRequestDataObject {
 
     /**
      * Sets the Customer's IP Address.
-    *
+     *
      * @param custIp String
-     *  <p>Maps to Payflow Parameter: CUSTIP</p>
+     *               <p>Maps to Payflow Parameter: CUSTIP</p>
      */
     public void setCustIp(String custIp) {
         this.custIp = custIp;
@@ -1613,7 +1617,7 @@ public class Invoice extends BaseRequestDataObject {
      * Gets the Customer's IP Address.
      *
      * @return custIp String
-     *  <p>Maps to Payflow Parameter: CUSTIP</p>
+     * <p>Maps to Payflow Parameter: CUSTIP</p>
      */
     public String getCustIp() {
         return custIp;
@@ -1623,7 +1627,7 @@ public class Invoice extends BaseRequestDataObject {
      * Sets the VAT Invoice Number.
      *
      * @param vatInvNum String
-     *  <p>Maps to Payflow Parameter: VATINVNUM</p>
+     *                  <p>Maps to Payflow Parameter: VATINVNUM</p>
      */
     public void setVatInvNum(String vatInvNum) {
         this.vatInvNum = vatInvNum;
@@ -1633,7 +1637,7 @@ public class Invoice extends BaseRequestDataObject {
      * Gets the VAT Invoice Number.
      *
      * @return vatInvNum String
-     *  <p>Maps to Payflow Parameter: VATINVNUM</p>
+     * <p>Maps to Payflow Parameter: VATINVNUM</p>
      */
     public String getVatInvNum() {
         return vatInvNum;
@@ -1643,7 +1647,7 @@ public class Invoice extends BaseRequestDataObject {
      * Sets the VAT Tax Rate.
      *
      * @param vatTaxRate String
-     *  <p>Maps to Payflow Parameter: VATTAXRATE</p>
+     *                   <p>Maps to Payflow Parameter: VATTAXRATE</p>
      */
     public void setVatTaxRate(String vatTaxRate) {
         this.vatTaxRate = vatTaxRate;
@@ -1653,7 +1657,7 @@ public class Invoice extends BaseRequestDataObject {
      * Gets the VAT Tax Rate.
      *
      * @return vatTaxRate String
-     *  <p>Maps to Payflow Parameter: VATTAXRATE</p>
+     * <p>Maps to Payflow Parameter: VATTAXRATE</p>
      */
     public String getVatTaxRate() {
         return vatTaxRate;
@@ -1662,38 +1666,102 @@ public class Invoice extends BaseRequestDataObject {
     /**
      * Sets the Report Group.
      * Category that the transaction is in, for example: coffee mugs.
+     *
      * @param reportGroup String
-     *  <p>Maps to Payflow Parameter: REPORTGROUP</p>
+     *                    <p>Maps to Payflow Parameter: REPORTGROUP</p>
      */
     public void setReportGroup(String reportGroup) {
         this.reportGroup = reportGroup;
     }
+
     /**
      * Gets the Report Group.
      *
      * @return reportGroup String
-     *  <p>Maps to Payflow Parameter: REPORTGROUP</p>
+     * <p>Maps to Payflow Parameter: REPORTGROUP</p>
      */
     public String getReportGroup() {
         return reportGroup;
     }
-	
-	/**
+
+    /**
      * Sets the Miscellaneous Data.
+     *
      * @param miscData String
-     *  <p>Maps to Payflow Parameter: MISCDATA</p>
+     *                 <p>Maps to Payflow Parameter: MISCDATA</p>
      */
     public void setMiscData(String miscData) {
         this.miscData = miscData;
     }
+
     /**
      * Gets the Miscellaneous Data.
      *
      * @return miscData String
-     *  <p>Maps to Payflow Parameter: MISCDATA</p>
+     * <p>Maps to Payflow Parameter: MISCDATA</p>
      */
     public String getMiscData() {
         return miscData;
+    }
+
+    /**
+     * Sets the SCAExemption.
+     *
+     * @param scaExemption String
+     *                     <p>Maps to Payflow Parameter: SCAEXEMPTION</p>
+     */
+    public void setScaExemption(String scaExemption) {
+        this.scaExemption = scaExemption;
+    }
+
+    /**
+     * Gets the SCAExemption.
+     *
+     * @return scaExemption String
+     * <p>Maps to Payflow Parameter: SCAEXEMPTION</p>
+     */
+    public String getScaExemption() {
+        return scaExemption;
+    }
+
+    /**
+     * Sets the CitDate.
+     *
+     * @param citDate String
+     *                <p>Maps to Payflow Parameter: CITDATE</p>
+     */
+    public void setCitDate(String citDate) {
+        this.citDate = citDate;
+    }
+
+    /**
+     * Gets the CitDate
+     *
+     * @return citDate String
+     * <p>Maps to Payflow Parameter: CITDATE</p>
+     */
+    public String getCitDate() {
+        return citDate;
+    }
+
+    /**
+     * Sets the VMaid
+     *
+     * @param vMaid String
+     *              <p>Maps to Payflow Parameter: VMAID</p>
+     */
+    public void setVMaid(String vMaid) {
+        this.vMaid = vMaid;
+    }
+
+    /**
+     * Gets the VMaid
+     *
+     * @return vMaid String
+     * <p>Maps to Payflow Parameter: VMAID</p>
+     */
+    public String getVMaid() {
+        return vMaid;
     }
 }
 

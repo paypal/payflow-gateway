@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="78abef13-b7ae-4d58-ae46-66be2d107624" revisionNumber="1">
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<para>February 8, 2022</para>
+		</introduction>
+
+		<section>
+			<title>Changes in This Release</title>
+			<content>
+				<alert>
+					<para>
+						<legacyBold>IMPORTANT:</legacyBold> THIS VERSION IS NOT 100% COMPATIBLE WITH OLDER VERSIONS OF THE SDK AS SOME OF THE OBJECTS HAVE CHANGED AND/OR THEIR LOCATIONS HAVE MOVED. DO NOT COPY THE DLL INTO A PRODUCTION ENVIRONMENT WITHOUT ADJUSTING YOUR CODE AND FULLY TESTING.
+					</para>
+				</alert>
+				<list class="bullet">
+					<listItem>Fixed issue where the RecurringResponse object was not returning all the available response parameters.</listItem>
+					<listItem>Added SCAExemption, CitDate and VMaid under the Invoice object to support Strong Customer Authentication.</listItem>
+					<listItem>Added PAR and PARID under the CreditCard object.  Currently only used by American Express.</listItem>
+				</list>
+			</content>
+		</section>	
+
+		<relatedTopics>
+			<link xlink:href="df400d3a-1030-4d72-865c-96b23b9f0f55" />
+		</relatedTopics>
+
+	</developerConceptualDocument>
+</topic>

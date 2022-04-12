@@ -3278,6 +3278,51 @@
             Payflow Param MISCDATA
             </summary>
         </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_CREATIONDATE">
+            <summary>
+            Payflow Param CREATIONDATE
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_LASTCHANGED">
+            <summary>
+            Payflow Param LASTCHANGED
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_RPSTATE">
+            <summary>
+            Payflow Param RPSTATE
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_NEXTPAYMENTNUM">
+            <summary>
+            Payflow Param NEXTPAYMENTNUM
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_SCAEXEMPTION">
+            <summary>
+            Payflow Param SCAEXEMPTION
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_CITDATE">
+            <summary>
+            Payflow Param CITDATE
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_VMAID">
+            <summary>
+            Payflow Param VMAID
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_PAR">
+            <summary>
+            Payflow Param VMAID
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.PARAM_PARID">
+            <summary>
+            Payflow Param VMAID
+            </summary>
+        </member>
         <member name="F:PayPal.Payments.Common.Utility.PayflowConstants.MAGTEK_PARAM_ENCMP">
             <summary>
             Magtek Param ENCMP
@@ -10237,6 +10282,26 @@
             Miscellaneous Data
             </summary>
         </member>
+        <member name="F:PayPal.Payments.DataObjects.Invoice.mSecureToken">
+            <summary>
+            Secure Token, used for Inquiry transaction
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.Invoice.mSCAExemption">
+            <summary>
+            SCA Exemption
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.Invoice.mCitDate">
+            <summary>
+            CitiDate
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.Invoice.mVMaid">
+            <summary>a
+             MVaid
+            </summary>
+        </member>
         <member name="M:PayPal.Payments.DataObjects.Invoice.#ctor">
             <summary>
             Constructor.
@@ -11008,7 +11073,16 @@
             <code>ECHODATA</code>
             </remarks>
         </member>
-        <!-- Badly formed XML comment ignored for member "P:PayPal.Payments.DataObjects.Invoice.VatInvNum" -->
+        <member name="P:PayPal.Payments.DataObjects.Invoice.VatInvNum">
+            <summary>
+            Gets, Sets  VAT Invoice Number.
+            </summary>
+            <remarks>
+            <para>Value added tax invoice number.</para>
+            <para>Maps to Payflow Parameter: 
+            <code>VATINVNUM</code></para>
+            </remarks>
+        </member>
         <member name="P:PayPal.Payments.DataObjects.Invoice.VatTaxRate">
             <summary>
             Gets, Sets  VAT Tax Rate.
@@ -11071,6 +11145,34 @@
             <code>MISCDATA</code>
             </remarks>
         </member>
+        <member name="P:PayPal.Payments.DataObjects.Invoice.SecureToken">
+            <summary>
+            Gets, Sets  SecureToken.
+            </summary>
+            <remarks>
+            <para> Merchant-defined identifier used in the Secure Token flow.
+            </para>
+            <para>You can use SECURETOKEN when performing Inquiry transactions. To ensure that you can always access
+            the correct transaction when performing an Inquiry, you must use CREATESECURETOKEN when
+            submitting any transaction.</para>
+            <para>Maps to Payflow Parameter:</para>
+            <code>SECURETOKEN</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.Invoice.SCAExemption">
+            <summary>
+            Gets, Sets  SCAExemption.
+            </summary>
+            <remarks>
+            <para> Value to flag exemption status.
+            </para>
+            <para> Only one of the following values can be sent: TM, SCP, TRA, LVP, MIT, RP, SD, TM</para>
+            <para>Maps to Payflow Parameter:</para>
+            <code>SCAEXEMPTION</code>
+            </remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:PayPal.Payments.DataObjects.Invoice.CitDate" -->
+        <!-- Badly formed XML comment ignored for member "P:PayPal.Payments.DataObjects.Invoice.VMaid" -->
         <member name="M:PayPal.Payments.DataObjects.Invoice.AddAdviceDetailItem(PayPal.Payments.DataObjects.AdviceDetail)">
             <summary>
             Used for advice detail items.
@@ -11958,7 +12060,16 @@
             <code>L_CARRIERSERVICELEVELCODE</code>
             </remarks>
         </member>
-        <!-- Badly formed XML comment ignored for member "P:PayPal.Payments.DataObjects.LineItem.ExtAmt" -->
+        <member name="P:PayPal.Payments.DataObjects.LineItem.ExtAmt">
+            <summary>
+            Gets, Sets line item extended amount
+            <remarks>
+            <para>Item ExtAmt</para>
+            <para>Maps to Payflow Parameter:</para>
+            <code>L_EXTAMT</code>
+            </remarks>
+            </summary>
+        </member>
         <member name="P:PayPal.Payments.DataObjects.LineItem.Name">
             ------------------------------------------------------
             <summary>
@@ -12756,6 +12867,7 @@
             <item><term>CCTRANS_POSDATA</term><description>TransactionResponse</description><description><see cref='P:PayPal.Payments.DataObjects.TransactionResponse.CCTrans_POSData'>CCTrans_POSData</see></description><description>String</description></item>
             <item><term>CHKNUM</term><description>ACHTender, CheckTender, CardTender</description><description>ChkNum</description><description>String</description></item>
             <item><term>CHKTYPE</term><description>ACHTender, CheckTender, CardTender</description><description>ChkType</description><description>String</description></item>
+            <item><term>CITDATE</term><description>Invoice</description><description><see cref='P:PayPal.Payments.DataObjects.Invoice.CitDate'>CitDate</see></description><description>String</description></item>
             <item><term>COMMCARD</term><description>PurchaseCard</description><description></description><description>String</description></item>
             <item><term>COMMCODE</term><description>Invoice</description><description><see cref='P:PayPal.Payments.DataObjects.Invoice.CommCode'>CommCode</see></description><description>String</description></item>
             <item><term>COMMENT1</term><description>Invoice</description><description><see cref='P:PayPal.Payments.DataObjects.Invoice.Comment1'>Comment1</see></description><description>String</description></item>
@@ -12880,8 +12992,10 @@
             <item><term>P_TRANSTATEn</term><description>RecurringResponse</description><description><see cref='P:PayPal.Payments.DataObjects.RecurringResponse.InquiryParams'>InquiryParams</see></description><description>String</description></item>
             <item><term>P_TRANSTIMEn</term><description>RecurringResponse</description><description><see cref='P:PayPal.Payments.DataObjects.RecurringResponse.InquiryParams'>InquiryParams</see></description><description>String</description></item>
             <item><term>PAGESTYLE</term><description>ECSetRequest</description><description><see cref='P:PayPal.Payments.DataObjects.ECSetRequest.PageStyle'>PageStyle</see></description><description>String</description></item>
+            <item><term>PAR</term><description>CreditCard</description><description></description><description>String</description></item>
             <item><term>PAREQ</term><description>BuyerAuthResponse</description><description><see cref='P:PayPal.Payments.DataObjects.BuyerAuthResponse.PaReq'>PaReq</see></description><description>String</description></item>
             <item><term>PARES</term><description>BuyerAuthVATransaction</description><description></description><description>String</description></item>
+            <item><term>PARID</term><description>TransactionResponse</description><description><see cref='P:PayPal.Payments.DataObjects.TransactionResponse.ParId'>ParId</see ></description><description>String</description></item >
             <item><term>PARTIALAUTH</term><description>AuthorizationTransaction</description><description></description><description>String</description></item>
             <item><term>PARTNER</term><description>UserInfo</description><description></description><description>String</description></item>
             <item><term>PAYERID</term><description>ECDoRequest ,ECGetResponse</description><description>PayerId</description><description>String</description></item>
@@ -12931,6 +13045,7 @@
             <item><term>RETURNURL</term><description>ECSetRequest</description><description><see cref='P:PayPal.Payments.DataObjects.ECSetRequest.ReturnURL'>ReturnURL</see></description><description>String</description></item>
             <item><term>RPREF</term><description>RecurringResponse</description><description><see cref='P:PayPal.Payments.DataObjects.RecurringResponse.RPRef'>RPRef</see></description><description>String</description></item>
             <item><term>RRN</term><description>TransactionResponse</description><description><see cref='P:PayPal.Payments.DataObjects.TransactionResponse.Rrn'>Rrn</see></description><description>String</description></item>
+            <item><term>SCAEXEMPTION</term><description>Invoice</description><description><see cref='P:PayPal.Payments.DataObjects.Invoice.SCAExemption'>SCAExemption</see></description><description>String</description></item>
             <item><term>SECURETOKEN</term><description>TransactionResponse</description><description><see cref='P:PayPal.Payments.DataObjects.TransactionResponse.SecureToken'>SecureToken</see></description><description>String</description></item>
             <item><term>SECURETOKENID</term><description>TransactionResponse</description><description><see cref='P:PayPal.Payments.DataObjects.TransactionResponse.SecureTokenId'>SecureTokenId</see></description><description>String</description></item>
             <item><term>SETTLEAMT</term><description>ECDoResponse</description><description><see cref='P:PayPal.Payments.DataObjects.ECDoResponse.SettleAmt'>SettleAmt</see></description><description>String</description></item>
@@ -13000,7 +13115,14 @@
             <item><term>VIT_PROXY</term><description>Internal to the SDK.</description><description></description><description>String</description></item>
             <item><term>VIT_SDKRUNTIMEVERSION</term><description>Internal to the SDK.</description><description></description><description>String</description></item>
             <item><term>XID</term><description>BuyerAuthResponse</description><description><see cref='P:PayPal.Payments.DataObjects.BuyerAuthResponse.XID'>XID</see></description><description>String</description></item>
+            <item><term>VMAID</term><description>Invoice</description><description><see cref='P:PayPal.Payments.DataObjects.Invoice.VMaid'>VMaid</see></description><description>String</description></item>
             <item><term>PAYFLOW-REQUEST-ID (Header)</term><description>Value is set from all the transactions:SaleTransaction, CaptureTransaction, VoidTransaction etc.</description><description>RequestId</description><description>String</description></item>
+            <item><term>NEXTPAYMENTNUM</term><description>RecurringResponse</description><description><see cref='P:PayPal.Payments.DataObjects.RecurringResponse.NextPaymentNumber'>NEXTPAYMENTNUM</see></description><description>String</description></item>
+            <item><term>RPSTATE</term><description>RecurringResponse</description><description><see cref='P:PayPal.Payments.DataObjects.RecurringResponse.RPState'>RPSTATE</see></description><description>String</description></item>
+            <item><term>NEXTPAYMENT</term><description>RecurringResponse</description><description><see cref='P:PayPal.Payments.DataObjects.RecurringResponse.NextPayment'>NextPayment</see></description><description>String</description></item>
+            <item><term>CREATIONDATE</term><description>RecurringResponse</description><description><see cref='P:PayPal.Payments.DataObjects.RecurringResponse.CreationDate'>CREATIONDATE</see></description><description>String</description></item>
+            <item><term>LASTCHANGED</term><description>RecurringResponse</description><description><see cref='P:PayPal.Payments.DataObjects.RecurringResponse.LastChangedDate'>LASTCHANGE</see></description><description>String</description></item>
+            <item><term>FREQUENCY</term><description>RecurringResponse</description><description><see cref='P:PayPal.Payments.DataObjects.RecurringResponse.Frequency'>FREQUENCY</see></description><description>String</description></item>
             </list>
             </summary>
         </member>
@@ -13803,6 +13925,11 @@
             Card on File Transaction ID
             </summary>
         </member>
+        <member name="F:PayPal.Payments.DataObjects.PaymentCard.mParId">
+            <summary>
+            Payment Account Reference
+            </summary>
+        </member>
         <member name="M:PayPal.Payments.DataObjects.PaymentCard.#ctor(System.String,System.String)">
             <summary>
             Constructor
@@ -13860,6 +13987,16 @@
             Used to flag if the card is on file.
             <para>Maps to Payflow Parameter:</para>
             <code>TXID</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.PaymentCard.ParId">
+            <summary>
+            Gets, Sets PAR
+            </summary>
+            <remarks>
+            Reference number assigned to each unique Primary Account Number (PAN).
+            <para>Maps to Payflow Parameter:</para>
+            <code>PAR</code>
             </remarks>
         </member>
         <member name="M:PayPal.Payments.DataObjects.PaymentCard.GenerateRequest">
@@ -14825,6 +14962,36 @@
             Inquiry Response Array list.
             </summary>
         </member>
+        <member name="F:PayPal.Payments.DataObjects.RecurringResponse.mCreationDate">
+            <summary>
+            Creation Date
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.RecurringResponse.mLastChangedDate">
+            <summary>
+            Last Changed Date
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.RecurringResponse.mRPState">
+            <summary>
+            Recurring Profile State
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.RecurringResponse.mNextPaymentNumber">
+            <summary>
+            Next Payment Number
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.RecurringResponse.mFrequency">
+            <summary>
+            Frequency
+            </summary>
+        </member>
+        <member name="F:PayPal.Payments.DataObjects.RecurringResponse.mCurrency">
+            <summary>
+            Currency
+            </summary>
+        </member>
         <member name="P:PayPal.Payments.DataObjects.RecurringResponse.ProfileId">
             <summary>
             Gets ProfileId
@@ -15248,6 +15415,66 @@
             Shipping country
             <para>Maps to Payflow Parameter:</para>
             <code>SHIPTOCOUNTRY</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.RecurringResponse.CreationDate">
+            <summary>
+            Gets Creation Date
+            </summary>
+            <remarks>
+            Creation Date
+            <para>Maps to Payflow Parameter:</para>
+            <code>CREATIONDATE</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.RecurringResponse.LastChangedDate">
+            <summary>
+            Gets Last Changed Date
+            </summary>
+            <remarks>
+            Last Changed Date
+            <para>Maps to Payflow Parameter:</para>
+            <code>LASTCHANGED</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.RecurringResponse.RPState">
+            <summary>
+            Gets Recurring Profile State
+            </summary>
+            <remarks>
+            Recurring Profile State
+            <para>Maps to Payflow Parameter:</para>
+            <code>RPSTATE</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.RecurringResponse.NextPaymentNumber">
+            <summary>
+            Gets Next Payment Number
+            </summary>
+            <remarks>
+            Next Payment Number
+            <para>Maps to Payflow Parameter:</para>
+            <code>NEXTPAYMENTNUM</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.RecurringResponse.Frequency">
+            <summary>
+            Gets Frequency
+            </summary>
+            <remarks>
+            Frequency
+            <para>Maps to Payflow Parameter:</para>
+            <code>FREQUENCY</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.RecurringResponse.Currency">
+            <summary>
+            Gets Currency
+            </summary>
+            <remarks>
+            Frequency
+            <para>Maps to Payflow Parameter:</para>
+            <code>CURRENCY</code>
             </remarks>
         </member>
         <member name="P:PayPal.Payments.DataObjects.RecurringResponse.InquiryParams">
@@ -16530,6 +16757,11 @@
             CCTrans_POSData
             </summary>
         </member>
+        <member name="F:PayPal.Payments.DataObjects.TransactionResponse.mParId">
+            <summary>
+            ParId
+            </summary>
+        </member>
         <member name="P:PayPal.Payments.DataObjects.TransactionResponse.Result">
             <summary>
             Gets Result
@@ -17292,6 +17524,17 @@
             <remarks>
             <para>Maps to Payflow Parameter:</para>
             <code>CCTRAN_POSDATA</code>
+            </remarks>
+        </member>
+        <member name="P:PayPal.Payments.DataObjects.TransactionResponse.ParId">
+            <summary>
+            Gets the Payment Account Reference
+            </summary>
+            Value returned by some processors that is a non-financial reference number assigned to each unique 
+            Primary Account Number (PAN) and mapped to all its affiliated Payment Tokens.
+            <remarks>
+            <para>Maps to Payflow Parameter:</para>
+            <code>PARID</code>
             </remarks>
         </member>
         <member name="M:PayPal.Payments.DataObjects.TransactionResponse.#ctor">
@@ -25886,7 +26129,7 @@
         </member>
         <member name="P:PayPal.Payments.Transactions.ReferenceTransaction.OrigPpref">
             <summary>
-            Gets, Sets OrgiPpref
+            Gets, Sets OrigPpref
             </summary>
             <remarks>
             <para>Maps to Payflow Parameter:</para>

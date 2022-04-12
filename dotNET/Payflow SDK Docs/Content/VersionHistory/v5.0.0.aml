@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="b2509c1b-9f06-4cd2-9497-3d835ae42a01" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <introduction>
+      <para>July 31, 2019</para>
+    </introduction>
+
+    <section>
+      <title>Changes in This Release</title>
+      <content>
+        <alert>
+          <para>
+            <legacyBold>IMPORTANT:</legacyBold> THIS VERSION IS NOT 100% COMPATIBLE WITH OLDER VERSIONS OF THE SDK AS SOME OF THE OBJECTS HAVE CHANGED AND/OR THEIR LOCATIONS HAVE MOVED. DO NOT COPY THE DLL INTO A PRODUCTION ENVIRONMENT WITHOUT ADJUSTING YOUR CODE AND FULLY TESTING.
+          </para>
+        </alert>
+        <phrase>
+          <legacyBold>Objects that have moved location</legacyBold>
+        </phrase>
+        <list class="bullet">
+          <listItem>MerchDescr and MerchSvc from Invoice object to new MerchantInfo object.</listItem>
+        </list>
+        <phrase>
+          <legacyBold>Objects that had name changes</legacyBold>
+        </phrase>
+
+
+        <list class="bullet">
+          <listItem>Changed VATAXPERCENT to VATTAXPERCENT.</listItem>
+          <listItem>Changed FIRSTNAME, LASTNAME, STREET, CITY, STATE, PHONENUM, EMAIL, etc. to the new "BILLTO" versions. Example: BILLTOFIRSTNAME, BILLTOLASTNAME, etc.  NOTE: The object names have been changed to reflect this.</listItem>
+        </list>
+        <phrase>
+          <legacyBold>New items added since last release</legacyBold>
+        </phrase>
+
+        <list class="bullet">
+          <listItem>MerchantInfo: This object holds the soft descriptor fields; such as, MERCHANTNAME, MERCHANTCITY, etc.</listItem>
+          <listItem>Invoice Object-ECHODATA: This parameter will allow you to "echo" back data in the response, it currently supports "ADDRESS" (Billing/Shipping Information) and "USER" in the response.</listItem>
+          <listItem>
+            Invoice Object-ORDERID: Order ID is used to prevent duplicate "orders" from being processed. This is NOT the same as Request ID; which is used at the transaction level.  Order ID (ORDERID) is used to check for a duplicate order in the future.  For example, if I pass ORDERID=10101 and in two weeks another order is processed with the same ORDERID, a duplicate condition will occur.  The results you receive will be from the original order with DUPLICATE=2 to show that it was ORDERID that triggered the duplicate. The order id is stored for 3 years.<para></para><para>
+              <legacyBold>Important Note:</legacyBold> Order ID functionality to catch duplicate orders processed withing seconds of each other
+              is limited.  Order ID should be used in conjunction with Request ID to prevent duplicates due to processing / communication errors. DO NOT use ORDERID as your only means to check for duplicate transactions.
+            </para>
+          </listItem>
+          <listItem>Data Upload example (DODataUpload) under Samples/Misc to show how to use transaction type "L" allowing credit card data to be removed from local servers and stored at PayPal to be used via reference transactions.  This is tokenization of the data.</listItem>
+          <listItem>UserItem Object-USER1 to USER10: If populated, the data will be echoed back in the response. These values are not stored in the data base and are not available for reporting purposes.  They are for your use.</listItem>
+          <listItem>Support for Magtek Encrypted Card Readers as part of the Swipe object.  Refer to DOEncryptedSwipe sample for more information.</listItem>
+          <listItem>New Processor Response Parameters: PAYMENTADVICECODE, ASSOCIATIONRESPCODE, TYPE, AFFLUENT, CCUPDATED, RRN, STAN, ACI and VALIDATIONCODE for those processors who support these values.</listItem>
+          <listItem>Location Transaction Advice Addendum Parameters: MERCHANTLOCATIONID, MERCHANTID, MERCHANTCONTACTINFO.</listItem>
+          <listItem>Response Parameters: CCTRANSID, CCTRANS_POSDATA.</listItem>
+          <listItem>Request Parameters: ADDLAMT, ADDLAMTTYPE, AUTHDATE, CATTYPE, CONTACTLESS, CUSTDATA, CUSTOMERID, CUSTOMERNUMBER, MERCHANTINVNUM, MERCHANTURL, MERCHANTVATNUM, MISCDATA, REPORTGROUP, VATINVNUM, VATTAXRATE</listItem>
+          <listItem>Request Line Item Parameters: L_ALTTAXAMT, L_ALTTAXID, L_ALTTAXRATE, L_CARRIERSERVICESLEVELCODE, L-EXTAMT</listItem>
+          <listItem>BrowserInfo object-BUTTONSOURCE: Allows partners, resellers to be able to allow PayPal to track their transactions for rev-share and other reasons.</listItem>
+          <listItem>Recurring Billing Parameter: FREQUENCY</listItem>
+          <listItem>TeleCheck Parameters: AUTHTYPE to CheckTender object and TRACEID, AUTHSTATUS to TransctionResponse object.</listItem>
+          <listItem>PaymentCard object: CARDONFILE - flags if the card is to be registered or has been registered for recurring use.  TransactionResponse object: TXID - The transaction ID associated with CARDONFILE request. </listItem>
+          <listItem>BuyerAuthStatus object: DSTRANSACTIONID (Directory Server Transaction ID) and THREEDSVersion (3D-Secure Version)</listItem>
+        </list>
+      </content>
+    </section>
+
+    <relatedTopics>
+      <link xlink:href="df400d3a-1030-4d72-865c-96b23b9f0f55" />
+    </relatedTopics>
+
+  </developerConceptualDocument>
+</topic>

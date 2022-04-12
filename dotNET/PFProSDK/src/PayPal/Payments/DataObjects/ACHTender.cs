@@ -150,7 +150,8 @@ namespace PayPal.Payments.DataObjects
 			set { mTermState = value; }
 		}
 
-		#endregion 
+		
+		#endregion
 
 		#region "Core functions"
 

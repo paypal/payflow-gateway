@@ -53,7 +53,7 @@ namespace PayPal.Payments.Common.Utility
         /// <summary>
         /// SDK Client Version (400 --> V4 protocol)
         /// </summary>
-        internal const String CLIENT_VERSION = "500";
+        internal const String CLIENT_VERSION = "502";
         /// <summary>
         /// SDK User Agent (Payflow SDK for .NET)
         /// </summary>
@@ -2205,6 +2205,43 @@ namespace PayPal.Payments.Common.Utility
         /// </summary>
         internal const String PARAM_MISCDATA = "MISCDATA";
 
+        // added DTPAYFLOW-1691 - March 2022 - v5.02
+        /// <summary>
+        /// Payflow Param CREATIONDATE
+        /// </summary>
+        internal const String PARAM_CREATIONDATE = "CREATIONDATE";
+        /// <summary>
+        /// Payflow Param LASTCHANGED
+        /// </summary>
+        internal const String PARAM_LASTCHANGED = "LASTCHANGED";
+        /// <summary>
+        /// Payflow Param RPSTATE
+        /// </summary>
+        internal const String PARAM_RPSTATE = "RPSTATE";
+        /// <summary>
+        /// Payflow Param NEXTPAYMENTNUM
+        /// </summary>
+        internal const String PARAM_NEXTPAYMENTNUM = "NEXTPAYMENTNUM";
+        /// <summary>
+        /// Payflow Param SCAEXEMPTION
+        /// </summary>
+        internal const String PARAM_SCAEXEMPTION = "SCAEXEMPTION";
+        /// <summary>
+        /// Payflow Param CITDATE
+        /// </summary>
+        internal const String PARAM_CITDATE = "CITDATE";
+        /// <summary>
+        /// Payflow Param VMAID
+        /// </summary>
+        internal const String PARAM_VMAID = "VMAID";
+        /// <summary>
+        /// Payflow Param VMAID
+        /// </summary>
+        internal const String PARAM_PAR = "PAR";
+        /// <summary>
+        /// Payflow Param VMAID
+        /// </summary>
+        internal const String PARAM_PARID = "PARID";
 
 
 
