@@ -12998,7 +12998,7 @@
             <item><term>P_TRANSTATEn</term><description>RecurringResponse</description><description><see cref='P:PayPal.Payments.DataObjects.RecurringResponse.InquiryParams'>InquiryParams</see></description><description>String</description></item>
             <item><term>P_TRANSTIMEn</term><description>RecurringResponse</description><description><see cref='P:PayPal.Payments.DataObjects.RecurringResponse.InquiryParams'>InquiryParams</see></description><description>String</description></item>
             <item><term>PAGESTYLE</term><description>ECSetRequest</description><description><see cref='P:PayPal.Payments.DataObjects.ECSetRequest.PageStyle'>PageStyle</see></description><description>String</description></item>
-            <item><term>PAR</term><description>CreditCard</description><description></description><description>String</description></item>
+            <item><term>PAR</term><description>Invoice</description><description><see cref='P:PayPal.Payments.DataObjects.Invoice.Par'>Par</see></description><description>String</description></item>
             <item><term>PAREQ</term><description>BuyerAuthResponse</description><description><see cref='P:PayPal.Payments.DataObjects.BuyerAuthResponse.PaReq'>PaReq</see></description><description>String</description></item>
             <item><term>PARES</term><description>BuyerAuthVATransaction</description><description></description><description>String</description></item>
             <item><term>PARID</term><description>TransactionResponse</description><description><see cref='P:PayPal.Payments.DataObjects.TransactionResponse.ParId'>ParId</see ></description><description>String</description></item >

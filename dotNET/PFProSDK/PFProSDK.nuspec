@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>Payflow_Pro_dotNet_SDK</id>
+    <version>5.02</version>
+    <title>Payflow Pro dotNET SDK</title>
+    <authors>PayPal</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <!-- <icon>icon.png</icon> -->
+    <projectUrl>https://github.com/paypal/payflow-gateway</projectUrl>
+    <description>A simple SDK allowing easy integration with the Payflow Gateway for .NET.</description>
+    <releaseNotes>Fixed issue where RecurringResponse object was not returning all available values in the response. Added SCAExemption, CitDate and VMaid under the Invoice object to support Strong Customer Authentication.</releaseNotes>
+    <copyright></copyright>
+    <tags>Payflow Payflow_Gateway</tags>
+  </metadata>
+  <frameworkAssemblies>
+	<frameworkAssembly assemblyName="System.Net" />
+  </frameworkAssemblies>
+</package>

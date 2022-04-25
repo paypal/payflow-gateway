@@ -317,7 +317,6 @@ public class Invoice extends BaseRequestDataObject {
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_VMAID, vMaid));
             super.getRequestBuffer().append(PayflowUtility.appendToRequest(PayflowConstants.PARAM_PAR, par));
 
-
             if (billTo != null) {
                 billTo.setRequestBuffer(getRequestBuffer());
                 billTo.generateRequest();

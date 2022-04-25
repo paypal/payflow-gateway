@@ -28,17 +28,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9533da2-017e-4f68-8627-3fa704709969" name="Default Changelist" comment="New object: AdviceDetail, supports ADDLAMTn and ADDLAMTTYPEn&#10;New object: Devices, supports CATTYPE and CONTACTLESS&#10;Added to CustomerInfo: CUSTDATA, CUSTOMERID and CUSTOMERNUMBER">
-      <change beforePath="$PROJECT_DIR$/../dotNET/PFProSDK/PFProSDK.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/PFProSDK/PFProSDK.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/PFProSDK/Properties/AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/PFProSDK/Properties/AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dotNET/PFProSDK/ndoc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/PFProSDK/ndoc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dotNET/PFProSDK/src/PayPal/Payments/DataObjects/UserItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/PFProSDK/src/PayPal/Payments/DataObjects/UserItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dotNET/SamplesCS/App.config" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/SamplesCS/App.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dotNET/SamplesCS/SamplesCS.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/SamplesCS/SamplesCS.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dotNET/SamplesCS/src/PayPal/Payments/Samples/CS/NameValuePairs/NVPSale.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/SamplesCS/src/PayPal/Payments/Samples/CS/NameValuePairs/NVPSale.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dotNET/SamplesVB/App.config" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/SamplesVB/App.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dotNET/SamplesVB/SamplesVB.vbproj" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/SamplesVB/SamplesVB.vbproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dotNET/PFProSDK/src/PayPal/Payments/DataObjects/NamespaceDoc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../dotNET/PFProSDK/src/PayPal/Payments/DataObjects/NamespaceDoc.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/BaseTender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/BaseTender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sdk/dataobjects/paypal/payflow/Invoice.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
