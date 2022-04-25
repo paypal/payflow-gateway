@@ -348,6 +348,10 @@ public class Invoice extends BaseRequestDataObject {
                 devices.setRequestBuffer(getRequestBuffer());
                 devices.generateRequest();
             }
+            if (merchantInfo != null) {
+                merchantInfo.setRequestBuffer(getRequestBuffer());
+                merchantInfo.generateRequest();
+            }
 
         } catch (Exception ex) {
             ErrorObject err = new ErrorObject(PayflowConstants.SEVERITY_FATAL, "", ex.toString());
