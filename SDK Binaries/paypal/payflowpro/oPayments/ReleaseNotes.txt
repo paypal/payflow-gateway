@@ -1,0 +1,12 @@
+RELEASE NOTES for PayPal's Payflow Pro Integration for Oracle oPayment R12 (pfpro_0Payment)
+
+**********************************************************************
+VERSION: v4.50
+-------------
+UPDATED: 06/28/2010
+-------------------
+NEW FEATURES/CHANGES/UPDATES
+----------------------------
+- First Release for Oracle oPayment R12 (Compatible with version 12 with Patch 8937577.  Oracle disabled the GET method through Patch 8937577
+  that was released for PADSS compliance. This patch can be applied on top of 12.1.1 or 12.1.2. If you have applied this this patch you will 
+  need to use this package.

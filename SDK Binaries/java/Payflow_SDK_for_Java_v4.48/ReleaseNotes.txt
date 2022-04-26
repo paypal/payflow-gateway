@@ -1,0 +1,328 @@
+Copyright (c) 2009-2020 PayPal Inc. All Rights Reserved
+
+PAYPAL PAYFLOW PAYMENT SERVICE RELEASE NOTES
+------------------------------------
+
+In addition to these Release Notes and the Payflow Pro Developer's Guide at https://developer.paypal.com/docs/payflow/integration-guide/
+
+For setting up debugging of the SDK, refer to ReadMe.txt file.
+
+For the API documentation, refer to Java docs in the <docs> folder.
+
+URLs used are:
+
+	Live: payflowpro.paypal.com
+	Test: pilot-payflowpro.paypal.com
+
+COMMON ISSUES:
+
+1. Result code -1: Host URL is incorrect or firewall, proxy or network issue.
+2. Result code 1: Usually caused by Invalid login information or ip restrictions on the account.
+3. Result code 26: Verify USER, VENDOR, PARTNER and PASSWORD. Remember, USER and VENDOR are both the merchant
+   login ID unless a Payflow Pro USER was created.  All fields are case-sensitive.
+4. Receive a result code -104, Unexpected transaction state Error while parsing the xml request.  This is usually
+   due to an ampersand (&) in the XML request.  If you want to use an ampersand; such as, Bill & Teds Auto, you
+   need to send the data using "&amp;" to represent the ampersand.
+
+   For example:  <NameOnCard>Bill &amp; Teds Auto</NameOnCard>
+   
+URLSTREAMHANDLERS:
+  
+Application servers (for example Weblogic, Websphere, JBoss) implement their own SSL API.
+While integrating PayFlowPro API (which uses JSSE), it might be necessary to use a proper URLStreamHandler
+class while creating the necessary java.net.URL object (in PayFlowPro API).  (Take a look at
+http://java.sun.com/j2se/1.4.2/docs/api/java/net/URL.html).
+  
+You can specify the appropriate URLStreamHandler class name using SDKProperties.setURLStreamHandlerClass method.
+
+For example, in order to use the PayFlowPro library with Weblogic (tested with WLS 8.1 SP5), you must include the
+following in your code:
+  
+SDKProperties.setURLStreamHandlerClass("sun.net.www.protocol.https.Handler");
+
+For IBM Websphere Application Server (WAS), see the readme_ibm_websphere.txt file for more information.
+
+WHERE TO BEGIN:
+
+After extraction of the SDK, the best place to start is to review the DoSaleComplete Console Sample which is
+located under the dataobjects\basictransactions directory.  The console sample is highly commented to give you the basic idea of
+how to use this SDK in your application.  
+
+REVISION HISTORY
+----------------
+VERSION: 4.48
+UPDATED: 09/14/2020
+
+This is the last build of the v4 SDK, its been replaced with v5 on GitHub at https://github.com/paypal/payflow-gateway.
+
+------------------------------------------------------
+NEW FEATURES/CHANGES/UPDATES
+-------------------------------------------------------
+-Added: USERn to new UserItem object, TRACEID, ACHSTATUS, TXID to TransactionResponse object, FREQUENCY to RecurringInfo object,
+-Added: CARDONFILE to PaymentCard object and THREEDSVERSION and DSTRANSACTIONID to BuyerAuthStatus object.
+-Added: USER1 to USER10 which is part of the Invoice object. These can be returned in the response using the EchoData set to "User".
+-Added: ECHODATA in Invoice object.
+
+
+VERSION: 4.47
+UPDATED: 03/10/2020
+------------------------------------------------------
+NEW FEATURES/CHANGES/UPDATES
+-------------------------------------------------------
+-Changed: Removed dependancy of sun.misc.BASE64Encoder and replaced with java.util.Base64.
+
+VERSION: 4.46
+UPDATED 06/27/2019
+------------------------------------------------------
+NEW FEATURES/CHANGES/UPDATES
+-------------------------------------------------------
+-Changed: Compiled on Java 1.8
+-Added: Added FREQUENCY to RecurringInfo object, AUTHTYPE to CheckTender object to support new field for TeleCheck, TRACEID and ACHSTATUS to 
+	TransactionResponse object for TeleCheck.
+
+VERSION: 4.41
+UPDATED 02/02/2018
+------------------------------------------------------
+NEW FEATURES/CHANGES/UPDATES
+-------------------------------------------------------
+- UPDATED: Added TLS 1.2 support.
+
+
+VERSION: 4.40
+UPDATED: 12/25/2010
+------------------------------------------------------
+NEW FEATURES/CHANGES/UPDATES
+-------------------------------------------------------
+-ADDED:		Added new Buyer Authetication parameters: AUTHSTATUS3DS(Request), MPIVENDOR3DS(Request), ECISUBMITTED3DS(Response),
+		VPAS(Response)
+-ADDED:		Better comments regarding why you need to add retry logic, use duplicate suppression, etc.  Review DoSaleComplete, 
+		NVPSale or XMLPaySale for more details.
+-ADDED:		Added missing Express Checkout Set parameter: ALLOWNOTE, REQBILLINGADDRESS, SHIPTONAME
+-ADDED:		Added new Verbosity (HIGH) transactionresponse parameters: CARDTYPE, FIRSTNAME, LASTNAME, EXTRSPMSG, AMT, AMEXID,
+		AMEXPOSDATA, ACCT, TRANSTIME, EMAILMATCH, PHONEMATCH - please refer to Developers guide as not all items
+		pertain to all processors.
+-Added: 	Added support for Partial Authorization.  See DOPartialAUth sample for new parameters: BALAMT, PARTIALAUTH, ORIGAMT
+		For more information on partial authorizatons, see https://www.x.com/docs/DOC-2021.
+-Added:		Added support for SECURETOKEN and SECURETOKENID used to safely store sensitive data prior to calling the 				hosted payment pages.
+
+VERSION: v434
+-------------------
+UPDATED: 10/02/2009
+-------------------
+NEW FEATURES/CHANGES/UPDATES
+----------------------------
+-Fixed:		Fixed STATUS not returned in the RecurringReponse object.
+-Updated:	Updated log file to include the Request ID passed.
+
+-------------------
+VERSION: v433
+-------------------
+UPDATED: 07/01/2009
+-------------------
+NEW FEATURES/CHANGES/UPDATES
+----------------------------
+-Added:		Added missing OrderTransaction Object for Express Checkout.
+-Fixed:		Fixed error, java.lang.IndexOutOfBoundsException: Index: 2, Size: 2 when using XMLPay.
+----------------
+VERSION: v432
+-------------------
+UPDATED: 07/01/2009
+-------------------
+NEW FEATURES/CHANGES/UPDATES
+----------------------------
+-Fixed/Added:	In the Express Checkout Response (ECGetResponse) the SHIPTOLASTNAME and SHIPTOFIRSTNAME objects have
+		been removed and replaced with SHIPTONAME to better align with PayPal Express Checkout.
+-Added:		Added SHIPTONAME in the ECSetRequest object.
+-Fixed:		The setAddrOverride object was not set when used.
+-Changed:	Compiled with Java 1.5.x.
+-Added:		Added missing parameter STATUS to the TransactionResponse object.
+-Fixed:		Added the missing response in the ExpressCheckoutUpdateResponse object.  Also, updated the DoUpdateEC sample
+		to included items of the complete response.
+
+----------------
+VERSION: v431
+-------------------
+UPDATED: 01/15/2009
+-------------------
+NEW FEATURES/CHANGES/UPDATES
+----------------------------
+-Fixed:		Missing Phone Number (getPhoneNum) in the Express Checkout Response (ECGetResponse) object.
+-Added:		Added PayPals Pay Later functionality for Express Checkout. See the DoSetEC console samples.
+-Fixed:		Fixed issue where connection was not closed completely when using a proxy causing other webservices or
+		applications on the server to not be able to obtain an HTTPS connection.
+
+		NOTE: This fix is not available in 1.4 as Java 1.4 defaults to a system wide proxy and the use of a
+		proxy per connection was not introduced until Java version 1.5.x.
+
+-Changed:	Object PaypalTender has been changed to better represent branding and to better fit other like objects.
+		The object is now PayPalTender.
+-Fixed:		When setting setCardIssue, the parameter was sent as CARDSTART instead of CARDISSUE.
+-Added:		REQBILLINGADDRESS for Express Checkout in ECSetRequest.  Returns billing address of PayPal account holder.
+-Added:		STREET2 for Express Chedckout in ECGetResponse.  Returns 2nd address line for billing address of PayPal
+		account holder.
+-Added:		Return of the billing information for the PayPal customer during an Express Checkout call in ECGetResponse.
+-Changed:	XMLPay Namespace from "http://www.verisign.com/XMLPay" to "http://www.paypal.com/XMLPay".
+-Changed:	When using XMLPay, the SDK now uses DOM Level 3 LSSerializer instead of the deprecated XMLSerializer.
+		Requires Xerces 2.9.0 or higher which can be obtained from http://www.apache.org/dist/xml/xerces-j. 
+
+		If you can not update to Xerces 2.9.0+, then you can either stay on v4.30 if you currently have it as it
+		is not available any longer or you might want to consider
+		building your own intergration using the Payflow HTTPS Interface.  Information can be found on the PayPal
+		Developer Forums at http://www.paypaldeveloper.com/pdn/board?board.id=payflow.
+-Fixed:		Wrong communication error (-1, Failed to connect to host) was being displayed when the response was not
+		received by the host.  Error displayed now is -12, Timeout waiting for response.
+
+VERSION: v430
+-------------------
+UPDATED: 03/15/2008
+-------------------
+NEW FEATURES/CHANGES/UPDATES
+----------------------------
+-Fixed: 	RESULT=-100&RESPMSG=Parameter List cannot be empty Empty response, Message 2::[ERROR]RESULT=-104&
+		    RESPMSG=Unexpected transaction state error while processing the Fraud response.
+-Fixed: 	Fixed issue where you could not do an Inquiry transaction using CustRef.
+-Fixed: 	Fixed issue where TimeOut value was not being passed.
+-Fixed: 	Added missing parameter for SHIPTOSTREET2 for Express Checkout Get Response (ECGetResponse) object.
+-Added: 	Added parameters for Express Checkout Reference Transactions.  NOTE: Your account must be vetted to 
+        	process Reference Transactions using Express Checkout.  See the DOSetEC Console Sample for more information.
+-Added:		New Express Checkout Console Samples showing both normal Express Checkout function (without web flow,
+        	which is required in production) and Reference Transactions using Express Checkout.
+-Changed: 	To better align Java package with other packages, the file structure was changed from samples.paypal.samples.* to
+		    paypal.payments.samples.*.
+-Updated:	Updated DoInquiry Samples to explain how to use CustRef instead of PNREF.
+-Fixed:		Fixed issue where BILLTOCOUNTRY was not being passed correctly when creating a Recurring Profile.
+-Fixed:  	Fixed issue where the ExtendData object was not populating the parameters passed.
+-Changed:	Host Urls are now payflowpro.paypal.com and pilot-payflowpro.paypal.com.  Older verisign.com host urls are still
+         	available, but it is suggested to make this change as your earliest convenience.
+
+VERSION: v422
+-------------------
+UPDATED: 10/29/2007
+-------------------
+NEW FEATURES/CHANGES/UPDATES
+----------------------------
+-Changed: 	Removed dependency on host URL path. The path "/transaction" is no longer needed.
+-Fixed:   	Added missing parameter CAPTURECOMPLETE to the Capture Transaction object.
+
+VERSION: v421
+-------------------
+UPDATED: 08/17/2007
+-------------------
+NEW FEATURES/CHANGES/UPDATES
+----------------------------
+-Fixed:     Error, "The xml pay request is invalid : NoWriterSupplied: No writer supplied for serializer."
+            when logging is turned on and XMLPay is being used.
+-Fixed:     Negative result codes (ie, SDK errors) were not being logged in the debug log file.
+-Changed:   Version number from a 4-digit to 3-digit to keep with same schema of older SDKs.
+            For example, was 4021, now 421.
+
+VERSION: v4020
+-------------------
+UPDATED: 07/05/2007
+-------------------
+NEW FEATURES/CHANGES/UPDATES
+----------------------------
+-Removed the following legacy items from the PayflowConnectionData class: 
+ CerthPath and certOverride.  Note: This does not have any impact on security
+ or encryption of data.
+-Removed the following legacy items from the ClientInfo constructor:
+ DeveloperCertificationId, DeveloperId and IntegrationCertificationId
+-Fixed issue where PayflowUtility.getRequestId did not create a proper 32-character
+ GUID when using the IBM JDK.
+      
+----------------
+VERSION: v4010
+-------------------
+UPDATED: 05/09/2007
+-------------------
+NEW FEATURES/CHANGES/UPDATES
+----------------------------
+-Final Release
+-Changed HOST URL to include path of "/transaction".  For example, https://payflowpro.verisign.com/transaction
+-Added DoSaleComplete sample.
+-Added new tag in SDKProperties called certOverride.
+    // Set CertOverride to ON if you encounter and can not resolve -31,
+    // "The certificate chain did not validate, no local certificate found" errors.
+    SDKProperties.setCertOverride("OFF");
+-MERCHDESCR and MERCHSVC are now part of the Invoice object.
+-Added display of PAYMENTHISTORY in DoRecurringInquiry sample.
+-BUG: ADDOVERRIDE changed to correct variable ADDROVERRIDE.
+-BUG: COMPLETETYPE changed to correct variable CAPTURECOMLETE.
+-BUG: Fixed missing CURRENCY parameter when using CurrencyCode as part of the Amt (Invoice) object.
+      Updated samples to use 3-digit alpha code (USD, EUR, etc.) as described in the Developers Guide.
+
+VERSION: v4002
+-------------------
+UPDATED: 09/20/2006
+-------------------
+NEW FEATURES/CHANGES/UPDATES
+----------------------------
+- Added support for additional URLSreamHandlers
+  
+  Application servers (for example Weblogic, Websphere, JBoss) implement their own SSL API.
+  While integrating PayFlowPro API (which uses JSSE), it might be necessary to use a proper URLStreamHandler
+  class while creating the necessary java.net.URL object (in PayFlowPro API).
+  (Take a look at http://java.sun.com/j2se/1.4.2/docs/api/java/net/URL.html).
+  
+  You can specify the appropriate URLStreamHandler class name using SDKProperties.setURLStreamHandlerClass method.
+  For example, in order to use the PayFlowPro library with Weblogic (tested with WLS 8.1 SP5), you must include the
+  following in your code:
+  
+  SDKProperties.setURLStreamHandlerClass("sun.net.www.protocol.https.Handler");
+  
+- Supports JBoss v3.2.6 and higher.  Earlier versions will result in a
+  "RESULT=-1&RESPMSG=Failed to connect to host Input Server Uri = https://payflowpro.verisign.com:443/transaction"
+  error message.
+
+
+VERSION: v4001
+------------------
+UPDATED: 06/30/2006
+-------------------
+NEW FEATURES/CHANGES/UPDATES
+----------------------------
+-Changed VeriSign with PayPal at all the instances.
+-Product name is changed to Payflow SDK for Java at all instances.
+-Replaced PFPro with Payflow.
+-Changed PFProNETAPI to PayflowNETAPI.
+-Changed PFProUtility to PayflowUtility.
+-Changed PFProConstants to PayflowConstants.
+-Changed PFProConnectionData to PayflowConnectionData.
+-Support for New Header PAYFLOW-ASSEMBLY.
+
+VERSION: v4001
+------------------
+UPDATED: 6/02/2006
+-------------------
+
+NEW FEATURES/CHANGES/UPDATES
+----------------------------
+- Support for Direct Payment transactions.
+- Removed commit transactions.
+
+VERSION: v4000
+------------------
+UPDATED: 4/18/2006
+-------------------
+
+NEW FEATURES/CHANGES/UPDATES
+----------------------------
+- Support for Strong assembly(Object based data).
+- Support for BuyerAuth.
+- Support for ExpressCheckout Transaction.
+- Support for PayPal tender type.	
+- Supports SUN and IBM JRE 1.4 and 1.5.
+- Added exhaustive samples(console application) for using the SDK.
+- Added eStorefront sample (Web application) for ExpressCheckout and BuyerAuth.
+
+
+VERSION: v001
+------------------
+UPDATED: 1/31/2006
+-------------------
+
+NEW FEATURES/CHANGES/UPDATES
+----------------------------
+- New release for the parameter based assembly support on the V4 protocol.
+- This has two separate methods for sending the Transaction and Commit request as required by V4. 
+- Supports SUN and IBM JRE 1.4 and 1.5.
