@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<reportingEngineRequest>
+    <authRequest>
+         <user>vendorname</user>
+         <vendor>vendorname</vendor>
+         <partner>partnerName</partner>
+         <password>password</password>
+    </authRequest>
+<runReportRequest>
+    <reportName>DailyActivityReport</reportName>
+          <reportParam>
+              <paramName>report_date</paramName>
+              <paramValue>2006-11-20</paramValue>
+          </reportParam>
+    <pageSize>50</pageSize>
+</runReportRequest>
+</reportingEngineRequest>

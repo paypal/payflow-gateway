@@ -1,0 +1,27 @@
+﻿Welcome to the Payflow SDK for Java
+
+IMPORTANT:
+
+This SDK is based on v4 branch and is no longer being updated.  This is the last build.
+
+This is a very simple SDK that was build compiled on Java 1.8_261.
+
+Should you want to want to modify and compile for another version or application, please feel free to down the source code on GitHub at https://github.com/paypal/payflow-gateway and feel free to offer pull requests of your changes.  However, remember that v5 of the Java SDK is not fully backwards compatible and requires testing prior to deploying in a production environment.
+
+For most details on the all the changes, refer the README on GitHub at https://github.com/paypal/payflow-gateway/blob/master/SDK%20Binaries/java/README.md
+
+To start, just open the DOSaleComplete example, locate the following piece of code, modify it with your Payflow credentials and have fun.
+
+UserInfo User = new UserInfo("<user>", "<vendor>", "<partner>", "<password>");
+
+If it suggested that you log into PayPal Manager and create an API user before you begin by following these steps:
+
+	1. Go to https://manager.paypal.com and log in.
+	2. Under Account Administration >> Manage Users, choose Add User.
+	3. Fill out the required information.
+	4. Under "Select a Predefined Role", choose API_FULL_TRANSACTIONS.
+	5. Update to save.
+
+Once done the new user will be used in the <user> field above, while the log ID you used for manager will go into the <vendor> field.
+
+Enjoy.

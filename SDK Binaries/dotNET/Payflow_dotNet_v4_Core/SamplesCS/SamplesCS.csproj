@@ -1,0 +1,68 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <StartupObject>PayPal.Payments.Samples.CS.DataObjects.BasicTransactions.DOSaleCompleteCS</StartupObject>
+    <Version>4.4.6</Version>
+    <Company>PayPal, Inc.</Company>
+    <Description>Sample files for the Payflow Gateway .NET Core SDK</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="App.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="App.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="AssemblyInfo.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\BasicTransactions\DOAuth.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\BasicTransactions\DOCapture.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\BasicTransactions\DOCredit.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\BasicTransactions\DOInquiry.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\BasicTransactions\DOPartialAuth.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\BasicTransactions\DOReferenceCredit.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\BasicTransactions\DOSale.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\BasicTransactions\DOSaleComplete.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\BasicTransactions\DOSecureTokenAuth.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\BasicTransactions\DOSwipe.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\BasicTransactions\DOVoiceAuth.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\BasicTransactions\DOVoid.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\ExpressCheckout\DODoEC.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\ExpressCheckout\DOGetEC.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\ExpressCheckout\DOSetEC.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\ExpressCheckout\DOUpdateEC.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\Fraud\DOFraudFilters.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\Fraud\DOFraudReview.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\Recurring\DORecurring.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\Recurring\DORecurringAdd.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\Recurring\DORecurringCancel.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\Recurring\DORecurringInquiry.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\Recurring\DORecurringModify.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\Recurring\DORecurringPayment.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\DataObjects\Recurring\DORecurringReActivate.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\NameValuePairs\NVPCommandLine.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\NameValuePairs\NVPSale.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\XMLPay\XMLPayCommandLine.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\XMLPay\XMLPayCommandLine_File.cs" />
+    <Compile Update="src\PayPal\Payments\Samples\CS\XMLPay\XMLPaySale.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Payflow_dotNet_Core">
+      <HintPath>lib\Payflow_dotNet_Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,891 @@
+﻿<?xml version ="1.0"?>
+<schema targetNamespace = "http://www.paypal.com/XMLPay"
+	elementFormDefault='unqualified'
+	attributeFormDefault='unqualified'
+	xmlns = "http://www.w3.org/1999/XMLSchema">
+
+  <include schemaLocation = "XMLPayTypes.xsd"/>
+
+  <element name = "XMLPayRequest">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element ref = "RequestData"/>
+        <element ref = "RequestAuth"/>
+      </sequence>
+      <attribute name = "version" type = "string" />
+      <attribute name = "request_id" type = "string" />
+      <attribute name = "response_id" type = "string" />
+      <attribute name = "Timeout" type = "int" />
+    </complexType>
+  </element>
+
+  <element name = "VersionIntegrationTracking">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "IntegrationType" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "IntegrationVersion" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "WrapperType" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "WrapperVersion" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "OSName" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "OSArchitecture" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "OSVersion" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "JavaVersion" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "Proxy" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "RequestData">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "Vendor" type = "UserIdType"/>
+        <element name = "Partner" type = "UserIdType"/>
+        <choice>
+          <element name = "Transactions">
+            <complexType content = "elementOnly">
+              <element ref = "Transaction" minOccurs = "1" maxOccurs = "unbounded" />
+            </complexType>
+          </element>
+          <element name = "RecurringProfiles">
+            <complexType content = "elementOnly">
+              <element ref = "RecurringProfile" minOccurs = "1" maxOccurs = "unbounded" />
+            </complexType>
+          </element>
+          <element name = "AccountUpdateRequests">
+            <complexType content = "elementOnly">
+              <element ref = "AccountUpdateRequest" minOccurs = "1" maxOccurs = "unbounded" />
+            </complexType>
+          </element>
+        </choice>
+        <element ref = "VersionIntegrationTracking" minOccurs = "0" maxOccurs = "1"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "RequestAuth">
+    <complexType content = "elementOnly">
+      <choice>
+        <element ref = "UserPass"/>
+        <element ref = "Signature"/>
+      </choice>
+    </complexType>
+  </element>
+
+  <element name = "XMLPayResponse">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element ref = "ResponseData"/>
+        <element ref = "Signature" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "TransactionReceipts" minOccurs = "0" maxOccurs = "1">
+          <complexType content = "elementOnly">
+            <element ref = "XMLPayReceipt" minOccurs = "1" maxOccurs = "unbounded"/>
+          </complexType>
+        </element>
+      </sequence>
+      <attribute name = "xmlns" type = "string" />
+      <attribute name = "version" type = "string" />
+      <attribute name = "request_id" type = "string" />
+      <attribute name = "response_id" type = "string" />
+    </complexType>
+  </element>
+
+  <element name = "ResponseData">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "Vendor" type = "UserIdType"/>
+        <element name = "Partner" type = "UserIdType"/>
+        <choice>
+          <element name = "TransactionResults">
+            <complexType content = "elementOnly">
+              <element ref = "TransactionResult" minOccurs = "1" maxOccurs = "unbounded"/>
+            </complexType>
+          </element>
+          <element name = "RecurringProfileResults">
+            <complexType content = "elementOnly">
+              <element ref = "RecurringProfileResult" minOccurs = "1" maxOccurs = "unbounded"/>
+            </complexType>
+          </element>
+          <element name = "AccountUpdateResults">
+            <complexType content = "elementOnly">
+              <element ref = "AccountUpdateResult" minOccurs = "1" maxOccurs = "unbounded"/>
+            </complexType>
+          </element>
+          <element name = "HTTPCommitResults">
+            <complexType content = "elementOnly">
+              <element ref = "HTTPCommitResult" minOccurs = "1" maxOccurs = "unbounded"/>
+            </complexType>
+          </element>
+        </choice>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "UserData">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "User1" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "User2" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "User3" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "User4" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "User5" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "User6" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "User7" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "User8" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "User9" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "User10" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "CustID" type = "string" minOccurs = "0" maxOccurs = "1"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "XMLPayReceipt">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element ref = "ReceiptData" />
+        <element ref = "Signature" minOccurs = "0" maxOccurs = "1"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "ReceiptData">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "Vendor" type = "UserIdType"/>
+        <element name = "Partner" type = "UserIdType"/>
+        <element ref = "Transaction"/>
+        <element ref = "TransactionResult"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "Transaction">
+    <complexType content = "elementOnly">
+      <sequence>
+        <choice>
+          <element ref = "Authorization"/>
+          <element ref = "Capture"/>
+          <element ref = "Sale"/>
+          <element ref = "Credit"/>
+          <element ref = "Void"/>
+          <element ref = "ForceCapture"/>
+          <element ref = "RepeatSale"/>
+          <element ref = "GetStatus"/>
+          <element ref = "VerifyEnrollment"/>
+          <element ref = "ValidateAuthentication"/>
+          <element ref = "TransactionUpdate"/>
+          <element ref = "SetExpressCheckout"/>
+          <element ref = "GetExpressCheckout"/>
+          <element ref = "DoExpressCheckout"/>
+          <element ref = "DataUpload"/>
+          <element ref = "InquiryTransaction"/>
+          <element ref = "BalanceInquiry"/>
+        </choice>
+      </sequence>
+      <attribute name = "Id" type = "ID"/>
+      <attribute name = "CustRef" type = "ReferenceIdType"/>
+      <element name = "Verbosity" type = "VerbosityEnum" minOccurs = "0" maxOccurs = "1"/>
+      <element name = "BrowserUserAgent" type = "string" minOccurs = "0" maxOccurs = "1"/>
+      <element name = "BrowserTime" type = "string" minOccurs = "0" maxOccurs = "1"/>
+      <element name = "BrowserCountryCode" type = "string" minOccurs = "0" maxOccurs = "1"/>
+      <element name = "CustomerID" type = "string" minOccurs = "0" maxOccurs = "1"/>
+      <element name = "ReportGroup" type = "string" minOccurs = "0" maxOccurs = "1"/>
+      <element name = "CreateSecureToken" type = "YesNoEnum" minOccurs = "0" maxOccurs = "1"/>
+      <element name = "SecureTokenID" type = "SecureTokenIdType" minOccurs = "0" maxOccurs = "1"/>
+      <element name = "SecureToken" type = "string" minOccurs = "0" maxOccurs = "1"/>
+      <element ref = "UserData" minOccurs = "0" maxOccurs = "1" />
+    </complexType>
+  </element>
+
+  <simpleType name = "VerbosityEnum" base = "string">
+    <enumeration value = "Off"/>
+    <enumeration value = "Low"/>
+    <enumeration value = "Medium"/>
+    <enumeration value = "High"/>
+  </simpleType>
+
+  <element name = "Authorization">
+    <complexType content = "elementOnly">
+      <sequence>
+        <choice>
+          <element ref = "ReferenceTransaction" minOccurs = "0" maxOccurs = "1"/>
+        </choice>
+        <element ref = "PayData"/>
+        <element ref = "PayDataAuth" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "DoReauthorization" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "PartialAuth" type = "YesNoEnum" minOccurs = "0" maxOccurs = "1"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "Capture">
+    <complexType content = "elementOnly">
+      <sequence>
+        <choice>
+          <element name = "PNRef" type = "PNRefType"/>
+          <element name = "PPRef" type = "PPRefType"/>
+        </choice>
+        <element ref = "Invoice" minOccurs="0" maxOccurs="1"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "Sale">
+    <complexType content = "elementOnly">
+      <sequence>
+        <choice>
+          <element ref = "ReferenceTransaction" minOccurs = "0" maxOccurs = "1"/>
+        </choice>
+        <element ref = "PayData"/>
+        <element ref = "PayDataAuth" minOccurs = "0" maxOccurs = "1"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "Credit">
+    <complexType content = "elementOnly">
+      <sequence>
+        <choice>
+          <element name = "PNRef" type = "PNRefType"/>
+          <element name = "PPRef" type = "PPRefType"/>
+          <element ref = "Tender" minOccurs="0" maxOccurs="1"/>
+        </choice>
+        <element ref = "Invoice"  minOccurs="0" maxOccurs="1"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "Void">
+    <complexType content = "elementOnly">
+      <sequence>
+        <choice>
+          <element name = "PNRef" type = "PNRefType"/>
+          <element name = "PPRef" type = "PPRefType"/>
+        </choice>
+        <element name = "Note" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "ForceCapture">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element ref = "PayData"/>
+        <element ref = "PayDataAuth" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "AuthCode" type = "AuthCodeType"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+        <element name = "AuthDate" type = "string" minOccurs = "0" maxOccurs = "1"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "RepeatSale">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "PNRef" type = "PNRefType"/>
+        <element ref = "Invoice" minOccurs="0" maxOccurs="1"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "GetStatus">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "PNRef" type = "PNRefType"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "VerifyEnrollment">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element ref = "PayData"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "ValidateAuthentication">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name= "PARes" type="BuyerAuthMesgType"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "AccountUpdateRequest">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "Action" type = "AUActionEnum"/>
+        <choice>
+          <element name = "PNRef" type = "PNRefType"/>
+          <element ref = "Tender"/>
+        </choice>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <simpleType name = "TransactionUpdateActionEnum" base = "string">
+    <enumeration value = "Approve"/>
+    <enumeration value = "Review"/>
+    <enumeration value = "ServiceDecline"/>
+    <enumeration value = "MerchantDecline"/>
+  </simpleType>
+
+  <element name = "TransactionUpdate">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "PNRef" type = "PNRefType"/>
+        <element name = "Action" type = "TransactionUpdateActionEnum"/>
+        <element name = "RMSID" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "SetExpressCheckout">
+    <complexType content = "elementOnly">
+      <sequence>
+        <choice>
+          <element ref = "Authorization"/>
+          <element ref = "Sale"/>
+          <element ref = "Order"/>
+        </choice>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "GetExpressCheckout">
+    <complexType content = "elementOnly">
+      <sequence>
+        <choice>
+          <element ref = "Authorization"/>
+          <element ref = "Sale"/>
+          <element ref = "Order"/>
+        </choice>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "DoExpressCheckout">
+    <complexType content = "elementOnly">
+      <sequence>
+        <choice>
+          <element ref = "Authorization"/>
+          <element ref = "Sale"/>
+          <element ref = "Order"/>
+        </choice>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "DataUpload">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "TotalAmt"  type = "CurrencyAmount" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "CardNum" type = "CardNumType" minOccurs = "1" maxOccurs = "1"/>
+        <element name = "ExpDate" type =  "ExpDateType" minOccurs = "1" maxOccurs = "1"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "BalanceInquiry">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element ref = "Tender"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "Order">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element ref = "PayData"/>
+        <element ref = "PayDataAuth" minOccurs = "0" maxOccurs = "1"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "InquiryTransaction">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "PNRef" type = "PNRefType"/>
+        <element ref = "Invoice" minOccurs = "0" maxOccurs = "1"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "FraudPreprocessResult">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "Message" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "XMLData" type = "string" minOccurs = "0" maxOccurs = "1"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "FraudPostprocessResult">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "Message" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "XMLData" type = "string" minOccurs = "0" maxOccurs = "1"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "ProcessorResult">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "AVSResult" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "CVResult" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "CardSecure" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "ResponseText" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "AdditionalMessages" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "SettleDate" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "STAN" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "RRN" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "HostCode" type = "HostCodeType" minOccurs="0" maxOccurs="1"/>
+        <element name = "HostResponse" type = "string" minOccurs="0" maxOccurs="1"/>
+        <element name = "AMEXID" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "BalanceAmount" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "TransactionResult">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "Result" type = "int"/>
+        <element ref = "BuyerAuthResult" minOccurs="0" maxOccurs="1"/>
+        <element ref = "ProcessorResult" minOccurs="0" maxOccurs="1"/>
+        <element ref = "FraudPreprocessResult" minOccurs="0" maxOccurs="1"/>
+        <element ref = "FraudPostprocessResult" minOccurs="0" maxOccurs="1"/>
+        <element name = "CardSecure" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "IAVSResult" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element ref = "AVSResult" minOccurs="0" maxOccurs="1"/>
+        <element name = "CVResult" type = "MatchResultEnum" minOccurs="0" maxOccurs="1"/>
+        <element name = "Message" type = "string" minOccurs="0" maxOccurs="1"/>
+        <element name = "SuccessWithWarning" type = "string" minOccurs="0" maxOccurs="1"/>
+        <element name = "PNRef" type = "PNRefType" minOccurs="0" maxOccurs="1"/>
+        <element name = "AuthCode" type = "AuthCodeType" minOccurs="0" maxOccurs="1"/>
+        <element name = "HostCode" type = "HostCodeType" minOccurs="0" maxOccurs="1"/>
+        <element name = "HostURL" type = "uriReference" minOccurs="0" maxOccurs="1"/>
+        <element name = "OrigResult" type = "byte" minOccurs="0" maxOccurs="1"/>
+        <element name = "TrStatus" type = "StatusType" minOccurs="0" maxOccurs="1"/>
+        <element name = "ReceiptURL" type = "uriReference" minOccurs="0" maxOccurs="1"/>
+        <element name = "ACHStatus" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "OrigPNRef" type = "PNRefType" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "OrigMessage" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "BalanceAmount" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "Amount" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "OriginalAmount" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "VisaCardLevel" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "TransactionTime" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "Account" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "ExpirationDate" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "CardType" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element ref = "PayPalResult" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "SecureTokenID" type = "SecureTokenIdType" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "SecureToken" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element ref = "EchoDataResult" minOccurs = "0" maxOccurs = "1"/>
+        <element ref = "UserData" minOccurs = "0" maxOccurs = "1" />
+        <element name = "OrderId" type = "OrderIdType" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "TXId" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+      <attribute name = "Id" type = "ID" />
+      <attribute name = "CustRef" type = "ReferenceIdType"/>
+      <attribute name = "Duplicate" type = "boolean"/>
+    </complexType>
+  </element>
+
+  <element name = "PayPalResult">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "EMail" type = "EMailType" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "PayerID" type = "PayerIDType" minOccurs="0" maxOccurs="1"/>
+        <element name = "Token" type = "ECTokenType" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "PPRef" type = "PPRefType" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "FeeAmount"  type = "CurrencyAmount" minOccurs="0" maxOccurs="1"/>
+        <element name = "PayerStatus" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "PaymentType" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "PendingReason" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "Custom" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "InvNum" type = "InvNumType"  minOccurs = "0" maxOccurs = "1"/>
+        <element name = "Phone" type = "PhoneNumberType" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "Name" type = "NameType" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "Lastname" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "ShipTo" minOccurs = "0" maxOccurs = "1">
+          <complexType content = "elementOnly">
+            <element ref = "Address"/>
+          </complexType>
+        </element>
+        <element name = "CorrelationID" type = "CorrelationIDType" minOccurs = "0" maxOccurs = "1"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "AccountUpdateResult">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "Result" type = "int"/>
+        <element name = "Message" type = "string"/>
+        <element name = "PNRef" type = "PNRefType"/>
+        <element name = "AUResponseCode" type = "AUResponseCode"/>
+        <element name = "AUResponseText" type = "AUResponseText"/>
+        <element name = "AUSubmitDate" type = "date" minOccurs = "0" maxOccurs = "1"/>
+        <element ref = "Tender" minOccurs = "0" maxOccurs = "1"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "HTTPCommitResult">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "Result" type = "int"/>
+        <element name = "Message" type = "string" minOccurs = "0" maxOccurs = "1"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "BuyerAuthResult">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "Status" type = "BuyerAuthStatusEnum"/>
+        <element name = "AuthenticationId" type = "Base64Sha1StringType" minOccurs="0" maxOccurs="1"/>
+        <element name = "PAReq" type = "BuyerAuthMesgType" minOccurs="0" maxOccurs="1" />
+        <element name = "ACSUrl" type = "uriReference" minOccurs="0" maxOccurs="1" />
+        <element name = "ECI" type = "ECIType" minOccurs="0" maxOccurs="1" />
+        <element name = "CAVV" type = "Base64Sha1StringType" minOccurs="0" maxOccurs="1" />
+        <element name = "XID" type = "Base64Sha1StringType" minOccurs="0" maxOccurs="1" />
+        <element name = "DSTransactionID" type = "DSTransactionIDType" minOccurs="0" maxOccurs="1" />
+        <element name = "ThreeDSVersion" type = "ThreeDSVersionType" minOccurs="0" maxOccurs="1" />
+        <element name = "AuthenticationStatus" type = "BuyerAuthStatusEnum"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <simpleType name = "BuyerAuthStatusEnum" base = "string">
+    <enumeration value = "E"/>
+    <enumeration value = "O"/>
+    <enumeration value = "X"/>
+    <enumeration value = "I"/>
+    <enumeration value = "Y"/>
+    <enumeration value = "A"/>
+    <enumeration value = "U"/>
+    <enumeration value = "N"/>
+    <enumeration value = "F"/>
+  </simpleType>
+
+  <element name = "AVSResult">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "StreetMatch" type = "MatchResultEnum"/>
+        <element name = "ZipMatch" type = "MatchResultEnum"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <simpleType name = "AuthCodeType" base = "string">
+    <maxLength value = "6"/>
+  </simpleType>
+
+  <simpleType name = "HostCodeType" base = "string">
+    <maxLength value = "6"/>
+  </simpleType>
+
+  <simpleType name = "StatusType" base = "string">
+    <maxLength value = "3"/>
+  </simpleType>
+
+  <simpleType name = "MatchResultEnum" base = "string">
+    <enumeration value = "Match"/>
+    <enumeration value = "No Match"/>
+    <enumeration value = "Service Not Available"/>
+    <enumeration value = "Service Not Requested"/>
+  </simpleType>
+
+  <element name = "UserPass">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "User" type = "UserIdType"/>
+        <element name = "UserDomain" type = "UserIdType" minOccurs="0" maxOccurs="1"/>
+        <element name = "Password" type = "PasswordType"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "RecurringProfile">
+    <complexType content = "elementOnly">
+      <sequence>
+        <choice>
+          <element ref = "Add"/>
+          <element ref = "Modify"/>
+          <element ref = "Cancel"/>
+          <element ref = "Reactivate"/>
+          <element ref = "Payment"/>
+          <element ref = "Inquiry"/>
+        </choice>
+      </sequence>
+      <attribute name = "Id" type = "ID"/>
+    </complexType>
+  </element>
+
+  <element name = "Add">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element ref = "RPData"/>
+        <element ref = "Tender"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "Modify">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "ProfileID" type = "ProfileIDType"/>
+        <element ref = "RPData" minOccurs = "0" maxOccurs = "1"/>
+        <element ref = "Tender" minOccurs = "0" maxOccurs = "1"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "Cancel">
+    <complexType content = "elementOnly">
+      <element name = "ProfileID" type = "ProfileIDType"/>
+    </complexType>
+  </element>
+
+  <element name = "Reactivate">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "ProfileID" type = "ProfileIDType"/>
+        <element ref = "RPData" minOccurs = "0" maxOccurs = "1"/>
+        <element ref = "Tender" minOccurs = "0" maxOccurs = "1"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "Payment">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "ProfileID" type = "ProfileIDType"/>
+        <element ref = "RPData" minOccurs = "0" maxOccurs = "1"/>
+        <element ref = "Tender" minOccurs = "0" maxOccurs = "1"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "Inquiry">
+    <complexType content = "elementOnly">
+      <element name = "ProfileID" type = "ProfileIDType"/>
+      <element name = "PaymentHistory" type = "string" minOccurs="0" maxOccurs="1"/>
+    </complexType>
+  </element>
+
+  <element name = "RPData">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "PNRef" type = "PNRefType" minOccurs="0" maxOccurs="1"/>
+        <element name = "BAID" type = "BAIDType" minOccurs="0" maxOccurs="1"/>
+        <element name = "Name" type = "RPNameType" minOccurs="0" maxOccurs="1"/>
+        <element name = "TotalAmt"  type = "CurrencyAmount" minOccurs="0" maxOccurs="1"/>
+        <element name = "Start" type = "RPDateType" minOccurs="0" maxOccurs="1"/>
+        <element name = "Term" type = "int" minOccurs="0" maxOccurs="1"/>
+        <element name = "PayPeriod" type = "PayPeriodType" minOccurs="0" maxOccurs="1"/>
+        <element name = "Frequency" type = "int" minOccurs="0" maxOccurs="1"/>
+        <element name = "MaxFailPayments" type = "int" minOccurs="0" maxOccurs="1"/>
+        <element name = "RetryNumDays" type = "int" minOccurs="0" maxOccurs="1"/>
+        <element name = "EMail" type = "EMailType" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "CompanyName" type = "CompanyNameType" minOccurs="0" maxOccurs="1"/>
+        <element name = "Comment" type = "CommentType" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "OptionalTrans" type = "OptionalTransType" minOccurs="0" maxOccurs="1"/>
+        <element name = "OptionalTransAmt" type = "CurrencyAmount" minOccurs="0" maxOccurs="1"/>
+        <element name = "BillTo" minOccurs = "0" maxOccurs = "1">
+          <complexType content = "elementOnly">
+            <element name = "Name" type = "NameType" minOccurs = "0" maxOccurs = "1"/>
+            <element name = "LastName" type = "NameType" minOccurs = "0" maxOccurs = "1"/>
+            <element name = "MiddleName" type = "NameType" minOccurs = "0" maxOccurs = "1"/>
+            <element ref = "Address" minOccurs = "0" maxOccurs = "1"/>
+            <element name = "Phone" type = "PhoneNumberType" minOccurs = "0" maxOccurs = "1"/>
+            <element name = "Fax" type = "PhoneNumberType" minOccurs = "0" maxOccurs = "1"/>
+          </complexType>
+        </element>
+        <element name = "ShipTo" minOccurs = "0" maxOccurs = "1">
+          <complexType content = "elementOnly">
+            <element name = "Name" type = "NameType" minOccurs = "0" maxOccurs = "1"/>
+            <element name = "LastName" type = "NameType" minOccurs = "0" maxOccurs = "1"/>
+            <element name = "MiddleName" type = "NameType" minOccurs = "0" maxOccurs = "1"/>
+            <element ref = "Address"/>
+            <element name = "Phone" type = "PhoneNumberType" minOccurs = "0" maxOccurs = "1"/>
+            <element name = "Fax" type = "PhoneNumberType" minOccurs = "0" maxOccurs = "1"/>
+            <element name = "Country" type = "CountryCode" minOccurs = "0" maxOccurs = "1"/>
+          </complexType>
+        </element>
+        <element name = "OrigProfileID" type = "ProfileIDType" minOccurs="0" maxOccurs="1"/>
+        <element name = "PaymentNum" type = "int" minOccurs="0" maxOccurs="1"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "RPPaymentResult">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "PaymentNum" type = "int"/>
+        <element name = "PNRef" type = "PNRefType" minOccurs="0" maxOccurs="1"/>
+        <element name = "TransTime" type = "dateTime"  minOccurs="0" maxOccurs="1"/>
+        <element name = "Result" type = "int"/>
+        <element name = "Tender" type = "TenderTypeEnum" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "Amt" type = "CurrencyAmount" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "TransState" type = "string" minOccurs="0" maxOccurs="1"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+      <attribute name = "Id" type = "ID"/>
+    </complexType>
+  </element>
+
+  <element name = "RecurringProfileResult">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "Result" type = "int"/>
+        <element name = "Message" type = "string" minOccurs="0" maxOccurs="1"/>
+        <element name = "ProfileID" type = "ProfileIDType" minOccurs="0" maxOccurs="1"/>
+        <element name = "RPRef" type = "RPRefType" minOccurs="0" maxOccurs="1"/>
+        <element name = "Status" type = "RPStatusType" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "Name" type = "RPNameType" minOccurs="0" maxOccurs="1"/>
+        <element name = "Start" type = "RPDateType" minOccurs="0" maxOccurs="1"/>
+        <element name = "Term" type = "int" minOccurs="0" maxOccurs="1"/>
+        <element name = "End" type = "RPDateType" minOccurs="0" maxOccurs="1"/>
+        <element name = "PayPeriod" type = "PayPeriodType" minOccurs="0" maxOccurs="1"/>
+        <element name = "Frequency" type = "int" minOccurs="0" maxOccurs="1"/>
+        <element name = "MaxFailPayments" type = "int" minOccurs="0" maxOccurs="1"/>
+        <element name = "RetryNumDays" type = "int" minOccurs="0" maxOccurs="1"/>
+        <element name = "EMail" type = "EMailType" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "CompanyName" type = "CompanyNameType" minOccurs="0" maxOccurs="1"/>
+        <element name = "Amt" type = "CurrencyAmount" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "PaymentsLeft" type = "int" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "NextPayment" type = "RPDateType" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "AggregateAmt" type = "CurrencyAmount" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "AggregateOptionalTransAmt" type = "CurrencyAmount" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "NumFailedPayments" type = "int" minOccurs = "0" maxOccurs = "1"/>
+        <element ref = "Tender" minOccurs = "0" maxOccurs = "1"/>
+        <element name = "BillTo" minOccurs = "0" maxOccurs = "1">
+          <complexType content = "elementOnly">
+            <element name = "Name" type = "NameType" minOccurs = "0" maxOccurs = "1"/>
+            <element ref = "Address" minOccurs = "0" maxOccurs = "1"/>
+            <element name = "Phone" type = "PhoneNumberType" minOccurs = "0" maxOccurs = "1"/>
+            <element name = "Fax" type = "PhoneNumberType" minOccurs = "0" maxOccurs = "1"/>
+          </complexType>
+        </element>
+        <element name = "ShipTo" minOccurs = "0" maxOccurs = "1">
+          <complexType content = "elementOnly">
+            <element name = "Name" type = "NameType" minOccurs = "0" maxOccurs = "1"/>
+            <element ref = "Address"/>
+            <element name = "Phone" type = "PhoneNumberType" minOccurs = "0" maxOccurs = "1"/>
+            <element name = "Fax" type = "PhoneNumberType" minOccurs = "0" maxOccurs = "1"/>
+          </complexType>
+        </element>
+        <element ref = "TransactionResult" minOccurs = "0" maxOccurs = "1"/>
+        <element ref = "RPPaymentResult" minOccurs = "0" maxOccurs = "unbounded"/>
+        <element ref = "ExtData" minOccurs = "0" maxOccurs = "unbounded"/>
+      </sequence>
+      <attribute name = "Id" type = "ID"/>
+    </complexType>
+  </element>
+
+  <simpleType name = "ProfileIDType" base = "string">
+    <maxLength value = "12"/>
+  </simpleType>
+
+  <simpleType name = "RPNameType" base = "string">
+    <maxLength value = "128"/>
+  </simpleType>
+
+  <simpleType name = "RPDateType" base = "string">
+    <maxLength value = "6"/>
+  </simpleType>
+
+  <simpleType name = "PayPeriodType" base = "string">
+    <enumeration value = "Weekly"/>
+    <enumeration value = "Bi-weekly"/>
+    <enumeration value = "Semi-monthly"/>
+    <enumeration value = "Every four weeks"/>
+    <enumeration value = "Monthly"/>
+    <enumeration value = "Quarterly"/>
+    <enumeration value = "Semi-yearly"/>
+    <enumeration value = "Yearly"/>
+  </simpleType>
+
+  <simpleType name = "CompanyNameType" base = "string">
+    <maxLength value = "127"/>
+  </simpleType>
+
+  <simpleType name = "OptionalTransType" base = "string">
+    <enumeration value = "Auth"/>
+    <enumeration value = "Sale"/>
+  </simpleType>
+
+  <simpleType name = "RPRefType" base = "string">
+    <maxLength value = "12"/>
+  </simpleType>
+
+  <simpleType name = "RPStatusType" base = "string">
+  </simpleType>
+
+  <element name = "EchoDataResult">
+    <complexType content = "elementOnly">
+      <sequence>
+        <choice>
+          <element ref = "EchoAddress" minOccurs = "0" maxOccurs = "1"/>
+        </choice>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name = "EchoAddress">
+    <complexType content = "elementOnly">
+      <sequence>
+        <element name = "BillTo" minOccurs = "0" maxOccurs = "1">
+          <complexType content = "elementOnly">
+            <element name = "Name" type = "NameType" minOccurs = "0" maxOccurs = "1"/>
+            <element name = "LastName" type = "NameType" minOccurs = "0" maxOccurs = "1"/>
+            <element name = "MiddleName" type = "NameType" minOccurs = "0" maxOccurs = "1"/>
+            <element ref = "Address" minOccurs = "0" maxOccurs = "1"/>
+            <element name = "Phone" type = "PhoneNumberType" minOccurs = "0" maxOccurs = "1"/>
+            <element name = "Fax" type = "PhoneNumberType" minOccurs = "0" maxOccurs = "1"/>
+          </complexType>
+        </element>
+        <element name = "ShipTo" minOccurs = "0" maxOccurs = "1">
+          <complexType content = "elementOnly">
+            <element name = "Name" type = "NameType" minOccurs = "0" maxOccurs = "1"/>
+            <element name = "LastName" type = "NameType" minOccurs = "0" maxOccurs = "1"/>
+            <element name = "MiddleName" type = "NameType" minOccurs = "0" maxOccurs = "1"/>
+            <element ref = "Address"/>
+            <element name = "Phone" type = "PhoneNumberType" minOccurs = "0" maxOccurs = "1"/>
+            <element name = "Fax" type = "PhoneNumberType" minOccurs = "0" maxOccurs = "1"/>
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

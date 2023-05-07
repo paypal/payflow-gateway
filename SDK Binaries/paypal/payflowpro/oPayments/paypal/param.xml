@@ -1,0 +1,2480 @@
+<?xml version="1.0"?>
+<!DOCTYPE pfpro_params [
+  <!ELEMENT pfpro_params (param+)>
+  <!ELEMENT param (BEP_param,PFPro_param,DB_Column)>
+   <!ELEMENT BEP_param (value)>
+          <!ELEMENT value (#PCDATA)>
+   <!ELEMENT PFPro_param (value,IOType)>
+   <!ELEMENT IOType (#PCDATA)>
+   <!ELEMENT DB_Column (Name,DataType,MaxLength,IsNull)>
+           <!ELEMENT Name (#PCDATA)>
+           <!ELEMENT DataType (#PCDATA)>
+           <!ELEMENT MaxLength (#PCDATA)>
+           <!ELEMENT IsNull (#PCDATA)>
+]>
+<pfpro_params>
+<param>
+   <BEP_param>
+       <value>oapfaba</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>ABA</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>ABA</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>9</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfaccttype</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>ACCTTYPE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>BANKACCTTYPE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>1</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfaddlmsgs</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>ADDLMSGS</value>
+           <IOType>OUT</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>ADDLMSGS</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>1048</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>OapfCVV2Result</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>CVV2MATCH</value>
+           <IOType>OUT</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>CVV2MATCH</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>1</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfavsaddr</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>AVSADDR</value>
+           <IOType>OUT</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>AVSADDR</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>1</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfavszip</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>AVSZIP</value>
+           <IOType>OUT</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>AVSZIP</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>1</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfauthentication_id</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>AUTHENTICATION_ID</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>AUTHENTICATION_ID</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>64</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfauthentication_status</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>AUTHENTICATION_STATUS</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>AUTHENTICATION_STATUS</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>1</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfbilltophone2</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>BILLTOPHONE2</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>BILLTOPHONE2</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>30</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfbilltostreet2</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>BILLTOSTREET2</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>BILLTOSTREET2</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>150</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfbrowsercountrycode</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>BROWSERCOUNTRYCODE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>BROWSERCOUNTRYCODE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>4</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfbrowsertime</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>BROWSERTIME</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>BROWSERTIME</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>40</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfbrowseruseragent</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>BROWSERUSERAGENT</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>BROWSERUSERAGENT</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>255</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value></value>
+   </BEP_param>
+   <PFPro_param>
+           <value>BUYERAUTHSTATUS</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>BUYERAUTHSTATUS</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>1</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfcardsecure</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>CARDSECURE</value>
+           <IOType>OUT</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>CARDSECURE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>1</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfcarrier</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>CARRIER</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>CARRIER</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfcavv</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>CAVV</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>CAVV</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>64</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfchknum</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>CHKNUM</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>CHKNUM</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>8</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfchktype</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>CHKTYPE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>CHKTYPE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>1</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfcommcard</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>COMMCARD</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>COMMCARD</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>1</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfcomment1</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>COMMENT1</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>COMMENT1</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>255</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfcomment2</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>COMMENT2</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>COMMENT2</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>255</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfcorpname</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>CORPNAME</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>CORPNAME</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>40</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfcorppurchdesc</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>CORPPURCHDESC</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>CORPPURCHDESC</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>80</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfcountrycode</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>COUNTRYCODE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>COUNTRYCODE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>4</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfcustage</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>CUSTAGE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>CUSTAGE</Name>
+           <DataType>NUMBER</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfcustcode</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>CUSTCODE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>CUSTCODE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>30</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfcustid</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>CUSTID</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>CUSTID</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>200</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfcustip</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>CUSTIP</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>CUSTIP</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>15</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfcustmaxage</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>CUSTMAXAGE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>CUSTMAXAGE</Name>
+           <DataType>NUMBER</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfcustminage</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>CUSTMINAGE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>CUSTMINAGE</Name>
+           <DataType>NUMBER</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfcustref</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>CUSTREF</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>CUSTREF</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>12</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfcusttm</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>CUSTTM</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>CUSTTM</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfcvv2</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>CVV2</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>CVV2</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>4</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfdesc</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>DESC</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>DESCR</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>200</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfdesc1</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>DESC1</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>DESC1</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>200</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfdesc2</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>DESC2</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>DESC2</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>200</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfdesc3</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>DESC3</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>DESC3</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>200</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfdesc4</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>DESC4</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>DESC4</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>200</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfshiptocountry</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>SHIPTOCOUNTRY</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>SHIPTOCOUNTRY</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>4</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfdiscount</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>DISCOUNT</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>DISCOUNT</Name>
+           <DataType>NUMBER</DataType>
+           <MaxLength>15,2</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfdl</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>DL</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>DL</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>35</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfdob</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>DOB</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>DOB</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfdutyamt</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>DUTYAMT</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>DUTYAMT</Name>
+           <DataType>NUMBER</DataType>
+           <MaxLength>15,2</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfeci</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>ECI</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>ECI</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>1</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfendtime</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>ENDTIME</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>ENDTIME</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>20</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapffax</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>FAX</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>FAX</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>20</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapffirstname</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>FIRSTNAME</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>FIRSTNAME</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>30</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfforgotpwd</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>FORGOTPWD</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>FORGOTPWD</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapffps_postxmldata</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>FPS_POSTXMLDATA</value>
+           <IOType>OUT</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>FPS_POSTXMLDATA</Name>
+           <DataType>BLOB</DataType>
+           <MaxLength></MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapffps_prexmldata</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>FPS_PREXMLDATA</value>
+           <IOType>OUT</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>FPS_PREXMLDATA</Name>
+           <DataType>BLOB</DataType>
+           <MaxLength></MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapffreightamt</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>FREIGHTAMT</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>FREIGHTAMT</Name>
+           <DataType>NUMBER</DataType>
+           <MaxLength>15,2</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfgiftcardtype</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>GIFTCARDTYPE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>GIFTCARDTYPE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfgiftmsg</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>GIFTMSG</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>GIFTMSG</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>180</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfhandlingamt</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>HANDLINGAMT</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>HANDLINGAMT</Name>
+           <DataType>NUMBER</DataType>
+           <MaxLength>15,2</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfhomephone</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>HOMEPHONE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>HOMEPHONE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>30</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfhostcode</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>HOSTCODE</value>
+           <IOType>OUT</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>HOSTCODE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>20</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfiavs</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>IAVS</value>
+           <IOType>OUT</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>IAVS</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfinvnum</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>INVNUM</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>INVNUM</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>20</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfinvoicedate</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>INVOICEDATE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>INVOICEDATE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>8</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapflastname</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>LASTNAME</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>LASTNAME</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>30</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfmerchdescr</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>MERCHDESCR</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>MERCHDESCR</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>22</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfmerchsvc</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>MERCHSVC</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>MERCHSVC</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>20</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfmicr</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>MICR</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>MICR</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>35</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapforderbin</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>ORDERBIN</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>ORDERBIN</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapforderdatetime</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>ORDERDATETIME</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>ORDERDATETIME</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>19</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapforigid</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>ORIGID</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>ORIGID</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>12</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfpasswordgiven</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>PASSWORDGIVEN</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>PASSWORDGIVEN</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>OapfPONum</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>PONUM</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>PONUM</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>40</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfpostfpsmsg</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>POSTFPSMSG</value>
+           <IOType>OUT</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>POSTFPSMSG</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>100</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfprefpsmsg</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>PREFPSMSG</value>
+           <IOType>OUT</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>PREFPSMSG</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>100</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfprenote</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>PRENOTE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>PRENOTE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>1</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfpreviouscust</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>PREVIOUSCUST</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>PREVIOUSCUST</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfprocavs</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>PROCAVS</value>
+           <IOType>OUT</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>PROCAVS</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>20</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfproccardsecure</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>PROCCARDSECURE</value>
+           <IOType>OUT</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>PROCCARDSECURE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfproccvv2</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>PROCCVV2</value>
+           <IOType>OUT</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>PROCCVV2</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>40</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfpur_desc</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>PUR_DESC</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>PUR_DESC</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>80</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfrecurring</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>RECURRING</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>RECURRING</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>1</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfregloyalty</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>REGLOYALTY</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>REGLOYALTY</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfregpromo</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>REGPROMO</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>REGPROMO</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfreqname</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>REQNAME</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>REQNAME</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>40</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfrespmsg</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>RESPMSG</value>
+           <IOType>OUT</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>RESPMSG</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>256</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfresptext</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>RESPTEXT</value>
+           <IOType>OUT</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>RESPTEXT</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>17</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfreturnallowed</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>RETURNALLOWED</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>RETURNALLOWED</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfshipcarrier</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>SHIPCARRIER</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>SHIPCARRIER</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>200</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfshipmentno</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>SHIPMENTNO</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>SHIPMENTNO</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>20</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfshipmethod</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>SHIPMETHOD</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>SHIPMETHOD</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfshiptocity</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>SHIPTOCITY</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>SHIPTOCITY</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>45</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfshiptoemail</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>SHIPTOEMAIL</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>SHIPTOEMAIL</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>120</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfshiptofirstname</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>SHIPTOFIRSTNAME</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>SHIPTOFIRSTNAME</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>40</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfshiptolastname</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>SHIPTOLASTNAME</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>SHIPTOLASTNAME</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>40</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfshiptomiddlename</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>SHIPTOMIDDLENAME</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>SHIPTOMIDDLENAME</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>40</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfshiptophone</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>SHIPTOPHONE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>SHIPTOPHONE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>20</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfshiptophone2</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>SHIPTOPHONE2</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>SHIPTOPHONE2</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>20</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfshiptostate</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>SHIPTOSTATE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>SHIPTOSTATE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>45</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfshiptostreet</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>SHIPTOSTREET</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>SHIPTOSTREET</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>150</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfshiptostreet2</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>SHIPTOSTREET2</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>SHIPTOSTREET2</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>150</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfshiptozip</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>SHIPTOZIP</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>SHIPTOZIP</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>20</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>OapfShipFromZip</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>SHIPFROMZIP</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>SHIPFROMZIP</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfss</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>SS</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>SS</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>40</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfssn</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>SSN</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>SSN</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>20</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfemail</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>EMAIL</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>EMAIL</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>120</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfphone</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>PHONENUM</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>PHONENUM</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>20</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfresult</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>RESULT</value>
+           <IOType>OUT</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>RESULT</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>9</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfstarttime</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>STARTTIME</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>STARTTIME</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfsubtotal</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>SUBTOTAL</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>SUBTOTAL</Name>
+           <DataType>NUMBER</DataType>
+           <MaxLength>15,2</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfswipe</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>SWIPE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>SWIPE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>80</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapftaxexempt</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>TAXEXEMPT</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>TAXEXEMPT</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapftaxamt</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>TAXAMT</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>TAXAMT</Name>
+           <DataType>NUMBER</DataType>
+           <MaxLength>15,2</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfvattaxamt</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>VATTAXAMT</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>VATTAXAMT</Name>
+           <DataType>NUMBER</DataType>
+           <MaxLength>15,2</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapflocaltaxamt</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>LOCALTAXAMT</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>LOCALTAXAMT</Name>
+           <DataType>NUMBER</DataType>
+           <MaxLength>15,2</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfnationaltaxamt</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>NATIONALTAXAMT</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>NATIONALTAXAMT</Name>
+           <DataType>NUMBER</DataType>
+           <MaxLength>15,2</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfalttaxamt</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>ALTTAXAMT</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>ALTTAXAMT</Name>
+           <DataType>NUMBER</DataType>
+           <MaxLength>15,2</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfvattaxpercent</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>VATTAXPERCENT</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>VATTAXPERCENT</Name>
+           <DataType>NUMBER</DataType>
+           <MaxLength>4,2</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfauthtype</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>AUTHTYPE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>AUTHTYPE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfcompanyname</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>COMPANYNAME</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>COMPANYNAME</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>30</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfvatregnum</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>VATREGNUM</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>VATREGNUM</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>20</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfcustvatregnum</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>CUSTVATREGNUM</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>CUSTVATREGNUM</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>13</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+
+
+<param>
+   <BEP_param>
+       <value>oapftermcity</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>TERMCITY</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>TERMCITY</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>40</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapftermstate</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>TERMSTATE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>TERMSTATE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>40</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfverbosity</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>VERBOSITY</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>VERBOSITY</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfwrapped</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>WRAPPED</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>WRAPPED</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfxid</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>XID</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>XID</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>64</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_amt</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_AMT</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_AMT</Name>
+           <DataType>NUMBER</DataType>
+           <MaxLength>15,2</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_category</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_CATEGORY</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_CATEGORY</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>100</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_cost</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_COST</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_COST</Name>
+           <DataType>NUMBER</DataType>
+           <MaxLength>15,2</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_desc</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_DESC</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_DESC</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>80</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_discount</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_DISCOUNT</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_DISCOUNT</Name>
+           <DataType>NUMBER</DataType>
+           <MaxLength>15,2</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_manufacturer</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_MANUFACTURER</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_MANUFACTURER</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>100</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_prodcode</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_PRODCODE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_PRODCODE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>100</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_qty</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_QTY</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_QTY</Name>
+           <DataType>NUMBER</DataType>
+           <MaxLength>9</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_sku</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_SKU</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_SKU</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>100</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_taxamt</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_TAXAMT</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_TAXAMT</Name>
+           <DataType>NUMBER</DataType>
+           <MaxLength>15,2</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_taxrate</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_TAXRATE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_TAXRATE</Name>
+           <DataType>NUMBER</DataType>
+           <MaxLength>4,2</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_taxtype</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_TAXTYPE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_TAXTYPE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>4</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+
+
+<param>
+   <BEP_param>
+       <value>oapfl_type</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_TYPE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_TYPE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>100</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_uom</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_UOM</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_UOM</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>3</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_upc</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_UPC</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_UPC</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>30</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_commcode</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_COMMCODE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_COMMCODE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>12</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_freightamt</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_FREIGHTAMT</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_FREIGHTAMT</Name>
+           <DataType>NUMBER</DataType>
+           <MaxLength>15,2</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_handlingamt</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_HANDLINGAMT</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_HANDLINGAMT</Name>
+           <DataType>NUMBER</DataType>
+           <MaxLength>15,2</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_trackingnum</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_TRACKINGNUM</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_TRACKINGNUM</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>30</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_pickupstreet</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_PICKUPSTREET</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_PICKUPSTREET</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>150</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_pickupcity</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_PICKUPCITY</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_PICKUPCITY</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>45</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_pickupstate</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_PICKUPSTATE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_PICKUPSTATE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>45</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_pickupzip</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_PICKUPZIP</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_PICKUPZIP</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>100</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_pickupcountry</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_PICKUPCOUNTRY</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_PICKUPCOUNTRY</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>4</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_unspsccode</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_UNSPSCCODE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_UNSPSCCODE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>30</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_weightuom</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_WEIGHTUOM</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_WEIGHTUOM</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>3</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_handlinguom</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_HANDLINGUOM</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_HANDLINGUOM</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>3</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_freightuom</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_FREIGHTUOM</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_FREIGHTUOM</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>3</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_costcenternum</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_COSTCENTERNUM</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_COSTCENTERNUM</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>30</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_catalognum</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_CATALOGNUM</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_CATALOGNUM</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>20</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfl_billeduom</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>L_BILLEDUOM</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>L_BILLEDUOM</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>3</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value></value>
+   </BEP_param>
+   <PFPro_param>
+           <value>VENDOR</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>PAYFLOWVENDOR</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>50</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value></value>
+   </BEP_param>
+   <PFPro_param>
+           <value>PARTNER</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>PAYFLOWPARTNER</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>50</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value></value>
+   </BEP_param>
+   <PFPro_param>
+           <value>USER</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>PAYFLOWUSER</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>50</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value></value>
+   </BEP_param>
+   <PFPro_param>
+           <value>PASSWORD</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>PAYFLOWPASSWORD</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>100</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfdsguid</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>DSGUID</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>DSGUID</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>100</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>oapfextendauthcode</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>AUTHCODE</value>
+           <IOType>OUT</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>AUTHCODE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>10</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+   </param>
+   <param>
+   <BEP_param>
+       <value>oapfduplicate</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>DUPLICATE</value>
+           <IOType>OUT</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>DUPLICATE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>2</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>OapfCustName</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>NAME</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>NAME</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>80</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>OapfCommCode</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>COMMCODE</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>COMMCODE</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>4</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+<param>
+   <BEP_param>
+       <value>OapfCurr</value>
+   </BEP_param>
+   <PFPro_param>
+           <value>CURRENCY</value>
+           <IOType>IN</IOType>
+   </PFPro_param>
+   <DB_Column>
+           <Name>CURRENCY</Name>
+           <DataType>VARCHAR2</DataType>
+           <MaxLength>3</MaxLength>
+           <IsNull>Y</IsNull>
+   </DB_Column>
+</param>
+</pfpro_params>
