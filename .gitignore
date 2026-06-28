@@ -448,3 +448,6 @@ credentials.*
 payflow.properties
 payflow-credentials.*
 sdk-credentials.*
+
+# Local test scripts (read credentials from App.config at runtime — never committed)
+/test/

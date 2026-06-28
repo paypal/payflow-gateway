@@ -1,6 +1,9 @@
 package paypal.payments.samples.dataobjects.misc;
 
 import paypal.payflow.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
 
 // This class uses the Payflow SDK Data Objects to do a simple Sale transaction with HIGH Verbosity.
 // The request is sent as a Data Object and the response received is also a Data Object.
@@ -34,7 +37,25 @@ public class DOVerbosity {
 
 		// Create the Data Objects.
 		// Create the User data object with the required user details.
-		UserInfo user = new UserInfo("<user>", "<vendor>", "<partner>", "<password>");
+		// Credentials: env vars take priority; payflow.properties is the fallback.
+		String mUser     = System.getenv("PAYFLOW_USER");
+		String mVendor   = System.getenv("PAYFLOW_VENDOR");
+		String mPartner  = System.getenv("PAYFLOW_PARTNER");
+		String mPassword = System.getenv("PAYFLOW_PASSWORD");
+		if (mUser == null || mVendor == null || mPartner == null || mPassword == null) {
+			Properties creds = new Properties();
+			try (FileInputStream fis = new FileInputStream("payflow.properties")) {
+				creds.load(fis);
+			} catch (IOException e) {
+				System.err.println("ERROR: Set PAYFLOW_USER/VENDOR/PARTNER/PASSWORD env vars, or create payflow.properties.");
+				return;
+			}
+			if (mUser     == null) mUser     = creds.getProperty("PayflowUser",     "");
+			if (mVendor   == null) mVendor   = creds.getProperty("PayflowVendor",   "");
+			if (mPartner  == null) mPartner  = creds.getProperty("PayflowPartner",  "");
+			if (mPassword == null) mPassword = creds.getProperty("PayflowPassword", "");
+		}
+		UserInfo user = new UserInfo(mUser, mVendor, mPartner, mPassword);
 
 		// Create the Payflow Connection data object with the required connection
 		// details.
@@ -58,7 +79,7 @@ public class DOVerbosity {
 
 		// Create a new Payment Device - Credit Card data object.
 		// The input parameters are Credit Card No. and Expiry Date for the Credit Card.
-		CreditCard cc = new CreditCard("5105105105105100", "0109");
+		CreditCard cc = new CreditCard("5105105105105100", "0130");
 		cc.setCvv2("123");
 
 		// Create a new Tender - Card Tender data object.

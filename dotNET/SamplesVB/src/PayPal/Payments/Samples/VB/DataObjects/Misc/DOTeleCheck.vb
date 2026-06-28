@@ -1,4 +1,4 @@
-Imports System
+ï»¿Imports System
 Imports PayPal.Payments.Common
 Imports PayPal.Payments.Common.Utility
 Imports PayPal.Payments.DataObjects
@@ -20,7 +20,11 @@ Namespace PayPal.Payments.Samples.VB.DataObjects.Misc
 
             ' Create the Data Objects.
             ' Create the User data object with the required user details.
-            Dim User As UserInfo = New UserInfo("<user>", "<vendor>", "<partner>", "<password>")
+            Dim mUser     As String = If(Environment.GetEnvironmentVariable("PAYFLOW_USER"),     PayflowUtility.AppSettings("PayflowUser"))
+            Dim mVendor   As String = If(Environment.GetEnvironmentVariable("PAYFLOW_VENDOR"),   PayflowUtility.AppSettings("PayflowVendor"))
+            Dim mPartner  As String = If(Environment.GetEnvironmentVariable("PAYFLOW_PARTNER"),  PayflowUtility.AppSettings("PayflowPartner"))
+            Dim mPassword As String = If(Environment.GetEnvironmentVariable("PAYFLOW_PASSWORD"), PayflowUtility.AppSettings("PayflowPassword"))
+            Dim User As UserInfo = New UserInfo(mUser, mVendor, mPartner, mPassword)
 
             ' Create the Payflow  Connection data object with the required connection details.
             ' The PAYFLOW_HOST property is defined in the App config file.
@@ -62,7 +66,7 @@ Namespace PayPal.Payments.Samples.VB.DataObjects.Misc
 
             ' Create a new Tender - Check Tender data object.
             Dim ChkTender As CheckTender = New CheckTender(ChkPayment)
-            ' Account holder’s next unused (available) check number. Up to 7 characters.
+            ' Account holderï¿½s next unused (available) check number. Up to 7 characters.
             ChkTender.ChkNum = "1234"
 
             ' DL or SS is required for a TeleCheck transaction.
@@ -70,7 +74,7 @@ Namespace PayPal.Payments.Samples.VB.DataObjects.Misc
             ' If CHKTYPE=C, the Federal Tax ID must be passed as the SS value.
             ChkTender.ChkType = "P"
 
-            ' Driver’s License number. If CHKTYPE=P, a value for either DL or SS must be passed as an identifier.
+            ' Driverï¿½s License number. If CHKTYPE=P, a value for either DL or SS must be passed as an identifier.
             ' Format: XXnnnnnnnn
             ' XX = State Code
             ' nnnnnnnn = DL Number - up to 31 characters.

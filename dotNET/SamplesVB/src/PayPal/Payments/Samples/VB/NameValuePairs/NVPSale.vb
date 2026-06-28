@@ -1,4 +1,4 @@
-Imports System
+﻿Imports System
 Imports PayPal.Payments.Common.Utility
 Imports PayPal.Payments.Communication
 Imports PayPal.Payments.DataObjects
@@ -19,9 +19,14 @@ Namespace PayPal.Payments.Samples.VB.NameValuePairs
             Console.WriteLine("Executing Sample from File: NVPSale.vb")
             Console.WriteLine("------------------------------------------------------")
 
-            ' Sample Request. 
-            ' Please replace <user>, <vendor>, <password> & <partner> with your merchant information.
-            Dim Request As String = "TRXTYPE=A&ACCT=4111111111111111&EXPDATE=0314&INVNUM=INV1234567&AMT=1.00&PONUM=PO123456&STREET=1189&ZIP=94070&CVV2=078&USER=<USER>&PARTNER=<PARTNER>&VENDOR=<VENDOR>&PWD=<PASSWORD>"
+            ' Credentials: env vars take priority; App.config (PayflowUser/Vendor/Partner/Password) is the fallback.
+            Dim mUser     As String = If(Environment.GetEnvironmentVariable("PAYFLOW_USER"),     PayflowUtility.AppSettings("PayflowUser"))
+            Dim mVendor   As String = If(Environment.GetEnvironmentVariable("PAYFLOW_VENDOR"),   PayflowUtility.AppSettings("PayflowVendor"))
+            Dim mPartner  As String = If(Environment.GetEnvironmentVariable("PAYFLOW_PARTNER"),  PayflowUtility.AppSettings("PayflowPartner"))
+            Dim mPassword As String = If(Environment.GetEnvironmentVariable("PAYFLOW_PASSWORD"), PayflowUtility.AppSettings("PayflowPassword"))
+
+            ' Sample Request.
+            Dim Request As String = "TRXTYPE=A&ACCT=4111111111111111&EXPDATE=0130&INVNUM=INV1234567&AMT=1.00&PONUM=PO123456&STREET=1189&ZIP=94070&CVV2=078&USER=" & mUser & "&PARTNER=" & mPartner & "&VENDOR=" & mVendor & "&PWD=" & mPassword
             ' Create an instance of PayflowNETAPI.
             Dim PayflowNETAPI As PayflowNETAPI = New PayflowNETAPI
             ' Can also pass the values in the constructor itself instead of using .config file.

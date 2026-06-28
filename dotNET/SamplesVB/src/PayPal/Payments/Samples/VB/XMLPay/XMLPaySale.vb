@@ -1,4 +1,4 @@
-Imports System
+﻿Imports System
 Imports PayPal.Payments.Common.Utility
 Imports PayPal.Payments.Communication
 Imports PayPal.Payments.DataObjects
@@ -24,7 +24,7 @@ Namespace PayPal.Payments.Samples.VB.XMLPay
 
             ' Sample Request. 
             ' Please replace [user], [vendor], [password] & [partner] with your merchant information.
-            Dim Request As String = "<?xml version=""1.0""?><XMLPayRequest Timeout=""45"" version=""2.0""><RequestData><Partner>[partner]</Partner><Vendor>[vendor]</Vendor><Transactions><Transaction><Sale><PayData><Invoice><TotalAmt Currency='USD'>25.12</TotalAmt><InvNum>INV12345</InvNum><BillTo><PONum>PO12345</PONum><Address><Street>123 Main St.</Street><Zip>12345</Zip></Address></BillTo></Invoice><Tender><Card><CardNum>5105105105105100</CardNum><ExpDate>201501</ExpDate></Card></Tender></PayData></Sale></Transaction></Transactions></RequestData><RequestAuth><UserPass><User>[user]</User><Password>[password]</Password></UserPass></RequestAuth></XMLPayRequest>"
+            Dim Request As String = "<?xml version=""1.0""?><XMLPayRequest Timeout=""45"" version=""2.0""><RequestData><Partner>[partner]</Partner><Vendor>[vendor]</Vendor><Transactions><Transaction><Sale><PayData><Invoice><TotalAmt Currency='USD'>25.12</TotalAmt><InvNum>INV12345</InvNum><BillTo><PONum>PO12345</PONum><Address><Street>123 Main St.</Street><Zip>12345</Zip></Address></BillTo></Invoice><Tender><Card><CardNum>5105105105105100</CardNum><ExpDate>203001</ExpDate></Card></Tender></PayData></Sale></Transaction></Transactions></RequestData><RequestAuth><UserPass><User>[user]</User><Password>[password]</Password></UserPass></RequestAuth></XMLPayRequest>"
 
             ' Create an instantce of PayflowNETAPI.
             Dim PayflowNETAPI As PayflowNETAPI = New PayflowNETAPI

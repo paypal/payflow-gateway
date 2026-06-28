@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using PayPal.Payments.Common;
 using PayPal.Payments.Common.Utility;
 using PayPal.Payments.DataObjects;
@@ -24,7 +24,11 @@ namespace PayPal.Payments.Samples.CS.DataObjects.Recurring
 
 			// Create the Data Objects.
 			// Create the User data object with the required user details.
-			UserInfo User = new UserInfo("<user>", "<vendor>", "<partner>", "<password>");
+			String mUser     = Environment.GetEnvironmentVariable("PAYFLOW_USER")     ?? PayflowUtility.AppSettings("PayflowUser");
+			String mVendor   = Environment.GetEnvironmentVariable("PAYFLOW_VENDOR")   ?? PayflowUtility.AppSettings("PayflowVendor");
+			String mPartner  = Environment.GetEnvironmentVariable("PAYFLOW_PARTNER")  ?? PayflowUtility.AppSettings("PayflowPartner");
+			String mPassword = Environment.GetEnvironmentVariable("PAYFLOW_PASSWORD") ?? PayflowUtility.AppSettings("PayflowPassword");
+			UserInfo User = new UserInfo(mUser, mVendor, mPartner, mPassword);
 
 			// Create the Payflow  Connection data object with the required connection details.
 			// The PAYFLOW_HOST property is defined in the App config file.
@@ -55,7 +59,7 @@ namespace PayPal.Payments.Samples.CS.DataObjects.Recurring
 
 			// Create a new Payment Device - Credit Card data object.
 			// The input parameters are Credit Card Number and Expiration Date of the Credit Card.
-			CreditCard CC = new CreditCard("5105105105105100", "0115");
+			CreditCard CC = new CreditCard("5105105105105100", "0130");
 			// CVV2 is used for Optional Transaction (Sale or Authorization) Only.  It is not stored as
 			// part of the profile, nor is it sent when payments are made.
 			CC.Cvv2 = "123";

@@ -1,4 +1,4 @@
-Imports System
+﻿Imports System
 Imports System.Globalization
 Imports System.Threading
 Imports PayPal.Payments.Common
@@ -91,10 +91,10 @@ Namespace PayPal.Payments.Samples.VB.DataObjects.BasicTransactions
             ' The other most common error with authentication is result code 1, user authentication failed.  This is usually
             ' due to invalid account information or IP restriction on the account.  You can verify IP restriction by logging 
             ' into Manager.
-            Dim mUser     As String = PayflowUtility.AppSettings("PayflowUser")
-            Dim mVendor   As String = PayflowUtility.AppSettings("PayflowVendor")
-            Dim mPartner  As String = PayflowUtility.AppSettings("PayflowPartner")
-            Dim mPassword As String = PayflowUtility.AppSettings("PayflowPassword")
+            Dim mUser     As String = If(Environment.GetEnvironmentVariable("PAYFLOW_USER"),     PayflowUtility.AppSettings("PayflowUser"))
+            Dim mVendor   As String = If(Environment.GetEnvironmentVariable("PAYFLOW_VENDOR"),   PayflowUtility.AppSettings("PayflowVendor"))
+            Dim mPartner  As String = If(Environment.GetEnvironmentVariable("PAYFLOW_PARTNER"),  PayflowUtility.AppSettings("PayflowPartner"))
+            Dim mPassword As String = If(Environment.GetEnvironmentVariable("PAYFLOW_PASSWORD"), PayflowUtility.AppSettings("PayflowPassword"))
             Dim User As UserInfo = New UserInfo(mUser, mVendor, mPartner, mPassword)
 
             ' *** Create the Payflow Connection data object with the required connection details. ***
@@ -309,7 +309,7 @@ Namespace PayPal.Payments.Samples.VB.DataObjects.BasicTransactions
             ' *** Create a new Payment Device - Credit Card data object. ***
             ' The input parameters are Credit Card Number and Expiration Date of the Credit Card.
             ' Note: Expiration date is in the format MMYY.
-            Dim CC As New CreditCard("5105105105105100", "0125")
+            Dim CC As New CreditCard("5105105105105100", "0130")
 
             ' Example of Swipe Data
             ' See DOSwipe.vb example for more information.

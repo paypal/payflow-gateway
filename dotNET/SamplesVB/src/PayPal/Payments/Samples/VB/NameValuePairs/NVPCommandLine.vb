@@ -1,4 +1,4 @@
-Imports System
+﻿Imports System
 Imports System.Configuration
 Imports PayPal.Payments.Common.Utility
 Imports PayPal.Payments.Communication
@@ -21,7 +21,7 @@ Namespace PayPal.Payments.Samples.VB.NameValuePairs
 
             If Args.Length < 4 Then
                 Console.WriteLine(Environment.NewLine + "Incorrect number of arguments. Usage:" + Environment.NewLine + "SamplesVB <hostAddress> <hostPort> <parmList> <timeOut> <proxyAddress> <proxyPort> <proxyLogon> <proxyPassword>")
-                Console.WriteLine(Environment.NewLine + "Example transaction:" + Environment.NewLine + "SamplesVB pilot-payflowpro.paypal.com 443 ""USER=<user>&TRXTYPE[1]=A&VENDOR=<vendor>&AMT[5]=25.00&PWD=<password>&PARTNER=<partner>&TENDER[1]=C&ACCT[16]=5100000000000008&EXPDATE[4]=0115"" 45")
+                Console.WriteLine(Environment.NewLine + "Example transaction:" + Environment.NewLine + "SamplesVB pilot-payflowpro.paypal.com 443 ""USER=<user>&TRXTYPE[1]=A&VENDOR=<vendor>&AMT[5]=25.00&PWD=<password>&PARTNER=<partner>&TENDER[1]=C&ACCT[16]=5100000000000008&EXPDATE[4]=0130"" 45")
                 Console.WriteLine(Environment.NewLine + "Press Enter to Exit ...")
                 Console.ReadLine()
                 System.Environment.Exit(-1)

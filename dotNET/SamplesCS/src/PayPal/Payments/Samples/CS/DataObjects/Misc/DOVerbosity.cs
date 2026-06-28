@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using PayPal.Payments.Common;
 using PayPal.Payments.Common.Utility;
 using PayPal.Payments.DataObjects;
@@ -18,7 +18,7 @@ namespace PayPal.Payments.Samples.CS.DataObjects.Misc
 	/// Normalizing the values limits them to a standardized set of values and simplifies the process of integrating 
 	/// the Payflow SDK.
 	/// 
-	/// By setting Verbosity to MEDIUM, you can view the processor’s raw response values. This setting is more “verbose”
+	/// By setting Verbosity to MEDIUM, you can view the processorï¿½s raw response values. This setting is more ï¿½verboseï¿½
 	/// than the LOW setting in that it returns more detailed, processor-specific information. 
 	/// 
 	/// Review the chapter in the Payflow Pro Developer's Guide regarding VERBOSITY and the INQUIRY function for more details.
@@ -37,7 +37,11 @@ namespace PayPal.Payments.Samples.CS.DataObjects.Misc
 
 			// Create the Data Objects.
 			// Create the User data object with the required user details.
-			UserInfo User = new UserInfo("<user>", "<vendor>", "<partner>", "<password>");
+			String mUser     = Environment.GetEnvironmentVariable("PAYFLOW_USER")     ?? PayflowUtility.AppSettings("PayflowUser");
+			String mVendor   = Environment.GetEnvironmentVariable("PAYFLOW_VENDOR")   ?? PayflowUtility.AppSettings("PayflowVendor");
+			String mPartner  = Environment.GetEnvironmentVariable("PAYFLOW_PARTNER")  ?? PayflowUtility.AppSettings("PayflowPartner");
+			String mPassword = Environment.GetEnvironmentVariable("PAYFLOW_PASSWORD") ?? PayflowUtility.AppSettings("PayflowPassword");
+			UserInfo User = new UserInfo(mUser, mVendor, mPartner, mPassword);
 
 			// Create a new Invoice data object with the Amount, Billing Address etc. details.
 			Invoice Inv = new Invoice();
@@ -56,7 +60,7 @@ namespace PayPal.Payments.Samples.CS.DataObjects.Misc
 
 			// Create a new Payment Device - Credit Card data object.
 			// The input parameters are Credit Card Number and Expiration Date of the Credit Card.
-			CreditCard CC = new CreditCard("5105105105105100", "0115");
+			CreditCard CC = new CreditCard("5105105105105100", "0130");
 			CC.Cvv2 = "123";
 
 			// Create a new Tender - Card Tender data object.

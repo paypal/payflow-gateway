@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Diagnostics;
 using PayPal.Payments.Common;
 using PayPal.Payments.Common.Utility;
@@ -12,7 +12,7 @@ namespace PayPal.Payments.Samples.CS.DataObjects.ExpressCheckout
 	/// The request is sent as a Data Object and the response received is also a Data Object.
 	/// 
 	/// Express Checkout offers your customers an easy, convenient checkout experience. It lets them 
-	/// use shipping and billing information stored securely at PayPal to check out, so they don’t have 
+	/// use shipping and billing information stored securely at PayPal to check out, so they donï¿½t have 
 	/// to re-enter it on your site. 
 	/// 	
 	/// From the perspective of website development, Express Checkout works like other Payflow Pro 
@@ -39,8 +39,8 @@ namespace PayPal.Payments.Samples.CS.DataObjects.ExpressCheckout
 	/// 
 	/// To implement a reference transaction, you must first obtain a billing agreement from the 
 	/// customer. The customer logs into PayPal once to consent to the billing agreement, after which 
-	/// customer login is not required. The customer’s consent allows PayPal to withdraw funds from 
-	/// the customer’s PayPal account. 
+	/// customer login is not required. The customerï¿½s consent allows PayPal to withdraw funds from 
+	/// the customerï¿½s PayPal account. 
 	/// 
 	/// The billing agreement is good until canceled by you or the customer. A customer may have 
 	/// more than one billing agreement for your website. This can occur if the customer establishes 
@@ -64,7 +64,11 @@ namespace PayPal.Payments.Samples.CS.DataObjects.ExpressCheckout
 			
 			// Create the Data Objects.
 			// Create the User data object with the required user details.
-			UserInfo User = new UserInfo("<user>", "<vendor>", "<partner>", "<password>");
+			String mUser     = Environment.GetEnvironmentVariable("PAYFLOW_USER")     ?? PayflowUtility.AppSettings("PayflowUser");
+			String mVendor   = Environment.GetEnvironmentVariable("PAYFLOW_VENDOR")   ?? PayflowUtility.AppSettings("PayflowVendor");
+			String mPartner  = Environment.GetEnvironmentVariable("PAYFLOW_PARTNER")  ?? PayflowUtility.AppSettings("PayflowPartner");
+			String mPassword = Environment.GetEnvironmentVariable("PAYFLOW_PASSWORD") ?? PayflowUtility.AppSettings("PayflowPassword");
+			UserInfo User = new UserInfo(mUser, mVendor, mPartner, mPassword);
 		
 			// Create the Payflow  Connection data object with the required connection details.
 			// See the DoSaleComplete sample for more information on setting the Connection object.
@@ -108,7 +112,7 @@ namespace PayPal.Payments.Samples.CS.DataObjects.ExpressCheckout
 			// **** Performing a Standard Transaction using Express Checkout ****
 			//
 			// Express Checkout offers your customers an easy, convenient checkout experience. It lets them 
-			// use shipping and billing information stored securely at PayPal to check out, so they don’t have 
+			// use shipping and billing information stored securely at PayPal to check out, so they donï¿½t have 
 			// to re-enter it on your site. 
 			//
 			// From the perspective of website development, Express Checkout works like other Payflow Pro 
@@ -136,7 +140,7 @@ namespace PayPal.Payments.Samples.CS.DataObjects.ExpressCheckout
 			// information. If the customer approves payment on the Confirmation page when you are using 
 			// a reference transaction, you receive the billing agreement as part of the transaction.You can 
 			// use that billing agreement later to bill the customer a set amount on a recurring basis, such as 
-			// once-a-month, for future purchases. The customer doesn’t need to log into PayPal each time to 
+			// once-a-month, for future purchases. The customer doesnï¿½t need to log into PayPal each time to 
 			// make a payment. 
 			// 
 			// Create the data object for Express Checkout Reference Transaction SET operation 
@@ -151,7 +155,7 @@ namespace PayPal.Payments.Samples.CS.DataObjects.ExpressCheckout
 			// bill the customer on a scheduled basis, say, once a month. In the billing agreement flow 
 			// without purchase, the customer is redirected to PayPal to log in. On the PayPal site, they 
 			// consent to the billing agreement. Next month, when you send the customer the first magazine 
-			// issue, the billing agreement authorizes you to start charging the customer’s PayPal account on 
+			// issue, the billing agreement authorizes you to start charging the customerï¿½s PayPal account on 
 			// the agreed upon recurring basis without having the customer log in to PayPal. 
 			//  
 			// Create the data object for Express Checkout Reference Transaction SET operation 

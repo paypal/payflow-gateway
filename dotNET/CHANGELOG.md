@@ -36,7 +36,12 @@
 
 ### Security
 
-* **Credentials moved out of source code** — `DOSaleComplete.cs` and `DOSaleComplete.vb` previously required developers to paste live Payflow credentials directly into the source file, creating a risk of accidentally committing them to version control. Credentials are now read from `App.config` at runtime using `PayflowUtility.AppSettings`. Four new keys have been added to both `SamplesCS/App.config` and `SamplesVB/App.config` (`PayflowUser`, `PayflowVendor`, `PayflowPartner`, `PayflowPassword`); fill them in locally before running. Both `App.config` files are marked `git update-index --skip-worktree` so local credential edits are never staged or committed.
+* **Credentials moved out of source code** — All sample files (C# and VB DataObjects, NVP, and XMLPay samples) no longer contain hardcoded credential placeholders. Credentials are resolved at runtime in priority order: (1) environment variables `PAYFLOW_USER`, `PAYFLOW_VENDOR`, `PAYFLOW_PARTNER`, `PAYFLOW_PASSWORD`; (2) `App.config` keys `PayflowUser`, `PayflowVendor`, `PayflowPartner`, `PayflowPassword` as a fallback. This allows CI/CD pipelines and shared machines to use env vars while individual developers use `App.config`. Both `SamplesCS/App.config` and `SamplesVB/App.config` ship with placeholder values and are marked `git update-index --skip-worktree` so local edits are never staged or committed.
+
+### Sample Fixes
+
+* **Expired test card dates** — All hardcoded expiration dates across every sample file updated to `0130` (January 2030). Previously dates ranged from `0109` to `1215`, all of which were expired.
+* **`Reporting.cs` obsolete HTTP API** — Replaced `HttpWebRequest` / `HttpWebResponse` (obsolete since .NET 5, warning `SYSLIB0014`) with `HttpClient`. Eliminated the `readServiceResponse` helper; `Main` is now `async Task`. Also corrected `xml.LoadXml("report.xml")` → `xml.Load("report.xml")` (LoadXml parses a string, not a filename).
 
 ### Quick-Start Scripts
 

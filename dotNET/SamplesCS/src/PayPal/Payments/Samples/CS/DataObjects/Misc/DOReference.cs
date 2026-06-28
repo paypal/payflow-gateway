@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using PayPal.Payments.Common;
 using PayPal.Payments.Common.Utility;
 using PayPal.Payments.DataObjects;
@@ -33,7 +33,11 @@ namespace PayPal.Payments.Samples.CS.DataObjects.Misc
 
 			// Create the Data Objects.
 			// Create the User data object with the required user details.
-			UserInfo User = new UserInfo("<user>", "<vendor>", "<partner>", "<password>");
+			String mUser     = Environment.GetEnvironmentVariable("PAYFLOW_USER")     ?? PayflowUtility.AppSettings("PayflowUser");
+			String mVendor   = Environment.GetEnvironmentVariable("PAYFLOW_VENDOR")   ?? PayflowUtility.AppSettings("PayflowVendor");
+			String mPartner  = Environment.GetEnvironmentVariable("PAYFLOW_PARTNER")  ?? PayflowUtility.AppSettings("PayflowPartner");
+			String mPassword = Environment.GetEnvironmentVariable("PAYFLOW_PASSWORD") ?? PayflowUtility.AppSettings("PayflowPassword");
+			UserInfo User = new UserInfo(mUser, mVendor, mPartner, mPassword);
 
 			// Create the Payflow  Connection data object with the required connection details.
 			// The PAYFLOW_HOST property is defined in the App config file.
@@ -60,7 +64,7 @@ namespace PayPal.Payments.Samples.CS.DataObjects.Misc
             //ReferenceTransaction Trans = new ReferenceTransaction("S", "<PNREF>", User, Connection, Inv, Card, PayflowUtility.RequestId);
 
             // You can also change the expiration date of the new reference transaction, by passing the EXPDATE via the ExtendData object.
-            //ExtendData ExpDate = new ExtendData("EXPDATE", "1215");
+            //ExtendData ExpDate = new ExtendData("EXPDATE", "0130");
             //Trans.AddToExtendData(ExpDate);
 
 			// Submit the Transaction

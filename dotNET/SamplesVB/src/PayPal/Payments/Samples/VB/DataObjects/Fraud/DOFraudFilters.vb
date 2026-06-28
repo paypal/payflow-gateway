@@ -1,4 +1,4 @@
-Imports System
+﻿Imports System
 Imports System.Collections
 Imports PayPal.Payments.Common
 Imports PayPal.Payments.Common.Utility
@@ -22,7 +22,11 @@ Namespace PayPal.Payments.Samples.VB.DataObjects.Fraud
 
             ' Create the Data Objects.
             ' Create the User data object with the required user details.
-            Dim User As UserInfo = New UserInfo("<user>", "<vendor>", "<partner>", "<password>")
+            Dim mUser     As String = If(Environment.GetEnvironmentVariable("PAYFLOW_USER"),     PayflowUtility.AppSettings("PayflowUser"))
+            Dim mVendor   As String = If(Environment.GetEnvironmentVariable("PAYFLOW_VENDOR"),   PayflowUtility.AppSettings("PayflowVendor"))
+            Dim mPartner  As String = If(Environment.GetEnvironmentVariable("PAYFLOW_PARTNER"),  PayflowUtility.AppSettings("PayflowPartner"))
+            Dim mPassword As String = If(Environment.GetEnvironmentVariable("PAYFLOW_PASSWORD"), PayflowUtility.AppSettings("PayflowPassword"))
+            Dim User As UserInfo = New UserInfo(mUser, mVendor, mPartner, mPassword)
 
             ' Create the Payflow  Connection data object with the required connection details.
             ' The PAYFLOW_HOST property is defined in the App config file.
@@ -49,7 +53,7 @@ Namespace PayPal.Payments.Samples.VB.DataObjects.Fraud
 
             ' Create a new Payment Device - Credit Card data object.
             ' The input parameters are Credit Card No. and Expiry Date for the Credit Card.
-            Dim CC As CreditCard = New CreditCard("4111111111111111", "0115")
+            Dim CC As CreditCard = New CreditCard("4111111111111111", "0130")
             CC.Cvv2 = "444"
 
             ' Create a new Tender - Card Tender data object.

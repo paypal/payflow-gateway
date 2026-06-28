@@ -13,7 +13,12 @@
 
 ### Security
 
-* **Credentials moved out of source code** — `DOSaleComplete.java` previously required developers to paste live Payflow credentials directly into the source file, creating a risk of accidentally committing them to version control. Credentials are now read at runtime from `java/payflow.properties` using `java.util.Properties`. A template `payflow.properties` file is included in the repository with empty values; fill it in locally before running. The file is listed in `.gitignore` and will never be committed. If the file is missing at runtime the sample prints a clear error and exits.
+* **Credentials moved out of source code** — All Java sample files (DataObjects, NVP, and XMLPay samples) no longer contain hardcoded credential placeholders. Credentials are resolved at runtime in priority order: (1) environment variables `PAYFLOW_USER`, `PAYFLOW_VENDOR`, `PAYFLOW_PARTNER`, `PAYFLOW_PASSWORD`; (2) `payflow.properties` keys `PayflowUser`, `PayflowVendor`, `PayflowPartner`, `PayflowPassword` as a fallback. This allows CI/CD pipelines and shared machines to use env vars while individual developers use the properties file. `payflow.properties` ships with placeholder values and is listed in `.gitignore` so it is never committed.
+
+### Sample Fixes
+
+* **Expired test card dates** — All hardcoded expiration dates across every sample file updated to `0130` (January 2030) for standard NVP/DataObjects samples and `203001` (YYYYMM format) for XMLPay samples. Previously dates ranged from `0109` to `0314`, all of which were expired.
+* **UTF-8 BOM removed from Java source files** — 38 Java sample files had a UTF-8 byte-order mark (BOM) inadvertently introduced during batch editing. The BOM caused `javac` to fail with `error: illegal character: '﻿'`. All affected files have been stripped back to plain UTF-8.
 
 ### Quick-Start Scripts
 

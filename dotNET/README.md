@@ -16,7 +16,29 @@ A .NET SDK for easy integration with the PayPal Payflow Gateway. Supports **.NET
 
 ### Step 1 — Configure credentials
 
-Credentials are no longer hardcoded in sample source files. Before running any sample, open `dotNET/SamplesCS/App.config` (or `SamplesVB/App.config` for VB) and fill in your Payflow account details:
+Credentials are read at runtime — never hardcoded. You have two options:
+
+**Option A — Environment variables (recommended for CI/CD and shared machines):**
+
+```powershell
+# Windows (PowerShell)
+$env:PAYFLOW_USER     = "your_user"
+$env:PAYFLOW_VENDOR   = "your_vendor"
+$env:PAYFLOW_PARTNER  = "PayPal"
+$env:PAYFLOW_PASSWORD = "your_password"
+```
+
+```bash
+# Linux / macOS / Git Bash
+export PAYFLOW_USER=your_user
+export PAYFLOW_VENDOR=your_vendor
+export PAYFLOW_PARTNER=PayPal
+export PAYFLOW_PASSWORD=your_password
+```
+
+**Option B — App.config (simple local use):**
+
+Open `dotNET/SamplesCS/App.config` (or `SamplesVB/App.config` for VB) and fill in your account details:
 
 ```xml
 <add key="PayflowUser"     value="your_user" />
@@ -25,7 +47,9 @@ Credentials are no longer hardcoded in sample source files. Before running any s
 <add key="PayflowPassword" value="your_password" />
 ```
 
-> **Why?** Previous versions had credentials hardcoded directly in the sample `.cs`/`.vb` source files, which risked accidentally committing real credentials to version control. Credentials are now read from `App.config` at runtime. Git is pre-configured (`--skip-worktree`) to ignore local changes to both `App.config` files so your credentials are never staged or committed.
+Git is pre-configured (`--skip-worktree`) to ignore local changes to both `App.config` files so your credentials are never staged or committed.
+
+> **Priority:** Environment variables take precedence over `App.config`. If any env var is missing the file is used as a fallback.
 
 ### Step 2 — Run the sample
 

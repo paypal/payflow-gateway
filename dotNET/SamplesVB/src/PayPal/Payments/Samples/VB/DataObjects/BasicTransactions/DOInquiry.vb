@@ -1,4 +1,4 @@
-Imports System
+ï»¿Imports System
 Imports PayPal.Payments.Common
 Imports PayPal.Payments.Common.Utility
 Imports PayPal.Payments.DataObjects
@@ -8,7 +8,7 @@ Namespace PayPal.Payments.Samples.VB.DataObjects.BasicTransactions
     ''' <summary>
     ''' This class uses the Payflow SDK Data Objects to do an Inquiry transaction.
     '''
-    ''' You perform an inquiry using a reference to an original transaction—either the PNREF
+    ''' You perform an inquiry using a reference to an original transactionï¿½either the PNREF
     ''' value returned for the original transaction or the CUSTREF value that you specified for the original
     ''' transaction.
     '''
@@ -36,7 +36,11 @@ Namespace PayPal.Payments.Samples.VB.DataObjects.BasicTransactions
 
             ' Create the Data Objects.
             ' Create the User data object with the required user details.
-            Dim User As UserInfo = New UserInfo("<user>", "<vendor>", "<partner>", "<password>")
+            Dim mUser     As String = If(Environment.GetEnvironmentVariable("PAYFLOW_USER"),     PayflowUtility.AppSettings("PayflowUser"))
+            Dim mVendor   As String = If(Environment.GetEnvironmentVariable("PAYFLOW_VENDOR"),   PayflowUtility.AppSettings("PayflowVendor"))
+            Dim mPartner  As String = If(Environment.GetEnvironmentVariable("PAYFLOW_PARTNER"),  PayflowUtility.AppSettings("PayflowPartner"))
+            Dim mPassword As String = If(Environment.GetEnvironmentVariable("PAYFLOW_PASSWORD"), PayflowUtility.AppSettings("PayflowPassword"))
+            Dim User As UserInfo = New UserInfo(mUser, mVendor, mPartner, mPassword)
 
             ' Create the Payflow  Connection data object with the required connection details.
             ' The PAYFLOW_HOST property is defined in the App config file.

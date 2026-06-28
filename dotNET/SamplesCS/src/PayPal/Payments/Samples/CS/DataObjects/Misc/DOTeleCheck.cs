@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using PayPal.Payments.Common;
 using PayPal.Payments.Common.Utility;
 using PayPal.Payments.DataObjects;
@@ -24,7 +24,11 @@ namespace PayPal.Payments.Samples.CS.DataObjects.Misc
 
             // Create the Data Objects.
             // Create the User data object with the required user details.
-            UserInfo User = new UserInfo("<user>", "<vendor>", "<partner>", "<password>");
+            String mUser     = Environment.GetEnvironmentVariable("PAYFLOW_USER")     ?? PayflowUtility.AppSettings("PayflowUser");
+            String mVendor   = Environment.GetEnvironmentVariable("PAYFLOW_VENDOR")   ?? PayflowUtility.AppSettings("PayflowVendor");
+            String mPartner  = Environment.GetEnvironmentVariable("PAYFLOW_PARTNER")  ?? PayflowUtility.AppSettings("PayflowPartner");
+            String mPassword = Environment.GetEnvironmentVariable("PAYFLOW_PASSWORD") ?? PayflowUtility.AppSettings("PayflowPassword");
+            UserInfo User = new UserInfo(mUser, mVendor, mPartner, mPassword);
 
             // Create the Payflow  Connection data object with the required connection details.
             // The PAYFLOW_HOST property is defined in the App config file.
@@ -66,13 +70,13 @@ namespace PayPal.Payments.Samples.CS.DataObjects.Misc
             ChkPayment.Name = "Ivan Smith";
             // Create a new Tender - Check Tender data object.
             CheckTender ChkTender = new CheckTender(ChkPayment);
-            // Account holder’s next unused (available) check number. Up to 7 characters.
+            // Account holderï¿½s next unused (available) check number. Up to 7 characters.
             ChkTender.ChkNum = "1234";
             // DL or SS is required for a TeleCheck transaction.
             // If CHKTYPE=P, a value for either DL or SS must be passed as an identifier.
             // If CHKTYPE=C, the Federal Tax ID must be passed as the SS value.
             ChkTender.ChkType = "P";
-            // Driver’s License number. If CHKTYPE=P, a value for either DL or SS must be passed as an identifier.
+            // Driverï¿½s License number. If CHKTYPE=P, a value for either DL or SS must be passed as an identifier.
             // Format: XXnnnnnnnn
             // XX = State Code, nnnnnnnn = DL Number - up to 31 characters.
             ChkTender.DL = "CAN85452345";

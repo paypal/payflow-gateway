@@ -1,4 +1,4 @@
-Imports System
+ï»¿Imports System
 Imports PayPal.Payments.Common
 Imports PayPal.Payments.Common.Utility
 Imports PayPal.Payments.DataObjects
@@ -37,7 +37,11 @@ Namespace PayPal.Payments.Samples.VB.DataObjects.BasicTransactions
 
             ' Create the Data Objects.
             ' Create the User data object with the required user details.
-            Dim User As UserInfo = New UserInfo("<user>", "<vendor>", "<partner>", "<password>")
+            Dim mUser     As String = If(Environment.GetEnvironmentVariable("PAYFLOW_USER"),     PayflowUtility.AppSettings("PayflowUser"))
+            Dim mVendor   As String = If(Environment.GetEnvironmentVariable("PAYFLOW_VENDOR"),   PayflowUtility.AppSettings("PayflowVendor"))
+            Dim mPartner  As String = If(Environment.GetEnvironmentVariable("PAYFLOW_PARTNER"),  PayflowUtility.AppSettings("PayflowPartner"))
+            Dim mPassword As String = If(Environment.GetEnvironmentVariable("PAYFLOW_PASSWORD"), PayflowUtility.AppSettings("PayflowPassword"))
+            Dim User As UserInfo = New UserInfo(mUser, mVendor, mPartner, mPassword)
 
             ' Create the Payflow Connection data object with the required connection details.
             ' The PAYFLOW_HOST property is defined in the App config file.
@@ -54,8 +58,8 @@ Namespace PayPal.Payments.Samples.VB.DataObjects.BasicTransactions
             Inv.Comment1 = "Swipe Example"
 
             ' Create a new Payment Device - Swipe data object.  The input parameter is Swipe Data.
-            ' Used to pass the Track 1 or Track 2 data (the card’s magnetic stripe information) for card-present
-            ' transactions. Include either Track 1 or Track 2 data—not both. If Track 1 is physically damaged,
+            ' Used to pass the Track 1 or Track 2 data (the cardï¿½s magnetic stripe information) for card-present
+            ' transactions. Include either Track 1 or Track 2 dataï¿½not both. If Track 1 is physically damaged,
             ' the POS application can send Track 2 data instead.
 
             ' The parameter data for the SwipeCard object is usually obtained with a card reader.

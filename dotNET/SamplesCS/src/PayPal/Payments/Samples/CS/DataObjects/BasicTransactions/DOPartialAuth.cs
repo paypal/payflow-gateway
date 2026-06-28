@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Globalization;
 using PayPal.Payments.Common;
 using PayPal.Payments.Common.Utility;
@@ -45,7 +45,11 @@ namespace PayPal.Payments.Samples.CS.DataObjects.BasicTransactions
 			String usCurrency = "USD";
 
 			// Create the User data object with the required user details.
-			UserInfo User = new UserInfo("<user>", "<vendor>", "<partner>", "<password>");
+			String mUser     = Environment.GetEnvironmentVariable("PAYFLOW_USER")     ?? PayflowUtility.AppSettings("PayflowUser");
+			String mVendor   = Environment.GetEnvironmentVariable("PAYFLOW_VENDOR")   ?? PayflowUtility.AppSettings("PayflowVendor");
+			String mPartner  = Environment.GetEnvironmentVariable("PAYFLOW_PARTNER")  ?? PayflowUtility.AppSettings("PayflowPartner");
+			String mPassword = Environment.GetEnvironmentVariable("PAYFLOW_PASSWORD") ?? PayflowUtility.AppSettings("PayflowPassword");
+			UserInfo User = new UserInfo(mUser, mVendor, mPartner, mPassword);
 
 			// Create the Payflow  Connection data object with the required connection details.
 			// The PAYFLOW_HOST property is defined in the App config file.
@@ -74,7 +78,7 @@ namespace PayPal.Payments.Samples.CS.DataObjects.BasicTransactions
 
 			// Create a new Payment Device - Credit Card data object.
 			// The input parameters are Credit Card Number and Expiration Date of the Credit Card.
-			CreditCard CC = new CreditCard("5105105105105100", "0115");
+			CreditCard CC = new CreditCard("5105105105105100", "0130");
 			CC.Cvv2 = "123";
 
 			// Create a new Tender - Card Tender data object.

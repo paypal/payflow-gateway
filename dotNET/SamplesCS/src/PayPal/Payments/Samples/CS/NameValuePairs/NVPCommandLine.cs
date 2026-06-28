@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using PayPal.Payments.Common.Utility;
 using PayPal.Payments.Communication;
 using PayPal.Payments.DataObjects;
@@ -27,7 +27,7 @@ namespace PayPal.Payments.Samples.CS.NameValuePairs
 			{
 				Console.WriteLine(Environment.NewLine + "Incorrect number of arguments. Usage:" + Environment.NewLine 
 					+ "SamplesCS <hostAddress> <hostPort> <parmList> <timeOut> <proxyAddress> <proxyPort> <proxyLogon> <proxyPassword>");
-				Console.WriteLine(Environment.NewLine + "Example transaction:" + Environment.NewLine + "SamplesCS pilot-payflowpro.paypal.com 443 \"USER=<user>&TRXTYPE[1]=A&VENDOR=<vendor>&AMT[5]=25.00&PWD=<password>&PARTNER=<partner>&TENDER[1]=C&ACCT[16]=5100000000000008&EXPDATE[4]=0125\" 45");
+				Console.WriteLine(Environment.NewLine + "Example transaction:" + Environment.NewLine + "SamplesCS pilot-payflowpro.paypal.com 443 \"USER=<user>&TRXTYPE[1]=A&VENDOR=<vendor>&AMT[5]=25.00&PWD=<password>&PARTNER=<partner>&TENDER[1]=C&ACCT[16]=5100000000000008&EXPDATE[4]=0130\" 45");
 				Console.WriteLine(Environment.NewLine + "Press Enter to Exit ...");
 				Console.ReadLine();
 				System.Environment.Exit(-1);

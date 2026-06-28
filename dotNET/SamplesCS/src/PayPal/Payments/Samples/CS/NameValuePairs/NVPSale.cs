@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using PayPal.Payments.Common.Utility;
 using PayPal.Payments.Communication;
 using PayPal.Payments.DataObjects;
@@ -22,9 +22,14 @@ namespace PayPal.Payments.Samples.CS.NameValuePairs
 			Console.WriteLine("Executing Sample from File: NVPSale.cs");
 			Console.WriteLine("------------------------------------------------------");
 
+            // Credentials: env vars take priority; App.config (PayflowUser/Vendor/Partner/Password) is the fallback.
+            String mUser     = Environment.GetEnvironmentVariable("PAYFLOW_USER")     ?? PayflowUtility.AppSettings("PayflowUser");
+            String mVendor   = Environment.GetEnvironmentVariable("PAYFLOW_VENDOR")   ?? PayflowUtility.AppSettings("PayflowVendor");
+            String mPartner  = Environment.GetEnvironmentVariable("PAYFLOW_PARTNER")  ?? PayflowUtility.AppSettings("PayflowPartner");
+            String mPassword = Environment.GetEnvironmentVariable("PAYFLOW_PASSWORD") ?? PayflowUtility.AppSettings("PayflowPassword");
+
             // Sample Request.
-            // Please replace <user>, <vendor>, <password> & <partner> with your merchant information.
-            String Request = "USER=<user>&VENDOR=<vendor>&PARTNER=<partner>&PWD=<password>&TRXTYPE=S&ACCT=5105105105105100&EXPDATE=0125&TENDER=C&INVNUM=INV12345&AMT=25.12&PONUM=PO12345&STREET=123 Main St.&ZIP=12345";
+            String Request = "USER=" + mUser + "&VENDOR=" + mVendor + "&PARTNER=" + mPartner + "&PWD=" + mPassword + "&TRXTYPE=S&ACCT=5105105105105100&EXPDATE=0130&TENDER=C&INVNUM=INV12345&AMT=25.12&PONUM=PO12345&STREET=123 Main St.&ZIP=12345";
 
 			// Create an instance of PayflowNETAPI.
 			PayflowNETAPI PayflowNETAPI = new PayflowNETAPI();

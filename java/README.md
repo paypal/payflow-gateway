@@ -13,7 +13,28 @@ A Java SDK for easy integration with the PayPal Payflow Gateway. Requires **Java
 
 ### Step 1 — Configure credentials
 
-Credentials are no longer hardcoded in sample source files. Before running any sample, open `java/payflow.properties` and fill in your Payflow account details:
+Credentials are read at runtime — never hardcoded. You have two options:
+
+**Option A — Environment variables (recommended for CI/CD and shared machines):**
+
+```bash
+export PAYFLOW_USER=your_user
+export PAYFLOW_VENDOR=your_vendor
+export PAYFLOW_PARTNER=PayPal
+export PAYFLOW_PASSWORD=your_password
+```
+
+On Windows (PowerShell):
+```powershell
+$env:PAYFLOW_USER     = "your_user"
+$env:PAYFLOW_VENDOR   = "your_vendor"
+$env:PAYFLOW_PARTNER  = "PayPal"
+$env:PAYFLOW_PASSWORD = "your_password"
+```
+
+**Option B — Properties file (simple local use):**
+
+Create `java/payflow.properties` and fill in your account details:
 
 ```properties
 PayflowUser=your_user
@@ -22,9 +43,9 @@ PayflowPartner=PayPal
 PayflowPassword=your_password
 ```
 
-This file is listed in `.gitignore` and will never be committed. If the file is missing, the sample prints an error and exits immediately.
+This file is listed in `.gitignore` and will never be committed.
 
-> **Why?** Previous versions had credentials hardcoded directly in `DOSaleComplete.java`, which risked accidentally committing real credentials to version control. Credentials are now read from `payflow.properties` at runtime, keeping them out of source control entirely.
+> **Priority:** Environment variables take precedence over `payflow.properties`. If any env var is missing, the file is used as a fallback. If neither is available, the sample prints an error and exits.
 
 ### Step 2 — Run the sample
 

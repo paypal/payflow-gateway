@@ -1,4 +1,4 @@
-Imports System
+﻿Imports System
 Imports System.Configuration
 Imports PayPal.Payments.Common.Utility
 Imports PayPal.Payments.Communication
@@ -22,7 +22,7 @@ Namespace PayPal.Payments.Samples.VB.XMLPay
 
             If Args.Length < 4 Then
                 Console.WriteLine(Environment.NewLine + "Incorrect number of arguments. Usage:" + Environment.NewLine + "SamplesVB <hostAddress> <hostPort> <xml-parmList> <timeout> <proxyAddress> <proxyPort> <proxyLogon> <proxyPassword>")
-                Console.WriteLine(Environment.NewLine + "Example transaction:" + Environment.NewLine + "SamplesVB pilot-payflowpro.paypal.com 443 ""<?xml version='1.0'?><XMLPayRequest Timeout='45' version='2.0'><RequestData><Partner>[partner]</Partner><Vendor>[vendor]</Vendor><Transactions><Transaction><Sale><PayData><Invoice><TotalAmt Currency='USD'>25.12</TotalAmt><InvNum>INV12345</InvNum><BillTo><PONum>PO12345</PONum><Address><Street>123 Main St.</Street><Zip>12345</Zip></Address></BillTo></Invoice><Tender><Card><CardNum>5105105105105100</CardNum><ExpDate>201501</ExpDate></Card></Tender></PayData></Sale></Transaction></Transactions></RequestData><RequestAuth><UserPass><User>[user]</User><Password>[password]</Password></UserPass></RequestAuth></XMLPayRequest>"" 45")
+                Console.WriteLine(Environment.NewLine + "Example transaction:" + Environment.NewLine + "SamplesVB pilot-payflowpro.paypal.com 443 ""<?xml version='1.0'?><XMLPayRequest Timeout='45' version='2.0'><RequestData><Partner>[partner]</Partner><Vendor>[vendor]</Vendor><Transactions><Transaction><Sale><PayData><Invoice><TotalAmt Currency='USD'>25.12</TotalAmt><InvNum>INV12345</InvNum><BillTo><PONum>PO12345</PONum><Address><Street>123 Main St.</Street><Zip>12345</Zip></Address></BillTo></Invoice><Tender><Card><CardNum>5105105105105100</CardNum><ExpDate>203001</ExpDate></Card></Tender></PayData></Sale></Transaction></Transactions></RequestData><RequestAuth><UserPass><User>[user]</User><Password>[password]</Password></UserPass></RequestAuth></XMLPayRequest>"" 45")
                 Console.WriteLine(Environment.NewLine + "Press Enter to Exit ...")
                 Console.ReadLine()
                 System.Environment.Exit(-1)

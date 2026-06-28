@@ -99,10 +99,10 @@ namespace PayPal.Payments.Samples.CS.DataObjects.BasicTransactions
             // The other most common error with authentication is result code 1, user authentication failed.  This is usually
             // due to invalid account information or IP restriction on the account.  You can verify IP restriction by logging 
             // into Manager.
-            String mUser     = PayflowUtility.AppSettings("PayflowUser");
-            String mVendor   = PayflowUtility.AppSettings("PayflowVendor");
-            String mPartner  = PayflowUtility.AppSettings("PayflowPartner");
-            String mPassword = PayflowUtility.AppSettings("PayflowPassword");
+            String mUser     = Environment.GetEnvironmentVariable("PAYFLOW_USER")     ?? PayflowUtility.AppSettings("PayflowUser");
+            String mVendor   = Environment.GetEnvironmentVariable("PAYFLOW_VENDOR")   ?? PayflowUtility.AppSettings("PayflowVendor");
+            String mPartner  = Environment.GetEnvironmentVariable("PAYFLOW_PARTNER")  ?? PayflowUtility.AppSettings("PayflowPartner");
+            String mPassword = Environment.GetEnvironmentVariable("PAYFLOW_PASSWORD") ?? PayflowUtility.AppSettings("PayflowPassword");
             UserInfo User = new UserInfo(mUser, mVendor, mPartner, mPassword);
 
             // *** Create the Payflow Connection data object with the required connection details. ***
@@ -328,7 +328,7 @@ namespace PayPal.Payments.Samples.CS.DataObjects.BasicTransactions
             // *** Create a new Payment Device - Credit Card data object. ***
             // The input parameters are Credit Card Number and Expiration Date of the Credit Card.
             // Note: Expiration date is in the format MMYY.
-            CreditCard CC = new CreditCard("4111111111111111", "0125");
+            CreditCard CC = new CreditCard("4111111111111111", "0130");
 
  			// Example of Swipe Transaction.
 			// See DOSwipe.cs example for more information.
