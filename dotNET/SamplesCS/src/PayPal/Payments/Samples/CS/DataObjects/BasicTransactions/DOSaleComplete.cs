@@ -99,7 +99,11 @@ namespace PayPal.Payments.Samples.CS.DataObjects.BasicTransactions
             // The other most common error with authentication is result code 1, user authentication failed.  This is usually
             // due to invalid account information or IP restriction on the account.  You can verify IP restriction by logging 
             // into Manager.
-            UserInfo User = new UserInfo("<user>", "<vendor>", "<partner>", "<password>");
+            String mUser     = PayflowUtility.AppSettings("PayflowUser");
+            String mVendor   = PayflowUtility.AppSettings("PayflowVendor");
+            String mPartner  = PayflowUtility.AppSettings("PayflowPartner");
+            String mPassword = PayflowUtility.AppSettings("PayflowPassword");
+            UserInfo User = new UserInfo(mUser, mVendor, mPartner, mPassword);
 
             // *** Create the Payflow Connection data object with the required connection details. ***
             //

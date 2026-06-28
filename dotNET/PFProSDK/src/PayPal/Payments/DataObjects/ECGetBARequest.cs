@@ -20,6 +20,7 @@ namespace PayPal.Payments.DataObjects
 		/// <summary>
 		/// Constructor for ECGetBARequest
 		/// </summary>
+		/// <param name="Token">The token received from the SET Billing Agreement operation.</param>
 		/// <remarks>
 		/// ECGetBARequest is used to set the data required for a Express Checkout GET operation
 		/// with Billing Agreement (Reference Transaction) without Purchase.

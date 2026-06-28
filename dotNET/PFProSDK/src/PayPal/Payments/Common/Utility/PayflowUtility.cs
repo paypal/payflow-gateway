@@ -882,17 +882,21 @@ namespace PayPal.Payments.Common.Utility
         }
 
         /// <summary>
-        /// Returns AppSettings
+        /// Reads a value from the application's <c>App.config</c> / <c>Web.config</c> (or
+        /// <c>{assemblyname}.dll.config</c> on .NET 8+) AppSettings section.
         /// </summary>
-        /// <param name="AppSettingsKey"></param>
-        /// <returns></returns>
+        /// <param name="AppSettingsKey">The key name to look up in AppSettings.</param>
+        /// <returns>The string value associated with the specified key, or <c>null</c> if not found.</returns>
         public static String AppSettings(String AppSettingsKey)
         {
-			/// Uncomment the line below for .NET Core to be able to read the app.config file.
-			///var mPFProAPPSettingsReader = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None).AppSettings;
-            AppSettingsReader mPFProAppSettingsReader;
-            mPFProAppSettingsReader = new AppSettingsReader();
-            return (String)mPFProAppSettingsReader.GetValue(AppSettingsKey, typeof(String));
+            try
+            {
+                return ConfigurationManager.AppSettings[AppSettingsKey];
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         #endregion

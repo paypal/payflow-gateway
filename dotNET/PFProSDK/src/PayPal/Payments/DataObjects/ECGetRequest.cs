@@ -45,6 +45,11 @@ namespace PayPal.Payments.DataObjects
 		public ECGetRequest(String Token) : base(PayflowConstants.ACTIONTYPE_GET, Token)
 		{			
 		}
+		/// <summary>
+		/// Constructor for ECGetRequest with explicit action type (for Billing Agreement GET operations).
+		/// </summary>
+		/// <param name="Token">The token received from the SET operation.</param>
+		/// <param name="Action">The action type (e.g., <c>GETBA</c>).</param>
 		protected ECGetRequest(String Token, String Action) : base(PayflowConstants.ACTIONTYPE_GETBA, Token)
 		{			
 		}

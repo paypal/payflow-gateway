@@ -1,25 +1,135 @@
-Payflow .NET SDK  
-----------------
+# Payflow .NET SDK
 
-A simple SDK allowing easy integration with the Payflow Gateway for .NET.
+A .NET SDK for easy integration with the PayPal Payflow Gateway. Supports **.NET 8.0** (LTS), **.NET 10.0** (LTS), and **.NET Framework 4.8**.
 
-> THIS VERSION IS NOT 100%  COMPATIBLE WITH OLDER VERSIONS AS SOME OF THE OBJECTS AND THEIR LOCATIONS HAVE MOVED.
-DO NOT COPY THE DLL INTO A PRODUCTION ENVIRONMENT WITHOUT ADJUSTING YOUR CODE IF NECESSARY AND TESTING.
+> **Note:** v5 contains breaking changes from v4. Review the [CHANGELOG](./CHANGELOG.md) before upgrading an existing integration.
 
-## Supported Platforms
-The code is compatible as-is for .NET Framework v4.x or higher using Visual Studio 2019/2022 and can be used in a .NET Core or .NET Standard application with minor changes to the solution/package.  
+## Requirements
 
-## SDK Documentation
-The `Payflow SDK Docs` project is built using [**Sandcastle Help File Builder (SHFB)**](https://github.com/EWSoftware/SHFB).
+| Target | Minimum Tooling |
+|--------|----------------|
+| .NET 10.0 (LTS) | .NET 10 SDK or Visual Studio 2022 17.12+ |
+| .NET 8.0 (LTS) | .NET 8 SDK or Visual Studio 2022 17.8+ |
+| .NET Framework 4.8 | .NET Framework 4.8 Developer Pack + Visual Studio 2019+ |
+
+## Quick Start
+
+### Step 1 — Configure credentials
+
+Credentials are no longer hardcoded in sample source files. Before running any sample, open `dotNET/SamplesCS/App.config` (or `SamplesVB/App.config` for VB) and fill in your Payflow account details:
+
+```xml
+<add key="PayflowUser"     value="your_user" />
+<add key="PayflowVendor"   value="your_vendor" />
+<add key="PayflowPartner"  value="PayPal" />
+<add key="PayflowPassword" value="your_password" />
+```
+
+> **Why?** Previous versions had credentials hardcoded directly in the sample `.cs`/`.vb` source files, which risked accidentally committing real credentials to version control. Credentials are now read from `App.config` at runtime. Git is pre-configured (`--skip-worktree`) to ignore local changes to both `App.config` files so your credentials are never staged or committed.
+
+### Step 2 — Run the sample
+
+The fastest way to verify connectivity is the `DOSaleComplete` sample. Once credentials are set in `App.config`, run:
+
+```powershell
+# Windows (PowerShell)
+cd dotNET
+.\run-sample.ps1
+```
+
+```bash
+# Linux / macOS / Git Bash
+cd dotNET
+./run-sample.sh
+```
+
+```bat
+REM Windows (Command Prompt)
+cd dotNET
+run-sample.bat
+```
+
+Pass `vb` / `-VB` to run the Visual Basic sample instead of the C# one.
+
+## Building the SDK
+
+```powershell
+cd dotNET/PFProSDK
+dotnet build
+```
+
+This produces `Payflow_dotNET.dll` under `bin/Debug/net8.0/`, `bin/Debug/net10.0/`, and `bin/Debug/net48/`. Use `-c Release` for release binaries.
+
+## Building a NuGet Package
+
+Package metadata is embedded directly in `PFProSDK.csproj` — no separate `.nuspec` or `nuget.exe` is needed.
+
+```powershell
+cd dotNET/PFProSDK
+dotnet pack -c Release
+```
+
+Output: `bin/Release/Payflow_dotNET_SDK.5.0.3.nupkg` — a single multi-targeted package containing `net8.0`, `net10.0`, and `net48` assemblies.
+
+## Building with Visual Studio
+
+Open `dotNET/Payflow dotNET SDK.sln` in Visual Studio 2022 or later. The SDK-style project loads directly with no migration wizard.
+
+## Running the Samples
+
+All sample projects target `net8.0`, `net10.0`, and `net48`.
+
+**Before running:** fill in your credentials in `App.config` as described in the Quick Start section above.
+
+To run from Visual Studio:
+
+1. Open the solution in Visual Studio.
+2. Set `SamplesCS` (C#) or `SamplesVB` (VB.NET) as the startup project.
+3. Update `<StartupObject>` in the project file if you want a different entry point than `DOSaleComplete`.
+4. Press **F5** or use `dotnet run --project SamplesCS -f net8.0`.
 
 ## API Documentation
-See the [**Payflow Gateway Developer Guide**](https://developer.paypal.com/docs/payflow/integration-guide/).
 
-## Development
-Please feel free to follow the [Contribution Guidelines](./CONTRIBUTING.md) to contribute to this repository. PRs are welcome, but for major changes please raise an issue first.
+The `Payflow SDK Docs` project generates a full API reference website using [Sandcastle Help File Builder (SHFB)](https://github.com/EWSoftware/SHFB) v2026.3.29.0 or later.
+
+**Requirements:** Install SHFB from its GitHub releases page. Opening the docs project in Visual Studio also requires the **.NET Framework 4.8 targeting pack** — install it via **VS Installer → Modify → Individual components → ".NET Framework 4.8 targeting pack"**. This is a VS IDE requirement only; the SHFB command-line build does not need it.
+
+```powershell
+$env:SHFBROOT = "C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\"
+cd "dotNET/Payflow SDK Docs"
+dotnet msbuild PayflowSDKDocs.shfbproj /p:Configuration=Release
+```
+
+Output is written to `Payflow SDK Docs/Help/`.
+
+> **Important:** Do not open `Help/index.html` directly in a browser. The SHFB website output
+> requires a local HTTP server — browsers block its JavaScript when loaded via `file://`.
+> Use the provided scripts to serve it:
+>
+> ```powershell
+> cd "dotNET/Payflow SDK Docs"
+> .\view-docs.ps1        # Windows PowerShell
+> ```
+> ```bash
+> ./view-docs.sh         # Linux / macOS / Git Bash
+> ```
+> ```bat
+> view-docs.bat          # Windows Command Prompt
+> ```
+>
+> Each script installs `dotnet-serve` automatically (one time) and opens the browser.
+> See `Payflow SDK Docs/README.md` for additional viewing options.
+
+See also the [Payflow Gateway Developer Guide](https://developer.paypal.com/docs/payflow/integration-guide/).
+
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md). PRs are welcome; open an issue first for major changes.
 
 ## Older Versions
-The last builds of the v4 SDKs are located in the [SDK Binaries](https://github.com/paypal/payflow-gateway/tree/master/SDK%20Binaries/) directory.
+
+The last v4 SDK binaries are in the [SDK Binaries](https://github.com/paypal/payflow-gateway/tree/master/SDK%20Binaries/) directory.
 
 ## License
-SDK License - [LICENSE](https://github.com/paypal/payflow-gateway/blob/master/LICENSE)
+
+[SDK LICENSE](https://github.com/paypal/payflow-gateway/blob/master/LICENSE)

@@ -200,11 +200,6 @@ namespace PayPal.Payments.DataObjects
 		private String mCompanyName;
 
 		/// <summary>
-		/// Name
-		/// </summary>
-		private String mName;
-
-		/// <summary>
 		/// First name
 		/// </summary>
 		private String mFirstName;
@@ -658,7 +653,7 @@ namespace PayPal.Payments.DataObjects
 		/// </remarks>
 		public String Name
 		{
-			get { return mName; }
+			get { return null; }
 		}
 
 		/// <summary>

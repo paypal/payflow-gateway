@@ -6,6 +6,12 @@
 ## .NET Help Files
 dotNET/Payflow SDK Docs/Help/
 
+## Java / Maven build output
+target/
+*.class
+*.jar
+!java/lib/*.jar
+
 # User-specific files
 *.rsuser
 *.suo
@@ -404,3 +410,40 @@ FodyWeavers.xsd
 
 # Ignore built Help directory and files
 dotNET/Payflow SDK Docs/Help/*
+
+# ---------------------------------------------------------------------------
+# Credentials & Secrets
+# If you fill in real Payflow credentials for local testing, use one of the
+# patterns below so git never tracks the file.
+#
+# .NET samples  — copy App.config → App.config.local, add real values there
+# Java samples  — copy DOSaleComplete.java → DOSaleComplete.java.local, or
+#                 create a payflow.properties file with your credentials
+# ---------------------------------------------------------------------------
+
+# Local override config files (copy the committed placeholder file and rename)
+*.local
+*.local.*
+App.config.local
+app.config.local
+web.config.local
+
+# Standard secrets / environment files
+.env
+.env.*
+!.env.example
+secrets.*
+*.secret
+*.secrets
+credentials
+credentials.*
+*.credentials
+
+# Java properties files that may hold credentials
+*.properties
+!**/test*.properties
+
+# Any file explicitly named for credentials
+payflow.properties
+payflow-credentials.*
+sdk-credentials.*

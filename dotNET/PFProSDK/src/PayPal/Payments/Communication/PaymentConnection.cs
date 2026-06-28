@@ -7,7 +7,6 @@ using System.IO;
 using System.Text;
 using PayPal.Payments.Common;
 using PayPal.Payments.Common.Logging;
-using System.Security.Permissions;
 using PayPal.Payments.DataObjects;
 using System.Collections;
 
@@ -393,8 +392,10 @@ namespace PayPal.Payments.Communication
 			{
                 //Create Connection Object.
 
-                // 03/06/2017 Added TLS 1.2 support for .NET 4.5 support.  Only TLS 1.2 is supported going forward.
-                System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;  // | SecurityProtocolType.Tls11;
+                // On .NET 8+, ServicePointManager is a no-op; OS-level TLS negotiation applies instead.
+#if NET48
+                System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls13;
+#endif
                 mServerConnection = (HttpWebRequest) WebRequest.Create(mServerUri);
                 // Create a new request to the above mentioned URL.    
                 // WebRequest mServerConnection = WebRequest.Create(mServerUri);

@@ -1,6 +1,9 @@
 package paypal.payments.samples.dataobjects.basictransactions;
 
 import paypal.payflow.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
 
 // This class uses the Payflow SDK Data Objects to do a simple Sale transaction.
 // The request is sent as a Data Object and the response received is also a Data Object.
@@ -123,9 +126,20 @@ public class DOSaleComplete {
 		// account. You can verify ip
 		// restriction by logging into Manager. Result code 26, Invalid Vendor ID is
 		// basically the same issue.
-		// UserInfo user = new UserInfo("<user>", "<vendor>", "<partner>",
-		// "<password>");
-		UserInfo user = new UserInfo("toddprov4", "toddprov4", "VeriSign", "zodiac69");
+		// Credentials are loaded from payflow.properties (gitignored).
+		// Copy the file from the java/ directory and fill in your values.
+		Properties creds = new Properties();
+		try (FileInputStream fis = new FileInputStream("payflow.properties")) {
+			creds.load(fis);
+		} catch (IOException e) {
+			System.err.println("ERROR: payflow.properties not found or unreadable. " + e.getMessage());
+			return;
+		}
+		UserInfo user = new UserInfo(
+			creds.getProperty("PayflowUser", ""),
+			creds.getProperty("PayflowVendor", ""),
+			creds.getProperty("PayflowPartner", ""),
+			creds.getProperty("PayflowPassword", ""));
 
 		// Create the Payflow Connection data object with the required connection
 		// details.

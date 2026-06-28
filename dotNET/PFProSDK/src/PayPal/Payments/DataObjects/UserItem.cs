@@ -182,6 +182,9 @@ namespace PayPal.Payments.DataObjects
             get { return mUserItem1; }
             set { mUserItem1 = value; }
         }
+        /// <summary>
+        /// Gets or Sets user item 2.
+        /// </summary>
         /// <remarks>
         /// <para>Maps to Payflow Parameter:</para>
         /// <code>USER2</code>
@@ -191,6 +194,9 @@ namespace PayPal.Payments.DataObjects
             get { return mUserItem2; }
             set { mUserItem2 = value; }
         }
+        /// <summary>
+        /// Gets or Sets user item 3.
+        /// </summary>
         /// <remarks>
         /// <para>Maps to Payflow Parameter:</para>
         /// <code>USER3</code>
@@ -200,6 +206,9 @@ namespace PayPal.Payments.DataObjects
             get { return mUserItem3; }
             set { mUserItem3 = value; }
         }
+        /// <summary>
+        /// Gets or Sets user item 4.
+        /// </summary>
         /// <remarks>
         /// <para>Maps to Payflow Parameter:</para>
         /// <code>USER4</code>
@@ -209,6 +218,9 @@ namespace PayPal.Payments.DataObjects
             get { return mUserItem4; }
             set { mUserItem4 = value; }
         }
+        /// <summary>
+        /// Gets or Sets user item 5.
+        /// </summary>
         /// <remarks>
         /// <para>Maps to Payflow Parameter:</para>
         /// <code>USER5</code>
@@ -218,6 +230,9 @@ namespace PayPal.Payments.DataObjects
             get { return mUserItem5; }
             set { mUserItem5 = value; }
         }
+        /// <summary>
+        /// Gets or Sets user item 6.
+        /// </summary>
         /// <remarks>
         /// <para>Maps to Payflow Parameter:</para>
         /// <code>USER6</code>
@@ -227,6 +242,9 @@ namespace PayPal.Payments.DataObjects
             get { return mUserItem6; }
             set { mUserItem6 = value; }
         }
+        /// <summary>
+        /// Gets or Sets user item 7.
+        /// </summary>
         /// <remarks>
         /// <para>Maps to Payflow Parameter:</para>
         /// <code>USER7</code>
@@ -236,6 +254,9 @@ namespace PayPal.Payments.DataObjects
             get { return mUserItem7; }
             set { mUserItem7 = value; }
         }
+        /// <summary>
+        /// Gets or Sets user item 8.
+        /// </summary>
         /// <remarks>
         /// <para>Maps to Payflow Parameter:</para>
         /// <code>USER8</code>
@@ -245,6 +266,9 @@ namespace PayPal.Payments.DataObjects
             get { return mUserItem8; }
             set { mUserItem8 = value; }
         }
+        /// <summary>
+        /// Gets or Sets user item 9.
+        /// </summary>
         /// <remarks>
         /// <para>Maps to Payflow Parameter:</para>
         /// <code>USER9</code>
@@ -254,9 +278,12 @@ namespace PayPal.Payments.DataObjects
             get { return mUserItem9; }
             set { mUserItem9 = value; }
         }
+        /// <summary>
+        /// Gets or Sets user item 10.
+        /// </summary>
         /// <remarks>
         /// <para>Maps to Payflow Parameter:</para>
-        /// <code>USERn</code>
+        /// <code>USER10</code>
         /// </remarks>
         public String UserItem10
         {

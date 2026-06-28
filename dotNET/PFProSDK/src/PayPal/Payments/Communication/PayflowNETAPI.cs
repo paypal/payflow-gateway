@@ -510,24 +510,21 @@ namespace PayPal.Payments.Communication
         }
 
         /// <summary>
-        /// PayflowNETAPI Constructor
+        /// PayflowNETAPI is used to submit a Name-value pair or XMLPay request to
+        /// PayPal payment gateway for online payment processing. The response
+        /// returned is the string value of the response from the PayPal payment
+        /// gateway.
+        /// </summary>
         /// <param name="HostAddress">Payflow Host Address.</param>
         /// <param name="HostPort">Payflow Host Port.</param>
         /// <param name="ProxyAddress">Proxy Address.</param>
         /// <param name="ProxyPort">Proxy Port.</param>
         /// <param name="ProxyLogon">Proxy Logon Id.</param>
         /// <param name="ProxyPassword">Proxy Password.</param>
-        ///</summary>
-        /// <summary>
-        /// PayflowNETAPI is used to submit a Name-value pair or XMLPay request to
-        /// PayPal payment gateway for online payment processing. The response 
-        /// returned is the string value of the response from the PayPal payment 
-        /// gateway.
-        /// </summary>
-        /// <remarks>Instance of PayflowNETAPI initialized with the information related 
+        /// <remarks>Instance of PayflowNETAPI initialized with the information related
         /// to connection to the PayPal payment gateway.
-        /// If the empty constructor of this class is used to create the object or 
-        /// passed values are empty, then The following values (if empty) 
+        /// If the empty constructor of this class is used to create the object or
+        /// passed values are empty, then The following values (if empty)
         /// are looked for as follows:
         /// <list type="table">
         /// <listheader>
@@ -910,10 +907,21 @@ namespace PayPal.Payments.Communication
 
         #region "Functions"
         /// <summary>
-        /// SetParameters will be used to initialize the different parameters passed by the user. This has been kept 
-        /// as a public function since this needs to be called by the COM implementation. This is an undocumented 
-        /// functionionality which the pure dotNET client are not suppose to use.
+        /// Initializes connection and logging parameters. Exposed as <c>public</c> for COM interop;
+        /// pure .NET callers should use the appropriate constructor overload instead.
         /// </summary>
+        /// <param name="HostAddress">Payflow Host Address.</param>
+        /// <param name="HostPort">Payflow Host Port.</param>
+        /// <param name="TimeOut">Transaction timeout in seconds.</param>
+        /// <param name="ProxyAddress">Proxy server address.</param>
+        /// <param name="ProxyPort">Proxy server port.</param>
+        /// <param name="ProxyLogon">Proxy logon ID.</param>
+        /// <param name="ProxyPassword">Proxy password.</param>
+        /// <param name="Trace">Trace level for logging.</param>
+        /// <param name="LogLevel">Log verbosity level.</param>
+        /// <param name="LogFileName">Path to the log file.</param>
+        /// <param name="LogFileSize">Maximum log file size in bytes.</param>
+        /// <param name="WrapperIsCOM"><c>true</c> if the caller is a COM wrapper.</param>
         public void SetParameters(String HostAddress,
             int HostPort,
             int TimeOut,
@@ -1381,11 +1389,14 @@ namespace PayPal.Payments.Communication
         }
 
 
-        /*
-         This function has been out in place to support generation of requestID from the COM Wrapper.This is
-         because a static function cannot be called from COM Wrapper and PayflowUtility is a static class and has 
-         a private constructor.
-        */
+        /// <summary>
+        /// Generates a unique request ID for use in Payflow transactions.
+        /// </summary>
+        /// <returns>A new unique request ID string.</returns>
+        /// <remarks>
+        /// Instance wrapper around <see cref="PayflowUtility.RequestId"/> to support callers
+        /// (such as COM interop wrappers) that cannot invoke static members directly.
+        /// </remarks>
         public String GenerateRequestId()
         {
             return PayflowUtility.RequestId;

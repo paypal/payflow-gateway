@@ -1,70 +1,116 @@
+## 5.0.3 (2026-06-28)
+
+### Build Modernization
+
+* Migrated project file from VS 2013 format (`ToolsVersion="12.0"`) to SDK-style (`<Project Sdk="Microsoft.NET.Sdk">`). Explicit per-file `<Compile Include>` entries are no longer needed — the SDK discovers all `.cs` files automatically.
+* Added **.NET 8.0** and **.NET 10.0** as supported targets alongside .NET Framework 4.8. The project now multi-targets `net8.0;net10.0;net48`; .NET 8.0 is the default active target in the CLI and Visual Studio.
+* NuGet packaging metadata is now embedded directly in `PFProSDK.csproj`. The separate `PFProSDK.nuspec` and vendored `nuget.exe` have been removed. Use `dotnet pack` to produce a `.nupkg`.
+* Removed legacy COM interop registration (`RegisterForComInterop`).
+* Added `System.Configuration.ConfigurationManager` NuGet package reference (net8.0 target only) to preserve `AppSettingsReader` support on modern .NET.
+* `SamplesCS` and `SamplesVB` sample projects migrated from old-style project files to SDK-style, targeting `net8.0`.
+
+### TLS
+
+* TLS configuration on .NET Framework 4.8 now enables both TLS 1.2 and TLS 1.3 (`SecurityProtocolType.Tls12 | SecurityProtocolType.Tls13`). On .NET 8 the OS handles TLS negotiation automatically and the `ServicePointManager` call is excluded via conditional compilation.
+
+### Bug Fixes
+
+* **`ACHTender` duplicate `AUTHTYPE` field** — `ACHTender` declared its own private `mAuthType` field that shadowed the one in `BaseTender`. Because `BaseTender.GenerateRequest()` (called via `base.GenerateRequest()`) already writes `AUTHTYPE` from the correctly-set base field, the subclass was appending `AUTHTYPE` a second time with an always-null value. Removed the dead shadow field and the redundant append.
+* **`BaseTransaction.mUserItem` dead field** — `BaseTransaction` contained a `private UserInfo mUserItem` field typed as `UserInfo` instead of `UserItem` (incorrect type), with no public property or setter, making it permanently null. The `if (mUserItem != null)` guard block that depended on it was unreachable dead code. Both removed. `UserItem` support in `Invoice` is unaffected.
+* **`RecurringResponse.Name` always-null backing field** — The `NAME` Payflow parameter is not returned in recurring responses; the field assignment was commented out, leaving a backing field that could never be set. Removed the dead field; the public `Name` property now returns `null` explicitly.
+* **`Reporting.cs` missing `readServiceResponse` method** — The method was called but never defined, causing a compile error. Added the correct implementation.
+* **`DOClientInfo.vb` stale API references** — Fixed `Bill.Street` → `Bill.BillToStreet` and `Bill.Zip` → `Bill.BillToZip` (renamed in 5.0.0). Removed the defunct `CommitResponse` / `AddCommitHeader` / `SubmitCommitTransaction` block which was removed from the SDK in 5.0.0.
+
+### Code Quality
+
+* Replaced non-generic `Hashtable` with `Dictionary<string, string>` for `PayflowConstants.CommErrorCodes` and `PayflowConstants.CommErrorMessages`.
+* `LocalPolicy` (a deprecated SSL certificate bypass stub, marked obsolete since VS 2005) is now excluded from .NET 8+ builds via `#if NET48`. The `ICertificatePolicy` interface it implemented was removed in .NET 5.
+* Removed unused `using System.Security.Permissions` import from `PaymentConnection.cs`.
+* Set `[assembly: ComVisible(false)]` in `AssemblyInfo.cs`; COM visibility is no longer registered at build time.
+
+### Documentation
+
+* Sandcastle Help File Builder (SHFB) project updated to SHFB v2026.3.29.0: presentation style changed from `VS2013` to `Themed2026`; documentation source pinned to the `net8.0` TFM; `.NET Framework 4.8` reference assemblies no longer required.
+* Added `<GenerateDocumentationFile>true</GenerateDocumentationFile>` to `PFProSDK.csproj` so the XML comments file is produced on every build and picked up by SHFB automatically.
+* Added complete XML doc comments for all previously undocumented public members: `UserItem2`–`UserItem10`, `Invoice.CitDate/VMaid/Par`, `PayPalTender.ExpressCheckoutRequest`, `PayflowNETAPI.GenerateRequestId()`, `PayflowNETAPI.SetParameters()`, `GlobalClass.GlobalVar`, `PayflowUtility.AppSettings()`, `ECDoRequest`/`ECGetRequest`/`ECGetBARequest`/`ECSetRequest` protected constructors. Fixed malformed XML comment blocks and broken `<cref>` attributes.
+
+### Security
+
+* **Credentials moved out of source code** — `DOSaleComplete.cs` and `DOSaleComplete.vb` previously required developers to paste live Payflow credentials directly into the source file, creating a risk of accidentally committing them to version control. Credentials are now read from `App.config` at runtime using `PayflowUtility.AppSettings`. Four new keys have been added to both `SamplesCS/App.config` and `SamplesVB/App.config` (`PayflowUser`, `PayflowVendor`, `PayflowPartner`, `PayflowPassword`); fill them in locally before running. Both `App.config` files are marked `git update-index --skip-worktree` so local credential edits are never staged or committed.
+
+### Quick-Start Scripts
+
+Added `run-sample.ps1`, `run-sample.bat`, and `run-sample.sh` to the `dotNET/` directory. Each script builds the C# sample project and runs `DOSaleComplete` in one step. Pass `vb` / `-VB` to run the Visual Basic sample instead. An optional framework flag (`-Framework net48`, `net10.0`) selects the target; default is `net8.0`.
+
+### Contributing
+
+* Added `CONTRIBUTING.md` with development setup, build instructions, coding standards, and PR guidelines.
+
+---
+
 ## 5.0.2 (2022-03-30)
 
-#### Changes
+### Changes
+
 * Fixed issue where `RecurringResponse` object was not returning all available values in the response.
 * Added `SCAExemption`, `CitDate` and `VMaid` under the `Invoice` object to support Strong Customer Authentication.
 
+---
+
 ## 5.0.0 (2020-09-13)
 
-### IMPORTANT: </p>THIS VERSION IS NOT 100%  COMPATIBLE WITH OLDER VERSIONS AS SOME OF THE OBJECTS AND THEIR LOCATIONS HAVE MOVED.
+> **IMPORTANT:** This version is not 100% compatible with older versions — some objects and their locations have moved. Do not use in production without adjusting your code and testing.
 
-#### Changes
-These changes will need to be incorporated into your existing integration before you can use this version.
-* FIRSTNAME, LASTNAME, STREET, CITY, STATE, PHONENUM, EMAIL, etc. have been replaced by "BILLTO" versions to align with the "SHIPTO" parameters. </p>Example:</br>`Bill.FirstName = "Joe";` is now `Bill.BillToFirstName = "Joe";`.
-* Moved Merchant fields; such as, Merchant Name, etc. from `CustomerInfo` object to new `MerchantInfo` object.
+### Breaking Changes
 
-* Moved `MerchDescr` and `MerchSvc` from `Invoice` object to new `MerchantInfo` object. This new object now holds the soft descriptor fields; such as, Merchant Name, Merchant City, etc.  The following is an example of the change:
+These changes must be incorporated into your existing integration before upgrading.
 
-	```<language>
-	MerchantInfo MerchInfo = new MerchantInfo();
-	MerchInfo.MerchantName = "My Company Name";
-	MerchInfo.MerchantCity = "My Company City";
-	Inv.MerchantInfo = MerchInfo
-	```
+* `FIRSTNAME`, `LASTNAME`, `STREET`, `CITY`, `STATE`, `PHONENUM`, `EMAIL`, etc. have been replaced by `BILLTO` versions to align with the `SHIPTO` parameters.
 
-* `VATAXPERCENT` is now `VATTAXPERCENT`.  The following is an example of the change:
+  Example: `Bill.FirstName = "Joe";` is now `Bill.BillToFirstName = "Joe";`
 
-	`Inv.VatTaxAmt = new Currency(new decimal(25.00), "USD");`
+* Moved Merchant fields (Merchant Name, etc.) from `CustomerInfo` object to the new `MerchantInfo` object.
 
-#### New Objects:
-* `MerchantInfo`.  This object holds the soft descriptor fields; such as, Merchant Name, Merchant City, etc.
-* `EchoData` to Invoice object, this parameter will allow you to "echo" back data in the response. See [Echo Data](https://developer.paypal.com/docs/payflow/integration-guide/submit-transactions/#echo-data).
+* Moved `MerchDescr` and `MerchSvc` from `Invoice` to `MerchantInfo`. Example:
 
-* `ORDERID` as part of the Invoice object. Order ID is used to prevent duplicate "orders" from being processed.
+  ```csharp
+  MerchantInfo MerchInfo = new MerchantInfo();
+  MerchInfo.MerchantName = "My Company Name";
+  MerchInfo.MerchantCity = "My Company City";
+  Inv.MerchantInfo = MerchInfo;
+  ```
 
-	>This is NOT the same as Request ID; which is used at the transaction level.  Order ID (ORDERID) is used to check for a duplicate order in the future.  For example, if I pass ORDERID=10101 and in two weeks another order is processed with the same ORDERID, a duplicate condition will occur.  The results you receive will be from the original order with DUPLICATE=2 to show that it was ORDERID that triggered the duplicate. The order id is stored for 3 years.</br></br>Important Note: Order ID functionality to catch duplicate orders processed withing seconds of each other is limited.  Order ID should be used in conjunction with Request ID to prevent duplicates due to processing / communication errors. DO NOT use ORDERID as your only means to check for duplicate transactions.
+* `VATAXPERCENT` is now `VATTAXPERCENT`. Example:
 
-#### New NVP Parameters:
-Some of the NVPs listed below have been added in earlier builds, but are here for reference.
+  ```csharp
+  Inv.VatTaxAmt = new Currency(new decimal(25.00), "USD");
+  ```
 
-* **Stored Credential Parameters**: `CARDONFILE` (Request), `TXID` (Request and Response) - Requests parameters are in the `PaymentCard` object - See [Card on File](https://developer.paypal.com/docs/payflow/integration-guide/card-on-file/#supported-card-on-file-types).</p>
-* **v2 3DS Parameters**: `DSTRANSACTIONID` (Directory Server Transaction ID) and `THREEDSVERSION` (3D-Secure Version) to the `BuyerAuthStatus` object. See [3-D Secure with 3rd-Party Merchant Plug-ins](https://developer.paypal.com/docs/payflow/3d-secure-mpi/).
-* `USER1` to `USER10` which is part of the `Invoice` object.</br>These can be returned in the response using the `EchoData` set to "User". See the enclosed DOSaleComplete sample for more information.</p>
-* Support for Magtek Encrypted Card Readers as part of the `Swipe` object.  Refer to `DOEncryptedSwipe` sample for more information.
+### New Objects
 
-* **Processor-specific Response Parameters**:
-	* `PAYMENTADVICECODE`, `TYPE`, `AFFLUENT`, `CCUPDATED`, `RRN`, `STAN`, `ACI` and `VALIDATIONCODE` in `TransactionResponse` object.
+* `MerchantInfo` — holds soft descriptor fields such as Merchant Name, Merchant City, etc.
+* `EchoData` added to `Invoice` — allows echoing data back in the response. See [Echo Data](https://developer.paypal.com/docs/payflow/integration-guide/submit-transactions/#echo-data).
+* `ORDERID` added to `Invoice` — prevents duplicate orders from being processed.
 
-* **Location Transaction Advice Addendum Parameters**:
-	* `MERCHANTLOCATIONID`, `MERCHANTID`, `MERCHANTCONTACTINFO`,  `MERCHANTURL`, `MERCHANTVATNUM` and `MERCHANTINVNUM` in `MerchantInfo` object.
+  > **Note:** `ORDERID` is not the same as Request ID. Request ID operates at the transaction level; `ORDERID` checks for duplicate orders over time (stored for 3 years). Use both together to prevent duplicates from processing/communication errors.
 
-* **Response Parameters**:
-	* `CCTRANSID`, `CCTRANS_POSDATA` in `TransactionResponse` object.
+### New NVP Parameters
 
-* **Request Parameters**:
-	* `ADDLAMT`, `ADDLAMTTYPE` in new `AdviceDetails` object.
-	* `CATTYPE`, `CONTACTLESS` in new `Devices` object.
-	* `CUSTDATA`, `CUSTOMERID`, `CUSTOMERNUMBER` in `CustomerInfo` object.
-	* `MISCDATA`, `REPORTGROUP`, `VATINVNUM`, `VATTAXRATE` in `Invoice` object.
-	* `AUTHDATE` in `VoiceAuthTransaction` object.
-	* `BUTTONSOURCE` in `BrowserInfo` object.
+Some parameters listed below were added in earlier builds but are included here for reference.
 
-* **Request Line Item Parameters**:
-	* `L_ALTTAXAMT`, `L_ALTTAXID`, `L_ALTTAXRATE`, `L_CARRIERSERVICELEVELCODE`, `L_EXTAMT` in `LineItem` object.
+* **Stored Credential:** `CARDONFILE` (Request), `TXID` (Request and Response) in the `PaymentCard` object. See [Card on File](https://developer.paypal.com/docs/payflow/integration-guide/card-on-file/#supported-card-on-file-types).
+* **v2 3DS:** `DSTRANSACTIONID` and `THREEDSVERSION` in the `BuyerAuthStatus` object. See [3-D Secure with 3rd-Party Merchant Plug-ins](https://developer.paypal.com/docs/payflow/3d-secure-mpi/).
+* `USER1` to `USER10` in the `Invoice` object. Can be returned in the response via `EchoData = "User"`. See the `DOSaleComplete` sample.
+* Support for MagTek Encrypted Card Readers in the `Swipe` object. See the `DOEncryptedSwipe` sample.
 
-* **Recurring Parameter**:
-	* `FREQUENCY` in `ReccurringInfo` object.
+* **Processor-specific Response:** `PAYMENTADVICECODE`, `TYPE`, `AFFLUENT`, `CCUPDATED`, `RRN`, `STAN`, `ACI`, `VALIDATIONCODE` in `TransactionResponse`.
+* **Location/Advice Addendum:** `MERCHANTLOCATIONID`, `MERCHANTID`, `MERCHANTCONTACTINFO`, `MERCHANTURL`, `MERCHANTVATNUM`, `MERCHANTINVNUM` in `MerchantInfo`.
+* **Response:** `CCTRANSID`, `CCTRANS_POSDATA` in `TransactionResponse`.
+* **Request:** `ADDLAMT`, `ADDLAMTTYPE` in new `AdviceDetails` object; `CATTYPE`, `CONTACTLESS` in new `Devices` object; `CUSTDATA`, `CUSTOMERID`, `CUSTOMERNUMBER` in `CustomerInfo`; `MISCDATA`, `REPORTGROUP`, `VATINVNUM`, `VATTAXRATE` in `Invoice`; `AUTHDATE` in `VoiceAuthTransaction`; `BUTTONSOURCE` in `BrowserInfo`.
+* **Request Line Items:** `L_ALTTAXAMT`, `L_ALTTAXID`, `L_ALTTAXRATE`, `L_CARRIERSERVICELEVELCODE`, `L_EXTAMT` in `LineItem`.
+* **Recurring:** `FREQUENCY` in `RecurringInfo`.
 
 ### New Samples
-* **Data Upload (DODataUpload)** under `samples\dataobjects\misc` to show how to use transaction type "L" allowing credit card data to be removed from local servers and stored at PayPal to be used via reference transactions.
-* **Encrypted Swipe (DOEncryptedSwipe)** under `samples\dataobjects\basictransactons` is for user using MagTek Encrypted Swipe readers.  See [Payflow Gateway Magtek Parameters](https://developer.paypal.com/docs/payflow/integration-guide/magtek/).  
+
+* **Data Upload (`DODataUpload`)** under `samples/dataobjects/misc` — demonstrates transaction type "L" for moving card data off local servers to PayPal for use in reference transactions.
+* **Encrypted Swipe (`DOEncryptedSwipe`)** under `samples/dataobjects/basictransactions` — for MagTek Encrypted Swipe readers. See [Payflow Gateway MagTek Parameters](https://developer.paypal.com/docs/payflow/integration-guide/magtek/).

@@ -151,7 +151,17 @@ namespace PayPal.Payments.DataObjects
 			mPaymentType = PaymentType;
 			mBA_Custom = BA_Custom;
 		}
-		protected ECSetRequest(String ReturnUrl, String CancelUrl, String BillingType, String BA_Desc, String PaymentType, String BA_Custom, String Action) 
+		/// <summary>
+		/// Constructor for ECSetRequest with explicit action type (for Billing Agreement SET operations).
+		/// </summary>
+		/// <param name="ReturnUrl">The URL to redirect the customer to after approval.</param>
+		/// <param name="CancelUrl">The URL to redirect the customer to if they cancel.</param>
+		/// <param name="BillingType">The billing type (e.g., <c>MerchantInitiatedBilling</c>).</param>
+		/// <param name="BA_Desc">Description of the billing agreement shown to the customer.</param>
+		/// <param name="PaymentType">The payment type (e.g., <c>any</c>).</param>
+		/// <param name="BA_Custom">Optional custom data for the billing agreement.</param>
+		/// <param name="Action">The action type (e.g., <c>SETBA</c>).</param>
+		protected ECSetRequest(String ReturnUrl, String CancelUrl, String BillingType, String BA_Desc, String PaymentType, String BA_Custom, String Action)
 			: base(PayflowConstants.ACTIONTYPE_SETBA)
 		{
 			mReturnURL = ReturnUrl;

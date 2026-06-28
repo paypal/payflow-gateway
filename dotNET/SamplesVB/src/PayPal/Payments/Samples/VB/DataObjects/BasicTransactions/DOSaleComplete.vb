@@ -91,7 +91,11 @@ Namespace PayPal.Payments.Samples.VB.DataObjects.BasicTransactions
             ' The other most common error with authentication is result code 1, user authentication failed.  This is usually
             ' due to invalid account information or IP restriction on the account.  You can verify IP restriction by logging 
             ' into Manager.
-            Dim User As UserInfo = New UserInfo("<user>", "<vendor>", "<partner>", "<password>")
+            Dim mUser     As String = PayflowUtility.AppSettings("PayflowUser")
+            Dim mVendor   As String = PayflowUtility.AppSettings("PayflowVendor")
+            Dim mPartner  As String = PayflowUtility.AppSettings("PayflowPartner")
+            Dim mPassword As String = PayflowUtility.AppSettings("PayflowPassword")
+            Dim User As UserInfo = New UserInfo(mUser, mVendor, mPartner, mPassword)
 
             ' *** Create the Payflow Connection data object with the required connection details. ***
             '

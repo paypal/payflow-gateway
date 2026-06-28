@@ -1,77 +1,105 @@
-### IMPORTANT: </p>THIS VERSION IS NOT 100%  COMPATIBLE WITH OLDER VERSIONS AS SOME OF THE OBJECTS AND THEIR LOCATIONS HAVE MOVED.
+## 5.0.3 (2026-06-28)
+
+### Build Modernization
+
+* Migrated build system from Apache Ant (`build/build.xml`) to **Maven** (`pom.xml`). Run `mvn clean package` from the `java/` directory to produce `target/payflow.jar`.
+* Removed the Apache Xerces runtime dependency (`xerces:xercesImpl`). XML parsing in `IPXmlReader` now uses the JDK-bundled JAXP implementation (`DocumentBuilderFactory` / `DocumentBuilder`). The library now has **zero external runtime dependencies**.
+* The three SDK source directories (`src/sdk/base`, `src/sdk/dataobjects`, `src/sdk/transactions`) are wired into Maven via `build-helper-maven-plugin`. Sample sources under `src/paypal/` are intentionally excluded from the library JAR.
+* Minimum supported Java version is **Java 11**. Java 8 is also supported — set `maven.compiler.release=8` in `pom.xml` if needed.
+
+### API Documentation
+
+* Added `maven-javadoc-plugin` to `pom.xml`. Run `mvn javadoc:javadoc` (or the provided `generate-docs` scripts) to produce a full HTML API reference at `target/site/apidocs/index.html`. 99 of 102 SDK classes already carried Javadoc comments; `doclint` warnings are suppressed for legacy comment quirks.
+
+### Security
+
+* **Credentials moved out of source code** — `DOSaleComplete.java` previously required developers to paste live Payflow credentials directly into the source file, creating a risk of accidentally committing them to version control. Credentials are now read at runtime from `java/payflow.properties` using `java.util.Properties`. A template `payflow.properties` file is included in the repository with empty values; fill it in locally before running. The file is listed in `.gitignore` and will never be committed. If the file is missing at runtime the sample prints a clear error and exits.
+
+### Quick-Start Scripts
+
+Added `run-sample.ps1`, `run-sample.bat`, and `run-sample.sh` to the `java/` directory. Each script runs `mvn clean package`, compiles `DOSaleComplete`, and runs it in a single step — no manual classpath setup required.
+
+Added `generate-docs.ps1`, `generate-docs.bat`, and `generate-docs.sh` for one-step Javadoc generation.
+
+### Contributing
+
+* Added `CONTRIBUTING.md` with development setup, build instructions, coding standards, and PR guidelines.
+
+---
 
 ## 5.0.2 (2022-03-30)
 
-#### Changes
+### Changes
+
 * Fixed issue where `RecurringResponse` object was not returning all available values in the response.
 * Added `SCAExemption`, `CitDate` and `VMaid` under the `Invoice` object to support Strong Customer Authentication.
 
+---
+
 ## 5.0.1 (2021-03-23)
 
-#### Changes
-* Removed system wide proxy and replaced with connection proxy.
+### Changes
+
+* Removed system-wide proxy and replaced with per-connection proxy.
 * Updated Express Checkout to use current parameters and flow.
-* Removed the dependency of the sun.misc.BASE64Encoder and replaced it with java.util.Base64.
+* Removed dependency on `sun.misc.BASE64Encoder`; replaced with `java.util.Base64`.
+
+---
 
 ## 5.0.0 (2020-09-13)
 
-#### Changes
-These changes will need to be incorporated into your existing integration before you can use this version.
-* FIRSTNAME, LASTNAME, STREET, CITY, STATE, PHONENUM, EMAIL, etc. have been replaced by "BILLTO" versions to align with the "SHIPTO" parameters. </p>Example:</br>`Bill.FirstName = "Joe";` is now `Bill.BillToFirstName = "Joe";`.
-* Moved Merchant fields; such as, Merchant Name, etc. from `CustomerInfo` object to new `MerchantInfo` object.
+> **IMPORTANT:** This version is not 100% compatible with older versions — some objects and their locations have moved. Do not use in production without adjusting your code and testing.
 
-* Moved `MerchDescr` and `MerchSvc` from `Invoice` object to new `MerchantInfo` object. This new object now holds the soft descriptor fields; such as, Merchant Name, Merchant City, etc.  The following is an example of the change:
+### Breaking Changes
 
-	```<language>
-	MerchantInfo MerchInfo = new MerchantInfo();
-	MerchInfo.MerchantName = "My Company Name";
-	MerchInfo.MerchantCity = "My Company City";
-	Inv.MerchantInfo = MerchInfo
-	```
+These changes must be incorporated into your existing integration before upgrading.
 
-* `VATAXPERCENT` is now `VATTAXPERCENT`.  The following is an example of the change:
+* `FIRSTNAME`, `LASTNAME`, `STREET`, `CITY`, `STATE`, `PHONENUM`, `EMAIL`, etc. have been replaced by `BILLTO` versions to align with the `SHIPTO` parameters.
 
-	`Inv.VatTaxAmt = new Currency(new decimal(25.00), "USD");`
+  Example: `Bill.FirstName = "Joe";` is now `Bill.BillToFirstName = "Joe";`
 
-#### New Objects:
-* `MerchantInfo`.  This object holds the soft descriptor fields; such as, Merchant Name, Merchant City, etc.
-* `EchoData` to Invoice object, this parameter will allow you to "echo" back data in the response. See [Echo Data](https://developer.paypal.com/docs/payflow/integration-guide/submit-transactions/#echo-data).
+* Moved Merchant fields (Merchant Name, etc.) from `CustomerInfo` object to the new `MerchantInfo` object.
 
-* `ORDERID` as part of the Invoice object. Order ID is used to prevent duplicate "orders" from being processed.
+* Moved `MerchDescr` and `MerchSvc` from `Invoice` to `MerchantInfo`. Example:
 
-	>This is NOT the same as Request ID; which is used at the transaction level.  Order ID (ORDERID) is used to check for a duplicate order in the future.  For example, if I pass ORDERID=10101 and in two weeks another order is processed with the same ORDERID, a duplicate condition will occur.  The results you receive will be from the original order with DUPLICATE=2 to show that it was ORDERID that triggered the duplicate. The order id is stored for 3 years.</br></br>Important Note: Order ID functionality to catch duplicate orders processed withing seconds of each other is limited.  Order ID should be used in conjunction with Request ID to prevent duplicates due to processing / communication errors. DO NOT use ORDERID as your only means to check for duplicate transactions.
+  ```java
+  MerchantInfo MerchInfo = new MerchantInfo();
+  MerchInfo.setMerchantName("My Company Name");
+  MerchInfo.setMerchantCity("My Company City");
+  Inv.setMerchantInfo(MerchInfo);
+  ```
 
-#### New NVP Parameters:
-Some of the NVPs listed below have been added in earlier builds, but are here for reference.
+* `VATAXPERCENT` is now `VATTAXPERCENT`. Example:
 
-* **Stored Credential Parameters**: `CARDONFILE` (Request), `TXID` (Request and Response) - Requests parameters are in the `PaymentCard` object - See [Card on File](https://developer.paypal.com/docs/payflow/integration-guide/card-on-file/#supported-card-on-file-types).</p>
-* **v2 3DS Parameters**: `DSTRANSACTIONID` (Directory Server Transaction ID) and `THREEDSVERSION` (3D-Secure Version) to the `BuyerAuthStatus` object. See [3-D Secure with 3rd-Party Merchant Plug-ins](https://developer.paypal.com/docs/payflow/3d-secure-mpi/).
-* `USER1` to `USER10` which is part of the `Invoice` object.</br>These can be returned in the response using the `EchoData` set to "User". See the enclosed DOSaleComplete sample for more information.</p>
-* Support for Magtek Encrypted Card Readers as part of the `Swipe` object.  Refer to `DOEncryptedSwipe` sample for more information.
+  ```java
+  Inv.setVatTaxAmt(new Currency(new BigDecimal("25.00"), "USD"));
+  ```
 
-* **Processor-specific Response Parameters**:
-	* `PAYMENTADVICECODE`, `TYPE`, `AFFLUENT`, `CCUPDATED`, `RRN`, `STAN`, `ACI` and `VALIDATIONCODE` in `TransactionResponse` object.
+### New Objects
 
-* **Location Transaction Advice Addendum Parameters**:
-	* `MERCHANTLOCATIONID`, `MERCHANTID`, `MERCHANTCONTACTINFO`,  `MERCHANTURL`, `MERCHANTVATNUM` and `MERCHANTINVNUM` in `MerchantInfo` object.
+* `MerchantInfo` — holds soft descriptor fields such as Merchant Name, Merchant City, etc.
+* `EchoData` added to `Invoice` — allows echoing data back in the response. See [Echo Data](https://developer.paypal.com/docs/payflow/integration-guide/submit-transactions/#echo-data).
+* `ORDERID` added to `Invoice` — prevents duplicate orders from being processed.
 
-* **Response Parameters**:
-	* `CCTRANSID`, `CCTRANS_POSDATA` in `TransactionResponse` object.
+  > **Note:** `ORDERID` is not the same as Request ID. Request ID operates at the transaction level; `ORDERID` checks for duplicate orders over time (stored for 3 years). Use both together to prevent duplicates from processing/communication errors.
 
-* **Request Parameters**:
-	* `ADDLAMT`, `ADDLAMTTYPE` in new `AdviceDetails` object.
-	* `CATTYPE`, `CONTACTLESS` in new `Devices` object.
-	* `CUSTDATA`, `CUSTOMERID`, `CUSTOMERNUMBER` in `CustomerInfo` object.
-	* `ECHODATA`, `MISCDATA`, `REPORTGROUP`, `VATINVNUM`, `VATTAXRATE` in `Invoice` object.
-	* `AUTHDATE` in `VoiceAuthTransaction` object.
-	* `BUTTONSOURCE` in `BrowserInfo` object.
+### New NVP Parameters
 
-* **Request Line Item Parameters**:
-	* `L_ALTTAXAMT`, `L_ALTTAXID`, `L_ALTTAXRATE`, `L_CARRIERSERVICELEVELCODE`, `L_EXTAMT` in `LineItem` object.
+Some parameters listed below were added in earlier builds but are included here for reference.
 
-* **Recurring Parameter**:
-	* `FREQUENCY` in `ReccurringInfo` object.
+* **Stored Credential:** `CARDONFILE` (Request), `TXID` (Request and Response) in the `PaymentCard` object. See [Card on File](https://developer.paypal.com/docs/payflow/integration-guide/card-on-file/#supported-card-on-file-types).
+* **v2 3DS:** `DSTRANSACTIONID` and `THREEDSVERSION` in the `BuyerAuthStatus` object. See [3-D Secure with 3rd-Party Merchant Plug-ins](https://developer.paypal.com/docs/payflow/3d-secure-mpi/).
+* `USER1` to `USER10` in the `Invoice` object. Can be returned in the response via `EchoData = "User"`. See the `DOSaleComplete` sample.
+* Support for MagTek Encrypted Card Readers in the `Swipe` object. See the `DOEncryptedSwipe` sample.
+
+* **Processor-specific Response:** `PAYMENTADVICECODE`, `TYPE`, `AFFLUENT`, `CCUPDATED`, `RRN`, `STAN`, `ACI`, `VALIDATIONCODE` in `TransactionResponse`.
+* **Location/Advice Addendum:** `MERCHANTLOCATIONID`, `MERCHANTID`, `MERCHANTCONTACTINFO`, `MERCHANTURL`, `MERCHANTVATNUM`, `MERCHANTINVNUM` in `MerchantInfo`.
+* **Response:** `CCTRANSID`, `CCTRANS_POSDATA` in `TransactionResponse`.
+* **Request:** `ADDLAMT`, `ADDLAMTTYPE` in new `AdviceDetails` object; `CATTYPE`, `CONTACTLESS` in new `Devices` object; `CUSTDATA`, `CUSTOMERID`, `CUSTOMERNUMBER` in `CustomerInfo`; `ECHODATA`, `MISCDATA`, `REPORTGROUP`, `VATINVNUM`, `VATTAXRATE` in `Invoice`; `AUTHDATE` in `VoiceAuthTransaction`; `BUTTONSOURCE` in `BrowserInfo`.
+* **Request Line Items:** `L_ALTTAXAMT`, `L_ALTTAXID`, `L_ALTTAXRATE`, `L_CARRIERSERVICELEVELCODE`, `L_EXTAMT` in `LineItem`.
+* **Recurring:** `FREQUENCY` in `RecurringInfo`.
 
 ### New Samples
-* **Data Upload (DODataUpload)** under `samples\dataobjects\misc` to show how to use transaction type "L" allowing credit card data to be removed from local servers and stored at PayPal to be used via reference transactions.
-* **Encrypted Swipe (DOEncryptedSwipe)** under `samples\dataobjects\basictransactons` is for user using MagTek Encrypted Swipe readers.  See [Payflow Gateway Magtek Parameters](https://developer.paypal.com/docs/payflow/integration-guide/magtek/).  
+
+* **Data Upload (`DODataUpload`)** under `samples/dataobjects/misc` — demonstrates transaction type "L" for moving card data off local servers to PayPal for use in reference transactions.
+* **Encrypted Swipe (`DOEncryptedSwipe`)** under `samples/dataobjects/basictransactions` — for MagTek Encrypted Swipe readers. See [Payflow Gateway MagTek Parameters](https://developer.paypal.com/docs/payflow/integration-guide/magtek/).

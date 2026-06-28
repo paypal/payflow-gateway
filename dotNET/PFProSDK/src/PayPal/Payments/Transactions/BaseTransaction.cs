@@ -254,12 +254,6 @@ namespace PayPal.Payments.Transactions
 		/// </summary>
 		private UserInfo mUserInfo;
 
-        /// <summary>
-        /// Holds  USER1 to USER10 fields.
-        /// <seealso cref="UserItem"/>
-        /// </summary>
-        private UserInfo mUserItem;
-
 		/// <summary>
 		/// Value (LOW, MEDIUM or HIGH) that controls the detail level and format of transaction results.
 		/// LOW (default) returns normalized values. MEDIUM or HIGH return the processor's raw response values.
@@ -1000,11 +994,6 @@ namespace PayPal.Payments.Transactions
 					mUserInfo.RequestBuffer = mRequestBuffer;
 					mUserInfo.GenerateRequest();
 				}
-                if (mUserItem != null)
-                {
-                    mUserItem.RequestBuffer = mRequestBuffer;
-                    mUserItem.GenerateRequest();
-                }
 				if (mBuyerAuthStatus != null)
 				{
 					mBuyerAuthStatus.RequestBuffer = mRequestBuffer;

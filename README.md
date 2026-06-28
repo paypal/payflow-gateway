@@ -1,27 +1,103 @@
 # Payflow Gateway SDKs
-![Home Image](homepage.jpg)
 
-__Welcome to the Payflow .NET and Java SDKs__.</br>The SDKs are now opened-sourced with the newest code; version 5, located in the corresponding directories.  Please review the README and CHANGELOG in each directory for more information.
+Open-source SDKs for the PayPal Payflow Gateway — available for **.NET** and **Java**. Both SDKs are currently at **v5.0.3**.
 
-> **Important Note:** The source code is based on v5 of the SDKs and there have been changes that prevent it from being backwards compatible with the existing v4 SDKs. Please review the **CHANGELOG** in the corresponding directory for more details.
+> **Important:** v5 is not fully backwards-compatible with v4. Review the CHANGELOG in each SDK directory before upgrading an existing integration.
 
-## SDK Binaries
+## SDKs
 
-The files in the SDK Binaries folder are the last builds of the v4 branch, but do not include all the newest NVPs. All new NVPs and all further changes will on the v5 branch.
+| SDK | Directory | Build Tool | Min Runtime |
+|-----|-----------|------------|-------------|
+| .NET | [`dotNET/`](./dotNET/) | `dotnet` CLI / Visual Studio 2022+ | .NET 8.0, .NET 10.0, or .NET Framework 4.8 |
+| Java | [`java/`](./java/) | Apache Maven 3.6+ | Java 11 |
+
+See each SDK's directory for full setup and usage details:
+
+* [dotNET/README.md](./dotNET/README.md) — build, NuGet packaging, samples, SHFB docs
+* [java/README.md](./java/README.md) — Maven build, sample compilation, IDE setup
+
+See the CHANGELOG in each directory for a detailed history of changes:
+
+* [dotNET/CHANGELOG.md](./dotNET/CHANGELOG.md)
+* [java/CHANGELOG.md](./java/CHANGELOG.md)
+
+## Quick Start
+
+Both SDKs ship with `run-sample` scripts that build and run the `DOSaleComplete` connectivity test in one step.
+
+**PowerShell (Windows):**
+
+```powershell
+# .NET
+cd dotNET && .\run-sample.ps1
+
+# Java
+cd java && .\run-sample.ps1
+```
+
+**Bash (Linux / macOS / Git Bash):**
+
+```bash
+# .NET
+cd dotNET && ./run-sample.sh
+
+# Java
+cd java && ./run-sample.sh
+```
+
+**Command Prompt (Windows):**
+
+```bat
+cd dotNET && run-sample.bat
+cd java    && run-sample.bat
+```
+
+Fill in your Payflow credentials in the sample file before running. The credentials section is near the top of `DOSaleComplete.cs` / `DOSaleComplete.java`.
+
+## Build Systems
+
+### .NET
+
+The .NET SDK uses the standard **`dotnet` CLI** (SDK-style project file). NuGet package metadata is embedded in `PFProSDK.csproj`; no separate `.nuspec` or vendored `nuget.exe` is needed.
+
+```powershell
+cd dotNET/PFProSDK
+dotnet build          # build for net8.0 + net48
+dotnet pack -c Release  # produces Payflow_dotNET_SDK.5.0.3.nupkg
+```
+
+The resulting `.nupkg` is a multi-targeted NuGet package compatible with .NET 8.0, .NET 10.0, and .NET Framework 4.8.
+
+### Java
+
+The Java SDK uses **Apache Maven**. The library has zero external runtime dependencies — XML parsing uses the JDK-bundled JAXP implementation.
+
+```bash
+cd java
+mvn clean package   # produces target/payflow.jar
+```
 
 ## Documentation
 
-See the [Payflow Gateway Developer's Guide](https://developer.paypal.com/docs/payflow/integration-guide/) for more info.
+* **Payflow Gateway Developer's Guide:** [developer.paypal.com/docs/payflow/integration-guide/](https://developer.paypal.com/docs/payflow/integration-guide/)
+* **XMLPay schema and general info:** [Payflow Developer's Guide (NVP/SOAP)](https://developer.paypal.com/api/nvp-soap/payflow/integration-guide/)
+* **New Features & Revision History:** [developer.paypal.com/docs/payflow/integration-guide/new-features/](https://developer.paypal.com/docs/payflow/integration-guide/new-features/)
+* **.NET API Reference** (generated): build `dotNET/Payflow SDK Docs/PayflowSDKDocs.shfbproj` with [SHFB v2026+](https://github.com/EWSoftware/SHFB); output at `dotNET/Payflow SDK Docs/Help/index.html`
+* **Java API Reference** (generated): run `mvn javadoc:javadoc` in `java/` (or use `generate-docs.bat/ps1/sh`); output at `java/target/site/apidocs/index.html`
 
-## XMLPay
+## SDK Binaries (v4)
 
-The original XMLPay Developer Guide is no longer available, but the XML Schema for Payflow's XMLPay is available and the general information for the data can be found in the [Payflow Developer's Guide](https://developer.paypal.com/api/nvp-soap/payflow/integration-guide/).
+The last pre-open-source v4 SDK binaries are preserved in the [SDK Binaries](./SDK%20Binaries/) directory. They do not include the newest NVPs; all active development is on v5.
 
-## General Information
+## Contributing
 
-For information on changes to the Payflow Gateway, see [New Features](https://developer.paypal.com/docs/payflow/integration-guide/new-features/) and [Revision History](https://developer.paypal.com/docs/payflow/integration-guide/reference/revision-history/).
+See the `CONTRIBUTING.md` in the relevant SDK directory:
 
-Any questions or issues with these SDKs, please send open an [ISSUE](https://github.com/paypal/payflow-gateway/issues) or you can email DL-PayPal-Payflow-SDK@paypal.com.
+* [dotNET/CONTRIBUTING.md](./dotNET/CONTRIBUTING.md)
+* [java/CONTRIBUTING.md](./java/CONTRIBUTING.md)
+
+Questions or bugs? Open an [issue](https://github.com/paypal/payflow-gateway/issues) or email DL-PayPal-Payflow-SDK@paypal.com.
 
 ## License
-Code released under [SDK LICENSE](LICENSE)  
+
+Code released under the [SDK LICENSE](./LICENSE).

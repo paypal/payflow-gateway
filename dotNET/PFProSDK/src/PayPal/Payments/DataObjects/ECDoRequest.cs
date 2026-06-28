@@ -51,6 +51,12 @@ namespace PayPal.Payments.DataObjects
 		{
 			mPayerId = PayerId;
 		}
+		/// <summary>
+		/// Constructor for ECDoRequest with explicit action type (for Billing Agreement DO operations).
+		/// </summary>
+		/// <param name="Token">The token received from the SET operation.</param>
+		/// <param name="PayerId">The payer ID returned from the GET operation.</param>
+		/// <param name="Action">The action type (e.g., <c>DOBA</c>).</param>
 		protected ECDoRequest(String Token, String PayerId, String Action) : base(PayflowConstants.ACTIONTYPE_DOBA, Token)
 		{
 			mPayerId = PayerId;

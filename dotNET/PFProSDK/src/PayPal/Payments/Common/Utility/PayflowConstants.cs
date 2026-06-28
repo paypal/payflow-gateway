@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 #endregion
 
@@ -376,12 +377,12 @@ namespace PayPal.Payments.Common.Utility
         /// <summary>
         /// Communication Error Codes
         /// </summary>
-        internal static Hashtable CommErrorCodes = PopulateErrorCodes();
+        internal static Dictionary<string, string> CommErrorCodes = PopulateErrorCodes();
 
         /// <summary>
         /// Communication Error Messages
         /// </summary>
-        internal static Hashtable CommErrorMessages = PopulateErrorMessages();
+        internal static Dictionary<string, string> CommErrorMessages = PopulateErrorMessages();
 
         #endregion
 
@@ -389,9 +390,9 @@ namespace PayPal.Payments.Common.Utility
         /// Populates Error code hash table
         /// </summary>
         /// <returns>Error code hash table</returns>
-        private static Hashtable PopulateErrorCodes()
+        private static Dictionary<string, string> PopulateErrorCodes()
         {
-            Hashtable ErrorCodeTable = new Hashtable();
+            var ErrorCodeTable = new Dictionary<string, string>();
             ErrorCodeTable.Add(E_SOK_CONN_FAILED, "-1");
             ErrorCodeTable.Add(E_PARM_NAME, "-6");
             ErrorCodeTable.Add(E_PARM_NAME_LEN, "-7");
@@ -417,9 +418,9 @@ namespace PayPal.Payments.Common.Utility
         /// Populates Message code hash table
         /// </summary>
         /// <returns>Message code hash table</returns>
-        private static Hashtable PopulateErrorMessages()
+        private static Dictionary<string, string> PopulateErrorMessages()
         {
-            Hashtable ErrorMessageTable = new Hashtable();
+            var ErrorMessageTable = new Dictionary<string, string>();
             ErrorMessageTable.Add(E_SOK_CONN_FAILED, "Failed to connect to host");
             ErrorMessageTable.Add(E_PARM_NAME, "Parameter list format error: & in name");
             ErrorMessageTable.Add(E_PARM_NAME_LEN, "Parameter list format error: invalid [] name length clause");

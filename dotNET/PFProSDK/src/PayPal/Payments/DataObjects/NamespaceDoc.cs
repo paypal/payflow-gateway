@@ -23,7 +23,7 @@ namespace PayPal.Payments.DataObjects
 	/// <item><term>AUTHCODE</term><description>VoiceAuthTransaction,  TransactionResponse</description><description>AuthCode</description><description>String</description></item>
 	/// <item><term>AUTHENTICATION_ID</term><description>BuyerAuthResponse</description><description><see cref='BuyerAuthResponse.Authentication_Id'>Authentication_Id</see></description><description>String</description></item>
 	/// <item><term>AUTHENTICATION_STATUS</term><description>BuyerAuthResponse</description><description><see cref='BuyerAuthResponse.Authentication_Status'>Authentication_Status</see></description><description>String</description></item>
-	/// <item><term>AUTHTYPE</term><description>ACHTender</description><description><see cref='AACHTender.'>AuthType</see></description><description>String</description></item>
+	/// <item><term>AUTHTYPE</term><description>ACHTender</description><description><see cref='BaseTender.AuthType'>AuthType</see></description><description>String</description></item>
 	/// <item><term>AVSADDR</term><description>TransactionResponse</description><description><see cref='TransactionResponse.AVSAddr'>AVSAddr</see></description><description>String</description></item>
 	/// <item><term>AVSZIP</term><description>TransactionResponse</description><description><see cref='TransactionResponse.AVSZip'>AVSZip</see></description><description>String</description></item>
 	/// <item><term>BA_CUSTOM</term><description>ECSetRequest</description><description><see cref='ECSetRequest.BA_Custom'>BA_Custom</see></description><description>String</description></item>

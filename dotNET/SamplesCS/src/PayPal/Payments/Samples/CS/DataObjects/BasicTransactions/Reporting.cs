@@ -2,7 +2,6 @@ using System;
 using System.Net;
 using System.Xml;
 using System.Text;
-using System.Collections;
 using System.IO;
 
 namespace PayPal.Payments.Samples.CS.DataObjects.BasicTransactions
@@ -25,6 +24,16 @@ namespace PayPal.Payments.Samples.CS.DataObjects.BasicTransactions
 	{
 		public Reporting()
 		{
+		}
+
+		private static byte[] readServiceResponse(HttpWebResponse response)
+		{
+			using (Stream responseStream = response.GetResponseStream())
+			using (MemoryStream ms = new MemoryStream())
+			{
+				responseStream.CopyTo(ms);
+				return ms.ToArray();
+			}
 		}
 
 		public static void Main(string[] Args)

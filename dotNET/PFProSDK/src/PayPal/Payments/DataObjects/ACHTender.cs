@@ -21,11 +21,6 @@ namespace PayPal.Payments.DataObjects
         #region "Member Variables"
 
         /// <summary>
-        /// ACH Auth Type
-        /// </summary>
-        private String mAuthType;
-
-        /// <summary>
         /// ACH Prenote (Y/N)
         /// </summary>
         private String mPreNote;
@@ -163,7 +158,6 @@ namespace PayPal.Payments.DataObjects
 			try
 			{
 				base.GenerateRequest();
-				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_AUTHTYPE, mAuthType));
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_PRENOTE, mPreNote));
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_TERMCITY, mTermCity));
 				RequestBuffer.Append(PayflowUtility.AppendToRequest(PayflowConstants.PARAM_TERMSTATE, mTermState));

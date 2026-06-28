@@ -6,7 +6,7 @@
 
     <groupId>com.paypal</groupId>
     <artifactId>payflow</artifactId>
-    <version>5.0.2</version>
+    <version>5.0.3</version>
     <packaging>jar</packaging>
 
     <name>Payflow Java SDK</name>
@@ -69,6 +69,25 @@
                             <Implementation-Version>${project.version}</Implementation-Version>
                         </manifestEntries>
                     </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <!-- Include only the SDK source trees; exclude the sample sources -->
+                    <sourcepath>
+                        ${project.basedir}/src/sdk/base;${project.basedir}/src/sdk/dataobjects;${project.basedir}/src/sdk/transactions
+                    </sourcepath>
+                    <windowtitle>Payflow Java SDK ${project.version}</windowtitle>
+                    <doctitle>Payflow Java SDK ${project.version} API Reference</doctitle>
+                    <header>Payflow Java SDK ${project.version}</header>
+                    <bottom>Copyright &#169; PayPal. All rights reserved.</bottom>
+                    <reportOutputDirectory>${project.reporting.outputDirectory}</reportOutputDirectory>
+                    <destDir>apidocs</destDir>
+                    <doclint>none</doclint>
                 </configuration>
             </plugin>
         </plugins>

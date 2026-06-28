@@ -30,7 +30,7 @@ namespace PayPal.Payments.DataObjects
 		#region "Properties"		
 
 		/// <summary>
-		/// 
+		/// Gets or Sets the ExpressCheckout request data object associated with this tender.
 		/// </summary>
 		public ExpressCheckoutRequest ExpressCheckoutRequest 
 		{
