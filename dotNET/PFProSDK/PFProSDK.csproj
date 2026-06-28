@@ -18,7 +18,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
     <!-- NuGet package metadata (replaces PFProSDK.nuspec + vendored nuget.exe; use "dotnet pack") -->
-    <PackageId>Payflow_dotNET_SDK</PackageId>
+    <PackageId>PayPal.Payflow</PackageId>
     <Version>5.0.3</Version>
     <Authors>PayPal</Authors>
     <Description>PayPal Payflow Gateway SDK for .NET. Supports net48, net8.0, and net10.0.</Description>
