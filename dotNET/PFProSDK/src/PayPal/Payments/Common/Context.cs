@@ -493,9 +493,9 @@ namespace PayPal.Payments.Common
 		}
 
 		/// <summary>
-		/// Not implemented 
+		/// Not implemented
 		/// </summary>
-		/// <param name="obj"></param>
+		/// <param name="obj">The object to compare with the current instance.</param>
 		/// <returns>Object.Equals</returns>
 		[System.Runtime.InteropServices.ComVisible(false)]
 		public override bool Equals(object obj)
