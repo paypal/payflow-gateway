@@ -154,7 +154,7 @@ public class DOSaleComplete {
 		// Currency Code USD is US ISO currency code. If no code passed, USD is default.
 		// See the Developer's Guide for the list of three-character currency codes
 		// available.
-		Currency amt = new Currency(new Double(25.25), "USD");
+		Currency amt = new Currency(Double.valueOf(25.25), "USD");
 
 		// A valid amount is a two decimal value. An invalid amount will generate a
 		// result code 4.
@@ -251,7 +251,6 @@ public class DOSaleComplete {
 		//
 		// Create the ShipTo object.
 		ShipTo ship;
-		new ShipTo();
 
 		// To prevent an 'Address Mismatch' fraud trigger, we are shipping to the
 		// billing address. However,
@@ -604,7 +603,7 @@ public class DOSaleComplete {
 				System.out.println("Press Enter to Exit ...");
 			} else {
 				try {
-					Thread.currentThread().sleep(5000); // let's wait 5 seconds to see if this is a temporary network
+					Thread.sleep(5000); // let's wait 5 seconds to see if this is a temporary network
 														// issue.
 					System.out.println("Retry #: " + Integer.toString(trxCount));
 					trxCount++;
