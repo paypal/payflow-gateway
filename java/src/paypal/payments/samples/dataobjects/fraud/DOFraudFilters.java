@@ -50,7 +50,7 @@ public class DOFraudFilters {
 		Invoice inv = new Invoice();
 
 		// Set Amount.
-		Currency amt = new Currency(new Double(51.00));
+		Currency amt = new Currency(Double.valueOf(51.00));
 		inv.setAmt(amt);
 		inv.setPoNum("PO12345");
 		inv.setInvNum("INV12345");

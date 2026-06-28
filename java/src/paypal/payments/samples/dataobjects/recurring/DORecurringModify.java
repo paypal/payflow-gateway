@@ -44,14 +44,14 @@ public class DORecurringModify {
 		recurInfo.setOrigProfileId("<ORIGINAL ID>");
 		recurInfo.setProfileName("<PROFILE NAME>");
 		recurInfo.setOptionalTrx("S");
-		Currency oamt = new Currency(new Double(5.25));
+		Currency oamt = new Currency(Double.valueOf(5.25));
 		recurInfo.setOptionalTrxAmt(oamt);
 
 		// Create a new Invoice data object with the Amount, Billing Address etc.
 		// details.
 		Invoice inv = new Invoice();
 		// Set Amount.
-		Currency amt = new Currency(new Double(25.12));
+		Currency amt = new Currency(Double.valueOf(25.12));
 		inv.setAmt(amt);
 		inv.setPoNum("PO12345");
 		inv.setInvNum("INV12345");

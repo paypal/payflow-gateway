@@ -159,7 +159,7 @@ public class DOSaleComplete {
 		// A valid amount is a two decimal value. An invalid amount will generate a
 		// result code 4.
 		// For values which have more than two decimal places such as:
-		// Currency amt = new Currency(new Double(25.1214));
+		// Currency amt = new Currency(Double.valueOf(25.1214));
 		// You will either need to truncate or round as needed using the following
 		// properties:
 		// amt.setRound(true);
@@ -305,7 +305,7 @@ public class DOSaleComplete {
 		//// Create a line item.
 		// LineItem item = new LineItem();
 		//// Add first item.
-		// Currency lnamt = new Currency(new Double(8.95), "USD");
+		// Currency lnamt = new Currency(Double.valueOf(8.95), "USD");
 		// item.setAmt(lnamt);
 		// item.setDesc("Line 1");
 		// item.setQty(1);
@@ -315,7 +315,7 @@ public class DOSaleComplete {
 		//// Create a line item.
 		// LineItem item1 = new LineItem();
 		//// Add second item.
-		// Currency lnamt1 = new Currency(new Double(5.25), "USD");
+		// Currency lnamt1 = new Currency(Double.valueOf(5.25), "USD");
 		// item1.setAmt(lnamt);
 		// item1.setDesc("Line 2");
 		// item1.setQty(2);

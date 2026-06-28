@@ -52,7 +52,7 @@ public class DORecurringAdd {
 		Invoice inv = new Invoice();
 
 		// Set Amount.
-		Currency amt = new Currency(new Double(25.75), "USD");
+		Currency amt = new Currency(Double.valueOf(25.75), "USD");
 		inv.setAmt(amt);
 		inv.setPoNum("PO12345");
 		// inv.setInvNum("INV12345");
@@ -91,7 +91,7 @@ public class DORecurringAdd {
 		// Peform an Optional Transaction.
 		recurInfo.setOptionalTrx("S"); // S = Sale, A = Authorization
 		// Set the amount if doing a "Sale" for the Optional Transaction.
-		Currency oTrxAmt = new Currency(new Double(25.75 + 9.95), "USD");
+		Currency oTrxAmt = new Currency(Double.valueOf(25.75 + 9.95), "USD");
 		recurInfo.setOptionalTrxAmt(oTrxAmt);
 
 		// Create a new Recurring Add Transaction.

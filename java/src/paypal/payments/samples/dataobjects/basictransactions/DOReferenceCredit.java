@@ -50,7 +50,7 @@ public class DOReferenceCredit {
 		// Currency Code USD is US ISO currency code. If no code passed, USD is default.
 		// See the Developer's Guide for the list of three-character currency codes
 		// available.
-		// Currency amt = new Currency(new Double(5.00));
+		// Currency amt = new Currency(Double.valueOf(5.00));
 		// inv.setAmt(amt);
 		// CreditTransaction trans = new CreditTransaction("<ORIG_TRANS_ID>", user,
 		// connection, inv, PayflowUtility.getRequestId());

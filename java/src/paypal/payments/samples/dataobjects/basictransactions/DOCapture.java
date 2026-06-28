@@ -49,7 +49,7 @@ public class DOCapture {
 		// Currency Code USD is US ISO currency code. If no code passed, USD is default.
 		// See the Developer//s Guide for the list of three-character currency codes
 		// available.
-		// Currency amt = new Currency(new Double(25.12));
+		// Currency amt = new Currency(Double.valueOf(25.12));
 		// inv.setAmt(amt);
 		// CaptureTransaction Trans = new CaptureTransaction("<ORIGINAL_PNREF>", User,
 		// Connection, Inv, PayflowUtility.RequestId);

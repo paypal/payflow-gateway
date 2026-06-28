@@ -46,7 +46,7 @@ public class DOSale_Base {
 		Invoice inv = new Invoice();
 
 		// Set Amount.
-		Currency amt = new Currency(new Double(25.1256));
+		Currency amt = new Currency(Double.valueOf(25.1256));
 		inv.setAmt(amt);
 		// Truncate the Amount value using the truncate feature of
 		// the Currency Data Object.

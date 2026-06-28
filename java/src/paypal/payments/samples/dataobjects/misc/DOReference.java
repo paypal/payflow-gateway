@@ -51,7 +51,7 @@ public class DOReference {
 		Invoice inv = new Invoice();
 
 		// Set Amount.
-		Currency amt = new Currency(new Double(25.12));
+		Currency amt = new Currency(Double.valueOf(25.12));
 		inv.setAmt(amt);
 
 		// Create a new Tender - Base Tender data object and set the Tender Type to "C".

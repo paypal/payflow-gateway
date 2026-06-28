@@ -90,7 +90,7 @@ public class DODoEC {
 		// details.
 		Invoice inv = new Invoice();
 		// Set Amount.
-		Currency amt = new Currency(new Double(25.00));
+		Currency amt = new Currency(Double.valueOf(25.00));
 		inv.setAmt(amt);
 		inv.setComment1("Testing Express Checkout");
 

@@ -49,7 +49,7 @@ public class DOSale_ACH {
 		Invoice inv = new Invoice();
 
 		// Set Amount.
-		Currency amt = new Currency(new Double(25.12));
+		Currency amt = new Currency(Double.valueOf(25.12));
 		inv.setAmt(amt);
 		inv.setPoNum("PO12345");
 		inv.setInvNum("INV12345");
