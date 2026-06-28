@@ -1,38 +1,42 @@
 ---
 name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
+about: Report a bug or unexpected behavior in the Payflow SDK
+title: '[Bug] '
+labels: 'bug'
 assignees: ''
 
 ---
 
+**SDK and environment**
+- SDK: [ ] .NET (C#)  [ ] .NET (VB)  [ ] Java
+- SDK version: 5.0.3
+- Runtime/framework: (e.g. .NET 8.0, .NET Framework 4.8, Java 17)
+- OS: (e.g. Windows 11, macOS 14, Ubuntu 22.04)
+
 **Describe the bug**
 A clear and concise description of what the bug is.
 
-**To Reproduce**
+**To reproduce**
 Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+1. 
+2. 
+3. 
 
 **Expected behavior**
 A clear and concise description of what you expected to happen.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+**Actual behavior**
+What actually happened, including any error messages or response codes from Payflow.
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+**Error output / stack trace**
+```
+Paste any error messages, exceptions, or stack traces here.
+```
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+**Code sample**
+```csharp
+// Minimal code sample that reproduces the issue (remove any real credentials)
+```
 
 **Additional context**
 Add any other context about the problem here.
