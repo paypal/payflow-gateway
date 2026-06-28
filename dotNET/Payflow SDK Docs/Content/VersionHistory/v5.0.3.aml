@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<topic id="39f7b5f8-ea46-4257-93e8-5791e57efe2a" revisionNumber="1">
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<para>June 2026</para>
+		</introduction>
+
+		<section>
+			<title>Changes in This Release</title>
+			<content>
+				<phrase>
+					<legacyBold>Security</legacyBold>
+				</phrase>
+				<list class="bullet">
+					<listItem>
+						All 71 C# and VB sample files now read credentials from environment variables
+						(<codeInline>PAYFLOW_USER</codeInline>, <codeInline>PAYFLOW_VENDOR</codeInline>,
+						<codeInline>PAYFLOW_PARTNER</codeInline>, <codeInline>PAYFLOW_PASSWORD</codeInline>)
+						with <codeInline>App.config</codeInline> as a fallback. No credentials appear in
+						any source file. CI/CD pipelines can inject credentials via environment variables;
+						developers fill in <codeInline>SamplesCS/App.config</codeInline> or
+						<codeInline>SamplesVB/App.config</codeInline> locally (both files are pre-configured
+						with <codeInline>git update-index --skip-worktree</codeInline> so edits are never staged).
+					</listItem>
+					<listItem>
+						<codeInline>.gitignore</codeInline> hardened with patterns covering
+						<codeInline>*.properties</codeInline>, <codeInline>.env</codeInline>,
+						<codeInline>secrets.*</codeInline>, <codeInline>credentials.*</codeInline>,
+						and related file types to prevent accidental credential commits.
+					</listItem>
+				</list>
+
+				<phrase>
+					<legacyBold>Build Modernization</legacyBold>
+				</phrase>
+				<list class="bullet">
+					<listItem>
+						Added <legacyBold>.NET 8.0</legacyBold> and <legacyBold>.NET 10.0</legacyBold> as
+						supported targets alongside .NET Framework 4.8. All three projects
+						(<codeInline>PFProSDK</codeInline>, <codeInline>SamplesCS</codeInline>,
+						<codeInline>SamplesVB</codeInline>) now multi-target
+						<codeInline>net8.0;net10.0;net48</codeInline>.
+					</listItem>
+					<listItem>
+						Migrated <codeInline>SamplesCS</codeInline> and <codeInline>SamplesVB</codeInline>
+						project files to SDK-style format.
+					</listItem>
+					<listItem>
+						SDK ships <codeInline>System.Configuration.ConfigurationManager</codeInline> NuGet
+						reference for net8.0/net10.0 and an explicit <codeInline>System.Configuration</codeInline>
+						framework reference for net48.
+					</listItem>
+					<listItem>
+						Published to NuGet.org as
+						<externalLink>
+							<linkText>PayPal.Payflow</linkText>
+							<linkUri>https://www.nuget.org/packages/PayPal.Payflow</linkUri>
+						</externalLink>:
+						<codeInline>dotnet add package PayPal.Payflow</codeInline>
+					</listItem>
+				</list>
+
+				<phrase>
+					<legacyBold>Bug Fixes</legacyBold>
+				</phrase>
+				<list class="bullet">
+					<listItem>
+						<legacyBold>Error -109 (PAYFLOW_HOST not found) on .NET 8/10</legacyBold> — stale
+						<codeInline>&lt;configSections&gt;</codeInline> EntityFramework entry in
+						<codeInline>App.config</codeInline> caused <codeInline>ConfigurationManager</codeInline>
+						to throw on startup. Fixed by cleaning <codeInline>App.config</codeInline> and switching
+						<codeInline>PayflowUtility.AppSettings()</codeInline> from
+						<codeInline>AppSettingsReader.GetValue()</codeInline> (throws on missing key) to
+						<codeInline>ConfigurationManager.AppSettings[]</codeInline> (returns null).
+					</listItem>
+					<listItem>
+						<legacyBold>CS0103 ConfigurationManager not found (net48)</legacyBold> — SDK-style
+						projects do not implicitly reference <codeInline>System.Configuration.dll</codeInline>
+						for the net48 target. Fixed with an explicit framework reference.
+					</listItem>
+					<listItem>
+						<codeInline>ACHTender</codeInline> — removed duplicate shadow field
+						<codeInline>AUTHTYPE</codeInline> in the subclass that was emitting a duplicate NVP
+						parameter on every ACH transaction.
+					</listItem>
+					<listItem>
+						<codeInline>BaseTransaction.mUserItem</codeInline> — removed dead field (wrong type,
+						permanently null, unreachable guard block).
+					</listItem>
+					<listItem>
+						<codeInline>RecurringResponse.Name</codeInline> — removed always-null backing field.
+					</listItem>
+					<listItem>
+						<codeInline>Reporting.cs</codeInline> — missing <codeInline>readServiceResponse</codeInline>
+						method that caused a compile error.
+					</listItem>
+					<listItem>
+						<codeInline>DOClientInfo.vb</codeInline> — corrected stale API references
+						(<codeInline>Bill.Street</codeInline> → <codeInline>BillToStreet</codeInline>, etc.).
+					</listItem>
+				</list>
+
+				<phrase>
+					<legacyBold>Sample Fixes</legacyBold>
+				</phrase>
+				<list class="bullet">
+					<listItem>
+						All hardcoded test card expiration dates updated to <codeInline>0130</codeInline>
+						(January 2030). XMLPay samples use <codeInline>203001</codeInline> (YYYYMM format).
+						Previously dates ranged from <codeInline>0109</codeInline> to
+						<codeInline>1215</codeInline>, all expired.
+					</listItem>
+					<listItem>
+						<codeInline>Reporting.cs</codeInline> modernized — replaced obsolete
+						<codeInline>HttpWebRequest</codeInline> / <codeInline>HttpWebResponse</codeInline>
+						(warning SYSLIB0014) with <codeInline>HttpClient</codeInline> and
+						<codeInline>async Task Main</codeInline>. Also fixed
+						<codeInline>xml.LoadXml("report.xml")</codeInline> →
+						<codeInline>xml.Load("report.xml")</codeInline>
+						(<codeInline>LoadXml</codeInline> parses a string literal, not a file path).
+					</listItem>
+				</list>
+
+				<phrase>
+					<legacyBold>Documentation</legacyBold>
+				</phrase>
+				<list class="bullet">
+					<listItem>
+						SHFB project updated to v2026.3.29.0 (presentation style Themed2026).
+					</listItem>
+					<listItem>
+						Added <codeInline>view-docs.ps1</codeInline>, <codeInline>view-docs.bat</codeInline>,
+						and <codeInline>view-docs.sh</codeInline> scripts — SHFB Website output requires a
+						local HTTP server (browsers block <codeInline>file://</codeInline> JavaScript).
+						Scripts install <codeInline>dotnet-serve</codeInline> automatically on first run
+						and open the browser.
+					</listItem>
+					<listItem>
+						License corrected from GNU General Public License to
+						<legacyBold>Apache License, Version 2.0</legacyBold>.
+					</listItem>
+				</list>
+			</content>
+		</section>
+
+		<relatedTopics>
+			<link xlink:href="df400d3a-1030-4d72-865c-96b23b9f0f55" />
+		</relatedTopics>
+
+	</developerConceptualDocument>
+</topic>

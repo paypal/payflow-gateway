@@ -8,14 +8,9 @@
 		<section>
 			<title>Getting Started</title>
 			<content>
-        <para>
-          <legacyBold>
-            This verison of the Payflow SDK is not backwards compatible with earlier versions.
-          </legacyBold>
-        </para>        
-         <para>Please see the <link xlink:href="df400d3a-1030-4d72-865c-96b23b9f0f55">version history</link> for list of the changes.</para>
-         <para>You should to refer the <link xlink:href="https://developer.paypal.com/docs/classic/payflow/integration-guide">Payflow Gateway Developer's Guide</link> as 
-        well as the included sample files to assist you in your integration."</para>
+				<para>Please see the <link xlink:href="df400d3a-1030-4d72-865c-96b23b9f0f55">version history</link> for a full list of changes in each release.</para>
+				<para>Refer to the <externalLink><linkText>Payflow Gateway Developer's Guide</linkText><linkUri>https://developer.paypal.com/docs/classic/payflow/integration-guide</linkUri></externalLink> as well as the included sample files to assist with your integration.</para>
+				<para>For questions or to report issues, visit the <externalLink><linkText>GitHub repository</linkText><linkUri>https://github.com/paypal/payflow-gateway/issues</linkUri></externalLink>.</para>
 			</content>
 		</section>
 

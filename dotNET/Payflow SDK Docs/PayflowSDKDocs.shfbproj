@@ -44,9 +44,8 @@
     <NamespaceGrouping>False</NamespaceGrouping>
     <MaximumGroupParts>2</MaximumGroupParts>
     <Preliminary>False</Preliminary>
-    <CopyrightText>
-    </CopyrightText>
-    <FeedbackEMailAddress>DL-PayPal-Payflow-SDK%40paypal.com</FeedbackEMailAddress>
+    <CopyrightText>Copyright 2020 PayPal. Licensed under the Apache License, Version 2.0.</CopyrightText>
+    <FeedbackEMailAddress></FeedbackEMailAddress>
     <SdkLinkTarget>Blank</SdkLinkTarget>
     <NamingMethod>Guid</NamingMethod>
     <ContentPlacement>AboveNamespaces</ContentPlacement>
@@ -83,6 +82,7 @@
   <ItemGroup>
     <None Include=".editorconfig" />
     <None Include="Content\GPL.aml" />
+    <None Include="Content\VersionHistory\v5.0.3.aml" />
     <None Include="Content\VersionHistory\v5.0.2.aml" />
     <None Include="Content\VersionHistory\v5.0.0.aml" />
     <None Include="Content\VersionHistory\VersionHistory.aml" />

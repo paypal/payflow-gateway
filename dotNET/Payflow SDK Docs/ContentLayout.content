@@ -9,20 +9,26 @@
     <HelpKeywords>
       <HelpKeyword index="K" term="version, history" />
     </HelpKeywords>
+    <Topic id="39f7b5f8-ea46-4257-93e8-5791e57efe2a" visible="True" isSelected="true" title="Version 5.0.3">
+      <HelpKeywords>
+        <HelpKeyword index="K" term="version, 5.0.3" />
+      </HelpKeywords>
+    </Topic>
+    <Topic id="78abef13-b7ae-4d58-ae46-66be2d107624" visible="True" title="Version 5.0.2">
+      <HelpKeywords>
+        <HelpKeyword index="K" term="version, 5.0.2" />
+      </HelpKeywords>
+    </Topic>
     <Topic id="b2509c1b-9f06-4cd2-9497-3d835ae42a01" visible="True" title="Version 5.0.0">
       <HelpKeywords>
         <HelpKeyword index="K" term="version, 5.0.0" />
       </HelpKeywords>
     </Topic>
-    <Topic id="78abef13-b7ae-4d58-ae46-66be2d107624" visible="True" isSelected="true" title="Version 5.0.2">
-      <HelpKeywords>
-        <HelpKeyword index="K" term="version, 5.0.2" />
-      </HelpKeywords>
-    </Topic>
-    <Topic id="c5220611-8086-4202-ba6e-a4d550c777c5" visible="True" title="GNU General Public License">
-      <HelpKeywords>
-        <HelpKeyword index="K" term="License, GPL, GNU" />
-      </HelpKeywords>
-    </Topic>
+  </Topic>
+  <Topic id="c5220611-8086-4202-ba6e-a4d550c777c5" visible="True" title="License (Apache 2.0)">
+    <HelpKeywords>
+      <HelpKeyword index="K" term="license, Apache" />
+      <HelpKeyword index="K" term="license, Apache 2.0" />
+    </HelpKeywords>
   </Topic>
 </Topics>
