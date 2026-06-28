@@ -17,6 +17,8 @@ if (-not (Test-Path $helpDir)) {
     exit 1
 }
 
+$serveExe = Join-Path $env:USERPROFILE ".dotnet\tools\dotnet-serve.exe"
+
 # Install dotnet-serve if not already installed
 $installed = dotnet tool list -g 2>$null | Select-String "dotnet-serve"
 if (-not $installed) {
@@ -32,4 +34,4 @@ Write-Host "Serving docs at $url" -ForegroundColor Cyan
 Write-Host "Press Ctrl+C to stop." -ForegroundColor Yellow
 Start-Process $url
 
-dotnet serve -p $port -d $helpDir
+& $serveExe -p $port -d $helpDir
