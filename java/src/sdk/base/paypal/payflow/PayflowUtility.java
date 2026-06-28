@@ -2,7 +2,6 @@ package paypal.payflow;
 
 
 
-import java.io.ByteArrayOutputStream;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.rmi.server.UID;
@@ -13,17 +12,12 @@ import java.util.Date;
 import java.util.Random;
 import java.text.BreakIterator;
 
-import org.apache.xerces.dom.AttrImpl;
-import org.apache.xerces.dom.ChildNode;
 import org.w3c.dom.*;
-
-// This class is deprecated in Xerces 2.9.0 
-//import org.apache.xml.serialize.XMLSerializer;
-
-// Used for DOM Level 3 LSSerializer in maskXMLPayRequest function.
-// See comments in that function.
-import org.w3c.dom.ls.*;
-import org.w3c.dom.bootstrap.DOMImplementationRegistry;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.StringWriter;
 
 /**
  * This class contains all the utility function's which may be required during a transaction.
@@ -309,7 +303,7 @@ public final class PayflowUtility {
                 Element xmlNode;
                 NodeList xmlPayChildNodes = xmlPayRequest.getChildNodes();
                 NamedNodeMap xmlPayReqAttributes;
-                AttrImpl attributeNode;
+                Node attributeNode;
                 int noOfChildren = xmlPayChildNodes.getLength();
                 try {
 
@@ -318,7 +312,7 @@ public final class PayflowUtility {
                         if (xmlNode.getLocalName().equals(PayflowConstants.XMLPAY_REQUEST_TAG)) {
                             xmlPayReqAttributes = xmlNode.getAttributes();
                             if (xmlPayReqAttributes != null) {
-                                attributeNode = (AttrImpl) xmlPayReqAttributes.getNamedItem(attribute);
+                                attributeNode = xmlPayReqAttributes.getNamedItem(attribute);
                                 if (attributeNode != null) {
                                     attributeValue = attributeNode.getTextContent();
                                 }
@@ -371,7 +365,7 @@ public final class PayflowUtility {
         if (xmlPayRequest != null && nodeName != null && nodeName.length() > 0) {
             NodeList nodeList = xmlPayRequest.getElementsByTagName(nodeName);
             if (nodeList != null && nodeList.getLength() == 1) {
-                ChildNode nodeElement = (ChildNode) nodeList.item(0);
+                Node nodeElement = nodeList.item(0);
                 if (nodeElement != null) {
                     retVal = nodeElement.getTextContent();
                 }
@@ -515,20 +509,10 @@ public final class PayflowUtility {
         //Mask DOB if present : Corresponding XmlPay element -- DOB
         PayflowUtility.maskXmlNodeValue(xmlPayRequest, PayflowConstants.XML_PARAM_DOB);
 
-        // This class was deprecated in Xerces 2.9.0.  Replaced with DOM Level 3 LSSerializer.
-        // 08/21/07 tsieber
-        //XMLSerializer ss = new XMLSerializer();
-        //ByteArrayOutputStream xmlOutputStream = new ByteArrayOutputStream();
-        //ss.setOutputByteStream(xmlOutputStream);
-        //ss.serialize(xmlPayRequest);
-        //retVal = xmlOutputStream.toString();
-
-        System.setProperty(DOMImplementationRegistry.PROPERTY, "org.apache.xerces.dom.DOMImplementationSourceImpl");
-        DOMImplementationRegistry registry = DOMImplementationRegistry.newInstance();
-        DOMImplementation domImpl = registry.getDOMImplementation("LS 3.0");
-        DOMImplementationLS implLS = (DOMImplementationLS) domImpl;
-        LSSerializer dom3Writer = implLS.createLSSerializer();
-        retVal = dom3Writer.writeToString(xmlPayRequest);
+        Transformer transformer = TransformerFactory.newInstance().newTransformer();
+        StringWriter writer = new StringWriter();
+        transformer.transform(new DOMSource(xmlPayRequest), new StreamResult(writer));
+        retVal = writer.toString();
         return retVal;
     }
 
@@ -586,7 +570,7 @@ public final class PayflowUtility {
             NodeList nodeList = xmlPayRequest.getElementsByTagName(nodeName);
 
             if (nodeList != null && nodeList.getLength() == 1) {
-                ChildNode nodeElement = (ChildNode) nodeList.item(0);
+                Node nodeElement = nodeList.item(0);
 
                 if (nodeElement != null) {
                     retVal = nodeElement.getTextContent();

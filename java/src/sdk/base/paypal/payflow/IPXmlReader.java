@@ -1,41 +1,23 @@
 package paypal.payflow;
 
-
-
-import org.apache.xerces.parsers.DOMParser;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 
+import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.StringReader;
 import java.util.HashMap;
 
 class IPXmlReader {
 
-    //private static final char SEPARATOR =  '/';
-    /**
-     * Hash representation of the configuration data present in an XML configuration
-     * file.
-     */
     private HashMap xmlData = null;
 
     private Document xmlDocumentElement = null;
 
     /**
-     * This variable holds the input xml String.
-     * This is used for logging purposes.
-     */
-    //private String xmlString = null;
-
-    /**
-     * IPXmlReader is the sole constructor which reads an XML file and stores
-     * the data in a hash data structure which is easier to traverse by the caller, ECMConfiguration.
-     * The constructor does the following things :
-     * <ol><li> Checks if the Xml file is not null. </li>
-     * <li> It parses the Xml file using DOM Parser and generates a Document object</li>
-     * <li> The method populateXmlConfigurationData() called by passing the Document object</li>
+     * Parses an XML string into a DOM Document.
      *
-     * @param xmlString Configuration File name.
-     * @throws Exception Exception
+     * @param xmlString XML input string.
+     * @throws Exception if the string is null or cannot be parsed.
      */
     public IPXmlReader(String xmlString)
             throws Exception {
@@ -44,19 +26,13 @@ class IPXmlReader {
             throw new Exception("The xml String is null");
         }
 
-        /* Initializing xmlConfigurationData */
         xmlData = new HashMap();
 
-        /* Initializing xmlParser */
-        DOMParser xmlParser;
-        xmlParser = new DOMParser();
-        //creating a StringReader for the xml string
         StringReader xmlStringReader = new StringReader(xmlString);
         InputSource xmlInputSource = new InputSource(xmlStringReader);
-        // Parsing the document
-        xmlParser.parse(xmlInputSource);
-        // Creating a Document object.
-        this.xmlDocumentElement = xmlParser.getDocument();
+        this.xmlDocumentElement = DocumentBuilderFactory.newInstance()
+                .newDocumentBuilder()
+                .parse(xmlInputSource);
 
         Logger.getInstance().log("paypal.payflow.IPXmlReader.IPXmlReader(String) : Exiting", PayflowConstants.SEVERITY_DEBUG);
     }

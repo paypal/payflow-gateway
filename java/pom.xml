@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.paypal</groupId>
+    <artifactId>payflow</artifactId>
+    <version>5.0.2</version>
+    <packaging>jar</packaging>
+
+    <name>Payflow Java SDK</name>
+    <description>PayPal Payflow Gateway SDK for Java</description>
+    <url>https://github.com/paypal/payflow-gateway</url>
+
+    <properties>
+        <maven.compiler.release>11</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- No external runtime dependencies: XML parsing uses the JDK built-in JAXP implementation -->
+
+    <build>
+        <!--
+          The SDK source is split across three directories under src/sdk/.
+          build-helper-maven-plugin adds the extra roots so Maven sees all of them.
+          The samples directory (src/paypal/) is intentionally excluded from the
+          library JAR; compile samples manually with payflow.jar on the classpath.
+        -->
+        <finalName>payflow</finalName>
+        <sourceDirectory>src/sdk/base</sourceDirectory>
+
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/sdk/dataobjects</source>
+                                <source>src/sdk/transactions</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.2</version>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Implementation-Title>Payflow Java SDK</Implementation-Title>
+                            <Implementation-Version>${project.version}</Implementation-Version>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

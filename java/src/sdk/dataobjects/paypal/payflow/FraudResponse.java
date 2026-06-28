@@ -1,12 +1,12 @@
 package paypal.payflow;
 
-import org.apache.xerces.parsers.DOMParser;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
+import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -81,15 +81,13 @@ public final class FraudResponse extends BaseResponseDataObject {
 
     private ArrayList parseXmlData(String XmlData) throws Exception {
 
-        DOMParser parser = new DOMParser();
         ByteArrayInputStream byteStream = new ByteArrayInputStream(XmlData.getBytes());
         InputSource source = new InputSource(byteStream);
         ArrayList fraudRuleList = new ArrayList();
-        //try
-        //{
-        parser.parse(source);
 
-        Document xmlDocument = parser.getDocument();
+        Document xmlDocument = DocumentBuilderFactory.newInstance()
+                .newDocumentBuilder()
+                .parse(source);
 
         NodeList ruleList = xmlDocument.getElementsByTagName(PayflowConstants.XML_PARAM_RULE);
         if (ruleList != null) {
@@ -147,11 +145,6 @@ public final class FraudResponse extends BaseResponseDataObject {
             }
         }
 
-        //}
-        //catch(Exception ex)
-        //{
-        //	throw ex;
-        //}
         return fraudRuleList;
     }
 
@@ -196,5 +189,3 @@ public final class FraudResponse extends BaseResponseDataObject {
     }
 
 }
-
-
