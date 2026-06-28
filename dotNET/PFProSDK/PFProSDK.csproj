@@ -24,14 +24,20 @@
     <Description>PayPal Payflow Gateway SDK for .NET. Supports net48, net8.0, and net10.0.</Description>
     <PackageProjectUrl>https://github.com/paypal/payflow-gateway</PackageProjectUrl>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <PackageTags>Payflow;PayflowGateway;PayPal;Payments</PackageTags>
+    <PackageTags>Payflow;PayflowGateway;PayPal;Payments;payment-gateway</PackageTags>
     <RepositoryUrl>https://github.com/paypal/payflow-gateway</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
 
     <!-- HttpWebRequest/WebRequest are marked [Obsolete] in .NET 5+ (SYSLIB0014) but still functional.
          The HTTP layer is intentionally left as-is to preserve the existing retry/reconnect state machine. -->
     <NoWarn>$(NoWarn);SYSLIB0014</NoWarn>
   </PropertyGroup>
+
+  <!-- Include the dotNET README so it appears on the nuget.org package page -->
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
   <!-- System.Configuration.dll is a framework assembly on net48 but SDK-style projects don't
        reference it implicitly — the explicit Reference entry below adds it. On .NET 8/10 the
