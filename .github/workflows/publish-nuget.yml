@@ -11,10 +11,9 @@ jobs:
   publish:
     name: Build and publish NuGet package
     runs-on: ubuntu-latest
-    environment: nuget-publish   # GitHub environment — add an approval gate here if desired
+    environment: nuget-publish
 
     permissions:
-      id-token: write  # Required for NuGet Trusted Publishing (OIDC)
       contents: read
 
     steps:
@@ -29,28 +28,9 @@ jobs:
       - name: Build and pack
         run: dotnet pack dotNET/PFProSDK/PFProSDK.csproj -c Release
 
-      - name: Obtain short-lived NuGet token via Trusted Publishing (OIDC)
-        id: nuget-token
-        run: |
-          # Step 1: Request a GitHub OIDC token
-          OIDC_TOKEN=$(curl -fsSL \
-            -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
-            "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=api://AzureADTokenExchange" \
-            | jq -r '.value')
-
-          # Step 2: Exchange the GitHub OIDC token for a short-lived NuGet API token
-          NUGET_TOKEN=$(curl -fsSL -X POST \
-            -H "Content-Type: application/json" \
-            -d "{\"token\":\"$OIDC_TOKEN\"}" \
-            "https://api.nuget.org/v1/authentication/authenticate" \
-            | jq -r '.token')
-
-          echo "::add-mask::$NUGET_TOKEN"
-          echo "token=$NUGET_TOKEN" >> $GITHUB_OUTPUT
-
       - name: Push to NuGet.org
         run: |
           dotnet nuget push "dotNET/PFProSDK/bin/Release/*.nupkg" \
-            --api-key "${{ steps.nuget-token.outputs.token }}" \
+            --api-key "${{ secrets.NUGET_API_KEY }}" \
             --source https://api.nuget.org/v3/index.json \
             --skip-duplicate
