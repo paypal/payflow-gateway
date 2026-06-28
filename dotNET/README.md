@@ -93,7 +93,7 @@ cd dotNET/PFProSDK
 dotnet pack -c Release
 ```
 
-Output: `bin/Release/Payflow_dotNET_SDK.5.0.3.nupkg` — a single multi-targeted package containing `net8.0`, `net10.0`, and `net48` assemblies.
+Output: `bin/Release/PayPal.Payflow.5.0.3.nupkg` — a single multi-targeted package containing `net8.0`, `net10.0`, and `net48` assemblies.
 
 ## Building with Visual Studio
 

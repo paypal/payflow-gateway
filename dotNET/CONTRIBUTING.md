@@ -79,7 +79,7 @@ cd dotNET/PFProSDK
 dotnet pack -c Release
 ```
 
-Output: `bin/Release/Payflow_dotNET_SDK.<version>.nupkg`
+Output: `bin/Release/PayPal.Payflow.<version>.nupkg`
 
 ---
 

@@ -11,6 +11,12 @@ Open-source SDKs for the PayPal Payflow Gateway — available for **.NET** and *
 | .NET | [`dotNET/`](./dotNET/) | `dotnet` CLI / Visual Studio 2022+ | .NET 8.0, .NET 10.0, or .NET Framework 4.8 |
 | Java | [`java/`](./java/) | Apache Maven 3.6+ | Java 11 |
 
+The .NET SDK is published on NuGet: [![NuGet](https://img.shields.io/nuget/v/PayPal.Payflow)](https://www.nuget.org/packages/PayPal.Payflow)
+
+```powershell
+dotnet add package PayPal.Payflow
+```
+
 See each SDK's directory for full setup and usage details:
 
 * [dotNET/README.md](./dotNET/README.md) — build, NuGet packaging, samples, SHFB docs
@@ -58,12 +64,18 @@ Fill in your Payflow credentials in the sample file before running. The credenti
 
 ### .NET
 
-The .NET SDK uses the standard **`dotnet` CLI** (SDK-style project file). NuGet package metadata is embedded in `PFProSDK.csproj`; no separate `.nuspec` or vendored `nuget.exe` is needed.
+The .NET SDK uses the standard **`dotnet` CLI** (SDK-style project file). The package is published on NuGet.org as [`PayPal.Payflow`](https://www.nuget.org/packages/PayPal.Payflow) and can be installed directly:
+
+```powershell
+dotnet add package PayPal.Payflow
+```
+
+To build locally from source:
 
 ```powershell
 cd dotNET/PFProSDK
-dotnet build          # build for net8.0 + net48
-dotnet pack -c Release  # produces Payflow_dotNET_SDK.5.0.3.nupkg
+dotnet build            # build for net8.0, net10.0, and net48
+dotnet pack -c Release  # produces PayPal.Payflow.5.0.3.nupkg
 ```
 
 The resulting `.nupkg` is a multi-targeted NuGet package compatible with .NET 8.0, .NET 10.0, and .NET Framework 4.8.
