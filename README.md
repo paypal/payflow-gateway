@@ -96,7 +96,7 @@ See the `CONTRIBUTING.md` in the relevant SDK directory:
 * [dotNET/CONTRIBUTING.md](./dotNET/CONTRIBUTING.md)
 * [java/CONTRIBUTING.md](./java/CONTRIBUTING.md)
 
-Questions or bugs? Open an [issue](https://github.com/paypal/payflow-gateway/issues) or email DL-PayPal-Payflow-SDK@paypal.com.
+Questions or bugs? Open an [issue](https://github.com/paypal/payflow-gateway/issues).
 
 ## License
 

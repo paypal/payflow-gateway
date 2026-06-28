@@ -23,4 +23,4 @@ You must be using .NET 4.5 or greater for TLS 1.2 support. However, if still usi
 
 The Payflow Developer Guides can be found at [here](https://developer.paypal.com/docs/payflow/integration-guide/).
 
-Any questions or issues with these SDKs, please send your inquires to DL-PayPal-Payflow-SDK@paypal.com.
+For questions or issues, please open a ticket in the [GitHub Issues](https://github.com/paypal/payflow-gateway/issues) section of the repository.

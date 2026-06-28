@@ -23,7 +23,7 @@
     <Authors>PayPal</Authors>
     <Description>PayPal Payflow Gateway SDK for .NET. Supports net48, net8.0, and net10.0.</Description>
     <PackageProjectUrl>https://github.com/paypal/payflow-gateway</PackageProjectUrl>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageTags>Payflow;PayflowGateway;PayPal;Payments</PackageTags>
     <RepositoryUrl>https://github.com/paypal/payflow-gateway</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
