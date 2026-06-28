@@ -50,6 +50,14 @@ run-sample.bat
 
 Each script runs `mvn clean package`, compiles the sample against the resulting JAR, and runs it — no manual classpath setup required.
 
+> **Note:** When running on JDK 21 or later you may see the following warning from Maven's
+> own Guava dependency. It is cosmetic and can be safely ignored — it has no effect on the
+> build or on the SDK at runtime:
+> ```
+> WARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.google.common.util.concurrent...
+> ```
+> This will be resolved in a future Maven release.
+
 ## Building the SDK
 
 ```bash
