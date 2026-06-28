@@ -44,7 +44,7 @@
     <NamespaceGrouping>False</NamespaceGrouping>
     <MaximumGroupParts>2</MaximumGroupParts>
     <Preliminary>False</Preliminary>
-    <CopyrightText>Copyright 2020 PayPal. Licensed under the Apache License, Version 2.0.</CopyrightText>
+    <CopyrightText>Copyright 2026 PayPal. Licensed under the Apache License, Version 2.0.</CopyrightText>
     <FeedbackEMailAddress></FeedbackEMailAddress>
     <SdkLinkTarget>Blank</SdkLinkTarget>
     <NamingMethod>Guid</NamingMethod>
