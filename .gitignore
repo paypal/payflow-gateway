@@ -442,6 +442,7 @@ credentials.*
 # Java properties files that may hold credentials
 *.properties
 !**/test*.properties
+!**/.mvn/wrapper/maven-wrapper.properties
 
 # Any file explicitly named for credentials
 payflow.properties

@@ -5,7 +5,7 @@
 
 pushd "%~dp0"
 echo Generating Javadoc for Payflow Java SDK...
-mvn javadoc:javadoc --no-transfer-progress
+call "%~dp0mvnw.cmd" javadoc:javadoc --no-transfer-progress
 if errorlevel 1 (
     popd
     echo Javadoc generation failed.

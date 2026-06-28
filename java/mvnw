@@ -1,0 +1,65 @@
+#!/bin/sh
+# Maven Wrapper — downloads Maven automatically if not already cached.
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+WRAPPER_PROPERTIES="$SCRIPT_DIR/.mvn/wrapper/maven-wrapper.properties"
+WRAPPER_CACHE="$HOME/.m2/wrapper/dists"
+
+if [ ! -f "$WRAPPER_PROPERTIES" ]; then
+    echo "[mvnw] ERROR: .mvn/wrapper/maven-wrapper.properties not found." >&2
+    exit 1
+fi
+
+# Read distributionUrl
+DIST_URL="$(grep '^distributionUrl=' "$WRAPPER_PROPERTIES" | cut -d= -f2-)"
+if [ -z "$DIST_URL" ]; then
+    echo "[mvnw] ERROR: distributionUrl not found in maven-wrapper.properties." >&2
+    exit 1
+fi
+
+# Derive names: apache-maven-3.9.9-bin.zip -> apache-maven-3.9.9-bin -> apache-maven-3.9.9
+DIST_FILENAME="$(basename "$DIST_URL")"
+DIST_NAME="${DIST_FILENAME%.zip}"
+MAVEN_DIRNAME="${DIST_NAME%-bin}"
+
+DIST_DIR="$WRAPPER_CACHE/$DIST_NAME"
+MAVEN_HOME="$DIST_DIR/$MAVEN_DIRNAME"
+MVN="$MAVEN_HOME/bin/mvn"
+
+if [ ! -f "$MVN" ]; then
+    echo "[mvnw] Maven not found locally. Downloading from:"
+    echo "[mvnw]   $DIST_URL"
+    echo "[mvnw] This is a one-time download (~10 MB). Please wait..."
+
+    mkdir -p "$DIST_DIR"
+
+    if command -v curl >/dev/null 2>&1; then
+        curl -fsSL -o "$DIST_DIR/$DIST_FILENAME" "$DIST_URL"
+    elif command -v wget >/dev/null 2>&1; then
+        wget -q -O "$DIST_DIR/$DIST_FILENAME" "$DIST_URL"
+    else
+        echo "[mvnw] ERROR: Neither curl nor wget is available. Install one and retry." >&2
+        exit 1
+    fi
+
+    if command -v unzip >/dev/null 2>&1; then
+        unzip -q "$DIST_DIR/$DIST_FILENAME" -d "$DIST_DIR"
+    else
+        echo "[mvnw] ERROR: unzip not found. Install it and retry." >&2
+        exit 1
+    fi
+
+    rm "$DIST_DIR/$DIST_FILENAME"
+
+    if [ ! -f "$MVN" ]; then
+        echo "[mvnw] ERROR: Maven executable not found after extraction: $MVN" >&2
+        exit 1
+    fi
+
+    chmod +x "$MVN"
+    echo "[mvnw] Maven downloaded to: $MAVEN_HOME"
+    echo ""
+fi
+
+exec "$MVN" "$@"

@@ -8,7 +8,7 @@ $root = $PSScriptRoot
 # Step 1: Build SDK JAR
 Write-Host "Building SDK JAR with Maven..." -ForegroundColor Cyan
 Push-Location $root
-mvn clean package -q
+& "$root\mvnw.cmd" clean package -q
 if ($LASTEXITCODE -ne 0) { Pop-Location; Write-Error "Maven build failed."; exit 1 }
 Pop-Location
 

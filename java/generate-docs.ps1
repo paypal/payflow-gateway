@@ -7,7 +7,7 @@ $root = $PSScriptRoot
 
 Write-Host "Generating Javadoc for Payflow Java SDK..." -ForegroundColor Cyan
 Push-Location $root
-mvn javadoc:javadoc --no-transfer-progress
+& "$root\mvnw.cmd" javadoc:javadoc --no-transfer-progress
 if ($LASTEXITCODE -ne 0) { Pop-Location; Write-Error "Javadoc generation failed."; exit 1 }
 Pop-Location
 

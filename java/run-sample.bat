@@ -11,7 +11,7 @@ set SAMPLESRC=%ROOT%src\paypal\payments\samples\dataobjects\basictransactions\DO
 
 echo Building SDK JAR with Maven...
 pushd "%ROOT%"
-mvn clean package -q
+call "%ROOT%mvnw.cmd" clean package -q
 if errorlevel 1 (
     popd
     echo Maven build failed.
@@ -31,3 +31,4 @@ echo.
 echo Running DOSaleComplete...
 echo ------------------------------------------------------
 java -cp "%JAR%;%SAMPLEBIN%" paypal.payments.samples.dataobjects.basictransactions.DOSaleComplete
+

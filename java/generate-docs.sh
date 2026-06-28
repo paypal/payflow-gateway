@@ -7,7 +7,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 echo "Generating Javadoc for Payflow Java SDK..."
-(cd "$SCRIPT_DIR" && mvn javadoc:javadoc --no-transfer-progress)
+(cd "$SCRIPT_DIR" && ./mvnw javadoc:javadoc --no-transfer-progress)
 
 echo ""
 echo "Done. Open: $SCRIPT_DIR/target/site/apidocs/index.html"

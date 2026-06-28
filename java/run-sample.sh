@@ -12,7 +12,7 @@ SAMPLE_SRC="$SCRIPT_DIR/src/paypal/payments/samples/dataobjects/basictransaction
 
 # Step 1: Build SDK JAR
 echo "Building SDK JAR with Maven..."
-(cd "$SCRIPT_DIR" && mvn clean package -q)
+(cd "$SCRIPT_DIR" && ./mvnw clean package -q)
 
 # Step 2: Compile sample
 echo "Compiling DOSaleComplete sample..."
