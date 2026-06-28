@@ -16,4 +16,8 @@
     <ProjectReference Include="..\PFProSDK\PFProSDK.csproj" />
   </ItemGroup>
 
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+
 </Project>
