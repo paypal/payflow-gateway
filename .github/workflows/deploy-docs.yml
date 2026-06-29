@@ -28,22 +28,31 @@ jobs:
         with:
           dotnet-version: '8.x'
 
-      - name: Install SHFB
+      - name: Install SHFB from GitHub release
         shell: powershell
-        run: choco install sandcastlehelpfilebuilder --yes --no-progress
+        run: |
+          $version = "2026.3.29.0"
+          $zip = "$env:TEMP\SHFB.zip"
+          $dest = "$env:TEMP\SHFB"
+          Invoke-WebRequest "https://github.com/EWSoftware/SHFB/releases/download/v$version/SHFBInstaller_$version.zip" `
+            -OutFile $zip -UseBasicParsing
+          Expand-Archive $zip $dest -Force
+          $exe = Get-ChildItem $dest -Filter "*.exe" | Select-Object -First 1
+          Write-Host "Running: $($exe.FullName)"
+          Start-Process -FilePath $exe.FullName -ArgumentList "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART" -Wait
+          # Capture the machine-scope SHFBROOT set by the installer for subsequent steps
+          $shfbRoot = [System.Environment]::GetEnvironmentVariable("SHFBROOT", "Machine")
+          "SHFBROOT=$shfbRoot" | Out-File -FilePath $env:GITHUB_ENV -Append
 
       - name: Build PFProSDK (generates XML doc)
         run: dotnet build "dotNET/PFProSDK/PFProSDK.csproj" -c Release
 
       - name: Build SHFB docs
         shell: powershell
-        run: |
-          # Chocolatey sets SHFBROOT at machine scope; pick it up explicitly.
-          $env:SHFBROOT = [System.Environment]::GetEnvironmentVariable("SHFBROOT", "Machine")
-          dotnet msbuild "dotNET/Payflow SDK Docs/PayflowSDKDocs.shfbproj" /p:Configuration=Release
+        run: dotnet msbuild "dotNET/Payflow SDK Docs/PayflowSDKDocs.shfbproj" /p:Configuration=Release
 
       - name: Upload .NET docs artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: dotnet-docs
           path: "dotNET/Payflow SDK Docs/Help/"
@@ -56,7 +65,7 @@ jobs:
       - uses: actions/checkout@v5
 
       - name: Setup Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: '17'
           distribution: 'temurin'
@@ -66,7 +75,7 @@ jobs:
         run: mvn -f java/pom.xml javadoc:javadoc -q
 
       - name: Upload Java docs artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: java-docs
           path: java/target/site/apidocs/
@@ -81,13 +90,13 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Download .NET docs
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: dotnet-docs
           path: _site/dotnet/
 
       - name: Download Java docs
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: java-docs
           path: _site/java/
