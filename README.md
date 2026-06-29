@@ -1,6 +1,6 @@
 # Payflow Gateway SDKs
 
-Open-source SDKs for the PayPal Payflow Gateway — available for **.NET** and **Java**. Both SDKs are currently at **v5.0.3**.
+Open-source SDKs for the PayPal Payflow Gateway — available for **.NET** and **Java**. Both SDKs are currently at **v5.0.4**.
 
 > **Important:** v5 is not fully backwards-compatible with v4. Review the CHANGELOG in each SDK directory before upgrading an existing integration.
 
@@ -75,7 +75,7 @@ To build locally from source:
 ```powershell
 cd dotNET/PFProSDK
 dotnet build            # build for net8.0, net10.0, and net48
-dotnet pack -c Release  # produces PayPal.Payflow.5.0.3.nupkg
+dotnet pack -c Release  # produces PayPal.Payflow.5.0.4.nupkg
 ```
 
 The resulting `.nupkg` is a multi-targeted NuGet package compatible with .NET 8.0, .NET 10.0, and .NET Framework 4.8.
@@ -94,8 +94,8 @@ mvn clean package   # produces target/payflow.jar
 * **Payflow Gateway Developer's Guide:** [developer.paypal.com/docs/payflow/integration-guide/](https://developer.paypal.com/docs/payflow/integration-guide/)
 * **XMLPay schema and general info:** [Payflow Developer's Guide (NVP/SOAP)](https://developer.paypal.com/api/nvp-soap/payflow/integration-guide/)
 * **New Features & Revision History:** [developer.paypal.com/docs/payflow/integration-guide/new-features/](https://developer.paypal.com/docs/payflow/integration-guide/new-features/)
-* **.NET API Reference** (generated): build `dotNET/Payflow SDK Docs/PayflowSDKDocs.shfbproj` with [SHFB v2026+](https://github.com/EWSoftware/SHFB); output at `dotNET/Payflow SDK Docs/Help/index.html`
-* **Java API Reference** (generated): run `mvn javadoc:javadoc` in `java/` (or use `generate-docs.bat/ps1/sh`); output at `java/target/site/apidocs/index.html`
+* **.NET API Reference** (generated): run `build-docs.ps1` (or `build-docs.bat`) in `dotNET/Payflow SDK Docs/` — requires [SHFB v2026+](https://github.com/EWSoftware/SHFB); then open with `view-docs.ps1`
+* **Java API Reference** (online): [paypal.github.io/payflow-gateway/](https://paypal.github.io/payflow-gateway/) — or generate locally with `mvn javadoc:javadoc` in `java/` (or use `generate-docs.bat/ps1/sh`)
 
 ## SDK Binaries (v4)
 
