@@ -8,6 +8,7 @@ echo Building PFProSDK (Release)...
 dotnet build "%SDK_PROJ%" -c Release
 if !ERRORLEVEL! neq 0 (
     echo ERROR: PFProSDK build failed.
+    pause
     exit /b 1
 )
 
@@ -18,9 +19,12 @@ if !ERRORLEVEL! neq 0 (
     echo ERROR: SHFB documentation build failed.
     echo Ensure Sandcastle Help File Builder is installed:
     echo   https://github.com/EWSoftware/SHFB/releases
+    pause
     exit /b 1
 )
 
 echo.
 echo Documentation built successfully. Output: %DOCS_DIR%Help\
 echo Run view-docs.bat to open in browser.
+echo.
+pause

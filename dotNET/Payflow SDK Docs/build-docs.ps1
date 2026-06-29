@@ -16,6 +16,7 @@ Write-Host "Building PFProSDK (Release)..." -ForegroundColor Cyan
 dotnet build $sdkProj -c Release
 if ($LASTEXITCODE -ne 0) {
     Write-Error "PFProSDK build failed."
+    Read-Host "Press Enter to exit"
     exit 1
 }
 
@@ -24,6 +25,7 @@ Write-Host "Building SHFB documentation..." -ForegroundColor Cyan
 dotnet msbuild $shfbProj /p:Configuration=Release
 if ($LASTEXITCODE -ne 0) {
     Write-Error "SHFB documentation build failed.`nEnsure Sandcastle Help File Builder is installed: https://github.com/EWSoftware/SHFB/releases"
+    Read-Host "Press Enter to exit"
     exit 1
 }
 
@@ -31,3 +33,5 @@ Write-Host ""
 Write-Host "Documentation built successfully." -ForegroundColor Green
 Write-Host "Output: $docsDir\Help\"
 Write-Host "Run .\view-docs.ps1 to open in browser."
+Write-Host ""
+Read-Host "Press Enter to exit"
