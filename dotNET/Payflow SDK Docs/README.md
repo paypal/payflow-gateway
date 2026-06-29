@@ -12,8 +12,22 @@ This project generates the full API reference for the Payflow .NET SDK using
 
 ## Building the Docs
 
+### Option 1 — One-click scripts (recommended)
+
+| Script | Platform |
+|--------|----------|
+| `build-docs.ps1` | Windows PowerShell / PowerShell 7 |
+| `build-docs.bat` | Windows Command Prompt |
+
+Each script builds `PFProSDK` in Release (regenerating the XML doc file) and then runs the SHFB project. Output is written to `Help\`.
+
+### Option 2 — Manual
+
 ```powershell
-$env:SHFBROOT = "C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\"
+# Regenerate the XML doc file first
+dotnet build ..\PFProSDK\PFProSDK.csproj -c Release
+
+# Build the SHFB website output
 dotnet msbuild PayflowSDKDocs.shfbproj /p:Configuration=Release
 ```
 

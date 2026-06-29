@@ -39,7 +39,7 @@
     <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
     <SaveComponentCacheCapacity>100</SaveComponentCacheCapacity>
     <HelpTitle>Payflow Gateway .NET SDK v5</HelpTitle>
-    <HelpFileVersion>5.0.3.0</HelpFileVersion>
+    <HelpFileVersion>5.0.4.0</HelpFileVersion>
     <RootNamespaceContainer>False</RootNamespaceContainer>
     <NamespaceGrouping>False</NamespaceGrouping>
     <MaximumGroupParts>2</MaximumGroupParts>

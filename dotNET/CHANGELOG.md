@@ -1,3 +1,26 @@
+## 5.0.4 (2026-06-29)
+
+### Bug Fixes
+
+* **`view-docs.bat` false error after successful `dotnet-serve` install** — `%ERRORLEVEL%` inside a parenthesized block is expanded at parse time, so the nested install-failure check was reading the exit code from the preceding `findstr` (1 = not found) rather than from `dotnet tool install`. Fixed with `setlocal EnableDelayedExpansion` and `!ERRORLEVEL!`.
+* **`view-docs.bat` / `view-docs.ps1` `dotnet serve` not found after fresh install** — `dotnet tool install -g` places the executable in `%USERPROFILE%\.dotnet\tools`, which is not on `PATH` in the current shell session. Both scripts now call `dotnet-serve.exe` by its full path instead of relying on `PATH` discovery.
+* **`SamplesCS` net48 — CS8370 `using` declarations require C# 8.0 or greater** — SDK-style projects targeting `net48` default to C# 7.3. `Reporting.cs` uses C# 8.0 `using`-declaration syntax. Fixed by adding `<LangVersion>latest</LangVersion>` for the `net48` target in `SamplesCS.csproj`.
+* **`SamplesCS` net48 — CS0234 `System.Net.Http` not found** — SDK-style projects do not implicitly reference `System.Net.Http.dll` for `net48`. Fixed with an explicit `<Reference Include="System.Net.Http" />` for the `net48` target.
+* **SHFB warning BE0066 — `Context.Equals` missing `<param>` documentation** — `<param name="obj"></param>` was present but empty; SHFB's `ShowMissingComponent` treats empty tags as missing. Added description text.
+
+### New Scripts
+
+* Added `build-docs.bat` and `build-docs.ps1` to `dotNET/Payflow SDK Docs/`. Each script builds `PFProSDK` in Release (regenerating the XML doc file) and then runs the SHFB project in one step. Both pause on completion so the window stays open.
+
+### Documentation
+
+* SHFB API docs — license page corrected from GNU General Public License to Apache License 2.0.
+* SHFB API docs — v5.0.3 version history topic added.
+* Copyright year updated from 2020 to 2026 across all three `LICENSE` files and the SHFB copyright footer.
+* Java SDK API reference now published to GitHub Pages: <https://paypal.github.io/payflow-gateway/>
+
+---
+
 ## 5.0.3 (2026-06-28)
 
 ### Build Modernization
