@@ -1,3 +1,16 @@
+## 5.0.4 (2026-06-28)
+
+### Bug Fixes
+
+* **`IPXmlReader` namespace-unaware parser silently broke XMLPay** — `DocumentBuilderFactory` was not set to namespace-aware mode. Without it, `Node.getLocalName()` returns `null` for all elements. `PayflowUtility.getXmlAttribute()` called `getLocalName()` on each child node, producing a `NullPointerException` that propagated to the generic `catch(Exception)` handler in `checkTransactionArgs()`. That handler silently set `isXmlPayRequest = false`, causing XMLPay requests to be sent with `Content-Type: text/namevalue` instead of `text/xml`. The gateway responded with `RESULT=-104`. Fixed by calling `factory.setNamespaceAware(true)` in `IPXmlReader`.
+* **`XMLPaySale.java` hardcoded credential placeholders** — The sample used literal `[user]`, `[vendor]`, `[password]`, `[partner]` in the request XML that were never substituted. Credentials are now read from `PAYFLOW_USER/VENDOR/PARTNER/PASSWORD` env vars with a `payflow.properties` fallback, matching all other Java samples.
+
+### Cleanup
+
+* **Removed stale `java/lib/` JARs** — `xercesImpl.jar` and `xml-apis.jar` were Ant-era runtime dependencies committed to the repository. They are unused by the Maven build (which uses the JDK-bundled JAXP XML parser); their presence in the repo was misleading. Both files are now removed.
+
+---
+
 ## 5.0.3 (2026-06-28)
 
 ### Build Modernization

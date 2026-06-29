@@ -30,9 +30,11 @@ class IPXmlReader {
 
         StringReader xmlStringReader = new StringReader(xmlString);
         InputSource xmlInputSource = new InputSource(xmlStringReader);
-        this.xmlDocumentElement = DocumentBuilderFactory.newInstance()
-                .newDocumentBuilder()
-                .parse(xmlInputSource);
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        // getLocalName() returns null unless namespace-aware — PayflowUtility.getXmlAttribute()
+        // calls getLocalName() and NPEs without this, breaking XMLPay request detection.
+        factory.setNamespaceAware(true);
+        this.xmlDocumentElement = factory.newDocumentBuilder().parse(xmlInputSource);
 
         Logger.getInstance().log("paypal.payflow.IPXmlReader.IPXmlReader(String) : Exiting", PayflowConstants.SEVERITY_DEBUG);
     }

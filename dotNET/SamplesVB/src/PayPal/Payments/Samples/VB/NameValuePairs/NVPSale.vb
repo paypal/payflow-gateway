@@ -26,7 +26,7 @@ Namespace PayPal.Payments.Samples.VB.NameValuePairs
             Dim mPassword As String = If(Environment.GetEnvironmentVariable("PAYFLOW_PASSWORD"), PayflowUtility.AppSettings("PayflowPassword"))
 
             ' Sample Request.
-            Dim Request As String = "TRXTYPE=A&ACCT=4111111111111111&EXPDATE=0130&INVNUM=INV1234567&AMT=1.00&PONUM=PO123456&STREET=1189&ZIP=94070&CVV2=078&USER=" & mUser & "&PARTNER=" & mPartner & "&VENDOR=" & mVendor & "&PWD=" & mPassword
+            Dim Request As String = "TENDER=C&TRXTYPE=A&ACCT=4111111111111111&EXPDATE=0130&INVNUM=INV1234567&AMT=1.00&PONUM=PO123456&STREET=1189&ZIP=94070&CVV2=078&USER=" & mUser & "&PARTNER=" & mPartner & "&VENDOR=" & mVendor & "&PWD=" & mPassword
             ' Create an instance of PayflowNETAPI.
             Dim PayflowNETAPI As PayflowNETAPI = New PayflowNETAPI
             ' Can also pass the values in the constructor itself instead of using .config file.

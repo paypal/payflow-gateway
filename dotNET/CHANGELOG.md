@@ -1,4 +1,4 @@
-## 5.0.4 (2026-06-29)
+## 5.0.4 (2026-06-28)
 
 ### Bug Fixes
 
@@ -7,10 +7,17 @@
 * **`SamplesCS` net48 — CS8370 `using` declarations require C# 8.0 or greater** — SDK-style projects targeting `net48` default to C# 7.3. `Reporting.cs` uses C# 8.0 `using`-declaration syntax. Fixed by adding `<LangVersion>latest</LangVersion>` for the `net48` target in `SamplesCS.csproj`.
 * **`SamplesCS` net48 — CS0234 `System.Net.Http` not found** — SDK-style projects do not implicitly reference `System.Net.Http.dll` for `net48`. Fixed with an explicit `<Reference Include="System.Net.Http" />` for the `net48` target.
 * **SHFB warning BE0066 — `Context.Equals` missing `<param>` documentation** — `<param name="obj"></param>` was present but empty; SHFB's `ShowMissingComponent` treats empty tags as missing. Added description text.
+* **`NVPSale.vb` missing `TENDER=C` parameter** — The NVP request string was missing the required tender type; credit card authorization transactions were silently rejected by the gateway without it.
+* **`XMLPaySale.cs` / `XMLPaySale.vb` hardcoded credential placeholders** — Both files contained literal `[user]`, `[vendor]`, `[password]`, `[partner]` in the XML request that were never substituted. Both now read from `PAYFLOW_USER/VENDOR/PARTNER/PASSWORD` env vars with an `App.config` fallback, matching the NVP and DataObjects samples.
+* **`XMLPaySale.vb` spurious 27-second sleep** — A stale `Thread.Sleep(27000)` was present at the top of `Main`; removed.
 
 ### New Scripts
 
 * Added `build-docs.bat` and `build-docs.ps1` to `dotNET/Payflow SDK Docs/`. Each script builds `PFProSDK` in Release (regenerating the XML doc file) and then runs the SHFB project in one step. Both pause on completion so the window stays open.
+
+### Enhancements
+
+* **`SamplesCS.csproj` / `SamplesVB.vbproj` — `SampleEntry` build property** — A `SampleEntry` MSBuild property now controls which sample class is compiled as the entry point. Passing `/p:SampleEntry=<classname>` at build time selects NVPSale, XMLPaySale, or any other sample without triggering a CS2017 error on the referenced library projects.
 
 ### Documentation
 

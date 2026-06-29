@@ -22,14 +22,18 @@ namespace PayPal.Payments.Samples.CS.XMLPay
 			Console.WriteLine("Executing Sample from File: XMLPaySale.cs");
 			Console.WriteLine("------------------------------------------------------");
 
-			// Sample Request. 
-			// Please replace [user], [vendor], [password] & [partner] with your merchant information.
-			String Request = "<?xml version=\"1.0\"?><XMLPayRequest Timeout=\"45\" version=\"2.0\"><RequestData><Partner>[partner]</Partner><Vendor>[vendor]</Vendor><Transactions><Transaction><Sale><PayData><Invoice><TotalAmt Currency=\"USD\">25.12</TotalAmt><InvNum>INV12345</InvNum><BillTo><PONum>PO12345</PONum><Address><Street>123 Main St.</Street><Zip>12345</Zip></Address></BillTo></Invoice><Tender><Card><CardNum>5105105105105100</CardNum><ExpDate>203001</ExpDate></Card></Tender></PayData></Sale></Transaction></Transactions></RequestData><RequestAuth><UserPass><User>[user]</User><Password>[password]</Password></UserPass></RequestAuth></XMLPayRequest>";
+            // Credentials: env vars take priority; App.config (PayflowUser/Vendor/Partner/Password) is the fallback.
+            String mUser     = Environment.GetEnvironmentVariable("PAYFLOW_USER")     ?? PayflowUtility.AppSettings("PayflowUser");
+            String mVendor   = Environment.GetEnvironmentVariable("PAYFLOW_VENDOR")   ?? PayflowUtility.AppSettings("PayflowVendor");
+            String mPartner  = Environment.GetEnvironmentVariable("PAYFLOW_PARTNER")  ?? PayflowUtility.AppSettings("PayflowPartner");
+            String mPassword = Environment.GetEnvironmentVariable("PAYFLOW_PASSWORD") ?? PayflowUtility.AppSettings("PayflowPassword");
+
+			// Sample Request.
+			String Request = "<?xml version=\"1.0\"?><XMLPayRequest Timeout=\"45\" version=\"2.0\"><RequestData><Partner>" + mPartner + "</Partner><Vendor>" + mVendor + "</Vendor><Transactions><Transaction><Sale><PayData><Invoice><TotalAmt Currency=\"USD\">25.12</TotalAmt><InvNum>INV12345</InvNum><BillTo><PONum>PO12345</PONum><Address><Street>123 Main St.</Street><Zip>12345</Zip></Address></BillTo></Invoice><Tender><Card><CardNum>5105105105105100</CardNum><ExpDate>203001</ExpDate></Card></Tender></PayData></Sale></Transaction></Transactions></RequestData><RequestAuth><UserPass><User>" + mUser + "</User><Password>" + mPassword + "</Password></UserPass></RequestAuth></XMLPayRequest>";
 
             // Create an instance of PayflowNETAPI.
             PayflowNETAPI PayflowNETAPI = new PayflowNETAPI();
-            // Can also pass the values in the constructor itself instead of using .config file.
-            //PayflowNETAPI.SetParameters("pilot-payflowpro.paypal.com", 443, 45, "", 0, "", "", "enabled", "1", "payflow.log", "10240000", false);
+            PayflowNETAPI.SetParameters("pilot-payflowpro.paypal.com", 443, 45, "", 0, "", "", "enabled", "1", "payflow.log", "10240000", false);
 
             // RequestId is a unique string that is required for each & every transaction. 
             // The merchant can use her/his own algorithm to generate this unique request id or 
