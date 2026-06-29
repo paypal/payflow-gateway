@@ -16,60 +16,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # ── .NET API docs (SHFB, Windows runner required) ────────────────────────────
-  build-dotnet-docs:
-    name: Build .NET docs (SHFB)
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v5
-
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v5
-        with:
-          dotnet-version: '8.x'
-
-      - name: Install SHFB (extract via 7-Zip, no GUI installer)
-        shell: powershell
-        run: |
-          $version = "2026.3.29.0"
-          $zip  = "$env:TEMP\SHFB.zip"
-          $exeDir = "$env:TEMP\SHFBpkg"
-          $shfbDest = "C:\SHFB"
-
-          # Download the release zip and unpack it to get the installer exe
-          Invoke-WebRequest "https://github.com/EWSoftware/SHFB/releases/download/v$version/SHFBInstaller_$version.zip" `
-            -OutFile $zip -UseBasicParsing
-          Expand-Archive $zip $exeDir -Force
-
-          $installer = Get-ChildItem $exeDir -Filter "*.exe" | Select-Object -First 1
-          Write-Host "Extracting: $($installer.FullName)"
-
-          # 7-Zip is pre-installed on all windows-latest runners and can extract
-          # Inno Setup installers without launching the GUI.
-          & "C:\Program Files\7-Zip\7z.exe" x $installer.FullName -o"$shfbDest" -y | Out-Null
-
-          # Locate SandcastleHelpFileBuilder.targets to determine the real SHFBROOT
-          $targets = Get-ChildItem $shfbDest -Filter "SandcastleHelpFileBuilder.targets" -Recurse |
-                     Select-Object -First 1
-          if (-not $targets) { throw "Could not locate SandcastleHelpFileBuilder.targets after extraction" }
-          $shfbRoot = $targets.DirectoryName + "\"
-          Write-Host "SHFBROOT = $shfbRoot"
-          "SHFBROOT=$shfbRoot" | Out-File -FilePath $env:GITHUB_ENV -Append
-
-      - name: Build PFProSDK (generates XML doc)
-        run: dotnet build "dotNET/PFProSDK/PFProSDK.csproj" -c Release
-
-      - name: Build SHFB docs
-        shell: powershell
-        run: dotnet msbuild "dotNET/Payflow SDK Docs/PayflowSDKDocs.shfbproj" /p:Configuration=Release
-
-      - name: Upload .NET docs artifact
-        uses: actions/upload-artifact@v5
-        with:
-          name: dotnet-docs
-          path: "dotNET/Payflow SDK Docs/Help/"
-
-  # ── Java API docs (Javadoc, Ubuntu) ──────────────────────────────────────────
+  # ── Java API docs (Javadoc) ───────────────────────────────────────────────────
   build-java-docs:
     name: Build Java docs (Javadoc)
     runs-on: ubuntu-latest
@@ -92,21 +39,15 @@ jobs:
           name: java-docs
           path: java/target/site/apidocs/
 
-  # ── Combine and deploy to GitHub Pages ───────────────────────────────────────
+  # ── Deploy to GitHub Pages ────────────────────────────────────────────────────
   deploy:
     name: Deploy to GitHub Pages
-    needs: [build-dotnet-docs, build-java-docs]
+    needs: build-java-docs
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Download .NET docs
-        uses: actions/download-artifact@v5
-        with:
-          name: dotnet-docs
-          path: _site/dotnet/
-
       - name: Download Java docs
         uses: actions/download-artifact@v5
         with:
@@ -134,6 +75,10 @@ jobs:
               .card:hover { border-color: #0969da; box-shadow: 0 0 0 3px rgba(9,105,218,.15); }
               .card h2 { font-size: 1.15rem; margin: 0 0 8px; color: #0969da; }
               .card p  { font-size: .9rem; margin: 0; color: #57606a; }
+              .card.local h2 { color: #6e7781; }
+              .badge { display: inline-block; font-size: .7rem; background: #ddf4ff;
+                       color: #0969da; border: 1px solid #b6e3ff; border-radius: 4px;
+                       padding: 1px 6px; margin-bottom: 6px; }
               footer { margin-top: 3rem; font-size: .8rem; color: #8c959f;
                        border-top: 1px solid #d0d7de; padding-top: 1rem; }
             </style>
@@ -142,13 +87,14 @@ jobs:
             <h1>Payflow Gateway SDK</h1>
             <p>API reference documentation for the Payflow Gateway .NET and Java SDKs — v5.0.3</p>
             <div class="cards">
-              <a class="card" href="dotnet/">
-                <h2>.NET SDK</h2>
-                <p>C# / VB.NET API reference. Covers all transaction types, response objects, and utilities in the PFProSDK library.</p>
-              </a>
               <a class="card" href="java/">
                 <h2>Java SDK</h2>
                 <p>Java API reference. Covers all transaction types, response objects, and utilities in the Payflow Java library.</p>
+              </a>
+              <a class="card local" href="https://github.com/paypal/payflow-gateway/tree/master/dotNET/Payflow%20SDK%20Docs">
+                <span class="badge">build locally</span>
+                <h2>.NET SDK</h2>
+                <p>Run <code>build-docs.ps1</code> (or <code>build-docs.bat</code>) in the <em>Payflow SDK Docs</em> folder, then <code>view-docs.ps1</code> to browse.</p>
               </a>
             </div>
             <footer>
