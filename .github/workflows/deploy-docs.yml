@@ -28,20 +28,32 @@ jobs:
         with:
           dotnet-version: '8.x'
 
-      - name: Install SHFB from GitHub release
+      - name: Install SHFB (extract via 7-Zip, no GUI installer)
         shell: powershell
         run: |
           $version = "2026.3.29.0"
-          $zip = "$env:TEMP\SHFB.zip"
-          $dest = "$env:TEMP\SHFB"
+          $zip  = "$env:TEMP\SHFB.zip"
+          $exeDir = "$env:TEMP\SHFBpkg"
+          $shfbDest = "C:\SHFB"
+
+          # Download the release zip and unpack it to get the installer exe
           Invoke-WebRequest "https://github.com/EWSoftware/SHFB/releases/download/v$version/SHFBInstaller_$version.zip" `
             -OutFile $zip -UseBasicParsing
-          Expand-Archive $zip $dest -Force
-          $exe = Get-ChildItem $dest -Filter "*.exe" | Select-Object -First 1
-          Write-Host "Running: $($exe.FullName)"
-          Start-Process -FilePath $exe.FullName -ArgumentList "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART" -Wait
-          # Capture the machine-scope SHFBROOT set by the installer for subsequent steps
-          $shfbRoot = [System.Environment]::GetEnvironmentVariable("SHFBROOT", "Machine")
+          Expand-Archive $zip $exeDir -Force
+
+          $installer = Get-ChildItem $exeDir -Filter "*.exe" | Select-Object -First 1
+          Write-Host "Extracting: $($installer.FullName)"
+
+          # 7-Zip is pre-installed on all windows-latest runners and can extract
+          # Inno Setup installers without launching the GUI.
+          & "C:\Program Files\7-Zip\7z.exe" x $installer.FullName -o"$shfbDest" -y | Out-Null
+
+          # Locate SandcastleHelpFileBuilder.targets to determine the real SHFBROOT
+          $targets = Get-ChildItem $shfbDest -Filter "SandcastleHelpFileBuilder.targets" -Recurse |
+                     Select-Object -First 1
+          if (-not $targets) { throw "Could not locate SandcastleHelpFileBuilder.targets after extraction" }
+          $shfbRoot = $targets.DirectoryName + "\"
+          Write-Host "SHFBROOT = $shfbRoot"
           "SHFBROOT=$shfbRoot" | Out-File -FilePath $env:GITHUB_ENV -Append
 
       - name: Build PFProSDK (generates XML doc)
