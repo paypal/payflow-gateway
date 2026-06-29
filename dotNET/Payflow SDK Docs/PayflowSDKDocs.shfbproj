@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <!-- The configuration and platform will be used to determine which assemblies to include from solution and
 				 project documentation sources -->
@@ -27,7 +27,7 @@
       <Argument Key="maxVersionParts" Value="" xmlns="" />
     </TransformComponentArguments>
     <DocumentationSources>
-      <DocumentationSource sourceFile="..\PFProSDK\PFProSDK.csproj" targetFramework="net8.0" xmlns="" />
+      <DocumentationSource sourceFile="..\PFProSDK\PFProSDK.csproj" configuration="Release" targetFramework="net8.0" xmlns="" />
     </DocumentationSources>
     <HelpFileFormat>Website</HelpFileFormat>
     <SyntaxFilters>Standard</SyntaxFilters>
@@ -45,7 +45,8 @@
     <MaximumGroupParts>2</MaximumGroupParts>
     <Preliminary>False</Preliminary>
     <CopyrightText>Copyright 2026 PayPal. Licensed under the Apache License, Version 2.0.</CopyrightText>
-    <FeedbackEMailAddress></FeedbackEMailAddress>
+    <FeedbackEMailAddress>
+    </FeedbackEMailAddress>
     <SdkLinkTarget>Blank</SdkLinkTarget>
     <NamingMethod>Guid</NamingMethod>
     <ContentPlacement>AboveNamespaces</ContentPlacement>
